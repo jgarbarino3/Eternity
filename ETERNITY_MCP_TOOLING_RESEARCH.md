@@ -92,6 +92,57 @@ External option:
 
 ## Useful Later
 
+### Model Customization: Unsloth Studio And Thinking Machines/Tinker
+
+This category is useful later, not for V0. These tools can help customize AI
+helpers around Eternity's research workflow, but they should not be treated as
+physics solvers or sources of scientific authority.
+
+Current public read:
+
+- Unsloth is an open-source framework for running and training models locally,
+  and Unsloth Studio is described as an open-source, no-code web UI for running
+  and training LLMs. Public docs also describe local model running, model
+  comparison, dataset creation, and fine-tuning workflows.
+- Thinking Machines Lab's service terms describe services for hosting, training,
+  developing, fine-tuning, and evaluating AI models, plus prepaid credits.
+  Public reporting describes Tinker as a Python/API product for distributed LLM
+  fine-tuning/post-training of open-weight models.
+
+Potential Eternity uses after enough curated data exists:
+
+- Fine-tune a small/local spec-drafting assistant on accepted experiment specs.
+- Train a result-critique assistant to catch unsupported claims, missing
+  validity envelopes, unit mistakes, and bad assumptions.
+- Train a literature triage assistant on promoted/rejected paper notes.
+- Compare base vs fine-tuned outputs for report style and mechanism critique.
+- Use managed credits for heavier fine-tuning runs when local hardware is
+  insufficient.
+
+Required guardrails:
+
+- Do not fine-tune until there is a curated dataset and held-out evaluation set.
+- Do not train on raw unreviewed AI outputs as if they were truth.
+- Keep fine-tuned helpers in the researcher playground until they pass tests on
+  held-out specs, reports, and critique examples.
+- Never treat a fine-tuned helper as a substitute for physics validation,
+  literature checks, or lab data.
+
+Recommendation:
+
+- Revisit Unsloth Studio after V1/V2, once Eternity has at least dozens of
+  accepted specs/reports/critiques.
+- Revisit Thinking Machines/Tinker credits after there is a clean training set
+  and a reason to prefer managed post-training over local Unsloth experiments.
+
+Sources:
+
+- Unsloth docs: https://unsloth.ai/docs
+- Unsloth fine-tuning guide: https://docs.unsloth.ai/get-started/fine-tuning-guide
+- Thinking Machines Lab: https://thinkingmachines.ai/
+- Thinking Machines Lab service terms: https://thinkingmachines.ai/legal/tos/
+- VentureBeat on Tinker: https://venturebeat.com/ai/thinking-machines-first-official-product-is-here-meet-tinker-an-api-for
+
 ### Jupyter And Notebooks
 
 Jupyter is useful for exploration, fit diagnostics, and interactive plots, but the production path should remain scripted and testable. Treat notebooks as exploratory front-ends over versioned datasets and pure Python modules.
@@ -246,6 +297,7 @@ Official security guidance:
 3. Google Drive integration for shared reports and lab notes.
 4. Qdrant or Chroma for semantic search over promoted literature and lab memory.
 5. GitHub Actions for reproducible validation runs.
+6. Unsloth Studio only after there is a curated spec/report/critique dataset.
 
 ### Add Much Later
 
@@ -253,6 +305,8 @@ Official security guidance:
 2. Calendar scheduling and experiment reminders.
 3. Slurm/HPC job-submission MCP with strict allowlisted commands.
 4. Custom PyVISA/serial/DAQ lab MCP with read-only mode first and explicit human gates.
+5. Thinking Machines/Tinker-style managed fine-tuning if credits/access are
+   available and local fine-tuning is insufficient.
 
 ## Bottom Line
 

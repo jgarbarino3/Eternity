@@ -160,6 +160,63 @@ V1 goal:
 
 This is the first serious digital-twin checkpoint.
 
+## Near-Term Reach With Current Tools
+
+With the V0 skeleton in place, the project can go meaningfully further before
+waiting for future model releases.
+
+Realistic current-tool milestones:
+
+1. **Real linear ENZ digital twin**
+   - Ingest ellipsometry or exported `n,k` data.
+   - Fit Drude and Drude-Lorentz parameters.
+   - Simulate real ITO/AZO thin films.
+   - Compare predicted and measured transmission/reflection.
+   - Produce reproducible reports with warnings and validity envelopes.
+
+2. **First calibration loop**
+   - Take one sample.
+   - Fit material parameters from one dataset.
+   - Predict another dataset.
+   - Show where the model works and where it fails.
+   - Track uncertainty and model limits.
+
+3. **Pump-probe / nonlinear prototype**
+   - Add simple time-dependent Drude parameters.
+   - Add fluence and delay as experiment dimensions.
+   - Fit relaxation times from synthetic or real pump-probe traces.
+   - Compare mechanisms such as plasma-frequency modulation vs damping
+     modulation.
+
+4. **Researcher playground**
+   - Let an AI read a result manifest.
+   - Ask it to explain what happened.
+   - Ask it to propose next simulations.
+   - Ask it to identify missing physics and possible artifacts.
+   - Keep it separate from validated claims.
+
+5. **Literature and lab memory**
+   - Build a local paper library around ENZ, ITO, AZO, hot electrons, temporal
+     refraction, pump-probe methods, and FDTD.
+   - Extract model equations, parameter ranges, and experimental conditions.
+   - Connect papers to simulations and results.
+
+6. **Higher-fidelity validation**
+   - Add Meep/FDTD for selected simple cases.
+   - Compare TMM vs FDTD in limits where both should agree.
+   - Use FDTD when it adds scientific value, not as the foundation for
+     everything.
+
+The honest limit is that current tools should not be trusted as a fully
+autonomous scientist. The useful target is a research copilot with a real
+physics substrate.
+
+The most exciting next scientific checkpoint is:
+
+> Eternity takes one real or literature ITO film dataset, fits a Drude-Lorentz
+> model, predicts its linear spectrum, compares against measured data, and
+> writes a report saying exactly where it agrees and fails.
+
 ## V2: First Researcher Behavior
 
 Once V0 or early V1 exists, add a small AI researcher command or notebook.
@@ -253,6 +310,48 @@ Over the 2.5-year horizon, the AI researcher can gradually gain more autonomy:
 
 Even at this stage, human review remains central. The AI can accelerate search and synthesis, but the project should keep scientific claims gated by validation.
 
+## Later Model-Customization Track
+
+Down the line, Eternity may benefit from model customization tools such as
+Unsloth Studio or Thinking Machines Lab's Tinker-style managed fine-tuning. They
+should not be used to train the physics simulator itself. Their likely value is
+training or adapting smaller specialist models around Eternity's accumulated
+research process.
+
+Possible later uses:
+
+- A local experiment-spec drafting model trained on accepted Eternity specs.
+- A result-critique model trained to flag missing assumptions, bad units,
+  unsupported claims, and validity-envelope violations.
+- A literature triage model trained on promoted vs rejected ENZ papers.
+- A report-drafting assistant that follows Eternity's cautious reporting style.
+- A mechanism-comparison assistant that proposes alternative explanations from
+  structured result manifests.
+
+Use this track only after the project has enough high-quality internal data:
+
+- Accepted and rejected experiment specs.
+- Result manifests with human critiques.
+- Literature notes with quality labels.
+- Failed-hypothesis records.
+- Reports that clearly separate evidence from speculation.
+
+Unsloth Studio is likely most useful for local no-code or low-code fine-tuning
+and side-by-side model comparison. Thinking Machines credits would be most useful
+for managed post-training or reinforcement-style fine-tuning if Tinker access is
+available and the project has a clean training/evaluation dataset.
+
+This track should stay downstream of the serious core:
+
+```text
+validated registry -> curated training examples -> fine-tuned helper model ->
+held-out evaluation -> optional use in researcher playground
+```
+
+Do not fine-tune on raw papers, raw lab data, or unreviewed AI outputs and then
+trust the result. For Eternity, customization should teach process discipline,
+not invent physics authority.
+
 ## What Success Could Look Like By The End Of The PhD Window
 
 An ambitious but realistic 2.5-year outcome:
@@ -264,6 +363,8 @@ An ambitious but realistic 2.5-year outcome:
 - Meep/FDTD validation for selected cases.
 - A lab-memory system with papers, notes, datasets, and failed ideas.
 - An AI researcher prototype that proposes mechanism-separating simulations.
+- Optional fine-tuned helper models for spec drafting, result critique,
+  literature triage, or report style.
 - Reproducible research reports that could support thesis work or paper ideation.
 - A clear record of where the model succeeded, failed, and suggested useful experiments.
 
