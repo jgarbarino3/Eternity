@@ -1,0 +1,17 @@
+.DS_Store
+.ruff_cache/
+.pytest_cache/
+.venv/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+results/runs/
+results/*.sqlite
+results/*.sqlite-*
+lab_data/raw/
+lab_data/interim/
+lab_data/processed/
+lab_data/external/
+reports/
+.worktrees/

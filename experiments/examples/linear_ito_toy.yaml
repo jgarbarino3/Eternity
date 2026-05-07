@@ -1,0 +1,66 @@
+schema_version: "0.1"
+experiment_id: linear_ito_toy_001
+question: "Can the linear TMM baseline produce a deterministic synthetic ITO thin-film spectrum?"
+hypothesis: "The low-fluence linear response is explained by a synthetic Drude-Lorentz dielectric function and film thickness."
+
+sample:
+  sample_id: synthetic_ito_001
+  material: ITO
+  thickness:
+    value: 60
+    unit: nm
+  material_model:
+    type: drude_lorentz_synthetic
+    parameters_ref: synthetic_ito_v0
+
+input_pulse:
+  kind: synthetic_gaussian
+  center_wavelength:
+    value: 1550
+    unit: nm
+  bandwidth:
+    value: 120
+    unit: nm
+
+geometry:
+  incidence_angle:
+    value: 0
+    unit: deg
+  polarization: TM
+  incident_medium: air
+  substrate: glass
+
+simulator:
+  name: linear_transfer_matrix
+  version: "0.1"
+  wavelength_range:
+    min: 1300
+    max: 1700
+    points: 401
+    unit: nm
+
+observables:
+  - transmission_spectrum
+  - reflection_spectrum
+  - absorption
+
+acceptance_tests:
+  - energy_accounting
+  - deterministic_replay
+
+validity_envelope:
+  wavelength:
+    min: 1300
+    max: 1700
+    unit: nm
+  fluence:
+    min: 0
+    max: 0.01
+    unit: mJ/cm^2
+  trusted_notes:
+    - "Synthetic linear low-fluence thin-film baseline only."
+  untrusted_notes:
+    - "No pump-induced ENZ material dynamics."
+    - "No hot-electron response."
+    - "No roughness, detector response, or experimental noise."
+
