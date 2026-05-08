@@ -2,6 +2,10 @@
 
 Eternity is a long-term AI-assisted ultrafast ENZ optics research project. V0 is a reproducible synthetic thin-film experiment runner, not an autonomous scientist.
 
+Start with the visual orientation layer in `docs/PROJECT_ATLAS.md`. It maps the
+Serious Core, Research Memory/Radar, and Hypothesis Harness lanes, and links to
+the interactive atlas at `docs/project_atlas/index.html`.
+
 ## V0 Commands
 
 ```bash

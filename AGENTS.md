@@ -9,6 +9,12 @@ Eternity is a long-term personal research project for building toward an AI rese
 - Every scientific result should state model level, assumptions, synthetic vs measured inputs, warnings, validity envelope, and follow-up needed.
 - Do not present simulation output as evidence of new physics without validation against baselines, literature, and eventually lab data.
 
+## Project Atlas Maintenance Rule
+
+- When changing Eternity strategy, major goals, evidence-promotion rules, claim-status policy, roadmap staging, Research Memory/Radar direction, or Hypothesis Harness direction, update `docs/PROJECT_ATLAS.md` and the interactive atlas in `docs/project_atlas/` in the same work.
+- If the atlas is deployed, redeploy the Netlify site after atlas changes and report the live URL.
+- Keep the simple roadmap, reverse mind maps, authority map, evidence ladder, and conflict board aligned with the newest repo state.
+
 ## Pro Model Checkpoint Rule
 
 Use checkpoint gates for hard, abstract, or unknown-territory work. When a checkpoint is warranted, say exactly:
@@ -27,4 +33,3 @@ Trigger a checkpoint before:
 - Phase transitions such as V0 to V1, linear to nonlinear, or local simulator to FDTD.
 
 Do not interrupt routine implementation for Pro input.
-

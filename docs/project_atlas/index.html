@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eternity Project Atlas</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2315201f'/%3E%3Cpath d='M16 42V16h32v8H26v6h18v8H26v4h22v8H16z' fill='%23dcebe7'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="assets/atlas.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to atlas</a>
+    <header class="atlas-header">
+      <div class="header-copy">
+        <p class="kicker">Eternity Project Atlas</p>
+        <h1>One system, three authority-separated lanes.</h1>
+        <p>
+          A visual control surface for keeping the calibrated ENZ digital twin,
+          research memory, and hypothesis harness connected without mixing their
+          scientific authority.
+        </p>
+      </div>
+      <div class="header-panel" aria-label="Current project anchor">
+        <span class="panel-label">Current Anchor</span>
+        <strong>Serious Core V1 linear validation</strong>
+        <span>Speculation may suggest work. Only validation artifacts promote claims.</span>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Atlas navigation">
+        <nav>
+          <a href="#home">Where Am I?</a>
+          <a href="#simple-roadmap">Simple Roadmap</a>
+          <a href="#authority-map">Authority Map</a>
+          <a href="#storyboard">Storyboard</a>
+          <a href="#promotion-conveyor">Promotion Conveyor</a>
+          <a href="#reverse-goal-maps">Reverse Goal Maps</a>
+          <a href="#multiple-path-map">Multiple Paths</a>
+          <a href="#conflict-board">Conflict Board</a>
+          <a href="#evidence-ladder">Evidence Ladder</a>
+          <a href="#roadmap-swimlanes">Swimlanes</a>
+          <a href="#node-template">Node Template</a>
+        </nav>
+      </aside>
+
+      <main id="main" class="atlas-main">
+        <section class="control-bar" aria-label="Atlas filters">
+          <label class="search-field" for="atlas-search">
+            <span>Search atlas nodes</span>
+            <input
+              id="atlas-search"
+              type="search"
+              placeholder="Try claim status, falsifier, radar, holdout..."
+              autocomplete="off"
+            />
+          </label>
+          <div class="filter-group" aria-label="Lane filters">
+            <button class="filter-button active" data-filter-group="lane" data-filter-value="all">
+              All lanes
+            </button>
+            <button class="filter-button" data-filter-group="lane" data-filter-value="serious-core">
+              Serious Core
+            </button>
+            <button class="filter-button" data-filter-group="lane" data-filter-value="memory-radar">
+              Memory/Radar
+            </button>
+            <button class="filter-button" data-filter-group="lane" data-filter-value="hypothesis">
+              Hypothesis
+            </button>
+            <button class="filter-button" data-filter-group="lane" data-filter-value="future">
+              Future
+            </button>
+          </div>
+          <div class="filter-group" aria-label="Status filters">
+            <button class="filter-button active" data-filter-group="status" data-filter-value="all">
+              All status
+            </button>
+            <button class="filter-button" data-filter-group="status" data-filter-value="validated">
+              Validated
+            </button>
+            <button class="filter-button" data-filter-group="status" data-filter-value="candidate">
+              Candidate
+            </button>
+            <button class="filter-button" data-filter-group="status" data-filter-value="speculative">
+              Speculative
+            </button>
+            <button class="filter-button" data-filter-group="status" data-filter-value="conflict">
+              Conflict
+            </button>
+          </div>
+        </section>
+
+        <section id="home" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">01</p>
+            <h2>Home / Where Am I?</h2>
+            <p>
+              The atlas keeps the long-term researcher idea visible while making
+              the current evidence boundary hard to miss.
+            </p>
+          </div>
+          <div class="overview-grid">
+            <article class="overview-panel atlas-node" data-lane="serious-core" data-status="validated">
+              <span class="badge lane-core">Serious Core</span>
+              <h3>Highest-authority evidence</h3>
+              <p>
+                Current committed runs remain synthetic software fixtures. The
+                next high-authority target is calibrated linear evidence from a
+                registry-backed calibration and holdout workflow.
+              </p>
+            </article>
+            <article class="overview-panel atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span class="badge lane-memory">Research Memory/Radar</span>
+              <h3>Speculative queues</h3>
+              <p>
+                Paper cards, lab observations, method-transfer notes, radar
+                leads, contradiction notes, and task drafts organize context.
+                They do not validate claims.
+              </p>
+            </article>
+            <article class="overview-panel atlas-node" data-lane="hypothesis" data-status="speculative">
+              <span class="badge lane-hypothesis">Hypothesis Harness</span>
+              <h3>Failure-learning loop</h3>
+              <p>
+                Hypothesis cards rank mechanisms, name artifact risks, propose
+                falsifiers, and record failed-hypothesis scars for future use.
+              </p>
+            </article>
+            <article class="overview-panel atlas-node" data-lane="future" data-status="conflict">
+              <span class="badge status-conflict">Current conflicts</span>
+              <h3>Competing paths stay visible</h3>
+              <p>
+                Fine-tuning, graph memory, FDTD, and nonlinear ENZ modeling stay
+                explicit as staged options until validation and architecture gates
+                make them safe to promote.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="simple-roadmap" class="atlas-section simple-roadmap-section">
+          <div class="section-heading">
+            <p class="section-number">02</p>
+            <h2>Simple Roadmap</h2>
+            <p>
+              The quick answer: the first real goal is calibrated linear
+              evidence. Everything else becomes more useful after that evidence
+              anchor exists.
+            </p>
+          </div>
+          <div class="current-goal atlas-node" data-lane="serious-core" data-status="candidate">
+            <div>
+              <span class="badge lane-core">First goal now</span>
+              <h3>First calibrated linear ENZ digital twin checkpoint</h3>
+              <p>
+                Given one identified sample and optical setup, fit or load a
+                physically constrained material model from calibration-only data,
+                freeze it, predict an independent holdout measurement, and emit a
+                bounded claim status.
+              </p>
+            </div>
+            <div class="progress-stack" aria-label="Progress toward first goal">
+              <div class="progress-row done"><span>Done</span><strong>V0 synthetic runner and contracts</strong></div>
+              <div class="progress-row active"><span>Doing</span><strong>Registry, artifacts, claim gates, atlas</strong></div>
+              <div class="progress-row next"><span>Next</span><strong>Real/literature linear data and holdout comparison</strong></div>
+            </div>
+          </div>
+          <div class="goal-sequence" aria-label="Eternity goal sequence">
+            <article class="sequence-card current atlas-node" data-lane="serious-core" data-status="candidate">
+              <span>01</span>
+              <h3>Calibrated linear evidence</h3>
+              <p>Earn the first serious-core validation milestone.</p>
+            </article>
+            <article class="sequence-card atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span>02</span>
+              <h3>Research memory substrate</h3>
+              <p>Make papers, lab memory, contradictions, and task queues searchable.</p>
+            </article>
+            <article class="sequence-card atlas-node" data-lane="hypothesis" data-status="speculative">
+              <span>03</span>
+              <h3>Hypothesis harness</h3>
+              <p>Rank mechanisms and choose falsifying tests without validating claims.</p>
+            </article>
+            <article class="sequence-card atlas-node" data-lane="future" data-status="conflict">
+              <span>04</span>
+              <h3>Nonlinear ENZ readiness</h3>
+              <p>Only after the linear baseline and controls are strong enough.</p>
+            </article>
+            <article class="sequence-card atlas-node" data-lane="future" data-status="candidate">
+              <span>05</span>
+              <h3>Paper-claim candidate</h3>
+              <p>Literature, controls, validation, and expert review converge.</p>
+            </article>
+          </div>
+          <div class="mini-mindmaps">
+            <article class="mini-map atlas-node" data-lane="serious-core" data-status="candidate">
+              <h3>Reverse mind map: first goal</h3>
+              <div class="mindmap-line goal">calibrated_linear_evidence</div>
+              <div class="mindmap-branches">
+                <span>holdout measurement</span>
+                <span>frozen material model</span>
+                <span>calibration-only fit</span>
+                <span>registry hashes</span>
+                <span>split integrity</span>
+                <span>residual report</span>
+              </div>
+            </article>
+            <article class="mini-map atlas-node" data-lane="hypothesis" data-status="candidate">
+              <h3>Reverse mind map: next useful experiment</h3>
+              <div class="mindmap-line goal">discriminating_test_plan</div>
+              <div class="mindmap-branches">
+                <span>rival mechanisms</span>
+                <span>artifact risks</span>
+                <span>missing controls</span>
+                <span>expected signatures</span>
+                <span>cost and feasibility</span>
+                <span>human review</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="authority-map" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">03</p>
+            <h2>Authority Map</h2>
+            <p>
+              The three lanes are connected by IDs, provenance, and review
+              records. They are separated by what they are allowed to claim.
+            </p>
+          </div>
+          <div class="authority-grid">
+            <article class="authority-lane atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span class="lane-marker memory"></span>
+              <h3>Research Memory / Radar</h3>
+              <p class="permission">May gather, classify, connect, and queue.</p>
+              <ul>
+                <li>Paper cards and method-transfer notes</li>
+                <li>Lab observations and failure modes</li>
+                <li>Weak-claim and contradiction review queues</li>
+              </ul>
+            </article>
+            <article class="authority-lane atlas-node" data-lane="hypothesis" data-status="speculative">
+              <span class="lane-marker hypothesis"></span>
+              <h3>Hypothesis Harness</h3>
+              <p class="permission">May propose, rank, critique, and falsify.</p>
+              <ul>
+                <li>Hypothesis cards and rival mechanisms</li>
+                <li>Artifact-risk checks and falsifier library</li>
+                <li>Failed-hypothesis memory and harness scores</li>
+              </ul>
+            </article>
+            <article class="authority-lane atlas-node high-authority" data-lane="serious-core" data-status="validated">
+              <span class="lane-marker core"></span>
+              <h3>Serious Core</h3>
+              <p class="permission">May validate bounded scientific claims.</p>
+              <ul>
+                <li>Experiment specs and lab-data registry</li>
+                <li>Calibration/holdout splits and material models</li>
+                <li>Validation gates, residuals, reports, claim status</li>
+              </ul>
+            </article>
+          </div>
+          <div class="rule-strip">
+            <strong>Core rule:</strong>
+            <span>Claims do not inherit authority from upstream records. They are re-authorized only by validation artifacts.</span>
+          </div>
+        </section>
+
+        <section id="storyboard" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">04</p>
+            <h2>Top-Level Storyboard</h2>
+            <p>
+              The project loop should always end by making the next question
+              sharper and the evidence state clearer.
+            </p>
+          </div>
+          <ol class="storyboard">
+            <li class="atlas-node" data-lane="memory-radar" data-status="candidate"><span>Question</span></li>
+            <li class="atlas-node" data-lane="memory-radar" data-status="candidate"><span>Context / memory</span></li>
+            <li class="atlas-node" data-lane="hypothesis" data-status="speculative"><span>Hypothesis</span></li>
+            <li class="atlas-node" data-lane="serious-core" data-status="candidate"><span>Experiment or simulation</span></li>
+            <li class="atlas-node" data-lane="serious-core" data-status="candidate"><span>Result</span></li>
+            <li class="atlas-node" data-lane="hypothesis" data-status="candidate"><span>Critique</span></li>
+            <li class="atlas-node" data-lane="serious-core" data-status="validated"><span>Claim audit</span></li>
+            <li class="atlas-node" data-lane="memory-radar" data-status="candidate"><span>Memory update</span></li>
+            <li class="atlas-node" data-lane="future" data-status="candidate"><span>Next better question</span></li>
+          </ol>
+        </section>
+
+        <section id="promotion-conveyor" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">05</p>
+            <h2>Evidence Promotion Conveyor</h2>
+            <p>
+              Promotion is a gated handoff, not a confidence boost from nicer
+              wording or more retrieved context.
+            </p>
+          </div>
+          <div class="conveyor">
+            <div class="conveyor-node atlas-node" data-lane="memory-radar" data-status="speculative">
+              <span class="badge status-lead">Lead</span>
+              <strong>Radar or note</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span class="badge status-candidate">Memory record</span>
+              <strong>Typed, sourced, reviewable</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="hypothesis" data-status="speculative">
+              <span class="badge status-speculative">Hypothesis card</span>
+              <strong>Assumptions and falsifiers</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="hypothesis" data-status="candidate">
+              <span class="badge status-candidate">Validation candidate</span>
+              <strong>Human-reviewed test plan</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="serious-core" data-status="candidate">
+              <span class="badge status-simulation">Serious-core run</span>
+              <strong>Provenance and gates</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="serious-core" data-status="validated">
+              <span class="badge status-validated">claim_status.json</span>
+              <strong>Bounded authority</strong>
+            </div>
+            <div class="conveyor-node atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span class="badge status-candidate">Memory update</span>
+              <strong>Survived, failed, or weakened</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="reverse-goal-maps" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">06</p>
+            <h2>Reverse Goal Maps</h2>
+            <p>
+              Each goal begins on the left. Branches show what must exist before
+              the goal can be earned.
+            </p>
+          </div>
+          <div class="goal-map-grid">
+            <article class="goal-map atlas-node" data-lane="serious-core" data-status="validated">
+              <h3>calibrated_linear_evidence</h3>
+              <ul>
+                <li>Independent holdout measurement</li>
+                <li>Frozen material model</li>
+                <li>Calibration-only fit inputs</li>
+                <li>Registry hashes and split integrity</li>
+                <li>Residual, uncertainty, and validity report</li>
+              </ul>
+            </article>
+            <article class="goal-map atlas-node" data-lane="hypothesis" data-status="candidate">
+              <h3>failed_hypothesis_memory</h3>
+              <ul>
+                <li>Original hypothesis and claim level</li>
+                <li>Prediction that failed or weakened</li>
+                <li>What is ruled out and what remains live</li>
+                <li>Future constraint for retrieval</li>
+                <li>Linked run artifacts or review decision</li>
+              </ul>
+            </article>
+            <article class="goal-map atlas-node" data-lane="hypothesis" data-status="candidate">
+              <h3>next_discriminating_experiment</h3>
+              <ul>
+                <li>Top rival mechanisms</li>
+                <li>Artifact risks and missing controls</li>
+                <li>Expected signatures under each mechanism</li>
+                <li>Cost, feasibility, and ambiguity remaining</li>
+                <li>Human-reviewed validation candidate</li>
+              </ul>
+            </article>
+            <article class="goal-map atlas-node" data-lane="future" data-status="candidate">
+              <h3>paper_claim_candidate</h3>
+              <ul>
+                <li>Calibrated evidence and independent controls</li>
+                <li>Literature comparison and novelty check</li>
+                <li>Failed alternatives and artifact review</li>
+                <li>Expert review and cautious wording</li>
+              </ul>
+            </article>
+            <article class="goal-map atlas-node" data-lane="future" data-status="conflict">
+              <h3>nonlinear_ENZ_modeling_ready</h3>
+              <ul>
+                <li>Validated linear baseline</li>
+                <li>Fluence and detuning controls</li>
+                <li>Mechanism-specific model assumptions</li>
+                <li>FDTD or literature baseline where useful</li>
+                <li>Pro checkpoint before phase transition</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="multiple-path-map" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">07</p>
+            <h2>Multiple-Path Map</h2>
+            <p>
+              The same goal can have parallel routes. The atlas makes the tradeoff
+              visible instead of forcing one premature roadmap.
+            </p>
+          </div>
+          <div class="path-board">
+            <div class="path-goal">
+              <span>Goal</span>
+              <strong>Choose the next useful experiment</strong>
+            </div>
+            <article class="path-card atlas-node" data-lane="serious-core" data-status="validated">
+              <span class="badge status-validated">Active anchor</span>
+              <h3>Serious-core validation</h3>
+              <p>Use registry, holdout split, baseline model, and validation gates.</p>
+            </article>
+            <article class="path-card atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span class="badge status-candidate">Context source</span>
+              <h3>Memory evidence scan</h3>
+              <p>Find prior failures, paper constraints, and weak claims before planning.</p>
+            </article>
+            <article class="path-card atlas-node" data-lane="hypothesis" data-status="candidate">
+              <span class="badge status-candidate">Falsifier engine</span>
+              <h3>Mechanism ranking</h3>
+              <p>Separate top explanations by artifact risk and discriminating tests.</p>
+            </article>
+            <article class="path-card atlas-node" data-lane="future" data-status="speculative">
+              <span class="badge status-speculative">Human route</span>
+              <h3>Advisor framing</h3>
+              <p>Use story pressure and lab feasibility without upgrading authority.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="conflict-board" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">08</p>
+            <h2>Conflict Board</h2>
+            <p>
+              Conflicts are first-class records. They keep risky interpretation
+              choices visible until a discriminating test resolves them.
+            </p>
+          </div>
+          <div class="conflict-list">
+            <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
+              <span class="badge status-conflict">Unresolved</span>
+              <h3>Linear phase vs nonlinear ENZ response</h3>
+              <p>
+                Pulse reshaping can look mechanism-rich before fluence,
+                detuning, substrate, and retrieval robustness controls separate
+                alternatives.
+              </p>
+              <dl>
+                <dt>Forbidden overclaim</dt>
+                <dd>Nonlinear ENZ mechanism proven.</dd>
+                <dt>Next discriminating test</dt>
+                <dd>Fluence series at fixed wavelength plus retrieval-seed robustness.</dd>
+              </dl>
+            </article>
+            <article class="conflict-card atlas-node" data-lane="future" data-status="conflict">
+              <span class="badge status-conflict">Staged</span>
+              <h3>Fine-tuning early vs harness first</h3>
+              <p>
+                Fine-tuning may help narrow extraction tasks later, but harness,
+                memory, and evals provide safer learning today.
+              </p>
+              <dl>
+                <dt>Current resolution</dt>
+                <dd>Memory/evals/harness first; fine-tuning only for bounded routine tasks.</dd>
+                <dt>Gate</dt>
+                <dd>Show a repeated schema or routing task that current prompting cannot handle.</dd>
+              </dl>
+            </article>
+            <article class="conflict-card atlas-node" data-lane="future" data-status="conflict">
+              <span class="badge status-conflict">Needs gate</span>
+              <h3>TMM/FDTD scope boundary</h3>
+              <p>
+                FDTD should be added when it answers a specific validation or
+                geometry question, not because higher fidelity sounds safer.
+              </p>
+              <dl>
+                <dt>Forbidden overclaim</dt>
+                <dd>FDTD output as automatic evidence of new physics.</dd>
+                <dt>Next decision</dt>
+                <dd>Use a Pro checkpoint before local simulator to FDTD transition.</dd>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        <section id="evidence-ladder" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">09</p>
+            <h2>Evidence Ladder</h2>
+            <p>
+              The ladder is the anti-confusion spine. It controls what language
+              is allowed at each maturity level.
+            </p>
+          </div>
+          <ol class="ladder">
+            <li class="atlas-node" data-lane="memory-radar" data-status="speculative">
+              <span>Level 0</span><strong>Lead</strong><em>possible, worth checking</em>
+            </li>
+            <li class="atlas-node" data-lane="memory-radar" data-status="candidate">
+              <span>Level 1</span><strong>Candidate claim</strong><em>reported by source</em>
+            </li>
+            <li class="atlas-node" data-lane="hypothesis" data-status="speculative">
+              <span>Level 2</span><strong>Structured hypothesis</strong><em>assumptions, alternatives, falsifiers</em>
+            </li>
+            <li class="atlas-node" data-lane="hypothesis" data-status="candidate">
+              <span>Level 3</span><strong>Validation candidate</strong><em>human-reviewed test plan</em>
+            </li>
+            <li class="atlas-node" data-lane="serious-core" data-status="candidate">
+              <span>Level 4</span><strong>Simulation supported</strong><em>deterministic run, bounded assumptions</em>
+            </li>
+            <li class="atlas-node" data-lane="serious-core" data-status="candidate">
+              <span>Level 5</span><strong>Holdout supported</strong><em>split integrity and residuals</em>
+            </li>
+            <li class="atlas-node" data-lane="serious-core" data-status="validated">
+              <span>Level 6</span><strong>Calibrated linear evidence</strong><em>serious-core conclusions allowed</em>
+            </li>
+            <li class="atlas-node" data-lane="future" data-status="candidate">
+              <span>Level 7</span><strong>Paper-claim candidate</strong><em>literature, controls, expert review</em>
+            </li>
+          </ol>
+        </section>
+
+        <section id="roadmap-swimlanes" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">10</p>
+            <h2>Roadmap Swimlanes</h2>
+            <p>
+              Parallel futures are allowed. The atlas shows which lane owns each
+              kind of work and where promotion gates sit.
+            </p>
+          </div>
+          <div class="swimlanes">
+            <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
+              <h3>Serious Core</h3>
+              <p>V1 contracts -> material fitting -> holdout comparison -> claim status.</p>
+            </article>
+            <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
+              <h3>Research Memory</h3>
+              <p>Typed records -> search/digest -> contradiction queues -> task drafts.</p>
+            </article>
+            <article class="swimlane atlas-node" data-lane="hypothesis" data-status="candidate">
+              <h3>Hypothesis Harness</h3>
+              <p>Cards -> mechanism ranks -> falsifiers -> failed-hypothesis scars.</p>
+            </article>
+            <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
+              <h3>Literature Radar</h3>
+              <p>Dry-run scans -> digests -> human promotion -> curated records.</p>
+            </article>
+            <article class="swimlane atlas-node" data-lane="future" data-status="conflict">
+              <h3>Future Nonlinear / FDTD</h3>
+              <p>Validated linear baseline -> Pro checkpoint -> narrow nonlinear/FDTD slice.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="node-template" class="atlas-section">
+          <div class="section-heading">
+            <p class="section-number">11</p>
+            <h2>Node Template</h2>
+            <p>
+              Every future atlas node should carry the metadata needed to prevent
+              speculative adjacency from feeling like validation.
+            </p>
+          </div>
+          <div class="node-template atlas-node" data-lane="serious-core" data-status="candidate">
+            <div><span>Status</span><strong>lead | candidate | validated | failed | conflict</strong></div>
+            <div><span>Authority lane</span><strong>Serious Core | Memory/Radar | Hypothesis | Future</strong></div>
+            <div><span>Source refs</span><strong>repo path, run artifact, paper, lab note, review decision</strong></div>
+            <div><span>Claim level</span><strong>allowed language and forbidden language</strong></div>
+            <div><span>Review state</span><strong>needs review | reviewed | promoted | archived</strong></div>
+            <div><span>Linked artifacts</span><strong>claim_status.json, report.md, residuals, memory record</strong></div>
+          </div>
+        </section>
+
+        <p class="empty-state" hidden>No atlas nodes match the current filters.</p>
+      </main>
+    </div>
+
+    <script src="assets/atlas.js"></script>
+  </body>
+</html>
