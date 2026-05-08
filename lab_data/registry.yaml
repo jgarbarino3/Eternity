@@ -1,0 +1,48 @@
+schema_version: "0.1"
+
+raw_artifacts:
+  synthetic_v0_transmission:
+    raw_artifact_id: synthetic_v0_transmission
+    kind: csv
+    path: lab_data/raw/synthetic_v0/transmission_fixture.csv
+    sha256: 40d8593fb72cf7df1eecccfe87e46d8b5e2f9ced6932ee2efadbae97d02ec2a8
+    bytes: 114
+    source_type: synthetic
+    immutable: true
+
+measurements:
+  synthetic_v0_transmission_measurement:
+    measurement_id: synthetic_v0_transmission_measurement
+    kind: transmission_spectrum
+    raw_artifact_ref: synthetic_v0_transmission
+    sample_ref: synthetic_ito_001
+    stack_ref: synthetic_air_ito_glass
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: transmission
+    y_unit: fraction
+    y_values_column: transmission
+    uncertainty_type: scalar
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+    geometry_polarization: TM
+    preprocessing:
+      - synthetic fixture generated for V1 contract testing
+    forbidden_for_fitting: false
+
+splits:
+  synthetic_v0_contract_split:
+    split_id: synthetic_v0_contract_split
+    raw_data_refs:
+      - synthetic_v0_transmission
+    created_before_fit: true
+    method: explicit_indices
+    calibration_measurement_refs:
+      - synthetic_v0_transmission_measurement
+    holdout_measurement_refs: []
+    fitting_may_access_holdout_y: false
+    ai_playground_may_access_holdout_y_before_fit: false
+    evidence_strength: synthetic_fixture

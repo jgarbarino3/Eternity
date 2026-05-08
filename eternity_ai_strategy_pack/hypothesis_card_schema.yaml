@@ -1,0 +1,141 @@
+# Eternity Hypothesis Card Schema v0
+# Status: draft. Expected to evolve as the repo and lab workflow mature.
+
+schema_version: 0.1
+
+hypothesis:
+  hypothesis_id: "HYP-YYYY-NNN"
+  title: "Short descriptive title"
+  created_at: "YYYY-MM-DD"
+  updated_at: "YYYY-MM-DD"
+  author_or_agent: "human|agent_name|hybrid"
+
+  claim:
+    text: "Precise claim. Avoid vague mechanism language."
+    claim_level: "speculation"  # enum below
+    confidence: "low"           # low|medium|high; must match evidence
+
+  domain_context:
+    project: "Eternity"
+    samples: []                  # sample IDs
+    experiments: []              # experiment IDs
+    data_artifacts: []           # raw/processed artifact IDs and hashes
+    material_models: []          # material model IDs and validity ranges
+
+  mechanisms:
+    primary:
+      - "mechanism_name"
+    alternatives:
+      - "alternative_mechanism"
+    artifact_risks:
+      - "frog_retrieval_instability"
+      - "bandwidth_clipping"
+      - "sample_inhomogeneity"
+
+  assumptions:
+    - assumption: "Explicit assumption"
+      status: "unchecked"        # unchecked|supported|weakened|invalid
+      source_refs: []
+
+  predictions:
+    - prediction: "Observable signature expected if hypothesis is true"
+      measurement: "FROG|Z-scan|ellipsometry|TMM|spectrum|other"
+      expected_direction: "increase|decrease|shape_change|invariant|other"
+      required_conditions: []
+
+  falsifiers:
+    - falsifier: "Observation that would weaken/falsify this hypothesis"
+      test: "Experiment or analysis needed"
+      severity: "weakens|strongly_weakens|falsifies"
+
+  proposed_tests:
+    - test_id: "TEST-YYYY-NNN"
+      name: "Fluence series at fixed center wavelength"
+      purpose: "Separate intensity-dependent response from linear phase effects"
+      expected_under_hypothesis: "..."
+      expected_under_alternatives: "..."
+      feasibility: "low|medium|high"
+      cost: "low|medium|high"
+      risk: "low|medium|high"
+      priority: "low|medium|high"
+
+  evidence:
+    supporting:
+      - evidence_id: ""
+        type: "raw_observation|processed_result|simulation_result|literature_claim|human_note"
+        summary: ""
+        source_refs: []
+        validity_scope: ""
+    contradicting: []
+    missing:
+      - "Needed evidence or control"
+
+  evaluation:
+    status: "untested"  # untested|supported|weakened|falsified|superseded|invalid
+    score:
+      explanatory_power: null
+      data_consistency: null
+      material_consistency: null
+      falsifiability: null
+      simplicity: null
+      artifact_risk: null
+      experiment_cost: null
+      overall: null
+    evaluator: "human|agent|tool|hybrid"
+    evaluator_notes: ""
+
+  memory_update:
+    write_failed_hypothesis_memory: false
+    lesson_if_failed: ""
+    future_constraint: ""
+    related_hypotheses: []
+    supersedes: []
+    superseded_by: []
+
+claim_level_enum:
+  - speculation
+  - plausible_mechanism
+  - weakly_supported
+  - simulation_supported
+  - single_measurement_supported
+  - control_supported
+  - validated_across_conditions
+  - paper_claim_candidate
+
+memory_status_enum:
+  - raw_observation
+  - processed_result
+  - simulation_result
+  - hypothesis
+  - failed_hypothesis
+  - human_note
+  - literature_claim
+  - validated_claim
+  - superseded_claim
+  - artifact_warning
+  - speculation
+
+mechanism_seed_taxonomy:
+  linear:
+    - scalar_gdd
+    - higher_order_spectral_phase
+    - wavelength_dependent_reflection_phase
+    - thin_film_interference
+    - substrate_dispersion
+  nonlinear:
+    - kerr_like_nonlinearity
+    - nonlinear_absorption
+    - pump_induced_delta_epsilon
+    - hot_electron_dynamics
+    - free_carrier_response
+    - thermal_response
+  experimental_artifact:
+    - frog_retrieval_instability
+    - frog_phase_ambiguity
+    - spectrometer_bandwidth_clipping
+    - shg_crystal_phase_matching
+    - beam_pointing_drift
+    - sample_inhomogeneity
+    - surface_roughness_or_oxidation
+    - calibration_leakage
+    - stage_timing_error

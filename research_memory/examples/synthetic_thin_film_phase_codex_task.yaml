@@ -1,0 +1,50 @@
+schema_version: "0.1"
+record_type: codex_task_draft
+title: Synthetic thin-film phase test for TiN/FROG reshaping
+summary: Draft a synthetic-only Codex task for testing whether thin-film spectral phase can reshape a broadband pulse without invoking nonlinear response.
+body: This task draft proposes implementation work only. It must not be treated as evidence.
+evidence_state: speculative
+review_state: needs_human_review
+source_refs:
+  - source_type: codex_task
+    locator: roadmap-example:synthetic-thin-film-phase-task
+    description: Curated roadmap example for a Codex task draft.
+created_at: "2026-05-08T12:15:00Z"
+tags: [codex_task, tin, frog, thin_film]
+project_areas: [tin_frog]
+related_record_ids: []
+claims:
+  - A synthetic-only task could test whether linear thin-film phase plausibly reshapes a broadband pulse.
+limitations:
+  - A synthetic task cannot validate a lab mechanism.
+  - No real lab data path should be touched by this draft.
+next_actions:
+  - Review this draft before promoting it to an implementation task.
+warnings:
+  - simulation_not_validated
+  - no_lab_pipeline_changes
+goal: Implement a synthetic-only test of whether plausible thin-film spectral phase can reshape a broadband pulse without invoking nonlinear response.
+context: Eternity has observed TiN/FROG temporal-structure changes, but scalar GDD-only replacement is insufficient in some notes and no mechanism is isolated.
+source_record_ids:
+  - rm_lab_failure_mode_placeholder
+  - rm_hypothesis_placeholder
+inputs:
+  - synthetic broadband Gaussian or measured-like spectrum
+  - configurable spectral phase terms
+  - thin-film transfer-matrix reflection phase from a simple material model
+expected_outputs:
+  - deterministic plots for input and reflected spectral phase
+  - deterministic plots for temporal intensity and phase before and after reflection
+  - Markdown report with assumptions, warnings, and validity envelope
+success_criteria:
+  - clear comparison between scalar GDD-only and wavelength-dependent thin-film phase
+  - no lab acquisition code touched
+  - no claim of validation
+do_not:
+  - Do not claim TiN nonlinearity is proven.
+  - Do not fit to holdout data.
+  - Do not replace existing V0 commands.
+scientific_guardrails:
+  - Treat synthetic outputs as unvalidated simulation artifacts.
+  - Keep serious-core validation separate.
+  - Preserve deterministic artifacts and tests.

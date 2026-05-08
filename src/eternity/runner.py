@@ -12,6 +12,8 @@ from typing import Any
 
 import yaml
 
+from eternity.artifacts import sha256_file
+from eternity.claim_status import ClaimStatus
 from eternity.ids import deterministic_hash, run_id_for_spec
 from eternity.reporting import write_plots, write_report
 from eternity.simulation import run_linear_tmm, write_tables
@@ -94,4 +96,37 @@ def run_experiment(spec_path: Path, results_root: Path = Path("results/runs")) -
             },
         },
     )
+    gates_dir = run_dir / "validation_gates"
+    gates_dir.mkdir(exist_ok=True)
+    write_json(
+        run_dir / "input_manifest.json",
+        {
+            "claim_scope": "synthetic V0 run",
+            "source_type": "synthetic",
+            "measurements": [],
+            "registry_snapshot_sha256": None,
+        },
+    )
+    write_json(
+        run_dir / "claim_status.json",
+        {
+            "status": ClaimStatus.SYNTHETIC_SOFTWARE_FIXTURE.value,
+            "can_feed_serious_core": False,
+            "reason": "Synthetic fixture only; no measured or holdout data were used.",
+        },
+    )
+    write_json(
+        gates_dir / "input_integrity.json",
+        {"status": "pass", "scope": "synthetic inline V0 inputs"},
+    )
+    write_json(
+        gates_dir / "split_integrity.json",
+        {"status": "not_applicable", "reason": "No calibration or holdout split in V0."},
+    )
+
+    artifact_hashes = {}
+    for artifact_path in sorted(run_dir.rglob("*")):
+        if artifact_path.is_file() and artifact_path.name != "artifact_hashes.json":
+            artifact_hashes[str(artifact_path.relative_to(run_dir))] = sha256_file(artifact_path)
+    write_json(run_dir / "artifact_hashes.json", artifact_hashes)
     return run_dir

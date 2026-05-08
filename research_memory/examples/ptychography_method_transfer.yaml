@@ -1,0 +1,44 @@
+schema_version: "0.1"
+record_type: method_transfer
+title: Ptychographic temporal reconstruction as a possible FROG robustness check
+summary: A ptychography-inspired redundancy idea may help test FROG retrieval robustness for broadband ENZ-centered pulses.
+body: This is a method-transfer lead, not evidence that ptychography solves the FROG problem for Eternity.
+evidence_state: speculative
+review_state: needs_human_review
+source_refs:
+  - source_type: peer_reviewed_paper
+    locator: roadmap-example:ptychography-method-transfer
+    description: Curated roadmap example for a possible method-transfer record.
+created_at: "2026-05-08T12:00:00Z"
+tags: [ptychography, frog, phase_retrieval, ultrafast]
+project_areas: [tin_frog, pulse_retrieval]
+related_record_ids: []
+claims:
+  - Ptychographic redundancy may be a useful stress-test idea for FROG retrieval.
+limitations:
+  - This record is a method-transfer lead and has not been benchmarked against FROG baselines.
+  - It may not map cleanly to the actual FROG geometry.
+next_actions:
+  - Build a synthetic-only toy comparison before touching any lab pipeline.
+assumptions:
+  - Synthetic ENZ-like higher-order phase distortions are enough for a first robustness test.
+warnings:
+  - synthetic_first
+  - no_lab_pipeline_changes
+method_name: Ptychographic temporal reconstruction
+original_field: Attosecond / ultrafast pulse metrology
+transfer_target: FROG retrieval robustness under ENZ-like higher-order phase distortions
+why_it_might_help:
+  - Adds an independent reconstruction philosophy for pulse retrieval.
+  - Could stress-test standard SHG-FROG assumptions in synthetic cases.
+  - May reveal failure modes when spectral phase is rapidly varying near ENZ.
+first_synthetic_test: Implement a toy ptychographic-style iterative retrieval and compare against a standard synthetic SHG-FROG trace for known ENZ-like spectral phase.
+lab_feasibility: No new hardware for first synthetic test; later work requires careful comparison to existing FROG data.
+required_inputs:
+  - synthetic broadband pulse
+  - known higher-order phase
+  - simulated SHG-FROG trace
+risks_or_misfits:
+  - May not map cleanly to the actual FROG geometry.
+  - Could become a distraction if not benchmarked against simple baselines.
+suggested_codex_task: Build a synthetic-only module comparing FROG-style and ptychography-inspired reconstruction on ENZ-distorted pulses.

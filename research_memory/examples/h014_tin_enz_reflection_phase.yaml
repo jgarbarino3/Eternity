@@ -1,0 +1,45 @@
+schema_version: "0.1"
+record_type: hypothesis
+title: H-014 TiN ENZ reflection phase may suppress temporal satellites
+summary: TiN ENZ reflection may impose wavelength-dependent phase that changes few-cycle pulse temporal structure.
+body: This is a hypothesis queue item. It needs synthetic comparison, controls, and serious-core validation before stronger wording.
+evidence_state: speculative
+review_state: needs_human_review
+source_refs:
+  - source_type: lab_note
+    locator: roadmap-example:h014-hypothesis
+    description: Curated roadmap example for a TiN/FROG hypothesis queue item.
+created_at: "2026-05-08T12:10:00Z"
+tags: [tin, enz, frog, phase, thin_film]
+project_areas: [tin_frog]
+related_record_ids: []
+claims:
+  - TiN ENZ reflection may impose wavelength-dependent phase that reshapes broadband pulses.
+limitations:
+  - Current evidence does not isolate linear dispersion, nonlinear response, alignment, filtering, or retrieval artifact.
+  - No holdout validation artifact supports this hypothesis.
+next_actions:
+  - Simulate broadband pulse reflection from TiN using measured or fit epsilon.
+  - Run matched no-sample, TiN, and neutral-mirror FROG at multiple energies.
+warnings:
+  - possible_retrieval_artifact
+  - possible_alignment_artifact
+  - nonlinear_not_isolated
+hypothesis_id: H-014
+hypothesis_statement: TiN ENZ reflection imposes a wavelength-dependent phase response that can suppress or reshape temporal satellites in broadband few-cycle pulses.
+why_plausible:
+  - ENZ thin-film reflection phase can vary rapidly near resonance.
+  - FROG retrievals show temporal structure changes after TiN reflection.
+  - Scalar GDD-only replacement is insufficient in at least some runs.
+what_would_support_it:
+  - reproducible phase reshaping across multiple matched runs
+  - agreement with a thin-film transfer-matrix phase model using measured or calibrated epsilon
+  - similar low-intensity effect consistent with linear dispersion
+what_would_weaken_it:
+  - same reshaping appears from a neutral mirror control
+  - effect disappears after alignment or spectral support correction
+  - retrieval changes strongly under alternate FROG constraints
+next_simulation: Simulate broadband pulse reflection from TiN using measured or fit epsilon and compare temporal intensity and phase before and after reflection.
+next_lab_test: Matched no-sample/TiN/neutral-mirror FROG at two or more pulse energies.
+current_confidence: low
+validation_status: untested

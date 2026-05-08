@@ -1,0 +1,50 @@
+schema_version: "0.1"
+record_type: lab_failure_mode
+title: TiN/FROG temporal reshaping not fully explained by scalar GDD-only model
+summary: Some TiN/FROG observations appear inconsistent with a simple scalar quadratic-dispersion explanation.
+body: This record preserves a lab-memory failure mode. It does not isolate nonlinearity and does not validate a mechanism.
+evidence_state: observed_lab
+review_state: needs_human_review
+source_refs:
+  - source_type: lab_note
+    locator: roadmap-example:tin-frog-failure-mode
+    description: Curated roadmap example preserving a TiN/FROG failure-mode observation.
+created_at: "2026-05-08T12:05:00Z"
+tags: [tin, frog, gdd, temporal_phase, satellite_suppression]
+project_areas: [tin_frog]
+related_record_ids: []
+claims:
+  - TiN modifies retrieved temporal structure in some FROG observations.
+  - Scalar GDD-only replacement is insufficient as a universal explanation.
+limitations:
+  - FROG retrieval ambiguity, noise, alignment, and spectral filtering remain possible.
+  - Nonlinear response is not isolated by this record.
+next_actions:
+  - Run matched no-sample, TiN reflection, and neutral-mirror controls across pulse energies.
+  - Compare with a thin-film transfer-matrix phase model using measured or calibrated epsilon.
+warnings:
+  - possible_retrieval_artifact
+  - possible_alignment_artifact
+  - nonlinear_not_isolated
+symptom: FROG retrieval after TiN reflection shows changed temporal structure and possible satellite or sidelobe changes.
+known_observations:
+  - No-sample and TiN-reflected retrieved pulses can differ substantially.
+  - Scalar GDD-only replacement can be partial in some cases but insufficient in others.
+  - The effect may involve temporal phase changes, not only intensity broadening.
+likely_causes:
+  - higher-order spectral phase from thin-film reflection
+  - ENZ-related dispersive phase structure
+  - spectral filtering or alignment artifact
+  - FROG retrieval ambiguity or noise
+  - possible nonlinear response, not isolated yet
+ruled_out_or_weakened:
+  - simple uniform broadening as the full explanation
+  - scalar GDD-only as a universal explanation
+diagnostic_tests:
+  - matched no-sample / TiN reflection / neutral mirror control
+  - multiple pulse energies with fixed retrieval settings
+  - compare with thin-film transfer-matrix phase model
+related_runs_or_samples:
+  - B7 Run1 as scalar-GDD insufficiency example
+  - C20 Run2 as possible partial GDD-success example
+advisor_safe_summary: TiN modifies the retrieved temporal structure; in several cases the modification is not well described by uniform broadening or scalar GDD alone.

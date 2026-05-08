@@ -1,0 +1,180 @@
+# Eternity AI Research Radar Config v0
+# This is a starter config for a future paper/post scanner.
+# The scanner should produce short Markdown digests and/or GitHub issues.
+
+snapshot_date: "2026-05-08"
+status: "draft_subject_to_change"
+
+purpose: >
+  Track AI/science-agent work that could help Eternity build a physics-grounded,
+  provenance-aware hypothesis and failed-hypothesis learning harness for ultrafast ENZ optics.
+
+priority_themes:
+  - scientific_ai_agents
+  - hypothesis_generation
+  - scientific_hypothesis_benchmarks
+  - agent_memory
+  - context_engineering
+  - failed_hypothesis_learning
+  - claim_verification
+  - compound_ai_systems
+  - evaluator_based_search
+  - self_driving_labs
+  - bayesian_experiment_design
+  - active_learning_for_experiments
+  - materials_hypothesis_generation
+  - photonics_agents
+  - ultrafast_ml
+  - frog_retrieval_ml
+  - zscan_analysis_ml
+  - enz_material_modeling
+
+query_seeds:
+  scientific_ai_agents:
+    - "AI scientist system experiment verification failure modes"
+    - "LLM scientific discovery agent hypothesis experiment analysis"
+    - "AI co-scientist hypothesis generation research proposal"
+    - "autonomous scientific discovery agent lab in the loop"
+  hypothesis_generation_benchmarks:
+    - "LLM scientific discovery hypothesis generation benchmark"
+    - "hypothesis generation benchmark LLM science"
+    - "scientific hypothesis ranking benchmark LLM"
+    - "MOOSE-Chem ResearchBench HypoBench"
+  agent_memory_context:
+    - "LLM agent memory write manage read loop"
+    - "context engineering AI agents memory compression"
+    - "failed hypothesis memory scientific agents"
+    - "claim verification memory scientific reasoning LLM"
+  evaluator_based_search:
+    - "LLM evaluator evolutionary search scientific discovery"
+    - "FunSearch AlphaEvolve evaluator program search science"
+    - "LLM code generation external evaluator scientific optimization"
+  self_driving_labs:
+    - "self-driving laboratory Bayesian experimental design spectroscopy"
+    - "autonomous laboratory active learning physical experiments"
+    - "closed loop experiment design AI materials photonics"
+  photonics_ultrafast:
+    - "AI agents photonic design automation"
+    - "LLM photonics design agent"
+    - "machine learning ultrafast spectroscopy autonomous experiment"
+    - "FROG retrieval machine learning ultrafast pulse characterization"
+    - "Z-scan analysis machine learning nonlinear optics"
+    - "ENZ materials AI hypothesis generation ultrafast optics"
+
+sources_to_watch:
+  arxiv_categories:
+    - cs.AI
+    - cs.CL
+    - cs.LG
+    - stat.ML
+    - physics.optics
+    - physics.data-an
+    - cond-mat.mtrl-sci
+  venues_and_feeds:
+    - arXiv
+    - OpenReview ICLR/NeurIPS/ICML workshops
+    - ACL Anthology
+    - Hugging Face Daily Papers
+    - Papers with Code
+    - Nature Machine Intelligence
+    - Nature Communications
+    - Science Advances
+    - ACS Photonics
+    - Optica / OSA
+    - AIP / APL Photonics / APL Machine Learning
+    - npj Computational Materials
+
+classification_labels:
+  actionability:
+    A: "immediately useful to Eternity"
+    B: "conceptual architecture idea"
+    C: "relevant but not actionable yet"
+    D: "low priority / mostly noise"
+    E: "read later"
+  maturity:
+    - paper
+    - benchmark
+    - code_repo
+    - blog
+    - review
+    - product_doc
+    - speculative_post
+  transfer_type:
+    - schema_design
+    - memory_policy
+    - context_routing
+    - hypothesis_eval
+    - experiment_selection
+    - physics_tool
+    - automation_workflow
+    - codex_skill
+    - literature_radar
+
+required_digest_fields:
+  - title
+  - authors_or_org
+  - date
+  - url
+  - theme_tags
+  - one_sentence_summary
+  - what_problem_it_solves
+  - evaluator_or_feedback_signal
+  - what_state_or_memory_improves
+  - transfer_to_eternity
+  - smallest_eternity_experiment
+  - risks_or_limitations
+  - actionability_label
+  - recommended_next_step
+
+known_anchor_sources:
+  - title: "The AI Scientist-v2"
+    url: "https://arxiv.org/abs/2504.08066"
+    tags: [scientific_ai_agents, automated_experiments]
+  - title: "Google AI co-scientist"
+    url: "https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/"
+    tags: [hypothesis_generation, scientific_ai_agents]
+  - title: "Robin multi-agent scientific discovery"
+    url: "https://arxiv.org/abs/2505.13400"
+    tags: [scientific_ai_agents, lab_in_the_loop]
+  - title: "ResearchBench"
+    url: "https://arxiv.org/abs/2503.21248"
+    tags: [hypothesis_generation_benchmarks]
+  - title: "HypoBench"
+    url: "https://arxiv.org/abs/2504.11524"
+    tags: [hypothesis_generation_benchmarks]
+  - title: "MOOSE-Chem"
+    url: "https://arxiv.org/abs/2410.07076"
+    tags: [hypothesis_generation_benchmarks, chemistry]
+  - title: "SciMuse"
+    url: "https://arxiv.org/abs/2405.17044"
+    tags: [knowledge_graphs, idea_generation]
+  - title: "Reflexion"
+    url: "https://arxiv.org/abs/2303.11366"
+    tags: [agent_memory, reflection]
+  - title: "Voyager"
+    url: "https://arxiv.org/abs/2305.16291"
+    tags: [skill_library, lifelong_learning]
+  - title: "FunSearch"
+    url: "https://www.nature.com/articles/s41586-023-06924-6"
+    tags: [evaluator_based_search]
+  - title: "AlphaEvolve"
+    url: "https://arxiv.org/abs/2506.13131"
+    tags: [evaluator_based_search, code_evolution]
+  - title: "DSPy"
+    url: "https://arxiv.org/abs/2310.03714"
+    tags: [programming_lm_pipelines]
+  - title: "Compound AI Systems"
+    url: "https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/"
+    tags: [compound_ai_systems]
+  - title: "Effective context engineering for AI agents"
+    url: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+    tags: [context_engineering]
+  - title: "Memory for Autonomous LLM Agents"
+    url: "https://arxiv.org/html/2603.07670v1"
+    tags: [agent_memory]
+  - title: "Self-driving lab discovers principles for steering spontaneous emission"
+    url: "https://www.nature.com/articles/s41467-025-66916-0"
+    tags: [self_driving_labs, ultrafast_optics]
+  - title: "AI Agents for Photonic Integrated Circuit Design Automation / PhIDO"
+    url: "https://arxiv.org/abs/2508.14123"
+    tags: [photonics_agents]

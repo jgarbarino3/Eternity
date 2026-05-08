@@ -7,11 +7,14 @@ build/
 __pycache__/
 *.pyc
 results/runs/
+results/research_memory/
 results/*.sqlite
 results/*.sqlite-*
+data/research_memory/
 lab_data/raw/
 lab_data/interim/
 lab_data/processed/
 lab_data/external/
 reports/
 .worktrees/
+*-pro-checkpoint.zip

@@ -101,6 +101,13 @@ new physics.
 {metrics_json}
 ```
 
+## Claim Status
+
+`synthetic_software_fixture`
+
+This run cannot feed serious-core conclusions because it uses synthetic inputs
+and no measured comparison or holdout data.
+
 ## Plots
 
 {plots}

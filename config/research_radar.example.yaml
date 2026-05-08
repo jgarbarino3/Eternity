@@ -1,0 +1,109 @@
+schema_version: "0.1"
+
+cadence:
+  frequency: weekly
+  day_of_week: sunday
+  timezone: Europe/Rome
+  local_time: "09:00"
+
+themes:
+  - hypothesis_generation
+  - agent_memory
+  - context_engineering
+  - scientific_evals
+  - self_driving_labs
+  - bayesian_experiment_design
+  - photonic_agents
+  - ultrafast_ml
+  - frog_retrieval
+  - materials_agents
+  - claim_verification
+
+recurring_queries:
+  - "LLM scientific discovery hypothesis generation benchmark"
+  - "AI scientist system experiment verification failure modes"
+  - "agent memory context engineering scientific reasoning"
+  - "self-driving laboratory Bayesian experimental design spectroscopy"
+  - "LLM agents materials science hypothesis generation simulation feedback"
+  - "LLM photonics design agent autonomous optics"
+  - "machine learning ultrafast spectroscopy autonomous experiment"
+  - "FROG retrieval deep learning ultrafast pulse characterization"
+  - "scientific claim verification LLM evidence benchmark"
+  - "knowledge graph LLM scientific idea generation"
+
+arxiv_categories:
+  - cs.AI
+  - cs.CL
+  - cs.LG
+  - stat.ML
+  - physics.optics
+  - physics.data-an
+  - cond-mat.mtrl-sci
+
+scoring:
+  grade_thresholds:
+    A: 28
+    B: 18
+    C: 8
+  strong_b_threshold: 22
+  weights:
+    exact_theme_phrase: 6
+    theme_keyword: 3
+    eternity_domain_keyword: 5
+    implementation_keyword: 3
+    experiment_keyword: 3
+    source_quality: 2
+    hype_penalty: -5
+
+sources:
+  - id: arxiv_ai_science_queries
+    type: arxiv_query
+    enabled: false
+    query: 'all:"LLM scientific discovery" OR all:"AI scientist" OR all:"scientific claim verification"'
+    max_results: 10
+    tags: [arxiv, ai_science, literature_radar]
+    project_areas: [literature_radar, research_agents]
+
+  - id: arxiv_optics_categories
+    type: arxiv_category
+    enabled: false
+    categories:
+      - physics.optics
+      - physics.data-an
+      - cond-mat.mtrl-sci
+    query: 'all:"ultrafast spectroscopy" OR all:"FROG retrieval" OR all:"epsilon near zero"'
+    max_results: 10
+    tags: [arxiv, optics, enz, ultrafast]
+    project_areas: [literature_radar, tin_frog, pulse_retrieval]
+
+  - id: openreview_ai_science_workshops
+    type: openreview_search
+    enabled: false
+    query: "AI scientist scientific discovery verification agents"
+    max_results: 10
+    tags: [openreview, workshops, ai_science]
+    project_areas: [literature_radar, research_agents]
+
+  - id: huggingface_daily_papers
+    type: huggingface_daily_papers
+    enabled: false
+    max_results: 20
+    tags: [huggingface, daily_papers, ml]
+    project_areas: [literature_radar, ultrafast_ml]
+
+  - id: semantic_scholar_low_volume
+    type: semantic_scholar_search
+    enabled: false
+    query: "LLM scientific discovery hypothesis generation benchmark"
+    max_results: 10
+    tags: [semantic_scholar, ai_science]
+    project_areas: [literature_radar, research_agents]
+
+  - id: google_scholar_manual_alerts
+    type: google_scholar_manual
+    enabled: false
+    manual_path: data/research_memory/google_scholar_alerts.txt
+    max_results: 20
+    tags: [google_scholar, manual_alert, literature_radar]
+    project_areas: [literature_radar]
+    source_notes: "Manual export only. Do not scrape Google Scholar."
