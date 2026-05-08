@@ -195,29 +195,41 @@
               <p>Literature, controls, validation, and expert review converge.</p>
             </article>
           </div>
-          <div class="mini-mindmaps">
-            <article class="mini-map atlas-node" data-lane="serious-core" data-status="candidate">
+          <div class="mindmap-pair">
+            <article class="reverse-map compact atlas-node" data-lane="serious-core" data-status="candidate">
               <h3>Reverse mind map: first goal</h3>
-              <div class="mindmap-line goal">calibrated_linear_evidence</div>
-              <div class="mindmap-branches">
-                <span>holdout measurement</span>
-                <span>frozen material model</span>
-                <span>calibration-only fit</span>
-                <span>registry hashes</span>
-                <span>split integrity</span>
-                <span>residual report</span>
+              <div class="reverse-map-body">
+                <div class="map-root">
+                  <span class="map-label">Goal</span>
+                  <strong>Calibrated linear evidence</strong>
+                </div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node complete"><span>Complete</span><strong>V0 synthetic runner</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Claim-status contract</strong></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Registry-backed artifacts</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Frozen material model</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Residual and uncertainty report</strong></div>
+                </div>
               </div>
             </article>
-            <article class="mini-map atlas-node" data-lane="hypothesis" data-status="candidate">
+            <article class="reverse-map compact atlas-node" data-lane="hypothesis" data-status="candidate">
               <h3>Reverse mind map: next useful experiment</h3>
-              <div class="mindmap-line goal">discriminating_test_plan</div>
-              <div class="mindmap-branches">
-                <span>rival mechanisms</span>
-                <span>artifact risks</span>
-                <span>missing controls</span>
-                <span>expected signatures</span>
-                <span>cost and feasibility</span>
-                <span>human review</span>
+              <div class="reverse-map-body">
+                <div class="map-root">
+                  <span class="map-label">Goal</span>
+                  <strong>Discriminating test plan</strong>
+                </div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node complete"><span>Complete</span><strong>Artifact-aware harness direction</strong></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Rival mechanism vocabulary</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures by mechanism</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Missing-control checklist</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Cost and feasibility ranking</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Human review gate</strong></div>
+                </div>
               </div>
             </article>
           </div>
@@ -342,55 +354,76 @@
               the goal can be earned.
             </p>
           </div>
-          <div class="goal-map-grid">
-            <article class="goal-map atlas-node" data-lane="serious-core" data-status="validated">
+          <div class="reverse-map-stack">
+            <article class="reverse-map atlas-node" data-lane="serious-core" data-status="validated">
               <h3>calibrated_linear_evidence</h3>
-              <ul>
-                <li>Independent holdout measurement</li>
-                <li>Frozen material model</li>
-                <li>Calibration-only fit inputs</li>
-                <li>Registry hashes and split integrity</li>
-                <li>Residual, uncertainty, and validity report</li>
-              </ul>
+              <div class="reverse-map-body">
+                <div class="map-root validated"><span class="map-label">Goal</span><strong>Calibrated linear evidence</strong></div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node complete"><span>Complete</span><strong>V0 runner proves deterministic artifact shape</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Claim-status labels and contract docs</strong></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Registry IDs, hashes, manifests, validation gates</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Calibration-only optical dataset</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Frozen Drude/Drude-Lorentz material model</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout prediction and residual report</strong></div>
+                </div>
+              </div>
             </article>
-            <article class="goal-map atlas-node" data-lane="hypothesis" data-status="candidate">
+            <article class="reverse-map atlas-node" data-lane="hypothesis" data-status="candidate">
               <h3>failed_hypothesis_memory</h3>
-              <ul>
-                <li>Original hypothesis and claim level</li>
-                <li>Prediction that failed or weakened</li>
-                <li>What is ruled out and what remains live</li>
-                <li>Future constraint for retrieval</li>
-                <li>Linked run artifacts or review decision</li>
-              </ul>
+              <div class="reverse-map-body">
+                <div class="map-root"><span class="map-label">Goal</span><strong>Failed-hypothesis memory</strong></div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node complete"><span>Complete</span><strong>Failure-learning strategy defined</strong></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Research-memory record types and examples</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Original hypothesis and claim level</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Prediction that failed or weakened</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Future constraint and linked run artifacts</strong></div>
+                </div>
+              </div>
             </article>
-            <article class="goal-map atlas-node" data-lane="hypothesis" data-status="candidate">
+            <article class="reverse-map atlas-node" data-lane="hypothesis" data-status="candidate">
               <h3>next_discriminating_experiment</h3>
-              <ul>
-                <li>Top rival mechanisms</li>
-                <li>Artifact risks and missing controls</li>
-                <li>Expected signatures under each mechanism</li>
-                <li>Cost, feasibility, and ambiguity remaining</li>
-                <li>Human-reviewed validation candidate</li>
-              </ul>
+              <div class="reverse-map-body">
+                <div class="map-root"><span class="map-label">Goal</span><strong>Next discriminating experiment</strong></div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node complete"><span>Complete</span><strong>Need for falsifiers established</strong></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Top rival mechanism categories</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures under each mechanism</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Artifact risks and missing controls</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Cost, feasibility, and ambiguity ranking</strong></div>
+                </div>
+              </div>
             </article>
-            <article class="goal-map atlas-node" data-lane="future" data-status="candidate">
+            <article class="reverse-map atlas-node" data-lane="future" data-status="candidate">
               <h3>paper_claim_candidate</h3>
-              <ul>
-                <li>Calibrated evidence and independent controls</li>
-                <li>Literature comparison and novelty check</li>
-                <li>Failed alternatives and artifact review</li>
-                <li>Expert review and cautious wording</li>
-              </ul>
+              <div class="reverse-map-body">
+                <div class="map-root"><span class="map-label">Goal</span><strong>Paper-claim candidate</strong></div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node not-started"><span>Needed</span><strong>Calibrated evidence across bounded conditions</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent controls and artifact review</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Literature and novelty check</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expert review and cautious wording</strong></div>
+                </div>
+              </div>
             </article>
-            <article class="goal-map atlas-node" data-lane="future" data-status="conflict">
+            <article class="reverse-map atlas-node" data-lane="future" data-status="conflict">
               <h3>nonlinear_ENZ_modeling_ready</h3>
-              <ul>
-                <li>Validated linear baseline</li>
-                <li>Fluence and detuning controls</li>
-                <li>Mechanism-specific model assumptions</li>
-                <li>FDTD or literature baseline where useful</li>
-                <li>Pro checkpoint before phase transition</li>
-              </ul>
+              <div class="reverse-map-body">
+                <div class="map-root"><span class="map-label">Goal</span><strong>Nonlinear ENZ modeling ready</strong></div>
+                <div class="map-rail" aria-hidden="true"></div>
+                <div class="map-branches">
+                  <div class="map-node blocked"><span>Blocked</span><strong>Validated linear baseline first</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Fluence and detuning controls</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Mechanism-specific model assumptions</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>FDTD or literature baseline where useful</strong></div>
+                  <div class="map-node blocked"><span>Gate</span><strong>Pro checkpoint before phase transition</strong></div>
+                </div>
+              </div>
             </article>
           </div>
         </section>

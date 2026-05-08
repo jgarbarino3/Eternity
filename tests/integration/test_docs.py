@@ -52,8 +52,15 @@ def test_project_atlas_entrypoints_and_required_sections_exist() -> None:
     assert "First calibrated linear ENZ digital twin checkpoint" in html
     assert "calibrated_linear_evidence" in html
     assert "holdout measurement" in html
+    assert 'class="reverse-map compact atlas-node"' in html
+    assert 'class="map-root' in html
+    assert 'class="map-node complete"' in html
+    assert 'class="map-node in-progress"' in html
+    assert 'class="map-node not-started"' in html
+    assert 'class="map-node blocked"' in html
     assert "Simple Roadmap" in markdown
     assert "calibrated_linear_evidence" in markdown
+    assert "left-to-right branching map" in markdown
 
     atlas_text = "\n".join(
         path.read_text() for path in [atlas_markdown, atlas_html, atlas_css, atlas_js]

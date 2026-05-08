@@ -50,16 +50,18 @@ calibrated_linear_evidence
   -> paper_claim_candidate
 ```
 
-Compact reverse mind map for the first goal:
+Compact reverse mind map for the first goal. In the interactive atlas, this is
+rendered as a left-to-right branching map: one goal card on the left and
+completed, in-progress, needed, blocked, or gated branches to the right.
 
 ```text
 calibrated_linear_evidence
-  <- holdout measurement
-  <- frozen material model
-  <- calibration-only fit
-  <- registry hashes
-  <- split integrity
-  <- residual and uncertainty report
+  -> COMPLETE: V0 synthetic runner
+  -> COMPLETE: claim-status contract
+  -> IN PROGRESS: registry-backed artifacts
+  -> NEEDED: independent holdout measurement
+  -> NEEDED: frozen material model
+  -> NEEDED: residual and uncertainty report
 ```
 
 ## Core Rule
