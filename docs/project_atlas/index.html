@@ -197,7 +197,10 @@
           </div>
           <div class="mindmap-pair">
             <article class="reverse-map compact atlas-node" data-lane="serious-core" data-status="candidate">
-              <h3>Reverse mind map: first goal</h3>
+              <div class="map-header">
+                <h3>Reverse mind map: first goal</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root">
                   <span class="map-label">Goal</span>
@@ -205,17 +208,20 @@
                 </div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node complete"><span>Complete</span><strong>V0 synthetic runner</strong></div>
-                  <div class="map-node complete"><span>Complete</span><strong>Claim-status contract</strong></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Registry-backed artifacts</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Frozen material model</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Residual and uncertainty report</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>V0 synthetic runner</strong><div class="sub-branches"><em>YAML spec</em><em>TMM run</em><em>reports</em></div></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Claim-status contract</strong><div class="sub-branches"><em>labels</em><em>gates</em><em>report warning</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Registry-backed artifacts</strong><div class="sub-branches"><em>raw hashes</em><em>input manifest</em><em>artifact hash list</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>sample ID</em><em>geometry</em><em>no fit leakage</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Frozen material model</strong><div class="sub-branches"><em>fit plan</em><em>validity range</em><em>diagnostics</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Residual and uncertainty report</strong><div class="sub-branches"><em>comparison table</em><em>residuals</em><em>claim status</em></div></div>
                 </div>
               </div>
             </article>
             <article class="reverse-map compact atlas-node" data-lane="hypothesis" data-status="candidate">
-              <h3>Reverse mind map: next useful experiment</h3>
+              <div class="map-header">
+                <h3>Reverse mind map: next useful experiment</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root">
                   <span class="map-label">Goal</span>
@@ -223,12 +229,12 @@
                 </div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node complete"><span>Complete</span><strong>Artifact-aware harness direction</strong></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Rival mechanism vocabulary</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures by mechanism</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Missing-control checklist</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Cost and feasibility ranking</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Human review gate</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Artifact-aware harness direction</strong><div class="sub-branches"><em>overclaim checks</em><em>artifact risks</em><em>claim levels</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Rival mechanism vocabulary</strong><div class="sub-branches"><em>linear phase</em><em>nonlinear absorption</em><em>retrieval artifact</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures by mechanism</strong><div class="sub-branches"><em>fluence</em><em>detuning</em><em>chirp</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Missing-control checklist</strong><div class="sub-branches"><em>substrate</em><em>seed robustness</em><em>bandwidth clipping</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Cost and feasibility ranking</strong><div class="sub-branches"><em>time</em><em>risk</em><em>separation power</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Human review gate</strong><div class="sub-branches"><em>allowed claim</em><em>forbidden wording</em><em>next spec</em></div></div>
                 </div>
               </div>
             </article>
@@ -356,72 +362,87 @@
           </div>
           <div class="reverse-map-stack">
             <article class="reverse-map atlas-node" data-lane="serious-core" data-status="validated">
-              <h3>calibrated_linear_evidence</h3>
+              <div class="map-header">
+                <h3>calibrated_linear_evidence</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root validated"><span class="map-label">Goal</span><strong>Calibrated linear evidence</strong></div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node complete"><span>Complete</span><strong>V0 runner proves deterministic artifact shape</strong></div>
-                  <div class="map-node complete"><span>Complete</span><strong>Claim-status labels and contract docs</strong></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Registry IDs, hashes, manifests, validation gates</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Calibration-only optical dataset</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Frozen Drude/Drude-Lorentz material model</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout prediction and residual report</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>V0 runner proves deterministic artifact shape</strong><div class="sub-branches"><em>resolved spec</em><em>provenance</em><em>metrics</em><em>plots</em></div></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Claim-status labels and contract docs</strong><div class="sub-branches"><em>synthetic fixture</em><em>failed validation</em><em>calibrated evidence</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Registry IDs, hashes, manifests, validation gates</strong><div class="sub-branches"><em>raw artifact records</em><em>input manifest</em><em>split gate</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Calibration-only optical dataset</strong><div class="sub-branches"><em>ellipsometry</em><em>T/R spectrum</em><em>known geometry</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Frozen Drude/Drude-Lorentz material model</strong><div class="sub-branches"><em>fit result</em><em>diagnostics</em><em>validity envelope</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent holdout prediction and residual report</strong><div class="sub-branches"><em>prediction table</em><em>comparison plot</em><em>uncertainty check</em></div></div>
                 </div>
               </div>
             </article>
             <article class="reverse-map atlas-node" data-lane="hypothesis" data-status="candidate">
-              <h3>failed_hypothesis_memory</h3>
+              <div class="map-header">
+                <h3>failed_hypothesis_memory</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root"><span class="map-label">Goal</span><strong>Failed-hypothesis memory</strong></div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node complete"><span>Complete</span><strong>Failure-learning strategy defined</strong></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Research-memory record types and examples</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Original hypothesis and claim level</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Prediction that failed or weakened</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Future constraint and linked run artifacts</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Failure-learning strategy defined</strong><div class="sub-branches"><em>postmortem lessons</em><em>future constraints</em><em>no evidence upgrade</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Research-memory record types and examples</strong><div class="sub-branches"><em>failure mode</em><em>hypothesis</em><em>negative result</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Original hypothesis and claim level</strong><div class="sub-branches"><em>claim text</em><em>confidence</em><em>provenance</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Prediction that failed or weakened</strong><div class="sub-branches"><em>observable</em><em>test run</em><em>severity</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Future constraint and linked run artifacts</strong><div class="sub-branches"><em>what ruled out</em><em>what remains</em><em>retrieval cue</em></div></div>
                 </div>
               </div>
             </article>
             <article class="reverse-map atlas-node" data-lane="hypothesis" data-status="candidate">
-              <h3>next_discriminating_experiment</h3>
+              <div class="map-header">
+                <h3>next_discriminating_experiment</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root"><span class="map-label">Goal</span><strong>Next discriminating experiment</strong></div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node complete"><span>Complete</span><strong>Need for falsifiers established</strong></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Top rival mechanism categories</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures under each mechanism</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Artifact risks and missing controls</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Cost, feasibility, and ambiguity ranking</strong></div>
+                  <div class="map-node complete"><span>Complete</span><strong>Need for falsifiers established</strong><div class="sub-branches"><em>do-not-overclaim</em><em>claim permission</em><em>artifact skepticism</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Top rival mechanism categories</strong><div class="sub-branches"><em>linear phase</em><em>nonlinear response</em><em>instrument artifact</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expected signatures under each mechanism</strong><div class="sub-branches"><em>fluence trend</em><em>wavelength detuning</em><em>chirp scan</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Artifact risks and missing controls</strong><div class="sub-branches"><em>FROG seed</em><em>substrate</em><em>bandwidth</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Cost, feasibility, and ambiguity ranking</strong><div class="sub-branches"><em>time</em><em>risk</em><em>information gain</em></div></div>
                 </div>
               </div>
             </article>
             <article class="reverse-map atlas-node" data-lane="future" data-status="candidate">
-              <h3>paper_claim_candidate</h3>
+              <div class="map-header">
+                <h3>paper_claim_candidate</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root"><span class="map-label">Goal</span><strong>Paper-claim candidate</strong></div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node not-started"><span>Needed</span><strong>Calibrated evidence across bounded conditions</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Independent controls and artifact review</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Literature and novelty check</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Expert review and cautious wording</strong></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Calibrated evidence across bounded conditions</strong><div class="sub-branches"><em>holdout</em><em>controls</em><em>validity scope</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Independent controls and artifact review</strong><div class="sub-branches"><em>substrate</em><em>instrument</em><em>retrieval</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Literature and novelty check</strong><div class="sub-branches"><em>prior claims</em><em>parameter ranges</em><em>mechanism comparison</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Expert review and cautious wording</strong><div class="sub-branches"><em>allowed claim</em><em>forbidden claim</em><em>paper outline</em></div></div>
                 </div>
               </div>
             </article>
             <article class="reverse-map atlas-node" data-lane="future" data-status="conflict">
-              <h3>nonlinear_ENZ_modeling_ready</h3>
+              <div class="map-header">
+                <h3>nonlinear_ENZ_modeling_ready</h3>
+                <button class="expand-map" type="button" aria-expanded="false">Expand map</button>
+              </div>
               <div class="reverse-map-body">
                 <div class="map-root"><span class="map-label">Goal</span><strong>Nonlinear ENZ modeling ready</strong></div>
                 <div class="map-rail" aria-hidden="true"></div>
                 <div class="map-branches">
-                  <div class="map-node blocked"><span>Blocked</span><strong>Validated linear baseline first</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Fluence and detuning controls</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>Mechanism-specific model assumptions</strong></div>
-                  <div class="map-node not-started"><span>Needed</span><strong>FDTD or literature baseline where useful</strong></div>
-                  <div class="map-node blocked"><span>Gate</span><strong>Pro checkpoint before phase transition</strong></div>
+                  <div class="map-node blocked"><span>Blocked</span><strong>Validated linear baseline first</strong><div class="sub-branches"><em>fit</em><em>holdout</em><em>uncertainty</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Fluence and detuning controls</strong><div class="sub-branches"><em>fixed wavelength</em><em>fixed fluence</em><em>input chirp</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>Mechanism-specific model assumptions</strong><div class="sub-branches"><em>plasma frequency</em><em>damping</em><em>relaxation time</em></div></div>
+                  <div class="map-node not-started"><span>Needed</span><strong>FDTD or literature baseline where useful</strong><div class="sub-branches"><em>TMM limit</em><em>geometry need</em><em>cost check</em></div></div>
+                  <div class="map-node blocked"><span>Gate</span><strong>Pro checkpoint before phase transition</strong><div class="sub-branches"><em>model choice</em><em>claim risk</em><em>validation plan</em></div></div>
                 </div>
               </div>
             </article>

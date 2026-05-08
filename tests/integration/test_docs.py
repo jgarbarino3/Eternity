@@ -58,9 +58,17 @@ def test_project_atlas_entrypoints_and_required_sections_exist() -> None:
     assert 'class="map-node in-progress"' in html
     assert 'class="map-node not-started"' in html
     assert 'class="map-node blocked"' in html
+    assert 'class="expand-map"' in html
+    assert "sub-branches" in html
+    assert "YAML spec" in html
+    assert "raw artifact records" in html
     assert "Simple Roadmap" in markdown
     assert "calibrated_linear_evidence" in markdown
     assert "left-to-right branching map" in markdown
+
+    js = atlas_js.read_text()
+    assert "map-expanded-open" in js
+    assert "Escape" in js
 
     atlas_text = "\n".join(
         path.read_text() for path in [atlas_markdown, atlas_html, atlas_css, atlas_js]

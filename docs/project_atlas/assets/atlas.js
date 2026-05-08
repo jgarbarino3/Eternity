@@ -10,6 +10,8 @@ const searchInput = document.querySelector("#atlas-search");
 const emptyState = document.querySelector(".empty-state");
 const navLinks = Array.from(document.querySelectorAll(".sidebar a"));
 const sections = Array.from(document.querySelectorAll(".atlas-section"));
+const expandButtons = Array.from(document.querySelectorAll(".expand-map"));
+let expandedMap = null;
 
 function normalize(value) {
   return value.trim().toLowerCase();
@@ -23,6 +25,8 @@ function nodeMatches(node) {
 }
 
 function updateFilters() {
+  if (expandedMap) closeExpandedMap();
+
   let visibleCount = 0;
 
   nodes.forEach((node) => {
@@ -32,6 +36,35 @@ function updateFilters() {
   });
 
   emptyState.hidden = visibleCount !== 0;
+}
+
+function closeExpandedMap() {
+  if (!expandedMap) return;
+
+  const button = expandedMap.querySelector(".expand-map");
+  expandedMap.classList.remove("expanded");
+  document.body.classList.remove("map-expanded-open");
+
+  if (button) {
+    button.textContent = "Expand map";
+    button.setAttribute("aria-expanded", "false");
+  }
+
+  expandedMap = null;
+}
+
+function openExpandedMap(map) {
+  closeExpandedMap();
+
+  expandedMap = map;
+  const button = map.querySelector(".expand-map");
+  map.classList.add("expanded");
+  document.body.classList.add("map-expanded-open");
+
+  if (button) {
+    button.textContent = "Close map";
+    button.setAttribute("aria-expanded", "true");
+  }
 }
 
 filterButtons.forEach((button) => {
@@ -52,6 +85,23 @@ filterButtons.forEach((button) => {
 searchInput.addEventListener("input", (event) => {
   state.query = normalize(event.target.value);
   updateFilters();
+});
+
+expandButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const map = button.closest(".reverse-map");
+    if (!map) return;
+
+    if (map === expandedMap) {
+      closeExpandedMap();
+    } else {
+      openExpandedMap(map);
+    }
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeExpandedMap();
 });
 
 const observer = new IntersectionObserver(
