@@ -66,6 +66,11 @@ grounding phase:
 - The active provenance closure is `Phase 3A.3 - thesis figure/data provenance
   reconciliation`: align `d_10nm` text exports with thesis Figure 4.1 while
   recording normalization as `relative_intensity_only`.
+- The active decision phase is `Phase 3A.4 - absolute reflectance decision and
+  threshold policy prep`: keep the thesis `d_10nm` exports relative-only unless
+  source-backed evidence proves their `Intensity` columns are calibrated
+  absolute reflectance, and prepare future-run policy without retroactively
+  judging inspected residuals.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -90,6 +95,11 @@ Current blocker:
   source link is still needed.
 - Phase 3A.3 does not have enough information to claim absolute reflectance.
   The thesis/figure evidence is enough for provenance, not calibration.
+- Phase 3A.4 keeps that result fail-closed after checking the local thesis,
+  figures, copied data hashes, CompleteEASE manual evidence, and nearby
+  Woollam/CompleteEASE artifacts. A new export, project/recipe record, lab note,
+  or Pro/user-approved relative-only policy is still needed before any future
+  calibrated-evidence attempt.
 
 ## Goal Usage In Codex
 

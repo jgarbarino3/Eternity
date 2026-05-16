@@ -23,12 +23,14 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.1 | Active | Normalization and threshold gate hardening | Audit the already-inspected Phase 3A run, keep current promotion blocked, and prepare machine-readable normalization/threshold policy for future predeclared runs. |
 | Phase 3A.2 | Active | Stack mapping correction | Keep source-backed `d_10nm` -> `3L2/Quartz`, but demote separate `30_20_10` exports to an unresolved candidate bundle until filename-to-thesis provenance is found. |
 | Phase 3A.3 | Active | Thesis figure/data provenance reconciliation | Align `d_10nm` text exports with thesis Figure 4.1, downgrade normalization to relative-intensity-only, and keep `30_20_10` separate unless export provenance is found. |
+| Phase 3A.4 | Active | Absolute reflectance decision and threshold policy prep | Keep `d_10nm` at `relative_intensity_only` after local provenance/manual checks, and require source-backed absolute normalization plus future predeclared thresholds before promotion. |
+| Phase 3A.5 | Next | Source-backed export/provenance retrieval | Look for CompleteEASE/Woollam project, recipe, export, debug bundle, lab note, or new export evidence tying exact dynamic traces to absolute reflectance calibration. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.3 - thesis figure/data provenance reconciliation**.
+Current phase: **Phase 3A.4 - absolute reflectance decision and threshold policy prep**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
@@ -38,18 +40,20 @@ Information sufficiency:
   stack-mapping and figure-provenance level.
 - Enough to audit and harden the current gate policy.
 - Enough to preserve Phase 3A residuals as historical context.
-- Enough to classify the present normalization basis as `relative_intensity_only`.
+- Enough to classify and preserve the present normalization basis as
+  `relative_intensity_only`.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to promote `run_f35a15cef565fb15` or any Phase 3A run to
   `calibrated_linear_evidence`.
+- Not enough to set pass/fail thresholds for already-inspected residuals.
 
 Recommended effort under the current GPT-5.5 assumption:
 
-- Planning: `medium` for bounded local provenance closure; `xhigh` only before
-  threshold or calibrated-evidence policy.
-- Implementation: `medium` for search/docs/registry updates; `high` if contract
-  logic changes.
+- Planning: `medium` for the next source-retrieval pass; `xhigh` before any
+  threshold or calibrated-evidence policy decision.
+- Implementation: `medium` for local search/docs/registry updates; `high` if
+  contract logic changes.
 
 Helpful tools:
 

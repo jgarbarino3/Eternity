@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-16",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.3 thesis figure/data provenance plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.4 absolute reflectance decision plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,15 +18,15 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.3",
-    "current_phase_name": "Thesis Figure/Data Provenance Reconciliation",
+    "current_phase": "3A.4",
+    "current_phase_name": "Absolute Reflectance Decision And Threshold Policy Prep",
     "total_phases": 3,
     "current_plan": null,
     "total_plans_in_phase": null,
     "status": "Executing",
     "last_activity": "2026-05-16",
-    "last_activity_desc": "Reconciled thesis d_10nm text exports with Figure 4.1 provenance and kept normalization relative-intensity-only.",
-    "progress_percent": 80,
+    "last_activity_desc": "Checked local thesis, figure, CompleteEASE/manual, hash, and nearby Woollam evidence and kept d_10nm normalization relative-intensity-only.",
+    "progress_percent": 85,
     "paused_at": null
   },
   "active_calculations": [
@@ -61,6 +61,13 @@
       "normalization_basis": "relative_intensity_only",
       "threshold_policy_status": "blocked_pending_pro_checkpoint",
       "existing_run_promotion_allowed": false
+    },
+    {
+      "phase": "3A.4",
+      "decision_ref": "docs/phase3a4_absolute_reflectance_decision.md",
+      "normalization_basis": "relative_intensity_only",
+      "absolute_reflectance_confirmed": false,
+      "future_policy_may_use_existing_residuals": false
     }
   ],
   "open_questions": [
@@ -102,6 +109,11 @@
       "phase": "3A.1",
       "summary": "Existing residuals are historical context only.",
       "rationale": "Threshold policy must apply to a future run unless it was recorded before the run being judged."
+    },
+    {
+      "phase": "3A.4",
+      "summary": "Keep d_10nm exports at relative_intensity_only after local evidence/manual checks.",
+      "rationale": "Thesis and figure evidence support measured reflectance provenance, but exported Intensity columns are not source-proven as calibrated absolute reflectance."
     }
   ],
   "approximations": [],
@@ -130,7 +142,8 @@
   "pending_todos": [
     "Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
-    "Resolve whether thesis/exported intensity spectra are absolute reflectance.",
+    "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
+    "Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug bundle can be recovered, or pivot to a new measurement/export.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
   ],
@@ -140,7 +153,7 @@
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
-    "Absolute reflectance calibration for thesis Intensity exports is unresolved."
+    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked by the Phase 3A.4 decision."
   ],
   "continuation": {
     "schema_version": 1,

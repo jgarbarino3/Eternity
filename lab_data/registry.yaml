@@ -1108,8 +1108,8 @@ measurements:
     geometry_polarization: TE
     instrument_or_source_notes: Thesis reflectance export for d_10nm, state=12V. Thesis
       Figure 4.1 labels the plotted y-axis as Reflectance and matches the table value
-      scale, but the export column is Intensity; Phase 3A.3 treats normalization as
-      relative_intensity_only until absolute reflectance calibration is source-confirmed.
+      scale, but the export column is Intensity; Phase 3A.4 keeps normalization
+      as relative_intensity_only until absolute reflectance calibration is source-confirmed.
     preprocessing:
     - Raw wavelength/intensity table copied without smoothing or normalization changes.
     forbidden_for_fitting: true
@@ -1136,8 +1136,8 @@ measurements:
     geometry_polarization: TE
     instrument_or_source_notes: Thesis reflectance export for d_10nm, state=initial. Thesis
       Figure 4.1 labels the plotted y-axis as Reflectance and matches the table value
-      scale, but the export column is Intensity; Phase 3A.3 treats normalization as
-      relative_intensity_only until absolute reflectance calibration is source-confirmed.
+      scale, but the export column is Intensity; Phase 3A.4 keeps normalization
+      as relative_intensity_only until absolute reflectance calibration is source-confirmed.
     preprocessing:
     - Raw wavelength/intensity table copied without smoothing or normalization changes.
     forbidden_for_fitting: true

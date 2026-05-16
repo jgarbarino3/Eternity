@@ -63,6 +63,37 @@ Decisive outputs:
 - `30_20_10` remains excluded from the validation candidate, though AFRL 6E
   notebook evidence supports it as a 30/10/20 quartz model bundle.
 
+## Phase 3A.4: Absolute Reflectance Decision And Threshold Policy Prep
+
+Status: active
+
+Decisive outputs:
+
+- `docs/phase3a4_absolute_reflectance_decision.md` records the fail-closed
+  decision: `relative_intensity_only`.
+- Local thesis text, figures, byte-identical raw-table hashes, CompleteEASE
+  manual passages, and nearby Woollam/CompleteEASE artifacts support measured
+  reflectance provenance but not calibrated absolute `%R` for the exported
+  `Intensity` columns.
+- Existing residuals remain historical only; future thresholds must be
+  source-backed, approved, and recorded before a future run.
+
+Next source-retrieval target:
+
+- Find a CompleteEASE/Woollam export, recipe, project file, debug bundle, lab
+  note, or newly exported table that ties the exact dynamic traces to absolute
+  reflectance calibration.
+
+## Phase 3A.5: Source-Backed Export/Provenance Retrieval
+
+Status: next
+
+Goal:
+
+- Recover the missing source link needed to upgrade from relative-only
+  diagnostics to absolute-reflectance policy, or decide to stop searching and
+  require a new measurement/export.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

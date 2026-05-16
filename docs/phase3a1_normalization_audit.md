@@ -31,6 +31,10 @@ comparison, but they are not yet sufficient for `calibrated_linear_evidence`.
 ## Gate Policy
 
 The machine-readable policy is `docs/phase3a1_threshold_policy.yaml`.
+Phase 3A.4 records the current decision artifact in
+`docs/phase3a4_absolute_reflectance_decision.md`: local thesis and
+CompleteEASE evidence support measured reflectance provenance, but not
+source-backed absolute `%R` calibration for the exported `Intensity` columns.
 
 Allowed normalization states:
 

@@ -258,6 +258,36 @@ Active provenance closure:
   with the thesis Figure 4.1 export.
 - Keep calibrated promotion blocked by normalization and threshold gates.
 
+#### Phase 3A.4: Absolute Reflectance Decision And Threshold Policy Prep
+
+Active decision:
+
+- Treat the thesis `d_10nm` exports as `relative_intensity_only` after checking
+  thesis text, local figures, byte-identical raw tables, local CompleteEASE
+  manual passages, and nearby Woollam/CompleteEASE artifacts.
+- Preserve the stronger Phase 3A.3 provenance result: `d_10nm` is source-backed
+  to thesis Figure 4.1 and sample `3L2/Quartz`, with 60-degree S-polarized RC2
+  reflectance context.
+- Do not treat the exported `Intensity` columns as absolute `%R` until a
+  source-backed export/recipe/project/lab-note record proves that calibration.
+- Keep `run_f35a15cef565fb15` historical only. No pass/fail thresholds may be
+  chosen from already-inspected residuals, and no current Phase 3A run may
+  promote to `calibrated_linear_evidence`.
+- Prepare future policy only: absolute-normalization evidence, wavelength
+  window, residual metrics, numeric thresholds, approver, and date must all be
+  recorded before a future residual-gated run.
+
+#### Phase 3A.5: Source-Backed Export/Provenance Retrieval
+
+Next targeted follow-up:
+
+- Search for a CompleteEASE/Woollam project, recipe, export, debug bundle, lab
+  note, or newly exported table that ties the exact thesis dynamic traces to
+  absolute reflectance calibration.
+- If that evidence is found, update the Phase 3A.1 policy for future runs only.
+- If it is not found, keep the thesis spectra as relative-only diagnostics and
+  move the calibrated-evidence route toward a new measurement/export.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

@@ -35,13 +35,13 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.3 thesis figure/data provenance reconciliation and Phase
-  3A.1 normalization gate hardening after the TiN/SiO2 thesis reflectance candidate:
+- **Doing**: Phase 3A.4 absolute-reflectance decision and threshold-policy prep
+  after the TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: obtain source-backed absolute-normalization evidence and
+- **Next**: Phase 3A.5 source-backed export/provenance retrieval, then
   Pro/user-approved thresholds before any future calibrated-evidence promotion
   attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
@@ -71,6 +71,7 @@ calibrated_linear_evidence
   -> IN PROGRESS: Phase 3A.1 normalization/threshold gate hardening
   -> IN PROGRESS: Phase 3A.2 stack mapping correction
   -> IN PROGRESS: Phase 3A.3 figure/data provenance reconciliation
+  -> IN PROGRESS: Phase 3A.4 absolute-reflectance decision
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -86,11 +87,11 @@ plots support qualitative TiON trends but do not provide raw R/T tables. This
 blocks calibrated TiON evidence while still allowing calibration_only_no_holdout
 grounding runs. Phase 3A now follows the separate TiN/SiO2 measured-reflectance
 path, capped below calibrated evidence until normalization and threshold gates
-are resolved. Phase 3A.3 aligns `d_10nm` with thesis Figure 4.1 while keeping
-normalization at relative-intensity-only. Phase 3A.2 keeps thesis `d_10nm`
-source-backed but keeps the separate `30_20_10` files out of the validation
-candidate. Phase 3A.1 now keeps the
-already-inspected residuals as
+are resolved. Phase 3A.3 aligns `d_10nm` with thesis Figure 4.1 while Phase
+3A.4 keeps normalization at relative-intensity-only after local thesis,
+CompleteEASE, hash, and nearby Woollam-artifact checks. Phase 3A.2 keeps thesis
+`d_10nm` source-backed but keeps the separate `30_20_10` files out of the
+validation candidate. Phase 3A.1 now keeps the already-inspected residuals as
 historical context only and blocks promotion until a future predeclared policy
 exists.
 ```

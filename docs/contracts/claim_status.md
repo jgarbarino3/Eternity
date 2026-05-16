@@ -35,3 +35,9 @@ when they are unresolved.
 Phase 3A.1 audits those blocked gates. It may report a future policy as ready,
 but it cannot upgrade an already-inspected run unless the policy explicitly
 applied before that run and all gate artifacts pass.
+
+Phase 3A.4 records the fail-closed absolute-reflectance decision. Thesis text
+and figures support measured reflectance provenance for `d_10nm` / `3L2`, but
+exported `Intensity` columns remain `relative_intensity_only` until a
+source-backed export, recipe, project file, lab note, or approved policy proves
+absolute reflectance normalization before a future residual-gated run.

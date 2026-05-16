@@ -30,3 +30,9 @@ that already produced residuals. A policy created after residual inspection may
 audit that existing run, but it must not make that existing run calibrated
 evidence. Promotion requires a source-backed normalization decision and
 threshold policy recorded before the future run being judged.
+
+Phase 3A.4 keeps the current normalization basis at `relative_intensity_only`.
+The thesis `d_10nm` exports may remain holdout candidates for future planning,
+but they cannot become calibrated holdout evidence unless absolute reflectance
+normalization is source-backed before a new run and the thresholds are
+predeclared before residual inspection.

@@ -20,6 +20,8 @@ measured spectra, but their geometry, normalization, polarization, and stack
 notes must be reconciled before they can serve as calibrated holdout evidence.
 
 For Phase 3A, d=10 nm TiN/SiO2 thesis measurements are mapped to
-`3L2/Quartz` with 60-degree TE/S-polarized geometry. The `30_20_10`
-reflectance, p/s intensity, Psi/Delta, and e1/e2 exports are auxiliary
-same-sample audit records and must remain forbidden for fitting.
+`3L2/Quartz` with 60-degree TE/S-polarized geometry. Their exported
+`Intensity` columns are `reflectance_intensity` with unit `arb` until absolute
+reflectance calibration is source-confirmed. The `30_20_10` reflectance, p/s
+intensity, Psi/Delta, and e1/e2 exports are unresolved candidate-bundle records
+and must remain forbidden for fitting.
