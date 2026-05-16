@@ -1,5 +1,4 @@
-schema_version: "0.1"
-
+schema_version: '0.1'
 raw_artifacts:
   synthetic_v0_transmission:
     raw_artifact_id: synthetic_v0_transmission
@@ -9,8 +8,1193 @@ raw_artifacts:
     bytes: 114
     source_type: synthetic
     immutable: true
-
+    original_filename: transmission_fixture.csv
+    original_path: null
+    acquired_at: '2026-05-07'
+    source_notes: Synthetic fixture generated for V1 contract testing.
+    access_notes: Repo-owned synthetic fixture.
+    provenance_refs: []
+  tin_50nm_lorentz_epsilon:
+    raw_artifact_id: tin_50nm_lorentz_epsilon
+    kind: txt
+    path: lab_data/raw/tin_tion_v1/tin_50nm_lorentz_epsilon.txt
+    sha256: 92c1ec4c5237d27e6a69528f078e68d65f6f1b2732e23517c7e61731567543aa
+    bytes: 34109
+    source_type: lab
+    immutable: true
+    original_filename: TiN.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/TiN.txt
+    acquired_at: '2026-05-16'
+    source_notes: 50 nm TiN DC magnetron sputtered film optical constants from master research
+      optics files.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  tion_48_0p8pa_epsilon:
+    raw_artifact_id: tion_48_0p8pa_epsilon
+    kind: txt
+    path: lab_data/raw/tin_tion_v1/tion_48_0p8pa_epsilon.txt
+    sha256: 659a8463e421104133ec5bb85d2a4c7d68f315df765b74d1164004d11507a7ff
+    bytes: 36330
+    source_type: lab
+    immutable: true
+    original_filename: TiON_48 (0.8 Pa).txt
+    original_path: /Users/joegarbarino/Downloads/TiON_48 (0.8 Pa).txt
+    acquired_at: '2026-05-16'
+    source_notes: 40 nm TiON_48 optical constants, 0.8 Pa sputtering condition; raw R/T provenance
+      not yet recovered.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  tion_49_1p0pa_epsilon:
+    raw_artifact_id: tion_49_1p0pa_epsilon
+    kind: txt
+    path: lab_data/raw/tin_tion_v1/tion_49_1p0pa_epsilon.txt
+    sha256: a28855b46b08a1747dc3d499aee20d3851040e886147da6a4ff35884496fca00
+    bytes: 35974
+    source_type: lab
+    immutable: true
+    original_filename: TiON_49 (1.0 Pa).txt
+    original_path: /Users/joegarbarino/Downloads/TiON_49 (1.0 Pa).txt
+    acquired_at: '2026-05-16'
+    source_notes: 40 nm TiON_49 optical constants, 1.0 Pa sputtering condition; raw R/T provenance
+      not yet recovered.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_15_50_fill_12V:
+    raw_artifact_id: thesis_reflectance_N_15_50_fill_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_15_50_fill_12V.txt
+    sha256: 00d06732f8197541b67bde30d0cd7c448c6a77326eecd574a6433279f067aef9
+    bytes: 15813
+    source_type: lab
+    immutable: true
+    original_filename: N_15_50_fill_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_15_50_fill_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_15_50_fill_initial:
+    raw_artifact_id: thesis_reflectance_N_15_50_fill_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_15_50_fill_initial.txt
+    sha256: 5b0700785020efb3daf44e220718df94ded9da36186935b53f792fa7f03d8edc
+    bytes: 15816
+    source_type: lab
+    immutable: true
+    original_filename: N_15_50_fill_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_15_50_fill_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_15_60_fill_12V:
+    raw_artifact_id: thesis_reflectance_N_15_60_fill_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_15_60_fill_12V.txt
+    sha256: 69f91f5d492ef0c834513042f543053ff838ca955dd0cd1bc8c438d4f1f1e649
+    bytes: 14766
+    source_type: lab
+    immutable: true
+    original_filename: N_15_60_fill_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_15_60_fill_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_15_60_fill_initial:
+    raw_artifact_id: thesis_reflectance_N_15_60_fill_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_15_60_fill_initial.txt
+    sha256: 1c44f5d34321f1b8041154081dedc0f171c317f3fcbb55bc15dd52693574c356
+    bytes: 14755
+    source_type: lab
+    immutable: true
+    original_filename: N_15_60_fill_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_15_60_fill_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_30_40_fill_12V:
+    raw_artifact_id: thesis_reflectance_N_30_40_fill_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_30_40_fill_12V.txt
+    sha256: 3e9d324336a1cb84b4fb61ff574bdce7acae519fb0d812c558d9ef6cbe632c78
+    bytes: 14794
+    source_type: lab
+    immutable: true
+    original_filename: N_30_40_fill_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_30_40_fill_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_30_40_fill_initial:
+    raw_artifact_id: thesis_reflectance_N_30_40_fill_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_30_40_fill_initial.txt
+    sha256: 644a30711cad0792a4879b62cef052876b172c1e92ec50ed880a1bee6673a3d4
+    bytes: 14770
+    source_type: lab
+    immutable: true
+    original_filename: N_30_40_fill_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_30_40_fill_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_4_40_fill_12V:
+    raw_artifact_id: thesis_reflectance_N_4_40_fill_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_4_40_fill_12V.txt
+    sha256: e651fff3076fe0feec210deae180d40da856fd8362c40a81e6d8886f5d20542c
+    bytes: 15828
+    source_type: lab
+    immutable: true
+    original_filename: N_4_40_fill_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_4_40_fill_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_N_4_40_fill_initial:
+    raw_artifact_id: thesis_reflectance_N_4_40_fill_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/N_4_40_fill_initial.txt
+    sha256: 88fee00440e28e143881f6927296159c33e733aac816dc00dc8558dde17aa9f4
+    bytes: 15824
+    source_type: lab
+    immutable: true
+    original_filename: N_4_40_fill_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/N_4_40_fill_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_10nm_12V:
+    raw_artifact_id: thesis_reflectance_d_10nm_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_10nm_12V.txt
+    sha256: 0b4890786cbebe76d723447592ed67549a826e563a8d4a4c4970d33919be4819
+    bytes: 14751
+    source_type: lab
+    immutable: true
+    original_filename: d_10nm_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_10nm_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_10nm_initial:
+    raw_artifact_id: thesis_reflectance_d_10nm_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_10nm_initial.txt
+    sha256: c093c27d277841140f7655da72372e9ffc90b2abf030c5e358cd0c01d2b3bc21
+    bytes: 14770
+    source_type: lab
+    immutable: true
+    original_filename: d_10nm_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_10nm_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_15nm_12V:
+    raw_artifact_id: thesis_reflectance_d_15nm_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_15nm_12V.txt
+    sha256: d1383c9226db4d65de3a249f5d3ad1627b1ff84419c19dd4b6bdcba2a1e75768
+    bytes: 14774
+    source_type: lab
+    immutable: true
+    original_filename: d_15nm_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_15nm_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_15nm_initial:
+    raw_artifact_id: thesis_reflectance_d_15nm_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_15nm_initial.txt
+    sha256: e801a5ad4df62b3f99529c9d4958e4ff151c031d77aa17ae55c1068be8a975f6
+    bytes: 14773
+    source_type: lab
+    immutable: true
+    original_filename: d_15nm_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_15nm_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_5nm_12V:
+    raw_artifact_id: thesis_reflectance_d_5nm_12V
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_5nm_12V.txt
+    sha256: 80b1f607de926342cce332ce378ed578b4b25c790a0c4e49a6ce478ca6947c75
+    bytes: 14781
+    source_type: lab
+    immutable: true
+    original_filename: d_5nm_12V.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_5nm_12V.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  thesis_reflectance_d_5nm_initial:
+    raw_artifact_id: thesis_reflectance_d_5nm_initial
+    kind: txt
+    path: lab_data/raw/thesis_reflectance/d_5nm_initial.txt
+    sha256: 6b576b4c666ab712e3764d6404ba8123f3f2f1f7ae918db7be468d86686c64bb
+    bytes: 14764
+    source_type: lab
+    immutable: true
+    original_filename: d_5nm_initial.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Thesis/Data/d_5nm_initial.txt
+    acquired_at: '2026-05-16'
+    source_notes: Thesis reflectance spectrum exported as wavelength/intensity text data.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs: []
+  phase3a_30_20_10_reflectance:
+    raw_artifact_id: phase3a_30_20_10_reflectance
+    kind: txt
+    path: lab_data/raw/thesis_phase3a/30_20_10_reflectance.txt
+    sha256: f708bf4abd2efe49a131f423aabcccd4f669d0a16a9a9d16de44ead3100bb9a8
+    bytes: 14756
+    source_type: lab
+    immutable: true
+    original_filename: 30_20_10 reflectance.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/30_20_10 reflectance.txt
+    acquired_at: '2026-05-16'
+    source_notes: Phase 3A 30_20_10 measured-looking reflectance/intensity export mapped to
+      thesis d_10nm / 3L2 candidate.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs:
+    - thesis_d_10nm
+    - thesis_table_4_1_3l2_quartz
+  phase3a_30_20_10_p_s_intensity:
+    raw_artifact_id: phase3a_30_20_10_p_s_intensity
+    kind: txt
+    path: lab_data/raw/thesis_phase3a/30_20_10_p_s_intensity.txt
+    sha256: c47f552a0b166775ecfb1bfe700e3911738f43056e17b53bb91508cd94a665d7
+    bytes: 24051
+    source_type: lab
+    immutable: true
+    original_filename: 30_20_10 p_s intensity.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/30_20_10 p_s intensity.txt
+    acquired_at: '2026-05-16'
+    source_notes: Phase 3A same-run p/s intensity export for 30_20_10 candidate stack.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs:
+    - thesis_d_10nm
+    - thesis_table_4_1_3l2_quartz
+  phase3a_30_20_10_psi_delta:
+    raw_artifact_id: phase3a_30_20_10_psi_delta
+    kind: txt
+    path: lab_data/raw/thesis_phase3a/30_20_10_psi_delta.txt
+    sha256: d414c0ab88381033806f056ffed5c8480f2f89f5d94550cf243a9d56a92172e6
+    bytes: 27130
+    source_type: lab
+    immutable: true
+    original_filename: 30_20_10 psi delta.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/30_20_10 psi delta.txt
+    acquired_at: '2026-05-16'
+    source_notes: Phase 3A same-run Psi/Delta ellipsometry export for 30_20_10 candidate stack.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs:
+    - thesis_d_10nm
+    - thesis_table_4_1_3l2_quartz
+  phase3a_30_20_10_epsilon:
+    raw_artifact_id: phase3a_30_20_10_epsilon
+    kind: txt
+    path: lab_data/raw/thesis_phase3a/30_20_10_e1_e2.txt
+    sha256: f19ce3434381191e068e498523249287dbee3e209f9a4e1fa24a29734ca5259a
+    bytes: 24997
+    source_type: lab
+    immutable: true
+    original_filename: 30_20_10 e1 e2.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/30_20_10 e1 e2.txt
+    acquired_at: '2026-05-16'
+    source_notes: Phase 3A derived e1/e2 export for 30_20_10 candidate stack; provenance needs
+      audit before use as fitted material response.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs:
+    - thesis_d_10nm
+    - thesis_table_4_1_3l2_quartz
+  sio2_sellmeier_epsilon:
+    raw_artifact_id: sio2_sellmeier_epsilon
+    kind: txt
+    path: lab_data/raw/thesis_phase3a/sio2_sellmeier_epsilon.txt
+    sha256: 28ba4678bf1f5e72e55d8fdbd6d3b10319cd2198dce3f2dd987432e70fdffadf
+    bytes: 13781
+    source_type: literature_table
+    immutable: true
+    original_filename: SiO2 e1 e2.txt
+    original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/SiO2 e1 e2.txt
+    acquired_at: '2026-05-16'
+    source_notes: SiO2 Sellmeier-derived epsilon table used as frozen dielectric input for
+      Phase 3A TiN/SiO2 TMM.
+    access_notes: Local user-provided research artifact; not redistributed from an external
+      public source.
+    provenance_refs:
+    - phase3a_tin_sio2_validation_candidate
+samples:
+  tin_50nm_dc_sputtered_master:
+    sample_id: tin_50nm_dc_sputtered_master
+    material: TiN
+    source_type: lab
+    nominal_thickness:
+      value: 50
+      unit: nm
+      uncertainty: null
+    composition: null
+    process_notes:
+    - 50 nm TiN DC magnetron sputtered film optical constants from master research optics
+      files.
+    provenance_refs:
+    - tin_50nm_lorentz_epsilon
+  tion_48_40nm_0p8pa:
+    sample_id: tion_48_40nm_0p8pa
+    material: TiON
+    source_type: lab
+    nominal_thickness:
+      value: 40
+      unit: nm
+      uncertainty: null
+    composition: TiON; exact stoichiometry not recorded in this registry yet
+    process_notes:
+    - 40 nm TiON_48 optical constants, 0.8 Pa sputtering condition; raw R/T provenance not
+      yet recovered.
+    provenance_refs:
+    - tion_48_0p8pa_epsilon
+  tion_49_40nm_1p0pa:
+    sample_id: tion_49_40nm_1p0pa
+    material: TiON
+    source_type: lab
+    nominal_thickness:
+      value: 40
+      unit: nm
+      uncertainty: null
+    composition: TiON; exact stoichiometry not recorded in this registry yet
+    process_notes:
+    - 40 nm TiON_49 optical constants, 1.0 Pa sputtering condition; raw R/T provenance not
+      yet recovered.
+    provenance_refs:
+    - tion_49_1p0pa_epsilon
+  thesis_d_5nm:
+    sample_id: thesis_d_5nm
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 gated film, d=5 nm oxide/device label from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_d_5nm_12V
+    - thesis_reflectance_d_5nm_initial
+  thesis_d_10nm:
+    sample_id: thesis_d_10nm
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: '3L2/Quartz: 20 nm top TiN / 10 nm SiO2 / 30 nm bottom TiN on quartz.'
+    process_notes:
+    - TiN:SiO2 gated film, d=10 nm oxide/device label from thesis data filename
+    - Phase 3A maps 30_20_10 exports to thesis Table 4.1 sample 3L2/Quartz unless contradicted.
+    provenance_refs:
+    - thesis_reflectance_d_10nm_12V
+    - thesis_reflectance_d_10nm_initial
+    - phase3a_30_20_10_reflectance
+    - phase3a_30_20_10_p_s_intensity
+    - phase3a_30_20_10_psi_delta
+    - phase3a_30_20_10_epsilon
+  thesis_d_15nm:
+    sample_id: thesis_d_15nm
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 gated film, d=15 nm oxide/device label from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_d_15nm_12V
+    - thesis_reflectance_d_15nm_initial
+  thesis_N_4_40_fill:
+    sample_id: thesis_N_4_40_fill
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 multilayer/fill device label N_4_40_fill from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_N_4_40_fill_12V
+    - thesis_reflectance_N_4_40_fill_initial
+  thesis_N_15_50_fill:
+    sample_id: thesis_N_15_50_fill
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 multilayer/fill device label N_15_50_fill from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_N_15_50_fill_12V
+    - thesis_reflectance_N_15_50_fill_initial
+  thesis_N_15_60_fill:
+    sample_id: thesis_N_15_60_fill
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 multilayer/fill device label N_15_60_fill from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_N_15_60_fill_12V
+    - thesis_reflectance_N_15_60_fill_initial
+  thesis_N_30_40_fill:
+    sample_id: thesis_N_30_40_fill
+    material: TiN:SiO2
+    source_type: lab
+    nominal_thickness: null
+    composition: TiN:SiO2 gated device or multilayer; exact stack should be reconciled with
+      thesis text before modeling.
+    process_notes:
+    - TiN:SiO2 multilayer/fill device label N_30_40_fill from thesis data filename
+    provenance_refs:
+    - thesis_reflectance_N_30_40_fill_12V
+    - thesis_reflectance_N_30_40_fill_initial
+  synthetic_ito_001:
+    sample_id: synthetic_ito_001
+    material: ITO
+    source_type: synthetic
+    nominal_thickness:
+      value: 60
+      unit: nm
+      uncertainty: null
+    composition: synthetic fixture
+    process_notes:
+    - Synthetic V0 sample only.
+    provenance_refs:
+    - synthetic_v0_transmission
+  sio2_sellmeier_reference:
+    sample_id: sio2_sellmeier_reference
+    material: SiO2
+    source_type: literature
+    nominal_thickness: null
+    composition: SiO2 Sellmeier reference optical constants
+    process_notes:
+    - Reference dielectric table used as frozen Phase 3A layer input.
+    provenance_refs:
+    - sio2_sellmeier_epsilon
+stacks:
+  tin_50nm_dc_sputtered_master_air_film_unknown_substrate:
+    stack_id: tin_50nm_dc_sputtered_master_air_film_unknown_substrate
+    sample_ref: tin_50nm_dc_sputtered_master
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN
+      thickness:
+        value: 50
+        unit: nm
+        uncertainty: null
+      notes: tabulated TiN epsilon; ENZ crossing near 549.077 nm
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Substrate provenance still needs confirmation before calibrated evidence.
+    notes: Stack is sufficient for provenance grounding; simulator examples use an explicit
+      glass approximation.
+  tion_48_40nm_0p8pa_air_film_unknown_substrate:
+    stack_id: tion_48_40nm_0p8pa_air_film_unknown_substrate
+    sample_ref: tion_48_40nm_0p8pa
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiON
+      thickness:
+        value: 40
+        unit: nm
+        uncertainty: null
+      notes: tabulated TiON_48 epsilon; ENZ crossing near 497.271 nm
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Substrate provenance still needs confirmation before calibrated evidence.
+    notes: Stack is sufficient for provenance grounding; simulator examples use an explicit
+      glass approximation.
+  tion_49_40nm_1p0pa_air_film_unknown_substrate:
+    stack_id: tion_49_40nm_1p0pa_air_film_unknown_substrate
+    sample_ref: tion_49_40nm_1p0pa
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiON
+      thickness:
+        value: 40
+        unit: nm
+        uncertainty: null
+      notes: tabulated TiON_49 epsilon; ENZ crossings near 546.387 nm and 1213.844 nm
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Substrate provenance still needs confirmation before calibrated evidence.
+    notes: Stack is sufficient for provenance grounding; simulator examples use an explicit
+      glass approximation.
+  thesis_d_5nm_thesis_reflectance_stack:
+    stack_id: thesis_d_5nm_thesis_reflectance_stack
+    sample_ref: thesis_d_5nm
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 gated film, d=5 nm oxide/device label from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  thesis_d_10nm_thesis_reflectance_stack:
+    stack_id: thesis_d_10nm_thesis_reflectance_stack
+    sample_ref: thesis_d_10nm
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: Incident side during RC2 reflectance measurement.
+    - role: metal
+      material: TiN
+      thickness:
+        value: 20
+        unit: nm
+        uncertainty: null
+      notes: Top TiN layer from thesis Table 4.1 3L2/Quartz.
+    - role: oxide
+      material: SiO2
+      thickness:
+        value: 10
+        unit: nm
+        uncertainty: null
+      notes: Middle insulating layer from thesis Table 4.1 3L2/Quartz.
+    - role: metal
+      material: TiN
+      thickness:
+        value: 30
+        unit: nm
+        uncertainty: null
+      notes: Bottom TiN layer from thesis Table 4.1 3L2/Quartz.
+    - role: substrate
+      material: quartz
+      thickness: null
+      notes: 1-inch quartz substrate according to thesis Table 4.1 / Figure 4.1.
+    notes: Phase 3A incident-order stack for measured S-polarized reflectance at 60 deg; 30_20_10
+      exports are mapped here as d_10nm / 3L2 candidates.
+  thesis_d_15nm_thesis_reflectance_stack:
+    stack_id: thesis_d_15nm_thesis_reflectance_stack
+    sample_ref: thesis_d_15nm
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 gated film, d=15 nm oxide/device label from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  thesis_N_4_40_fill_thesis_reflectance_stack:
+    stack_id: thesis_N_4_40_fill_thesis_reflectance_stack
+    sample_ref: thesis_N_4_40_fill
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 multilayer/fill device label N_4_40_fill from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  thesis_N_15_50_fill_thesis_reflectance_stack:
+    stack_id: thesis_N_15_50_fill_thesis_reflectance_stack
+    sample_ref: thesis_N_15_50_fill
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 multilayer/fill device label N_15_50_fill from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  thesis_N_15_60_fill_thesis_reflectance_stack:
+    stack_id: thesis_N_15_60_fill_thesis_reflectance_stack
+    sample_ref: thesis_N_15_60_fill
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 multilayer/fill device label N_15_60_fill from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  thesis_N_30_40_fill_thesis_reflectance_stack:
+    stack_id: thesis_N_30_40_fill_thesis_reflectance_stack
+    sample_ref: thesis_N_30_40_fill
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: TiN:SiO2
+      thickness: null
+      notes: TiN:SiO2 multilayer/fill device label N_30_40_fill from thesis data filename
+    - role: substrate
+      material: unknown
+      thickness: null
+      notes: Resolve from thesis before calibrated modeling.
+    notes: Registry anchor for measured thesis reflectance spectra; not yet a calibrated model
+      stack.
+  synthetic_air_ito_glass:
+    stack_id: synthetic_air_ito_glass
+    sample_ref: synthetic_ito_001
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: null
+    - role: film
+      material: ITO
+      thickness:
+        value: 60
+        unit: nm
+        uncertainty: null
+      notes: synthetic V0 film
+    - role: substrate
+      material: glass
+      thickness: null
+      notes: lossless n=1.45 fixture
+    notes: Synthetic V0 stack.
 measurements:
+  tin_50nm_lorentz_epsilon_measurement:
+    measurement_id: tin_50nm_lorentz_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: tin_50nm_lorentz_epsilon
+    sample_ref: tin_50nm_dc_sputtered_master
+    stack_ref: tin_50nm_dc_sputtered_master_air_film_unknown_substrate
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: complex_dielectric_function
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: e1
+      epsilon_imag: e2
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: 50 nm TiN DC magnetron sputtered film optical constants from
+      master research optics files.
+    preprocessing:
+    - Raw text table is parsed with comma or dot decimal support; no smoothing or fitting
+      is applied.
+    forbidden_for_fitting: false
+  tion_48_0p8pa_epsilon_measurement:
+    measurement_id: tion_48_0p8pa_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: tion_48_0p8pa_epsilon
+    sample_ref: tion_48_40nm_0p8pa
+    stack_ref: tion_48_40nm_0p8pa_air_film_unknown_substrate
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: complex_dielectric_function
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: e1
+      epsilon_imag: e2
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: 40 nm TiON_48 optical constants, 0.8 Pa sputtering condition;
+      raw R/T provenance not yet recovered.
+    preprocessing:
+    - Raw text table is parsed with comma or dot decimal support; no smoothing or fitting
+      is applied.
+    forbidden_for_fitting: false
+  tion_49_1p0pa_epsilon_measurement:
+    measurement_id: tion_49_1p0pa_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: tion_49_1p0pa_epsilon
+    sample_ref: tion_49_40nm_1p0pa
+    stack_ref: tion_49_40nm_1p0pa_air_film_unknown_substrate
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: complex_dielectric_function
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: e1
+      epsilon_imag: e2
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: 40 nm TiON_49 optical constants, 1.0 Pa sputtering condition;
+      raw R/T provenance not yet recovered.
+    preprocessing:
+    - Raw text table is parsed with comma or dot decimal support; no smoothing or fitting
+      is applied.
+    forbidden_for_fitting: false
+  thesis_reflectance_N_15_50_fill_12V_measurement:
+    measurement_id: thesis_reflectance_N_15_50_fill_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_15_50_fill_12V
+    sample_ref: thesis_N_15_50_fill
+    stack_ref: thesis_N_15_50_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_15_50_fill, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_N_15_50_fill_initial_measurement:
+    measurement_id: thesis_reflectance_N_15_50_fill_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_15_50_fill_initial
+    sample_ref: thesis_N_15_50_fill
+    stack_ref: thesis_N_15_50_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_15_50_fill, state=initial.
+      Geometry and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: false
+  thesis_reflectance_N_15_60_fill_12V_measurement:
+    measurement_id: thesis_reflectance_N_15_60_fill_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_15_60_fill_12V
+    sample_ref: thesis_N_15_60_fill
+    stack_ref: thesis_N_15_60_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_15_60_fill, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_N_15_60_fill_initial_measurement:
+    measurement_id: thesis_reflectance_N_15_60_fill_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_15_60_fill_initial
+    sample_ref: thesis_N_15_60_fill
+    stack_ref: thesis_N_15_60_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_15_60_fill, state=initial.
+      Geometry and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: false
+  thesis_reflectance_N_30_40_fill_12V_measurement:
+    measurement_id: thesis_reflectance_N_30_40_fill_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_30_40_fill_12V
+    sample_ref: thesis_N_30_40_fill
+    stack_ref: thesis_N_30_40_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_30_40_fill, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_N_30_40_fill_initial_measurement:
+    measurement_id: thesis_reflectance_N_30_40_fill_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_30_40_fill_initial
+    sample_ref: thesis_N_30_40_fill
+    stack_ref: thesis_N_30_40_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_30_40_fill, state=initial.
+      Geometry and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: false
+  thesis_reflectance_N_4_40_fill_12V_measurement:
+    measurement_id: thesis_reflectance_N_4_40_fill_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_4_40_fill_12V
+    sample_ref: thesis_N_4_40_fill
+    stack_ref: thesis_N_4_40_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_4_40_fill, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_N_4_40_fill_initial_measurement:
+    measurement_id: thesis_reflectance_N_4_40_fill_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_N_4_40_fill_initial
+    sample_ref: thesis_N_4_40_fill
+    stack_ref: thesis_N_4_40_fill_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Thesis reflectance export for N_4_40_fill, state=initial.
+      Geometry and normalization must be reconciled with thesis before calibration.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: false
+  thesis_reflectance_d_10nm_12V_measurement:
+    measurement_id: thesis_reflectance_d_10nm_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_10nm_12V
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_d_10nm_initial_measurement:
+    measurement_id: thesis_reflectance_d_10nm_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_10nm_initial
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=initial. Geometry
+      and normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_d_15nm_12V_measurement:
+    measurement_id: thesis_reflectance_d_15nm_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_15nm_12V
+    sample_ref: thesis_d_15nm
+    stack_ref: thesis_d_15nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_15nm, state=12V. Geometry
+      and normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_d_15nm_initial_measurement:
+    measurement_id: thesis_reflectance_d_15nm_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_15nm_initial
+    sample_ref: thesis_d_15nm
+    stack_ref: thesis_d_15nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_15nm, state=initial. Geometry
+      and normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_d_5nm_12V_measurement:
+    measurement_id: thesis_reflectance_d_5nm_12V_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_5nm_12V
+    sample_ref: thesis_d_5nm
+    stack_ref: thesis_d_5nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_5nm, state=12V. Geometry and
+      normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+  thesis_reflectance_d_5nm_initial_measurement:
+    measurement_id: thesis_reflectance_d_5nm_initial_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: thesis_reflectance_d_5nm_initial
+    sample_ref: thesis_d_5nm
+    stack_ref: thesis_d_5nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 60
+      unit: deg
+      uncertainty: null
+    geometry_polarization: TE
+    instrument_or_source_notes: Thesis reflectance export for d_5nm, state=initial. Geometry
+      and normalization must be reconciled with thesis before calibration. Thesis text identifies
+      three-layer reflectance as S-polarized/TE at 60 degrees.
+    preprocessing:
+    - Raw wavelength/intensity table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
   synthetic_v0_transmission_measurement:
     measurement_id: synthetic_v0_transmission_measurement
     kind: transmission_spectrum
@@ -24,25 +1208,335 @@ measurements:
     y_quantity: transmission
     y_unit: fraction
     y_values_column: transmission
+    y_values_columns:
+      transmission: transmission
     uncertainty_type: scalar
     geometry_incidence_angle:
       value: 0
       unit: deg
+      uncertainty: null
     geometry_polarization: TM
+    instrument_or_source_notes: Synthetic fixture generated for V1 contract testing.
     preprocessing:
-      - synthetic fixture generated for V1 contract testing
+    - synthetic fixture generated for V1 contract testing
     forbidden_for_fitting: false
-
+  sio2_sellmeier_epsilon_measurement:
+    measurement_id: sio2_sellmeier_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: sio2_sellmeier_epsilon
+    sample_ref: sio2_sellmeier_reference
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    y_quantity: epsilon
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: e1
+      epsilon_imag: e2
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: SiO2 Sellmeier-derived epsilon table used as frozen dielectric
+      layer input.
+    preprocessing:
+    - Loaded as wavelength/e1/e2 table; no smoothing or fitting in Eternity.
+    forbidden_for_fitting: false
+  phase3a_30_20_10_reflectance_measurement:
+    measurement_id: phase3a_30_20_10_reflectance_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: phase3a_30_20_10_reflectance
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis: &id001
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: Wavelength (nm)
+    uncertainty_type: unknown
+    geometry_incidence_angle: &id002
+      value: 60
+      unit: deg
+      uncertainty: null
+    preprocessing: &id003
+    - Raw wavelength table copied without smoothing or normalization changes.
+    forbidden_for_fitting: true
+    y_quantity: reflectance_intensity
+    y_unit: arb
+    y_values_column: Intensity
+    y_values_columns:
+      reflectance_intensity: Intensity
+    geometry_polarization: TE
+    instrument_or_source_notes: 30_20_10 reflectance/intensity export mapped to thesis d_10nm
+      / 3L2; auxiliary diagnostic, not fit input.
+  phase3a_30_20_10_p_s_intensity_measurement:
+    measurement_id: phase3a_30_20_10_p_s_intensity_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: phase3a_30_20_10_p_s_intensity
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis: *id001
+    uncertainty_type: unknown
+    geometry_incidence_angle: *id002
+    preprocessing: *id003
+    forbidden_for_fitting: true
+    y_quantity: p_s_reflectance_intensity
+    y_unit: arb
+    y_values_column: s-Intensity
+    y_values_columns:
+      p_intensity: p-Intensity
+      s_intensity: s-Intensity
+    geometry_polarization: mixed
+    instrument_or_source_notes: 30_20_10 p/s intensity export; auxiliary diagnostic, not fit
+      input.
+  phase3a_30_20_10_psi_delta_measurement:
+    measurement_id: phase3a_30_20_10_psi_delta_measurement
+    kind: ellipsometry_psi_delta
+    raw_artifact_ref: phase3a_30_20_10_psi_delta
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis: *id001
+    uncertainty_type: unknown
+    geometry_incidence_angle: *id002
+    preprocessing: *id003
+    forbidden_for_fitting: true
+    y_quantity: ellipsometry_angles
+    y_unit: deg
+    y_values_column: Psi
+    y_values_columns:
+      psi: Psi
+      delta: Delta
+    geometry_polarization: mixed
+    instrument_or_source_notes: 30_20_10 Psi/Delta ellipsometry export; auxiliary diagnostic,
+      not fit input.
+  phase3a_30_20_10_epsilon_measurement:
+    measurement_id: phase3a_30_20_10_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: phase3a_30_20_10_epsilon
+    sample_ref: thesis_d_10nm
+    stack_ref: thesis_d_10nm_thesis_reflectance_stack
+    x_axis: *id001
+    uncertainty_type: unknown
+    geometry_incidence_angle: *id002
+    preprocessing: *id003
+    forbidden_for_fitting: true
+    y_quantity: epsilon
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: <e1>
+      epsilon_imag: <e2>
+    geometry_polarization: mixed
+    instrument_or_source_notes: 30_20_10 derived e1/e2 export; registered for audit, not used
+      as a fitted material model.
+material_models:
+  tin_50nm_lorentz_epsilon_model:
+    material_model_id: tin_50nm_lorentz_epsilon_model
+    sample_ref: tin_50nm_dc_sputtered_master
+    kind: tabulated_epsilon
+    source_type: lab
+    raw_artifact_ref: tin_50nm_lorentz_epsilon
+    source_measurement_ref: tin_50nm_lorentz_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t) optics convention assumed for passive positive epsilon_imag
+      tables
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: vacuum wavelength where Re(epsilon) crosses zero by linear interpolation
+    enz_wavelengths_nm:
+    - 549.077
+    wavelength_min_nm: 210.0
+    wavelength_max_nm: 2500.0
+    passivity_check: pass
+    fit_provenance: Loaded as a frozen tabulated material model; no fitting performed.
+    validity_notes:
+    - Use only inside the tabulated wavelength range.
+    - Optical constants alone are calibration-side input, not an independent holdout.
+    limitations:
+    - No raw TiON R/T provenance registered yet.
+    - Substrate and ellipsometry acquisition details need audit before calibrated evidence.
+  tion_48_0p8pa_epsilon_model:
+    material_model_id: tion_48_0p8pa_epsilon_model
+    sample_ref: tion_48_40nm_0p8pa
+    kind: tabulated_epsilon
+    source_type: lab
+    raw_artifact_ref: tion_48_0p8pa_epsilon
+    source_measurement_ref: tion_48_0p8pa_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t) optics convention assumed for passive positive epsilon_imag
+      tables
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: vacuum wavelength where Re(epsilon) crosses zero by linear interpolation
+    enz_wavelengths_nm:
+    - 497.271
+    wavelength_min_nm: 433.428676
+    wavelength_max_nm: 1707.810202
+    passivity_check: pass
+    fit_provenance: Loaded as a frozen tabulated material model; no fitting performed.
+    validity_notes:
+    - Use only inside the tabulated wavelength range.
+    - Optical constants alone are calibration-side input, not an independent holdout.
+    limitations:
+    - No raw TiON R/T provenance registered yet.
+    - Substrate and ellipsometry acquisition details need audit before calibrated evidence.
+  tion_49_1p0pa_epsilon_model:
+    material_model_id: tion_49_1p0pa_epsilon_model
+    sample_ref: tion_49_40nm_1p0pa
+    kind: tabulated_epsilon
+    source_type: lab
+    raw_artifact_ref: tion_49_1p0pa_epsilon
+    source_measurement_ref: tion_49_1p0pa_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t) optics convention assumed for passive positive epsilon_imag
+      tables
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: vacuum wavelength where Re(epsilon) crosses zero by linear interpolation
+    enz_wavelengths_nm:
+    - 546.387
+    - 1213.844
+    wavelength_min_nm: 412.7424238
+    wavelength_max_nm: 1707.810202
+    passivity_check: pass
+    fit_provenance: Loaded as a frozen tabulated material model; no fitting performed.
+    validity_notes:
+    - Use only inside the tabulated wavelength range.
+    - Optical constants alone are calibration-side input, not an independent holdout.
+    limitations:
+    - No raw TiON R/T provenance registered yet.
+    - Substrate and ellipsometry acquisition details need audit before calibrated evidence.
+  synthetic_ito_v0:
+    material_model_id: synthetic_ito_v0
+    sample_ref: synthetic_ito_001
+    kind: synthetic_drude_lorentz
+    source_type: synthetic
+    raw_artifact_ref: null
+    source_measurement_ref: null
+    equation_convention: synthetic Drude-Lorentz epsilon returned by eternity.materials.drude_lorentz_ito
+    sign_convention: internal synthetic fixture convention
+    interpolation: none
+    extrapolation: allowed_with_warning
+    enz_definition: null
+    enz_wavelengths_nm: []
+    wavelength_min_nm: 1300
+    wavelength_max_nm: 1700
+    passivity_check: not_applicable
+    fit_provenance: Hard-coded synthetic fixture.
+    validity_notes:
+    - Software fixture only.
+    limitations:
+    - Not a lab sample.
+  sio2_sellmeier_epsilon_model:
+    material_model_id: sio2_sellmeier_epsilon_model
+    sample_ref: sio2_sellmeier_reference
+    kind: tabulated_epsilon
+    source_type: literature_table
+    raw_artifact_ref: sio2_sellmeier_epsilon
+    source_measurement_ref: sio2_sellmeier_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t)
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: No ENZ crossing expected for passive SiO2 in the table range.
+    enz_wavelengths_nm: []
+    wavelength_min_nm: 371.340149
+    wavelength_max_nm: 1678.175049
+    passivity_check: pass
+    fit_provenance: Loaded as a frozen Sellmeier-derived table; no fit performed in Eternity.
+    validity_notes:
+    - Use only inside tabulated wavelength range.
+    limitations:
+    - This is a reference dielectric input, not a measured holdout.
 splits:
   synthetic_v0_contract_split:
     split_id: synthetic_v0_contract_split
     raw_data_refs:
-      - synthetic_v0_transmission
+    - synthetic_v0_transmission
     created_before_fit: true
     method: explicit_indices
     calibration_measurement_refs:
-      - synthetic_v0_transmission_measurement
+    - synthetic_v0_transmission_measurement
     holdout_measurement_refs: []
     fitting_may_access_holdout_y: false
     ai_playground_may_access_holdout_y_before_fit: false
     evidence_strength: synthetic_fixture
+  tin_tion_optical_constants_no_holdout:
+    split_id: tin_tion_optical_constants_no_holdout
+    raw_data_refs:
+    - tin_50nm_lorentz_epsilon
+    - tion_48_0p8pa_epsilon
+    - tion_49_1p0pa_epsilon
+    created_before_fit: true
+    method: measurement_ids
+    calibration_measurement_refs:
+    - tin_50nm_lorentz_epsilon_measurement
+    - tion_48_0p8pa_epsilon_measurement
+    - tion_49_1p0pa_epsilon_measurement
+    holdout_measurement_refs: []
+    fitting_may_access_holdout_y: false
+    ai_playground_may_access_holdout_y_before_fit: false
+    evidence_strength: calibration_only_no_holdout
+  thesis_reflectance_initial_vs_12v_audit:
+    split_id: thesis_reflectance_initial_vs_12v_audit
+    raw_data_refs:
+    - thesis_reflectance_N_15_50_fill_12V
+    - thesis_reflectance_N_15_50_fill_initial
+    - thesis_reflectance_N_15_60_fill_12V
+    - thesis_reflectance_N_15_60_fill_initial
+    - thesis_reflectance_N_30_40_fill_12V
+    - thesis_reflectance_N_30_40_fill_initial
+    - thesis_reflectance_N_4_40_fill_12V
+    - thesis_reflectance_N_4_40_fill_initial
+    - thesis_reflectance_d_10nm_12V
+    - thesis_reflectance_d_10nm_initial
+    - thesis_reflectance_d_15nm_12V
+    - thesis_reflectance_d_15nm_initial
+    - thesis_reflectance_d_5nm_12V
+    - thesis_reflectance_d_5nm_initial
+    created_before_fit: true
+    method: measurement_ids
+    calibration_measurement_refs:
+    - thesis_reflectance_N_15_50_fill_initial_measurement
+    - thesis_reflectance_N_15_60_fill_initial_measurement
+    - thesis_reflectance_N_30_40_fill_initial_measurement
+    - thesis_reflectance_N_4_40_fill_initial_measurement
+    - thesis_reflectance_d_10nm_initial_measurement
+    - thesis_reflectance_d_15nm_initial_measurement
+    - thesis_reflectance_d_5nm_initial_measurement
+    holdout_measurement_refs:
+    - thesis_reflectance_N_15_50_fill_12V_measurement
+    - thesis_reflectance_N_15_60_fill_12V_measurement
+    - thesis_reflectance_N_30_40_fill_12V_measurement
+    - thesis_reflectance_N_4_40_fill_12V_measurement
+    - thesis_reflectance_d_10nm_12V_measurement
+    - thesis_reflectance_d_15nm_12V_measurement
+    - thesis_reflectance_d_5nm_12V_measurement
+    fitting_may_access_holdout_y: false
+    ai_playground_may_access_holdout_y_before_fit: false
+    evidence_strength: same_raw_spectrum_holdout
+  thesis_d_10nm_phase3a_validation_candidate:
+    split_id: thesis_d_10nm_phase3a_validation_candidate
+    raw_data_refs:
+    - tin_50nm_lorentz_epsilon
+    - sio2_sellmeier_epsilon
+    - thesis_reflectance_d_10nm_initial
+    - thesis_reflectance_d_10nm_12V
+    - phase3a_30_20_10_reflectance
+    - phase3a_30_20_10_p_s_intensity
+    - phase3a_30_20_10_psi_delta
+    - phase3a_30_20_10_epsilon
+    created_before_fit: true
+    method: measurement_ids
+    calibration_measurement_refs:
+    - tin_50nm_lorentz_epsilon_measurement
+    - sio2_sellmeier_epsilon_measurement
+    holdout_measurement_refs:
+    - thesis_reflectance_d_10nm_initial_measurement
+    fitting_may_access_holdout_y: false
+    ai_playground_may_access_holdout_y_before_fit: false
+    evidence_strength: weak_within_dataset_holdout

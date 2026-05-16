@@ -8,7 +8,7 @@ import typer
 from pydantic import ValidationError
 
 from eternity.artifacts import sha256_file
-from eternity.registry import load_registry
+from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
 
@@ -71,6 +71,14 @@ def validate_registry(path: Path) -> None:
     except ValidationError as error:
         typer.echo(str(error), err=True)
         raise typer.Exit(1) from error
+
+    integrity = validate_registry_integrity(registry, path)
+    if not integrity.ok:
+        for issue in integrity.issues:
+            typer.echo(f"integrity issue: {issue}", err=True)
+        raise typer.Exit(1)
+    for warning in integrity.warnings:
+        typer.echo(f"integrity warning: {warning}", err=True)
 
     typer.echo(
         "valid registry: "

@@ -160,6 +160,62 @@ V1 goal:
 
 This is the first serious digital-twin checkpoint.
 
+### Active V1 Phase 3: TiN/TiON + Thesis Reflectance Grounding
+
+The immediate core move is not yet a calibrated claim. It is to make the
+available real data safe for the Serious Core:
+
+- Snapshot the 50 nm TiN optical constants, TiON_48/TiON_49 40 nm epsilon
+  tables, and thesis reflectance spectra under `lab_data/raw/...`.
+- Register every artifact with SHA-256, byte size, source notes, sample/stack
+  refs, and claim-status boundaries.
+- Load tabulated epsilon as a frozen linear material model for deterministic
+  TMM grounding runs.
+- Preserve thesis initial/12V reflectance spectra as measured provenance and
+  possible holdout candidates.
+- Emit explicit R/T provenance audits and gaps when TiON sample-matched
+  reflection/transmission data is missing.
+
+Allowed status for optical-constants-only TiN/TiON runs:
+
+```text
+calibration_only_no_holdout
+```
+
+Forbidden language until an independent holdout exists:
+
+```text
+calibrated TiN/TiON evidence
+validated nonlinear ENZ response
+sample-matched R/T agreement
+```
+
+#### Phase 3A: TiN/SiO2 Thesis Reflectance Reconciliation
+
+Active core move:
+
+- Reconcile the thesis/paper TiN/SiO2 measured spectra with the sample labels
+  and stack records already in the registry.
+- Add the `30_20_10` reflectance, Psi/Delta, p/s intensity, and e1/e2 exports
+  as candidate raw artifacts if their provenance mapping holds.
+- Decide the measurement geometry, polarization, normalization, and holdout
+  split policy before any residual thresholds are set.
+- Keep TiON_48/TiON_49 in a parked Phase 3B path unless raw R/T or
+  source-tabulated reflectance appears.
+
+Implemented Phase 3A should emit a fail-closed validation candidate using the
+`thesis_d_10nm` / `3L2` stack:
+
+- frozen TiN and SiO2 epsilon tables;
+- incident-order stack `air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz`;
+- TE/S-polarized, 60-degree comparison against the d=10 nm initial spectrum;
+- `30_20_10` reflectance, p/s intensity, Psi/Delta, and e1/e2 exports as
+  auxiliary audit evidence.
+
+Phase 3A may emit `weak_within_dataset_holdout`, but it cannot claim
+`calibrated_linear_evidence` while normalization and residual-threshold gates
+remain blocked.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before
@@ -213,9 +269,11 @@ physics substrate.
 
 The most exciting next scientific checkpoint is:
 
-> Eternity takes one real or literature ITO film dataset, fits a Drude-Lorentz
-> model, predicts its linear spectrum, compares against measured data, and
-> writes a report saying exactly where it agrees and fails.
+> Eternity takes one identified ENZ film dataset, currently the local TiN/TiON
+> family if sample provenance is strong enough, loads or fits a constrained
+> linear material model, predicts an independent measured spectrum, compares
+> against holdout data, and writes a report saying exactly where it agrees and
+> fails.
 
 ## V2: First Researcher Behavior
 

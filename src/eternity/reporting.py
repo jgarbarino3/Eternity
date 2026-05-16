@@ -73,6 +73,59 @@ def write_report(
     untrusted = "\n".join(f"- {note}" for note in result.validity_notes["untrusted"])
     plots = "\n".join(f"- `{path.relative_to(run_dir)}`" for path in plot_paths)
     metrics_json = json.dumps(result.metrics, indent=2, sort_keys=True)
+    model_level = result.metrics["model_level"]
+    is_phase3a = model_level == "linear_tmm_registry_multilayer_phase3a_validation_candidate"
+    is_tabulated = model_level == "linear_tmm_tabulated_epsilon_v1_grounding"
+    if is_phase3a:
+        claim_status = "weak_within_dataset_holdout"
+        summary_note = (
+            "This is a Phase 3A TiN/SiO2 validation-candidate run. It compares a frozen "
+            "registry-backed multilayer TMM prediction with measured thesis reflectance, "
+            "but it is not calibrated linear evidence until normalization and residual "
+            "threshold gates are approved."
+        )
+        claim_note = (
+            "This run cannot feed serious-core conclusions yet because the measured export "
+            "is intensity-labeled and calibrated pass/fail thresholds are not predeclared."
+        )
+        follow_up = (
+            "- Decide whether the thesis intensity export is comparable to absolute reflectance.\n"
+            "- Predeclare residual thresholds before promoting any calibrated evidence.\n"
+            "- Keep 12V, nonlinear, FROG, and pump-probe interpretations outside this claim."
+        )
+    elif is_tabulated:
+        claim_status = "calibration_only_no_holdout"
+        summary_note = (
+            "This is a V1 real-data grounding run using registry-backed tabulated optical "
+            "constants. It is not calibrated linear evidence because no independent measured "
+            "R/T holdout is validated in this run."
+        )
+        claim_note = (
+            "This run cannot feed serious-core conclusions yet because optical constants alone "
+            "do not provide an independent measured R/T holdout or residual validation."
+        )
+        follow_up = (
+            "- Recover or measure independent R/T for the same TiN/TiON sample and geometry.\n"
+            "- Freeze the tabulated material model before comparing against any holdout.\n"
+            "- Keep nonlinear ENZ, FROG, and pump-probe interpretations outside this claim."
+        )
+    else:
+        claim_status = "synthetic_software_fixture"
+        summary_note = (
+            "This is a synthetic V0 linear thin-film run. It is useful for exercising the "
+            "Eternity research pipeline, but it is not evidence of nonlinear ENZ dynamics "
+            "or new physics."
+        )
+        claim_note = (
+            "This run cannot feed serious-core conclusions because it uses synthetic inputs "
+            "and no measured comparison or holdout data."
+        )
+        follow_up = (
+            "- Replace the synthetic ITO model with fitted ellipsometry data.\n"
+            "- Compare this linear baseline against measured transmission/reflection.\n"
+            "- Keep nonlinear ENZ, hot-electron, roughness, detector, and pump-probe effects "
+            "out of V0 claims."
+        )
 
     report_path.write_text(
         f"""# {spec.experiment_id} Report
@@ -83,15 +136,13 @@ Question: {spec.question}
 
 Hypothesis: {spec.hypothesis}
 
-This is a synthetic V0 linear thin-film run. It is useful for exercising the
-Eternity research pipeline, but it is not evidence of nonlinear ENZ dynamics or
-new physics.
+{summary_note}
 
 ## Model
 
 - Simulator: `{spec.simulator.name}` version `{spec.simulator.version}`
 - Model level: `{result.metrics["model_level"]}`
-- Material: synthetic `{spec.sample.material}`
+- Material: `{spec.sample.material}`
 - Film thickness: `{spec.sample.thickness.value} {spec.sample.thickness.unit}`
 - Spec hash: `{spec_hash}`
 
@@ -103,10 +154,9 @@ new physics.
 
 ## Claim Status
 
-`synthetic_software_fixture`
+`{claim_status}`
 
-This run cannot feed serious-core conclusions because it uses synthetic inputs
-and no measured comparison or holdout data.
+{claim_note}
 
 ## Plots
 
@@ -132,9 +182,7 @@ Not trusted:
 
 ## Follow-Up
 
-- Replace the synthetic ITO model with fitted ellipsometry data.
-- Compare this linear baseline against measured transmission/reflection.
-- Keep nonlinear ENZ, hot-electron, roughness, detector, and pump-probe effects out of V0 claims.
+{follow_up}
 """,
         encoding="utf-8",
     )

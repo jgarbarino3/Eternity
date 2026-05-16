@@ -11,7 +11,16 @@ results/research_memory/
 results/*.sqlite
 results/*.sqlite-*
 data/research_memory/
-lab_data/raw/
+GPD/state.json.bak
+lab_data/raw/*
+!lab_data/raw/synthetic_v0/
+!lab_data/raw/synthetic_v0/**
+!lab_data/raw/tin_tion_v1/
+!lab_data/raw/tin_tion_v1/**
+!lab_data/raw/thesis_reflectance/
+!lab_data/raw/thesis_reflectance/**
+!lab_data/raw/thesis_phase3a/
+!lab_data/raw/thesis_phase3a/**
 lab_data/interim/
 lab_data/processed/
 lab_data/external/

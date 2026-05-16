@@ -49,6 +49,16 @@ class WavelengthGridSpec(RangeSpec):
 class MaterialModelSpec(BaseModel):
     type: str
     parameters_ref: str
+    registry_path: str | None = None
+    material_model_ref: str | None = None
+
+    model_config = ConfigDict(extra="forbid")
+
+
+class LayerSpec(BaseModel):
+    material: str
+    thickness: QuantitySpec
+    material_model_ref: str
 
     model_config = ConfigDict(extra="forbid")
 
@@ -58,6 +68,8 @@ class SampleSpec(BaseModel):
     material: str
     thickness: QuantitySpec
     material_model: MaterialModelSpec
+    stack_ref: str | None = None
+    layers: list[LayerSpec] = Field(default_factory=list)
 
     model_config = ConfigDict(extra="forbid")
 
@@ -96,6 +108,18 @@ class ValidityEnvelopeSpec(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
+class ValidationComparisonSpec(BaseModel):
+    registry_path: str = "lab_data/registry.yaml"
+    split_ref: str
+    holdout_measurement_ref: str
+    auxiliary_measurement_refs: list[str] = Field(default_factory=list)
+    status_ceiling: Literal["weak_within_dataset_holdout", "calibration_only_no_holdout"]
+    wavelength_window: RangeSpec
+    thresholds_ref: str | None = None
+
+    model_config = ConfigDict(extra="forbid")
+
+
 class ExperimentSpec(BaseModel):
     schema_version: Literal["0.1"]
     experiment_id: str
@@ -108,5 +132,6 @@ class ExperimentSpec(BaseModel):
     observables: list[str]
     acceptance_tests: list[str]
     validity_envelope: ValidityEnvelopeSpec
+    validation: ValidationComparisonSpec | None = None
 
     model_config = ConfigDict(extra="forbid")

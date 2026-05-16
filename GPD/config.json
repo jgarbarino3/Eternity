@@ -1,0 +1,6 @@
+{
+  "autonomy": "supervised",
+  "research_mode": "balanced",
+  "commit_docs": true,
+  "parallelization": true
+}

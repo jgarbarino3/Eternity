@@ -1,0 +1,145 @@
+{
+  "project_reference": {
+    "project_md_updated": "2026-05-16",
+    "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
+    "current_focus": "Phase 3A TiN/SiO2 thesis reflectance reconciliation"
+  },
+  "project_contract": {
+    "gpd_role": "planning_mirror_only",
+    "authoritative_sources": [
+      "CURRENT_REALISTIC_ROADMAP.md",
+      "GOALS.md",
+      "docs/PROJECT_ATLAS.md",
+      "docs/phase_index.md",
+      "docs/contracts/claim_status.md",
+      "src/eternity/claim_status.py"
+    ],
+    "claim_status_authority": "Eternity repo contracts and claim-status code remain authoritative over GPD notes.",
+    "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
+  },
+  "position": {
+    "current_phase": "3A",
+    "current_phase_name": "TiN/SiO2 Thesis Reflectance Reconciliation",
+    "total_phases": 3,
+    "current_plan": null,
+    "total_plans_in_phase": null,
+    "status": "Executing",
+    "last_activity": "2026-05-16",
+    "last_activity_desc": "Implemented a fail-closed TiN/SiO2 3L2/d_10nm validation candidate and kept claim promotion blocked by normalization and threshold gates.",
+    "progress_percent": 70,
+    "paused_at": null
+  },
+  "active_calculations": [
+    {
+      "label": "phase3a_tin_sio2_d10nm_validation_candidate",
+      "run_id": "run_74411c01c8a4b74e",
+      "description": "Frozen TiN/SiO2 multilayer TMM candidate over 400-900 nm at 60 deg TE/S geometry."
+    }
+  ],
+  "intermediate_results": [
+    {
+      "phase": "3A",
+      "run_id": "run_74411c01c8a4b74e",
+      "claim_status": "weak_within_dataset_holdout",
+      "can_feed_serious_core": false,
+      "validation_points": 501,
+      "validation_window_nm": [
+        400.0,
+        900.0
+      ],
+      "mean_abs_residual": 0.2798737087610879,
+      "rmse": 0.2810951894697738,
+      "max_abs_residual": 0.30514520763860137,
+      "blocking_gates": [
+        "thresholds_predeclared",
+        "normalization_gate"
+      ]
+    }
+  ],
+  "open_questions": [
+    "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
+    "Can the thesis/exported Intensity columns be justified as absolute or consistently normalized reflectance for Phase 3A?",
+    "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?"
+  ],
+  "resolved_questions": [],
+  "performance_metrics": {
+    "rows": []
+  },
+  "decisions": [
+    {
+      "phase": "1",
+      "summary": "GPD is a planning mirror, not the source of scientific authority.",
+      "rationale": "Eternity claim status remains governed by repo docs, contracts, and src/eternity/claim_status.py."
+    },
+    {
+      "phase": "1",
+      "summary": "TiN/TiON optical constants can support calibration_only_no_holdout only.",
+      "rationale": "No independent TiON R/T or ellipsometry holdout provenance is registered yet."
+    },
+    {
+      "phase": "3A",
+      "summary": "Map 30_20_10 exports to thesis d_10nm / 3L2/Quartz unless contradicted.",
+      "rationale": "Registry notes preserve the provenance caveat and stack mapping."
+    },
+    {
+      "phase": "3A",
+      "summary": "Phase 3A validation candidates are capped at weak_within_dataset_holdout.",
+      "rationale": "Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status."
+    }
+  ],
+  "approximations": [],
+  "convention_lock": {
+    "metric_signature": null,
+    "fourier_convention": null,
+    "natural_units": null,
+    "gauge_choice": null,
+    "regularization_scheme": null,
+    "renormalization_scheme": null,
+    "coordinate_system": null,
+    "spin_basis": null,
+    "state_normalization": null,
+    "coupling_convention": null,
+    "index_positioning": null,
+    "time_ordering": null,
+    "commutation_convention": null,
+    "levi_civita_sign": null,
+    "generator_normalization": null,
+    "covariant_derivative_sign": null,
+    "gamma_matrix_convention": null,
+    "creation_annihilation_order": null,
+    "custom_conventions": {}
+  },
+  "propagated_uncertainties": [],
+  "pending_todos": [
+    "Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.",
+    "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
+    "Resolve whether thesis/exported intensity spectra are absolute reflectance or only comparable normalized traces."
+  ],
+  "blockers": [
+    "TiON_48/TiON_49 raw R/T spectra are not registered.",
+    "FROG labels are not authoritatively mapped to TiON_48/TiON_49.",
+    "Phase 3A thresholds_predeclared gate is blocked.",
+    "Phase 3A normalization_gate is blocked."
+  ],
+  "continuation": {
+    "schema_version": 1,
+    "handoff": {
+      "resume_file": null,
+      "stopped_at": null,
+      "last_result_id": null,
+      "recorded_at": null,
+      "recorded_by": null
+    },
+    "bounded_segment": null,
+    "machine": {
+      "recorded_at": null,
+      "hostname": null,
+      "platform": null
+    }
+  },
+  "contract_alignment": {
+    "confirmed_at": null,
+    "confirmed_contract_hash": null,
+    "confirmed_context_hash": null
+  }
+}

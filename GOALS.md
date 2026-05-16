@@ -37,18 +37,40 @@ Only `calibrated_linear_evidence` can feed serious-core conclusions.
 
 ## Current State
 
-The repo currently has a working V0 skeleton:
+The repo currently has a working V0 skeleton and an active V1 real-data
+grounding phase:
 
 - `uv run --no-editable pytest` passes.
 - `uv run --no-editable eternity validate experiments/examples/linear_ito_toy.yaml`
   validates the example spec.
 - `uv run --no-editable eternity run experiments/examples/linear_ito_toy.yaml`
   writes deterministic artifacts under `results/runs/run_47d4e2d9baa7f574/`.
+- TiN/TiON optical-constants snapshots and thesis reflectance spectra are being
+  registered as immutable `lab_data/raw/...` artifacts with SHA-256 hashes.
+- `experiments/examples/linear_tion_48_tabulated.yaml` is the first tabulated
+  TiON grounding run. Its strongest permitted status is
+  `calibration_only_no_holdout`.
+- The active named phase is `Phase 3A - TiN/SiO2 thesis reflectance
+  reconciliation`: map the thesis/paper measured spectra and `30_20_10`
+  reflectance/Psi/Delta/e1e2 exports to exact samples, geometry,
+  normalization, and a holdout policy, then emit a fail-closed validation
+  candidate whose ceiling is `weak_within_dataset_holdout`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The next step is to add typed contracts, registry-backed input hashes,
-calibration/holdout split objects, material-model fit artifacts, claim-status
-labels, and validation gates before real or literature data enters the system.
+The active step is to keep source-qualified TiN/TiON optical constants, thesis
+reflectance spectra, material models, and provenance gaps inside the registry
+without promoting them to calibrated evidence.
+
+Current blocker:
+
+- TiON_48/TiON_49 raw R/T spectra and authoritative FROG-label mapping are not
+  registered. Until that is fixed, TiON runs cannot emit
+  `calibrated_linear_evidence`.
+- TiON grower guidance and attached plots are useful provenance, but they are
+  not raw sample-matched R/T tables unless explicitly digitized and labeled as
+  plot-derived evidence.
+- Phase 3A normalization certainty and predeclared residual thresholds are not
+  yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 
 ## Goal Usage In Codex
 

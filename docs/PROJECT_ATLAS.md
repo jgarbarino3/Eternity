@@ -35,10 +35,15 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: registry, artifact hashes, validation gates, claim-status labels,
-  research-memory/radar foundations, and the atlas itself.
-- **Next**: real or literature linear data, calibration-only fitting, independent
-  holdout comparison, residuals, uncertainty, and validity envelope.
+- **Doing**: Phase 3A TiN/SiO2 thesis reflectance reconciliation: source-qualified TiN/TiON optical
+  constants, thesis reflectance snapshots, sample/stack IDs,
+  registry-backed tabulated models, R/T provenance audits, and atlas/GPD
+  alignment.
+- **Next**: resolve Phase 3A normalization and predeclared residual thresholds
+  before any calibrated-evidence promotion attempt.
+- **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
+  notes and plots are useful provenance but only plot-level reflectance unless
+  raw tables or explicit digitized artifacts are registered.
 
 Goal sequence:
 
@@ -58,10 +63,24 @@ completed, in-progress, needed, blocked, or gated branches to the right.
 calibrated_linear_evidence
   -> COMPLETE: V0 synthetic runner
   -> COMPLETE: claim-status contract
-  -> IN PROGRESS: registry-backed artifacts
+  -> IN PROGRESS: Phase 3 real-data grounding
+  -> IN PROGRESS: Phase 3A TiN/SiO2 thesis reflectance reconciliation
+  -> IN PROGRESS: frozen tabulated material model
+  -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
-  -> NEEDED: frozen material model
   -> NEEDED: residual and uncertainty report
+```
+
+Active conflict:
+
+```text
+Optical constants are available for TiN/TiON, but TiON_48/TiON_49
+sample-matched R/T provenance is not registered. Grower notes and attached
+plots support qualitative TiON trends but do not provide raw R/T tables. This
+blocks calibrated TiON evidence while still allowing calibration_only_no_holdout
+grounding runs. Phase 3A now follows the separate TiN/SiO2 measured-reflectance
+path, capped below calibrated evidence until normalization and threshold gates
+are resolved.
 ```
 
 ## Core Rule

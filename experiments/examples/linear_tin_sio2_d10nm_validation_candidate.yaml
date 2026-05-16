@@ -1,0 +1,106 @@
+schema_version: "0.1"
+experiment_id: linear_tin_sio2_d10nm_validation_candidate_001
+question: "Can Eternity prepare a fail-closed TiN/SiO2 thesis d_10nm linear reflectance validation candidate?"
+hypothesis: "A frozen TiN/SiO2 multilayer TMM prediction can be compared with thesis d_10nm initial reflectance, but calibrated evidence remains blocked until normalization and thresholds are approved."
+
+sample:
+  sample_id: thesis_d_10nm
+  material: TiN:SiO2
+  thickness:
+    value: 60
+    unit: nm
+  stack_ref: thesis_d_10nm_thesis_reflectance_stack
+  material_model:
+    type: registry_multilayer_stack
+    parameters_ref: thesis_d_10nm_phase3a_incident_order_stack
+    registry_path: lab_data/registry.yaml
+    material_model_ref: null
+  layers:
+    - material: TiN
+      thickness:
+        value: 20
+        unit: nm
+      material_model_ref: tin_50nm_lorentz_epsilon_model
+    - material: SiO2
+      thickness:
+        value: 10
+        unit: nm
+      material_model_ref: sio2_sellmeier_epsilon_model
+    - material: TiN
+      thickness:
+        value: 30
+        unit: nm
+      material_model_ref: tin_50nm_lorentz_epsilon_model
+
+input_pulse:
+  kind: synthetic_gaussian
+  center_wavelength:
+    value: 600
+    unit: nm
+  bandwidth:
+    value: 200
+    unit: nm
+
+geometry:
+  incidence_angle:
+    value: 60
+    unit: deg
+  polarization: TE
+  incident_medium: air
+  substrate: quartz
+
+simulator:
+  name: linear_transfer_matrix
+  version: "0.1"
+  wavelength_range:
+    min: 400
+    max: 900
+    points: 501
+    unit: nm
+
+observables:
+  - reflection_spectrum
+  - transmission_spectrum
+  - absorption
+
+acceptance_tests:
+  - registry_artifact_hashes
+  - multilayer_tmm_energy_accounting
+  - phase3a_stack_mapping_gate
+  - no_fit_leakage_gate
+  - no_calibrated_evidence_without_thresholds
+  - no_calibrated_evidence_without_normalization_gate
+
+validity_envelope:
+  wavelength:
+    min: 400
+    max: 900
+    unit: nm
+  fluence:
+    min: 0
+    max: 0.01
+    unit: mJ/cm^2
+  trusted_notes:
+    - "Linear passive TMM only, using frozen TiN and SiO2 epsilon tables."
+    - "Stack maps thesis Table 4.1 sample 3L2/Quartz as air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz."
+    - "Comparison window is 400-900 nm."
+  untrusted_notes:
+    - "Thesis Intensity export normalization has not been proven as absolute reflectance."
+    - "No Pro/user-approved residual thresholds have been predeclared."
+    - "No bias-state, plasma-frequency refit, nonlinear ENZ, FROG, roughness, or detector response is modeled."
+
+validation:
+  registry_path: lab_data/registry.yaml
+  split_ref: thesis_d_10nm_phase3a_validation_candidate
+  holdout_measurement_ref: thesis_reflectance_d_10nm_initial_measurement
+  auxiliary_measurement_refs:
+    - phase3a_30_20_10_reflectance_measurement
+    - phase3a_30_20_10_p_s_intensity_measurement
+    - phase3a_30_20_10_psi_delta_measurement
+    - thesis_reflectance_d_10nm_12V_measurement
+  status_ceiling: weak_within_dataset_holdout
+  wavelength_window:
+    min: 400
+    max: 900
+    unit: nm
+  thresholds_ref: null

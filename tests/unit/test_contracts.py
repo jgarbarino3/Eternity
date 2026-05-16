@@ -4,9 +4,11 @@ from pydantic import ValidationError
 from eternity.contracts import (
     AxisSpec,
     DataSplitRecord,
+    MaterialModelRecord,
     MeasurementRecord,
     QuantityWithUncertainty,
     RawArtifactRecord,
+    SampleRecord,
 )
 
 
@@ -79,3 +81,48 @@ def test_split_declares_evidence_strength_and_no_holdout_access() -> None:
 
     assert split.created_before_fit
     assert not split.fitting_may_access_holdout_y
+
+
+def test_split_accepts_weak_within_dataset_holdout_label() -> None:
+    split = DataSplitRecord(
+        split_id="phase3a_candidate_split",
+        raw_data_refs=["tin", "reflectance"],
+        created_before_fit=True,
+        method="measurement_ids",
+        calibration_measurement_refs=["tin_epsilon"],
+        holdout_measurement_refs=["d10_initial"],
+        fitting_may_access_holdout_y=False,
+        ai_playground_may_access_holdout_y_before_fit=False,
+        evidence_strength="weak_within_dataset_holdout",
+    )
+
+    assert split.evidence_strength == "weak_within_dataset_holdout"
+
+
+def test_material_model_record_declares_tabulated_epsilon_boundaries() -> None:
+    sample = SampleRecord(
+        sample_id="tion_48_40nm_0p8pa",
+        material="TiON",
+        source_type="lab",
+        nominal_thickness=QuantityWithUncertainty(value=40, unit="nm"),
+    )
+    model = MaterialModelRecord(
+        material_model_id="tion_48_0p8pa_epsilon_model",
+        sample_ref=sample.sample_id,
+        kind="tabulated_epsilon",
+        source_type="lab",
+        raw_artifact_ref="tion_48_0p8pa_epsilon",
+        source_measurement_ref="tion_48_0p8pa_epsilon_measurement",
+        equation_convention="epsilon = epsilon_real + i epsilon_imag",
+        sign_convention="exp(-i omega t)",
+        interpolation="linear",
+        extrapolation="forbidden",
+        enz_definition="Re(epsilon)=0 crossing",
+        enz_wavelengths_nm=[497.271],
+        wavelength_min_nm=433.428676,
+        wavelength_max_nm=1707.810202,
+        passivity_check="pass",
+    )
+
+    assert model.kind == "tabulated_epsilon"
+    assert model.extrapolation == "forbidden"
