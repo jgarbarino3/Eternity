@@ -50,6 +50,19 @@ Decisive outputs:
 - `d_10nm` remains source-backed as 3L2/Quartz.
 - `30_20_10` files no longer feed the validation candidate.
 
+## Phase 3A.3: Thesis Figure/Data Provenance Reconciliation
+
+Status: active
+
+Decisive outputs:
+
+- `d_10nm_initial` and `d_10nm_12V` align with thesis Figure 4.1 and the local
+  `10 nm SiO2 Reflectance.png` figure.
+- Current normalization basis is `relative_intensity_only`, not absolute
+  calibrated reflectance.
+- `30_20_10` remains excluded from the validation candidate, though AFRL 6E
+  notebook evidence supports it as a 30/10/20 quartz model bundle.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active
@@ -57,7 +70,8 @@ Status: active
 Decisive outputs:
 
 - Machine-readable policy `docs/phase3a1_threshold_policy.yaml` with
-  normalization `unknown` and threshold status `blocked_pending_pro_checkpoint`.
+  normalization `relative_intensity_only` and threshold status
+  `blocked_pending_pro_checkpoint`.
 - Audit command `eternity phase3a1-audit` that separates existing-run promotion
   from future-run policy readiness.
 - Pro checkpoint packet for source-backed normalization and future threshold

@@ -63,6 +63,9 @@ grounding phase:
   the thesis-supported `d_10nm` / `3L2/Quartz` mapping, but remove the separate
   `30_20_10` files from the validation candidate until their provenance is
   proven.
+- The active provenance closure is `Phase 3A.3 - thesis figure/data provenance
+  reconciliation`: align `d_10nm` text exports with thesis Figure 4.1 while
+  recording normalization as `relative_intensity_only`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -85,6 +88,8 @@ Current blocker:
 - Phase 3A.2 does not have enough information to use `30_20_10` as thesis
   `d_10nm` evidence. A Woollam project file, plotting script, lab note, or other
   source link is still needed.
+- Phase 3A.3 does not have enough information to claim absolute reflectance.
+  The thesis/figure evidence is enough for provenance, not calibration.
 
 ## Goal Usage In Codex
 

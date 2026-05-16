@@ -17,7 +17,7 @@ def test_phase3a1_blocked_policy_loads() -> None:
 
     assert policy.phase_id == "Phase 3A.1"
     assert policy.status == "blocked_pending_pro_checkpoint"
-    assert policy.normalization_basis == "unknown"
+    assert policy.normalization_basis == "relative_intensity_only"
     assert policy.policy_may_promote_calibrated_evidence is False
 
 

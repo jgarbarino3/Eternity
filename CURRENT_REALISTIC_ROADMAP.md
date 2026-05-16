@@ -224,7 +224,7 @@ Active follow-up:
 
 - Keep the already-inspected Phase 3A residuals as historical context only.
 - Record the normalization decision as a machine-readable gate policy with the
-  current state `unknown`.
+  current state `relative_intensity_only`.
 - Record that no residual thresholds are approved for the existing run.
 - Provide an audit command that reports whether the current run can be promoted
   and why it remains blocked.
@@ -242,6 +242,20 @@ Active correction:
 - Demote separate `30_20_10` Coding/txt exports to
   `phase3a_30_20_10_candidate` because the thesis/appendix do not prove those
   filenames are the plotted `d_10nm` spectra.
+- Keep calibrated promotion blocked by normalization and threshold gates.
+
+#### Phase 3A.3: Thesis Figure/Data Provenance Reconciliation
+
+Active provenance closure:
+
+- Align `d_10nm_initial.txt` and `d_10nm_12V.txt` with thesis Figure 4.1 and
+  the local `10 nm SiO2 Reflectance.png` plot.
+- Record that the values are plotted as reflectance but exported as
+  `Intensity`, so the current normalization basis is `relative_intensity_only`,
+  not absolute calibrated reflectance.
+- Keep `30_20_10` as a separate candidate bundle. AFRL 6E notebook evidence
+  supports a 30 nm TiN / 10 nm SiO2 / 20 nm TiN quartz model, but not identity
+  with the thesis Figure 4.1 export.
 - Keep calibrated promotion blocked by normalization and threshold gates.
 
 ## Near-Term Reach With Current Tools

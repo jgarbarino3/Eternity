@@ -6,8 +6,10 @@ Date: 2026-05-16
 
 Current state: **blocked**.
 
-The thesis/exported columns are registered as `Intensity`, not source-confirmed
-absolute reflectance. They are valid measured/provenance inputs for the Phase 3A
+The thesis/exported columns are registered as `Intensity`, while the thesis
+figure plots the same scale as `Reflectance`. Phase 3A.3 therefore records the
+current basis as `relative_intensity_only`, not source-confirmed absolute
+reflectance. These data are valid measured/provenance inputs for the Phase 3A
 comparison, but they are not yet sufficient for `calibrated_linear_evidence`.
 
 ## Current Evidence
@@ -19,6 +21,8 @@ comparison, but they are not yet sufficient for `calibrated_linear_evidence`.
   bundle.
 - Thesis text in the registry identifies the three-layer reflectance geometry
   as S-polarized / TE at 60 degrees.
+- Phase 3A.3 links the table scale to the local thesis Figure 4.1 PNG and
+  CompleteEASE in-situ screenshot.
 - The raw reflectance table was copied without smoothing or normalization
   changes.
 - The Phase 3A run reports `normalization_gate: blocked` because the holdout

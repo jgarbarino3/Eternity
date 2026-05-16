@@ -6,6 +6,12 @@ Date: 2026-05-16
 
 Current state: **blocked pending Pro/user approval**.
 
+Phase 3A.3 upgrades the current normalization basis from `unknown` to
+`relative_intensity_only`: the thesis figure labels the same scale as
+reflectance, and the CompleteEASE in-situ screenshot shows dynamic data on the
+same numerical scale, but the exported text headers still say `Intensity` and
+no source proves an absolute reflectance calibration.
+
 The residuals from `run_f35a15cef565fb15` have already been inspected. They may
 be reported as historical context, but they must not be used to select a pass or
 fail threshold for that same run.

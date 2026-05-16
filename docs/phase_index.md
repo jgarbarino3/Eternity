@@ -22,29 +22,34 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A | Active | TiN/SiO2 thesis reflectance reconciliation | Reconcile thesis/paper TiN/SiO2 measured spectra, `30_20_10` reflectance/Psi/Delta/e1e2 exports, sample labels, angle, polarization, normalization, holdout policy, and fail-closed validation candidate. |
 | Phase 3A.1 | Active | Normalization and threshold gate hardening | Audit the already-inspected Phase 3A run, keep current promotion blocked, and prepare machine-readable normalization/threshold policy for future predeclared runs. |
 | Phase 3A.2 | Active | Stack mapping correction | Keep source-backed `d_10nm` -> `3L2/Quartz`, but demote separate `30_20_10` exports to an unresolved candidate bundle until filename-to-thesis provenance is found. |
+| Phase 3A.3 | Active | Thesis figure/data provenance reconciliation | Align `d_10nm` text exports with thesis Figure 4.1, downgrade normalization to relative-intensity-only, and keep `30_20_10` separate unless export provenance is found. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.2 - stack mapping correction**.
+Current phase: **Phase 3A.3 - thesis figure/data provenance reconciliation**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
 Information sufficiency:
 
 - Enough to keep the thesis `d_10nm` validation candidate source-backed at the
-  stack-mapping level.
+  stack-mapping and figure-provenance level.
 - Enough to audit and harden the current gate policy.
 - Enough to preserve Phase 3A residuals as historical context.
+- Enough to classify the present normalization basis as `relative_intensity_only`.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
+- Not enough to claim absolute reflectance normalization.
 - Not enough to promote `run_f35a15cef565fb15` or any Phase 3A run to
   `calibrated_linear_evidence`.
 
 Recommended effort under the current GPT-5.5 assumption:
 
-- Planning: `xhigh` for Pro-style normalization/threshold decisions.
-- Implementation: `high` for gate-policy code, docs, and tests.
+- Planning: `medium` for bounded local provenance closure; `xhigh` only before
+  threshold or calibrated-evidence policy.
+- Implementation: `medium` for search/docs/registry updates; `high` if contract
+  logic changes.
 
 Helpful tools:
 

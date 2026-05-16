@@ -284,7 +284,9 @@ raw_artifacts:
     original_path: /Users/joegarbarino/Desktop/Research Optics/Coding/txt/30_20_10 reflectance.txt
     acquired_at: '2026-05-16'
     source_notes: Phase 3A 30_20_10 measured-looking reflectance/intensity export; filename
-      suggests a TiN/SiO2/TiN stack, but thesis linkage is not source-confirmed.
+      suggests a TiN/SiO2/TiN stack. Phase 3A.3 found an AFRL 6E notebook tying
+      the bundle to a 30 nm TiN / 10 nm SiO2 / 20 nm TiN quartz model, but not
+      to the thesis d_10nm export.
     access_notes: Local user-provided research artifact; not redistributed from an external
       public source.
     provenance_refs:
@@ -433,8 +435,10 @@ samples:
       relationship to thesis d_10nm/3L2 remain unresolved.
     process_notes:
     - Local Coding/txt exports share the 30_20_10 prefix and a Spectroscopic Data timestamp.
-    - Thesis and appendix support a 30 nm TiN / 10 nm SiO2 / 20 nm TiN 3L2 structure,
-      but do not source-confirm these exact filenames as the plotted d_10nm data.
+    - AFRL 6E notebook reads the 30_20_10 p/s intensity file and describes a three-layer
+      quartz substrate model with 30 nm TiN, 10 nm SiO2, and 20 nm TiN.
+    - Thesis and appendix support a matching 3L2 structure, but do not source-confirm
+      these exact filenames as the plotted d_10nm data.
     provenance_refs:
     - phase3a_30_20_10_reflectance
     - phase3a_30_20_10_p_s_intensity
@@ -648,17 +652,36 @@ stacks:
     - role: incident_medium
       material: air
       thickness: null
-      notes: Assumed only for provenance grouping; not calibrated.
-    - role: other
-      material: TiN:SiO2
-      thickness: null
-      notes: Filename-level 30_20_10 stack hint only; layer order and substrate unresolved.
+      notes: Assumed incident medium for provenance grouping; not calibrated.
+    - role: metal
+      material: TiN
+      thickness:
+        value: 20
+        unit: nm
+        uncertainty: null
+      notes: Top-layer interpretation of AFRL 6E notebook layer list; incident order is
+        not directly stated.
+    - role: oxide
+      material: SiO2
+      thickness:
+        value: 10
+        unit: nm
+        uncertainty: null
+      notes: AFRL 6E notebook describes Layer 2 as 10 nm SiO2.
+    - role: metal
+      material: TiN
+      thickness:
+        value: 30
+        unit: nm
+        uncertainty: null
+      notes: Bottom-layer interpretation of AFRL 6E notebook layer list; incident order is
+        not directly stated.
     - role: substrate
-      material: unknown
+      material: quartz
       thickness: null
-      notes: Do not assume quartz without a source tying these exports to thesis 3L2.
-    notes: Phase 3A.2 demoted this bundle from thesis d_10nm auxiliary evidence to an
-      unresolved candidate artifact group.
+      notes: AFRL 6E notebook describes the model as on a quartz substrate.
+    notes: Phase 3A.3 source-backed the 30_20_10 candidate as a 30/10/20 quartz stack
+      through the AFRL 6E notebook, but thesis d_10nm identity remains unresolved.
   thesis_d_15nm_thesis_reflectance_stack:
     stack_id: thesis_d_15nm_thesis_reflectance_stack
     sample_ref: thesis_d_15nm
@@ -1083,9 +1106,10 @@ measurements:
       unit: deg
       uncertainty: null
     geometry_polarization: TE
-    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=12V. Geometry
-      and normalization must be reconciled with thesis before calibration. Thesis text identifies
-      three-layer reflectance as S-polarized/TE at 60 degrees.
+    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=12V. Thesis
+      Figure 4.1 labels the plotted y-axis as Reflectance and matches the table value
+      scale, but the export column is Intensity; Phase 3A.3 treats normalization as
+      relative_intensity_only until absolute reflectance calibration is source-confirmed.
     preprocessing:
     - Raw wavelength/intensity table copied without smoothing or normalization changes.
     forbidden_for_fitting: true
@@ -1110,9 +1134,10 @@ measurements:
       unit: deg
       uncertainty: null
     geometry_polarization: TE
-    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=initial. Geometry
-      and normalization must be reconciled with thesis before calibration. Thesis text identifies
-      three-layer reflectance as S-polarized/TE at 60 degrees.
+    instrument_or_source_notes: Thesis reflectance export for d_10nm, state=initial. Thesis
+      Figure 4.1 labels the plotted y-axis as Reflectance and matches the table value
+      scale, but the export column is Intensity; Phase 3A.3 treats normalization as
+      relative_intensity_only until absolute reflectance calibration is source-confirmed.
     preprocessing:
     - Raw wavelength/intensity table copied without smoothing or normalization changes.
     forbidden_for_fitting: true

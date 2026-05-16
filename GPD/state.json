@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-16",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.2 stack mapping correction plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.3 thesis figure/data provenance plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,14 +18,14 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.2",
-    "current_phase_name": "Stack Mapping Correction",
+    "current_phase": "3A.3",
+    "current_phase_name": "Thesis Figure/Data Provenance Reconciliation",
     "total_phases": 3,
     "current_plan": null,
     "total_plans_in_phase": null,
     "status": "Executing",
     "last_activity": "2026-05-16",
-    "last_activity_desc": "Correcting the Phase 3A stack mapping: thesis d_10nm remains 3L2/Quartz, while separate 30_20_10 exports are demoted to unresolved provenance.",
+    "last_activity_desc": "Reconciled thesis d_10nm text exports with Figure 4.1 provenance and kept normalization relative-intensity-only.",
     "progress_percent": 80,
     "paused_at": null
   },
@@ -58,14 +58,14 @@
     {
       "phase": "3A.1",
       "policy_ref": "docs/phase3a1_threshold_policy.yaml",
-      "normalization_basis": "unknown",
+      "normalization_basis": "relative_intensity_only",
       "threshold_policy_status": "blocked_pending_pro_checkpoint",
       "existing_run_promotion_allowed": false
     }
   ],
   "open_questions": [
     "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
-    "Can the thesis/exported Intensity columns be justified as absolute or consistently normalized reflectance for Phase 3A?",
+    "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?"
   ],
   "resolved_questions": [],
@@ -87,6 +87,11 @@
       "phase": "3A.2",
       "summary": "Keep thesis d_10nm mapped to 3L2/Quartz, but do not map separate 30_20_10 exports to that sample without source evidence.",
       "rationale": "Thesis Table 4.1 and Figure 4.1 support d_10nm/3L2; the thesis and appendix do not source-confirm the separate Coding/txt filenames."
+    },
+    {
+      "phase": "3A.3",
+      "summary": "Treat d_10nm exports as thesis Figure 4.1 provenance with relative_intensity_only normalization, not absolute calibrated reflectance.",
+      "rationale": "The local figure and CompleteEASE screenshot match the table scale, but text exports still say Intensity and no absolute calibration proof was found."
     },
     {
       "phase": "3A",
@@ -125,8 +130,8 @@
   "pending_todos": [
     "Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
-    "Resolve whether thesis/exported intensity spectra are absolute reflectance or only comparable normalized traces.",
-    "Bring back Pro/user guidance for Phase 3A.1 normalization and future threshold policy.",
+    "Resolve whether thesis/exported intensity spectra are absolute reflectance.",
+    "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
   ],
   "blockers": [
@@ -134,7 +139,8 @@
     "FROG labels are not authoritatively mapped to TiON_48/TiON_49.",
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
-    "30_20_10 filename-to-thesis provenance is unresolved."
+    "30_20_10 filename-to-thesis provenance is unresolved.",
+    "Absolute reflectance calibration for thesis Intensity exports is unresolved."
   ],
   "continuation": {
     "schema_version": 1,

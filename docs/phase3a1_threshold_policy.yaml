@@ -1,7 +1,10 @@
 phase_id: Phase 3A.1
 status: blocked_pending_pro_checkpoint
-normalization_basis: unknown
-normalization_evidence_refs: []
+normalization_basis: relative_intensity_only
+normalization_evidence_refs:
+- docs/phase3a3_thesis_data_provenance.md
+- /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/10 nm SiO2 Reflectance.png
+- /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/photo 10 nm SiO2 in situ.png
 thresholds_ref: null
 wavelength_window_nm: null
 metrics: []
