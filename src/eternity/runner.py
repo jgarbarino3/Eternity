@@ -246,17 +246,27 @@ def _write_validation_candidate_artifacts(
         "validation_rmse": float(np.sqrt(np.mean(residual**2))),
         "validation_max_abs_residual": float(np.max(np.abs(residual))),
     }
+    stack = registry.stacks[measurement.stack_ref]
+    stack_mapping_status = (
+        "blocked"
+        if stack.notes
+        and any(
+            term in stack.notes.lower()
+            for term in ("unresolved", "not source-confirmed", "filename-level")
+        )
+        else "pass"
+    )
     write_json(
         gates_dir / "stack_mapping.json",
         {
-            "status": "pass",
+            "status": stack_mapping_status,
             "sample_ref": measurement.sample_ref,
             "stack_ref": measurement.stack_ref,
             "geometry_incidence_angle": measurement.geometry_incidence_angle.model_dump(
                 mode="json"
             ),
             "geometry_polarization": measurement.geometry_polarization,
-            "source": "Thesis Table 4.1 maps 3L2/Quartz to 30 nm TiN / 10 nm SiO2 / 20 nm TiN.",
+            "source": stack.notes,
         },
     )
     forbidden_refs = [
@@ -340,7 +350,11 @@ def _write_validation_candidate_artifacts(
             "holdout_measurement_ref": validation.holdout_measurement_ref,
             "auxiliary_measurement_refs": validation.auxiliary_measurement_refs,
             "metrics": metrics,
-            "blocking_gates": ["thresholds_predeclared", "normalization_gate"],
+            "blocking_gates": [
+                *([] if stack_mapping_status == "pass" else ["stack_mapping"]),
+                "thresholds_predeclared",
+                "normalization_gate",
+            ],
         },
     )
     return metrics

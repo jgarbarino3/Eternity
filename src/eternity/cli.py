@@ -20,7 +20,7 @@ app.add_typer(memory_app, name="memory")
 DEFAULT_PHASE3A1_SPEC_PATH = Path(
     "experiments/examples/linear_tin_sio2_d10nm_validation_candidate.yaml"
 )
-DEFAULT_PHASE3A1_RUN_DIR = Path("results/runs/run_74411c01c8a4b74e")
+DEFAULT_PHASE3A1_RUN_DIR = Path("results/runs/run_f35a15cef565fb15")
 DEFAULT_PHASE3A1_POLICY_PATH = Path("docs/phase3a1_threshold_policy.yaml")
 PHASE3A1_SPEC_OPTION = typer.Option(
     DEFAULT_PHASE3A1_SPEC_PATH,

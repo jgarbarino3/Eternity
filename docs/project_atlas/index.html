@@ -164,7 +164,7 @@
             </div>
             <div class="progress-stack" aria-label="Progress toward first goal">
               <div class="progress-row done"><span>Done</span><strong>V0 synthetic runner and contracts</strong></div>
-              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.1 normalization/threshold gates</strong></div>
+              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.2 stack mapping correction</strong></div>
               <div class="progress-row next"><span>Next</span><strong>Source-backed future policy</strong></div>
             </div>
           </div>
@@ -211,8 +211,9 @@
                   <div class="map-node complete"><span>Complete</span><strong>V0 synthetic runner</strong><div class="sub-branches"><em>YAML spec</em><em>TMM run</em><em>reports</em></div></div>
                   <div class="map-node complete"><span>Complete</span><strong>Claim-status contract</strong><div class="sub-branches"><em>labels</em><em>gates</em><em>report warning</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Phase 3 raw snapshots</strong><div class="sub-branches"><em>hashes</em><em>source notes</em><em>sample IDs</em></div></div>
-                  <div class="map-node in-progress"><span>In progress</span><strong>Phase 3A TiN/SiO2 reconciliation</strong><div class="sub-branches"><em>thesis spectra</em><em>30_20_10 exports</em><em>holdout policy</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Phase 3A TiN/SiO2 reconciliation</strong><div class="sub-branches"><em>thesis d_10nm</em><em>30_20_10 unresolved</em><em>holdout policy</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Phase 3A.1 gate hardening</strong><div class="sub-branches"><em>normalization</em><em>threshold policy</em><em>no promotion</em></div></div>
+                  <div class="map-node in-progress"><span>In progress</span><strong>Phase 3A.2 stack mapping</strong><div class="sub-branches"><em>3L2 source-backed</em><em>30_20_10 demoted</em><em>provenance needed</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Frozen tabulated model</strong><div class="sub-branches"><em>epsilon table</em><em>ENZ crossings</em><em>valid range</em></div></div>
                   <div class="map-node blocked"><span>Parked</span><strong>Phase 3B TiON R/T provenance</strong><div class="sub-branches"><em>sample match</em><em>plot-only R</em><em>raw tables missing</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>no fit leakage</em><em>residual threshold</em><em>claim gate</em></div></div>
@@ -507,15 +508,16 @@
                 but TiON_48/TiON_49 cannot become calibrated evidence without
                 sample-matched transmission/reflection or ellipsometry holdout
                 provenance. Phase 3A follows the TiN/SiO2 thesis path, where
-                local measured spectra exist, but Phase 3A.1 keeps the
-                already-inspected residuals below calibrated promotion until
-                source-backed future policy exists.
+                local measured spectra exist, but Phase 3A.2 separates the
+                source-backed thesis d_10nm stack from unresolved 30_20_10
+                exports. Phase 3A.1 keeps the already-inspected residuals below
+                calibrated promotion until source-backed future policy exists.
               </p>
               <dl>
                 <dt>Forbidden overclaim</dt>
                 <dd>Calibrated TiN/TiON evidence exists.</dd>
                 <dt>Next discriminating test</dt>
-                <dd>Resolve Phase 3A.1 normalization and future predeclared thresholds before promotion.</dd>
+                <dd>Resolve Phase 3A.2 30_20_10 provenance plus Phase 3A.1 normalization and future predeclared thresholds before promotion.</dd>
               </dl>
             </article>
             <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
@@ -613,7 +615,7 @@
           <div class="swimlanes">
             <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
               <h3>Serious Core</h3>
-              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.1 gate audit -> claim status.</p>
+              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.1 gate audit -> claim status.</p>
             </article>
             <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
               <h3>Research Memory</h3>

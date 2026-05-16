@@ -21,20 +21,24 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3 | Active | Real-data grounding | Bring real optical constants and measured spectra into the Serious Core without promoting unsupported claims. |
 | Phase 3A | Active | TiN/SiO2 thesis reflectance reconciliation | Reconcile thesis/paper TiN/SiO2 measured spectra, `30_20_10` reflectance/Psi/Delta/e1e2 exports, sample labels, angle, polarization, normalization, holdout policy, and fail-closed validation candidate. |
 | Phase 3A.1 | Active | Normalization and threshold gate hardening | Audit the already-inspected Phase 3A run, keep current promotion blocked, and prepare machine-readable normalization/threshold policy for future predeclared runs. |
+| Phase 3A.2 | Active | Stack mapping correction | Keep source-backed `d_10nm` -> `3L2/Quartz`, but demote separate `30_20_10` exports to an unresolved candidate bundle until filename-to-thesis provenance is found. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.1 - normalization and threshold gate hardening**.
+Current phase: **Phase 3A.2 - stack mapping correction**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
 Information sufficiency:
 
+- Enough to keep the thesis `d_10nm` validation candidate source-backed at the
+  stack-mapping level.
 - Enough to audit and harden the current gate policy.
 - Enough to preserve Phase 3A residuals as historical context.
-- Not enough to promote `run_74411c01c8a4b74e` or any Phase 3A run to
+- Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
+- Not enough to promote `run_f35a15cef565fb15` or any Phase 3A run to
   `calibrated_linear_evidence`.
 
 Recommended effort under the current GPT-5.5 assumption:

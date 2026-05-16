@@ -6,7 +6,7 @@ Date: 2026-05-16
 
 Current state: **blocked pending Pro/user approval**.
 
-The residuals from `run_74411c01c8a4b74e` have already been inspected. They may
+The residuals from `run_f35a15cef565fb15` have already been inspected. They may
 be reported as historical context, but they must not be used to select a pass or
 fail threshold for that same run.
 

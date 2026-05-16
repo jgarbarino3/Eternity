@@ -197,7 +197,8 @@ Active core move:
 - Reconcile the thesis/paper TiN/SiO2 measured spectra with the sample labels
   and stack records already in the registry.
 - Add the `30_20_10` reflectance, Psi/Delta, p/s intensity, and e1/e2 exports
-  as candidate raw artifacts if their provenance mapping holds.
+  as candidate raw artifacts, but do not treat them as thesis `d_10nm`
+  validation evidence until the filename-to-thesis mapping is source-confirmed.
 - Decide the measurement geometry, polarization, normalization, and holdout
   split policy before any residual thresholds are set.
 - Keep TiON_48/TiON_49 in a parked Phase 3B path unless raw R/T or
@@ -209,8 +210,9 @@ Implemented Phase 3A should emit a fail-closed validation candidate using the
 - frozen TiN and SiO2 epsilon tables;
 - incident-order stack `air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz`;
 - TE/S-polarized, 60-degree comparison against the d=10 nm initial spectrum;
-- `30_20_10` reflectance, p/s intensity, Psi/Delta, and e1/e2 exports as
-  auxiliary audit evidence.
+- `30_20_10` reflectance, p/s intensity, Psi/Delta, and e1/e2 exports as a
+  separate unresolved candidate bundle, not auxiliary evidence for the
+  `d_10nm` holdout.
 
 Phase 3A may emit `weak_within_dataset_holdout`, but it cannot claim
 `calibrated_linear_evidence` while normalization and residual-threshold gates
@@ -228,8 +230,19 @@ Active follow-up:
   and why it remains blocked.
 
 Phase 3A.1 is not a calibration phase. It may prepare future gate policy, but
-it must not convert `run_74411c01c8a4b74e` into
+it must not convert `run_f35a15cef565fb15` into
 `calibrated_linear_evidence`.
+
+#### Phase 3A.2: Stack Mapping Correction
+
+Active correction:
+
+- Keep thesis `d_10nm` mapped to `3L2/Quartz` because the thesis Table 4.1 and
+  Figure 4.1 support the 30 nm TiN / 10 nm SiO2 / 20 nm TiN stack.
+- Demote separate `30_20_10` Coding/txt exports to
+  `phase3a_30_20_10_candidate` because the thesis/appendix do not prove those
+  filenames are the plotted `d_10nm` spectra.
+- Keep calibrated promotion blocked by normalization and threshold gates.
 
 ## Near-Term Reach With Current Tools
 

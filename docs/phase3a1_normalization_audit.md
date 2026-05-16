@@ -13,7 +13,10 @@ comparison, but they are not yet sufficient for `calibrated_linear_evidence`.
 ## Current Evidence
 
 - `thesis_reflectance_d_10nm_initial_measurement` is mapped to
-  `thesis_d_10nm` / `3L2/Quartz`.
+  `thesis_d_10nm` / `3L2/Quartz` by thesis Table 4.1 and Figure 4.1.
+- The separate `30_20_10` Coding/txt exports are no longer treated as
+  `d_10nm` auxiliary evidence; Phase 3A.2 keeps them in an unresolved candidate
+  bundle.
 - Thesis text in the registry identifies the three-layer reflectance geometry
   as S-polarized / TE at 60 degrees.
 - The raw reflectance table was copied without smoothing or normalization

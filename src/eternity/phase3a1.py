@@ -113,6 +113,7 @@ def build_phase3a1_audit(
     claim_status = _load_json(run_dir / "claim_status.json")
     validation_summary = _load_json(run_dir / "validation_summary.json")
     normalization_gate = _load_json(run_dir / "validation_gates" / "normalization_gate.json")
+    stack_mapping = _load_json(run_dir / "validation_gates" / "stack_mapping.json")
     thresholds_gate = _load_json(
         run_dir / "validation_gates" / "thresholds_predeclared.json"
     )
@@ -122,6 +123,7 @@ def build_phase3a1_audit(
         policy.applies_to_existing_run
         and policy.policy_may_promote_calibrated_evidence
         and normalization_gate.get("status") == "pass"
+        and stack_mapping.get("status") == "pass"
         and thresholds_gate.get("status") == "pass"
         and no_fit_leakage.get("status") == "pass"
         and claim_status.get("status") == "calibrated_linear_evidence"
@@ -139,6 +141,8 @@ def build_phase3a1_audit(
         blocking_reasons.append("current_residuals_inspected_before_policy")
     if normalization_gate.get("status") != "pass":
         blocking_reasons.append("normalization_gate_blocked")
+    if stack_mapping.get("status") != "pass":
+        blocking_reasons.append("stack_mapping_gate_blocked")
     if thresholds_gate.get("status") != "pass":
         blocking_reasons.append("thresholds_predeclared_gate_blocked")
     if policy.status != "approved_for_future_runs":
@@ -164,6 +168,7 @@ def build_phase3a1_audit(
         },
         "policy": policy.model_dump(mode="json"),
         "gates": {
+            "stack_mapping": stack_mapping,
             "normalization_gate": normalization_gate,
             "thresholds_predeclared": thresholds_gate,
             "no_fit_leakage": no_fit_leakage,

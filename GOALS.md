@@ -59,6 +59,10 @@ grounding phase:
   hardening`: preserve the already-inspected residuals as historical context,
   keep the current run blocked, and prepare source-backed policy for future
   predeclared validation.
+- The active correction is `Phase 3A.2 - stack mapping correction`: preserve
+  the thesis-supported `d_10nm` / `3L2/Quartz` mapping, but remove the separate
+  `30_20_10` files from the validation candidate until their provenance is
+  proven.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -78,6 +82,9 @@ Current blocker:
 - Phase 3A.1 does not have enough information to pass normalization or threshold
   gates. It can only audit and harden those gates until Pro/user-approved policy
   is recorded before a future run.
+- Phase 3A.2 does not have enough information to use `30_20_10` as thesis
+  `d_10nm` evidence. A Woollam project file, plotting script, lab note, or other
+  source link is still needed.
 
 ## Goal Usage In Codex
 

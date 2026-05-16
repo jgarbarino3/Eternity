@@ -95,6 +95,10 @@ def test_phase3a1_audit_keeps_existing_run_blocked(tmp_path: Path) -> None:
         json.dumps({"status": "blocked"}),
         encoding="utf-8",
     )
+    (gates_dir / "stack_mapping.json").write_text(
+        json.dumps({"status": "pass"}),
+        encoding="utf-8",
+    )
     (gates_dir / "thresholds_predeclared.json").write_text(
         json.dumps({"status": "blocked"}),
         encoding="utf-8",

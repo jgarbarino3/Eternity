@@ -16,6 +16,14 @@ def test_registry_loads_contract_fixture() -> None:
     assert registry.measurements["phase3a_30_20_10_psi_delta_measurement"].kind == (
         "ellipsometry_psi_delta"
     )
+    assert (
+        registry.measurements["phase3a_30_20_10_reflectance_measurement"].sample_ref
+        == "phase3a_30_20_10_candidate"
+    )
+    assert (
+        registry.measurements["thesis_reflectance_d_10nm_initial_measurement"].stack_ref
+        == "thesis_d_10nm_thesis_reflectance_stack"
+    )
     assert registry.splits["synthetic_v0_contract_split"].evidence_strength == "synthetic_fixture"
     assert registry.splits["tin_tion_optical_constants_no_holdout"].evidence_strength == (
         "calibration_only_no_holdout"

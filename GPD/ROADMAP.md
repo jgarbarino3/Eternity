@@ -21,20 +21,34 @@ Decisive outputs:
 
 ## Phase 3A: TiN/SiO2 Thesis Reflectance Reconciliation
 
-Status: validation candidate implemented; followed by Phase 3A.1
+Status: validation candidate implemented; corrected by Phase 3A.2 and followed
+by Phase 3A.1
 
 Decisive outputs:
 
 - Immutable raw snapshots under `lab_data/raw/thesis_phase3a/` for
   `30_20_10` reflectance, p/s intensity, Psi/Delta, derived e1/e2, and SiO2
   Sellmeier epsilon.
-- Registry mapping from `30_20_10` to thesis `d_10nm` / `3L2/Quartz` with the
-  incident-order stack `air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz`.
+- Registry mapping from thesis `d_10nm` to `3L2/Quartz` with the incident-order
+  stack `air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz`.
+- Separate `30_20_10` exports demoted to an unresolved candidate bundle until
+  source evidence links the filenames to a sample and stack.
 - Registry-backed multilayer TMM example
   `experiments/examples/linear_tin_sio2_d10nm_validation_candidate.yaml`.
-- Validation candidate run `results/runs/run_74411c01c8a4b74e`, capped at
+- Validation candidate run `results/runs/run_f35a15cef565fb15`, capped at
   `weak_within_dataset_holdout`, with calibrated promotion blocked by
   `thresholds_predeclared` and `normalization_gate`.
+
+## Phase 3A.2: Stack Mapping Correction
+
+Status: active
+
+Decisive outputs:
+
+- Thesis/appendix evidence checked for 3L2, d=10 nm, 60 degree TE/S-polarized
+  reflectance, and `30_20_10` filename linkage.
+- `d_10nm` remains source-backed as 3L2/Quartz.
+- `30_20_10` files no longer feed the validation candidate.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

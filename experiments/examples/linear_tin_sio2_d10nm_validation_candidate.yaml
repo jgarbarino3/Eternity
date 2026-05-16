@@ -82,11 +82,12 @@ validity_envelope:
     unit: mJ/cm^2
   trusted_notes:
     - "Linear passive TMM only, using frozen TiN and SiO2 epsilon tables."
-    - "Stack maps thesis Table 4.1 sample 3L2/Quartz as air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz."
+    - "Thesis Table 4.1 and Figure 4.1 map d=10 nm to sample 3L2/Quartz; incident-order stack is air / 20 nm TiN / 10 nm SiO2 / 30 nm TiN / quartz."
     - "Comparison window is 400-900 nm."
   untrusted_notes:
     - "Thesis Intensity export normalization has not been proven as absolute reflectance."
     - "No Pro/user-approved residual thresholds have been predeclared."
+    - "Separate 30_20_10 Coding/txt exports are not used as auxiliary evidence for this candidate until filename-to-thesis provenance is source-confirmed."
     - "No bias-state, plasma-frequency refit, nonlinear ENZ, FROG, roughness, or detector response is modeled."
 
 validation:
@@ -94,9 +95,6 @@ validation:
   split_ref: thesis_d_10nm_phase3a_validation_candidate
   holdout_measurement_ref: thesis_reflectance_d_10nm_initial_measurement
   auxiliary_measurement_refs:
-    - phase3a_30_20_10_reflectance_measurement
-    - phase3a_30_20_10_p_s_intensity_measurement
-    - phase3a_30_20_10_psi_delta_measurement
     - thesis_reflectance_d_10nm_12V_measurement
   status_ceiling: weak_within_dataset_holdout
   wavelength_window:

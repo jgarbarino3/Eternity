@@ -142,6 +142,12 @@ def test_phase3a_run_writes_fail_closed_validation_candidate_artifacts() -> None
     assert no_fit_leakage["status"] == "pass"
     assert no_fit_leakage["leaked_measurement_refs"] == []
     assert no_fit_leakage["leaked_raw_artifact_refs"] == []
+    assert "phase3a_30_20_10_reflectance_measurement" not in no_fit_leakage[
+        "forbidden_measurement_refs"
+    ]
+    stack_mapping = json.loads((run_dir / "validation_gates" / "stack_mapping.json").read_text())
+    assert stack_mapping["status"] == "pass"
+    assert "Figure 4.1" in stack_mapping["source"]
     manifest = json.loads((run_dir / "manifest.json").read_text())
     assert manifest["artifacts"]["comparison_table.csv"]["role"] == "holdout"
     assert manifest["artifacts"]["comparison_table.csv"]["kind"] == "validation_comparison_table"
