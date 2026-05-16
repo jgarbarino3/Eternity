@@ -35,15 +35,14 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.5 source-backed export/provenance retrieval after the
-  TiN/SiO2 thesis reflectance candidate:
+- **Doing**: Phase 3A.6 CompleteEASE re-export / measurement packet planning
+  after the TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: Phase 3A.6 CompleteEASE re-export / measurement packet, then
-  Pro/user-approved normalization and thresholds before any future
-  calibrated-evidence promotion attempt.
+- **Next**: execute the Phase 3A.6 packet, then Pro/user-approved normalization
+  and thresholds before any future calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -73,7 +72,7 @@ calibrated_linear_evidence
   -> IN PROGRESS: Phase 3A.3 figure/data provenance reconciliation
   -> COMPLETE: Phase 3A.4 absolute-reflectance decision
   -> BLOCKED: Phase 3A.5 export/provenance retrieval
-  -> NEEDED: Phase 3A.6 re-export or measurement packet
+  -> ACTIVE PLANNING: Phase 3A.6 re-export or measurement packet
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -96,6 +95,8 @@ likely local source locations, the desktop SDSU Google Drive folder, targeted
 Google Drive thesis/defense hits, SDSU slides/reports, and the scanned lab
 notebook. It found related RC2/CompleteEASE and `3L2/Quartz` provenance but no
 exact absolute-`%R` export proof, so the decision is `blocked_needs_new_export`.
+Phase 3A.6 is now the active planning slice: the project is preparing the exact
+source-evidence packet rather than pretending the current data are enough.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

@@ -105,13 +105,17 @@ Result:
 
 ## Phase 3A.6: CompleteEASE Re-export / Measurement Packet
 
-Status: next
+Status: active/planning
 
 Goal:
 
 - Write the exact source-evidence request for a clean future Phase 3A run:
   sample ID, stack, angle, polarization, calibration state, channel name, units,
   export settings, source file, and predeclared threshold-policy boundary.
+
+Plan:
+
+- `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

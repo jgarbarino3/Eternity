@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.5 source-backed export retrieval plus Phase 3A.1 gates
+**Current focus:** Phase 3A.6 CompleteEASE re-export / measurement packet planning plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.5
-**Current Phase Name:** Source-Backed Export / Provenance Retrieval
+**Current Phase:** 3A.6
+**Current Phase Name:** CompleteEASE Re-export / Measurement Packet
 **Total Phases:** 3
-**Current Plan:** none
-**Total Plans in Phase:** none
+**Current Plan:** docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md
+**Total Plans in Phase:** 1
 **Status:** Executing
 **Last Activity:** 2026-05-16
-**Last Activity Description:** Searched likely local RC2/CompleteEASE/thesis sources and found no exact proof that d_10nm Intensity exports are calibrated absolute %R.
+**Last Activity Description:** Planned the source-evidence packet required before any future absolute-reflectance Phase 3A run.
 
 **Progress:** [████████░░] 80%
 

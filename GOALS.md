@@ -71,6 +71,9 @@ grounding phase:
   RC2/CompleteEASE, thesis, SDSU slide/report, and scanned lab-notebook
   provenance, but no exact export/project/recipe/lab-note proof that the
   `d_10nm` `Intensity` columns are calibrated absolute `%R`.
+- The active planning phase is `Phase 3A.6 - CompleteEASE re-export /
+  measurement packet`: define the exact source-evidence request and future-only
+  policy boundary needed before any future absolute-reflectance validation run.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -105,6 +108,9 @@ Current blocker:
   scanned lab notebook. It keeps the status at `blocked_needs_new_export`. The
   current data are still useful for provenance and relative-intensity
   diagnostics, but not for calibrated promotion.
+- Phase 3A.6 has enough information for planning and packet design. It does not
+  yet have enough information to approve absolute normalization, write numeric
+  thresholds, or promote any existing run.
 
 ## Goal Usage In Codex
 

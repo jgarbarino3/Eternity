@@ -298,6 +298,25 @@ Next best core move:
   Pro/user-approved relative-only diagnostic policy that cannot promote to
   `calibrated_linear_evidence`.
 
+#### Phase 3A.6: CompleteEASE Re-export / Measurement Packet
+
+Active planning file:
+`docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`.
+
+Purpose:
+
+- Turn the Phase 3A.5 blocked result into a precise evidence request for the
+  original CompleteEASE/Woollam project, a fresh re-export, an export recipe,
+  or a new measurement note.
+- Require sample identity, stack, angle, polarization, channel name, units,
+  calibration/baseline state, source file identity, hash, and future-only
+  threshold boundaries before any absolute-reflectance run.
+- Keep all existing inspected runs below `calibrated_linear_evidence`.
+
+Not enough information exists yet to complete calibrated Phase 3A promotion.
+Enough information exists to plan the source-evidence packet and prevent another
+ambiguous export from entering the serious core.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before
