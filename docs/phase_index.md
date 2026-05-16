@@ -20,25 +20,27 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 2 | Completed/In progress | V1 registry and contract scaffolding | Claim-status labels, registry schemas, artifact provenance, material and measurement contracts. |
 | Phase 3 | Active | Real-data grounding | Bring real optical constants and measured spectra into the Serious Core without promoting unsupported claims. |
 | Phase 3A | Active | TiN/SiO2 thesis reflectance reconciliation | Reconcile thesis/paper TiN/SiO2 measured spectra, `30_20_10` reflectance/Psi/Delta/e1e2 exports, sample labels, angle, polarization, normalization, holdout policy, and fail-closed validation candidate. |
+| Phase 3A.1 | Active | Normalization and threshold gate hardening | Audit the already-inspected Phase 3A run, keep current promotion blocked, and prepare machine-readable normalization/threshold policy for future predeclared runs. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A - TiN/SiO2 thesis reflectance reconciliation**.
+Current phase: **Phase 3A.1 - normalization and threshold gate hardening**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
 Information sufficiency:
 
-- Enough for a planning and reconciliation pass.
-- Enough to register additional candidate raw artifacts such as `30_20_10 reflectance.txt`, `30_20_10 psi delta.txt`, `30_20_10 p_s intensity.txt`, and `30_20_10 e1 e2.txt`.
-- Not enough yet for `calibrated_linear_evidence` until normalization, threshold policy, and residual gates are resolved.
+- Enough to audit and harden the current gate policy.
+- Enough to preserve Phase 3A residuals as historical context.
+- Not enough to promote `run_74411c01c8a4b74e` or any Phase 3A run to
+  `calibrated_linear_evidence`.
 
 Recommended effort under the current GPT-5.5 assumption:
 
-- Planning: `xhigh`.
-- Implementation: `high`, unless the plan resolves into a narrow metadata-only registration pass, in which case `medium` may be enough.
+- Planning: `xhigh` for Pro-style normalization/threshold decisions.
+- Implementation: `high` for gate-policy code, docs, and tests.
 
 Helpful tools:
 

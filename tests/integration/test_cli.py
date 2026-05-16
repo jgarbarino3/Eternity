@@ -147,3 +147,31 @@ def test_phase3a_run_writes_fail_closed_validation_candidate_artifacts() -> None
     assert manifest["artifacts"]["comparison_table.csv"]["kind"] == "validation_comparison_table"
     assert manifest["artifacts"]["material_model.json"]["role"] == "calibration"
     assert manifest["artifacts"]["artifact_hashes.json"]["kind"] == "artifact_hash_index"
+
+
+def test_phase3a1_audit_reports_blocked_existing_run(tmp_path: Path) -> None:
+    run_result = runner.invoke(
+        app,
+        ["run", "experiments/examples/linear_tin_sio2_d10nm_validation_candidate.yaml"],
+    )
+    assert run_result.exit_code == 0, run_result.output
+    run_dir = Path(run_result.output.strip().splitlines()[-1])
+
+    audit_result = runner.invoke(
+        app,
+        [
+            "phase3a1-audit",
+            "--run-dir",
+            str(run_dir),
+            "--output-dir",
+            str(tmp_path),
+        ],
+    )
+
+    assert audit_result.exit_code == 0, audit_result.output
+    assert (tmp_path / "phase3a1_audit.json").exists()
+    assert (tmp_path / "phase3a1_audit.md").exists()
+    audit = json.loads((tmp_path / "phase3a1_audit.json").read_text())
+    assert audit["status"] == "blocked_existing_run"
+    assert audit["promotion"]["existing_run_allowed"] is False
+    assert "normalization_gate_blocked" in audit["promotion"]["blocking_reasons"]

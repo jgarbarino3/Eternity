@@ -55,6 +55,10 @@ grounding phase:
   reflectance/Psi/Delta/e1e2 exports to exact samples, geometry,
   normalization, and a holdout policy, then emit a fail-closed validation
   candidate whose ceiling is `weak_within_dataset_holdout`.
+- The active follow-up is `Phase 3A.1 - normalization and threshold gate
+  hardening`: preserve the already-inspected residuals as historical context,
+  keep the current run blocked, and prepare source-backed policy for future
+  predeclared validation.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -71,6 +75,9 @@ Current blocker:
   plot-derived evidence.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
+- Phase 3A.1 does not have enough information to pass normalization or threshold
+  gates. It can only audit and harden those gates until Pro/user-approved policy
+  is recorded before a future run.
 
 ## Goal Usage In Codex
 

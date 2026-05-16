@@ -24,3 +24,9 @@ Phase 3A may compare a frozen TiN/SiO2 multilayer prediction against
 `thesis_d_10nm` initial reflectance. Without predeclared residual thresholds and
 normalization approval, the strongest allowed status is
 `weak_within_dataset_holdout`.
+
+Phase 3A.1 records normalization and threshold policy separately from the run
+that already produced residuals. A policy created after residual inspection may
+audit that existing run, but it must not make that existing run calibrated
+evidence. Promotion requires a source-backed normalization decision and
+threshold policy recorded before the future run being judged.

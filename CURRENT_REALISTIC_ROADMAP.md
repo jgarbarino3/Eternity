@@ -216,6 +216,21 @@ Phase 3A may emit `weak_within_dataset_holdout`, but it cannot claim
 `calibrated_linear_evidence` while normalization and residual-threshold gates
 remain blocked.
 
+#### Phase 3A.1: Normalization And Threshold Gate Hardening
+
+Active follow-up:
+
+- Keep the already-inspected Phase 3A residuals as historical context only.
+- Record the normalization decision as a machine-readable gate policy with the
+  current state `unknown`.
+- Record that no residual thresholds are approved for the existing run.
+- Provide an audit command that reports whether the current run can be promoted
+  and why it remains blocked.
+
+Phase 3A.1 is not a calibration phase. It may prepare future gate policy, but
+it must not convert `run_74411c01c8a4b74e` into
+`calibrated_linear_evidence`.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

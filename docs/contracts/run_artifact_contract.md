@@ -40,3 +40,7 @@ Phase 3A validation-candidate runs should additionally emit
 `validation_summary.json` and gate files for stack mapping, no-fit leakage,
 threshold predeclaration, normalization, and claim-status ceiling. Blocked
 threshold or normalization gates must prevent `calibrated_linear_evidence`.
+
+Phase 3A.1 audit artifacts, when written, must include a JSON payload and a
+Markdown summary. They must distinguish existing-run promotion from future-run
+policy readiness and must keep historical residuals out of threshold selection.

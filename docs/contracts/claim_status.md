@@ -31,3 +31,7 @@ Phase 3A TiN/SiO2 runs may use `weak_within_dataset_holdout` for a prepared
 comparison against thesis d=10 nm initial reflectance. That status cannot feed
 serious-core conclusions and must report blocked normalization/threshold gates
 when they are unresolved.
+
+Phase 3A.1 audits those blocked gates. It may report a future policy as ready,
+but it cannot upgrade an already-inspected run unless the policy explicitly
+applied before that run and all gate artifacts pass.

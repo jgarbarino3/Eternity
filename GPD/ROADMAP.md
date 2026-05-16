@@ -21,7 +21,7 @@ Decisive outputs:
 
 ## Phase 3A: TiN/SiO2 Thesis Reflectance Reconciliation
 
-Status: active, fail-closed validation candidate implemented
+Status: validation candidate implemented; followed by Phase 3A.1
 
 Decisive outputs:
 
@@ -36,7 +36,27 @@ Decisive outputs:
   `weak_within_dataset_holdout`, with calibrated promotion blocked by
   `thresholds_predeclared` and `normalization_gate`.
 
+## Phase 3A.1: Normalization And Threshold Gate Hardening
+
+Status: active
+
+Decisive outputs:
+
+- Machine-readable policy `docs/phase3a1_threshold_policy.yaml` with
+  normalization `unknown` and threshold status `blocked_pending_pro_checkpoint`.
+- Audit command `eternity phase3a1-audit` that separates existing-run promotion
+  from future-run policy readiness.
+- Pro checkpoint packet for source-backed normalization and future threshold
+  decisions.
+
 Stop/rethink conditions:
+
+- Existing Phase 3A residuals are used to choose thresholds.
+- A policy created after residual inspection is allowed to promote the existing
+  run.
+- Normalization is marked absolute without source-backed evidence.
+
+Global stop/rethink conditions:
 
 - Any TiN/TiON run is labeled `calibrated_linear_evidence` without an
   independent holdout.

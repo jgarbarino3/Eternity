@@ -1,0 +1,12 @@
+phase_id: Phase 3A.1
+status: blocked_pending_pro_checkpoint
+normalization_basis: unknown
+normalization_evidence_refs: []
+thresholds_ref: null
+wavelength_window_nm: null
+metrics: []
+approver: null
+approved_at: null
+residuals_inspected_before_policy: true
+applies_to_existing_run: false
+policy_may_promote_calibrated_evidence: false

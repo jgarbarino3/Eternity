@@ -7,20 +7,20 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A TiN/SiO2 thesis reflectance reconciliation
+**Current focus:** Phase 3A.1 normalization and threshold gate hardening
 
 ## Current Position
 
-**Current Phase:** 3A
-**Current Phase Name:** TiN/SiO2 Thesis Reflectance Reconciliation
+**Current Phase:** 3A.1
+**Current Phase Name:** Normalization And Threshold Gate Hardening
 **Total Phases:** 3
 **Current Plan:** none
 **Total Plans in Phase:** none
 **Status:** Executing
 **Last Activity:** 2026-05-16
-**Last Activity Description:** Implemented a fail-closed TiN/SiO2 3L2/d_10nm validation candidate and kept claim promotion blocked by normalization and threshold gates.
+**Last Activity Description:** Added Phase 3A.1 policy/audit layer so the existing TiN/SiO2 candidate remains blocked while future normalization and threshold decisions can be recorded cleanly.
 
-**Progress:** [███████░░░] 70%
+**Progress:** [████████░░] 80%
 
 ## Active Calculations
 
@@ -31,6 +31,7 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - Phase 3A candidate emitted `weak_within_dataset_holdout`, not `calibrated_linear_evidence`.
 - Validation summary for `run_74411c01c8a4b74e`: 501 points over 400-900 nm; mean absolute residual about 0.280, RMSE about 0.281, max absolute residual about 0.305.
 - Blocking gates remain `thresholds_predeclared` and `normalization_gate`; serious-core ingestion stays false.
+- Phase 3A.1 policy records normalization as `unknown` and thresholds as `blocked_pending_pro_checkpoint`.
 
 ## Open Questions
 
@@ -52,6 +53,7 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - [Phase 1]: TiN/TiON optical constants can support calibration_only_no_holdout only. — No independent TiON R/T or ellipsometry holdout provenance is registered yet.
 - [Phase 3A]: Map `30_20_10` exports to thesis `d_10nm` / `3L2/Quartz` unless contradicted. — Registry notes preserve the provenance caveat and stack mapping.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
+- [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
 ### Active Approximations
 
@@ -70,6 +72,7 @@ None yet.
 - Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Resolve whether thesis/exported intensity spectra are absolute reflectance or only comparable normalized traces.
+- Bring back Pro/user guidance for Phase 3A.1 normalization and future threshold policy.
 
 ### Blockers/Concerns
 
