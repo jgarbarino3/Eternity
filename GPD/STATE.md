@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.4 absolute reflectance decision plus Phase 3A.1 gates
+**Current focus:** Phase 3A.5 source-backed export retrieval plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.4
-**Current Phase Name:** Absolute Reflectance Decision And Threshold Policy Prep
+**Current Phase:** 3A.5
+**Current Phase Name:** Source-Backed Export / Provenance Retrieval
 **Total Phases:** 3
 **Current Plan:** none
 **Total Plans in Phase:** none
 **Status:** Executing
 **Last Activity:** 2026-05-16
-**Last Activity Description:** Checked local thesis, figure, CompleteEASE/manual, hash, and nearby Woollam evidence and kept d_10nm normalization relative-intensity-only.
+**Last Activity Description:** Searched likely local RC2/CompleteEASE/thesis sources and found no exact proof that d_10nm Intensity exports are calibrated absolute %R.
 
 **Progress:** [████████░░] 80%
 
@@ -34,6 +34,9 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - Phase 3A.1 policy records normalization as `relative_intensity_only` and thresholds as `blocked_pending_pro_checkpoint`.
 - Phase 3A.3 found strong figure-provenance alignment for `d_10nm` and no absolute reflectance calibration proof.
 - Phase 3A.4 preserved `relative_intensity_only` after local evidence/manual checks and prepared future-only threshold policy guidance.
+- Phase 3A.5 found related RC2/CompleteEASE, thesis, SDSU slide/report, and
+  scanned lab-notebook provenance, but no exact source-backed absolute `%R`
+  proof; decision is `blocked_needs_new_export`.
 
 ## Open Questions
 
@@ -61,6 +64,9 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - [Phase 3A.4]: Keep `d_10nm` exports at `relative_intensity_only` until a
   source-backed export, recipe, project file, lab note, or approved policy
   proves absolute normalization before a future residual-gated run.
+- [Phase 3A.5]: Local retrieval did not find exact source-backed absolute `%R`
+  evidence for `d_10nm`. — Continue with relative-intensity diagnostics unless
+  a new export/project/recipe/lab note is recovered.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -83,7 +89,11 @@ None yet.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
-  bundle can be recovered, or pivot to a new measurement/export.
+  bundle can be recovered, or pivot to a new measurement/export. Current local
+  search result: `blocked_needs_new_export`.
+- Phase 3A.6: prepare a CompleteEASE re-export / measurement packet with
+  required sample ID, angle, polarization, calibration state, channel name, and
+  units.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
 
@@ -95,7 +105,8 @@ None yet.
 - Phase 3A `normalization_gate` is blocked.
 - `30_20_10` filename-to-thesis provenance is unresolved.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
-  unresolved and currently blocked by the Phase 3A.4 decision.
+  unresolved and currently blocked by the Phase 3A.5 retrieval decision, even
+  after SDSU Google Drive, thesis/defense, and scanned lab-notebook checks.
 
 ## Session Continuity
 

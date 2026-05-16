@@ -279,14 +279,24 @@ Active decision:
 
 #### Phase 3A.5: Source-Backed Export/Provenance Retrieval
 
-Next targeted follow-up:
+Decision: `blocked_needs_new_export`.
 
-- Search for a CompleteEASE/Woollam project, recipe, export, debug bundle, lab
-  note, or newly exported table that ties the exact thesis dynamic traces to
-  absolute reflectance calibration.
-- If that evidence is found, update the Phase 3A.1 policy for future runs only.
-- If it is not found, keep the thesis spectra as relative-only diagnostics and
-  move the calibrated-evidence route toward a new measurement/export.
+The bounded local/SDSU/Google Drive search found strong RC2/CompleteEASE,
+thesis, SDSU slide, AFRL report, and scanned lab-notebook provenance, including
+related reflectivity/reflection-intensity files and the `3L2/Quartz` sample
+narrative. It still did not find a source-backed export, recipe, project, debug
+bundle, or lab-note statement proving that the exact `d_10nm_initial.txt` and
+`d_10nm_12V.txt` `Intensity` columns are calibrated absolute `%R`.
+
+The Phase 3A normalization basis therefore stays `relative_intensity_only`.
+`run_f35a15cef565fb15` remains historical and capped below calibrated evidence.
+
+Next best core move:
+
+- `Phase 3A.6 - CompleteEASE re-export / measurement packet`: write the exact
+  source-evidence request needed for a clean future run, or define a
+  Pro/user-approved relative-only diagnostic policy that cannot promote to
+  `calibrated_linear_evidence`.
 
 ## Near-Term Reach With Current Tools
 

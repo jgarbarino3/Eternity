@@ -66,11 +66,11 @@ grounding phase:
 - The active provenance closure is `Phase 3A.3 - thesis figure/data provenance
   reconciliation`: align `d_10nm` text exports with thesis Figure 4.1 while
   recording normalization as `relative_intensity_only`.
-- The active decision phase is `Phase 3A.4 - absolute reflectance decision and
-  threshold policy prep`: keep the thesis `d_10nm` exports relative-only unless
-  source-backed evidence proves their `Intensity` columns are calibrated
-  absolute reflectance, and prepare future-run policy without retroactively
-  judging inspected residuals.
+- The completed retrieval phase is `Phase 3A.5 - source-backed export /
+  provenance retrieval`: a bounded local/SDSU/Google Drive search found related
+  RC2/CompleteEASE, thesis, SDSU slide/report, and scanned lab-notebook
+  provenance, but no exact export/project/recipe/lab-note proof that the
+  `d_10nm` `Intensity` columns are calibrated absolute `%R`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -100,6 +100,11 @@ Current blocker:
   Woollam/CompleteEASE artifacts. A new export, project/recipe record, lab note,
   or Pro/user-approved relative-only policy is still needed before any future
   calibrated-evidence attempt.
+- Phase 3A.5 has now searched the likely local source locations, the desktop
+  SDSU Google Drive folder, targeted Google Drive thesis/defense hits, and the
+  scanned lab notebook. It keeps the status at `blocked_needs_new_export`. The
+  current data are still useful for provenance and relative-intensity
+  diagnostics, but not for calibrated promotion.
 
 ## Goal Usage In Codex
 

@@ -35,15 +35,15 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.4 absolute-reflectance decision and threshold-policy prep
-  after the TiN/SiO2 thesis reflectance candidate:
+- **Doing**: Phase 3A.5 source-backed export/provenance retrieval after the
+  TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: Phase 3A.5 source-backed export/provenance retrieval, then
-  Pro/user-approved thresholds before any future calibrated-evidence promotion
-  attempt.
+- **Next**: Phase 3A.6 CompleteEASE re-export / measurement packet, then
+  Pro/user-approved normalization and thresholds before any future
+  calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -71,7 +71,9 @@ calibrated_linear_evidence
   -> IN PROGRESS: Phase 3A.1 normalization/threshold gate hardening
   -> IN PROGRESS: Phase 3A.2 stack mapping correction
   -> IN PROGRESS: Phase 3A.3 figure/data provenance reconciliation
-  -> IN PROGRESS: Phase 3A.4 absolute-reflectance decision
+  -> COMPLETE: Phase 3A.4 absolute-reflectance decision
+  -> BLOCKED: Phase 3A.5 export/provenance retrieval
+  -> NEEDED: Phase 3A.6 re-export or measurement packet
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -89,11 +91,15 @@ grounding runs. Phase 3A now follows the separate TiN/SiO2 measured-reflectance
 path, capped below calibrated evidence until normalization and threshold gates
 are resolved. Phase 3A.3 aligns `d_10nm` with thesis Figure 4.1 while Phase
 3A.4 keeps normalization at relative-intensity-only after local thesis,
-CompleteEASE, hash, and nearby Woollam-artifact checks. Phase 3A.2 keeps thesis
-`d_10nm` source-backed but keeps the separate `30_20_10` files out of the
-validation candidate. Phase 3A.1 now keeps the already-inspected residuals as
-historical context only and blocks promotion until a future predeclared policy
-exists.
+CompleteEASE, hash, and nearby Woollam-artifact checks. Phase 3A.5 searched
+likely local source locations, the desktop SDSU Google Drive folder, targeted
+Google Drive thesis/defense hits, SDSU slides/reports, and the scanned lab
+notebook. It found related RC2/CompleteEASE and `3L2/Quartz` provenance but no
+exact absolute-`%R` export proof, so the decision is `blocked_needs_new_export`.
+Phase 3A.2 keeps thesis `d_10nm` source-backed but
+keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
+now keeps the already-inspected residuals as historical context only and blocks
+promotion until a future predeclared policy exists.
 ```
 
 ## Core Rule

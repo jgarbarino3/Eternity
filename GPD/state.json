@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-16",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.4 absolute reflectance decision plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.5 source-backed export retrieval plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,15 +18,15 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.4",
-    "current_phase_name": "Absolute Reflectance Decision And Threshold Policy Prep",
+    "current_phase": "3A.5",
+    "current_phase_name": "Source-Backed Export / Provenance Retrieval",
     "total_phases": 3,
     "current_plan": null,
     "total_plans_in_phase": null,
     "status": "Executing",
     "last_activity": "2026-05-16",
-    "last_activity_desc": "Checked local thesis, figure, CompleteEASE/manual, hash, and nearby Woollam evidence and kept d_10nm normalization relative-intensity-only.",
-    "progress_percent": 85,
+    "last_activity_desc": "Searched likely local RC2/CompleteEASE/thesis sources and found no exact proof that d_10nm Intensity exports are calibrated absolute %R.",
+    "progress_percent": 88,
     "paused_at": null
   },
   "active_calculations": [
@@ -68,6 +68,14 @@
       "normalization_basis": "relative_intensity_only",
       "absolute_reflectance_confirmed": false,
       "future_policy_may_use_existing_residuals": false
+    },
+    {
+      "phase": "3A.5",
+      "decision_ref": "docs/phase3a5_export_provenance_retrieval.md",
+      "normalization_basis": "relative_intensity_only",
+      "decision": "blocked_needs_new_export",
+      "absolute_reflectance_evidence_found": false,
+      "search_scope": "local Research Optics, Optics Research, Downloads, desktop SDSU Google Drive, targeted Google Drive thesis/defense hits, SDSU slides/reports, and scanned lab notebook"
     }
   ],
   "open_questions": [
@@ -114,6 +122,11 @@
       "phase": "3A.4",
       "summary": "Keep d_10nm exports at relative_intensity_only after local evidence/manual checks.",
       "rationale": "Thesis and figure evidence support measured reflectance provenance, but exported Intensity columns are not source-proven as calibrated absolute reflectance."
+    },
+    {
+      "phase": "3A.5",
+      "summary": "Local retrieval did not find exact source-backed absolute %R evidence for d_10nm.",
+      "rationale": "Related RC2/CompleteEASE and thesis provenance exists, but no exact export/project/recipe/lab-note proof ties the thesis Intensity columns to calibrated absolute reflectance."
     }
   ],
   "approximations": [],
@@ -143,7 +156,8 @@
     "Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
-    "Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug bundle can be recovered, or pivot to a new measurement/export.",
+    "Phase 3A.5 local/SDSU/Google Drive search result is blocked_needs_new_export; pivot to new export/project recovery or relative-only policy.",
+    "Phase 3A.6: prepare a CompleteEASE re-export / measurement packet with required sample ID, angle, polarization, calibration state, channel name, and units.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
   ],
@@ -153,7 +167,7 @@
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
-    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked by the Phase 3A.4 decision."
+    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked by the Phase 3A.5 retrieval decision, even after SDSU Google Drive, thesis/defense, and scanned lab-notebook checks."
   ],
   "continuation": {
     "schema_version": 1,

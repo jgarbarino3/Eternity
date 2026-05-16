@@ -86,13 +86,32 @@ Next source-retrieval target:
 
 ## Phase 3A.5: Source-Backed Export/Provenance Retrieval
 
-Status: next
+Status: completed/blocked
 
 Goal:
 
 - Recover the missing source link needed to upgrade from relative-only
   diagnostics to absolute-reflectance policy, or decide to stop searching and
   require a new measurement/export.
+
+Result:
+
+- Decision `blocked_needs_new_export`.
+- Related RC2/CompleteEASE, thesis, SDSU slide/report, and scanned lab-notebook
+  provenance was found, including reflectivity/reflection-intensity artifacts,
+  but no exact source-backed proof that the thesis `d_10nm` `Intensity` exports
+  are calibrated absolute `%R`.
+- Operational normalization remains `relative_intensity_only`.
+
+## Phase 3A.6: CompleteEASE Re-export / Measurement Packet
+
+Status: next
+
+Goal:
+
+- Write the exact source-evidence request for a clean future Phase 3A run:
+  sample ID, stack, angle, polarization, calibration state, channel name, units,
+  export settings, source file, and predeclared threshold-policy boundary.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

@@ -62,6 +62,19 @@ Evidence that prevents absolute promotion:
 - No local Woollam project file, recipe, export setting, plotting script, or
   lab note was found that maps this exact export column to absolute `%R`.
 
+## Phase 3A.5 Follow-up
+
+Phase 3A.5 extended the source search across the likely Research Optics, Optics
+Research, targeted Downloads, desktop SDSU Google Drive, targeted Google Drive
+thesis/defense hits, SDSU slides/reports, and the scanned lab notebook. It found
+related RC2 reflectivity/reflection-intensity files plus stronger `3L2/Quartz`
+sample provenance, but no exact CompleteEASE/Woollam source record proving that
+the thesis `d_10nm` `Intensity` exports are calibrated absolute `%R`.
+
+Follow-up status: `blocked_needs_new_export`.
+
+See `docs/phase3a5_export_provenance_retrieval.md`.
+
 ## Future Policy
 
 Existing residuals remain historical context only. Because
