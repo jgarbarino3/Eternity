@@ -1,0 +1,50 @@
+phase_id: Phase 3A.6
+status: active_packet_ready
+decision: blocked_needs_new_export
+applies_to_existing_run: false
+existing_run_refs:
+  - results/runs/run_f35a15cef565fb15
+current_normalization_basis: relative_intensity_only
+future_absolute_reflectance_allowed: false
+future_threshold_policy_allowed: false
+required_evidence_fields:
+  sample_identity:
+    - sample_label
+    - substrate
+    - incident_order_stack
+    - stack_source_ref
+  acquisition_geometry:
+    - instrument
+    - software_or_source_environment
+    - incidence_angle_deg
+    - polarization
+    - wavelength_units
+    - bias_state
+  normalization:
+    - exported_channel_name
+    - exported_units
+    - calibration_or_baseline_state
+    - direct_tmm_comparability_statement
+  provenance:
+    - original_absolute_path
+    - sha256
+    - byte_count
+    - source_note
+acceptance_rules:
+  absolute_reflectance_evidence_found:
+    requires_source_backed_units: true
+    requires_calibration_state: true
+    may_apply_to_existing_run: false
+    next_required_phase: Phase 3A.7
+  relative_intensity_policy_only:
+    may_promote_calibrated_linear_evidence: false
+    allowed_use: shape_or_provenance_diagnostic
+  blocked_needs_new_export:
+    allowed_use: provenance_only
+    next_required_action: recover_project_or_reexport
+  new_measurement_required:
+    allowed_use: none_for_calibrated_validation
+prohibited_actions:
+  - promote_run_f35a15cef565fb15
+  - set_thresholds_from_inspected_residuals
+  - treat_intensity_header_as_absolute_reflectance_without_source_proof

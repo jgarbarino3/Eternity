@@ -1,6 +1,6 @@
 # Phase 3A.6 CompleteEASE Re-export / Measurement Packet Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]` / `- [x]`) syntax for tracking.
 
 **Goal:** Build the exact source-evidence packet needed to either recover/export absolute RC2 reflectance for thesis `d_10nm` / `3L2`, or keep Phase 3A permanently relative-only until new evidence appears.
 
@@ -42,7 +42,7 @@ Authoritative claim boundary:
 
 - Create: `docs/phase3a6_completeease_reexport_packet.md`
 
-- [ ] **Step 1: Add the packet header and decision boundary**
+- [x] **Step 1: Add the packet header and decision boundary**
 
 Create `docs/phase3a6_completeease_reexport_packet.md` with:
 
@@ -68,7 +68,7 @@ This packet is not approval to promote any existing run. It is a checklist for
 future source recovery, re-export, or re-measurement.
 ```
 
-- [ ] **Step 2: Add the required sample identity section**
+- [x] **Step 2: Add the required sample identity section**
 
 Append:
 
@@ -94,7 +94,7 @@ Acceptance rule:
 - Fail if the only link is a filename such as `30_20_10`.
 ```
 
-- [ ] **Step 3: Add the required acquisition geometry section**
+- [x] **Step 3: Add the required acquisition geometry section**
 
 Append:
 
@@ -118,7 +118,7 @@ Acceptance rule:
 - Fail if angle or polarization is inferred only from neighboring thesis text.
 ```
 
-- [ ] **Step 4: Add the required normalization/calibration section**
+- [x] **Step 4: Add the required normalization/calibration section**
 
 Append:
 
@@ -145,7 +145,7 @@ Acceptance rule for absolute reflectance:
   reflective intensity without units/calibration state.
 ```
 
-- [ ] **Step 5: Add the required artifact provenance section**
+- [x] **Step 5: Add the required artifact provenance section**
 
 Append:
 
@@ -174,7 +174,7 @@ Acceptance rule:
   promotion.
 ```
 
-- [ ] **Step 6: Add the decision outcomes section**
+- [x] **Step 6: Add the decision outcomes section**
 
 Append:
 
@@ -195,7 +195,7 @@ No outcome from this packet may retroactively promote
 `run_f35a15cef565fb15`.
 ```
 
-- [ ] **Step 7: Add the requester checklist**
+- [x] **Step 7: Add the requester checklist**
 
 Append:
 
@@ -241,7 +241,7 @@ Any export settings:
 - Create: `docs/phase3a6_acceptance_policy.yaml`
 - Modify: `docs/phase3a1_threshold_policy.yaml`
 
-- [ ] **Step 1: Add the default blocked policy**
+- [x] **Step 1: Add the default blocked policy**
 
 Create `docs/phase3a6_acceptance_policy.yaml` with:
 
@@ -298,7 +298,7 @@ prohibited_actions:
   - treat_intensity_header_as_absolute_reflectance_without_source_proof
 ```
 
-- [ ] **Step 2: Link Phase 3A.6 policy from Phase 3A.1**
+- [x] **Step 2: Link Phase 3A.6 policy from Phase 3A.1**
 
 Modify `docs/phase3a1_threshold_policy.yaml` so `normalization_evidence_refs`
 contains:
@@ -332,7 +332,7 @@ policy_may_promote_calibrated_evidence: false
 - Modify: `GPD/STATE.md`
 - Modify: `GPD/state.json`
 
-- [ ] **Step 1: Mark Phase 3A.6 active/planning**
+- [x] **Step 1: Mark Phase 3A.6 active/planning**
 
 Update `docs/phase_index.md` so the Phase 3A.6 row status is:
 
@@ -346,7 +346,7 @@ Update the active recommendation to:
 Current phase: Phase 3A.6 - CompleteEASE re-export / measurement packet.
 ```
 
-- [ ] **Step 2: Preserve the skipped blockers**
+- [x] **Step 2: Preserve the skipped blockers**
 
 Ensure every updated roadmap surface still lists:
 
@@ -357,7 +357,7 @@ Phase 3A absolute normalization remains unresolved until source-backed evidence 
 No already-inspected run may be promoted.
 ```
 
-- [ ] **Step 3: Update the atlas conflict board**
+- [x] **Step 3: Update the atlas conflict board**
 
 Update atlas text so it says Phase 3A.6 is active and its current work is:
 
@@ -367,7 +367,7 @@ the spectra are useful; the conflict is whether their exported units and
 calibration state support absolute reflectance.
 ```
 
-- [ ] **Step 4: Update GPD mirror without changing authority**
+- [x] **Step 4: Update GPD mirror without changing authority**
 
 Update `GPD/state.json` with:
 
@@ -388,7 +388,7 @@ authoritative.
 
 - No new source files beyond docs/policy files.
 
-- [ ] **Step 1: Validate YAML and JSON**
+- [x] **Step 1: Validate YAML and JSON**
 
 Run:
 
@@ -413,7 +413,7 @@ Expected output:
 policy_yaml_and_gpd_json_ok
 ```
 
-- [ ] **Step 2: Run registry and experiment checks**
+- [x] **Step 2: Run registry and experiment checks**
 
 Run:
 
@@ -431,7 +431,7 @@ Expected results:
 - run completes to `results/runs/run_f35a15cef565fb15`;
 - Phase 3A.1 audit still reports normalization and threshold blockers.
 
-- [ ] **Step 3: Run tests and lint**
+- [x] **Step 3: Run tests and lint**
 
 Run:
 
@@ -447,7 +447,7 @@ Expected results:
 - ruff passes;
 - no whitespace errors.
 
-- [ ] **Step 4: Smoke-check atlas**
+- [x] **Step 4: Smoke-check atlas**
 
 Run the existing Playwright file smoke pattern against:
 
@@ -462,7 +462,7 @@ Expected checks:
 - body text includes `blocked_needs_new_export`;
 - conflict board exists.
 
-- [ ] **Step 5: Review claim status remains fail-closed**
+- [x] **Step 5: Review claim status remains fail-closed**
 
 Run:
 
@@ -478,7 +478,7 @@ Expected findings:
 - `normalization_gate_blocked` remains present;
 - `thresholds_predeclared_gate_blocked` remains present.
 
-- [ ] **Step 6: Commit only Phase 3A.6 planning files**
+- [x] **Step 6: Commit only Phase 3A.6 planning files**
 
 Run:
 

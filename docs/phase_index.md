@@ -25,7 +25,7 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.3 | Active | Thesis figure/data provenance reconciliation | Align `d_10nm` text exports with thesis Figure 4.1, downgrade normalization to relative-intensity-only, and keep `30_20_10` separate unless export provenance is found. |
 | Phase 3A.4 | Active | Absolute reflectance decision and threshold policy prep | Keep `d_10nm` at `relative_intensity_only` after local provenance/manual checks, and require source-backed absolute normalization plus future predeclared thresholds before promotion. |
 | Phase 3A.5 | Completed/blocked | Source-backed export/provenance retrieval | Bounded local/SDSU/Google Drive search found related RC2/CompleteEASE, thesis, SDSU slide/report, and scanned lab-notebook provenance, but no exact source-backed proof that `d_10nm` `Intensity` exports are calibrated absolute `%R`; decision is `blocked_needs_new_export`. |
-| Phase 3A.6 | Active/planning | CompleteEASE re-export / measurement packet | Write the exact source-evidence request for a clean future run, or define a Pro/user-approved relative-only diagnostic policy that cannot promote calibrated evidence. Planning file: `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`. |
+| Phase 3A.6 | Active/packet-ready | CompleteEASE re-export / measurement packet | Packet and acceptance policy are ready for a clean future re-export, new measurement, or source-file intake. Artifacts: `docs/phase3a6_completeease_reexport_packet.md`, `docs/phase3a6_acceptance_policy.yaml`, and `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
@@ -41,8 +41,8 @@ Information sufficiency:
   stack-mapping and figure-provenance level.
 - Enough to audit and harden the current gate policy.
 - Enough to decide that local retrieval did not prove absolute `%R`.
-- Enough to plan the exact re-export/measurement packet for future source
-  recovery.
+- Enough to use the exact re-export/measurement packet for future source
+  recovery or measurement intake.
 - Enough to preserve Phase 3A residuals as historical context.
 - Enough to classify and preserve the present normalization basis as
   `relative_intensity_only`.

@@ -300,7 +300,13 @@ Next best core move:
 
 #### Phase 3A.6: CompleteEASE Re-export / Measurement Packet
 
-Active planning file:
+Implementation artifacts:
+
+- `docs/phase3a6_completeease_reexport_packet.md`
+- `docs/phase3a6_acceptance_policy.yaml`
+- `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`
+
+Planning file:
 `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`.
 
 Purpose:
@@ -314,7 +320,7 @@ Purpose:
 - Keep all existing inspected runs below `calibrated_linear_evidence`.
 
 Not enough information exists yet to complete calibrated Phase 3A promotion.
-Enough information exists to plan the source-evidence packet and prevent another
+Enough information exists to use the source-evidence packet and prevent another
 ambiguous export from entering the serious core.
 
 ## Near-Term Reach With Current Tools

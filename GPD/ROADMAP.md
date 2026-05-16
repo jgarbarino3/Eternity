@@ -105,7 +105,7 @@ Result:
 
 ## Phase 3A.6: CompleteEASE Re-export / Measurement Packet
 
-Status: active/planning
+Status: active/packet-ready
 
 Goal:
 
@@ -116,6 +116,11 @@ Goal:
 Plan:
 
 - `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`
+
+Artifacts:
+
+- `docs/phase3a6_completeease_reexport_packet.md`
+- `docs/phase3a6_acceptance_policy.yaml`
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

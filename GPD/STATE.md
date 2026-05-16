@@ -7,7 +7,7 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.6 CompleteEASE re-export / measurement packet planning plus Phase 3A.1 gates
+**Current focus:** Phase 3A.6 CompleteEASE re-export / measurement packet plus Phase 3A.1 gates
 
 ## Current Position
 
@@ -16,9 +16,9 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 **Total Phases:** 3
 **Current Plan:** docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md
 **Total Plans in Phase:** 1
-**Status:** Executing
+**Status:** Packet ready
 **Last Activity:** 2026-05-16
-**Last Activity Description:** Planned the source-evidence packet required before any future absolute-reflectance Phase 3A run.
+**Last Activity Description:** Created the source-evidence packet and acceptance policy required before any future absolute-reflectance Phase 3A run.
 
 **Progress:** [████████░░] 80%
 
@@ -91,9 +91,9 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.6: prepare a CompleteEASE re-export / measurement packet with
-  required sample ID, angle, polarization, calibration state, channel name, and
-  units.
+- Phase 3A.6: use the CompleteEASE re-export / measurement packet to recover,
+  re-export, or newly measure source-backed data with required sample ID, angle,
+  polarization, calibration state, channel name, and units.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
 

@@ -5,6 +5,8 @@ normalization_evidence_refs:
 - docs/phase3a3_thesis_data_provenance.md
 - docs/phase3a4_absolute_reflectance_decision.md
 - docs/phase3a5_export_provenance_retrieval.md
+- docs/phase3a6_completeease_reexport_packet.md
+- docs/phase3a6_acceptance_policy.yaml
 - /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/10 nm SiO2 Reflectance.png
 - /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/photo 10 nm SiO2 in situ.png
 thresholds_ref: null
