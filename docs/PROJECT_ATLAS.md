@@ -35,14 +35,15 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.9 relative-only diagnostic run packet
+- **Doing**: Phase 3A.10 manual source follow-up vs Phase 3B branch decision
   after the TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: decide whether to manually inspect the top quartz dynamic source
-  candidates or return to parked TiON/Phase 3B evidence gathering.
+- **Next**: run a bounded manual source follow-up packet on the top three
+  quartz dynamic candidates, then fall back to Phase 3A.6 or Phase 3B if no
+  exact source/calibration proof appears.
   Absolute normalization and thresholds remain required before any future
   calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
@@ -78,6 +79,7 @@ calibrated_linear_evidence
   -> COMPLETE/BLOCKED: Phase 3A.7 source recovery
   -> COMPLETE/BLOCKED: Phase 3A.8 source candidate triage
   -> COMPLETE/DIAGNOSTIC: Phase 3A.9 relative-only packet
+  -> COMPLETE/DECISION: Phase 3A.10 branch decision
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -112,6 +114,9 @@ evidence. Phase 3A.9 then records those diagnostics for the existing run:
 min-max spectral-shape correlation is high, prediction and measurement dips
 coincide at the 400 nm edge of the inspected window, and both trends increase
 over 400-900 nm. That is useful diagnostic context, not calibrated validation.
+Phase 3A.10 chooses a bounded manual source follow-up on the top three quartz
+dynamic candidates before returning to Phase 3B, because Phase 3B still lacks
+raw sample-matched TiON R/T.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

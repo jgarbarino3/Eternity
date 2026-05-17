@@ -339,3 +339,81 @@ def test_phase3a9_diagnostic_command_writes_artifacts(tmp_path: Path) -> None:
     assert packet["decision"]["can_feed_serious_core"] is False
     assert (tmp_path / "out" / "phase3a9_relative_only_diagnostic_packet.md").exists()
     assert (tmp_path / "out" / "phase3a9_relative_only_diagnostic_table.csv").exists()
+
+
+def test_phase3a10_decision_command_writes_artifacts(tmp_path: Path) -> None:
+    triage_json = tmp_path / "phase3a8.json"
+    triage_json.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.8",
+                "categories": {
+                    "manual_followup_priority": [
+                        {
+                            "path": "/tmp/quartz 10nm pulsed.SEsnap",
+                            "sha256": "abc",
+                            "triage_priority_score": 86,
+                            "score": 40,
+                            "triage_rationale": "matches quartz dynamic",
+                        }
+                    ]
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    diagnostic_json = tmp_path / "phase3a9.json"
+    diagnostic_json.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.9",
+                "decision": {"status": "relative_only_diagnostic_packet_ready"},
+                "diagnostics": {
+                    "shape_correlation_minmax": 0.986,
+                    "trend_direction_agreement": True,
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    registry = tmp_path / "registry.yaml"
+    registry.write_text(
+        "\n".join(
+            [
+                "raw_artifacts:",
+                "  tion_48_0p8pa_epsilon: {}",
+                "  tion_49_1p0pa_epsilon: {}",
+                "measurements:",
+                "  tion_48_0p8pa_epsilon_measurement:",
+                "    sample_ref: tion_48_40nm_0p8pa",
+                "    kind: epsilon_table",
+                "    y_quantity: complex_dielectric_function",
+                "material_models:",
+                "  tion_48_0p8pa_epsilon_model: {}",
+                "  tion_49_1p0pa_epsilon_model: {}",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a10-decision",
+            "--triage-json",
+            str(triage_json),
+            "--diagnostic-json",
+            str(diagnostic_json),
+            "--registry",
+            str(registry),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads((tmp_path / "out" / "phase3a10_branch_decision.json").read_text())
+    assert packet["decision"]["selected_branch"] == "limited_manual_source_followup_first"
+    assert packet["decision"]["can_feed_serious_core"] is False
+    assert (tmp_path / "out" / "phase3a10_branch_decision.md").exists()

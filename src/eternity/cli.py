@@ -27,6 +27,10 @@ from eternity.phase3a8 import (
     write_phase3a8_triage,
 )
 from eternity.phase3a9 import build_phase3a9_packet, write_phase3a9_packet
+from eternity.phase3a10 import (
+    build_phase3a10_decision_from_paths,
+    write_phase3a10_decision,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -104,6 +108,26 @@ PHASE3A9_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and CSV diagnostic artifacts.",
+)
+PHASE3A10_TRIAGE_OPTION = typer.Option(
+    Path("docs/phase3a8_source_candidate_triage.json"),
+    "--triage-json",
+    help="Phase 3A.8 source-candidate triage JSON.",
+)
+PHASE3A10_DIAGNOSTIC_OPTION = typer.Option(
+    Path("docs/phase3a9_relative_only_diagnostic_packet.json"),
+    "--diagnostic-json",
+    help="Phase 3A.9 relative-only diagnostic packet JSON.",
+)
+PHASE3A10_REGISTRY_OPTION = typer.Option(
+    Path("lab_data/registry.yaml"),
+    "--registry",
+    help="Registry used to inspect Phase 3B TiON readiness.",
+)
+PHASE3A10_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown branch-decision artifacts.",
 )
 
 
@@ -287,6 +311,34 @@ def phase3a9_diagnostic(
     packet_without_table = dict(packet)
     packet_without_table.pop("table", None)
     typer.echo(json.dumps(packet_without_table, indent=2, sort_keys=True))
+
+
+@app.command("phase3a10-decision")
+def phase3a10_decision(
+    triage_json: Path = PHASE3A10_TRIAGE_OPTION,
+    diagnostic_json: Path = PHASE3A10_DIAGNOSTIC_OPTION,
+    registry_path: Path = PHASE3A10_REGISTRY_OPTION,
+    output_dir: Path | None = PHASE3A10_OUTPUT_DIR_OPTION,
+) -> None:
+    """Decide whether Phase 3A should do manual source follow-up or return to Phase 3B."""
+
+    try:
+        packet = build_phase3a10_decision_from_paths(
+            triage_json,
+            diagnostic_json,
+            registry_path,
+        )
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as error:
+        typer.echo(f"Phase 3A.10 decision failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3a10_decision(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

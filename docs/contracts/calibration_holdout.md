@@ -53,3 +53,8 @@ Phase 3A.9 packets may reuse the already-inspected comparison table to describe
 relative-only behavior. Because the run and residuals are historical, those
 descriptors must remain non-promoting context and cannot become holdout gates
 for that same run.
+
+Phase 3A.10 may choose a bounded manual source follow-up, but recovered source
+metadata must still prove normalization before any future residual-gated run.
+If that proof is not found, Phase 3A remains relative-only and Phase 3B remains
+blocked until raw sample-matched TiON R/T is registered.

@@ -57,3 +57,7 @@ Phase 3A.9 diagnostic packets may report relative-shape metrics and trend/dip
 descriptors for an already-inspected run. These metrics are descriptive only:
 they are not pass/fail thresholds, they do not repair normalization, and they
 must not upgrade the run's claim status.
+
+Phase 3A.10 branch decisions are planning artifacts. Choosing manual source
+follow-up, clean re-export, or Phase 3B return does not change any run status
+and does not permit serious-core ingestion.

@@ -197,6 +197,32 @@ Result:
 - Both normalized traces trend upward over 400-900 nm.
 - The packet is descriptive context only and cannot feed serious-core evidence.
 
+## Phase 3A.10: Manual Source Follow-Up vs Phase 3B Return Decision
+
+Status: completed/decision
+
+Goal:
+
+- Decide whether to spend the next slice on manual CompleteEASE source
+  follow-up or return to parked Phase 3B TiON evidence gathering.
+
+Artifacts:
+
+- `src/eternity/phase3a10.py`
+- `docs/phase3a10_branch_decision.md`
+- `docs/phase3a10_branch_decision.json`
+
+Result:
+
+- Decision `limited_manual_source_followup_first`.
+- Inspect only the top three quartz dynamic `.SEsnap` candidates unless new
+  evidence appears.
+- Success requires exact `3L2/Quartz` identity plus channel name, units,
+  calibration state, angle, and polarization.
+- If the pass fails, use Phase 3A.6 for a clean export/new measurement or
+  return to Phase 3B.
+- Phase 3B is still not calibrated-ready because TiON raw R/T is missing.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

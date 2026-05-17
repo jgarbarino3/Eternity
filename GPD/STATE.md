@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.9 relative-only diagnostic run packet plus Phase 3A.1 gates
+**Current focus:** Phase 3A.10 branch decision plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.9
-**Current Phase Name:** Relative-Only Diagnostic Run Packet
+**Current Phase:** 3A.10
+**Current Phase Name:** Manual Source Follow-Up vs Phase 3B Return Decision
 **Total Phases:** 3
-**Current Plan:** docs/phase3a9_relative_only_diagnostic_packet.md
+**Current Plan:** docs/phase3a10_branch_decision.md
 **Total Plans in Phase:** 1
 **Status:** Completed/blocked
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Generated a non-promoting relative-shape, dip-position, and trend-direction diagnostic packet for the existing Phase 3A run.
+**Last Activity Description:** Chose one bounded manual source follow-up pass on the top quartz dynamic candidates before falling back to Phase 3A.6 or Phase 3B.
 
 **Progress:** [█████████░] 90%
 
@@ -48,6 +48,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   min-max shape correlation about 0.986, matched 400 nm dip position, and
   shared increasing trend over 400-900 nm. Serious-core ingestion remains
   false.
+- Phase 3A.10 chose `limited_manual_source_followup_first`: inspect the top
+  three quartz dynamic `.SEsnap` candidates only, then fall back to Phase 3A.6
+  clean export/new measurement or Phase 3B if exact source/calibration proof is
+  not found.
 
 ## Open Questions
 
@@ -88,6 +92,8 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - [Phase 3A.9]: Relative-only diagnostics are descriptive, not validating. —
   Shape/dip/trend agreement is useful context, but cannot become a pass/fail
   gate or calibrated-evidence promotion for the already-inspected run.
+- [Phase 3A.10]: Bounded manual source follow-up comes before Phase 3B return.
+  — The follow-up has concrete targets and Phase 3B still lacks raw TiON R/T.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -112,9 +118,9 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.10: decide between manual source follow-up for the top quartz
-  dynamic candidates, using Phase 3A.6 for a clean export/new measurement, or
-  returning to Phase 3B TiON evidence gathering.
+- Phase 3A.11: execute the bounded manual source follow-up packet for the top
+  three quartz dynamic candidates; stop unless exact source identity and
+  calibration proof appears.
 - Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.

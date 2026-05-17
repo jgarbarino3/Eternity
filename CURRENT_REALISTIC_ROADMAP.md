@@ -419,6 +419,37 @@ Enough information exists to say the relative spectral shape is worth keeping
 as a diagnostic clue. Not enough information exists to claim absolute
 reflectance agreement, pass/fail validation, or `calibrated_linear_evidence`.
 
+#### Phase 3A.10: Manual Source Follow-Up vs Phase 3B Return Decision
+
+Decision: `limited_manual_source_followup_first`.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a10.py`
+- `docs/phase3a10_branch_decision.md`
+- `docs/phase3a10_branch_decision.json`
+
+Phase 3A.10 consumes the Phase 3A.8 source triage, Phase 3A.9 diagnostic
+packet, and registry state. It chooses the next branch without doing another
+open-ended source search.
+
+Result:
+
+- Do one bounded manual follow-up pass on the three highest-priority quartz
+  dynamic `.SEsnap` candidates.
+- Stop after those three candidates unless the user adds new evidence.
+- Success requires source-backed channel name, units, calibration state, angle,
+  polarization, and exact `3L2/Quartz` identity.
+- If the manual pass fails, keep Phase 3A relative-only and either use the
+  Phase 3A.6 clean export/new measurement packet or return to Phase 3B TiON
+  evidence gathering.
+- Phase 3B remains parked for calibrated evidence because TiON_48/TiON_49 have
+  optical constants registered but no raw sample-matched R/T.
+
+Enough information exists to run the bounded manual follow-up. Not enough
+information exists to promote calibrated evidence or to unpark TiON as a
+calibrated-evidence route.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

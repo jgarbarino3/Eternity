@@ -87,6 +87,10 @@ grounding phase:
   packet`: it reports spectral shape, dip position, trend direction, and
   figure-provenance diagnostics for the existing run while keeping serious-core
   and calibrated-evidence promotion forbidden.
+- The active branch decision is `Phase 3A.10 - Manual source follow-up vs
+  Phase 3B return`: do one bounded manual follow-up pass on the top three
+  quartz dynamic `.SEsnap` candidates, then fall back to Phase 3A.6 or Phase 3B
+  if exact source/calibration proof is not found.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -135,6 +139,9 @@ Current blocker:
 - Phase 3A.9 has enough information to preserve the current relative-shape
   agreement as a useful diagnostic clue. It does not have enough information to
   convert that clue into absolute reflectance validation or calibrated evidence.
+- Phase 3A.10 has enough information to choose bounded manual source follow-up
+  before returning to Phase 3B. It does not have enough information to unpark
+  TiON as calibrated evidence, because raw sample-matched R/T is still missing.
 
 ## Goal Usage In Codex
 
