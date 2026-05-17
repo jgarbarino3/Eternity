@@ -42,6 +42,19 @@ def test_validate_command_accepts_standrews_validation_candidate_spec() -> None:
     assert "valid: linear_standrews_tin_50nm_validation_candidate_001" in result.output
 
 
+def test_validate_command_accepts_standrews_threshold_locked_clean_run_spec() -> None:
+    result = runner.invoke(
+        app,
+        [
+            "validate",
+            "experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml",
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    assert "valid: linear_standrews_tin_50nm_threshold_locked_clean_run_001" in result.output
+
+
 def test_memory_subcommand_is_registered_without_breaking_v0_cli() -> None:
     result = runner.invoke(app, ["memory", "--help"])
 
@@ -643,3 +656,53 @@ def test_phase3c2_audit_command_writes_future_only_policy(tmp_path: Path) -> Non
     assert (tmp_path / "out" / "phase3c2_standrews_run_audit.md").exists()
     policy_text = (tmp_path / "out" / "phase3c2_future_threshold_policy.yaml").read_text()
     assert "pending_pro_or_user_lock_before_clean_run" in policy_text
+
+
+def test_phase3c3_evaluate_command_writes_clean_run_decision(tmp_path: Path) -> None:
+    run_result = runner.invoke(
+        app,
+        ["run", "experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml"],
+    )
+    assert run_result.exit_code == 0, run_result.output
+    run_dir = Path(run_result.output.strip().splitlines()[-1])
+    assert run_dir.name != "run_42fe0ad6dd295019"
+
+    claim_status = json.loads((run_dir / "claim_status.json").read_text())
+    assert claim_status["can_feed_serious_core"] is False
+    threshold_gate = json.loads(
+        (run_dir / "validation_gates" / "thresholds_predeclared.json").read_text()
+    )
+    normalization_gate = json.loads(
+        (run_dir / "validation_gates" / "normalization_gate.json").read_text()
+    )
+    assert threshold_gate["status"] == "pass"
+    assert normalization_gate["status"] == "pass"
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3c3-evaluate",
+            "--run-dir",
+            str(run_dir),
+            "--policy",
+            "docs/phase3c3_standrews_threshold_policy.yaml",
+            "--pairing-json",
+            "docs/phase3c1_standrews_tin_pairing.json",
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    evaluation = json.loads((tmp_path / "out" / "phase3c3_clean_run_evaluation.json").read_text())
+    assert evaluation["decision"]["status"] in {
+        "clean_run_failed_thresholds",
+        "clean_run_passed_thresholds_ready_for_phase4_review",
+    }
+    assert evaluation["decision"]["can_feed_serious_core"] is False
+    assert evaluation["gates"]["no_fit_leakage"]["status"] == "pass"
+    assert evaluation["gates"]["normalization_gate"]["status"] == "pass"
+    assert "public_standrews_tin_50nm_transmittance_measurement" in (
+        evaluation["gates"]["no_fit_leakage"]["forbidden_measurement_refs"]
+    )
+    assert (tmp_path / "out" / "phase3c3_clean_run_evaluation.md").exists()

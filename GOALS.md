@@ -110,6 +110,10 @@ grounding phase:
   future-only threshold policy`: the existing St Andrews run is explicitly
   non-promotable, a future-only threshold-policy packet exists, and a new clean
   run is required before any residual-gated promotion can be reconsidered.
+- The completed clean-run result is `Phase 3C.3 - St Andrews threshold lock +
+  clean run decision`: thresholds were locked before a new spec/run, the
+  reflectance normalization gate passed for the public St Andrews dataset, and
+  the clean run failed all five predeclared metrics. This is not Phase 4-ready.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -183,6 +187,11 @@ Current blocker:
   `applies_to_existing_run` is false, and `run_42fe0ad6dd295019` residuals are
   historical context only. A future clean run must be created after any
   Pro/user-approved threshold lock.
+- Phase 3C.3 has enough information to make a clean negative decision. It does
+  not have enough information to proceed to Phase 4 promotion review: the
+  threshold-locked run failed MAE, RMSE, max residual, dip-offset, and shape
+  correlation gates. The next useful work is failure triage, not threshold
+  loosening.
 
 ## Goal Usage In Codex
 

@@ -49,3 +49,9 @@ Phase 3C.2 audit artifacts must include a JSON audit, Markdown summary, and
 future threshold-policy YAML. The policy must preserve `applies_to_existing_run:
 false` for any already-inspected run and name the clean-run requirement before
 threshold-gated promotion can be reconsidered.
+
+Phase 3C.3 clean-run artifacts must include the locked threshold-policy YAML,
+the threshold-locked clean-run spec, and a JSON/Markdown evaluation packet. The
+evaluation must report metric pass/fail status, keep `can_feed_serious_core:
+false`, and distinguish `clean_run_failed_thresholds` from
+`clean_run_passed_thresholds_ready_for_phase4_review`.

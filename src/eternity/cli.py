@@ -41,6 +41,7 @@ from eternity.phase3a12 import (
 )
 from eternity.phase3c1 import build_phase3c1_packet_from_paths, write_phase3c1_packet
 from eternity.phase3c2 import build_phase3c2_audit, write_phase3c2_audit
+from eternity.phase3c3 import build_phase3c3_evaluation, write_phase3c3_evaluation
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -198,6 +199,26 @@ PHASE3C2_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and policy audit artifacts.",
+)
+PHASE3C3_RUN_DIR_OPTION = typer.Option(
+    None,
+    "--run-dir",
+    help="Threshold-locked St Andrews clean-run directory to evaluate.",
+)
+PHASE3C3_POLICY_OPTION = typer.Option(
+    Path("docs/phase3c3_standrews_threshold_policy.yaml"),
+    "--policy",
+    help="Locked Phase 3C.3 threshold policy.",
+)
+PHASE3C3_PAIRING_JSON_OPTION = typer.Option(
+    Path("docs/phase3c1_standrews_tin_pairing.json"),
+    "--pairing-json",
+    help="Phase 3C.1 pairing JSON.",
+)
+PHASE3C3_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown clean-run evaluation artifacts.",
 )
 
 
@@ -502,6 +523,34 @@ def phase3c2_audit(
         return
 
     typer.echo(json.dumps(audit, indent=2, sort_keys=True))
+
+
+@app.command("phase3c3-evaluate")
+def phase3c3_evaluate(
+    run_dir: Path | None = PHASE3C3_RUN_DIR_OPTION,
+    policy: Path = PHASE3C3_POLICY_OPTION,
+    pairing_json: Path = PHASE3C3_PAIRING_JSON_OPTION,
+    output_dir: Path | None = PHASE3C3_OUTPUT_DIR_OPTION,
+) -> None:
+    """Evaluate Phase 3C.3 St Andrews threshold-locked clean run."""
+
+    if run_dir is None:
+        typer.echo("Phase 3C.3 evaluation failed: --run-dir is required", err=True)
+        raise typer.Exit(1)
+
+    try:
+        evaluation = build_phase3c3_evaluation(run_dir, policy, pairing_json)
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as error:
+        typer.echo(f"Phase 3C.3 evaluation failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3c3_evaluation(output_dir, evaluation)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(evaluation, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

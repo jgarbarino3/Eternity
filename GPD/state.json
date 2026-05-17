@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3C.2 St Andrews candidate run audit and future-only threshold policy"
+    "current_focus": "Phase 3C.3 St Andrews threshold lock and clean-run decision"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,15 +18,15 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3C.2",
-    "current_phase_name": "St Andrews Candidate Run Audit + Future-Only Threshold Policy",
+    "current_phase": "3C.3",
+    "current_phase_name": "St Andrews Threshold Lock + Clean Run Decision",
     "total_phases": 3,
-    "current_plan": "docs/phase3c2_standrews_run_audit.md",
+    "current_plan": "docs/phase3c3_clean_run_evaluation.md",
     "total_plans_in_phase": 3,
-    "status": "Completed/future-only policy prepared",
+    "status": "Completed/failed validation",
     "last_activity": "2026-05-17",
-    "last_activity_desc": "Audited the St Andrews validation-candidate run, preserved residuals as historical context only, and wrote a future-only threshold policy that requires a clean run after threshold lock.",
-    "progress_percent": 90,
+    "last_activity_desc": "Locked conservative St Andrews reflectance thresholds before a new clean run; the clean run failed all five metrics and cannot move to Phase 4 as-is.",
+    "progress_percent": 92,
     "paused_at": null
   },
   "active_calculations": [
@@ -217,13 +217,38 @@
         "normalization_or_promotion_policy",
         "clean_run_after_threshold_lock"
       ]
+    },
+    {
+      "phase": "3C.3",
+      "decision_ref": "docs/phase3c3_clean_run_evaluation.md",
+      "policy_ref": "docs/phase3c3_standrews_threshold_policy.yaml",
+      "decision": "clean_run_failed_thresholds",
+      "claim_status_decision": "failed_validation",
+      "can_feed_serious_core": false,
+      "clean_run_ready_for_phase4_review": false,
+      "clean_run": "run_f6ea582618328f44",
+      "failed_metrics": [
+        "mean_absolute_error",
+        "root_mean_square_error",
+        "max_absolute_residual",
+        "dip_wavelength_offset_nm",
+        "shape_correlation_minmax"
+      ],
+      "metrics": {
+        "mean_absolute_error": 0.084748221728215,
+        "root_mean_square_error": 0.17824688885208068,
+        "max_absolute_residual": 0.697624347,
+        "dip_wavelength_offset_nm": -141.92999999999995,
+        "shape_correlation_minmax": -0.11145385096355263
+      },
+      "next": "Phase 3C.4 failure triage"
     }
   ],
   "open_questions": [
     "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
-    "Should Phase 3C.3 lock future thresholds and run a clean St Andrews validation, or keep Phase 3C as a weak-within-dataset diagnostic lane?"
+    "Is the Phase 3C.3 failure caused by material-table pairing, substrate/roughness assumptions, or a limitation of the current zero-fit TMM model?"
   ],
   "resolved_questions": [],
   "performance_metrics": {
@@ -314,6 +339,11 @@
       "phase": "3C.2",
       "summary": "St Andrews residuals are historical context only.",
       "rationale": "A future threshold policy now exists, but it has applies_to_existing_run false and cannot promote run_42fe0ad6dd295019."
+    },
+    {
+      "phase": "3C.3",
+      "summary": "St Andrews threshold-locked clean run failed.",
+      "rationale": "Reflectance normalization is acceptable for this public dataset policy, but the current 50 C epsilon / RT.xlsx pairing fails all five predeclared metrics and is not Phase 4-ready."
     }
   ],
   "approximations": [],
@@ -348,7 +378,7 @@
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack.",
-    "Phase 3C.3: decide whether to lock thresholds before a clean St Andrews run, using Pro/GPD and optionally Consensus MCP, or keep Phase 3C diagnostic-only."
+    "Phase 3C.4: triage the St Andrews threshold failure before revising the material pairing/model or parking the lane as diagnostic-only."
   ],
   "blockers": [
     "TiON_48/TiON_49 raw R/T spectra are not registered.",
@@ -357,7 +387,7 @@
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
     "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
-    "Phase 3C.2 policy is future-only and cannot promote the existing St Andrews run. Thresholds remain pending until locked before a clean run."
+    "Phase 3C.3 clean run failed all locked reflectance thresholds; do not proceed to Phase 4 without failure triage."
   ],
   "continuation": {
     "schema_version": 1,

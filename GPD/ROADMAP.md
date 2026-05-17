@@ -365,8 +365,38 @@ Current result:
 
 Next:
 
-- Phase 3C.3 should decide whether to lock thresholds before a new clean run
-  or keep Phase 3C as a weak-within-dataset diagnostic lane.
+- Phase 3C.3 locks thresholds before a new clean run and records whether the
+  public St Andrews lane is Phase 4-ready.
+
+## Phase 3C.3: St Andrews Threshold Lock + Clean Run Decision
+
+Status: completed / failed validation
+
+Goal:
+
+- Lock conservative reflectance-only thresholds before a clean run.
+- Accept St Andrews reflectance normalization for the public dataset only under
+  the locked policy.
+- Decide whether the clean run is ready for Phase 4 review.
+
+Artifacts:
+
+- `docs/phase3c3_standrews_threshold_policy.yaml`
+- `experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml`
+- `docs/phase3c3_clean_run_evaluation.md`
+- `docs/phase3c3_clean_run_evaluation.json`
+
+Result:
+
+- Decision `clean_run_failed_thresholds`.
+- Clean run `run_f6ea582618328f44` failed MAE, RMSE, max absolute residual,
+  dip-offset, and min-max shape-correlation gates.
+- Serious-core ingestion remains false; this lane is not Phase 4-ready as-is.
+
+Next:
+
+- Phase 3C.4 should triage the failure before revising the model or parking the
+  St Andrews lane.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

@@ -44,10 +44,12 @@ Current progress:
 - **Done**: Phase 3C.2 St Andrews candidate run audit + future-only threshold
   policy. The existing St Andrews run is non-promotable and a clean future run
   is required after any threshold lock.
-- **Next**: Phase 3C.3 St Andrews threshold lock + clean run decision. Pairing
-  remains `candidate_supported_reflectance_only`, transmittance is auxiliary,
-  and predeclared thresholds remain required before any calibrated-evidence
-  promotion attempt.
+- **Done**: Phase 3C.3 St Andrews threshold lock + clean run decision. The
+  clean run failed all five predeclared reflectance metrics and cannot move to
+  Phase 4 as-is.
+- **Next**: Phase 3C.4 St Andrews failure triage. Decide whether the failure is
+  pairing/material-model mismatch, roughness/substrate assumptions, or a model
+  limitation before parking or revising the lane.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -87,7 +89,8 @@ calibrated_linear_evidence
   -> COMPLETE: Phase 3C public TiN dataset intake
   -> COMPLETE: Phase 3C.1 St Andrews TiN pairing
   -> COMPLETE: Phase 3C.2 run audit / future-only policy
-  -> NEXT: Phase 3C.3 threshold lock / clean run decision
+  -> COMPLETE/FAILED: Phase 3C.3 threshold lock / clean run decision
+  -> NEXT: Phase 3C.4 St Andrews failure triage
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -138,7 +141,11 @@ fail-closed validation candidate. This is promising but still blocked from
 calibrated promotion. Phase 3C.2 audits the existing run and preserves its
 residuals as historical context only: the draft threshold policy is future-only,
 `applies_to_existing_run` is false, and a clean run is required after any
-threshold lock.
+threshold lock. Phase 3C.3 locks conservative reflectance thresholds before a
+new clean run and accepts St Andrews reflectance normalization for this public
+dataset, but the run fails all five metrics. The conflict has moved from
+"can we lock thresholds?" to "is the failure caused by pairing/material-model
+mismatch, missing roughness/substrate physics, or a fundamental model limit?"
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

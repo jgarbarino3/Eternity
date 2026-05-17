@@ -36,12 +36,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3C | Completed/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready. |
 | Phase 3C.1 | Completed/fail-closed candidate | St Andrews TiN pairing + validation candidate | Extracted `RT.xlsx` into canonical R/T CSV snapshots, registered `50nm-MTiN-50c` as the candidate frozen epsilon input, added the St Andrews sample/stack/material/split records, and created a normal-incidence validation candidate capped at `weak_within_dataset_holdout`. |
 | Phase 3C.2 | Completed/future-only policy | St Andrews candidate run audit + threshold policy decision | Audited `run_42fe0ad6dd295019`, preserved residuals as historical context, and wrote a pending future-only threshold policy with `applies_to_existing_run: false`. |
-| Phase 3C.3 | Recommended | St Andrews threshold lock + clean run decision | Decide whether to lock defensible thresholds before a new clean run, or keep Phase 3C as a weak-within-dataset diagnostic lane. |
+| Phase 3C.3 | Completed/failed-validation | St Andrews threshold lock + clean run decision | Locked conservative reflectance thresholds before `run_f6ea582618328f44`; the clean run failed all five metrics and cannot move to Phase 4 as-is. |
+| Phase 3C.4 | Recommended | St Andrews failure triage | Decide whether the Phase 3C.3 failure is caused by material-table mismatch, roughness/substrate assumptions, pairing ambiguity, or model limitations before parking or revising the St Andrews lane. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3C.2 - St Andrews candidate run audit + threshold policy decision**.
+Current phase: **Phase 3C.3 - St Andrews threshold lock + clean run decision**.
 
 Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization
 proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The
@@ -88,6 +89,10 @@ Information sufficiency:
   `run_42fe0ad6dd295019` is explicitly non-promotable, the policy has
   `applies_to_existing_run: false`, and a next clean run is required before any
   threshold-gated judgment.
+- Enough to complete Phase 3C.3 as a clean negative threshold decision:
+  the St Andrews reflectance normalization gate is accepted for this public
+  dataset, but the clean run failed all five predeclared metrics and remains
+  unable to feed the serious core.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -97,18 +102,20 @@ Information sufficiency:
 - Not enough to set pass/fail thresholds for already-inspected residuals.
 - Not enough to run Phase 3C as calibrated evidence yet: the pairing is only
   `candidate_supported_reflectance_only`, transmittance scaling/noise remains
-  auxiliary, and future threshold policy must be approved before any promoted
-  residual-gated run.
+  auxiliary, and the threshold-locked clean run failed.
 - Not enough to use Phase 3C.2 residuals as threshold evidence. They were
   inspected before policy approval and are historical context only.
+- Not enough to move to Phase 4 promotion review without explaining or fixing
+  the Phase 3C.3 failure.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3C.3 - St Andrews Threshold Lock + Clean Run Decision**. Planning:
-  GPT-5.5 `xhigh`, because this is a threshold/promotion fork and residuals
-  have already been seen once. Implementation: `medium` for a decision packet,
-  or `high` if claim gates/contracts change. Use Pro/GPD and optionally
-  Consensus MCP before approving any future thresholds.
+- **Phase 3C.4 - St Andrews Failure Triage**. Planning: GPT-5.5 `high`, because
+  the threshold result is now cleanly negative and the next decision is a
+  bounded forensic triage, not a threshold-approval fork. Implementation:
+  `medium` for report-only triage, or `high` if material-provider or claim-gate
+  code changes. Use GPD verifier/checker and optionally Consensus MCP/current
+  literature search before proposing any model revision.
 
 Helpful tools:
 

@@ -74,3 +74,9 @@ future threshold policy. Because the current St Andrews residuals were already
 inspected before threshold approval, that policy must set
 `applies_to_existing_run: false`; calibrated promotion requires a later clean
 run after the policy is locked.
+
+Phase 3C.3 may lock thresholds for a later St Andrews clean run and may treat
+the reflectance channel as an absolute fraction when the public paper/RT.xlsx
+normalization evidence is recorded. Transmittance remains auxiliary. A clean
+run that fails any locked metric is `failed_validation` for this lane, not a
+reason to loosen thresholds after inspection.

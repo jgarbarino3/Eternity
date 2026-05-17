@@ -7,20 +7,20 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3C.2 St Andrews candidate run audit and future-only threshold policy
+**Current focus:** Phase 3C.3 St Andrews threshold lock and clean-run decision
 
 ## Current Position
 
-**Current Phase:** 3C.2
-**Current Phase Name:** St Andrews Candidate Run Audit + Future-Only Threshold Policy
+**Current Phase:** 3C.3
+**Current Phase Name:** St Andrews Threshold Lock + Clean Run Decision
 **Total Phases:** 3
-**Current Plan:** docs/phase3c2_standrews_run_audit.md
+**Current Plan:** docs/phase3c3_clean_run_evaluation.md
 **Total Plans in Phase:** 3
-**Status:** Completed/future-only policy prepared
+**Status:** Completed/failed validation
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Audited the St Andrews validation-candidate run, preserved residuals as historical context only, and wrote a future-only threshold policy that requires a clean run after threshold lock.
+**Last Activity Description:** Locked conservative St Andrews reflectance thresholds before a new clean run; the clean run failed all five metrics and cannot move to Phase 4 as-is.
 
-**Progress:** [█████████░] 90%
+**Progress:** [█████████░] 92%
 
 ## Active Calculations
 
@@ -74,6 +74,11 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   remains non-promotable, `applies_to_existing_run` is false, and the next
   calibrated-evidence attempt would require thresholds locked before a new
   clean run.
+- Phase 3C.3 wrote `docs/phase3c3_standrews_threshold_policy.yaml`,
+  `experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml`,
+  and `docs/phase3c3_clean_run_evaluation.md` / `.json`: clean run
+  `run_f6ea582618328f44` failed all five predeclared metrics and is not ready
+  for Phase 4 review.
 
 ## Open Questions
 
@@ -81,8 +86,8 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
-- Should Phase 3C.3 lock future thresholds and run a clean St Andrews
-  validation, or keep Phase 3C as a weak-within-dataset diagnostic lane?
+- Is the Phase 3C.3 failure caused by material-table pairing, substrate /
+  roughness assumptions, or a limitation of the current zero-fit TMM model?
 
 ## Performance Metrics
 
@@ -135,6 +140,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - [Phase 3C.2]: St Andrews residuals are historical context only. — A future
   threshold policy now exists, but it has `applies_to_existing_run: false` and
   cannot promote `run_42fe0ad6dd295019`.
+- [Phase 3C.3]: St Andrews threshold-locked clean run failed. — The public
+  dataset reflectance normalization is acceptable for this policy, but the
+  current 50 C epsilon / RT.xlsx pairing fails all five metrics and is not
+  Phase 4-ready.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -165,8 +174,8 @@ None yet.
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
-- Phase 3C.3: decide whether to lock thresholds before a clean St Andrews run,
-  using Pro/GPD and optionally Consensus MCP, or keep Phase 3C diagnostic-only.
+- Phase 3C.4: triage the St Andrews threshold failure before revising the
+  material pairing/model or parking the lane as diagnostic-only.
 
 ### Blockers/Concerns
 
@@ -178,8 +187,8 @@ None yet.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
-- Phase 3C.2 policy is future-only and cannot promote the existing St Andrews
-  run. Thresholds remain pending until locked before a clean run.
+- Phase 3C.3 clean run failed all locked reflectance thresholds; do not proceed
+  to Phase 4 without failure triage.
 
 ## Session Continuity
 

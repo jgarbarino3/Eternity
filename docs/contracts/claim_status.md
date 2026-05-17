@@ -84,3 +84,9 @@ Phase 3C.2 audit artifacts may prepare a future threshold policy, but they must
 mark already-inspected St Andrews runs as non-promotable. A Phase 3C.2 policy
 with `applies_to_existing_run: false` and pending approval cannot raise any run
 above `weak_within_dataset_holdout`.
+
+Phase 3C.3 clean-run evaluations may accept St Andrews `RT.xlsx` reflectance as
+absolute fraction only under the locked public-dataset policy. Passing those
+thresholds can only make a run ready for Phase 4 review; failing any locked
+threshold emits a `failed_validation` decision packet and cannot feed the
+serious core.

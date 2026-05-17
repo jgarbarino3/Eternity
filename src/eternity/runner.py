@@ -17,6 +17,10 @@ from eternity.artifacts import sha256_file
 from eternity.claim_status import ClaimStatus
 from eternity.ids import deterministic_hash, run_id_for_spec
 from eternity.optical_data import load_reflectance_spectrum
+from eternity.phase3c3 import (
+    load_phase3c3_policy,
+    phase3c3_policy_allows_reflectance_normalization,
+)
 from eternity.registry import (
     LabDataRegistry,
     artifact_path,
@@ -199,6 +203,11 @@ def _write_validation_candidate_artifacts(
     run_dir: Path,
     gates_dir: Path,
 ) -> dict[str, float | str]:
+    threshold_policy = (
+        load_phase3c3_policy(Path(validation.thresholds_ref))
+        if validation.thresholds_ref is not None
+        else None
+    )
     measurement = registry.measurements[validation.holdout_measurement_ref]
     artifact = registry.raw_artifacts[measurement.raw_artifact_ref]
     spectrum = load_reflectance_spectrum(artifact_path(artifact, registry_path))
@@ -317,6 +326,7 @@ def _write_validation_candidate_artifacts(
         {
             "status": "blocked" if validation.thresholds_ref is None else "pass",
             "thresholds_ref": validation.thresholds_ref,
+            "policy_status": threshold_policy.get("status") if threshold_policy else None,
             "reason": (
                 "No Pro/user-approved residual thresholds were predeclared."
                 if validation.thresholds_ref is None
@@ -324,12 +334,25 @@ def _write_validation_candidate_artifacts(
             ),
         },
     )
+    normalization_pass = bool(
+        threshold_policy
+        and phase3c3_policy_allows_reflectance_normalization(
+            threshold_policy,
+            validation.holdout_measurement_ref,
+        )
+    )
     write_json(
         gates_dir / "normalization_gate.json",
         {
-            "status": "blocked",
+            "status": "pass" if normalization_pass else "blocked",
             "reason": (
-                "The holdout normalization is not approved for calibrated promotion."
+                "Phase 3C.3 accepts St Andrews RT.xlsx reflectance as an absolute "
+                "fraction for a future clean-run threshold decision."
+                if normalization_pass
+                else "The holdout normalization is not approved for calibrated promotion."
+            ),
+            "normalization_basis": (
+                threshold_policy.get("normalization_basis") if threshold_policy else None
             ),
         },
     )
@@ -351,8 +374,8 @@ def _write_validation_candidate_artifacts(
             "metrics": metrics,
             "blocking_gates": [
                 *([] if stack_mapping_status == "pass" else ["stack_mapping"]),
-                "thresholds_predeclared",
-                "normalization_gate",
+                *([] if validation.thresholds_ref is not None else ["thresholds_predeclared"]),
+                *([] if normalization_pass else ["normalization_gate"]),
             ],
         },
     )
@@ -414,10 +437,17 @@ def run_experiment(spec_path: Path, results_root: Path = Path("results/runs")) -
         source_type = source_provenance["source_type"]
         if is_validation_candidate:
             claim_status = ClaimStatus.WEAK_WITHIN_DATASET_HOLDOUT
-            claim_reason = (
-                "A measured-holdout comparison was prepared, but calibrated "
-                "promotion is blocked by threshold and normalization gates."
-            )
+            if spec.validation and spec.validation.thresholds_ref is not None:
+                claim_reason = (
+                    "A measured-holdout comparison was prepared under a predeclared "
+                    "threshold policy, but calibrated promotion still requires a "
+                    "separate clean-run evaluation and Phase 4 review."
+                )
+            else:
+                claim_reason = (
+                    "A measured-holdout comparison was prepared, but calibrated "
+                    "promotion is blocked by threshold and normalization gates."
+                )
         else:
             claim_status = ClaimStatus.CALIBRATION_ONLY_NO_HOLDOUT
             claim_reason = (

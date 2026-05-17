@@ -1,0 +1,144 @@
+{
+  "boundary": "Phase 3C.3 may decide whether a clean run is ready for Phase 4 review, but it cannot feed the serious core or promote to calibrated_linear_evidence.",
+  "decision": {
+    "can_feed_serious_core": false,
+    "claim_status_decision": "failed_validation",
+    "clean_run_ready_for_phase4_review": false,
+    "existing_phase3c2_run_promotable": false,
+    "next_step": "inspect pairing/material-model mismatch or park St Andrews as diagnostic",
+    "status": "clean_run_failed_thresholds"
+  },
+  "gates": {
+    "claim_status": {
+      "can_feed_serious_core": false,
+      "reason": "A measured-holdout comparison was prepared under a predeclared threshold policy, but calibrated promotion still requires a separate clean-run evaluation and Phase 4 review.",
+      "status": "weak_within_dataset_holdout"
+    },
+    "no_fit_leakage": {
+      "fitting_may_access_holdout_y": false,
+      "forbidden_measurement_refs": [
+        "public_standrews_tin_50nm_reflectance_measurement",
+        "public_standrews_tin_50nm_transmittance_measurement"
+      ],
+      "forbidden_raw_artifact_refs": [
+        "public_standrews_tin_50nm_reflectance",
+        "public_standrews_tin_50nm_transmittance"
+      ],
+      "leaked_measurement_refs": [],
+      "leaked_raw_artifact_refs": [],
+      "reason": "Frozen material inputs do not reference forbidden holdout or auxiliary data.",
+      "status": "pass",
+      "used_material_model_refs": [
+        "public_standrews_tin_50nm_50c_epsilon_model"
+      ],
+      "used_measurement_refs": [
+        "public_standrews_tin_50nm_50c_epsilon_measurement"
+      ],
+      "used_raw_artifact_refs": [
+        "public_standrews_tin_50nm_50c_epsilon"
+      ]
+    },
+    "normalization_gate": {
+      "normalization_basis": {
+        "channel": "reflectance",
+        "evidence_refs": [
+          "docs/phase3c1_standrews_tin_pairing.md",
+          "docs/phase3c2_standrews_run_audit.md",
+          "lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf"
+        ],
+        "rationale": "The public paper labels Figure 4 as normal-incidence reflectance and transmittance spectra for 50 nm TiN on glass. The extracted RT.xlsx reflectance channel has a minimum of about 0.20377 near 542 nm, matching the paper text reporting roughly 20 percent reflectance near 540 nm.",
+        "status": "absolute_fraction_accepted_for_reflectance"
+      },
+      "reason": "Phase 3C.3 accepts St Andrews RT.xlsx reflectance as an absolute fraction for a future clean-run threshold decision.",
+      "status": "pass"
+    },
+    "policy_gate": {
+      "blocking_reasons": [],
+      "run_id": "run_f6ea582618328f44",
+      "status": "pass"
+    },
+    "thresholds_predeclared": {
+      "policy_status": "locked_for_future_clean_run",
+      "reason": "Threshold policy was declared before residual inspection.",
+      "status": "pass",
+      "thresholds_ref": "docs/phase3c3_standrews_threshold_policy.yaml"
+    }
+  },
+  "generated_at": "2026-05-17T22:04:53.012894+02:00",
+  "inputs": {
+    "historical_run_excluded": "run_42fe0ad6dd295019",
+    "pairing_json": "docs/phase3c1_standrews_tin_pairing.json",
+    "policy": "docs/phase3c3_standrews_threshold_policy.yaml",
+    "run_created_at": "2026-05-17T20:04:52.150885+00:00",
+    "run_dir": "results/runs/run_f6ea582618328f44"
+  },
+  "metrics": {
+    "dip_wavelength_offset_nm": -141.92999999999995,
+    "max_absolute_residual": 0.697624347,
+    "mean_absolute_error": 0.084748221728215,
+    "measurement_dip": {
+      "value": 0.20377,
+      "wavelength_nm": 542.06
+    },
+    "prediction_dip": {
+      "value": 0.194253217,
+      "wavelength_nm": 400.13
+    },
+    "root_mean_square_error": 0.17824688885208068,
+    "shape_correlation_minmax": -0.11145385096355263,
+    "validation_points": 1785,
+    "wavelength_window_nm": [
+      400.13,
+      999.82
+    ]
+  },
+  "phase_id": "Phase 3C.3",
+  "threshold_evaluation": {
+    "failed_metrics": [
+      "mean_absolute_error",
+      "root_mean_square_error",
+      "max_absolute_residual",
+      "dip_wavelength_offset_nm",
+      "shape_correlation_minmax"
+    ],
+    "metrics": [
+      {
+        "comparator": "less_equal",
+        "name": "mean_absolute_error",
+        "status": "fail",
+        "threshold": 0.04,
+        "value": 0.084748221728215
+      },
+      {
+        "comparator": "less_equal",
+        "name": "root_mean_square_error",
+        "status": "fail",
+        "threshold": 0.06,
+        "value": 0.17824688885208068
+      },
+      {
+        "comparator": "less_equal",
+        "name": "max_absolute_residual",
+        "status": "fail",
+        "threshold": 0.15,
+        "value": 0.697624347
+      },
+      {
+        "comparator": "abs_less_equal",
+        "name": "dip_wavelength_offset_nm",
+        "status": "fail",
+        "threshold": 40.0,
+        "value": -141.92999999999995
+      },
+      {
+        "comparator": "greater_equal",
+        "name": "shape_correlation_minmax",
+        "status": "fail",
+        "threshold": 0.9,
+        "value": -0.11145385096355263
+      }
+    ],
+    "status": "fail"
+  },
+  "title": "St Andrews Threshold Lock + Clean Run Decision"
+}

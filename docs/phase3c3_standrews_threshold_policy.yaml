@@ -1,0 +1,68 @@
+phase_id: Phase 3C.3
+policy: standrews_threshold_policy
+status: locked_for_future_clean_run
+created_at: '2026-05-17T19:48:50+00:00'
+applies_to_existing_runs: false
+excluded_run_refs:
+- results/runs/run_42fe0ad6dd295019
+excluded_run_ids:
+- run_42fe0ad6dd295019
+policy_may_promote_calibrated_evidence: false
+phase4_review_required: true
+wavelength_window_nm:
+  min_nm: 400.0
+  max_nm: 1000.0
+primary_channel:
+  kind: reflectance
+  measurement_ref: public_standrews_tin_50nm_reflectance_measurement
+  use: threshold_holdout_for_future_clean_run
+auxiliary_channels:
+- kind: transmittance
+  measurement_ref: public_standrews_tin_50nm_transmittance_measurement
+  use: diagnostic_only
+normalization_basis:
+  status: absolute_fraction_accepted_for_reflectance
+  channel: reflectance
+  evidence_refs:
+  - docs/phase3c1_standrews_tin_pairing.md
+  - docs/phase3c2_standrews_run_audit.md
+  - lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf
+  rationale:
+    The public paper labels Figure 4 as normal-incidence reflectance and
+    transmittance spectra for 50 nm TiN on glass. The extracted RT.xlsx
+    reflectance channel has a minimum of about 0.20377 near 542 nm, matching
+    the paper text reporting roughly 20 percent reflectance near 540 nm.
+required_metrics:
+- name: mean_absolute_error
+  comparator: less_equal
+  threshold: 0.04
+  units: reflectance_fraction
+- name: root_mean_square_error
+  comparator: less_equal
+  threshold: 0.06
+  units: reflectance_fraction
+- name: max_absolute_residual
+  comparator: less_equal
+  threshold: 0.15
+  units: reflectance_fraction
+- name: dip_wavelength_offset_nm
+  comparator: abs_less_equal
+  threshold: 40.0
+  units: nm
+- name: shape_correlation_minmax
+  comparator: greater_equal
+  threshold: 0.90
+  units: unitless
+approval:
+  approver: user_phase3c3_plan_request
+  approved_at: '2026-05-17T19:48:50+00:00'
+  locked_before_run: true
+  threshold_basis:
+    Conservative same-sample, zero-fit TMM clean-run policy. The thresholds
+    were selected before running the threshold-locked spec and must not be
+    retuned from run_42fe0ad6dd295019 residuals.
+forbidden_uses:
+- applying_to_run_42fe0ad6dd295019
+- tuning_thresholds_from_already_inspected_residuals
+- promoting_directly_to_calibrated_linear_evidence
+- serious_core_evidence_before_phase4_review
