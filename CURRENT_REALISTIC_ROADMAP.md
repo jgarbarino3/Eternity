@@ -506,6 +506,46 @@ Result:
   while keeping TiON calibrated evidence blocked until raw sample-matched R/T
   or explicitly registered plot-derived data exists.
 
+#### Phase 3C: Public TiN Dataset Validation Lane
+
+Status: active / intake-ready.
+
+Implementation artifacts:
+
+- `lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip`
+- `lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf`
+- `docs/phase3c_public_tin_dataset_intake.md`
+- `docs/phase3c_public_tin_dataset_intake.json`
+
+Phase 3C pivots away from the exhausted thesis-source path into a public,
+paper-backed TiN dataset from the University of St Andrews:
+
+- Dataset DOI: `10.17630/42a1d567-9e02-4916-8709-e2b4911c715c`
+- Paper DOI: `10.1088/2515-7647/adcddc`
+- Public data include extracted ellipsometry permittivity tables, raw Woollam
+  `.SE/.mod` files, `RT.xlsx` reflectance/transmittance data, and XRD.
+
+This path looks meaningfully better than continuing Phase 3A because the linked
+paper states Figure 4 is unpolarized normal-incidence reflectance/transmittance
+for 50 nm TiN films on glass over `400-1000 nm`. The `RT.xlsx` reflectance
+minimum in that window is `0.20377` at `542.06 nm`, matching the paper text that
+reflectance reaches about `20%` near `540 nm`.
+
+Result:
+
+- Decision `public_dataset_intake_ready`.
+- This can support a new validation candidate after pairing and leakage policy
+  are explicit.
+- It still cannot emit `calibrated_linear_evidence` until the exact
+  `RT.xlsx`-to-ellipsometry-table pairing, no-fit-leakage status, residual
+  metrics, and thresholds are predeclared before residual inspection.
+
+Recommended next:
+
+- `Phase 3C.1 - St Andrews TiN Pairing + Validation Candidate Plan`: decide
+  which ellipsometry table predicts `RT.xlsx`, predeclare the 400-1000 nm
+  validation policy, then implement loaders/specs for a fail-closed run.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

@@ -21,6 +21,8 @@ lab_data/raw/*
 !lab_data/raw/thesis_reflectance/**
 !lab_data/raw/thesis_phase3a/
 !lab_data/raw/thesis_phase3a/**
+!lab_data/raw/public_st_andrews_tin_2025/
+!lab_data/raw/public_st_andrews_tin_2025/**
 lab_data/interim/
 lab_data/processed/
 lab_data/external/

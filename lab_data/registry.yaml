@@ -357,6 +357,44 @@ raw_artifacts:
       public source.
     provenance_refs:
     - phase3a_tin_sio2_validation_candidate
+  public_standrews_tin_2025_dataset_zip:
+    raw_artifact_id: public_standrews_tin_2025_dataset_zip
+    kind: vendor_export
+    path: lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip
+    sha256: e3a6eaf3baf86c926a1234302a888c2a6678a1c8949a33e2898fdb8c75efdc00
+    bytes: 899515
+    source_type: literature_table
+    immutable: true
+    original_filename: TiN-data_Pure.zip
+    original_path: /Users/joegarbarino/Downloads/TiN-data_Pure.zip
+    acquired_at: '2026-05-17'
+    source_notes: Public St Andrews dataset for low-temperature fabrication of plasmonic TiN
+      thin films by electron-beam evaporation. Archive contains extracted ellipsometry
+      permittivity text tables, raw Woollam CompleteEASE files, RT.xlsx reflectance/transmittance
+      data, and XRD data.
+    access_notes: Public University of St Andrews dataset, DOI 10.17630/42a1d567-9e02-4916-8709-e2b4911c715c,
+      licensed CC BY. Snapshot was downloaded manually through the browser after direct shell
+      download encountered a web challenge.
+    provenance_refs:
+    - phase3c_public_tin_dataset_intake
+  public_standrews_tin_2025_paper_pdf:
+    raw_artifact_id: public_standrews_tin_2025_paper_pdf
+    kind: vendor_export
+    path: lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf
+    sha256: 6f3a0e86debce7de92148fe84431e645fdf590ca1f5d1466664541cd8544ac55
+    bytes: 2321499
+    source_type: literature_table
+    immutable: true
+    original_filename: Das_2025_JoPP_Low-temperature-plasmonic-titanium-nitride-thin-films_CC.pdf
+    original_path: https://research-repository.st-andrews.ac.uk/bitstream/handle/10023/32035/Das_2025_JoPP_Low-temperature-plasmonic-titanium-nitride-thin-films_CC.pdf
+    acquired_at: '2026-05-17'
+    source_notes: Open-access Journal of Physics Photonics paper linked to the public TiN
+      dataset. Paper text maps Figure 4 to 50 nm TiN on glass, normal-incidence unpolarized
+      reflectance/transmittance over 400-1000 nm.
+    access_notes: Open-access article under Creative Commons Attribution 4.0 according to
+      the St Andrews repository item.
+    provenance_refs:
+    - phase3c_public_tin_dataset_intake
 samples:
   tin_50nm_dc_sputtered_master:
     sample_id: tin_50nm_dc_sputtered_master

@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.12 manual source exhaustion plus Phase 3A.1 gates
+**Current focus:** Phase 3C public TiN dataset intake plus Phase 3C.1 pairing policy
 
 ## Current Position
 
-**Current Phase:** 3A.12
-**Current Phase Name:** Manual Source Review Result Or Clean Export Pivot
+**Current Phase:** 3C
+**Current Phase Name:** Public TiN Dataset Validation Lane
 **Total Phases:** 3
-**Current Plan:** docs/phase3a12_manual_source_review_result.md
+**Current Plan:** docs/phase3c_public_tin_dataset_intake.md
 **Total Plans in Phase:** 1
-**Status:** Completed/blocked
+**Status:** Active/intake-ready
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Inspected the three bounded source candidates and exhausted the Phase 3A manual proof path without finding exact source identity or absolute reflectance proof.
+**Last Activity Description:** Snapshotted the St Andrews 2025 public TiN dataset and linked paper; found a promising R/T plus ellipsometry validation lane that still needs exact pairing and no-fit-leakage policy.
 
 **Progress:** [█████████░] 90%
 
@@ -59,6 +59,11 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   `.json`: all three candidates are related provenance only. They pass the
   60-degree context gate but fail or leave unresolved the identity, stack,
   channel, absolute-normalization, and source-lineage gates.
+- Phase 3C wrote `docs/phase3c_public_tin_dataset_intake.md` and `.json`:
+  St Andrews `TiN-data_Pure.zip` and the linked Das et al. paper are
+  snapshotted. `RT.xlsx` has a reflectance minimum of `0.20377` at `542.06 nm`
+  in the paper's 400-1000 nm window, matching the paper's Figure 4 description
+  of about 20% reflectance near 540 nm.
 
 ## Open Questions
 
@@ -66,6 +71,7 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
+- Which St Andrews ellipsometry table is the legitimate no-fit-leakage input for predicting `RT.xlsx`?
 
 ## Performance Metrics
 
@@ -107,6 +113,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - [Phase 3A.12]: Phase 3A source follow-up is exhausted. — Do not continue
   open-ended searching without new evidence, a clean export, or a new
   measurement.
+- [Phase 3C]: St Andrews public TiN is the next best validation lane. — It has
+  paper-backed R/T and ellipsometry in one public dataset, but still needs exact
+  pairing, leakage policy, and predeclared thresholds before calibrated
+  promotion.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -137,6 +147,8 @@ None yet.
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
+- Phase 3C.1: map `RT.xlsx` to the correct St Andrews ellipsometry table,
+  predeclare validation metrics/window, then implement loaders/specs.
 
 ### Blockers/Concerns
 
@@ -148,6 +160,7 @@ None yet.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
+- Phase 3C exact R/T-to-ellipsometry pairing is not yet locked.
 
 ## Session Continuity
 

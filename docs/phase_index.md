@@ -33,13 +33,15 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.11 | Completed/packet-ready | Bounded manual source follow-up packet | Converts the Phase 3A.10 branch choice into a three-candidate review packet with exact proof gates, stop rules, and non-promotion boundaries. |
 | Phase 3A.12 | Completed/exhausted | Manual source review result or clean export pivot | Inspected the three bounded candidates and found related provenance but no exact `3L2/Quartz`, 30/10/20 stack, absolute `%R`, or `d_10nm` source-lineage proof. Phase 3A should not continue without new user-supplied source evidence or a clean export/measurement. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
+| Phase 3C | Active/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready; exact R/T-to-ellipsometry pairing and no-fit-leakage policy remain before a validation candidate. |
+| Phase 3C.1 | Recommended | St Andrews TiN pairing + validation candidate plan | Decide which ellipsometry table may predict `RT.xlsx`, predeclare the 400-1000 nm validation policy, then add loaders/specs only after the pairing and leakage rules are explicit. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.12 - Manual source review result or clean export pivot**.
+Current phase: **Phase 3C - Public TiN dataset validation lane**.
 
-Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
+Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The St Andrews 2025 public TiN dataset is a cleaner path because it includes a public paper, ellipsometry tables, and `RT.xlsx` reflectance/transmittance data for 50 nm TiN on glass.
 
 Information sufficiency:
 
@@ -68,6 +70,10 @@ Information sufficiency:
   all three candidates pass only the 60-degree context gate and fail or leave
   unresolved the identity, stack, channel, absolute-normalization, and source
   lineage gates.
+- Enough to start Phase 3C: the St Andrews dataset archive and linked paper are
+  snapshotted under `lab_data/raw/public_st_andrews_tin_2025/`, the archive hash
+  is registered, and the `RT.xlsx` reflectance minimum in the paper window
+  matches the linked paper's Figure 4 description.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -75,15 +81,17 @@ Information sufficiency:
 - Not enough to promote `run_f35a15cef565fb15` or any Phase 3A run to
   `calibrated_linear_evidence`.
 - Not enough to set pass/fail thresholds for already-inspected residuals.
+- Not enough to run Phase 3C as calibrated evidence yet: the exact `RT.xlsx` to
+  ellipsometry-table pairing, no-fit-leakage status, and future threshold policy
+  must be written before residual inspection.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake**, unless
-  the user can provide a clean CompleteEASE export or new measurement for Phase
-  3A. Planning: `high` because this is a pivot away from the exhausted 3A
-  source path. Implementation: `medium` for a registry/digitization packet or
-  `high` if new raw R/T appears. Use `xhigh` before any calibrated-evidence
-  threshold or promotion decision.
+- **Phase 3C.1 - St Andrews TiN Pairing + Validation Candidate Plan**. Planning:
+  `high` because the main risk is scientific leakage, not code mechanics.
+  Implementation: `high` if adding loaders/specs and a first validation
+  candidate, or `medium` if only writing the mapping packet. Use `xhigh` before
+  any calibrated-evidence threshold or promotion decision.
 
 Helpful tools:
 

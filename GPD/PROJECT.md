@@ -4,11 +4,12 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-17. Current mirrored focus is Phase 3A.12 manual source
-review result: the three bounded quartz dynamic candidates were inspected and
-the Phase 3A source path is exhausted unless new source evidence, a clean
-export, or a new measurement appears. Absolute reflectance normalization
-remains blocked.
+Updated: 2026-05-17. Current mirrored focus is Phase 3C public TiN dataset
+intake: the St Andrews 2025 public TiN dataset and linked paper are
+snapshotted after Phase 3A source exhaustion. The new path is promising because
+it includes ellipsometry tables plus paper-backed R/T data, but calibrated
+promotion remains blocked until sample pairing, no-fit-leakage status, and
+future thresholds are explicit.
 
 Authoritative sources remain:
 

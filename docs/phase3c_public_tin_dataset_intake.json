@@ -1,0 +1,94 @@
+{
+  "phase_id": "Phase 3C",
+  "title": "Public TiN dataset intake",
+  "date": "2026-05-17",
+  "decision": "public_dataset_intake_ready",
+  "can_feed_serious_core": false,
+  "can_promote_calibrated_linear_evidence": false,
+  "dataset": {
+    "title": "Low-temperature fabrication of plasmonic titanium nitride thin films by electron beam evaporation (dataset)",
+    "doi": "10.17630/42a1d567-9e02-4916-8709-e2b4911c715c",
+    "url": "https://research-portal.st-andrews.ac.uk/en/datasets/low-temperature-fabrication-of-plasmonic-titanium-nitride-thin-fi/",
+    "license": "CC BY",
+    "downloaded_file": "TiN-data_Pure.zip",
+    "repo_snapshot": "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+    "sha256": "e3a6eaf3baf86c926a1234302a888c2a6678a1c8949a33e2898fdb8c75efdc00",
+    "bytes": 899515
+  },
+  "paper": {
+    "citation_short": "Das et al., Journal of Physics: Photonics 7, 025032 (2025)",
+    "doi": "10.1088/2515-7647/adcddc",
+    "repo_snapshot": "lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf",
+    "sha256": "6f3a0e86debce7de92148fe84431e645fdf590ca1f5d1466664541cd8544ac55",
+    "bytes": 2321499,
+    "mapping_notes": [
+      "Paper describes 50 nm TiN films on glass.",
+      "Paper states Figure 4 is unpolarized transmittance and reflectance at normal incidence.",
+      "Paper states reflectance minimum is about 20% near 540 nm.",
+      "RT.xlsx reflectance minimum in 400-1000 nm is 0.20377 at 542.06 nm."
+    ]
+  },
+  "archive_summary": {
+    "member_count": 33,
+    "ellipsometry_text_tables": 11,
+    "has_rt_xlsx": true,
+    "has_xrd_xy": true,
+    "has_woollam_se_and_mod_files": true
+  },
+  "rt_xlsx_summary": {
+    "paper_window_nm": [
+      400,
+      1000
+    ],
+    "reflectance": {
+      "rows_total": 2048,
+      "rows_in_paper_window": 1785,
+      "wavelength_nm_total_min": 340.02,
+      "wavelength_nm_total_max": 1029.8,
+      "min_in_paper_window": {
+        "wavelength_nm": 542.06,
+        "value": 0.20377
+      },
+      "max_in_paper_window": {
+        "wavelength_nm": 413.23,
+        "value": 0.89402
+      }
+    },
+    "transmittance": {
+      "rows_total": 2048,
+      "rows_in_paper_window": 1784,
+      "wavelength_nm_total_min": 340.35,
+      "wavelength_nm_total_max": 1030.7,
+      "min_in_paper_window": {
+        "wavelength_nm": 718.8,
+        "value": 0.02035
+      },
+      "max_in_paper_window": {
+        "wavelength_nm": 404.18,
+        "value": 0.71769
+      }
+    }
+  },
+  "remaining_blockers": [
+    "Exact RT.xlsx to ellipsometry-table pairing is not yet locked.",
+    "No residual threshold policy has been predeclared for this dataset.",
+    "No loader or experiment spec has been added for RT.xlsx yet.",
+    "The dataset can become a validation candidate only after no-fit-leakage and sample-pairing policy are explicit."
+  ],
+  "recommended_next_phase": {
+    "phase_id": "Phase 3C.1",
+    "name": "St Andrews TiN Pairing + Validation Candidate Plan",
+    "needs_planning": true,
+    "planning_effort_gpt_5_5": "high",
+    "implementation_effort_gpt_5_5": "high",
+    "helpful_tools": [
+      "local shell",
+      "unzip",
+      "pdftotext",
+      "shasum",
+      "spreadsheet parsing",
+      "GPD planner/checker/verifier",
+      "Consensus MCP if literature support for validation metrics is needed"
+    ]
+  }
+}

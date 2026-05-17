@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.12 manual source exhaustion plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3C public TiN dataset intake plus Phase 3C.1 pairing policy"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,14 +18,14 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.12",
-    "current_phase_name": "Manual Source Review Result Or Clean Export Pivot",
+    "current_phase": "3C",
+    "current_phase_name": "Public TiN Dataset Validation Lane",
     "total_phases": 3,
-    "current_plan": "docs/phase3a12_manual_source_review_result.md",
+    "current_plan": "docs/phase3c_public_tin_dataset_intake.md",
     "total_plans_in_phase": 1,
-    "status": "Completed/blocked",
+    "status": "Active/intake-ready",
     "last_activity": "2026-05-17",
-    "last_activity_desc": "Inspected the three bounded source candidates and exhausted the Phase 3A manual proof path without finding exact source identity or absolute reflectance proof.",
+    "last_activity_desc": "Snapshotted the St Andrews 2025 public TiN dataset and linked paper; found a promising R/T plus ellipsometry validation lane that still needs exact pairing and no-fit-leakage policy.",
     "progress_percent": 90,
     "paused_at": null
   },
@@ -150,12 +150,33 @@
         "absolute_reflectance_units_or_calibration_state",
         "export_or_source_lineage_to_d10nm_text_trace"
       ]
+    },
+    {
+      "phase": "3C",
+      "decision_ref": "docs/phase3c_public_tin_dataset_intake.md",
+      "decision": "public_dataset_intake_ready",
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "dataset_ref": "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+      "paper_ref": "lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf",
+      "rt_reflectance_min_value": 0.20377,
+      "rt_reflectance_min_wavelength_nm": 542.06,
+      "validation_window_nm": [
+        400.0,
+        1000.0
+      ],
+      "remaining_gates": [
+        "exact_rt_xlsx_to_ellipsometry_table_pairing",
+        "no_fit_leakage_policy",
+        "thresholds_predeclared_before_residuals"
+      ]
     }
   ],
   "open_questions": [
     "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
-    "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?"
+    "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
+    "Which St Andrews ellipsometry table is the legitimate no-fit-leakage input for predicting RT.xlsx?"
   ],
   "resolved_questions": [],
   "performance_metrics": {
@@ -231,6 +252,11 @@
       "phase": "3A.12",
       "summary": "Phase 3A source follow-up is exhausted.",
       "rationale": "The three bounded candidates are related provenance only; they do not prove exact source identity, absolute reflectance, or d_10nm source lineage."
+    },
+    {
+      "phase": "3C",
+      "summary": "St Andrews public TiN is the next best validation lane.",
+      "rationale": "It has paper-backed R/T and ellipsometry in one public dataset, but still needs exact pairing, leakage policy, and predeclared thresholds before calibrated promotion."
     }
   ],
   "approximations": [],
@@ -264,7 +290,8 @@
     "Phase 3B.1: perform a TiON evidence reality check / digitized plot intake, or use Phase 3A.6 only if a clean CompleteEASE export/new measurement appears.",
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
-    "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
+    "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack.",
+    "Phase 3C.1: map RT.xlsx to the correct St Andrews ellipsometry table, predeclare validation metrics/window, then implement loaders/specs."
   ],
   "blockers": [
     "TiON_48/TiON_49 raw R/T spectra are not registered.",
@@ -272,7 +299,8 @@
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
-    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates."
+    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
+    "Phase 3C exact R/T-to-ellipsometry pairing is not yet locked."
   ],
   "continuation": {
     "schema_version": 1,

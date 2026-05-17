@@ -272,6 +272,38 @@ Result:
 - Pivot to Phase 3B evidence reality check or use Phase 3A.6 only if a clean
   export/new measurement appears.
 
+## Phase 3C: Public TiN Dataset Validation Lane
+
+Status: active / intake-ready
+
+Goal:
+
+- Use the St Andrews 2025 public TiN dataset as a cleaner validation lane after
+  Phase 3A source exhaustion.
+- Keep the lane fail-closed until exact R/T-to-ellipsometry pairing,
+  no-fit-leakage status, and threshold policy are explicit.
+
+Artifacts:
+
+- `lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip`
+- `lab_data/raw/public_st_andrews_tin_2025/Das_2025_JoPP_TiN.pdf`
+- `docs/phase3c_public_tin_dataset_intake.md`
+- `docs/phase3c_public_tin_dataset_intake.json`
+
+Current result:
+
+- Public dataset includes ellipsometry permittivity tables, raw Woollam files,
+  `RT.xlsx` R/T data, and XRD.
+- The linked paper maps Figure 4 to 50 nm TiN on glass, normal-incidence
+  unpolarized R/T over 400-1000 nm.
+- `RT.xlsx` reflectance reaches `0.20377` at `542.06 nm`, matching the paper's
+  approximate 20% reflectance minimum near 540 nm.
+
+Next:
+
+- Phase 3C.1 should decide which ellipsometry table predicts `RT.xlsx`, then
+  predeclare validation metrics before any residual-gated run.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

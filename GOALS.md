@@ -97,6 +97,10 @@ grounding phase:
 - The completed review result is `Phase 3A.12 - Manual source review result or
   clean export pivot`: the three bounded candidates were inspected and did not
   prove exact source identity, absolute reflectance, or `d_10nm` lineage.
+- The active intake result is `Phase 3C - Public TiN dataset validation lane`:
+  the St Andrews 2025 public TiN dataset and linked paper were snapshotted and
+  look like a cleaner path toward a validation candidate than continuing the
+  exhausted Phase 3A source search.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -154,6 +158,12 @@ Current blocker:
 - Phase 3A.12 has enough information to stop the current Phase 3A source path.
   Without a clean export, new measurement, or new user-supplied source file,
   continuing Phase 3A provenance searching is not recommended.
+- Phase 3C has enough information to continue productively: the public dataset
+  includes ellipsometry permittivity tables and `RT.xlsx` reflectance /
+  transmittance data, while the linked paper maps Figure 4 to 50 nm TiN on
+  glass at normal incidence over 400-1000 nm. It does not yet have enough
+  information to claim calibrated evidence because exact R/T-to-ellipsometry
+  pairing and no-fit-leakage policy are still open.
 
 ## Goal Usage In Codex
 
