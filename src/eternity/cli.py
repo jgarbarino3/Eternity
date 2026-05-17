@@ -40,6 +40,7 @@ from eternity.phase3a12 import (
     write_phase3a12_result,
 )
 from eternity.phase3c1 import build_phase3c1_packet_from_paths, write_phase3c1_packet
+from eternity.phase3c2 import build_phase3c2_audit, write_phase3c2_audit
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -177,6 +178,26 @@ PHASE3C1_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown Phase 3C.1 pairing artifacts.",
+)
+PHASE3C2_RUN_DIR_OPTION = typer.Option(
+    Path("results/runs/run_42fe0ad6dd295019"),
+    "--run-dir",
+    help="Existing St Andrews validation-candidate run directory to audit.",
+)
+PHASE3C2_PAIRING_JSON_OPTION = typer.Option(
+    Path("docs/phase3c1_standrews_tin_pairing.json"),
+    "--pairing-json",
+    help="Phase 3C.1 pairing JSON.",
+)
+PHASE3C2_REGISTRY_OPTION = typer.Option(
+    Path("lab_data/registry.yaml"),
+    "--registry",
+    help="Registry containing the St Andrews validation split.",
+)
+PHASE3C2_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and policy audit artifacts.",
 )
 
 
@@ -456,6 +477,31 @@ def phase3c1_intake(
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3c2-audit")
+def phase3c2_audit(
+    run_dir: Path = PHASE3C2_RUN_DIR_OPTION,
+    pairing_json: Path = PHASE3C2_PAIRING_JSON_OPTION,
+    registry_path: Path = PHASE3C2_REGISTRY_OPTION,
+    output_dir: Path | None = PHASE3C2_OUTPUT_DIR_OPTION,
+) -> None:
+    """Audit Phase 3C.2 St Andrews candidate run and future threshold policy."""
+
+    try:
+        audit = build_phase3c2_audit(run_dir, pairing_json, registry_path)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError, ValidationError) as error:
+        typer.echo(f"Phase 3C.2 audit failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, policy_path = write_phase3c2_audit(output_dir, audit)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {policy_path}")
+        return
+
+    typer.echo(json.dumps(audit, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

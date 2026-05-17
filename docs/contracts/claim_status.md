@@ -79,3 +79,8 @@ serious-core conclusions: the current pairing is
 `candidate_supported_reflectance_only`, transmittance is auxiliary until
 scaling/noise is audited, and thresholds are blocked until a future
 predeclared policy is approved before residual-gated judgment.
+
+Phase 3C.2 audit artifacts may prepare a future threshold policy, but they must
+mark already-inspected St Andrews runs as non-promotable. A Phase 3C.2 policy
+with `applies_to_existing_run: false` and pending approval cannot raise any run
+above `weak_within_dataset_holdout`.

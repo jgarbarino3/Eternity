@@ -35,12 +35,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 3C | Completed/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready. |
 | Phase 3C.1 | Completed/fail-closed candidate | St Andrews TiN pairing + validation candidate | Extracted `RT.xlsx` into canonical R/T CSV snapshots, registered `50nm-MTiN-50c` as the candidate frozen epsilon input, added the St Andrews sample/stack/material/split records, and created a normal-incidence validation candidate capped at `weak_within_dataset_holdout`. |
-| Phase 3C.2 | Recommended | St Andrews candidate run audit + threshold policy decision | Inspect the fail-closed St Andrews run, decide whether more source pairing evidence is needed, and use Pro/GPD review before approving any future residual thresholds or calibrated-evidence promotion policy. |
+| Phase 3C.2 | Completed/future-only policy | St Andrews candidate run audit + threshold policy decision | Audited `run_42fe0ad6dd295019`, preserved residuals as historical context, and wrote a pending future-only threshold policy with `applies_to_existing_run: false`. |
+| Phase 3C.3 | Recommended | St Andrews threshold lock + clean run decision | Decide whether to lock defensible thresholds before a new clean run, or keep Phase 3C as a weak-within-dataset diagnostic lane. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3C.1 - St Andrews TiN pairing + validation candidate**.
+Current phase: **Phase 3C.2 - St Andrews candidate run audit + threshold policy decision**.
 
 Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization
 proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The
@@ -83,6 +84,10 @@ Information sufficiency:
   `RT.xlsx` has canonical reflectance/transmittance CSV snapshots, the selected
   `50nm-MTiN-50c` epsilon table is registered, and the example forbids R/T
   holdout artifacts from fitting.
+- Enough to complete Phase 3C.2 as a future-only policy/audit phase:
+  `run_42fe0ad6dd295019` is explicitly non-promotable, the policy has
+  `applies_to_existing_run: false`, and a next clean run is required before any
+  threshold-gated judgment.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -94,15 +99,16 @@ Information sufficiency:
   `candidate_supported_reflectance_only`, transmittance scaling/noise remains
   auxiliary, and future threshold policy must be approved before any promoted
   residual-gated run.
+- Not enough to use Phase 3C.2 residuals as threshold evidence. They were
+  inspected before policy approval and are historical context only.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3C.2 - St Andrews Candidate Run Audit + Threshold Policy Decision**.
-  Planning: GPT-5.5 `xhigh` if thresholds or calibrated-evidence policy are
-  being considered, because this is the point where residuals could bias the
-  rules. Implementation: `medium` for a report-only audit, or `high` if claim
-  gates/contracts change. A Pro checkpoint is recommended before any threshold
-  approval or `calibrated_linear_evidence` promotion.
+- **Phase 3C.3 - St Andrews Threshold Lock + Clean Run Decision**. Planning:
+  GPT-5.5 `xhigh`, because this is a threshold/promotion fork and residuals
+  have already been seen once. Implementation: `medium` for a decision packet,
+  or `high` if claim gates/contracts change. Use Pro/GPD and optionally
+  Consensus MCP before approving any future thresholds.
 
 Helpful tools:
 

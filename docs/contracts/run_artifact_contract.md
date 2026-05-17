@@ -44,3 +44,8 @@ threshold or normalization gates must prevent `calibrated_linear_evidence`.
 Phase 3A.1 audit artifacts, when written, must include a JSON payload and a
 Markdown summary. They must distinguish existing-run promotion from future-run
 policy readiness and must keep historical residuals out of threshold selection.
+
+Phase 3C.2 audit artifacts must include a JSON audit, Markdown summary, and
+future threshold-policy YAML. The policy must preserve `applies_to_existing_run:
+false` for any already-inspected run and name the clean-run requirement before
+threshold-gated promotion can be reconsidered.

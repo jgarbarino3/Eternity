@@ -106,6 +106,10 @@ grounding phase:
   transmittance CSV snapshots, the candidate `50nm-MTiN-50c` epsilon table was
   registered, and a fail-closed normal-incidence TiN-on-glass example now
   exists with claim ceiling `weak_within_dataset_holdout`.
+- The completed audit result is `Phase 3C.2 - St Andrews candidate run audit +
+  future-only threshold policy`: the existing St Andrews run is explicitly
+  non-promotable, a future-only threshold-policy packet exists, and a new clean
+  run is required before any residual-gated promotion can be reconsidered.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -174,6 +178,11 @@ Current blocker:
   information to claim calibrated evidence because thresholds are not
   predeclared, the pairing remains `candidate_supported_reflectance_only`, and
   transmittance scaling/noise is auxiliary until audited.
+- Phase 3C.2 has enough information to choose the next fork. It does not have
+  enough information to claim calibrated evidence: the policy is pending,
+  `applies_to_existing_run` is false, and `run_42fe0ad6dd295019` residuals are
+  historical context only. A future clean run must be created after any
+  Pro/user-approved threshold lock.
 
 ## Goal Usage In Codex
 

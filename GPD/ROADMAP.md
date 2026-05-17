@@ -334,10 +334,39 @@ Current result:
 - Transmittance remains auxiliary until scaling/noise is audited.
 - Claim ceiling remains `weak_within_dataset_holdout`.
 
+Completed follow-up:
+
+- Phase 3C.2 audits the generated fail-closed run and prepares a future-only
+  threshold policy.
+
+## Phase 3C.2: St Andrews Candidate Run Audit + Future-Only Threshold Policy
+
+Status: completed / future-only policy prepared
+
+Goal:
+
+- Preserve the inspected St Andrews residuals as historical context only.
+- Prepare a threshold-policy packet that cannot apply to the existing run.
+- Require a clean future run after any Pro/user threshold lock.
+
+Artifacts:
+
+- `docs/phase3c2_standrews_run_audit.md`
+- `docs/phase3c2_standrews_run_audit.json`
+- `docs/phase3c2_future_threshold_policy.yaml`
+
+Current result:
+
+- Decision `candidate_run_audited_future_policy_prepared`.
+- Existing run promotable: `false`.
+- Next clean run required: `true`.
+- Future policy status: `pending_pro_or_user_lock_before_clean_run`.
+- Historical residuals must not tune thresholds.
+
 Next:
 
-- Phase 3C.2 should audit the generated fail-closed run and use Pro/GPD review
-  before approving thresholds or any calibrated-evidence policy.
+- Phase 3C.3 should decide whether to lock thresholds before a new clean run
+  or keep Phase 3C as a weak-within-dataset diagnostic lane.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

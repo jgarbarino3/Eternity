@@ -68,3 +68,9 @@ Phase 3A.12 exhausted the bounded manual source follow-up. Its result keeps the
 Phase 3A thesis spectra useful only as relative-intensity diagnostics unless a
 new clean export, measurement, or source-backed absolute-reflectance record is
 added later.
+
+Phase 3C.2 may audit the St Andrews `RT.xlsx` reflectance holdout and draft a
+future threshold policy. Because the current St Andrews residuals were already
+inspected before threshold approval, that policy must set
+`applies_to_existing_run: false`; calibrated promotion requires a later clean
+run after the policy is locked.

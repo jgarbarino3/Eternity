@@ -592,6 +592,46 @@ Recommended next:
   if thresholds/promotion are on the table; implementation can use `medium` for
   report-only work or `high` if claim gates/contracts change.
 
+#### Phase 3C.2: St Andrews Candidate Run Audit + Future-Only Threshold Policy
+
+Status: completed / future-only policy prepared.
+
+Implementation artifacts:
+
+- `docs/phase3c2_standrews_run_audit.md`
+- `docs/phase3c2_standrews_run_audit.json`
+- `docs/phase3c2_future_threshold_policy.yaml`
+
+Phase 3C.2 audits the already-inspected St Andrews candidate run and prepares a
+future threshold-policy packet without promoting the run:
+
+- `run_42fe0ad6dd295019` remains `weak_within_dataset_holdout` with
+  `can_feed_serious_core: false`.
+- The existing run is not promotable because residuals were inspected before
+  threshold approval.
+- The policy status is `pending_pro_or_user_lock_before_clean_run`.
+- The policy explicitly sets `applies_to_existing_run: false` and
+  `requires_clean_run_after_policy_lock: true`.
+- The required future metrics are MAE, RMSE, max absolute residual, dip
+  wavelength offset, and min-max shape correlation over `400-1000 nm`.
+
+Result:
+
+- Decision `candidate_run_audited_future_policy_prepared`.
+- Historical residual context is preserved, but forbidden for threshold tuning:
+  MAE about `0.0847`, RMSE about `0.178`, max absolute residual about `0.698`,
+  dip offset about `-142 nm`, and min-max shape correlation about `-0.111`.
+- Current blockers remain threshold predeclaration and normalization/promotion
+  approval. No calibrated evidence exists yet.
+
+Recommended next:
+
+- `Phase 3C.3 - St Andrews Threshold Lock + Clean Run Decision`: either use a
+  Pro/GPD/Consensus checkpoint to lock defensible thresholds before a new clean
+  run, or stop the calibrated-validation attempt and keep Phase 3C as a
+  weak-within-dataset diagnostic lane. Planning should use GPT-5.5 `xhigh`;
+  implementation is `high` if claim gates change, otherwise `medium`.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

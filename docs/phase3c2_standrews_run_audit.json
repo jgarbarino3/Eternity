@@ -1,0 +1,201 @@
+{
+  "decision": {
+    "blocking_reasons": [
+      "existing_residuals_inspected_before_policy",
+      "policy_does_not_apply_to_existing_run",
+      "next_clean_run_required",
+      "thresholds_predeclared_gate_blocked",
+      "normalization_gate_blocked"
+    ],
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "existing_run_promotable": false,
+    "next_clean_run_required": true,
+    "status": "candidate_run_audited_future_policy_prepared"
+  },
+  "future_threshold_policy": {
+    "applies_to_existing_run": false,
+    "approval": {
+      "approved_at": null,
+      "approver": null,
+      "locked_before_run": false,
+      "thresholds_ref": null
+    },
+    "auxiliary_channels": [
+      {
+        "kind": "transmittance",
+        "measurement_ref": "public_standrews_tin_50nm_transmittance_measurement",
+        "use": "diagnostic_only"
+      }
+    ],
+    "created_at": "2026-05-17T19:38:48.393639+00:00",
+    "forbidden_uses": [
+      "using_run_42fe0ad6dd295019_residuals_to_tune_cutoffs",
+      "retroactive_promotion_of_existing_run",
+      "serious_core_evidence_before_clean_run",
+      "calibrated_linear_evidence_without_predeclared_thresholds"
+    ],
+    "phase_id": "Phase 3C.2",
+    "policy": "future_threshold_policy",
+    "policy_may_promote_calibrated_evidence": false,
+    "primary_channel": {
+      "kind": "reflectance",
+      "measurement_ref": "public_standrews_tin_50nm_reflectance_measurement",
+      "use": "candidate_holdout_for_future_clean_run"
+    },
+    "required_metrics": [
+      {
+        "name": "mean_absolute_error",
+        "status": "pending",
+        "threshold": null
+      },
+      {
+        "name": "root_mean_square_error",
+        "status": "pending",
+        "threshold": null
+      },
+      {
+        "name": "max_absolute_residual",
+        "status": "pending",
+        "threshold": null
+      },
+      {
+        "name": "dip_wavelength_offset",
+        "status": "pending",
+        "threshold": null
+      },
+      {
+        "name": "shape_correlation_minmax",
+        "status": "pending",
+        "threshold": null
+      }
+    ],
+    "requires_clean_run_after_policy_lock": true,
+    "residuals_inspected_before_policy": true,
+    "residuals_inspected_run_refs": [
+      "results/runs/run_42fe0ad6dd295019"
+    ],
+    "status": "pending_pro_or_user_lock_before_clean_run",
+    "wavelength_window_nm": {
+      "max_nm": 1000.0,
+      "min_nm": 400.0
+    }
+  },
+  "gates": {
+    "claim_status_ceiling": {
+      "can_feed_serious_core": false,
+      "claim_status": "weak_within_dataset_holdout",
+      "status": "pass"
+    },
+    "future_threshold_policy": {
+      "blocking_reasons": [
+        "policy_created_after_existing_run"
+      ],
+      "existing_run_promotion_allowed": false,
+      "future_clean_run_required": true,
+      "status": "blocked_for_existing_run"
+    },
+    "no_fit_leakage": {
+      "fitting_may_access_holdout_y": false,
+      "forbidden_measurement_refs": [
+        "public_standrews_tin_50nm_reflectance_measurement",
+        "public_standrews_tin_50nm_transmittance_measurement"
+      ],
+      "forbidden_raw_artifact_refs": [
+        "public_standrews_tin_50nm_reflectance",
+        "public_standrews_tin_50nm_transmittance"
+      ],
+      "leaked_measurement_refs": [],
+      "leaked_raw_artifact_refs": [],
+      "reason": "Frozen material inputs do not reference forbidden holdout or auxiliary data.",
+      "status": "pass",
+      "used_material_model_refs": [
+        "public_standrews_tin_50nm_50c_epsilon_model"
+      ],
+      "used_measurement_refs": [
+        "public_standrews_tin_50nm_50c_epsilon_measurement"
+      ],
+      "used_raw_artifact_refs": [
+        "public_standrews_tin_50nm_50c_epsilon"
+      ]
+    },
+    "normalization_gate": {
+      "reason": "The holdout normalization is not approved for calibrated promotion.",
+      "status": "blocked"
+    },
+    "pairing_gate": {
+      "pairing_status": "candidate_supported_reflectance_only",
+      "status": "pass"
+    },
+    "thresholds_predeclared": {
+      "reason": "No Pro/user-approved residual thresholds were predeclared.",
+      "status": "blocked",
+      "thresholds_ref": null
+    }
+  },
+  "generated_at": "2026-05-17T19:38:48.393841+00:00",
+  "inputs": {
+    "comparison_table": "results/runs/run_42fe0ad6dd295019/comparison_table.csv",
+    "pairing_json": "docs/phase3c1_standrews_tin_pairing.json",
+    "registry_path": "lab_data/registry.yaml",
+    "run_created_at": "2026-05-17T19:38:10.594717+00:00",
+    "run_dir": "results/runs/run_42fe0ad6dd295019",
+    "split_ref": "public_standrews_tin_50nm_50c_validation_candidate"
+  },
+  "interpretation_boundary": "Phase 3C.2 may prepare a future policy, but the existing St Andrews run remains historical because residuals were inspected first.",
+  "phase_id": "Phase 3C.2",
+  "run": {
+    "claim_status": {
+      "can_feed_serious_core": false,
+      "reason": "A measured-holdout comparison was prepared, but calibrated promotion is blocked by threshold and normalization gates.",
+      "status": "weak_within_dataset_holdout"
+    },
+    "comparison_diagnostics": {
+      "dip_wavelength_offset_nm": -141.92999999999995,
+      "measurement_dip": {
+        "value": 0.20377,
+        "wavelength_nm": 542.06
+      },
+      "points": 1785,
+      "prediction_dip": {
+        "value": 0.194253217,
+        "wavelength_nm": 400.13
+      },
+      "shape_correlation_minmax": -0.11145385096355263,
+      "wavelength_window_nm": [
+        400.13,
+        999.82
+      ]
+    },
+    "historical_residual_metrics": {
+      "validation_max_abs_residual": 0.6976243466052916,
+      "validation_mean_abs_residual": 0.0847482217267253,
+      "validation_points": 1785.0,
+      "validation_rmse": 0.17824688884709078,
+      "validation_window_max_nm": 1000.0,
+      "validation_window_min_nm": 400.0
+    },
+    "validation_summary": {
+      "auxiliary_measurement_refs": [
+        "public_standrews_tin_50nm_transmittance_measurement"
+      ],
+      "blocking_gates": [
+        "thresholds_predeclared",
+        "normalization_gate"
+      ],
+      "claim_status_ceiling": "weak_within_dataset_holdout",
+      "holdout_measurement_ref": "public_standrews_tin_50nm_reflectance_measurement",
+      "metrics": {
+        "validation_max_abs_residual": 0.6976243466052916,
+        "validation_mean_abs_residual": 0.0847482217267253,
+        "validation_points": 1785.0,
+        "validation_rmse": 0.17824688884709078,
+        "validation_window_max_nm": 1000.0,
+        "validation_window_min_nm": 400.0
+      },
+      "status": "blocked_from_calibrated_promotion"
+    }
+  },
+  "title": "St Andrews Candidate Run Audit + Future-Only Threshold Policy"
+}

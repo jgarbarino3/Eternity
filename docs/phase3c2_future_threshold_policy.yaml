@@ -1,0 +1,47 @@
+phase_id: Phase 3C.2
+policy: future_threshold_policy
+status: pending_pro_or_user_lock_before_clean_run
+created_at: '2026-05-17T19:38:48.393639+00:00'
+applies_to_existing_run: false
+residuals_inspected_before_policy: true
+residuals_inspected_run_refs:
+- results/runs/run_42fe0ad6dd295019
+policy_may_promote_calibrated_evidence: false
+requires_clean_run_after_policy_lock: true
+wavelength_window_nm:
+  min_nm: 400.0
+  max_nm: 1000.0
+primary_channel:
+  kind: reflectance
+  measurement_ref: public_standrews_tin_50nm_reflectance_measurement
+  use: candidate_holdout_for_future_clean_run
+auxiliary_channels:
+- kind: transmittance
+  measurement_ref: public_standrews_tin_50nm_transmittance_measurement
+  use: diagnostic_only
+required_metrics:
+- name: mean_absolute_error
+  threshold: null
+  status: pending
+- name: root_mean_square_error
+  threshold: null
+  status: pending
+- name: max_absolute_residual
+  threshold: null
+  status: pending
+- name: dip_wavelength_offset
+  threshold: null
+  status: pending
+- name: shape_correlation_minmax
+  threshold: null
+  status: pending
+approval:
+  approver: null
+  approved_at: null
+  locked_before_run: false
+  thresholds_ref: null
+forbidden_uses:
+- using_run_42fe0ad6dd295019_residuals_to_tune_cutoffs
+- retroactive_promotion_of_existing_run
+- serious_core_evidence_before_clean_run
+- calibrated_linear_evidence_without_predeclared_thresholds

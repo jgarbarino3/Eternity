@@ -41,10 +41,13 @@ Current progress:
 - **Doing**: Phase 3C.1 St Andrews TiN pairing + validation candidate:
   canonical R/T CSV snapshots, the candidate `50nm-MTiN-50c` epsilon snapshot,
   registry records, and a fail-closed example now exist.
-- **Next**: Phase 3C.2 St Andrews candidate run audit + threshold policy
-  decision. Pairing remains `candidate_supported_reflectance_only`,
-  transmittance is auxiliary, and predeclared thresholds remain required before
-  any calibrated-evidence promotion attempt.
+- **Done**: Phase 3C.2 St Andrews candidate run audit + future-only threshold
+  policy. The existing St Andrews run is non-promotable and a clean future run
+  is required after any threshold lock.
+- **Next**: Phase 3C.3 St Andrews threshold lock + clean run decision. Pairing
+  remains `candidate_supported_reflectance_only`, transmittance is auxiliary,
+  and predeclared thresholds remain required before any calibrated-evidence
+  promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -82,8 +85,9 @@ calibrated_linear_evidence
   -> PACKET READY: Phase 3A.11 manual source follow-up packet
   -> COMPLETE/EXHAUSTED: Phase 3A.12 manual source review
   -> COMPLETE: Phase 3C public TiN dataset intake
-  -> ACTIVE: Phase 3C.1 St Andrews TiN pairing
-  -> NEXT: Phase 3C.2 run audit / threshold policy
+  -> COMPLETE: Phase 3C.1 St Andrews TiN pairing
+  -> COMPLETE: Phase 3C.2 run audit / future-only policy
+  -> NEXT: Phase 3C.3 threshold lock / clean run decision
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -131,8 +135,10 @@ paper maps Figure 4 to normal-incidence unpolarized spectra for 50 nm TiN on
 glass. Phase 3C.1 extracts the `RT.xlsx` R/T snapshots, registers the
 `50nm-MTiN-50c` epsilon table as the candidate frozen input, and adds a
 fail-closed validation candidate. This is promising but still blocked from
-calibrated promotion until future thresholds are approved before residual
-judgment and the transmittance/pairing caveats are resolved.
+calibrated promotion. Phase 3C.2 audits the existing run and preserves its
+residuals as historical context only: the draft threshold policy is future-only,
+`applies_to_existing_run` is false, and a clean run is required after any
+threshold lock.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

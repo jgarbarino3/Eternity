@@ -610,3 +610,36 @@ def test_phase3c1_intake_command_writes_artifacts(tmp_path: Path) -> None:
     assert (raw_dir / "standrews_tin_50nm_reflectance.csv").exists()
     assert (raw_dir / "standrews_tin_50nm_transmittance.csv").exists()
     assert (raw_dir / "standrews_tin_50nm_50c_epsilon.txt").exists()
+
+
+def test_phase3c2_audit_command_writes_future_only_policy(tmp_path: Path) -> None:
+    run_result = runner.invoke(
+        app,
+        ["run", "experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml"],
+    )
+    assert run_result.exit_code == 0, run_result.output
+    run_dir = Path(run_result.output.strip().splitlines()[-1])
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3c2-audit",
+            "--run-dir",
+            str(run_dir),
+            "--pairing-json",
+            "docs/phase3c1_standrews_tin_pairing.json",
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    audit = json.loads((tmp_path / "out" / "phase3c2_standrews_run_audit.json").read_text())
+    assert audit["decision"]["existing_run_promotable"] is False
+    assert audit["decision"]["next_clean_run_required"] is True
+    assert audit["decision"]["can_feed_serious_core"] is False
+    assert audit["future_threshold_policy"]["applies_to_existing_run"] is False
+    assert audit["gates"]["no_fit_leakage"]["status"] == "pass"
+    assert (tmp_path / "out" / "phase3c2_standrews_run_audit.md").exists()
+    policy_text = (tmp_path / "out" / "phase3c2_future_threshold_policy.yaml").read_text()
+    assert "pending_pro_or_user_lock_before_clean_run" in policy_text
