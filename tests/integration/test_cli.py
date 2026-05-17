@@ -484,3 +484,55 @@ def test_phase3a11_packet_command_writes_artifacts(tmp_path: Path) -> None:
     assert packet["phase_id"] == "Phase 3A.11"
     assert packet["decision"]["can_feed_serious_core"] is False
     assert (tmp_path / "out" / "phase3a11_manual_source_followup_packet.md").exists()
+
+
+def test_phase3a12_result_command_writes_artifacts(tmp_path: Path) -> None:
+    review_input = tmp_path / "phase3a12_review.json"
+    review_input.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.12",
+                "source_packet": "docs/phase3a11_manual_source_followup_packet.json",
+                "reviewed_candidates": [
+                    {
+                        "candidate_id": "phase3a11_candidate_1",
+                        "sha256": "abc",
+                        "path": "/tmp/candidate.SEsnap",
+                        "positive_evidence": ["FitLog line 216 records 60.0 degrees"],
+                        "negative_evidence": [
+                            "No FitLog hits for 3L2 or absolute reflectance."
+                        ],
+                        "proof_gate_results": {
+                            "exact_3l2_quartz_identity": "failed",
+                            "stack_30nm_tin_10nm_sio2_20nm_tin": "failed",
+                            "s_polarized_or_te_reflectance_channel": "unresolved",
+                            "sixty_degree_incidence": "passed",
+                            "absolute_reflectance_units_or_calibration_state": "failed",
+                            "export_or_source_lineage_to_d10nm_text_trace": "failed",
+                        },
+                        "candidate_decision": "related_but_not_source_identity",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a12-result",
+            "--review-input",
+            str(review_input),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads(
+        (tmp_path / "out" / "phase3a12_manual_source_review_result.json").read_text()
+    )
+    assert packet["decision"]["status"] == "manual_source_followup_exhausted"
+    assert packet["decision"]["can_feed_serious_core"] is False
+    assert (tmp_path / "out" / "phase3a12_manual_source_review_result.md").exists()

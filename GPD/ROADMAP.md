@@ -246,6 +246,32 @@ Result:
   files into the repo.
 - It cannot feed serious-core evidence or promote the existing run.
 
+## Phase 3A.12: Manual Source Review Result Or Clean Export Pivot
+
+Status: completed/exhausted
+
+Goal:
+
+- Inspect the three bounded Phase 3A.11 candidates once and decide whether
+  Phase 3A source follow-up is still worth pursuing.
+
+Artifacts:
+
+- `src/eternity/phase3a12.py`
+- `docs/phase3a12_manual_source_review_input.json`
+- `docs/phase3a12_manual_source_review_result.md`
+- `docs/phase3a12_manual_source_review_result.json`
+
+Result:
+
+- Decision `manual_source_followup_exhausted`.
+- The candidates pass only the 60-degree context gate.
+- Exact `3L2/Quartz`, 30/10/20 stack, S/TE reflectance channel, absolute
+  reflectance calibration, and `d_10nm` source-lineage gates remain failed or
+  unresolved.
+- Pivot to Phase 3B evidence reality check or use Phase 3A.6 only if a clean
+  export/new measurement appears.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

@@ -4,11 +4,11 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-17. Current mirrored focus is Phase 3A.11 bounded manual
-source follow-up packet: inspect only the three listed quartz dynamic
-candidates against exact source/calibration proof gates before falling back to
-Phase 3A.6 or Phase 3B, while absolute reflectance normalization remains
-blocked.
+Updated: 2026-05-17. Current mirrored focus is Phase 3A.12 manual source
+review result: the three bounded quartz dynamic candidates were inspected and
+the Phase 3A source path is exhausted unless new source evidence, a clean
+export, or a new measurement appears. Absolute reflectance normalization
+remains blocked.
 
 Authoritative sources remain:
 

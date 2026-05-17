@@ -63,3 +63,8 @@ Phase 3A.11 may package exact candidates and proof gates for manual review.
 That packet is not measurement evidence. Any positive finding must become a
 separate source-backed decision artifact before thresholds, holdout gates, or
 claim promotion are reconsidered.
+
+Phase 3A.12 exhausted the bounded manual source follow-up. Its result keeps the
+Phase 3A thesis spectra useful only as relative-intensity diagnostics unless a
+new clean export, measurement, or source-backed absolute-reflectance record is
+added later.

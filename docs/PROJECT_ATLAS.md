@@ -35,15 +35,14 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.11 bounded manual source follow-up packet
+- **Doing**: Phase 3A.12 manual source review result
   after the TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: record the manual source review result for the three listed
-  candidates, then fall back to Phase 3A.6 or Phase 3B if no exact
-  source/calibration proof appears.
+- **Next**: pivot to Phase 3B evidence reality check / digitized plot intake,
+  unless a clean Phase 3A CompleteEASE export or new measurement appears.
   Absolute normalization and thresholds remain required before any future
   calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
@@ -81,6 +80,7 @@ calibrated_linear_evidence
   -> COMPLETE/DIAGNOSTIC: Phase 3A.9 relative-only packet
   -> COMPLETE/DECISION: Phase 3A.10 branch decision
   -> PACKET READY: Phase 3A.11 manual source follow-up packet
+  -> COMPLETE/EXHAUSTED: Phase 3A.12 manual source review
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -120,6 +120,8 @@ dynamic candidates before returning to Phase 3B, because Phase 3B still lacks
 raw sample-matched TiON R/T.
 Phase 3A.11 records the exact three-candidate review packet, proof gates, and
 stop rules without changing the relative-only claim boundary.
+Phase 3A.12 exhausts that bounded manual source path: the reviewed candidates
+are related provenance, not exact source/calibration proof.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

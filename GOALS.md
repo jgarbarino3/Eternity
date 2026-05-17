@@ -94,6 +94,9 @@ grounding phase:
 - The active packet result is `Phase 3A.11 - Bounded manual source follow-up
   packet`: the three-candidate review scope, proof gates, stop rules, and
   forbidden uses are now written as repo artifacts.
+- The completed review result is `Phase 3A.12 - Manual source review result or
+  clean export pivot`: the three bounded candidates were inspected and did not
+  prove exact source identity, absolute reflectance, or `d_10nm` lineage.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -148,6 +151,9 @@ Current blocker:
 - Phase 3A.11 has enough information to guide the manual review of the three
   candidate source files. It does not itself prove absolute reflectance,
   exact source identity, or calibrated-evidence readiness.
+- Phase 3A.12 has enough information to stop the current Phase 3A source path.
+  Without a clean export, new measurement, or new user-supplied source file,
+  continuing Phase 3A provenance searching is not recommended.
 
 ## Goal Usage In Codex
 

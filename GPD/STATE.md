@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.11 manual source packet plus Phase 3A.1 gates
+**Current focus:** Phase 3A.12 manual source exhaustion plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.11
-**Current Phase Name:** Bounded Manual Source Follow-Up Packet
+**Current Phase:** 3A.12
+**Current Phase Name:** Manual Source Review Result Or Clean Export Pivot
 **Total Phases:** 3
-**Current Plan:** docs/phase3a11_manual_source_followup_packet.md
+**Current Plan:** docs/phase3a12_manual_source_review_result.md
 **Total Plans in Phase:** 1
 **Status:** Completed/blocked
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Wrote the bounded manual source follow-up packet for the top three quartz dynamic candidates and preserved the non-promotion boundary.
+**Last Activity Description:** Inspected the three bounded source candidates and exhausted the Phase 3A manual proof path without finding exact source identity or absolute reflectance proof.
 
 **Progress:** [█████████░] 90%
 
@@ -55,6 +55,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Phase 3A.11 wrote `docs/phase3a11_manual_source_followup_packet.md` and
   `.json`: the packet lists proof gates, snippets to inspect first, and stop
   rules for the three candidates. It remains non-promoting.
+- Phase 3A.12 wrote `docs/phase3a12_manual_source_review_result.md` and
+  `.json`: all three candidates are related provenance only. They pass the
+  60-degree context gate but fail or leave unresolved the identity, stack,
+  channel, absolute-normalization, and source-lineage gates.
 
 ## Open Questions
 
@@ -100,6 +104,9 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - [Phase 3A.11]: Manual source follow-up is packetized, not proven. — The
   packet guides review but does not prove absolute reflectance or source
   identity.
+- [Phase 3A.12]: Phase 3A source follow-up is exhausted. — Do not continue
+  open-ended searching without new evidence, a clean export, or a new
+  measurement.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -124,9 +131,8 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.12: record the manual source review result for the top three quartz
-  dynamic candidates; stop unless exact source identity and calibration proof
-  appears.
+- Phase 3B.1: perform a TiON evidence reality check / digitized plot intake, or
+  use Phase 3A.6 only if a clean CompleteEASE export/new measurement appears.
 - Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.

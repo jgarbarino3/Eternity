@@ -477,6 +477,35 @@ Result:
   Phase 3A.6 clean export/new measurement packet or return to Phase 3B TiON
   evidence gathering.
 
+#### Phase 3A.12: Manual Source Review Result Or Clean Export Pivot
+
+Status: completed / exhausted.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a12.py`
+- `docs/phase3a12_manual_source_review_input.json`
+- `docs/phase3a12_manual_source_review_result.md`
+- `docs/phase3a12_manual_source_review_result.json`
+
+Phase 3A.12 inspected the three bounded Phase 3A.11 `.SEsnap` candidates by
+hash, inner archive members, `_FitLog` metadata, and targeted proof-term
+search. All three candidates strengthen related quartz / 10 nm SiO2 /
+60-degree CompleteEASE provenance, but none prove exact `3L2/Quartz` identity,
+the `30 nm TiN / 10 nm SiO2 / 20 nm TiN` stack, absolute reflectance units or
+calibration state, or lineage to the `d_10nm` text exports.
+
+Result:
+
+- Decision `manual_source_followup_exhausted`.
+- Phase 3A remains `relative_intensity_only` with ceiling
+  `weak_within_dataset_holdout`.
+- Continuing Phase 3A source searching is not recommended unless the user adds
+  new source evidence or a clean CompleteEASE export/new measurement.
+- Recommended pivot is Phase 3B evidence reality check / digitized plot intake,
+  while keeping TiON calibrated evidence blocked until raw sample-matched R/T
+  or explicitly registered plot-derived data exists.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

@@ -35,6 +35,10 @@ from eternity.phase3a11 import (
     build_phase3a11_packet_from_paths,
     write_phase3a11_packet,
 )
+from eternity.phase3a12 import (
+    build_phase3a12_result_from_path,
+    write_phase3a12_result,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -147,6 +151,16 @@ PHASE3A11_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown manual follow-up artifacts.",
+)
+PHASE3A12_REVIEW_INPUT_OPTION = typer.Option(
+    Path("docs/phase3a12_manual_source_review_input.json"),
+    "--review-input",
+    help="Phase 3A.12 manual source review input JSON.",
+)
+PHASE3A12_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown manual source review results.",
 )
 
 
@@ -381,6 +395,28 @@ def phase3a11_packet(
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3a12-result")
+def phase3a12_result(
+    review_input: Path = PHASE3A12_REVIEW_INPUT_OPTION,
+    output_dir: Path | None = PHASE3A12_OUTPUT_DIR_OPTION,
+) -> None:
+    """Build the Phase 3A.12 bounded manual source review result."""
+
+    try:
+        result = build_phase3a12_result_from_path(review_input)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as error:
+        typer.echo(f"Phase 3A.12 result failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3a12_result(output_dir, result)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(result, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

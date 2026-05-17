@@ -66,3 +66,8 @@ Phase 3A.11 manual follow-up packets are review artifacts. They may identify
 proof gates and candidate source files, but `calibrated_linear_evidence`
 requires a later source-backed normalization decision and future predeclared
 threshold policy.
+
+Phase 3A.12 manual source review results may exhaust a provenance branch. An
+exhausted branch is not negative physics evidence; it simply forbids using that
+branch for serious-core promotion until new source data, a clean export, or a
+new measurement is registered.

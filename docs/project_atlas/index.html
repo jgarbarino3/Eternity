@@ -164,8 +164,8 @@
             </div>
             <div class="progress-stack" aria-label="Progress toward first goal">
               <div class="progress-row done"><span>Done</span><strong>V0 synthetic runner and contracts</strong></div>
-              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.11 packet ready</strong></div>
-              <div class="progress-row next"><span>Next</span><strong>Manual source review result</strong></div>
+              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.12 exhausted</strong></div>
+              <div class="progress-row next"><span>Next</span><strong>Phase 3B reality check</strong></div>
             </div>
           </div>
           <div class="goal-sequence" aria-label="Eternity goal sequence">
@@ -222,7 +222,8 @@
                   <div class="map-node blocked"><span>Triaged/blocked</span><strong>Phase 3A.8 source triage</strong><div class="sub-branches"><em>quartz dynamic follow-up</em><em>Si controls separated</em><em>relative-only lane</em></div></div>
                   <div class="map-node complete"><span>Diagnostic</span><strong>Phase 3A.9 relative-only packet</strong><div class="sub-branches"><em>shape correlation</em><em>dip position</em><em>trend direction</em></div></div>
                   <div class="map-node complete"><span>Decision</span><strong>Phase 3A.10 branch choice</strong><div class="sub-branches"><em>manual follow-up first</em><em>three candidates</em><em>Phase 3B fallback</em></div></div>
-                  <div class="map-node in-progress"><span>Packet ready</span><strong>Phase 3A.11 manual packet</strong><div class="sub-branches"><em>proof gates</em><em>stop rules</em><em>no promotion</em></div></div>
+                  <div class="map-node complete"><span>Packet ready</span><strong>Phase 3A.11 manual packet</strong><div class="sub-branches"><em>proof gates</em><em>stop rules</em><em>no promotion</em></div></div>
+                  <div class="map-node blocked"><span>Exhausted</span><strong>Phase 3A.12 source review</strong><div class="sub-branches"><em>related only</em><em>no absolute R</em><em>pivot now</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Frozen tabulated model</strong><div class="sub-branches"><em>epsilon table</em><em>ENZ crossings</em><em>valid range</em></div></div>
                   <div class="map-node blocked"><span>Parked</span><strong>Phase 3B TiON R/T provenance</strong><div class="sub-branches"><em>sample match</em><em>plot-only R</em><em>raw tables missing</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>no fit leakage</em><em>residual threshold</em><em>claim gate</em></div></div>
@@ -536,7 +537,7 @@
                 diagnostics. Phase 3A.9 records the current relative-only run
                 packet: high normalized shape correlation, matched 400 nm dip
                 location, and shared increasing trend over 400-900 nm. The
-                Phase 3A.10 branch packet chose one bounded manual source follow-up on the top three quartz dynamic candidates. Phase 3A.11 now records the exact review packet, proof gates, and stop rules before returning to Phase 3B or requesting a clean export. The
+                Phase 3A.10 branch packet chose one bounded manual source follow-up on the top three quartz dynamic candidates. Phase 3A.11 recorded the exact review packet, and Phase 3A.12 exhausted it: the candidates are related provenance, not exact source identity or absolute reflectance proof. The
                 conflict is not whether the spectra are useful; it is whether
                 exported units and calibration state can support absolute
                 reflectance.
@@ -549,7 +550,7 @@
                 <dt>Forbidden overclaim</dt>
                 <dd>Calibrated TiN/TiON evidence exists.</dd>
                 <dt>Next discriminating test</dt>
-                <dd>Inspect only the top three quartz dynamic source candidates; if they do not prove exact identity and calibration, use the clean re-export packet or return to Phase 3B TiON evidence gathering.</dd>
+                <dd>Move to Phase 3B evidence reality check or use the Phase 3A.6 clean re-export packet only if new measurement/export evidence appears.</dd>
               </dl>
             </article>
             <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
@@ -647,7 +648,7 @@
           <div class="swimlanes">
             <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
               <h3>Serious Core</h3>
-              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet ready -> Phase 3A.1 gate audit -> claim status.</p>
+              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet -> Phase 3A.12 exhausted -> Phase 3A.1 gate audit -> claim status.</p>
             </article>
             <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
               <h3>Research Memory</h3>
