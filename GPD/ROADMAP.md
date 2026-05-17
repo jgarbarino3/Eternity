@@ -173,6 +173,30 @@ Result:
 - Relative-only diagnostics may compare spectral shape, dip position, trend
   direction, and figure provenance only; they cannot feed serious-core evidence.
 
+## Phase 3A.9: Relative-Only Diagnostic Run Packet
+
+Status: completed/diagnostic
+
+Goal:
+
+- Preserve the useful relative-shape information from the existing Phase 3A run
+  while keeping claim promotion blocked.
+
+Artifacts:
+
+- `src/eternity/phase3a9.py`
+- `docs/phase3a9_relative_only_diagnostic_packet.md`
+- `docs/phase3a9_relative_only_diagnostic_packet.json`
+- `docs/phase3a9_relative_only_diagnostic_table.csv`
+
+Result:
+
+- Decision `relative_only_diagnostic_packet_ready`.
+- Min-max shape correlation is about 0.986 over 400-900 nm.
+- Prediction and measurement dips both occur at 400 nm in the inspected window.
+- Both normalized traces trend upward over 400-900 nm.
+- The packet is descriptive context only and cannot feed serious-core evidence.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

@@ -274,3 +274,68 @@ def test_phase3a8_triage_command_writes_artifacts(tmp_path: Path) -> None:
     assert triage["decision"]["can_feed_serious_core"] is False
     assert (tmp_path / "out" / "phase3a8_source_candidate_triage.md").exists()
     assert (tmp_path / "out" / "phase3a8_relative_only_diagnostic_policy.yaml").exists()
+
+
+def test_phase3a9_diagnostic_command_writes_artifacts(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "comparison_table.csv").write_text(
+        "\n".join(
+            [
+                "wavelength_nm,prediction,measurement,residual,measurement_ref",
+                "400,0.4,0.3,0.1,thesis_reflectance_d_10nm_initial_measurement",
+                "500,0.2,0.1,0.1,thesis_reflectance_d_10nm_initial_measurement",
+                "600,0.5,0.4,0.1,thesis_reflectance_d_10nm_initial_measurement",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    (run_dir / "claim_status.json").write_text(
+        json.dumps({"status": "weak_within_dataset_holdout", "can_feed_serious_core": False}),
+        encoding="utf-8",
+    )
+    (run_dir / "validation_summary.json").write_text(
+        json.dumps({"status": "blocked_from_calibrated_promotion", "metrics": {}}),
+        encoding="utf-8",
+    )
+    policy_path = tmp_path / "phase3a8_policy.yaml"
+    policy_path.write_text(
+        "\n".join(
+            [
+                "phase_id: Phase 3A.8",
+                "policy: relative_only_diagnostic",
+                "can_feed_serious_core: false",
+                "allowed_diagnostics:",
+                "  - spectral_shape",
+                "  - dip_position",
+                "forbidden_uses:",
+                "  - serious_core_evidence",
+                "  - calibrated_linear_evidence",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a9-diagnostic",
+            "--run-dir",
+            str(run_dir),
+            "--policy",
+            str(policy_path),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads(
+        (tmp_path / "out" / "phase3a9_relative_only_diagnostic_packet.json").read_text()
+    )
+    assert packet["decision"]["status"] == "relative_only_diagnostic_packet_ready"
+    assert packet["decision"]["can_feed_serious_core"] is False
+    assert (tmp_path / "out" / "phase3a9_relative_only_diagnostic_packet.md").exists()
+    assert (tmp_path / "out" / "phase3a9_relative_only_diagnostic_table.csv").exists()

@@ -83,6 +83,10 @@ grounding phase:
   prioritizes quartz 10 nm dynamic files for manual follow-up, classifies Si
   control files separately, and pivots Phase 3A to relative-only diagnostics
   unless a source-backed absolute export or new measurement appears.
+- The active diagnostic result is `Phase 3A.9 - Relative-only diagnostic run
+  packet`: it reports spectral shape, dip position, trend direction, and
+  figure-provenance diagnostics for the existing run while keeping serious-core
+  and calibrated-evidence promotion forbidden.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -128,6 +132,9 @@ Current blocker:
   trend direction, and figure provenance as relative-only diagnostics. It does
   not have enough information to feed the serious core or promote any Phase 3A
   run above `weak_within_dataset_holdout`.
+- Phase 3A.9 has enough information to preserve the current relative-shape
+  agreement as a useful diagnostic clue. It does not have enough information to
+  convert that clue into absolute reflectance validation or calibrated evidence.
 
 ## Goal Usage In Codex
 

@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.8 source candidate triage + relative-only diagnostic decision plus Phase 3A.1 gates
+**Current focus:** Phase 3A.9 relative-only diagnostic run packet plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.8
-**Current Phase Name:** Source Candidate Triage + Relative-Only Diagnostic Decision
+**Current Phase:** 3A.9
+**Current Phase Name:** Relative-Only Diagnostic Run Packet
 **Total Phases:** 3
-**Current Plan:** docs/phase3a8_source_candidate_triage.md
+**Current Plan:** docs/phase3a9_relative_only_diagnostic_packet.md
 **Total Plans in Phase:** 1
 **Status:** Completed/blocked
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Deduplicated and classified recovered source candidates, pivoting Phase 3A to relative-only diagnostics while keeping calibrated evidence blocked.
+**Last Activity Description:** Generated a non-promoting relative-shape, dip-position, and trend-direction diagnostic packet for the existing Phase 3A run.
 
 **Progress:** [█████████░] 90%
 
@@ -44,6 +44,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Phase 3A.8 deduplicated recovered candidates by SHA-256, prioritized quartz
   10 nm dynamic snapshots for manual follow-up, separated Si controls, and
   recorded `pivot_to_relative_only_diagnostic`.
+- Phase 3A.9 reported relative-only diagnostics for `run_f35a15cef565fb15`:
+  min-max shape correlation about 0.986, matched 400 nm dip position, and
+  shared increasing trend over 400-900 nm. Serious-core ingestion remains
+  false.
 
 ## Open Questions
 
@@ -81,6 +85,9 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - [Phase 3A.8]: Source-candidate triage pivots to relative-only diagnostics. —
   Spectral shape, dip position, trend direction, and figure provenance may be
   compared, but serious-core evidence and calibrated promotion remain forbidden.
+- [Phase 3A.9]: Relative-only diagnostics are descriptive, not validating. —
+  Shape/dip/trend agreement is useful context, but cannot become a pass/fail
+  gate or calibrated-evidence promotion for the already-inspected run.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -105,9 +112,9 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.9: build a relative-only diagnostic run packet that cannot promote
-  to calibrated evidence, or use Phase 3A.6 if a clean absolute export/new
-  measurement is required.
+- Phase 3A.10: decide between manual source follow-up for the top quartz
+  dynamic candidates, using Phase 3A.6 for a clean export/new measurement, or
+  returning to Phase 3B TiON evidence gathering.
 - Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.

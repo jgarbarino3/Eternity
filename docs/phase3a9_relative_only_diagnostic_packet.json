@@ -1,0 +1,64 @@
+{
+  "allowed_diagnostics": [
+    "spectral_shape",
+    "dip_position",
+    "trend_direction",
+    "figure_provenance"
+  ],
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "existing_run_promotion": "forbidden",
+    "historical_run": "run_f35a15cef565fb15",
+    "normalization_basis": "relative_intensity_only",
+    "status": "relative_only_diagnostic_packet_ready"
+  },
+  "diagnostics": {
+    "dip_offset_nm": 0.0,
+    "max_abs_relative_shape_delta": 0.18075756860177566,
+    "mean_abs_relative_shape_delta": 0.0961868323899881,
+    "measurement_dip": {
+      "value": 0.241225,
+      "wavelength_nm": 400.0
+    },
+    "measurement_trend_direction": "increasing",
+    "points": 501,
+    "prediction_dip": {
+      "value": 0.463548445,
+      "wavelength_nm": 400.0
+    },
+    "prediction_trend_direction": "increasing",
+    "shape_correlation_minmax": 0.9861424344926918,
+    "trend_direction_agreement": true,
+    "wavelength_window_nm": [
+      400.0,
+      900.0
+    ]
+  },
+  "forbidden_uses": [
+    "serious_core_evidence",
+    "calibrated_linear_evidence",
+    "absolute_reflectance_claim",
+    "retroactive_threshold_tuning"
+  ],
+  "generated_at": "2026-05-17T17:48:13.653628+00:00",
+  "historical_residual_context": {
+    "validation_max_abs_residual": 0.30514520763860137,
+    "validation_mean_abs_residual": 0.2798737087610879,
+    "validation_points": 501.0,
+    "validation_rmse": 0.2810951894697738,
+    "validation_window_max_nm": 900.0,
+    "validation_window_min_nm": 400.0
+  },
+  "inputs": {
+    "comparison_table": "results/runs/run_f35a15cef565fb15/comparison_table.csv",
+    "policy_path": "docs/phase3a8_relative_only_diagnostic_policy.yaml",
+    "run_dir": "results/runs/run_f35a15cef565fb15",
+    "source_claim_status": "weak_within_dataset_holdout",
+    "source_validation_status": "blocked_from_calibrated_promotion"
+  },
+  "interpretation_boundary": "These diagnostics compare relative spectral shape only. They are not absolute-reflectance validation, pass/fail thresholds, or calibrated evidence.",
+  "phase_id": "Phase 3A.9",
+  "title": "Relative-Only Diagnostic Run Packet"
+}

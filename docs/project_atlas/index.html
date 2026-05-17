@@ -164,8 +164,8 @@
             </div>
             <div class="progress-stack" aria-label="Progress toward first goal">
               <div class="progress-row done"><span>Done</span><strong>V0 synthetic runner and contracts</strong></div>
-              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.8 source triage</strong></div>
-              <div class="progress-row next"><span>Next</span><strong>Relative-only diagnostic packet</strong></div>
+              <div class="progress-row active"><span>Doing</span><strong>Phase 3A.9 relative-only packet</strong></div>
+              <div class="progress-row next"><span>Next</span><strong>Manual source follow-up or Phase 3B</strong></div>
             </div>
           </div>
           <div class="goal-sequence" aria-label="Eternity goal sequence">
@@ -220,6 +220,7 @@
                   <div class="map-node in-progress"><span>Packet ready</span><strong>Phase 3A.6 re-export packet</strong><div class="sub-branches"><em>sample ID</em><em>channel units</em><em>calibration state</em></div></div>
                   <div class="map-node blocked"><span>Recovered/blocked</span><strong>Phase 3A.7 source recovery</strong><div class="sub-branches"><em>source candidates</em><em>3L2 locked</em><em>absolute R blocked</em></div></div>
                   <div class="map-node blocked"><span>Triaged/blocked</span><strong>Phase 3A.8 source triage</strong><div class="sub-branches"><em>quartz dynamic follow-up</em><em>Si controls separated</em><em>relative-only lane</em></div></div>
+                  <div class="map-node complete"><span>Diagnostic</span><strong>Phase 3A.9 relative-only packet</strong><div class="sub-branches"><em>shape correlation</em><em>dip position</em><em>trend direction</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Frozen tabulated model</strong><div class="sub-branches"><em>epsilon table</em><em>ENZ crossings</em><em>valid range</em></div></div>
                   <div class="map-node blocked"><span>Parked</span><strong>Phase 3B TiON R/T provenance</strong><div class="sub-branches"><em>sample match</em><em>plot-only R</em><em>raw tables missing</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>no fit leakage</em><em>residual threshold</em><em>claim gate</em></div></div>
@@ -530,9 +531,12 @@
                 triages those candidates: quartz 10 nm dynamic files are manual
                 follow-up candidates, Si 100 files are controls/wrong-substrate
                 candidates, and the active lane pivots to relative-only
-                diagnostics. The conflict is not whether the spectra are useful;
-                it is whether exported units and calibration state can support
-                absolute reflectance.
+                diagnostics. Phase 3A.9 records the current relative-only run
+                packet: high normalized shape correlation, matched 400 nm dip
+                location, and shared increasing trend over 400-900 nm. The
+                conflict is not whether the spectra are useful; it is whether
+                exported units and calibration state can support absolute
+                reflectance.
                 Phase 3A.2 separates the source-backed thesis d_10nm stack from
                 unresolved 30_20_10 exports. Phase 3A.1 keeps the
                 already-inspected residuals below calibrated promotion until
@@ -542,7 +546,7 @@
                 <dt>Forbidden overclaim</dt>
                 <dd>Calibrated TiN/TiON evidence exists.</dd>
                 <dt>Next discriminating test</dt>
-                <dd>Run a relative-only diagnostic packet or obtain a clean re-export, then record future predeclared thresholds before promotion.</dd>
+                <dd>Choose manual source follow-up, use the clean re-export packet, or return to Phase 3B TiON evidence gathering before any future calibrated promotion attempt.</dd>
               </dl>
             </article>
             <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
@@ -640,7 +644,7 @@
           <div class="swimlanes">
             <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
               <h3>Serious Core</h3>
-              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.1 gate audit -> claim status.</p>
+              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.1 gate audit -> claim status.</p>
             </article>
             <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
               <h3>Research Memory</h3>

@@ -389,6 +389,36 @@ Enough information exists to run relative-only diagnostics honestly. Not enough
 information exists to approve absolute normalization, thresholds, or
 `calibrated_linear_evidence`.
 
+#### Phase 3A.9: Relative-Only Diagnostic Run Packet
+
+Decision: `relative_only_diagnostic_packet_ready`, with serious-core ingestion
+and calibrated promotion still forbidden.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a9.py`
+- `docs/phase3a9_relative_only_diagnostic_packet.md`
+- `docs/phase3a9_relative_only_diagnostic_packet.json`
+- `docs/phase3a9_relative_only_diagnostic_table.csv`
+
+Phase 3A.9 consumes the existing Phase 3A validation-candidate run and the
+Phase 3A.8 relative-only policy. It reports normalized shape, dip-position, and
+trend-direction diagnostics without treating them as thresholds or calibrated
+validation.
+
+Result for `run_f35a15cef565fb15`:
+
+- Window: 400-900 nm, 501 points.
+- Min-max shape correlation: about 0.986.
+- Prediction and measurement dips both occur at 400 nm in the inspected window.
+- Both normalized spectra trend upward over the inspected window.
+- Historical absolute residual context remains visible, but it is not used for
+  threshold setting or promotion.
+
+Enough information exists to say the relative spectral shape is worth keeping
+as a diagnostic clue. Not enough information exists to claim absolute
+reflectance agreement, pass/fail validation, or `calibrated_linear_evidence`.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

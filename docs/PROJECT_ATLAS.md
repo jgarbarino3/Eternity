@@ -35,15 +35,14 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3A.8 source candidate triage + relative-only diagnostic
-  decision
+- **Doing**: Phase 3A.9 relative-only diagnostic run packet
   after the TiN/SiO2 thesis reflectance candidate:
   source-qualified TiN/TiON optical
   constants, thesis reflectance snapshots, sample/stack IDs,
   registry-backed tabulated models, R/T provenance audits, and atlas/GPD
   alignment.
-- **Next**: build a Phase 3A.9 relative-only diagnostic run packet, or use the
-  Phase 3A.6 packet if source-backed absolute reflectance is required.
+- **Next**: decide whether to manually inspect the top quartz dynamic source
+  candidates or return to parked TiON/Phase 3B evidence gathering.
   Absolute normalization and thresholds remain required before any future
   calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
@@ -78,6 +77,7 @@ calibrated_linear_evidence
   -> ACTIVE/PACKET READY: Phase 3A.6 re-export or measurement packet
   -> COMPLETE/BLOCKED: Phase 3A.7 source recovery
   -> COMPLETE/BLOCKED: Phase 3A.8 source candidate triage
+  -> COMPLETE/DIAGNOSTIC: Phase 3A.9 relative-only packet
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -108,7 +108,10 @@ candidates, including DoD SAFE zip-contained snapshots for quartz cap-test and
 absolute-`%R` proof. Phase 3A.8 deduplicates those candidates, separates quartz
 10 nm dynamic follow-up candidates from Si-control files, and pivots the
 current lane to relative-only diagnostics that cannot feed serious-core
-evidence.
+evidence. Phase 3A.9 then records those diagnostics for the existing run:
+min-max spectral-shape correlation is high, prediction and measurement dips
+coincide at the 400 nm edge of the inspected window, and both trends increase
+over 400-900 nm. That is useful diagnostic context, not calibrated validation.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

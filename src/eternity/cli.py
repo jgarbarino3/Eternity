@@ -26,6 +26,7 @@ from eternity.phase3a8 import (
     load_phase3a7_recovery,
     write_phase3a8_triage,
 )
+from eternity.phase3a9 import build_phase3a9_packet, write_phase3a9_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -88,6 +89,21 @@ PHASE3A8_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and policy triage artifacts.",
+)
+PHASE3A9_RUN_DIR_OPTION = typer.Option(
+    DEFAULT_PHASE3A1_RUN_DIR,
+    "--run-dir",
+    help="Existing Phase 3A run directory with comparison_table.csv.",
+)
+PHASE3A9_POLICY_OPTION = typer.Option(
+    Path("docs/phase3a8_relative_only_diagnostic_policy.yaml"),
+    "--policy",
+    help="Phase 3A.8 relative-only diagnostic policy.",
+)
+PHASE3A9_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and CSV diagnostic artifacts.",
 )
 
 
@@ -245,6 +261,32 @@ def phase3a8_triage(
         return
 
     typer.echo(json.dumps(triage, indent=2, sort_keys=True))
+
+
+@app.command("phase3a9-diagnostic")
+def phase3a9_diagnostic(
+    run_dir: Path = PHASE3A9_RUN_DIR_OPTION,
+    policy_path: Path = PHASE3A9_POLICY_OPTION,
+    output_dir: Path | None = PHASE3A9_OUTPUT_DIR_OPTION,
+) -> None:
+    """Write a Phase 3A.9 relative-only diagnostic packet for an existing run."""
+
+    try:
+        packet = build_phase3a9_packet(run_dir, policy_path)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as error:
+        typer.echo(f"Phase 3A.9 diagnostic failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, csv_path = write_phase3a9_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {csv_path}")
+        return
+
+    packet_without_table = dict(packet)
+    packet_without_table.pop("table", None)
+    typer.echo(json.dumps(packet_without_table, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

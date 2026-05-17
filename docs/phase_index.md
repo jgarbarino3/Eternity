@@ -28,12 +28,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.6 | Active/packet-ready | CompleteEASE re-export / measurement packet | Packet and acceptance policy are ready for a clean future re-export, new measurement, or source-file intake. Artifacts: `docs/phase3a6_completeease_reexport_packet.md`, `docs/phase3a6_acceptance_policy.yaml`, and `docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md`. |
 | Phase 3A.7 | Completed/blocked | CompleteEASE source recovery + 3L2 provenance lock | Read-only scanner and report found related local CompleteEASE/Woollam `.SEsnap/.SE/.iSE` candidates, including DoD SAFE zip-contained 10 nm quartz cap and cap-test snapshots. Stack/geometry provenance is strengthened; absolute `%R` proof is still blocked. |
 | Phase 3A.8 | Completed/blocked | Source candidate triage + relative-only diagnostic decision | Deduplicated Phase 3A.7 candidates by SHA-256, separated quartz dynamic/manual follow-up candidates from Si controls, and pivoted to `relative_only_diagnostic` while keeping serious-core and calibrated-evidence promotion forbidden. |
+| Phase 3A.9 | Completed/diagnostic | Relative-only diagnostic run packet | Reports non-promoting spectral-shape, dip-position, trend-direction, and figure-provenance diagnostics for `run_f35a15cef565fb15`; the packet is useful context but cannot feed serious-core evidence. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.8 - Source candidate triage + relative-only diagnostic decision**.
+Current phase: **Phase 3A.9 - Relative-only diagnostic run packet**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
@@ -52,6 +53,9 @@ Information sufficiency:
   `relative_intensity_only`.
 - Enough to pivot Phase 3A into relative-only diagnostics for spectral shape,
   dip position, trend direction, and figure provenance.
+- Enough to report that the current relative-only packet has strong min-max
+  shape correlation, matched 400 nm dip location, and shared increasing trend
+  over 400-900 nm.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -62,11 +66,10 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3A.9 - Relative-Only Diagnostic Run Packet.** Planning: `high`
-  because it must keep the relative-only lane useful without overclaiming.
-  Implementation: `medium` if it only adds diagnostics/reporting, `high` if
-  claim-gate logic changes. Use `xhigh` before any threshold or calibrated
-  evidence policy.
+- **Phase 3A.10 - Decide Manual Source Follow-Up vs Phase 3B Return.**
+  Planning: `high`; use `xhigh` if deciding threshold policy or calibrated
+  evidence promotion. Implementation: `medium` for a bounded source-follow-up
+  checklist or TiON park/unpark report, `high` if claim gates change.
 
 Helpful tools:
 

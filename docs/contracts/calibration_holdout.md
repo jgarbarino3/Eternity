@@ -48,3 +48,8 @@ That lane can inform planning and provenance, but it is not a calibrated
 holdout split. A future calibrated run still requires source-backed absolute
 normalization or a new measurement plus predeclared thresholds before residual
 inspection.
+
+Phase 3A.9 packets may reuse the already-inspected comparison table to describe
+relative-only behavior. Because the run and residuals are historical, those
+descriptors must remain non-promoting context and cannot become holdout gates
+for that same run.

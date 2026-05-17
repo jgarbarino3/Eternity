@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.8 source candidate triage + relative-only diagnostic decision plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.9 relative-only diagnostic run packet plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,14 +18,14 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.8",
-    "current_phase_name": "Source Candidate Triage + Relative-Only Diagnostic Decision",
+    "current_phase": "3A.9",
+    "current_phase_name": "Relative-Only Diagnostic Run Packet",
     "total_phases": 3,
-    "current_plan": "docs/phase3a8_source_candidate_triage.md",
+    "current_plan": "docs/phase3a9_relative_only_diagnostic_packet.md",
     "total_plans_in_phase": 1,
     "status": "Completed/blocked",
     "last_activity": "2026-05-17",
-    "last_activity_desc": "Deduplicated and classified recovered source candidates, pivoting Phase 3A to relative-only diagnostics while keeping calibrated evidence blocked.",
+    "last_activity_desc": "Generated a non-promoting relative-shape, dip-position, and trend-direction diagnostic packet for the existing Phase 3A run.",
     "progress_percent": 90,
     "paused_at": null
   },
@@ -100,6 +100,20 @@
         "trend_direction",
         "figure_provenance"
       ]
+    },
+    {
+      "phase": "3A.9",
+      "decision_ref": "docs/phase3a9_relative_only_diagnostic_packet.md",
+      "normalization_basis": "relative_intensity_only",
+      "decision": "relative_only_diagnostic_packet_ready",
+      "can_feed_serious_core": false,
+      "shape_correlation_minmax": 0.9861424344926918,
+      "dip_offset_nm": 0.0,
+      "trend_direction_agreement": true,
+      "wavelength_window_nm": [
+        400.0,
+        900.0
+      ]
     }
   ],
   "open_questions": [
@@ -161,6 +175,11 @@
       "phase": "3A.8",
       "summary": "Source-candidate triage pivots to relative-only diagnostics.",
       "rationale": "The triage found useful quartz 10 nm dynamic manual-follow-up candidates, but no exact source identity or calibrated absolute reflectance proof."
+    },
+    {
+      "phase": "3A.9",
+      "summary": "Relative-only diagnostics are descriptive, not validating.",
+      "rationale": "Shape, dip, and trend agreement are useful context, but cannot become a pass/fail gate or calibrated-evidence promotion for the already-inspected run."
     }
   ],
   "approximations": [],
@@ -191,7 +210,7 @@
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.5 local/SDSU/Google Drive search result is blocked_needs_new_export; pivot to new export/project recovery or relative-only policy.",
-    "Phase 3A.9: build a relative-only diagnostic run packet that cannot promote to calibrated evidence, or use Phase 3A.6 if a clean absolute export/new measurement is required.",
+    "Phase 3A.10: decide between manual source follow-up for the top quartz dynamic candidates, using Phase 3A.6 for a clean export/new measurement, or returning to Phase 3B TiON evidence gathering.",
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
@@ -202,7 +221,7 @@
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
-    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.8 source triage, even with related CompleteEASE/Woollam source candidates."
+    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.9 relative-only diagnostics, even with related CompleteEASE/Woollam source candidates."
   ],
   "continuation": {
     "schema_version": 1,

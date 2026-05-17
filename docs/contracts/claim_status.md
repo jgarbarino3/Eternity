@@ -52,3 +52,8 @@ Relative-only diagnostics may compare spectral shape, dip position, trend
 direction, and figure provenance, but they must not feed serious-core evidence,
 claim absolute reflectance, tune thresholds retroactively, or promote above
 `weak_within_dataset_holdout`.
+
+Phase 3A.9 diagnostic packets may report relative-shape metrics and trend/dip
+descriptors for an already-inspected run. These metrics are descriptive only:
+they are not pass/fail thresholds, they do not repair normalization, and they
+must not upgrade the run's claim status.

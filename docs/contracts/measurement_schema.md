@@ -35,3 +35,8 @@ Phase 3A.8 may register source-candidate triage classes and relative-only
 diagnostic policy. These records describe evidence usability, not new
 measurements; they must preserve the original hashes and must not rewrite
 `reflectance_intensity`/`arb` into absolute reflectance units.
+
+Phase 3A.9 diagnostic tables may include normalized prediction/measurement
+columns and relative-shape deltas. These are derived diagnostic columns and
+must keep the source measurement reference and relative-normalization boundary
+explicit.
