@@ -181,3 +181,50 @@ def test_phase3a1_audit_reports_blocked_existing_run(tmp_path: Path) -> None:
     assert audit["status"] == "blocked_existing_run"
     assert audit["promotion"]["existing_run_allowed"] is False
     assert "normalization_gate_blocked" in audit["promotion"]["blocking_reasons"]
+
+
+def test_phase3a7_recovery_command_writes_artifacts(tmp_path: Path) -> None:
+    source_root = tmp_path / "sources"
+    source_root.mkdir()
+    (source_root / "candidate.SE").write_text(
+        "CompleteEASE reflectance intensity quartz 3 layer cap test",
+        encoding="utf-8",
+    )
+    thesis_pdf = tmp_path / "thesis.pdf"
+    thesis_pdf.write_text("3L2 Figure 4.1", encoding="utf-8")
+    d10_initial = tmp_path / "d_10nm_initial.txt"
+    d10_initial.write_text("Wavelength\tIntensity\n", encoding="utf-8")
+    d10_12v = tmp_path / "d_10nm_12V.txt"
+    d10_12v.write_text("Wavelength\tIntensity\n", encoding="utf-8")
+    ps_intensity = tmp_path / "30_20_10 p_s intensity.txt"
+    ps_intensity.write_text("Wavelength\tp-Intensity\ts-Intensity\n", encoding="utf-8")
+    reflectance = tmp_path / "30_20_10 reflectance.txt"
+    reflectance.write_text("Wavelength\tIntensity\n", encoding="utf-8")
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a7-recovery",
+            "--source-root",
+            str(source_root),
+            "--thesis-pdf",
+            str(thesis_pdf),
+            "--d10-initial",
+            str(d10_initial),
+            "--d10-12v",
+            str(d10_12v),
+            "--candidate-ps-intensity",
+            str(ps_intensity),
+            "--candidate-reflectance",
+            str(reflectance),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    recovery = json.loads(
+        (tmp_path / "out" / "phase3a7_completeease_source_recovery.json").read_text()
+    )
+    assert recovery["decision"]["can_promote_calibrated_linear_evidence"] is False
+    assert (tmp_path / "out" / "phase3a7_completeease_source_recovery.md").exists()

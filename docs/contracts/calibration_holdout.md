@@ -36,3 +36,9 @@ The thesis `d_10nm` exports may remain holdout candidates for future planning,
 but they cannot become calibrated holdout evidence unless absolute reflectance
 normalization is source-backed before a new run and the thresholds are
 predeclared before residual inspection.
+
+Phase 3A.7 recovered related CompleteEASE/Woollam source candidates, including
+DoD SAFE zip-contained snapshots. These candidates may guide future source
+triage or re-export, but they do not relax the holdout rules unless they prove
+channel name, units, calibration state, angle, polarization, and sample identity
+before a new residual-gated run.

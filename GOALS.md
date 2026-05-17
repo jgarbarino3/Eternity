@@ -74,6 +74,10 @@ grounding phase:
 - The active packet phase is `Phase 3A.6 - CompleteEASE re-export /
   measurement packet`: use the exact source-evidence request and future-only
   policy boundary before any future absolute-reflectance validation run.
+- The active recovery phase is `Phase 3A.7 - CompleteEASE source recovery +
+  3L2 provenance lock`: a read-only scanner now records local `.SE`, `.SEsnap`,
+  `.iSE`, and DoD SAFE zip-contained candidates. It strengthens source
+  provenance but keeps absolute reflectance blocked.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -111,6 +115,10 @@ Current blocker:
 - Phase 3A.6 has enough information to request or perform a clean re-export /
   measurement intake. It does not yet have enough information to approve
   absolute normalization, write numeric thresholds, or promote any existing run.
+- Phase 3A.7 has enough information to confirm the thesis-backed `3L2/Quartz`
+  stack and to rank related local CompleteEASE/Woollam source candidates. It
+  still does not have enough information to treat exported `Intensity` columns
+  as calibrated absolute `%R`.
 
 ## Goal Usage In Codex
 

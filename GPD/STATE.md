@@ -2,25 +2,25 @@
 
 ## Project Reference
 
-See: GPD/PROJECT.md (updated 2026-05-16)
+See: GPD/PROJECT.md (updated 2026-05-17)
 
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.6 CompleteEASE re-export / measurement packet plus Phase 3A.1 gates
+**Current focus:** Phase 3A.7 CompleteEASE source recovery + 3L2 provenance lock plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.6
-**Current Phase Name:** CompleteEASE Re-export / Measurement Packet
+**Current Phase:** 3A.7
+**Current Phase Name:** CompleteEASE Source Recovery + 3L2 Provenance Lock
 **Total Phases:** 3
-**Current Plan:** docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md
+**Current Plan:** docs/phase3a7_completeease_source_recovery.md
 **Total Plans in Phase:** 1
-**Status:** Packet ready
-**Last Activity:** 2026-05-16
-**Last Activity Description:** Created the source-evidence packet and acceptance policy required before any future absolute-reflectance Phase 3A run.
+**Status:** Completed/blocked
+**Last Activity:** 2026-05-17
+**Last Activity Description:** Recovered and ranked related local CompleteEASE/Woollam source candidates while keeping absolute reflectance blocked.
 
-**Progress:** [████████░░] 80%
+**Progress:** [█████████░] 90%
 
 ## Active Calculations
 
@@ -37,6 +37,10 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - Phase 3A.5 found related RC2/CompleteEASE, thesis, SDSU slide/report, and
   scanned lab-notebook provenance, but no exact source-backed absolute `%R`
   proof; decision is `blocked_needs_new_export`.
+- Phase 3A.7 found related local CompleteEASE/Woollam `.SE/.SEsnap/.iSE`
+  candidates, including DoD SAFE zip-contained quartz cap and 10 nm SiO2
+  dynamic snapshots; stack mapping is strengthened, but absolute `%R` proof is
+  still blocked.
 
 ## Open Questions
 
@@ -67,6 +71,10 @@ See: GPD/PROJECT.md (updated 2026-05-16)
 - [Phase 3A.5]: Local retrieval did not find exact source-backed absolute `%R`
   evidence for `d_10nm`. — Continue with relative-intensity diagnostics unless
   a new export/project/recipe/lab note is recovered.
+- [Phase 3A.7]: Related CompleteEASE/Woollam source candidates do not equal
+  absolute reflectance proof. — Keep normalization `relative_intensity_only`
+  unless source metadata explicitly proves channel name, units, calibration
+  state, angle, polarization, and exact sample identity.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -91,9 +99,11 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.6: use the CompleteEASE re-export / measurement packet to recover,
-  re-export, or newly measure source-backed data with required sample ID, angle,
-  polarization, calibration state, channel name, and units.
+- Phase 3A.8: triage the strongest Phase 3A.7 source candidates or define a
+  Pro/user-approved relative-only diagnostic policy that cannot promote to
+  calibrated evidence.
+- Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
+  measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
 
@@ -105,8 +115,8 @@ None yet.
 - Phase 3A `normalization_gate` is blocked.
 - `30_20_10` filename-to-thesis provenance is unresolved.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
-  unresolved and currently blocked by the Phase 3A.5 retrieval decision, even
-  after SDSU Google Drive, thesis/defense, and scanned lab-notebook checks.
+  unresolved and currently blocked after Phase 3A.7 source recovery, even with
+  related CompleteEASE/Woollam source candidates.
 
 ## Session Continuity
 

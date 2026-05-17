@@ -41,3 +41,8 @@ and figures support measured reflectance provenance for `d_10nm` / `3L2`, but
 exported `Intensity` columns remain `relative_intensity_only` until a
 source-backed export, recipe, project file, lab note, or approved policy proves
 absolute reflectance normalization before a future residual-gated run.
+
+Phase 3A.7 source recovery may report `related_source_candidates_found` and
+`stack_mapping_confirmed`, but these are provenance findings only. They do not
+permit `calibrated_linear_evidence` while absolute normalization and
+predeclared thresholds remain blocked.

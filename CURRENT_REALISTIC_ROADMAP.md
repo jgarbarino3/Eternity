@@ -323,6 +323,39 @@ Not enough information exists yet to complete calibrated Phase 3A promotion.
 Enough information exists to use the source-evidence packet and prevent another
 ambiguous export from entering the serious core.
 
+#### Phase 3A.7: CompleteEASE Source Recovery + 3L2 Provenance Lock
+
+Decision: `related_source_candidates_found`, with `absolute_reflectance_blocked`.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a7.py`
+- `docs/phase3a7_completeease_source_recovery.md`
+- `docs/phase3a7_completeease_source_recovery.json`
+
+Phase 3A.7 adds a read-only recovery scanner for local CompleteEASE/Woollam
+`.SE`, `.SEsnap`, and `.iSE` files, including matching members inside DoD SAFE
+zip containers. It records hashes, archive/member paths, `_FitLog` snippets,
+and candidate scores without copying large binary source files into the repo.
+
+Result:
+
+- Thesis-backed `3L2/Quartz` mapping is stronger: 30 nm TiN / 10 nm SiO2 /
+  20 nm TiN on quartz, S-polarized RC2 in-situ reflectance/reflective intensity
+  at 60 degrees, Figure 4.1.
+- The strongest recovered local candidates are related CompleteEASE/Woollam
+  source snapshots for quartz cap-test and 10 nm SiO2 pulsed/dynamic runs.
+- No readable source metadata proves that the exported `Intensity` columns are
+  calibrated absolute `%R`. Generic CompleteEASE strings such as `% 1st
+  Reflection` or `Absolute MSE` are not normalization proof.
+- `run_f35a15cef565fb15` remains historical, capped at
+  `weak_within_dataset_holdout`, and blocked by normalization and
+  predeclared-threshold gates.
+
+Enough information exists to continue relative-intensity diagnostics and source
+triage. Not enough information exists to approve absolute normalization,
+thresholds, or `calibrated_linear_evidence`.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

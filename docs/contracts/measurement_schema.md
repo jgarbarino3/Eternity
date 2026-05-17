@@ -25,3 +25,8 @@ For Phase 3A, d=10 nm TiN/SiO2 thesis measurements are mapped to
 reflectance calibration is source-confirmed. The `30_20_10` reflectance, p/s
 intensity, Psi/Delta, and e1/e2 exports are unresolved candidate-bundle records
 and must remain forbidden for fitting.
+
+Phase 3A.7 may register CompleteEASE/Woollam source candidates by path, hash,
+archive member, and readable metadata. Those records strengthen provenance, but
+they do not change measurement units or normalization unless the source
+explicitly proves calibrated absolute reflectance.

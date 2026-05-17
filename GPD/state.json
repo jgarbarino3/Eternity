@@ -1,8 +1,8 @@
 {
   "project_reference": {
-    "project_md_updated": "2026-05-16",
+    "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.6 CompleteEASE re-export / measurement packet plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.7 CompleteEASE source recovery + 3L2 provenance lock plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,15 +18,15 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.6",
-    "current_phase_name": "CompleteEASE Re-export / Measurement Packet",
+    "current_phase": "3A.7",
+    "current_phase_name": "CompleteEASE Source Recovery + 3L2 Provenance Lock",
     "total_phases": 3,
-    "current_plan": "docs/superpowers/plans/2026-05-16-phase3a6-completeease-reexport-measurement-packet.md",
+    "current_plan": "docs/phase3a7_completeease_source_recovery.md",
     "total_plans_in_phase": 1,
-    "status": "Packet ready",
-    "last_activity": "2026-05-16",
-    "last_activity_desc": "Created the source-evidence packet and acceptance policy required before any future absolute-reflectance Phase 3A run.",
-    "progress_percent": 92,
+    "status": "Completed/blocked",
+    "last_activity": "2026-05-17",
+    "last_activity_desc": "Recovered and ranked related local CompleteEASE/Woollam source candidates while keeping absolute reflectance blocked.",
+    "progress_percent": 90,
     "paused_at": null
   },
   "active_calculations": [
@@ -76,6 +76,15 @@
       "decision": "blocked_needs_new_export",
       "absolute_reflectance_evidence_found": false,
       "search_scope": "local Research Optics, Optics Research, Downloads, desktop SDSU Google Drive, targeted Google Drive thesis/defense hits, SDSU slides/reports, and scanned lab notebook"
+    },
+    {
+      "phase": "3A.7",
+      "decision_ref": "docs/phase3a7_completeease_source_recovery.md",
+      "normalization_basis": "relative_intensity_only",
+      "decision": "related_source_candidates_found",
+      "absolute_reflectance_evidence_found": false,
+      "stack_mapping": "stack_mapping_confirmed",
+      "search_scope": "local Research Optics AFRL/DoD direct .SE/.SEsnap/.iSE files plus matching members inside DoD SAFE zip containers"
     }
   ],
   "open_questions": [
@@ -127,6 +136,11 @@
       "phase": "3A.5",
       "summary": "Local retrieval did not find exact source-backed absolute %R evidence for d_10nm.",
       "rationale": "Related RC2/CompleteEASE and thesis provenance exists, but no exact export/project/recipe/lab-note proof ties the thesis Intensity columns to calibrated absolute reflectance."
+    },
+    {
+      "phase": "3A.7",
+      "summary": "Related CompleteEASE/Woollam source candidates do not equal absolute reflectance proof.",
+      "rationale": "The scanner found source candidates and stronger 3L2/Quartz provenance, but no readable metadata proves channel name, units, calibration state, angle, polarization, and exact sample identity for calibrated absolute reflectance."
     }
   ],
   "approximations": [],
@@ -157,7 +171,8 @@
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.5 local/SDSU/Google Drive search result is blocked_needs_new_export; pivot to new export/project recovery or relative-only policy.",
-    "Phase 3A.6: use the CompleteEASE re-export / measurement packet to recover, re-export, or newly measure source-backed data with required sample ID, angle, polarization, calibration state, channel name, and units.",
+    "Phase 3A.8: triage the strongest Phase 3A.7 source candidates or define a Pro/user-approved relative-only diagnostic policy that cannot promote to calibrated evidence.",
+    "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."
   ],
@@ -167,7 +182,7 @@
     "Phase 3A thresholds_predeclared gate is blocked.",
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
-    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked by the Phase 3A.5 retrieval decision, even after SDSU Google Drive, thesis/defense, and scanned lab-notebook checks."
+    "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.7 source recovery, even with related CompleteEASE/Woollam source candidates."
   ],
   "continuation": {
     "schema_version": 1,

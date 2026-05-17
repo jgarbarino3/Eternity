@@ -4,6 +4,10 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
+Updated: 2026-05-17. Current mirrored focus is Phase 3A.7 source recovery:
+related CompleteEASE/Woollam candidates were found, but absolute reflectance
+normalization remains blocked.
+
 Authoritative sources remain:
 
 - `GOALS.md`

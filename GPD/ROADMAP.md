@@ -122,6 +122,31 @@ Artifacts:
 - `docs/phase3a6_completeease_reexport_packet.md`
 - `docs/phase3a6_acceptance_policy.yaml`
 
+## Phase 3A.7: CompleteEASE Source Recovery + 3L2 Provenance Lock
+
+Status: completed/blocked
+
+Goal:
+
+- Recover and rank local CompleteEASE/Woollam source candidates without copying
+  large binary `.SE`, `.SEsnap`, or `.iSE` files into the repo.
+
+Artifacts:
+
+- `src/eternity/phase3a7.py`
+- `docs/phase3a7_completeease_source_recovery.md`
+- `docs/phase3a7_completeease_source_recovery.json`
+
+Result:
+
+- Decision `related_source_candidates_found` with `absolute_reflectance_blocked`.
+- Thesis-backed `3L2/Quartz` stack and 60-degree S-polarized RC2 context are
+  strengthened.
+- Local CompleteEASE/Woollam candidates include quartz cap-test and 10 nm SiO2
+  dynamic snapshots, including DoD SAFE zip-contained `.SEsnap` members.
+- No readable metadata proves calibrated absolute `%R`; Phase 3A remains capped
+  below calibrated evidence.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

@@ -10,6 +10,17 @@ from pydantic import ValidationError
 
 from eternity.artifacts import sha256_file
 from eternity.phase3a1 import build_phase3a1_audit, write_phase3a1_audit
+from eternity.phase3a7 import (
+    DEFAULT_302010_PS_INTENSITY,
+    DEFAULT_302010_REFLECTANCE,
+    DEFAULT_D10_12V,
+    DEFAULT_D10_INITIAL,
+    DEFAULT_SOURCE_ROOT,
+    DEFAULT_THESIS_PDF,
+    RecoveryInputs,
+    build_phase3a7_recovery,
+    write_phase3a7_recovery,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -41,6 +52,27 @@ PHASE3A1_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown audit artifacts.",
+)
+PHASE3A7_SOURCE_ROOT_OPTION = typer.Option(
+    DEFAULT_SOURCE_ROOT,
+    "--source-root",
+    help="Read-only root containing candidate CompleteEASE/Woollam .SE/.SEsnap/.iSE files.",
+)
+PHASE3A7_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown recovery artifacts.",
+)
+PHASE3A7_THESIS_PDF_OPTION = typer.Option(DEFAULT_THESIS_PDF, "--thesis-pdf")
+PHASE3A7_D10_INITIAL_OPTION = typer.Option(DEFAULT_D10_INITIAL, "--d10-initial")
+PHASE3A7_D10_12V_OPTION = typer.Option(DEFAULT_D10_12V, "--d10-12v")
+PHASE3A7_CANDIDATE_PS_INTENSITY_OPTION = typer.Option(
+    DEFAULT_302010_PS_INTENSITY,
+    "--candidate-ps-intensity",
+)
+PHASE3A7_CANDIDATE_REFLECTANCE_OPTION = typer.Option(
+    DEFAULT_302010_REFLECTANCE,
+    "--candidate-reflectance",
 )
 
 
@@ -138,6 +170,42 @@ def phase3a1_audit(
         return
 
     typer.echo(json.dumps(audit, indent=2, sort_keys=True))
+
+
+@app.command("phase3a7-recovery")
+def phase3a7_recovery(
+    source_root: Path = PHASE3A7_SOURCE_ROOT_OPTION,
+    thesis_pdf: Path = PHASE3A7_THESIS_PDF_OPTION,
+    d10_initial: Path = PHASE3A7_D10_INITIAL_OPTION,
+    d10_12v: Path = PHASE3A7_D10_12V_OPTION,
+    candidate_ps_intensity: Path = PHASE3A7_CANDIDATE_PS_INTENSITY_OPTION,
+    candidate_reflectance: Path = PHASE3A7_CANDIDATE_REFLECTANCE_OPTION,
+    output_dir: Path | None = PHASE3A7_OUTPUT_DIR_OPTION,
+) -> None:
+    """Recover Phase 3A.7 CompleteEASE/Woollam source provenance."""
+
+    try:
+        recovery = build_phase3a7_recovery(
+            RecoveryInputs(
+                source_root=source_root,
+                thesis_pdf=thesis_pdf,
+                d10_initial=d10_initial,
+                d10_12v=d10_12v,
+                candidate_ps_intensity=candidate_ps_intensity,
+                candidate_reflectance=candidate_reflectance,
+            )
+        )
+    except FileNotFoundError as error:
+        typer.echo(f"Phase 3A.7 input not found: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3a7_recovery(output_dir, recovery)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(recovery, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
