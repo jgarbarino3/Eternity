@@ -1,0 +1,1252 @@
+{
+  "allowed_relative_only_diagnostics": [
+    "spectral_shape",
+    "dip_position",
+    "trend_direction",
+    "figure_provenance"
+  ],
+  "categories": {
+    "manual_followup_priority": [
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE",
+            "size_bytes": 8850308
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 19118
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE'",
+          "'20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle'",
+          "2100.0 15160.0",
+          "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE'",
+          "20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -0.0 1.0E8 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_quartz",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+        "score": 40,
+        "sha256": "b14020a0b37291da7bb2e6f4729686bcca54a87b5d61d94346449d6495e09dfb",
+        "size_bytes": 8862846,
+        "triage_category": "manual_followup_priority",
+        "triage_priority_score": 86,
+        "triage_rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+        "zip_crc32": "2e399121",
+        "zip_mtime": "2023-05-26-04:25:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE",
+            "size_bytes": 8983828
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 19185
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE'",
+          "'20230524 - data collected with random freq - 8V - rand offset - bump probe - then 16V zero offset pulsed'",
+          "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE'",
+          "20230524 - data collected with random freq - 8V - rand offset - bump probe - then 16V zero offset pulsed",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -0.0 1.0E8 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u",
+          "'H4sIAAAAAAAAAO2U6yPWdx+A79v5TjlTOaUUD+V053S7f9/v7/P5ZBTLypqVdRCiLVmhdaBGi5RTkkOMsrKKmKGDVnRaBzxSOiwzZeusqakWjdv6H563z/Xyene9uSD90gews+AzyIy+D9lKCezSfwC5j87B7hvDkNfcCnuq5ZBfooSCHf1QuPFjKPp8HewNXQzFHxpACS+Gb+UyKLWLgDKLE7D"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_quartz",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+        "score": 40,
+        "sha256": "f7a54e3f1c67005da251fa4538c50bae4d2f1b2e4a9c72246a7e1302162990c5",
+        "size_bytes": 8996421,
+        "triage_category": "manual_followup_priority",
+        "triage_priority_score": 86,
+        "triage_rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+        "zip_crc32": "2b3f2408",
+        "zip_mtime": "2023-05-26-04:25:24"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE",
+            "size_bytes": 705584
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 19109
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230525 - probes removed - 890 nm peaks still present.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE'",
+          "'20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE'",
+          "20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -0.0 1.0E8 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u",
+          "'H4sIAAAAAAAAAO2U6yPWdx+A79v5TjlTOaUUD+V053S7f9/v7/P5ZBTLypqVdRCiLVmhdaBGi5RTkkOMsrKKmKGDVnRaBzxSOiwzZeusqakWjdv6H563z/Xyene9uSD90gews+AzyIy+D9lKCezSfwC5j87B7hvDkNfcCnuq5ZBfooSCHf1QuPFjKPp8HewNXQzFHxpACS+Gb+UyKLWLgDKLE7D"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_quartz",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230525 - probes removed - 890 nm peaks still present.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230525 - probes removed - 890 nm peaks still present.SEsnap",
+        "score": 40,
+        "sha256": "2c63ad6f9d86290249818ef41c9ff6e3ef20ab53e6911fbf495c962a6a6b751d",
+        "size_bytes": 716878,
+        "triage_category": "manual_followup_priority",
+        "triage_priority_score": 86,
+        "triage_rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+        "zip_crc32": "cbf54ab4",
+        "zip_mtime": "2023-05-26-04:25:24"
+      }
+    ],
+    "not_decisive_for_absolute_reflectance": [],
+    "related_but_not_source_identity": [
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519-RT-1 LAYER - TIN ON SI - PUCK 4 OF 620230519-114322.iSE",
+            "size_bytes": 1635604
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 11396
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 4 complete  - goal 75nm TiN - 30 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 4 complete  - goal 75nm TiN - 30 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 4 OF 620230519-114322.iSE'",
+          "'20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test'",
+          "'n of TiN 52nm RT on Si-20230515 @ 632.8 nm = 1.37179'",
+          "'k of TiN 52nm RT on Si-20230515 @ 632.8 nm = 2.21884'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 4 OF 620230519-114322.iSE'",
+          "20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "1.4482001306012695 F 0.1 10.0 F 'A' F F 0.0 0.0 100000.0 F 100.0",
+          "'Layer' 'TiN 50nm RT on quartz-20230517' 'OSC' '' 'TiN 50nm RT on quartz-20230517'",
+          "start_TiN 50nm RT on quartz-20230517 Fit Parms"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230519-RT-1 LAYER - TIN ON SI - PUCK 4 OF 620230519-114322.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_20nm",
+          "mentions_30nm",
+          "mentions_completeease",
+          "mentions_quartz",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 4 complete  - goal 75nm TiN - 30 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 4 complete  - goal 75nm TiN - 30 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+        "score": 50,
+        "sha256": "9c691779fd7235ec61ac545858e8258a55498a14497c1869ebb4bc4feb744212",
+        "size_bytes": 1638899,
+        "triage_category": "related_but_not_source_identity",
+        "triage_priority_score": 42,
+        "triage_rationale": "related CompleteEASE/Woollam cap-test provenance without exact thesis identity",
+        "zip_crc32": "68c4a609",
+        "zip_mtime": "2023-05-22-02:35:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230518-RT-SIO2-PUCK 4 ON TIN20230518-153339.iSE",
+            "size_bytes": 194676
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 9310
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 4 ON TIN20230518-153339.iSE'",
+          "'20230518 - Puck 5 complete - TiN on blank quartz RT'",
+          "'n of SiO2 (Sellmeier) @ 632.8 nm = 1.45710'",
+          "'k of SiO2 (Sellmeier) @ 632.8 nm = 0.0000'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 4 ON TIN20230518-153339.iSE'",
+          "20230518 - Puck 5 complete - TiN on blank quartz RT",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "1.4482001306012695 F 0.1 10.0 F 'A' F F 0.0 0.0 100000.0 F 100.0",
+          "'Layer' 'TiN 50nm RT on quartz-20230517' 'OSC' '' 'TiN 50nm RT on quartz-20230517'",
+          "start_TiN 50nm RT on quartz-20230517 Fit Parms"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230518-RT-SIO2-PUCK 4 ON TIN20230518-153339.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_20nm",
+          "mentions_completeease",
+          "mentions_quartz",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 4 complete - 20 nm SiO2 - 53nm TiN on quartz for 3 layer cap test.SEsnap",
+        "score": 46,
+        "sha256": "3030a8650f9d8335f0a333857af85fbeca1ed9cbcf3db0fccab82962c0d975b2",
+        "size_bytes": 197293,
+        "triage_category": "related_but_not_source_identity",
+        "triage_priority_score": 42,
+        "triage_rationale": "related CompleteEASE/Woollam cap-test provenance without exact thesis identity",
+        "zip_crc32": "283e25b6",
+        "zip_mtime": "2023-05-22-02:35:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230517-RT-1 LAYER - TIN ON QUARTZ20230517-104823.iSE",
+            "size_bytes": 1785072
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 9011
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - completed TiN RT growth - 50.3 nm actually on quartz..SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX.zip::DoD SAFE-GutD3WAH22Yxo9tX/20230517 - completed TiN RT growth - 50.3 nm actually on quartz..SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX/20230517 - completed TiN RT growth - 50.3 nm actually on quartz..SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230517-RT-1 LAYER - TIN ON QUARTZ20230517-104823.iSE'",
+          "'20230517 - quartz TiN growth - quartz modeled'",
+          "'En = 0.760'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230517-RT-1 LAYER - TIN ON QUARTZ20230517-104823.iSE'",
+          "20230517 - quartz TiN growth - quartz modeled",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Layer' 'TiN 52nm RT on Si-20230515' 'OSC' '' 'TiN 52nm RT on Si-20230515'",
+          "start_TiN 52nm RT on Si-20230515 Fit Parms",
+          "0.47825076489406065 T 0.0 100.0 F 'Br' F F 0.0 0.0 100000.0 F 100.0",
+          "0.760212396905221 T 1.0E-8 15.0 F 'En' F F 0.0 0.0 100000.0 F 100.0"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230517-RT-1 LAYER - TIN ON QUARTZ20230517-104823.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_quartz",
+          "mentions_s_polarized_or_te",
+          "mentions_tin"
+        ],
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - completed TiN RT growth - 50.3 nm actually on quartz..SEsnap",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - completed TiN RT growth - 50.3 nm actually on quartz..SEsnap",
+        "score": 32,
+        "sha256": "28da57b88b2e00b140aa64607424573c5003d4fee3fddf782336833f2143e963",
+        "size_bytes": 1787887,
+        "triage_category": "related_but_not_source_identity",
+        "triage_priority_score": 42,
+        "triage_rationale": "related CompleteEASE/Woollam cap-test provenance without exact thesis identity"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230517 - Blank quartz 1 in - RT for TiN goal 50 nm growth.SE",
+            "size_bytes": 21872
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 7364
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - quartz TiN growth - quartz modeled.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX.zip::DoD SAFE-GutD3WAH22Yxo9tX/20230517 - quartz TiN growth - quartz modeled.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX/20230517 - quartz TiN growth - quartz modeled.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230517 - Blank quartz 1 in - RT for TiN goal 50 nm growth.SE'",
+          "'20220819 - 6 - quartz RT - TiN pure - 1250 seconds growth time'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230517 - Blank quartz 1 in - RT for TiN goal 50 nm growth.SE'",
+          "20220819 - 6 - quartz RT - TiN pure - 1250 seconds growth time",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "\u0000\u001bCauchy:CAUCHY:SUBSTRATE:YES\u0000\u0004none\u0002",
+          "'Absolute MSE' 0.0 3 F 1000000.0",
+          "start_FitInfo",
+          "end_FitInfo"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_quartz",
+          "mentions_s_polarized_or_te",
+          "mentions_tin"
+        ],
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - quartz TiN growth - quartz modeled.SEsnap",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-GutD3WAH22Yxo9tX 2/20230517 - quartz TiN growth - quartz modeled.SEsnap",
+        "score": 32,
+        "sha256": "aecc47b1a55737d5c46886077ddc740d705c1667e80688e7ccc1631962929dd0",
+        "size_bytes": 24070,
+        "triage_category": "related_but_not_source_identity",
+        "triage_priority_score": 42,
+        "triage_rationale": "related CompleteEASE/Woollam cap-test provenance without exact thesis identity"
+      }
+    ],
+    "wrong_substrate_or_control": [
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - ellipsometry - 10 nm SiO2 - 3 layer cap.SE",
+            "size_bytes": 404140
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 8341
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 1 - ellipsometry - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - ellipsometry - 10 nm SiO2 - 3 layer cap.SE'",
+          "'20230517 - 52nm goal TiN - RT -on quartz 1 in - Transmission'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - ellipsometry - 10 nm SiO2 - 3 layer cap.SE'",
+          "20230517 - 52nm goal TiN - RT -on quartz 1 in - Transmission",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "1.0E7 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Br' 0.8454548360987882 4 F 0.009282836072249955 12 F 0.0 0.0 100000.0 F 'NULL'",
+          "'Absolute MSE' 0.0 3 F 1000000.0"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_quartz",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "20230523 - Puck 1 - ellipsometry - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 1 - ellipsometry - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "score": 46,
+        "sha256": "f404042b9114cca6bf6521cf42589270ca384d4e7109af73b0af079434e4bf39",
+        "size_bytes": 406635,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 38,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "cbc6f54d",
+        "zip_mtime": "2023-05-23-11:46:42"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - should be on 50nm TiN where was masked.SE",
+            "size_bytes": 204244
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 500
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on 50nm TiN where was masked.SE'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on 50nm TiN where was masked.SE'"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_intensity",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap",
+        "score": 44,
+        "sha256": "d28816d4984f1a1ca93c7edbe07d2b4684c9b056245e453d2c46c3f8d35ae884",
+        "size_bytes": 204864,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "72ea871f",
+        "zip_mtime": "2023-05-23-09:27:08"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519-RT-1 LAYER - TIN ON SI - PUCK 2 OF 620230519-100605.iSE",
+            "size_bytes": 3145664
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 23685
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 2 complete  - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 2 complete  - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 2 OF 620230519-100605.iSE'",
+          "'20230519 - Puck 1 complete - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test'",
+          "'Thickness # 4 = 1260.25'",
+          "'Total Thickness = 1260.2488'",
+          "'n of TiN 52nm RT on Si-20230515 @ 632.8 nm = 1.30823'",
+          "'k of TiN 52nm RT on Si-20230515 @ 632.8 nm = 2.25746'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 2 OF 620230519-100605.iSE'",
+          "20230519 - Puck 1 complete - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230519-RT-1 LAYER - TIN ON SI - PUCK 2 OF 620230519-100605.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_10nm_or_11nm",
+          "mentions_20nm",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 2 complete  - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 2 complete  - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "score": 40,
+        "sha256": "a87b27fa26619e9facc8e9b15608c3f9b4df1d4a8a9c68c4458508e5bbd45383",
+        "size_bytes": 3158411,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "149d017d",
+        "zip_mtime": "2023-05-22-02:35:24"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - should be on whole stack-reflectivity measurement.SE",
+            "size_bytes": 204244
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 522
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on entire stack of 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on whole stack-reflectivity measurement.SE'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on whole stack-reflectivity measurement.SE'"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_intensity",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "20230519 - 3 layer cap - goal on entire stack of 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on entire stack of 10nm SiO2 cap - Si 100 N type 2 in-reflection intensity.SEsnap",
+        "score": 40,
+        "sha256": "d596ac024e2ec0bfa3a3357e1934b9c5999e6a045dac6bb82cc0491a457a3e24",
+        "size_bytes": 204893,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "49492fc7",
+        "zip_mtime": "2023-05-23-09:34:22"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - ellipsometry - 20 nm SiO2 - 3 layer cap.SE",
+            "size_bytes": 404140
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 6987
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 2 - ellipsometry - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - ellipsometry - 20 nm SiO2 - 3 layer cap.SE'",
+          "'20230523 - Puck 1 -reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - ellipsometry - 20 nm SiO2 - 3 layer cap.SE'",
+          "20230523 - Puck 1 -reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "1.0E7 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Absolute MSE' 0.0 3 F 1000000.0"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm",
+          "mentions_20nm"
+        ],
+        "member_path": "20230523 - Puck 2 - ellipsometry - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 2 - ellipsometry - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "score": 40,
+        "sha256": "1050fabc15ddde982530839c7f49696677df88332c65bae70dafb944599bf0df",
+        "size_bytes": 406106,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "2f51ca00",
+        "zip_mtime": "2023-05-23-11:57:02"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230518-RT-SIO2-PUCK 1 ON TIN20230518-143630.iSE",
+            "size_bytes": 232660
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 21615
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 1 ON TIN20230518-143630.iSE'",
+          "'20230517 - Puck 1 complete - 53nm TiN on Si 100 for 3 layer cap test'",
+          "'n of SiO2 (Sellmeier) @ 632.8 nm = 1.45710'",
+          "'k of SiO2 (Sellmeier) @ 632.8 nm = 0.0000'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 1 ON TIN20230518-143630.iSE'",
+          "20230517 - Puck 1 complete - 53nm TiN on Si 100 for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230518-RT-SIO2-PUCK 1 ON TIN20230518-143630.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_10nm_or_11nm",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "score": 36,
+        "sha256": "6fa2aff53603014f297af80fabcdb1036ed8580e66a327b809ce5df498b62e81",
+        "size_bytes": 244502,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "05b0ada4",
+        "zip_mtime": "2023-05-22-02:35:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230518-RT-SIO2-PUCK 2 ON TIN20230518-145416.iSE",
+            "size_bytes": 251744
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 21640
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 2 complete - 21 nm SiO2 - 56nm TiN on Si 100 for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 2 complete - 21 nm SiO2 - 56nm TiN on Si 100 for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 2 ON TIN20230518-145416.iSE'",
+          "'20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test'",
+          "'n of SiO2 (Sellmeier) @ 632.8 nm = 1.45710'",
+          "'k of SiO2 (Sellmeier) @ 632.8 nm = 0.0000'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230518-RT-SIO2-PUCK 2 ON TIN20230518-145416.iSE'",
+          "20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230518-RT-SIO2-PUCK 2 ON TIN20230518-145416.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_10nm_or_11nm",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 2 complete - 21 nm SiO2 - 56nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230518 - Puck 2 complete - 21 nm SiO2 - 56nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "score": 36,
+        "sha256": "5b55a3f218538170411d7529666a2e7a2ac00fc55890ef9b31e0ad6b0588a4db",
+        "size_bytes": 263589,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "d9eee57c",
+        "zip_mtime": "2023-05-22-02:35:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519-RT-1 LAYER - TIN ON SI - PUCK 1 OF 620230519-092511.iSE",
+            "size_bytes": 3048052
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 23659
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 1 complete  - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 1 complete  - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 1 OF 620230519-092511.iSE'",
+          "'20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test'",
+          "'Total Thickness = 1367.4360'",
+          "'n of TiN 52nm RT on Si-20230515 @ 632.8 nm = 1.33504'",
+          "'k of TiN 52nm RT on Si-20230515 @ 632.8 nm = 2.19628'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519-RT-1 LAYER - TIN ON SI - PUCK 1 OF 620230519-092511.iSE'",
+          "20230518 - Puck 1 complete - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "20230519-RT-1 LAYER - TIN ON SI - PUCK 1 OF 620230519-092511.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_10nm_or_11nm",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 1 complete  - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 1 complete  - goal 100nm TiN - 11 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "score": 36,
+        "sha256": "ee3aa9f20795609c2f80807a6d3187c13589c88116dc2721985792d8b71566d3",
+        "size_bytes": 3060786,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "70690cd7",
+        "zip_mtime": "2023-05-22-02:35:24"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - Reflectivity - 10 nm SiO2 - 3 layer cap.SE",
+            "size_bytes": 404140
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 6989
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 1 -reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - Reflectivity - 10 nm SiO2 - 3 layer cap.SE'",
+          "'20230523 - Puck 1 - reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - Reflectivity - 10 nm SiO2 - 3 layer cap.SE'",
+          "20230523 - Puck 1 - reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "60.0 0.0 F -5.0 5.0 F '60.0\u00b0' F F 0.0 0.0 100000.0 F 100.0",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "1.0E7 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Absolute MSE' 0.0 3 F 1000000.0"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "20230523 - Puck 1 -reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 1 -reflectivity - 10nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "score": 36,
+        "sha256": "3c965974f19bd7b96d9ec2499e9e24b59d9e3953addb16a98a8559b65620db28",
+        "size_bytes": 406101,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": 8,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "65ea2ecb",
+        "zip_mtime": "2023-05-23-11:52:14"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 1 - should be on 50nm TiN where was masked for ellipsometry.SE",
+            "size_bytes": 204244
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 534
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-ellipsometry.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on 50nm TiN where was masked for ellipsometry.SE'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 1 - should be on 50nm TiN where was masked for ellipsometry.SE'"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_tin",
+          "mentions_sio2",
+          "mentions_10nm_or_11nm"
+        ],
+        "member_path": "20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-ellipsometry.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230519 - 3 layer cap - goal on masked 50nm TiN area - was 10nm SiO2 cap - Si 100 N type 2 in-ellipsometry.SEsnap",
+        "score": 36,
+        "sha256": "6ddbf02bdb050cbd2a6d50775f411aa0e3987fec43fa63e5a763012d34656068",
+        "size_bytes": 204912,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": -4,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "428a6853",
+        "zip_mtime": "2023-05-23-09:30:18"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "TempData.iSE",
+            "size_bytes": 3265564
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 23541
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 3 complete  - goal 100nm TiN - 30 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 3 complete  - goal 100nm TiN - 30 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\TempData.iSE'",
+          "'20230519 - Puck 2 complete - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test'",
+          "'n of TiN 52nm RT on Si-20230515 @ 632.8 nm = 1.32206'",
+          "'k of TiN 52nm RT on Si-20230515 @ 632.8 nm = 2.14492'",
+          "'C:\\CompleteEASE\\StateFileOpen\\TempData.iSE'",
+          "20230519 - Puck 2 complete - goal 100nm TiN - 20 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test",
+          "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+          "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+          "start_ScatteringFactor",
+          "end_ScatteringFactor",
+          "start_DS Weighting",
+          "end_DS Weighting",
+          "start_Patterning",
+          "0.0 F 0.0 100.0 F '% Patterned' F F 0.0 0.0 100000.0 F 100.0",
+          "end_Patterning",
+          "start_Selected Options",
+          "end_Selected Options",
+          "start_MM_Weighting",
+          "'Absolute MSE'",
+          "end_MM_Weighting",
+          "5000000.0 F -10.0 100000.0 F 'Substrate Thickness' F F 0.0 0.0 100000.0 F 100.0",
+          "'Si substrate, Herzinger et.al., JAP v83p3323y1998, (multi-wavelength, multi-sample analysis)'",
+          "'H4sIAAAAAAAAAA2V+1+Pdx/Hv6VziE6ESoVOFhUdHFs+r/c1hxVLWnLbSMhxbSrrTs7HGr6WrCw1pyYthnRrWW030UJtY5YH9zC5s3vp20HOul8/XH/A9f48n8+X+qsxWP1vV6f6W7umWnS1qqWiST1O8VSPr4eo1gC9atUHq1bDMGWInK8Mpc2qrXelaltxS7XVa6p9pE61681Ve3uc6ojqVh1",
+          "'H4sIAAAAAAAAAA1TeTTVeRzNlELGLltSGm1aDIXmvce7v+fJGkb2rdJGJQyVUpYkS5ZIxYhJpqGmRykjJd9PNWSbQmVaLEOWaTNaTCVm/HHPuX/de8899zKm9YiRWz27lT3Ebj/IYL9rzmB1/pdY/VRHVl/SzO46cezu6C3WUGjOGm1+Z43vIllToSVrdviONX8OZy2l79kf3lXsnvx9do9Zs/u"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [
+          "TempData.iSE"
+        ],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_20nm",
+          "mentions_30nm",
+          "mentions_completeease",
+          "mentions_s_polarized_or_te",
+          "mentions_sio2",
+          "mentions_three_layer",
+          "mentions_tin"
+        ],
+        "member_path": "DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 3 complete  - goal 100nm TiN - 30 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-YuRhUUwxjvv8Zoh6.zip::DoD SAFE-YuRhUUwxjvv8Zoh6/20230519 - Puck 3 complete  - goal 100nm TiN - 30 nm SiO2 - 53nm TiN on Si 100 for 3 layer cap test.SEsnap",
+        "score": 40,
+        "sha256": "b94613ae813aa801a53df54bd33d49efe1abcdc59f1c769cac419769c8420d67",
+        "size_bytes": 3278182,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": -16,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "21d8bac8",
+        "zip_mtime": "2023-05-22-02:35:26"
+      },
+      {
+        "absolute_reflectance_proof": false,
+        "archive_entries": [
+          {
+            "name": "20230519 - Puck 4 - reflected intensity - 20 nm SiO2 - 3 layer cap.SE",
+            "size_bytes": 404140
+          },
+          {
+            "name": "_FitLog",
+            "size_bytes": 531
+          }
+        ],
+        "can_prove_absolute_reflectance": false,
+        "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "duplicate_paths": [
+          "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 4 - reflected intensity - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap"
+        ],
+        "evidence_snippets": [
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 4 - reflected intensity - 20 nm SiO2 - 3 layer cap.SE'",
+          "'C:\\CompleteEASE\\StateFileOpen\\20230519 - Puck 4 - reflected intensity - 20 nm SiO2 - 3 layer cap.SE'"
+        ],
+        "has_fit_log": true,
+        "inner_ise_entries": [],
+        "kind": "sesnap",
+        "match_reasons": [
+          "mentions_completeease",
+          "mentions_intensity",
+          "mentions_s_polarized_or_te",
+          "mentions_three_layer",
+          "mentions_sio2",
+          "mentions_20nm"
+        ],
+        "member_path": "20230523 - Puck 4 - reflected intensity - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "original_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip",
+        "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-aCyVf5zQGhuzpg6f/RC-2.zip::20230523 - Puck 4 - reflected intensity - 20nm SiO2 -3 layer cap - Si 100 RT.SEsnap",
+        "score": 40,
+        "sha256": "0d2a398fedba112ecb2db8cdbe01d2e9a5f6e7490ee9138f4e638bca43c89a87",
+        "size_bytes": 404819,
+        "triage_category": "wrong_substrate_or_control",
+        "triage_priority_score": -16,
+        "triage_rationale": "file/member path names Si control/substrate context rather than 3L2/Quartz",
+        "zip_crc32": "6a612e35",
+        "zip_mtime": "2023-05-23-12:28:12"
+      }
+    ]
+  },
+  "decision": {
+    "absolute_reflectance_status": "absolute_reflectance_blocked",
+    "blocked_gates": [
+      "normalization_gate",
+      "thresholds_predeclared"
+    ],
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "existing_run_promotion": "forbidden",
+    "final_decision": "pivot_to_relative_only_diagnostic",
+    "historical_run": "run_f35a15cef565fb15",
+    "normalization_basis": "relative_intensity_only"
+  },
+  "forbidden_uses": [
+    "serious_core_evidence",
+    "calibrated_linear_evidence",
+    "absolute_reflectance_claim",
+    "retroactive_threshold_tuning"
+  ],
+  "generated_at": "2026-05-17T17:38:54.457812+00:00",
+  "inputs": {
+    "dedupe_key": "sha256",
+    "deduped_candidate_count": 19,
+    "input_candidate_count": 30,
+    "source_phase_id": "Phase 3A.7",
+    "source_recovery_decision": {
+      "absolute_reflectance_status": "absolute_reflectance_blocked",
+      "blocked_gates": [
+        "normalization_gate",
+        "thresholds_predeclared"
+      ],
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "claim_status_ceiling": "weak_within_dataset_holdout",
+      "exact_source_identity_status": "not_found",
+      "normalization_basis": "relative_intensity_only",
+      "source_recovery_status": "related_source_candidates_found",
+      "stack_mapping": "stack_mapping_confirmed"
+    },
+    "source_title": "CompleteEASE Source Recovery + 3L2 Provenance Lock"
+  },
+  "next_fork": {
+    "fresh_export_or_measurement": "Use the Phase 3A.6 packet if absolute reflectance evidence is required.",
+    "manual_source_followup": "Inspect the manual-followup candidates in CompleteEASE or with stronger source tooling if the user wants to keep provenance recovery alive.",
+    "relative_only_diagnostic": "Proceed with shape/dip/trend diagnostics only, explicitly capped below calibrated evidence."
+  },
+  "phase_id": "Phase 3A.8",
+  "title": "Source Candidate Triage + Relative-Only Diagnostic Decision"
+}

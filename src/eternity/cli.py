@@ -21,6 +21,11 @@ from eternity.phase3a7 import (
     build_phase3a7_recovery,
     write_phase3a7_recovery,
 )
+from eternity.phase3a8 import (
+    build_phase3a8_triage,
+    load_phase3a7_recovery,
+    write_phase3a8_triage,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -73,6 +78,16 @@ PHASE3A7_CANDIDATE_PS_INTENSITY_OPTION = typer.Option(
 PHASE3A7_CANDIDATE_REFLECTANCE_OPTION = typer.Option(
     DEFAULT_302010_REFLECTANCE,
     "--candidate-reflectance",
+)
+PHASE3A8_RECOVERY_JSON_OPTION = typer.Option(
+    Path("docs/phase3a7_completeease_source_recovery.json"),
+    "--recovery-json",
+    help="Phase 3A.7 recovery JSON to triage without rescanning local source files.",
+)
+PHASE3A8_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and policy triage artifacts.",
 )
 
 
@@ -206,6 +221,30 @@ def phase3a7_recovery(
         return
 
     typer.echo(json.dumps(recovery, indent=2, sort_keys=True))
+
+
+@app.command("phase3a8-triage")
+def phase3a8_triage(
+    recovery_json: Path = PHASE3A8_RECOVERY_JSON_OPTION,
+    output_dir: Path | None = PHASE3A8_OUTPUT_DIR_OPTION,
+) -> None:
+    """Triage Phase 3A.7 source candidates without fresh source scanning."""
+
+    try:
+        recovery = load_phase3a7_recovery(recovery_json)
+        triage = build_phase3a8_triage(recovery)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as error:
+        typer.echo(f"Phase 3A.8 triage failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, policy_path = write_phase3a8_triage(output_dir, triage)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {policy_path}")
+        return
+
+    typer.echo(json.dumps(triage, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

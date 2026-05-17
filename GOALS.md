@@ -78,6 +78,11 @@ grounding phase:
   3L2 provenance lock`: a read-only scanner now records local `.SE`, `.SEsnap`,
   `.iSE`, and DoD SAFE zip-contained candidates. It strengthens source
   provenance but keeps absolute reflectance blocked.
+- The active triage result is `Phase 3A.8 - Source candidate triage +
+  relative-only diagnostic decision`: it deduplicates recovered candidates,
+  prioritizes quartz 10 nm dynamic files for manual follow-up, classifies Si
+  control files separately, and pivots Phase 3A to relative-only diagnostics
+  unless a source-backed absolute export or new measurement appears.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -119,6 +124,10 @@ Current blocker:
   stack and to rank related local CompleteEASE/Woollam source candidates. It
   still does not have enough information to treat exported `Intensity` columns
   as calibrated absolute `%R`.
+- Phase 3A.8 has enough information to compare spectral shape, dip position,
+  trend direction, and figure provenance as relative-only diagnostics. It does
+  not have enough information to feed the serious core or promote any Phase 3A
+  run above `weak_within_dataset_holdout`.
 
 ## Goal Usage In Codex
 

@@ -147,6 +147,32 @@ Result:
 - No readable metadata proves calibrated absolute `%R`; Phase 3A remains capped
   below calibrated evidence.
 
+## Phase 3A.8: Source Candidate Triage + Relative-Only Diagnostic Decision
+
+Status: completed/blocked
+
+Goal:
+
+- Deduplicate and classify Phase 3A.7 source candidates, then decide whether
+  the current lane should keep searching or pivot to relative-only diagnostics.
+
+Artifacts:
+
+- `src/eternity/phase3a8.py`
+- `docs/phase3a8_source_candidate_triage.md`
+- `docs/phase3a8_source_candidate_triage.json`
+- `docs/phase3a8_relative_only_diagnostic_policy.yaml`
+
+Result:
+
+- Decision `pivot_to_relative_only_diagnostic` with
+  `absolute_reflectance_blocked`.
+- Quartz 10 nm dynamic snapshots are the top manual-follow-up candidates.
+- Si 100 candidates are separated as controls/wrong-substrate context for
+  `3L2/Quartz`.
+- Relative-only diagnostics may compare spectral shape, dip position, trend
+  direction, and figure provenance only; they cannot feed serious-core evidence.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

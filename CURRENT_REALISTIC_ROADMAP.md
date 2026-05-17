@@ -356,6 +356,39 @@ Enough information exists to continue relative-intensity diagnostics and source
 triage. Not enough information exists to approve absolute normalization,
 thresholds, or `calibrated_linear_evidence`.
 
+#### Phase 3A.8: Source Candidate Triage + Relative-Only Diagnostic Decision
+
+Decision: `pivot_to_relative_only_diagnostic`, with `absolute_reflectance_blocked`.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a8.py`
+- `docs/phase3a8_source_candidate_triage.md`
+- `docs/phase3a8_source_candidate_triage.json`
+- `docs/phase3a8_relative_only_diagnostic_policy.yaml`
+
+Phase 3A.8 consumes the Phase 3A.7 recovery manifest without rescanning local
+source files. It deduplicates source candidates by SHA-256, separates the
+quartz 10 nm dynamic/manual-follow-up candidates from Si-control candidates,
+and records the relative-only lane explicitly.
+
+Result:
+
+- The highest manual-follow-up candidates are the DoD SAFE zip-contained quartz
+  10 nm SiO2 pulsed/dynamic `.SEsnap` files.
+- Related quartz cap-test files remain provenance context, not exact source
+  identity records.
+- Si 100 files are classified as controls or wrong-substrate candidates for the
+  thesis `3L2/Quartz` path.
+- Future Phase 3A diagnostics may compare spectral shape, dip position, trend
+  direction, and figure provenance only.
+- Serious-core ingestion, calibrated-linear-evidence promotion, absolute
+  reflectance claims, and retroactive threshold tuning remain forbidden.
+
+Enough information exists to run relative-only diagnostics honestly. Not enough
+information exists to approve absolute normalization, thresholds, or
+`calibrated_linear_evidence`.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

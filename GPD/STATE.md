@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3A.7 CompleteEASE source recovery + 3L2 provenance lock plus Phase 3A.1 gates
+**Current focus:** Phase 3A.8 source candidate triage + relative-only diagnostic decision plus Phase 3A.1 gates
 
 ## Current Position
 
-**Current Phase:** 3A.7
-**Current Phase Name:** CompleteEASE Source Recovery + 3L2 Provenance Lock
+**Current Phase:** 3A.8
+**Current Phase Name:** Source Candidate Triage + Relative-Only Diagnostic Decision
 **Total Phases:** 3
-**Current Plan:** docs/phase3a7_completeease_source_recovery.md
+**Current Plan:** docs/phase3a8_source_candidate_triage.md
 **Total Plans in Phase:** 1
 **Status:** Completed/blocked
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Recovered and ranked related local CompleteEASE/Woollam source candidates while keeping absolute reflectance blocked.
+**Last Activity Description:** Deduplicated and classified recovered source candidates, pivoting Phase 3A to relative-only diagnostics while keeping calibrated evidence blocked.
 
 **Progress:** [█████████░] 90%
 
@@ -41,6 +41,9 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   candidates, including DoD SAFE zip-contained quartz cap and 10 nm SiO2
   dynamic snapshots; stack mapping is strengthened, but absolute `%R` proof is
   still blocked.
+- Phase 3A.8 deduplicated recovered candidates by SHA-256, prioritized quartz
+  10 nm dynamic snapshots for manual follow-up, separated Si controls, and
+  recorded `pivot_to_relative_only_diagnostic`.
 
 ## Open Questions
 
@@ -75,6 +78,9 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   absolute reflectance proof. — Keep normalization `relative_intensity_only`
   unless source metadata explicitly proves channel name, units, calibration
   state, angle, polarization, and exact sample identity.
+- [Phase 3A.8]: Source-candidate triage pivots to relative-only diagnostics. —
+  Spectral shape, dip position, trend direction, and figure provenance may be
+  compared, but serious-core evidence and calibrated promotion remain forbidden.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -99,9 +105,9 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3A.8: triage the strongest Phase 3A.7 source candidates or define a
-  Pro/user-approved relative-only diagnostic policy that cannot promote to
-  calibrated evidence.
+- Phase 3A.9: build a relative-only diagnostic run packet that cannot promote
+  to calibrated evidence, or use Phase 3A.6 if a clean absolute export/new
+  measurement is required.
 - Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
@@ -115,7 +121,7 @@ None yet.
 - Phase 3A `normalization_gate` is blocked.
 - `30_20_10` filename-to-thesis provenance is unresolved.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
-  unresolved and currently blocked after Phase 3A.7 source recovery, even with
+  unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
 
 ## Session Continuity

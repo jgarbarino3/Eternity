@@ -1,0 +1,25 @@
+phase_id: Phase 3A.8
+policy: relative_only_diagnostic
+decision: pivot_to_relative_only_diagnostic
+normalization_basis: relative_intensity_only
+absolute_reflectance_confirmed: false
+can_feed_serious_core: false
+can_promote_calibrated_linear_evidence: false
+claim_status_ceiling: weak_within_dataset_holdout
+existing_run_promotion: forbidden
+historical_run: run_f35a15cef565fb15
+allowed_diagnostics:
+  - spectral_shape
+  - dip_position
+  - trend_direction
+  - figure_provenance
+forbidden_uses:
+  - serious_core_evidence
+  - calibrated_linear_evidence
+  - absolute_reflectance_claim
+  - retroactive_threshold_tuning
+promotion_requires:
+  - source_backed_absolute_reflectance_export_or_new_measurement
+  - future_predeclared_thresholds
+  - no_residual_inspection_before_policy_approval
+  - passing_normalization_and_threshold_gates

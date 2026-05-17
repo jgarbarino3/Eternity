@@ -42,3 +42,9 @@ DoD SAFE zip-contained snapshots. These candidates may guide future source
 triage or re-export, but they do not relax the holdout rules unless they prove
 channel name, units, calibration state, angle, polarization, and sample identity
 before a new residual-gated run.
+
+Phase 3A.8 triage turns those candidates into a relative-only diagnostic lane.
+That lane can inform planning and provenance, but it is not a calibrated
+holdout split. A future calibrated run still requires source-backed absolute
+normalization or a new measurement plus predeclared thresholds before residual
+inspection.

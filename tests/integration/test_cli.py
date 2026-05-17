@@ -228,3 +228,49 @@ def test_phase3a7_recovery_command_writes_artifacts(tmp_path: Path) -> None:
     )
     assert recovery["decision"]["can_promote_calibrated_linear_evidence"] is False
     assert (tmp_path / "out" / "phase3a7_completeease_source_recovery.md").exists()
+
+
+def test_phase3a8_triage_command_writes_artifacts(tmp_path: Path) -> None:
+    recovery_json = tmp_path / "phase3a7.json"
+    recovery_json.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.7",
+                "title": "CompleteEASE Source Recovery + 3L2 Provenance Lock",
+                "decision": {
+                    "exact_source_identity_status": "not_found",
+                    "absolute_reflectance_status": "absolute_reflectance_blocked",
+                },
+                "candidate_sources": [
+                    {
+                        "path": "/tmp/quartz 10nm SiO2 cap pulsed.SEsnap",
+                        "kind": "sesnap",
+                        "sha256": "quartz",
+                        "score": 40,
+                        "match_reasons": ["mentions_quartz", "mentions_10nm_or_11nm"],
+                        "absolute_reflectance_proof": False,
+                        "evidence_snippets": ["CompleteEASE quartz 10nm SiO2 cap pulsed"],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a8-triage",
+            "--recovery-json",
+            str(recovery_json),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    triage = json.loads((tmp_path / "out" / "phase3a8_source_candidate_triage.json").read_text())
+    assert triage["decision"]["final_decision"] == "pivot_to_relative_only_diagnostic"
+    assert triage["decision"]["can_feed_serious_core"] is False
+    assert (tmp_path / "out" / "phase3a8_source_candidate_triage.md").exists()
+    assert (tmp_path / "out" / "phase3a8_relative_only_diagnostic_policy.yaml").exists()

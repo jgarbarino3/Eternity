@@ -30,3 +30,8 @@ Phase 3A.7 may register CompleteEASE/Woollam source candidates by path, hash,
 archive member, and readable metadata. Those records strengthen provenance, but
 they do not change measurement units or normalization unless the source
 explicitly proves calibrated absolute reflectance.
+
+Phase 3A.8 may register source-candidate triage classes and relative-only
+diagnostic policy. These records describe evidence usability, not new
+measurements; they must preserve the original hashes and must not rewrite
+`reflectance_intensity`/`arb` into absolute reflectance units.

@@ -46,3 +46,9 @@ Phase 3A.7 source recovery may report `related_source_candidates_found` and
 `stack_mapping_confirmed`, but these are provenance findings only. They do not
 permit `calibrated_linear_evidence` while absolute normalization and
 predeclared thresholds remain blocked.
+
+Phase 3A.8 source triage may report `pivot_to_relative_only_diagnostic`.
+Relative-only diagnostics may compare spectral shape, dip position, trend
+direction, and figure provenance, but they must not feed serious-core evidence,
+claim absolute reflectance, tune thresholds retroactively, or promote above
+`weak_within_dataset_holdout`.

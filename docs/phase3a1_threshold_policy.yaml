@@ -9,6 +9,9 @@ normalization_evidence_refs:
 - docs/phase3a6_acceptance_policy.yaml
 - docs/phase3a7_completeease_source_recovery.md
 - docs/phase3a7_completeease_source_recovery.json
+- docs/phase3a8_source_candidate_triage.md
+- docs/phase3a8_source_candidate_triage.json
+- docs/phase3a8_relative_only_diagnostic_policy.yaml
 - /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/10 nm SiO2 Reflectance.png
 - /Users/joegarbarino/Desktop/Research Optics/Thesis/Figures/photo 10 nm SiO2 in situ.png
 thresholds_ref: null
