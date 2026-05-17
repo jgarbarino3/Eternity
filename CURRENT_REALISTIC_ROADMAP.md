@@ -450,6 +450,33 @@ Enough information exists to run the bounded manual follow-up. Not enough
 information exists to promote calibrated evidence or to unpark TiON as a
 calibrated-evidence route.
 
+#### Phase 3A.11: Bounded Manual Source Follow-Up Packet
+
+Status: packet-ready / non-promoting.
+
+Implementation artifacts:
+
+- `src/eternity/phase3a11.py`
+- `docs/phase3a11_manual_source_followup_packet.md`
+- `docs/phase3a11_manual_source_followup_packet.json`
+
+Phase 3A.11 converts the Phase 3A.10 branch choice into an exact review packet:
+inspect only the three listed quartz dynamic `.SEsnap` candidates, classify
+them against the proof gates, and stop unless source-backed evidence proves
+exact `3L2/Quartz` identity, stack, S/TE reflectance channel, 60-degree
+geometry, absolute reflectance units/calibration state, and lineage to the
+`d_10nm` text trace.
+
+Result:
+
+- The manual review scope is bounded and reproducible.
+- The current default remains `relative_intensity_only`.
+- The packet cannot feed serious-core evidence and cannot promote any existing
+  run to `calibrated_linear_evidence`.
+- If any proof gate remains unresolved after the three candidates, use the
+  Phase 3A.6 clean export/new measurement packet or return to Phase 3B TiON
+  evidence gathering.
+
 ## Near-Term Reach With Current Tools
 
 With the V0 skeleton in place, the project can go meaningfully further before

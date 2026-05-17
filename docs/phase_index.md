@@ -30,12 +30,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.8 | Completed/blocked | Source candidate triage + relative-only diagnostic decision | Deduplicated Phase 3A.7 candidates by SHA-256, separated quartz dynamic/manual follow-up candidates from Si controls, and pivoted to `relative_only_diagnostic` while keeping serious-core and calibrated-evidence promotion forbidden. |
 | Phase 3A.9 | Completed/diagnostic | Relative-only diagnostic run packet | Reports non-promoting spectral-shape, dip-position, trend-direction, and figure-provenance diagnostics for `run_f35a15cef565fb15`; the packet is useful context but cannot feed serious-core evidence. |
 | Phase 3A.10 | Completed/decision | Manual source follow-up vs Phase 3B return | Chooses one bounded manual follow-up pass on the top three quartz dynamic `.SEsnap` candidates before falling back to Phase 3A.6 clean export/new measurement or Phase 3B TiON evidence gathering. |
+| Phase 3A.11 | Completed/packet-ready | Bounded manual source follow-up packet | Converts the Phase 3A.10 branch choice into a three-candidate review packet with exact proof gates, stop rules, and non-promotion boundaries. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3A.10 - Manual source follow-up vs Phase 3B return decision**.
+Current phase: **Phase 3A.11 - Bounded manual source follow-up packet**.
 
 Reason: the TiN/SiO2 thesis path has local measured spectra and additional same-sample-looking ellipsometry exports, while TiON_48/TiON_49 currently remain optical-constant plus plot-level provenance without raw sample-matched R/T.
 
@@ -60,6 +61,8 @@ Information sufficiency:
 - Enough to choose a bounded manual source follow-up before returning to Phase
   3B, because there are three concrete quartz dynamic candidates and Phase 3B
   still lacks raw TiON R/T.
+- Enough to package the manual review scope, source candidates, proof gates,
+  and stop rules for Phase 3A.11.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -70,10 +73,12 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3A.11 - Bounded Manual Source Follow-Up Packet.** Planning:
-  `medium` because Phase 3A.10 already chose the branch. Implementation:
-  `medium` for a checklist/reporting pass. Use `xhigh` only if a source file
-  appears to prove absolute reflectance or threshold policy becomes active.
+- **Phase 3A.12 - Manual Source Review Result or Clean Export Pivot.**
+  Planning: `medium` if the next step is simply recording manual review
+  results; `xhigh` if any candidate appears to prove absolute reflectance.
+  Implementation: `medium` for unresolved/manual-log artifacts, `high` for
+  source-backed policy changes. Do not approve thresholds or promotion without
+  an `xhigh` checkpoint.
 
 Helpful tools:
 

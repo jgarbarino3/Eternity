@@ -223,6 +223,29 @@ Result:
   return to Phase 3B.
 - Phase 3B is still not calibrated-ready because TiON raw R/T is missing.
 
+## Phase 3A.11: Bounded Manual Source Follow-Up Packet
+
+Status: completed/packet-ready
+
+Goal:
+
+- Turn the Phase 3A.10 branch choice into an exact manual review packet for the
+  top three quartz dynamic source candidates.
+
+Artifacts:
+
+- `src/eternity/phase3a11.py`
+- `docs/phase3a11_manual_source_followup_packet.md`
+- `docs/phase3a11_manual_source_followup_packet.json`
+
+Result:
+
+- The packet lists the three source candidates, snippets to inspect first,
+  exact proof gates, stop rules, and manual-log fields.
+- It does not do a new broad search and does not copy large binary source
+  files into the repo.
+- It cannot feed serious-core evidence or promote the existing run.
+
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
 Status: active

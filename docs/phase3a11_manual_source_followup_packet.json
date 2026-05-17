@@ -1,0 +1,267 @@
+{
+  "candidates": [
+    {
+      "archive_entries": [
+        {
+          "name": "200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE",
+          "size_bytes": 8850308
+        },
+        {
+          "name": "_FitLog",
+          "size_bytes": 19118
+        }
+      ],
+      "archive_member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+      "candidate_id": "phase3a11_candidate_1",
+      "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+      "current_assessment": {
+        "absolute_reflectance_proof_found": false,
+        "can_feed_serious_core": false,
+        "exact_source_identity_proven": false,
+        "related_to_quartz_10nm_dynamic_sources": true
+      },
+      "evidence_snippets": [
+        "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE'",
+        "'20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle'",
+        "2100.0 15160.0",
+        "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE'",
+        "20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle",
+        "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+        "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+        "start_ScatteringFactor",
+        "end_ScatteringFactor",
+        "start_DS Weighting"
+      ],
+      "failure_classification_if_unresolved": "related_but_not_source_identity",
+      "inner_ise_entries": [
+        "200230524 - Quartz -10nm SiO2 - Puck 4 - 16V pulsed zero offset - square wave - offset to 0 to 8V 0.01 mHz.iSE"
+      ],
+      "manual_review_questions": [
+        "Does the source file explicitly identify the sample as 3L2/Quartz or the thesis d_10nm stack?",
+        "Does it state or encode the layer order 30 nm TiN / 10 nm SiO2 / 20 nm TiN on quartz?",
+        "Does it identify the channel as S-polarized/TE reflectance rather than generic intensity?",
+        "Does it preserve the 60 degree incidence geometry used by thesis Figure 4.1?",
+        "Does it prove the exported values are calibrated absolute reflectance or percent reflectance?",
+        "Can the source lineage be tied to the existing d_10nm_initial or d_10nm_12V text trace?"
+      ],
+      "match_reasons": [
+        "mentions_quartz",
+        "mentions_completeease",
+        "mentions_s_polarized_or_te",
+        "mentions_tin",
+        "mentions_sio2",
+        "mentions_10nm_or_11nm"
+      ],
+      "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+      "priority": 86,
+      "rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+      "required_evidence_to_pass": [
+        "exact_3l2_quartz_identity",
+        "stack_30nm_tin_10nm_sio2_20nm_tin",
+        "s_polarized_or_te_reflectance_channel",
+        "sixty_degree_incidence",
+        "absolute_reflectance_units_or_calibration_state",
+        "export_or_source_lineage_to_d10nm_text_trace"
+      ],
+      "review_status": "pending_manual_review",
+      "score": 40,
+      "sha256": "b14020a0b37291da7bb2e6f4729686bcca54a87b5d61d94346449d6495e09dfb",
+      "size_bytes": 8862846,
+      "zip_crc32": "2e399121",
+      "zip_mtime": "2023-05-26-04:25:26"
+    },
+    {
+      "archive_entries": [
+        {
+          "name": "200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE",
+          "size_bytes": 8983828
+        },
+        {
+          "name": "_FitLog",
+          "size_bytes": 19185
+        }
+      ],
+      "archive_member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+      "candidate_id": "phase3a11_candidate_2",
+      "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+      "current_assessment": {
+        "absolute_reflectance_proof_found": false,
+        "can_feed_serious_core": false,
+        "exact_source_identity_proven": false,
+        "related_to_quartz_10nm_dynamic_sources": true
+      },
+      "evidence_snippets": [
+        "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE'",
+        "'20230524 - data collected with random freq - 8V - rand offset - bump probe - then 16V zero offset pulsed'",
+        "'C:\\CompleteEASE\\StateFileOpen\\200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE'",
+        "20230524 - data collected with random freq - 8V - rand offset - bump probe - then 16V zero offset pulsed",
+        "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+        "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+        "start_ScatteringFactor",
+        "end_ScatteringFactor",
+        "start_DS Weighting",
+        "end_DS Weighting"
+      ],
+      "failure_classification_if_unresolved": "related_but_not_source_identity",
+      "inner_ise_entries": [
+        "200230524 - Quartz -10nm SiO2 - Puck 4 - 8V pulsed zero offset - 0.05msec - square wave - offset to 0 to 8V 0.01Hz.iSE"
+      ],
+      "manual_review_questions": [
+        "Does the source file explicitly identify the sample as 3L2/Quartz or the thesis d_10nm stack?",
+        "Does it state or encode the layer order 30 nm TiN / 10 nm SiO2 / 20 nm TiN on quartz?",
+        "Does it identify the channel as S-polarized/TE reflectance rather than generic intensity?",
+        "Does it preserve the 60 degree incidence geometry used by thesis Figure 4.1?",
+        "Does it prove the exported values are calibrated absolute reflectance or percent reflectance?",
+        "Can the source lineage be tied to the existing d_10nm_initial or d_10nm_12V text trace?"
+      ],
+      "match_reasons": [
+        "mentions_quartz",
+        "mentions_completeease",
+        "mentions_s_polarized_or_te",
+        "mentions_tin",
+        "mentions_sio2",
+        "mentions_10nm_or_11nm"
+      ],
+      "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230524 - quartz - 10nm SiO2 - cap - pulsed 0-8Vdc - 0.01Hz - 50pct duty cycle.SEsnap",
+      "priority": 86,
+      "rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+      "required_evidence_to_pass": [
+        "exact_3l2_quartz_identity",
+        "stack_30nm_tin_10nm_sio2_20nm_tin",
+        "s_polarized_or_te_reflectance_channel",
+        "sixty_degree_incidence",
+        "absolute_reflectance_units_or_calibration_state",
+        "export_or_source_lineage_to_d10nm_text_trace"
+      ],
+      "review_status": "pending_manual_review",
+      "score": 40,
+      "sha256": "f7a54e3f1c67005da251fa4538c50bae4d2f1b2e4a9c72246a7e1302162990c5",
+      "size_bytes": 8996421,
+      "zip_crc32": "2b3f2408",
+      "zip_mtime": "2023-05-26-04:25:24"
+    },
+    {
+      "archive_entries": [
+        {
+          "name": "20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE",
+          "size_bytes": 705584
+        },
+        {
+          "name": "_FitLog",
+          "size_bytes": 19109
+        }
+      ],
+      "archive_member_path": "DoD SAFE-iHiV4KrT7ctHmyRx/20230525 - probes removed - 890 nm peaks still present.SEsnap",
+      "candidate_id": "phase3a11_candidate_3",
+      "container_path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip",
+      "current_assessment": {
+        "absolute_reflectance_proof_found": false,
+        "can_feed_serious_core": false,
+        "exact_source_identity_proven": false,
+        "related_to_quartz_10nm_dynamic_sources": true
+      },
+      "evidence_snippets": [
+        "'C:\\CompleteEASE\\StateFileOpen\\20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE'",
+        "'20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle'",
+        "'C:\\CompleteEASE\\StateFileOpen\\20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE'",
+        "20230524 - quartz - 10nm SiO2 - cap - pulsed 0-12Vdc - 0.01Hz - 50pct duty cycle",
+        "5.0 F 0.0 20.0 F '# Back Reflections' F F 0.0 0.0 100000.0 F 100.0",
+        "100.0 F 0.0 100.0 F '% 1st Reflection' F F 0.0 0.0 100000.0 F 100.0",
+        "start_ScatteringFactor",
+        "end_ScatteringFactor",
+        "start_DS Weighting",
+        "end_DS Weighting"
+      ],
+      "failure_classification_if_unresolved": "related_but_not_source_identity",
+      "inner_ise_entries": [
+        "20230524 - Puck 4 - check of reflectivity at 890 nm -- is it from probes - data while removing probes.iSE"
+      ],
+      "manual_review_questions": [
+        "Does the source file explicitly identify the sample as 3L2/Quartz or the thesis d_10nm stack?",
+        "Does it state or encode the layer order 30 nm TiN / 10 nm SiO2 / 20 nm TiN on quartz?",
+        "Does it identify the channel as S-polarized/TE reflectance rather than generic intensity?",
+        "Does it preserve the 60 degree incidence geometry used by thesis Figure 4.1?",
+        "Does it prove the exported values are calibrated absolute reflectance or percent reflectance?",
+        "Can the source lineage be tied to the existing d_10nm_initial or d_10nm_12V text trace?"
+      ],
+      "match_reasons": [
+        "mentions_quartz",
+        "mentions_completeease",
+        "mentions_s_polarized_or_te",
+        "mentions_tin",
+        "mentions_sio2",
+        "mentions_10nm_or_11nm"
+      ],
+      "path": "/Users/joegarbarino/Desktop/Research Optics/AFRL/DoD/DoD SAFE-iHiV4KrT7ctHmyRx.zip::DoD SAFE-iHiV4KrT7ctHmyRx/20230525 - probes removed - 890 nm peaks still present.SEsnap",
+      "priority": 86,
+      "rationale": "matches quartz plus 10 nm/dynamic-source clues but not exact thesis identity",
+      "required_evidence_to_pass": [
+        "exact_3l2_quartz_identity",
+        "stack_30nm_tin_10nm_sio2_20nm_tin",
+        "s_polarized_or_te_reflectance_channel",
+        "sixty_degree_incidence",
+        "absolute_reflectance_units_or_calibration_state",
+        "export_or_source_lineage_to_d10nm_text_trace"
+      ],
+      "review_status": "pending_manual_review",
+      "score": 40,
+      "sha256": "2c63ad6f9d86290249818ef41c9ff6e3ef20ab53e6911fbf495c962a6a6b751d",
+      "size_bytes": 716878,
+      "zip_crc32": "cbf54ab4",
+      "zip_mtime": "2023-05-26-04:25:24"
+    }
+  ],
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "candidate_count": 3,
+    "claim_status_ceiling_before_manual_proof": "weak_within_dataset_holdout",
+    "requires_pro_checkpoint_before_thresholds_or_promotion": true,
+    "selected_branch": "limited_manual_source_followup_first",
+    "status": "manual_review_packet_ready",
+    "stop_after_candidate_count": 3
+  },
+  "generated_at": "2026-05-17T18:11:01.203667+00:00",
+  "input_decision_ref": "docs/phase3a10_branch_decision.json",
+  "input_triage_ref": "docs/phase3a8_source_candidate_triage.json",
+  "outcome_rules": {
+    "all_candidates_unresolved": "mark manual source follow-up exhausted",
+    "all_gates_pass": "prepare a future Phase 3A.12 absolute-reflectance policy packet; do not retroactively promote existing inspected residuals",
+    "any_gate_unresolved": "keep Phase 3A relative-only and use Phase 3A.6 clean export/new measurement packet or return to Phase 3B evidence gathering"
+  },
+  "phase_id": "Phase 3A.11",
+  "proof_gates": [
+    "exact_3l2_quartz_identity",
+    "stack_30nm_tin_10nm_sio2_20nm_tin",
+    "s_polarized_or_te_reflectance_channel",
+    "sixty_degree_incidence",
+    "absolute_reflectance_units_or_calibration_state",
+    "export_or_source_lineage_to_d10nm_text_trace"
+  ],
+  "recommended_manual_log_fields": [
+    "reviewer",
+    "review_date",
+    "candidate_id",
+    "tool_used",
+    "evidence_location",
+    "evidence_quote_or_note",
+    "passed_gates",
+    "failed_or_unresolved_gates",
+    "decision"
+  ],
+  "scope": {
+    "allowed_work": [
+      "open or inspect only the listed source candidates",
+      "record exact source-backed evidence lines or external screenshots if needed",
+      "classify each candidate against the proof gates"
+    ],
+    "forbidden_work": [
+      "adding unregistered large binary source files to the repo",
+      "assuming intensity is absolute reflectance without source proof",
+      "tuning thresholds from run_f35a15cef565fb15",
+      "promoting any existing run to calibrated_linear_evidence"
+    ],
+    "search_mode": "no_new_broad_search"
+  },
+  "title": "Bounded Manual Source Follow-Up Packet"
+}

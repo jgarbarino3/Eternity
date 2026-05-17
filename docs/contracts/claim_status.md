@@ -61,3 +61,8 @@ must not upgrade the run's claim status.
 Phase 3A.10 branch decisions are planning artifacts. Choosing manual source
 follow-up, clean re-export, or Phase 3B return does not change any run status
 and does not permit serious-core ingestion.
+
+Phase 3A.11 manual follow-up packets are review artifacts. They may identify
+proof gates and candidate source files, but `calibrated_linear_evidence`
+requires a later source-backed normalization decision and future predeclared
+threshold policy.

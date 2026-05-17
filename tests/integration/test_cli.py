@@ -417,3 +417,70 @@ def test_phase3a10_decision_command_writes_artifacts(tmp_path: Path) -> None:
     assert packet["decision"]["selected_branch"] == "limited_manual_source_followup_first"
     assert packet["decision"]["can_feed_serious_core"] is False
     assert (tmp_path / "out" / "phase3a10_branch_decision.md").exists()
+
+
+def test_phase3a11_packet_command_writes_artifacts(tmp_path: Path) -> None:
+    decision_json = tmp_path / "phase3a10.json"
+    decision_json.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.10",
+                "decision": {"selected_branch": "limited_manual_source_followup_first"},
+                "manual_source_followup": {
+                    "targets": [
+                        {
+                            "path": "/tmp/quartz 10nm pulsed.SEsnap",
+                            "sha256": "abc",
+                            "priority": 86,
+                            "score": 40,
+                            "rationale": "matches quartz dynamic",
+                        }
+                    ]
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    triage_json = tmp_path / "phase3a8.json"
+    triage_json.write_text(
+        json.dumps(
+            {
+                "phase_id": "Phase 3A.8",
+                "categories": {
+                    "manual_followup_priority": [
+                        {
+                            "path": "/tmp/quartz 10nm pulsed.SEsnap",
+                            "sha256": "abc",
+                            "member_path": "archive/candidate.SEsnap",
+                            "container_path": "/tmp/source.zip",
+                            "inner_ise_entries": ["candidate.iSE"],
+                            "evidence_snippets": ["60.0 0.0 F -5.0 5.0 F '60.0deg'"],
+                            "absolute_reflectance_proof": False,
+                        }
+                    ]
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3a11-packet",
+            "--decision-json",
+            str(decision_json),
+            "--triage-json",
+            str(triage_json),
+            "--output-dir",
+            str(tmp_path / "out"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads(
+        (tmp_path / "out" / "phase3a11_manual_source_followup_packet.json").read_text()
+    )
+    assert packet["phase_id"] == "Phase 3A.11"
+    assert packet["decision"]["can_feed_serious_core"] is False
+    assert (tmp_path / "out" / "phase3a11_manual_source_followup_packet.md").exists()

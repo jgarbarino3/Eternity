@@ -31,6 +31,10 @@ from eternity.phase3a10 import (
     build_phase3a10_decision_from_paths,
     write_phase3a10_decision,
 )
+from eternity.phase3a11 import (
+    build_phase3a11_packet_from_paths,
+    write_phase3a11_packet,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -128,6 +132,21 @@ PHASE3A10_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown branch-decision artifacts.",
+)
+PHASE3A11_DECISION_OPTION = typer.Option(
+    Path("docs/phase3a10_branch_decision.json"),
+    "--decision-json",
+    help="Phase 3A.10 branch-decision JSON.",
+)
+PHASE3A11_TRIAGE_OPTION = typer.Option(
+    Path("docs/phase3a8_source_candidate_triage.json"),
+    "--triage-json",
+    help="Phase 3A.8 source-candidate triage JSON.",
+)
+PHASE3A11_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown manual follow-up artifacts.",
 )
 
 
@@ -334,6 +353,29 @@ def phase3a10_decision(
 
     if output_dir is not None:
         json_path, md_path = write_phase3a10_decision(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3a11-packet")
+def phase3a11_packet(
+    decision_json: Path = PHASE3A11_DECISION_OPTION,
+    triage_json: Path = PHASE3A11_TRIAGE_OPTION,
+    output_dir: Path | None = PHASE3A11_OUTPUT_DIR_OPTION,
+) -> None:
+    """Build the bounded Phase 3A.11 manual source follow-up packet."""
+
+    try:
+        packet = build_phase3a11_packet_from_paths(decision_json, triage_json)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as error:
+        typer.echo(f"Phase 3A.11 packet failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3a11_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         return

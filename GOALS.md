@@ -91,6 +91,9 @@ grounding phase:
   Phase 3B return`: do one bounded manual follow-up pass on the top three
   quartz dynamic `.SEsnap` candidates, then fall back to Phase 3A.6 or Phase 3B
   if exact source/calibration proof is not found.
+- The active packet result is `Phase 3A.11 - Bounded manual source follow-up
+  packet`: the three-candidate review scope, proof gates, stop rules, and
+  forbidden uses are now written as repo artifacts.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -142,6 +145,9 @@ Current blocker:
 - Phase 3A.10 has enough information to choose bounded manual source follow-up
   before returning to Phase 3B. It does not have enough information to unpark
   TiON as calibrated evidence, because raw sample-matched R/T is still missing.
+- Phase 3A.11 has enough information to guide the manual review of the three
+  candidate source files. It does not itself prove absolute reflectance,
+  exact source identity, or calibrated-evidence readiness.
 
 ## Goal Usage In Codex
 

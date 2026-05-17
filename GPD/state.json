@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3A.10 branch decision plus Phase 3A.1 normalization gates"
+    "current_focus": "Phase 3A.11 manual source packet plus Phase 3A.1 normalization gates"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,14 +18,14 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3A.10",
-    "current_phase_name": "Manual Source Follow-Up vs Phase 3B Return Decision",
+    "current_phase": "3A.11",
+    "current_phase_name": "Bounded Manual Source Follow-Up Packet",
     "total_phases": 3,
-    "current_plan": "docs/phase3a10_branch_decision.md",
+    "current_plan": "docs/phase3a11_manual_source_followup_packet.md",
     "total_plans_in_phase": 1,
     "status": "Completed/blocked",
     "last_activity": "2026-05-17",
-    "last_activity_desc": "Chose one bounded manual source follow-up pass on the top quartz dynamic candidates before falling back to Phase 3A.6 or Phase 3B.",
+    "last_activity_desc": "Wrote the bounded manual source follow-up packet for the top three quartz dynamic candidates and preserved the non-promotion boundary.",
     "progress_percent": 90,
     "paused_at": null
   },
@@ -126,6 +126,14 @@
         "Phase 3A.6 clean export/new measurement",
         "Phase 3B TiON evidence gathering"
       ]
+    },
+    {
+      "phase": "3A.11",
+      "decision_ref": "docs/phase3a11_manual_source_followup_packet.md",
+      "decision": "manual_review_packet_ready",
+      "candidate_count": 3,
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false
     }
   ],
   "open_questions": [
@@ -197,6 +205,11 @@
       "phase": "3A.10",
       "summary": "Bounded manual source follow-up comes before Phase 3B return.",
       "rationale": "The follow-up has three concrete quartz dynamic candidates and Phase 3B still lacks raw TiON R/T."
+    },
+    {
+      "phase": "3A.11",
+      "summary": "Manual source follow-up is packetized, not proven.",
+      "rationale": "The packet guides review but does not prove absolute reflectance or source identity."
     }
   ],
   "approximations": [],
@@ -227,7 +240,7 @@
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.5 local/SDSU/Google Drive search result is blocked_needs_new_export; pivot to new export/project recovery or relative-only policy.",
-    "Phase 3A.11: execute the bounded manual source follow-up packet for the top three quartz dynamic candidates; stop unless exact source identity and calibration proof appears.",
+    "Phase 3A.12: record the manual source review result for the top three quartz dynamic candidates; stop unless exact source identity and calibration proof appears.",
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack."

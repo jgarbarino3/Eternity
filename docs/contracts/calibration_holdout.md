@@ -58,3 +58,8 @@ Phase 3A.10 may choose a bounded manual source follow-up, but recovered source
 metadata must still prove normalization before any future residual-gated run.
 If that proof is not found, Phase 3A remains relative-only and Phase 3B remains
 blocked until raw sample-matched TiON R/T is registered.
+
+Phase 3A.11 may package exact candidates and proof gates for manual review.
+That packet is not measurement evidence. Any positive finding must become a
+separate source-backed decision artifact before thresholds, holdout gates, or
+claim promotion are reconsidered.
