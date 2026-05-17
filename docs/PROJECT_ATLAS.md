@@ -35,12 +35,16 @@ bounded claim status.
 Current progress:
 
 - **Done**: V0 synthetic runner and V1 contract scaffolding.
-- **Doing**: Phase 3C public TiN dataset intake after Phase 3A exhaustion:
+- **Done**: Phase 3C public TiN dataset intake after Phase 3A exhaustion:
   the St Andrews 2025 public TiN archive and linked paper are snapshotted, and
   the dataset includes ellipsometry tables plus `RT.xlsx` R/T data.
-- **Next**: Phase 3C.1 St Andrews TiN pairing + validation candidate plan.
-  Exact R/T-to-ellipsometry pairing, no-fit-leakage status, and predeclared
-  thresholds remain required before any calibrated-evidence promotion attempt.
+- **Doing**: Phase 3C.1 St Andrews TiN pairing + validation candidate:
+  canonical R/T CSV snapshots, the candidate `50nm-MTiN-50c` epsilon snapshot,
+  registry records, and a fail-closed example now exist.
+- **Next**: Phase 3C.2 St Andrews candidate run audit + threshold policy
+  decision. Pairing remains `candidate_supported_reflectance_only`,
+  transmittance is auxiliary, and predeclared thresholds remain required before
+  any calibrated-evidence promotion attempt.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -77,8 +81,9 @@ calibrated_linear_evidence
   -> COMPLETE/DECISION: Phase 3A.10 branch decision
   -> PACKET READY: Phase 3A.11 manual source follow-up packet
   -> COMPLETE/EXHAUSTED: Phase 3A.12 manual source review
-  -> ACTIVE: Phase 3C public TiN dataset intake
-  -> NEXT: Phase 3C.1 St Andrews TiN pairing
+  -> COMPLETE: Phase 3C public TiN dataset intake
+  -> ACTIVE: Phase 3C.1 St Andrews TiN pairing
+  -> NEXT: Phase 3C.2 run audit / threshold policy
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -123,8 +128,11 @@ are related provenance, not exact source/calibration proof.
 Phase 3C opens a cleaner public-dataset lane: the St Andrews 2025 TiN dataset
 contains ellipsometry permittivity tables and `RT.xlsx` R/T data, and the linked
 paper maps Figure 4 to normal-incidence unpolarized spectra for 50 nm TiN on
-glass. This is promising but still blocked from calibrated promotion until the
-exact `RT.xlsx`-to-ellipsometry pairing and future threshold policy are written.
+glass. Phase 3C.1 extracts the `RT.xlsx` R/T snapshots, registers the
+`50nm-MTiN-50c` epsilon table as the candidate frozen input, and adds a
+fail-closed validation candidate. This is promising but still blocked from
+calibrated promotion until future thresholds are approved before residual
+judgment and the transmittance/pairing caveats are resolved.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

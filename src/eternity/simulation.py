@@ -56,14 +56,14 @@ def _run_registry_multilayer_tmm(spec: ExperimentSpec) -> SimulationResult:
     layer_thicknesses_nm: list[float] = []
     assumptions: list[str] = [
         "Registry-backed multilayer stack is treated as frozen before comparison.",
-        "No material parameters are fitted to the thesis reflectance spectra.",
+        "No material parameters are fitted to validation holdout spectra.",
     ]
     warnings: list[dict[str, str]] = [
         {
             "severity": "warning",
-            "source": "phase3a_simulation",
+            "source": "validation_candidate_simulation",
             "message": (
-                "Phase 3A is a validation candidate. Claim status is capped until "
+                "This is a validation candidate. Claim status is capped until "
                 "normalization and predeclared residual gates are approved."
             ),
         }
@@ -116,7 +116,7 @@ def _run_registry_multilayer_tmm(spec: ExperimentSpec) -> SimulationResult:
         "mean_reflection": float(np.mean(reflection)),
         "mean_absorption": float(np.mean(absorption)),
         "max_energy_error": float(np.max(energy_error)),
-        "model_level": "linear_tmm_registry_multilayer_phase3a_validation_candidate",
+        "model_level": "linear_tmm_registry_multilayer_validation_candidate",
         "layer_count": float(len(layer_names)),
     }
 

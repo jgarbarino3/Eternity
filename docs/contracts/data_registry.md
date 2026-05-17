@@ -24,3 +24,9 @@ Optical-constants artifacts may enter the Serious Core as calibration-side
 material inputs. They do not become independent evidence for R/T prediction
 unless a separate measured transmission, reflection, or ellipsometry holdout is
 registered with geometry and split integrity.
+
+For Phase 3C.1 St Andrews TiN, the original public zip and paper PDF remain
+provenance containers. Loadable measurement/model inputs must be small
+member-derived snapshots with their own SHA-256 digests, byte counts, source
+member names, and registry ids. Hidden Excel-in-zip members must not be used as
+direct loose measurement paths in experiment specs.

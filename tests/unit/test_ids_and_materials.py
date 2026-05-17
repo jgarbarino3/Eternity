@@ -42,10 +42,22 @@ def test_phase3a_multilayer_tmm_outputs_finite_spectra() -> None:
 
     result = run_linear_tmm(spec)
 
-    assert result.metrics["model_level"] == (
-        "linear_tmm_registry_multilayer_phase3a_validation_candidate"
-    )
+    assert result.metrics["model_level"] == "linear_tmm_registry_multilayer_validation_candidate"
     assert result.layer_names == ["TiN", "SiO2", "TiN"]
+    assert np.all(np.isfinite(result.reflection))
+    assert np.all(np.isfinite(result.transmission))
+    assert np.allclose(result.transmission + result.reflection + result.absorption, 1.0)
+
+
+def test_standrews_multilayer_tmm_outputs_finite_spectra() -> None:
+    spec = load_spec(
+        Path("experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml")
+    )
+
+    result = run_linear_tmm(spec)
+
+    assert result.metrics["model_level"] == "linear_tmm_registry_multilayer_validation_candidate"
+    assert result.layer_names == ["TiN"]
     assert np.all(np.isfinite(result.reflection))
     assert np.all(np.isfinite(result.transmission))
     assert np.allclose(result.transmission + result.reflection + result.absorption, 1.0)

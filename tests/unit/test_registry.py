@@ -31,6 +31,14 @@ def test_registry_loads_contract_fixture() -> None:
     assert registry.splits["thesis_d_10nm_phase3a_validation_candidate"].evidence_strength == (
         "weak_within_dataset_holdout"
     )
+    assert registry.raw_artifacts["public_standrews_tin_50nm_reflectance"].source_type == (
+        "literature_table"
+    )
+    assert registry.material_models["public_standrews_tin_50nm_50c_epsilon_model"].kind == (
+        "tabulated_epsilon"
+    )
+    split = registry.splits["public_standrews_tin_50nm_50c_validation_candidate"]
+    assert split.evidence_strength == "weak_within_dataset_holdout"
 
 
 def test_registry_integrity_checks_real_data_snapshots() -> None:

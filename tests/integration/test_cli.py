@@ -32,6 +32,16 @@ def test_validate_command_accepts_phase3a_validation_candidate_spec() -> None:
     assert "valid: linear_tin_sio2_d10nm_validation_candidate_001" in result.output
 
 
+def test_validate_command_accepts_standrews_validation_candidate_spec() -> None:
+    result = runner.invoke(
+        app,
+        ["validate", "experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml"],
+    )
+
+    assert result.exit_code == 0, result.output
+    assert "valid: linear_standrews_tin_50nm_validation_candidate_001" in result.output
+
+
 def test_memory_subcommand_is_registered_without_breaking_v0_cli() -> None:
     result = runner.invoke(app, ["memory", "--help"])
 
@@ -153,6 +163,43 @@ def test_phase3a_run_writes_fail_closed_validation_candidate_artifacts() -> None
     assert manifest["artifacts"]["comparison_table.csv"]["kind"] == "validation_comparison_table"
     assert manifest["artifacts"]["material_model.json"]["role"] == "calibration"
     assert manifest["artifacts"]["artifact_hashes.json"]["kind"] == "artifact_hash_index"
+
+
+def test_standrews_run_writes_fail_closed_validation_candidate_artifacts() -> None:
+    result = runner.invoke(
+        app,
+        ["run", "experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml"],
+    )
+    assert result.exit_code == 0, result.output
+    run_dir = Path(result.output.strip().splitlines()[-1])
+
+    assert (run_dir / "comparison_table.csv").exists()
+    assert (run_dir / "holdout_residuals.csv").exists()
+    assert (run_dir / "validation_summary.json").exists()
+    assert (run_dir / "validation_gates" / "normalization_gate.json").exists()
+    assert (run_dir / "validation_gates" / "thresholds_predeclared.json").exists()
+    assert (run_dir / "validation_gates" / "no_fit_leakage.json").exists()
+
+    claim_status = json.loads((run_dir / "claim_status.json").read_text())
+    assert claim_status["status"] == "weak_within_dataset_holdout"
+    assert claim_status["can_feed_serious_core"] is False
+    normalization_gate = json.loads(
+        (run_dir / "validation_gates" / "normalization_gate.json").read_text()
+    )
+    assert normalization_gate["status"] == "blocked"
+    threshold_gate = json.loads(
+        (run_dir / "validation_gates" / "thresholds_predeclared.json").read_text()
+    )
+    assert threshold_gate["status"] == "blocked"
+    no_fit_leakage = json.loads((run_dir / "validation_gates" / "no_fit_leakage.json").read_text())
+    assert no_fit_leakage["status"] == "pass"
+    assert no_fit_leakage["leaked_measurement_refs"] == []
+    assert "public_standrews_tin_50nm_reflectance_measurement" in no_fit_leakage[
+        "forbidden_measurement_refs"
+    ]
+    assert "public_standrews_tin_50nm_transmittance" in no_fit_leakage[
+        "forbidden_raw_artifact_refs"
+    ]
 
 
 def test_phase3a1_audit_reports_blocked_existing_run(tmp_path: Path) -> None:
@@ -536,3 +583,30 @@ def test_phase3a12_result_command_writes_artifacts(tmp_path: Path) -> None:
     assert packet["decision"]["status"] == "manual_source_followup_exhausted"
     assert packet["decision"]["can_feed_serious_core"] is False
     assert (tmp_path / "out" / "phase3a12_manual_source_review_result.md").exists()
+
+
+def test_phase3c1_intake_command_writes_artifacts(tmp_path: Path) -> None:
+    raw_dir = tmp_path / "raw"
+    output_dir = tmp_path / "out"
+
+    result = runner.invoke(
+        app,
+        [
+            "phase3c1-intake",
+            "--zip-path",
+            "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+            "--raw-output-dir",
+            str(raw_dir),
+            "--output-dir",
+            str(output_dir),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads((output_dir / "phase3c1_standrews_tin_pairing.json").read_text())
+    assert packet["selected_pairing"]["pairing_status"] == "candidate_supported_reflectance_only"
+    assert packet["decision"]["can_feed_serious_core"] is False
+    assert (output_dir / "phase3c1_standrews_tin_pairing.md").exists()
+    assert (raw_dir / "standrews_tin_50nm_reflectance.csv").exists()
+    assert (raw_dir / "standrews_tin_50nm_transmittance.csv").exists()
+    assert (raw_dir / "standrews_tin_50nm_50c_epsilon.txt").exists()

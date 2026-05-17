@@ -4,12 +4,12 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-17. Current mirrored focus is Phase 3C public TiN dataset
-intake: the St Andrews 2025 public TiN dataset and linked paper are
-snapshotted after Phase 3A source exhaustion. The new path is promising because
-it includes ellipsometry tables plus paper-backed R/T data, but calibrated
-promotion remains blocked until sample pairing, no-fit-leakage status, and
-future thresholds are explicit.
+Updated: 2026-05-17. Current mirrored focus is Phase 3C.1 St Andrews TiN
+pairing and fail-closed validation candidate: the public archive and paper are
+snapshotted, `RT.xlsx` has canonical R/T CSV snapshots, the candidate
+`50nm-MTiN-50c` epsilon table is registered, and a normal-incidence TiN-on-glass
+example exists. Calibrated promotion remains blocked until future thresholds
+are predeclared and pairing/transmittance caveats are resolved.
 
 Authoritative sources remain:
 

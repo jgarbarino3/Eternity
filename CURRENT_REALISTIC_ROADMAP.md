@@ -508,7 +508,7 @@ Result:
 
 #### Phase 3C: Public TiN Dataset Validation Lane
 
-Status: active / intake-ready.
+Status: completed / intake-ready.
 
 Implementation artifacts:
 
@@ -542,9 +542,55 @@ Result:
 
 Recommended next:
 
-- `Phase 3C.1 - St Andrews TiN Pairing + Validation Candidate Plan`: decide
-  which ellipsometry table predicts `RT.xlsx`, predeclare the 400-1000 nm
-  validation policy, then implement loaders/specs for a fail-closed run.
+- `Phase 3C.1 - St Andrews TiN Pairing + Validation Candidate`: interpret the
+  public archive, extract canonical R/T and epsilon member snapshots, register a
+  fail-closed validation candidate, and keep calibrated promotion blocked.
+
+#### Phase 3C.1: St Andrews TiN Pairing + Validation Candidate
+
+Status: completed / fail-closed validation candidate ready.
+
+Implementation artifacts:
+
+- `docs/phase3c1_standrews_tin_pairing.md`
+- `docs/phase3c1_standrews_tin_pairing.json`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_reflectance.csv`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_transmittance.csv`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_50c_epsilon.txt`
+- `experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml`
+
+Phase 3C.1 turns the public St Andrews archive into a usable, fail-closed
+validation lane:
+
+- `RT.xlsx` was converted into deterministic unsmoothed reflectance and
+  transmittance CSV snapshots.
+- `TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt` was copied as the candidate
+  frozen epsilon input for `public_standrews_tin_50nm_50c`.
+- The registry now contains the St Andrews sample, air / 50 nm TiN / glass
+  stack, tabulated-epsilon material model, R/T measurements, and a
+  no-fit-leakage validation split.
+- The validation candidate uses normal-incidence TMM over `400-1000 nm`, with
+  reflectance as the first holdout and transmittance as auxiliary diagnostic.
+
+Result:
+
+- Decision `candidate_supported_reflectance_only`.
+- The paper-backed reflectance minimum and `RT.xlsx` agree: about `20%`
+  reflectance near `540 nm`, extracted as `0.20377` at `542.06 nm`.
+- Pairing is good enough to run a validation candidate, but not enough for
+  `calibrated_linear_evidence`.
+- Transmittance scaling/noise remains auxiliary until audited.
+- Thresholds remain `blocked_not_predeclared`, so the claim ceiling is
+  `weak_within_dataset_holdout`.
+
+Recommended next:
+
+- `Phase 3C.2 - St Andrews Candidate Run Audit + Threshold Policy Decision`:
+  inspect the generated fail-closed run, decide whether more source pairing
+  evidence is needed, and use a Pro/GPD checkpoint before approving any future
+  thresholds or calibrated-evidence policy. Planning should use GPT-5.5 `xhigh`
+  if thresholds/promotion are on the table; implementation can use `medium` for
+  report-only work or `high` if claim gates/contracts change.
 
 ## Near-Term Reach With Current Tools
 

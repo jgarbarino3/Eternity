@@ -33,15 +33,20 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.11 | Completed/packet-ready | Bounded manual source follow-up packet | Converts the Phase 3A.10 branch choice into a three-candidate review packet with exact proof gates, stop rules, and non-promotion boundaries. |
 | Phase 3A.12 | Completed/exhausted | Manual source review result or clean export pivot | Inspected the three bounded candidates and found related provenance but no exact `3L2/Quartz`, 30/10/20 stack, absolute `%R`, or `d_10nm` source-lineage proof. Phase 3A should not continue without new user-supplied source evidence or a clean export/measurement. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
-| Phase 3C | Active/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready; exact R/T-to-ellipsometry pairing and no-fit-leakage policy remain before a validation candidate. |
-| Phase 3C.1 | Recommended | St Andrews TiN pairing + validation candidate plan | Decide which ellipsometry table may predict `RT.xlsx`, predeclare the 400-1000 nm validation policy, then add loaders/specs only after the pairing and leakage rules are explicit. |
+| Phase 3C | Completed/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready. |
+| Phase 3C.1 | Completed/fail-closed candidate | St Andrews TiN pairing + validation candidate | Extracted `RT.xlsx` into canonical R/T CSV snapshots, registered `50nm-MTiN-50c` as the candidate frozen epsilon input, added the St Andrews sample/stack/material/split records, and created a normal-incidence validation candidate capped at `weak_within_dataset_holdout`. |
+| Phase 3C.2 | Recommended | St Andrews candidate run audit + threshold policy decision | Inspect the fail-closed St Andrews run, decide whether more source pairing evidence is needed, and use Pro/GPD review before approving any future residual thresholds or calibrated-evidence promotion policy. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3C - Public TiN dataset validation lane**.
+Current phase: **Phase 3C.1 - St Andrews TiN pairing + validation candidate**.
 
-Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The St Andrews 2025 public TiN dataset is a cleaner path because it includes a public paper, ellipsometry tables, and `RT.xlsx` reflectance/transmittance data for 50 nm TiN on glass.
+Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization
+proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The
+St Andrews 2025 public TiN dataset is the cleanest current lane because it
+includes a public paper, ellipsometry tables, and `RT.xlsx` reflectance /
+transmittance data for 50 nm TiN on glass.
 
 Information sufficiency:
 
@@ -74,6 +79,10 @@ Information sufficiency:
   snapshotted under `lab_data/raw/public_st_andrews_tin_2025/`, the archive hash
   is registered, and the `RT.xlsx` reflectance minimum in the paper window
   matches the linked paper's Figure 4 description.
+- Enough to complete Phase 3C.1 as a fail-closed validation candidate:
+  `RT.xlsx` has canonical reflectance/transmittance CSV snapshots, the selected
+  `50nm-MTiN-50c` epsilon table is registered, and the example forbids R/T
+  holdout artifacts from fitting.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -81,17 +90,19 @@ Information sufficiency:
 - Not enough to promote `run_f35a15cef565fb15` or any Phase 3A run to
   `calibrated_linear_evidence`.
 - Not enough to set pass/fail thresholds for already-inspected residuals.
-- Not enough to run Phase 3C as calibrated evidence yet: the exact `RT.xlsx` to
-  ellipsometry-table pairing, no-fit-leakage status, and future threshold policy
-  must be written before residual inspection.
+- Not enough to run Phase 3C as calibrated evidence yet: the pairing is only
+  `candidate_supported_reflectance_only`, transmittance scaling/noise remains
+  auxiliary, and future threshold policy must be approved before any promoted
+  residual-gated run.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3C.1 - St Andrews TiN Pairing + Validation Candidate Plan**. Planning:
-  `high` because the main risk is scientific leakage, not code mechanics.
-  Implementation: `high` if adding loaders/specs and a first validation
-  candidate, or `medium` if only writing the mapping packet. Use `xhigh` before
-  any calibrated-evidence threshold or promotion decision.
+- **Phase 3C.2 - St Andrews Candidate Run Audit + Threshold Policy Decision**.
+  Planning: GPT-5.5 `xhigh` if thresholds or calibrated-evidence policy are
+  being considered, because this is the point where residuals could bias the
+  rules. Implementation: `medium` for a report-only audit, or `high` if claim
+  gates/contracts change. A Pro checkpoint is recommended before any threshold
+  approval or `calibrated_linear_evidence` promotion.
 
 Helpful tools:
 

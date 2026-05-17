@@ -329,8 +329,7 @@ def _write_validation_candidate_artifacts(
         {
             "status": "blocked",
             "reason": (
-                "The holdout export is labeled Intensity/arb; it has not yet been proven "
-                "to be directly comparable to absolute TMM reflectance."
+                "The holdout normalization is not approved for calibrated promotion."
             ),
         },
     )
@@ -416,7 +415,7 @@ def run_experiment(spec_path: Path, results_root: Path = Path("results/runs")) -
         if is_validation_candidate:
             claim_status = ClaimStatus.WEAK_WITHIN_DATASET_HOLDOUT
             claim_reason = (
-                "A Phase 3A measured-reflectance comparison was prepared, but calibrated "
+                "A measured-holdout comparison was prepared, but calibrated "
                 "promotion is blocked by threshold and normalization gates."
             )
         else:
@@ -485,7 +484,7 @@ def run_experiment(spec_path: Path, results_root: Path = Path("results/runs")) -
             {
                 "status": "candidate" if is_validation_candidate else "blocked",
                 "reason": (
-                    "Phase 3A TiN/SiO2 measured-reflectance comparison is prepared, "
+                    "Measured R/T comparison is prepared, "
                     "but calibrated promotion remains gate-blocked."
                     if is_validation_candidate
                     else "No independent R/T holdout is registered for this TiN/TiON run."
@@ -504,7 +503,7 @@ def run_experiment(spec_path: Path, results_root: Path = Path("results/runs")) -
                     "TiON_48/TiON_49 raw R/T spectra are not registered.",
                     "FROG labels are not authoritatively mapped to TiON_48/TiON_49.",
                     "No independent holdout residual threshold has been approved.",
-                    "Thesis intensity normalization is not yet proven as absolute reflectance.",
+                    "Holdout normalization is not yet approved for calibrated promotion.",
                 ]
             },
         )

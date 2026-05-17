@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-17",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3C public TiN dataset intake plus Phase 3C.1 pairing policy"
+    "current_focus": "Phase 3C.1 St Andrews TiN pairing and fail-closed validation candidate"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,14 +18,14 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3C",
-    "current_phase_name": "Public TiN Dataset Validation Lane",
+    "current_phase": "3C.1",
+    "current_phase_name": "St Andrews TiN Pairing + Validation Candidate",
     "total_phases": 3,
-    "current_plan": "docs/phase3c_public_tin_dataset_intake.md",
-    "total_plans_in_phase": 1,
-    "status": "Active/intake-ready",
+    "current_plan": "docs/phase3c1_standrews_tin_pairing.md",
+    "total_plans_in_phase": 2,
+    "status": "Completed/fail-closed candidate ready",
     "last_activity": "2026-05-17",
-    "last_activity_desc": "Snapshotted the St Andrews 2025 public TiN dataset and linked paper; found a promising R/T plus ellipsometry validation lane that still needs exact pairing and no-fit-leakage policy.",
+    "last_activity_desc": "Extracted St Andrews RT.xlsx into canonical R/T snapshots, registered the candidate 50 C epsilon input, and added a fail-closed TiN-on-glass validation candidate capped at weak_within_dataset_holdout.",
     "progress_percent": 90,
     "paused_at": null
   },
@@ -170,13 +170,34 @@
         "no_fit_leakage_policy",
         "thresholds_predeclared_before_residuals"
       ]
+    },
+    {
+      "phase": "3C.1",
+      "decision_ref": "docs/phase3c1_standrews_tin_pairing.md",
+      "decision": "candidate_supported_reflectance_only",
+      "claim_status_ceiling": "weak_within_dataset_holdout",
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "selected_sample": "public_standrews_tin_50nm_50c",
+      "selected_epsilon_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+      "holdout_member": "TiN-data_Pure/RT.xlsx",
+      "reflectance_min_value": 0.20377,
+      "reflectance_min_wavelength_nm": 542.06,
+      "selected_epsilon_enz_nm": [
+        664.334
+      ],
+      "remaining_gates": [
+        "thresholds_predeclared",
+        "transmittance_scaling_noise_audit",
+        "future_calibrated_promotion_policy"
+      ]
     }
   ],
   "open_questions": [
     "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
-    "Which St Andrews ellipsometry table is the legitimate no-fit-leakage input for predicting RT.xlsx?"
+    "Is the Phase 3C.1 candidate_supported_reflectance_only pairing sufficient for future threshold policy, or should more St Andrews source metadata be reviewed?"
   ],
   "resolved_questions": [],
   "performance_metrics": {
@@ -257,6 +278,11 @@
       "phase": "3C",
       "summary": "St Andrews public TiN is the next best validation lane.",
       "rationale": "It has paper-backed R/T and ellipsometry in one public dataset, but still needs exact pairing, leakage policy, and predeclared thresholds before calibrated promotion."
+    },
+    {
+      "phase": "3C.1",
+      "summary": "St Andrews TiN can run as a fail-closed validation candidate.",
+      "rationale": "Reflectance supports the 50 nm / 50 C candidate pairing well enough for a capped run, but not for calibrated promotion; R/T holdouts remain forbidden for fitting and thresholds are blocked."
     }
   ],
   "approximations": [],
@@ -291,7 +317,7 @@
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack.",
-    "Phase 3C.1: map RT.xlsx to the correct St Andrews ellipsometry table, predeclare validation metrics/window, then implement loaders/specs."
+    "Phase 3C.2: audit the St Andrews fail-closed run and use Pro/GPD review before any future threshold approval or calibrated-evidence promotion policy."
   ],
   "blockers": [
     "TiON_48/TiON_49 raw R/T spectra are not registered.",
@@ -300,7 +326,7 @@
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
     "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
-    "Phase 3C exact R/T-to-ellipsometry pairing is not yet locked."
+    "Phase 3C.1 pairing is candidate_supported_reflectance_only, not calibrated evidence; transmittance scaling/noise remains auxiliary and thresholds are not predeclared."
   ],
   "continuation": {
     "schema_version": 1,

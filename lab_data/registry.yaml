@@ -395,6 +395,56 @@ raw_artifacts:
       the St Andrews repository item.
     provenance_refs:
     - phase3c_public_tin_dataset_intake
+  public_standrews_tin_50nm_reflectance:
+    raw_artifact_id: public_standrews_tin_50nm_reflectance
+    kind: csv
+    path: lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_reflectance.csv
+    sha256: e5fc5baee768ca32587223209b9b25d80c4464b7805fee113bbb0a7a6dc4f424
+    bytes: 30300
+    source_type: literature_table
+    immutable: true
+    original_filename: RT.xlsx::reflectance
+    original_path: lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip::TiN-data_Pure/RT.xlsx
+    acquired_at: '2026-05-17'
+    source_notes: Phase 3C.1 canonical reflectance CSV extracted from St Andrews RT.xlsx
+      without smoothing or normalization changes.
+    access_notes: Member-derived snapshot from the public St Andrews CC BY dataset archive.
+    provenance_refs:
+    - phase3c1_standrews_tin_pairing
+  public_standrews_tin_50nm_transmittance:
+    raw_artifact_id: public_standrews_tin_50nm_transmittance
+    kind: csv
+    path: lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_transmittance.csv
+    sha256: af3bacb370e29c31490317489e14b0899f1c97a2e9739a199b9c84b9f7766795
+    bytes: 30408
+    source_type: literature_table
+    immutable: true
+    original_filename: RT.xlsx::transmittance
+    original_path: lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip::TiN-data_Pure/RT.xlsx
+    acquired_at: '2026-05-17'
+    source_notes: Phase 3C.1 canonical transmittance CSV extracted from St Andrews RT.xlsx
+      without smoothing or normalization changes; auxiliary diagnostic only until scaling
+      is audited.
+    access_notes: Member-derived snapshot from the public St Andrews CC BY dataset archive.
+    provenance_refs:
+    - phase3c1_standrews_tin_pairing
+  public_standrews_tin_50nm_50c_epsilon:
+    raw_artifact_id: public_standrews_tin_50nm_50c_epsilon
+    kind: txt
+    path: lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_50c_epsilon.txt
+    sha256: 36a4737de5ee99c0033e6dd90e8e7e88ae9a0b4b71c8af50b242a328da7f31fd
+    bytes: 20544
+    source_type: literature_table
+    immutable: true
+    original_filename: 50nm-MTiN-50c.txt
+    original_path: lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip::TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt
+    acquired_at: '2026-05-17'
+    source_notes: Phase 3C.1 selected candidate 50 nm / 50 C TiN epsilon table extracted
+      from the St Andrews archive without smoothing or refitting; canonical text snapshot
+      strips archive trailing whitespace.
+    access_notes: Member-derived snapshot from the public St Andrews CC BY dataset archive.
+    provenance_refs:
+    - phase3c1_standrews_tin_pairing
 samples:
   tin_50nm_dc_sputtered_master:
     sample_id: tin_50nm_dc_sputtered_master
@@ -565,6 +615,25 @@ samples:
     - Reference dielectric table used as frozen Phase 3A layer input.
     provenance_refs:
     - sio2_sellmeier_epsilon
+  public_standrews_tin_50nm_50c:
+    sample_id: public_standrews_tin_50nm_50c
+    material: TiN
+    source_type: literature
+    nominal_thickness:
+      value: 50
+      unit: nm
+      uncertainty: null
+    composition: TiN, exact stoichiometry not in registry; electron-beam evaporated film on
+      microscope glass.
+    process_notes:
+    - St Andrews paper describes low-temperature electron-beam evaporation of TiN on AmScope
+      microscope glass slides.
+    - Phase 3C.1 pairs the 50 nm / 50 C epsilon table to RT.xlsx as a supported reflectance-only
+      validation candidate, not calibrated evidence.
+    provenance_refs:
+    - public_standrews_tin_2025_dataset_zip
+    - public_standrews_tin_2025_paper_pdf
+    - public_standrews_tin_50nm_50c_epsilon
 stacks:
   tin_50nm_dc_sputtered_master_air_film_unknown_substrate:
     stack_id: tin_50nm_dc_sputtered_master_air_film_unknown_substrate
@@ -830,6 +899,29 @@ stacks:
       thickness: null
       notes: lossless n=1.45 fixture
     notes: Synthetic V0 stack.
+  public_standrews_tin_50nm_50c_air_tin_glass:
+    stack_id: public_standrews_tin_50nm_50c_air_tin_glass
+    sample_ref: public_standrews_tin_50nm_50c
+    layers:
+    - role: incident_medium
+      material: air
+      thickness: null
+      notes: Normal-incidence R/T measurement in paper Figure 4.
+    - role: film
+      material: TiN
+      thickness:
+        value: 50
+        unit: nm
+        uncertainty: null
+      notes: Candidate 50 nm / 50 C TiN table selected in Phase 3C.1.
+    - role: substrate
+      material: glass
+      thickness: null
+      notes: Paper states films were deposited on AmScope microscope glass slides; simulator
+        uses lossless n=1.45 glass approximation.
+    notes: Phase 3C.1 public dataset validation candidate stack. Pairing is supported for
+      reflectance but not sufficient for calibrated promotion without thresholds and final
+      no-fit-leakage review.
 measurements:
   tin_50nm_lorentz_epsilon_measurement:
     measurement_id: tin_50nm_lorentz_epsilon_measurement
@@ -1425,6 +1517,87 @@ measurements:
     geometry_polarization: mixed
     instrument_or_source_notes: 30_20_10 derived e1/e2 export; unresolved candidate bundle,
       registered for audit and not used as a fitted material model.
+  public_standrews_tin_50nm_50c_epsilon_measurement:
+    measurement_id: public_standrews_tin_50nm_50c_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: public_standrews_tin_50nm_50c_epsilon
+    sample_ref: public_standrews_tin_50nm_50c
+    stack_ref: public_standrews_tin_50nm_50c_air_tin_glass
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: complex_dielectric_function
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: e1
+      epsilon_imag: e2
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: St Andrews Phase 3C.1 selected 50 nm / 50 C epsilon
+      table from the public archive; loaded as a frozen material model.
+    preprocessing:
+    - Extracted from TiN-data_Pure.zip without smoothing, fitting, or normalization changes.
+    forbidden_for_fitting: false
+  public_standrews_tin_50nm_reflectance_measurement:
+    measurement_id: public_standrews_tin_50nm_reflectance_measurement
+    kind: reflection_spectrum
+    raw_artifact_ref: public_standrews_tin_50nm_reflectance
+    sample_ref: public_standrews_tin_50nm_50c
+    stack_ref: public_standrews_tin_50nm_50c_air_tin_glass
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: reflectance
+    y_unit: fraction
+    y_values_column: reflectance
+    y_values_columns:
+      reflectance: reflectance
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unpolarized
+    instrument_or_source_notes: St Andrews RT.xlsx reflectance channel; paper Figure 4
+      describes normal-incidence unpolarized R/T for 50 nm TiN on glass over 400-1000 nm.
+    preprocessing:
+    - Extracted from RT.xlsx without smoothing or normalization changes.
+    - Reflectance minimum in 400-1000 nm is 0.20377 at 542.06 nm, matching the paper
+      description of about 20% near 540 nm.
+    forbidden_for_fitting: true
+  public_standrews_tin_50nm_transmittance_measurement:
+    measurement_id: public_standrews_tin_50nm_transmittance_measurement
+    kind: transmission_spectrum
+    raw_artifact_ref: public_standrews_tin_50nm_transmittance
+    sample_ref: public_standrews_tin_50nm_50c
+    stack_ref: public_standrews_tin_50nm_50c_air_tin_glass
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: transmittance
+    y_unit: fraction
+    y_values_column: transmittance
+    y_values_columns:
+      transmittance: transmittance
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unpolarized
+    instrument_or_source_notes: St Andrews RT.xlsx transmittance channel. Phase 3C.1 keeps
+      it auxiliary until scaling/noise is audited against the paper text.
+    preprocessing:
+    - Extracted from RT.xlsx without smoothing or normalization changes.
+    forbidden_for_fitting: true
 material_models:
   tin_50nm_lorentz_epsilon_model:
     material_model_id: tin_50nm_lorentz_epsilon_model
@@ -1544,6 +1717,32 @@ material_models:
     - Use only inside tabulated wavelength range.
     limitations:
     - This is a reference dielectric input, not a measured holdout.
+  public_standrews_tin_50nm_50c_epsilon_model:
+    material_model_id: public_standrews_tin_50nm_50c_epsilon_model
+    sample_ref: public_standrews_tin_50nm_50c
+    kind: tabulated_epsilon
+    source_type: literature_table
+    raw_artifact_ref: public_standrews_tin_50nm_50c_epsilon
+    source_measurement_ref: public_standrews_tin_50nm_50c_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t) optics convention assumed for passive positive
+      epsilon_imag tables
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: vacuum wavelength where Re(epsilon) crosses zero by linear interpolation
+    enz_wavelengths_nm:
+    - 664.334
+    wavelength_min_nm: 245.874191
+    wavelength_max_nm: 1689.241577
+    passivity_check: pass
+    fit_provenance: Loaded as a frozen member-derived table from St Andrews TiN-data_Pure.zip;
+      no fitting performed in Eternity.
+    validity_notes:
+    - Use only inside the tabulated wavelength range.
+    - Candidate pairing is reflectance-supported but not calibrated-promotion-ready.
+    limitations:
+    - RT.xlsx does not independently label the annealing condition.
+    - Transmittance is auxiliary until scaling/noise is audited.
 splits:
   synthetic_v0_contract_split:
     split_id: synthetic_v0_contract_split
@@ -1625,6 +1824,23 @@ splits:
     - sio2_sellmeier_epsilon_measurement
     holdout_measurement_refs:
     - thesis_reflectance_d_10nm_initial_measurement
+    fitting_may_access_holdout_y: false
+    ai_playground_may_access_holdout_y_before_fit: false
+    evidence_strength: weak_within_dataset_holdout
+  public_standrews_tin_50nm_50c_validation_candidate:
+    split_id: public_standrews_tin_50nm_50c_validation_candidate
+    raw_data_refs:
+    - public_standrews_tin_2025_dataset_zip
+    - public_standrews_tin_2025_paper_pdf
+    - public_standrews_tin_50nm_50c_epsilon
+    - public_standrews_tin_50nm_reflectance
+    - public_standrews_tin_50nm_transmittance
+    created_before_fit: true
+    method: measurement_ids
+    calibration_measurement_refs:
+    - public_standrews_tin_50nm_50c_epsilon_measurement
+    holdout_measurement_refs:
+    - public_standrews_tin_50nm_reflectance_measurement
     fitting_may_access_holdout_y: false
     ai_playground_may_access_holdout_y_before_fit: false
     evidence_strength: weak_within_dataset_holdout

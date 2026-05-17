@@ -71,3 +71,11 @@ Phase 3A.12 manual source review results may exhaust a provenance branch. An
 exhausted branch is not negative physics evidence; it simply forbids using that
 branch for serious-core promotion until new source data, a clean export, or a
 new measurement is registered.
+
+Phase 3C.1 St Andrews TiN candidates may report
+`weak_within_dataset_holdout` after source-member extraction, registry
+pairing, and no-fit-leakage gates pass. This status still cannot feed
+serious-core conclusions: the current pairing is
+`candidate_supported_reflectance_only`, transmittance is auxiliary until
+scaling/noise is audited, and thresholds are blocked until a future
+predeclared policy is approved before residual-gated judgment.

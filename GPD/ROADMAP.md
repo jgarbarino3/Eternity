@@ -274,7 +274,7 @@ Result:
 
 ## Phase 3C: Public TiN Dataset Validation Lane
 
-Status: active / intake-ready
+Status: completed / intake-ready
 
 Goal:
 
@@ -301,8 +301,43 @@ Current result:
 
 Next:
 
-- Phase 3C.1 should decide which ellipsometry table predicts `RT.xlsx`, then
-  predeclare validation metrics before any residual-gated run.
+- Phase 3C.1 should turn the intake into a fail-closed validation candidate.
+
+## Phase 3C.1: St Andrews TiN Pairing + Fail-Closed Validation Candidate
+
+Status: completed / fail-closed candidate ready
+
+Goal:
+
+- Convert the public archive into small member-derived snapshots that can enter
+  the registry without using hidden zip/Excel members as loose paths.
+- Pair `RT.xlsx` to the candidate 50 nm TiN epsilon input only as far as the
+  evidence supports.
+- Keep serious-core and calibrated-evidence promotion blocked.
+
+Artifacts:
+
+- `docs/phase3c1_standrews_tin_pairing.md`
+- `docs/phase3c1_standrews_tin_pairing.json`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_reflectance.csv`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_transmittance.csv`
+- `lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_50c_epsilon.txt`
+- `experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml`
+
+Current result:
+
+- Pairing status is `candidate_supported_reflectance_only`.
+- Reflectance agrees with the paper-level Figure 4 description: minimum
+  `0.20377` at `542.06 nm` in the 400-1000 nm window.
+- The selected epsilon table has ENZ at about `664.334 nm` and passes the
+  simple passivity check.
+- Transmittance remains auxiliary until scaling/noise is audited.
+- Claim ceiling remains `weak_within_dataset_holdout`.
+
+Next:
+
+- Phase 3C.2 should audit the generated fail-closed run and use Pro/GPD review
+  before approving thresholds or any calibrated-evidence policy.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

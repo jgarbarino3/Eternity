@@ -97,10 +97,15 @@ grounding phase:
 - The completed review result is `Phase 3A.12 - Manual source review result or
   clean export pivot`: the three bounded candidates were inspected and did not
   prove exact source identity, absolute reflectance, or `d_10nm` lineage.
-- The active intake result is `Phase 3C - Public TiN dataset validation lane`:
-  the St Andrews 2025 public TiN dataset and linked paper were snapshotted and
-  look like a cleaner path toward a validation candidate than continuing the
-  exhausted Phase 3A source search.
+- The completed intake result is `Phase 3C - Public TiN dataset validation
+  lane`: the St Andrews 2025 public TiN dataset and linked paper were
+  snapshotted and look like a cleaner path toward a validation candidate than
+  continuing the exhausted Phase 3A source search.
+- The completed candidate result is `Phase 3C.1 - St Andrews TiN pairing +
+  validation candidate`: `RT.xlsx` was extracted into canonical reflectance and
+  transmittance CSV snapshots, the candidate `50nm-MTiN-50c` epsilon table was
+  registered, and a fail-closed normal-incidence TiN-on-glass example now
+  exists with claim ceiling `weak_within_dataset_holdout`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is to keep source-qualified TiN/TiON optical constants, thesis
@@ -161,9 +166,14 @@ Current blocker:
 - Phase 3C has enough information to continue productively: the public dataset
   includes ellipsometry permittivity tables and `RT.xlsx` reflectance /
   transmittance data, while the linked paper maps Figure 4 to 50 nm TiN on
-  glass at normal incidence over 400-1000 nm. It does not yet have enough
-  information to claim calibrated evidence because exact R/T-to-ellipsometry
-  pairing and no-fit-leakage policy are still open.
+  glass at normal incidence over 400-1000 nm.
+- Phase 3C.1 has enough information to run a fail-closed validation candidate:
+  the `RT.xlsx` reflectance minimum matches the paper description, the
+  `50nm-MTiN-50c` epsilon table is registered as a frozen input, and R/T
+  holdout artifacts are forbidden for fitting. It still does not have enough
+  information to claim calibrated evidence because thresholds are not
+  predeclared, the pairing remains `candidate_supported_reflectance_only`, and
+  transmittance scaling/noise is auxiliary until audited.
 
 ## Goal Usage In Codex
 

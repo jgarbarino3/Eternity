@@ -1,0 +1,180 @@
+{
+  "candidate_epsilon_tables": [
+    {
+      "bytes": 22262,
+      "enz_wavelengths_nm": [
+        597.146
+      ],
+      "epsilon_imag_max": 41.698841,
+      "epsilon_imag_min": 3.995485,
+      "epsilon_real_max": 5.381231,
+      "epsilon_real_min": -14.505738,
+      "member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-40c.txt",
+      "passivity_check": "pass",
+      "rows": 678,
+      "sha256": "982f6348038728a80f0514efec1ac5d69f5a29c75f98bbe1841a24c487d8daa5",
+      "wavelength_max_nm": 1689.241577,
+      "wavelength_min_nm": 245.874191
+    },
+    {
+      "bytes": 21900,
+      "enz_wavelengths_nm": [
+        664.334
+      ],
+      "epsilon_imag_max": 19.316454,
+      "epsilon_imag_min": 2.642982,
+      "epsilon_real_max": 2.558006,
+      "epsilon_real_min": -3.779527,
+      "member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+      "passivity_check": "pass",
+      "rows": 678,
+      "sha256": "37a32bc83e5cb783ffb7b2165e4456d13649168349bdc33bf171c3a28cf04f47",
+      "wavelength_max_nm": 1689.241577,
+      "wavelength_min_nm": 245.874191
+    },
+    {
+      "bytes": 21569,
+      "enz_wavelengths_nm": [
+        978.144
+      ],
+      "epsilon_imag_max": 12.002344,
+      "epsilon_imag_min": 2.269789,
+      "epsilon_real_max": 3.774493,
+      "epsilon_real_min": -2.599663,
+      "member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-60c.txt",
+      "passivity_check": "pass",
+      "rows": 678,
+      "sha256": "ea23ca7310a6dd8748c39b82418fb2d48a9839335d47f32a3b1351dcb8efe3ee",
+      "wavelength_max_nm": 1689.241577,
+      "wavelength_min_nm": 245.874191
+    },
+    {
+      "bytes": 21910,
+      "enz_wavelengths_nm": [
+        634.178
+      ],
+      "epsilon_imag_max": 17.72296,
+      "epsilon_imag_min": 2.458979,
+      "epsilon_real_max": 3.322614,
+      "epsilon_real_min": -10.782938,
+      "member": "TiN-data_Pure/Ellipsometry/50 nm-MTiN-Anntemp-50C.txt",
+      "passivity_check": "pass",
+      "rows": 678,
+      "sha256": "e8570c4adee0e066c9f643d5d7d43092e0dfefc55d5fb3b72e2db7fbd1cb4f24",
+      "wavelength_max_nm": 1689.241577,
+      "wavelength_min_nm": 245.874191
+    },
+    {
+      "bytes": 21301,
+      "enz_wavelengths_nm": [],
+      "epsilon_imag_max": 9.737326,
+      "epsilon_imag_min": 3.984087,
+      "epsilon_real_max": 4.570271,
+      "epsilon_real_min": 1.822211,
+      "member": "TiN-data_Pure/Ellipsometry/50nm TiN-RoomTemp.txt",
+      "passivity_check": "pass",
+      "rows": 678,
+      "sha256": "d8b19d8f597a7d0a512d86b44301c099252efe54b2b55dcd27a6fb3261413d3e",
+      "wavelength_max_nm": 1689.241577,
+      "wavelength_min_nm": 245.874191
+    }
+  ],
+  "date": "2026-05-17",
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "status": "candidate_supported_reflectance_only"
+  },
+  "generated_artifacts": {
+    "reflectance_csv": {
+      "bytes": 30300,
+      "path": "lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_reflectance.csv",
+      "sha256": "e5fc5baee768ca32587223209b9b25d80c4464b7805fee113bbb0a7a6dc4f424",
+      "source_member": "TiN-data_Pure/RT.xlsx"
+    },
+    "selected_epsilon": {
+      "bytes": 20544,
+      "path": "lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_50c_epsilon.txt",
+      "sha256": "36a4737de5ee99c0033e6dd90e8e7e88ae9a0b4b71c8af50b242a328da7f31fd",
+      "source_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt"
+    },
+    "transmittance_csv": {
+      "bytes": 30408,
+      "path": "lab_data/raw/public_st_andrews_tin_2025/standrews_tin_50nm_transmittance.csv",
+      "sha256": "af3bacb370e29c31490317489e14b0899f1c97a2e9739a199b9c84b9f7766795",
+      "source_member": "TiN-data_Pure/RT.xlsx"
+    }
+  },
+  "next_phase": "Phase 3C.2 threshold/pro-checkpoint only if residual policy is requested",
+  "phase_id": "Phase 3C.1",
+  "policy": {
+    "calibrated_linear_evidence_allowed": false,
+    "can_feed_serious_core": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "no_fit_leakage_status": "prepared_for_runner_gate",
+    "normalization_status": "reflectance_fraction_paper_consistent_not_promotion_approved",
+    "threshold_status": "blocked_not_predeclared"
+  },
+  "rt_summary": {
+    "reflectance": {
+      "max_in_paper_window": {
+        "value": 0.89402,
+        "wavelength_nm": 413.23
+      },
+      "min_in_paper_window": {
+        "value": 0.20377,
+        "wavelength_nm": 542.06
+      },
+      "paper_window_nm": [
+        400.0,
+        1000.0
+      ],
+      "rows_in_paper_window": 1785,
+      "rows_total": 2048,
+      "wavelength_nm_total_max": 1029.8,
+      "wavelength_nm_total_min": 340.02
+    },
+    "transmittance": {
+      "max_in_paper_window": {
+        "value": 0.71769,
+        "wavelength_nm": 404.18
+      },
+      "min_in_paper_window": {
+        "value": 0.02035,
+        "wavelength_nm": 718.8
+      },
+      "paper_window_nm": [
+        400.0,
+        1000.0
+      ],
+      "rows_in_paper_window": 1784,
+      "rows_total": 2048,
+      "wavelength_nm_total_max": 1030.7,
+      "wavelength_nm_total_min": 340.35
+    }
+  },
+  "selected_pairing": {
+    "caveats": [
+      "RT.xlsx itself does not name the annealing condition.",
+      "Transmittance scaling/noise does not yet cleanly match the paper text, so transmittance stays auxiliary.",
+      "No residual thresholds are approved before this first validation-candidate run."
+    ],
+    "evidence": [
+      "The linked paper identifies Figure 4 as 50 nm TiN on glass at normal incidence.",
+      "The linked paper says reflectance reaches about 20% near 540 nm.",
+      "RT.xlsx reflectance minimum in 400-1000 nm is 0.20377 at 542.06 nm.",
+      "The 50nm-MTiN-50c epsilon table is the best default material input because the paper identifies the 50 C film as the optimized 50 nm TiN sample."
+    ],
+    "holdout_member": "TiN-data_Pure/RT.xlsx",
+    "pairing_status": "candidate_supported_reflectance_only",
+    "sample_id": "public_standrews_tin_50nm_50c",
+    "selected_material_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt"
+  },
+  "source_archive": {
+    "path": "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+    "rt_member": "TiN-data_Pure/RT.xlsx",
+    "selected_epsilon_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+    "sha256": "e3a6eaf3baf86c926a1234302a888c2a6678a1c8949a33e2898fdb8c75efdc00"
+  },
+  "title": "St Andrews TiN pairing and fail-closed validation candidate"
+}

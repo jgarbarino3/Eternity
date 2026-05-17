@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3C public TiN dataset intake plus Phase 3C.1 pairing policy
+**Current focus:** Phase 3C.1 St Andrews TiN pairing and fail-closed validation candidate
 
 ## Current Position
 
-**Current Phase:** 3C
-**Current Phase Name:** Public TiN Dataset Validation Lane
+**Current Phase:** 3C.1
+**Current Phase Name:** St Andrews TiN Pairing + Validation Candidate
 **Total Phases:** 3
-**Current Plan:** docs/phase3c_public_tin_dataset_intake.md
-**Total Plans in Phase:** 1
-**Status:** Active/intake-ready
+**Current Plan:** docs/phase3c1_standrews_tin_pairing.md
+**Total Plans in Phase:** 2
+**Status:** Completed/fail-closed candidate ready
 **Last Activity:** 2026-05-17
-**Last Activity Description:** Snapshotted the St Andrews 2025 public TiN dataset and linked paper; found a promising R/T plus ellipsometry validation lane that still needs exact pairing and no-fit-leakage policy.
+**Last Activity Description:** Extracted St Andrews `RT.xlsx` into canonical R/T snapshots, registered the candidate 50 C epsilon input, and added a fail-closed TiN-on-glass validation candidate capped at weak_within_dataset_holdout.
 
 **Progress:** [█████████░] 90%
 
@@ -64,6 +64,11 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   snapshotted. `RT.xlsx` has a reflectance minimum of `0.20377` at `542.06 nm`
   in the paper's 400-1000 nm window, matching the paper's Figure 4 description
   of about 20% reflectance near 540 nm.
+- Phase 3C.1 wrote `docs/phase3c1_standrews_tin_pairing.md` and `.json`:
+  `RT.xlsx` is extracted into canonical reflectance/transmittance CSV
+  snapshots, `50nm-MTiN-50c` is the candidate epsilon table, and
+  `experiments/examples/linear_standrews_tin_50nm_validation_candidate.yaml`
+  runs as a fail-closed normal-incidence validation candidate.
 
 ## Open Questions
 
@@ -71,7 +76,8 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
-- Which St Andrews ellipsometry table is the legitimate no-fit-leakage input for predicting `RT.xlsx`?
+- Is the Phase 3C.1 `candidate_supported_reflectance_only` pairing sufficient
+  for future threshold policy, or should more source/paper metadata be reviewed?
 
 ## Performance Metrics
 
@@ -117,6 +123,10 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   paper-backed R/T and ellipsometry in one public dataset, but still needs exact
   pairing, leakage policy, and predeclared thresholds before calibrated
   promotion.
+- [Phase 3C.1]: St Andrews TiN can run as a fail-closed validation candidate.
+  — Reflectance supports the 50 nm / 50 C candidate pairing well enough for a
+  capped run, but not for calibrated promotion; R/T holdouts remain forbidden
+  for fitting and thresholds are blocked.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -147,8 +157,8 @@ None yet.
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
-- Phase 3C.1: map `RT.xlsx` to the correct St Andrews ellipsometry table,
-  predeclare validation metrics/window, then implement loaders/specs.
+- Phase 3C.2: audit the St Andrews fail-closed run and use Pro/GPD review
+  before any future threshold approval or calibrated-evidence promotion policy.
 
 ### Blockers/Concerns
 
@@ -160,7 +170,9 @@ None yet.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
-- Phase 3C exact R/T-to-ellipsometry pairing is not yet locked.
+- Phase 3C.1 pairing is `candidate_supported_reflectance_only`, not calibrated
+  evidence; transmittance scaling/noise remains auxiliary and thresholds are
+  not predeclared.
 
 ## Session Continuity
 

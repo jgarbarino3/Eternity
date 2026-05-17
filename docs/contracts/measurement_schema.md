@@ -40,3 +40,11 @@ Phase 3A.9 diagnostic tables may include normalized prediction/measurement
 columns and relative-shape deltas. These are derived diagnostic columns and
 must keep the source measurement reference and relative-normalization boundary
 explicit.
+
+Phase 3C.1 St Andrews public TiN records may use member-derived CSV snapshots
+from `RT.xlsx` for reflectance and transmittance, with y units recorded as
+fraction when the public paper and table scale are consistent. Those R/T
+snapshots remain holdout or auxiliary measurements and must be forbidden for
+fitting. The selected ellipsometry epsilon table may be a material-model input
+only when it is registered as a separate raw member-derived artifact and the
+split gate confirms no R/T leakage.

@@ -74,24 +74,27 @@ def write_report(
     plots = "\n".join(f"- `{path.relative_to(run_dir)}`" for path in plot_paths)
     metrics_json = json.dumps(result.metrics, indent=2, sort_keys=True)
     model_level = result.metrics["model_level"]
-    is_phase3a = model_level == "linear_tmm_registry_multilayer_phase3a_validation_candidate"
+    is_validation_candidate = model_level in {
+        "linear_tmm_registry_multilayer_validation_candidate",
+        "linear_tmm_registry_multilayer_phase3a_validation_candidate",
+    }
     is_tabulated = model_level == "linear_tmm_tabulated_epsilon_v1_grounding"
-    if is_phase3a:
+    if is_validation_candidate:
         claim_status = "weak_within_dataset_holdout"
         summary_note = (
-            "This is a Phase 3A TiN/SiO2 validation-candidate run. It compares a frozen "
-            "registry-backed multilayer TMM prediction with measured thesis reflectance, "
-            "but it is not calibrated linear evidence until normalization and residual "
-            "threshold gates are approved."
+            "This is a registry-backed validation-candidate run. It compares a frozen "
+            "linear TMM prediction with a measured holdout spectrum, but it is not "
+            "calibrated linear evidence until normalization and residual threshold gates "
+            "are approved."
         )
         claim_note = (
-            "This run cannot feed serious-core conclusions yet because the measured export "
-            "is intensity-labeled and calibrated pass/fail thresholds are not predeclared."
+            "This run cannot feed serious-core conclusions yet because calibrated "
+            "normalization and pass/fail thresholds are not both approved."
         )
         follow_up = (
-            "- Decide whether the thesis intensity export is comparable to absolute reflectance.\n"
+            "- Decide whether the measured holdout channel is promotion-ready.\n"
             "- Predeclare residual thresholds before promoting any calibrated evidence.\n"
-            "- Keep 12V, nonlinear, FROG, and pump-probe interpretations outside this claim."
+            "- Keep nonlinear, FROG, and pump-probe interpretations outside this claim."
         )
     elif is_tabulated:
         claim_status = "calibration_only_no_holdout"
