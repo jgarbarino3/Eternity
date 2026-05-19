@@ -33,24 +33,28 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.11 | Completed/packet-ready | Bounded manual source follow-up packet | Converts the Phase 3A.10 branch choice into a three-candidate review packet with exact proof gates, stop rules, and non-promotion boundaries. |
 | Phase 3A.12 | Completed/exhausted | Manual source review result or clean export pivot | Inspected the three bounded candidates and found related provenance but no exact `3L2/Quartz`, 30/10/20 stack, absolute `%R`, or `d_10nm` source-lineage proof. Phase 3A should not continue without new user-supplied source evidence or a clean export/measurement. |
 | Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
+| Phase 3B.1 | Recommended/available | TiON evidence reality check / digitized plot intake | Inventory TiON_48/TiON_49 evidence, decide whether plot-derived reflectance can be registered as explicit `digitized_from_plot`, and keep calibrated promotion blocked until raw sample-matched R/T appears. |
 | Phase 3C | Completed/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready. |
 | Phase 3C.1 | Completed/fail-closed candidate | St Andrews TiN pairing + validation candidate | Extracted `RT.xlsx` into canonical R/T CSV snapshots, registered `50nm-MTiN-50c` as the candidate frozen epsilon input, added the St Andrews sample/stack/material/split records, and created a normal-incidence validation candidate capped at `weak_within_dataset_holdout`. |
 | Phase 3C.2 | Completed/future-only policy | St Andrews candidate run audit + threshold policy decision | Audited `run_42fe0ad6dd295019`, preserved residuals as historical context, and wrote a pending future-only threshold policy with `applies_to_existing_run: false`. |
 | Phase 3C.3 | Completed/failed-validation | St Andrews threshold lock + clean run decision | Locked conservative reflectance thresholds before `run_f6ea582618328f44`; the clean run failed all five metrics and cannot move to Phase 4 as-is. |
 | Phase 3C.4 | Completed/triaged | St Andrews failure triage | Triage packet found a non-near-miss dominated by blue-edge residuals; no alternate epsilon table, simple thickness sweep, or fixed substrate-index sweep repairs the locked-threshold failure. |
 | Phase 3C.5 | Completed/parity gaps recorded | St Andrews source-model parity diagnostic | Raw Woollam `.mod/.SE` inspection found source-model gaps: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are not represented in the current clean-run stack. No model revision or promotion is justified yet. |
-| Phase 3C.6 | Recommended/direction decision | Source-model parity implementation or lane park decision | Decide whether to implement a bounded source-model parity runner/material update for St Andrews, or park the lane as diagnostic-only and return to another evidence path. |
+| Phase 3C.6 | Completed/decision implemented | Source-model parity implementation or lane park decision | Resolved by Phase 3C.6A: bounded parity code was implemented and the lane remains non-promoting. |
+| Phase 3C.6A | Completed/parked | Bounded St Andrews source-model parity implementation | Tested source Cauchy substrate, inferred source thickness, approximate roughness EMA, and approximate backside reflection. All variants failed locked thresholds; exact roughness/back-reflection parity remains underdetermined, so St Andrews is parked before Phase 4. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3C.6 - source-model parity implementation or lane park decision**.
+Current phase: **Phase 3B.1 - TiON evidence reality check / digitized plot intake**.
 
 Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization
 proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The
-St Andrews 2025 public TiN dataset is the cleanest current lane because it
-includes a public paper, ellipsometry tables, and `RT.xlsx` reflectance /
-transmittance data for 50 nm TiN on glass.
+St Andrews 2025 public TiN dataset was the cleanest recent public lane, but
+Phase 3C.6A has now parked it before Phase 4. The next actionable evidence lane
+is TiON reality checking because TiON remains central to the project and its
+raw sample-matched R/T blocker has not been re-inventoried after the St Andrews
+negative result.
 
 Information sufficiency:
 
@@ -103,6 +107,10 @@ Information sufficiency:
   the selected raw Woollam source model exposes Float Glass Cauchy substrate,
   film-thickness/roughness metadata, and back-reflection settings that differ
   from the current clean-run stack.
+- Enough to complete Phase 3C.6A as a bounded no-promotion implementation:
+  source-derived parity variants were implemented and all failed the locked
+  thresholds, while roughness/back-reflection remain approximate and
+  underdetermined.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -119,24 +127,23 @@ Information sufficiency:
   the Phase 3C.3 failure.
 - Not enough to choose a replacement St Andrews material model from the
   holdout-derived sweeps without leakage; source-model parity must come first.
-- Not enough to silently implement or promote a replacement source model:
-  Phase 3C.6 must decide whether bounded parity code is worth doing now or
-  whether St Andrews should be parked as diagnostic-only.
+- Not enough to continue St Andrews toward Phase 4: Phase 3C.6A failed the
+  bounded parity test and exact source-model parity remains unavailable.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3C.6 - Source-Model Parity Implementation or Lane Park Decision**.
-  Planning: GPT-5.5 `high`, because the next step chooses between code changes
-  to the St Andrews model lane and parking the lane. Implementation: `high` if
-  material-provider, stack, roughness, or runner code changes are approved, or
-  `medium` for a report-only park/decision packet.
+- **Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake**.
+  Planning: GPT-5.5 `high`, because the next step decides whether plot-level
+  TiON evidence can be registered as explicitly digitized context or whether
+  the lane must wait for raw R/T. Implementation: `medium` for a report/intake
+  packet; `high` only if new loader/material-provider code is added.
 
 Helpful tools:
 
 - GPD planning/checking/verifier workflows for phase design and scientific claim boundaries.
 - Local `unzip`, `strings`, `pdftotext`, `shasum`, registry validation, and pytest commands.
-- The `eternity phase3c4-triage` CLI for repeatable failure-triage context.
-- The `eternity phase3a7-recovery` CLI for repeatable read-only source scans.
+- The `eternity phase3c6-parity` CLI for repeatable St Andrews stop-state context.
+- The `eternity phase3a7-recovery` CLI for repeatable read-only source scans when comparing source-provenance rules.
 - Consensus MCP for literature context on reflectance validation policy if the
   next phase needs published threshold/normalization precedent.
 - Plot digitization only if TiON plot-level reflectance needs to become an explicitly labeled `digitized_from_plot` artifact later.

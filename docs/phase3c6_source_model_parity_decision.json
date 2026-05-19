@@ -1,0 +1,314 @@
+{
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "continue_to_phase4": false,
+    "next_phase": "Phase 3B.1 or Phase 3C.6B only with new source-model evidence",
+    "phase4_ready": false,
+    "status": "parity_variants_failed_roughness_back_reflection_underdetermined",
+    "stop_reason": "Bounded source-derived variants still fail the locked thresholds, and roughness/back-reflection parity remains approximate rather than exact."
+  },
+  "generated_at": "2026-05-19T10:39:10.356192+00:00",
+  "implemented_parity": {
+    "back_reflection": "approximate_incoherent_backside_estimate",
+    "cauchy_substrate": "implemented_for_bounded_test",
+    "roughness": "approximate_50_50_bruggeman_ema",
+    "source_thickness": "implemented_with_angstrom_inference"
+  },
+  "inputs": {
+    "comparison_table": "results/runs/run_f6ea582618328f44/comparison_table.csv",
+    "pairing_json": "docs/phase3c1_standrews_tin_pairing.json",
+    "parity_json": "docs/phase3c5_standrews_source_model_parity.json",
+    "run_dir": "results/runs/run_f6ea582618328f44"
+  },
+  "interpretation_boundary": "Phase 3C.6A implements bounded source-derived parity diagnostics. It does not fit to RT.xlsx, change thresholds, select a replacement material model for promotion, feed the serious core, or make the St Andrews lane Phase 4-ready.",
+  "length_inference": {
+    "basis": "completeease_length_values_interpreted_as_angstrom_for_bounded_test",
+    "confidence": "plausible_not_independently_verified",
+    "film_thickness_nm": 41.73650914589387,
+    "film_thickness_raw": 417.36509145893865,
+    "reason": "The raw fit limits around the thickness parameter are 200-1500, which is plausible as Angstrom for a nominal 50 nm film. This is sufficient for a bounded parity test, not exact source-model proof.",
+    "roughness_raw": 114.62616711097938,
+    "roughness_thickness_nm": 11.462616711097938
+  },
+  "phase_id": "Phase 3C.6A",
+  "resolved_status": {
+    "back_reflection": false,
+    "cauchy_substrate": true,
+    "roughness": false,
+    "source_thickness": true
+  },
+  "source_model": {
+    "back_reflections_count": 5.0,
+    "film_thickness_possible_nm_if_raw_angstrom": 41.73650914589386,
+    "film_thickness_raw": 417.36509145893865,
+    "film_thickness_raw_units": "unresolved_completeease_internal_units",
+    "first_reflection_percent": 100.0,
+    "layer_model": "TIN 3 (Lorentz)",
+    "roughness_raw": 114.62616711097938,
+    "roughness_raw_units": "unresolved_completeease_internal_units",
+    "source_mentions_surface_roughness": true,
+    "substrate_model": {
+      "cauchy_A": 1.5052715793770524,
+      "cauchy_B": -0.018660648237365515,
+      "cauchy_C": -0.000833799619479561,
+      "exponent": 1.5,
+      "k_amplitude": 0.0,
+      "kind": "Float Glass - Air (Cauchy)"
+    },
+    "thickness_nonuniformity_percent": 0.0
+  },
+  "threshold_summary": {
+    "all_variants_failed": true,
+    "best_rmse": 0.17797584103233144,
+    "best_rmse_variant": "source_cauchy_glass_nominal_thickness",
+    "passing_variants": []
+  },
+  "title": "Bounded St Andrews Source-Model Parity Implementation",
+  "variants": [
+    {
+      "assumptions": [
+        "Fixed n=1.45 glass and nominal 50 nm compact TiN film."
+      ],
+      "description": "Resimulated clean-run stack: 50 nm TiN on fixed n=1.45 glass.",
+      "limitations": [
+        "No source-model parity changes included."
+      ],
+      "metrics": {
+        "dip_wavelength_offset_nm": -141.92999999999995,
+        "max_absolute_residual": 0.6976242742691572,
+        "mean_absolute_error": 0.08474826520693628,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.1942533127977763,
+          "wavelength_nm": 400.13
+        },
+        "prediction_range": [
+          0.1942533127977763,
+          0.39583478699074925
+        ],
+        "root_mean_square_error": 0.17824698851751608,
+        "shape_correlation_minmax": -0.11145501533212368,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "clean_baseline_resimulated",
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    },
+    {
+      "assumptions": [
+        "Cauchy substrate uses n(lambda_um)=A+B/lambda_um^2+C/lambda_um^4.",
+        "The TiN layer remains the nominal 50 nm clean-run layer."
+      ],
+      "description": "Only the source Float Glass Cauchy substrate is enabled.",
+      "limitations": [
+        "Does not include roughness or back-reflection settings."
+      ],
+      "metrics": {
+        "dip_wavelength_offset_nm": -141.92999999999995,
+        "max_absolute_residual": 0.6964872644018233,
+        "mean_absolute_error": 0.0845013363315674,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.19652330015827427,
+          "wavelength_nm": 400.13
+        },
+        "prediction_range": [
+          0.19652330015827427,
+          0.39849477281813156
+        ],
+        "root_mean_square_error": 0.17797584103233144,
+        "shape_correlation_minmax": -0.10325922488649993,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "source_cauchy_glass_nominal_thickness",
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    },
+    {
+      "assumptions": [
+        "Raw source thickness is interpreted as 41.7365 nm.",
+        "No roughness or back-reflection estimate is included."
+      ],
+      "description": "Source Cauchy substrate plus inferred compact TiN thickness.",
+      "limitations": [
+        "CompleteEASE internal length units are inferred, not independently decoded."
+      ],
+      "metrics": {
+        "dip_wavelength_offset_nm": -124.71999999999997,
+        "max_absolute_residual": 0.6992267815134711,
+        "mean_absolute_error": 0.09847414378140475,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.1947283245449656,
+          "wavelength_nm": 417.34
+        },
+        "prediction_range": [
+          0.1947283245449656,
+          0.3607878304831805
+        ],
+        "root_mean_square_error": 0.18466670961321846,
+        "shape_correlation_minmax": -0.07529903761203038,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "source_cauchy_glass_source_thickness",
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    },
+    {
+      "assumptions": [
+        "Raw roughness is interpreted as 11.4626 nm.",
+        "Roughness is approximated as 50 percent void / 50 percent TiN EMA."
+      ],
+      "description": "Source Cauchy substrate, inferred compact TiN thickness, and 50/50 air-TiN Bruggeman roughness layer.",
+      "limitations": [
+        "The source file exposes roughness metadata but not a full public EMA recipe, so this remains approximate."
+      ],
+      "metrics": {
+        "dip_wavelength_offset_nm": -141.92999999999995,
+        "max_absolute_residual": 0.7098630161134935,
+        "mean_absolute_error": 0.09735603079440545,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.18347578881991594,
+          "wavelength_nm": 400.13
+        },
+        "prediction_range": [
+          0.18347578881991594,
+          0.36726914638626323
+        ],
+        "root_mean_square_error": 0.18661217027286386,
+        "shape_correlation_minmax": -0.09096786328469215,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "source_cauchy_thickness_roughness_ema",
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    },
+    {
+      "assumptions": [
+        "Back-reflection estimate uses a thick lossless incoherent glass layer.",
+        "The source `% 1st Reflection` value is treated as 100 percent enabled."
+      ],
+      "description": "Roughness variant plus an incoherent glass-air backside estimate.",
+      "limitations": [
+        "The public source does not expose exact substrate thickness or the CompleteEASE acquisition reduction; this is not exact parity."
+      ],
+      "metrics": {
+        "dip_wavelength_offset_nm": -141.92999999999995,
+        "max_absolute_residual": 0.7076137497494734,
+        "mean_absolute_error": 0.09563604754475438,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.18553667498224985,
+          "wavelength_nm": 400.13
+        },
+        "prediction_range": [
+          0.18553667498224985,
+          0.36883708955788563
+        ],
+        "root_mean_square_error": 0.1854896946389523,
+        "shape_correlation_minmax": -0.09328432024735202,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "source_cauchy_thickness_roughness_backside_estimate",
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    }
+  ]
+}

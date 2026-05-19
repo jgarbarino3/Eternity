@@ -44,6 +44,7 @@ from eternity.phase3c2 import build_phase3c2_audit, write_phase3c2_audit
 from eternity.phase3c3 import build_phase3c3_evaluation, write_phase3c3_evaluation
 from eternity.phase3c4 import build_phase3c4_triage, write_phase3c4_triage
 from eternity.phase3c5 import build_phase3c5_parity_packet, write_phase3c5_parity_packet
+from eternity.phase3c6 import build_phase3c6_packet, write_phase3c6_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -261,6 +262,26 @@ PHASE3C5_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown source-model parity artifacts.",
+)
+PHASE3C6_PARITY_JSON_OPTION = typer.Option(
+    Path("docs/phase3c5_standrews_source_model_parity.json"),
+    "--parity-json",
+    help="Phase 3C.5 source-model parity JSON.",
+)
+PHASE3C6_PAIRING_JSON_OPTION = typer.Option(
+    Path("docs/phase3c1_standrews_tin_pairing.json"),
+    "--pairing-json",
+    help="Phase 3C.1 pairing JSON with the selected St Andrews source archive.",
+)
+PHASE3C6_RUN_DIR_OPTION = typer.Option(
+    Path("results/runs/run_f6ea582618328f44"),
+    "--run-dir",
+    help="Threshold-locked St Andrews clean-run directory used for parity variants.",
+)
+PHASE3C6_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and CSV source-model parity artifacts.",
 )
 
 
@@ -639,6 +660,31 @@ def phase3c5_parity(
         json_path, md_path = write_phase3c5_parity_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3c6-parity")
+def phase3c6_parity(
+    parity_json: Path = PHASE3C6_PARITY_JSON_OPTION,
+    pairing_json: Path = PHASE3C6_PAIRING_JSON_OPTION,
+    run_dir: Path = PHASE3C6_RUN_DIR_OPTION,
+    output_dir: Path | None = PHASE3C6_OUTPUT_DIR_OPTION,
+) -> None:
+    """Run bounded St Andrews source-model parity variants."""
+
+    try:
+        packet = build_phase3c6_packet(parity_json, pairing_json, run_dir)
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as error:
+        typer.echo(f"Phase 3C.6A parity failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, csv_path = write_phase3c6_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {csv_path}")
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))

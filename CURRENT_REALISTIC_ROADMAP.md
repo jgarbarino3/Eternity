@@ -740,16 +740,58 @@ Result:
   but they do not identify a validated replacement model and do not make the
   St Andrews lane Phase 4-ready.
 
+Completed next:
+
+- `Phase 3C.6A - Bounded St Andrews Source-Model Parity Implementation`:
+  implemented source-derived Cauchy substrate, inferred source thickness,
+  approximate roughness EMA, and approximate backside-reflection variants
+  without fitting to the holdout, loosening thresholds, or promoting the lane.
+
+#### Phase 3C.6A: Bounded St Andrews Source-Model Parity Implementation
+
+Status: completed / parity variants failed, roughness and back-reflection
+remain underdetermined.
+
+Implementation artifacts:
+
+- `src/eternity/phase3c6.py`
+- `tests/unit/test_phase3c6.py`
+- `docs/phase3c6_source_model_parity_decision.md`
+- `docs/phase3c6_source_model_parity_decision.json`
+- `docs/phase3c6_parity_variants.csv`
+
+Phase 3C.6A turns the readable Phase 3C.5 source-model gaps into bounded
+simulations. It implements only what can be justified from the public packet:
+Float Glass Cauchy substrate, a plausible Angstrom interpretation of the raw
+film/roughness length fields, a 50/50 air-TiN Bruggeman roughness estimate, and
+an approximate incoherent glass-air backside estimate. It does not reproduce
+CompleteEASE exactly.
+
+Result:
+
+- Decision `parity_variants_failed_roughness_back_reflection_underdetermined`.
+- All bounded variants fail the locked Phase 3C.3 thresholds.
+- The best RMSE variant is source Cauchy glass with nominal 50 nm thickness
+  (`RMSE ~= 0.177976`), still failing all five metrics.
+- Roughness and back-reflection parity are recorded as approximate and
+  unresolved; exact CompleteEASE acquisition reduction and substrate thickness
+  remain unavailable from the public packet.
+- The St Andrews lane remains non-promoting, cannot feed the serious core, and
+  is not Phase 4-ready.
+
 Recommended next:
 
-- `Phase 3C.6 - Source-Model Parity Implementation or Lane Park Decision`:
-  choose whether to implement a bounded source-model parity runner/material
-  update for the St Andrews lane or park the lane as diagnostic-only. Planning:
-  GPT-5.5 `high`; implementation: `high` if code changes are approved, or
-  `medium` for a report-only park/decision packet. Use the Phase 3C.5 parity
-  packet, local model/table inspection, GPD verifier/checker, and current
-  optical-model literature only if roughness/substrate/back-reflection
-  tolerance context is needed.
+- `Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake`: return
+  to the TiON lane and decide whether existing plot-level evidence can be
+  registered explicitly as `digitized_from_plot`, while keeping calibrated
+  evidence blocked until raw sample-matched R/T is available. Planning:
+  GPT-5.5 `high`; implementation: `medium` for a report/intake packet. Use
+  local plot/table inspection, registry validation, plot digitizer if needed,
+  and GPD only as a claim-boundary/phase-check mirror.
+- `Phase 3C.6B` should be opened only if new St Andrews source evidence appears
+  that resolves the exact roughness/back-reflection implementation or
+  CompleteEASE acquisition geometry. Without that evidence, do not continue
+  iterating St Andrews parity variants.
 
 ## Near-Term Reach With Current Tools
 
@@ -969,43 +1011,44 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3C.6 - Source-Model Parity Implementation or Lane Park Decision`.
+Choose `Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake`.
 
 Recommended decision scope:
 
 ```text
-1. Decide whether the source-model parity gaps justify code changes now:
-   Float Glass Cauchy substrate, roughness metadata, film-thickness unit
-   decoding, and back-reflection settings.
-2. If yes, implement a bounded source-model parity run that does not tune to
-   the holdout or loosen thresholds.
-3. If no, park St Andrews as diagnostic-only and return to the next evidence
-   lane without promoting the failed clean run.
+1. Inventory the existing TiON_48/TiON_49 plot-level reflectance evidence,
+   grower guidance, and registered optical constants without treating plots as
+   raw measured tables.
+2. Decide whether a bounded `digitized_from_plot` artifact is worth creating
+   now, with explicit uncertainty and no calibrated-evidence promotion.
+3. Keep Phase 3C parked unless new source evidence resolves exact roughness,
+   back-reflection, or CompleteEASE acquisition parity.
 ```
 
-First command target:
+First implementation target:
 
 ```text
-eternity phase3c5-parity --output-dir docs
+Add a bounded Phase 3B.1 report/CLI only after inspecting the existing TiON
+files and registry entries.
 ```
 
 First output:
 
 ```text
-docs/phase3c6_source_model_parity_decision.md
-docs/phase3c6_source_model_parity_decision.json
+docs/phase3b1_tion_evidence_reality_check.md
+docs/phase3b1_tion_evidence_reality_check.json
 ```
 
 The decision packet should include:
 
-- Whether source-model parity code changes are approved now.
-- The exact assumptions that would be implemented and which ones remain
-  unresolved.
-- A leakage guard forbidding holdout-derived parameter fitting or threshold
-  changes.
-- A stop rule for parking the lane if parity remains underdetermined.
-- Why the failed clean run still cannot feed serious-core evidence or Phase 4
-  promotion.
+- Which TiON evidence exists as raw tables, optical constants, notes, plots, or
+  inferred/digitized artifacts.
+- Whether any plot digitization is explicit enough to register as
+  `digitized_from_plot`.
+- Why raw sample-matched R/T remains the promotion blocker.
+- A leakage guard forbidding plot-derived evidence from becoming calibrated
+  validation evidence without raw data or an approved source policy.
+- The next concrete acquisition/re-export target if Phase 3B.1 stays blocked.
 
 That is the next brick on the direct path toward the AI researcher.
 

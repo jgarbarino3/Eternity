@@ -7,20 +7,20 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3C.6 source-model parity implementation or lane park decision
+**Current focus:** Phase 3B.1 TiON evidence reality check / digitized plot intake
 
 ## Current Position
 
-**Current Phase:** 3C.6
-**Current Phase Name:** Source-Model Parity Implementation Or Lane Park Decision
+**Current Phase:** 3B.1
+**Current Phase Name:** TiON Evidence Reality Check / Digitized Plot Intake
 **Total Phases:** 3
-**Current Plan:** docs/phase3c5_standrews_source_model_parity.md
-**Total Plans in Phase:** 5
-**Status:** Recommended/direction decision
+**Current Plan:** docs/phase3c6_source_model_parity_decision.md
+**Total Plans in Phase:** 6
+**Status:** Recommended/available
 **Last Activity:** 2026-05-19
-**Last Activity Description:** Recorded Phase 3C.5 source-model parity gaps: the raw Woollam source model exposes Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings missing from the clean-run stack.
+**Last Activity Description:** Completed Phase 3C.6A bounded St Andrews source-model parity: all source-derived variants failed the locked thresholds, roughness/back-reflection remain approximate, and St Andrews is parked before Phase 4.
 
-**Progress:** [█████████░] 96%
+**Progress:** [█████████░] 97%
 
 ## Active Calculations
 
@@ -89,6 +89,12 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   substrate assumptions, film-thickness/roughness metadata, and
   back-reflection settings missing from the current clean-run stack. The lane
   remains non-promoting and not Phase 4-ready.
+- Phase 3C.6A wrote `docs/phase3c6_source_model_parity_decision.md`,
+  `.json`, and `docs/phase3c6_parity_variants.csv`: bounded source Cauchy
+  substrate, inferred source thickness, approximate roughness EMA, and
+  approximate backside-reflection variants all failed the locked thresholds.
+  Exact roughness/back-reflection parity remains underdetermined, so St Andrews
+  is parked before Phase 4.
 
 ## Open Questions
 
@@ -96,8 +102,8 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
-- Should Phase 3C.6 implement bounded St Andrews source-model parity support
-  now, or park the lane as diagnostic-only and return to another evidence path?
+- Can TiON plot-level reflectance evidence be registered explicitly as
+  `digitized_from_plot`, or should Phase 3B wait for raw sample-matched R/T?
 
 ## Performance Metrics
 
@@ -162,12 +168,19 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   substrate, film-thickness/roughness metadata, and back-reflection settings
   absent from the clean run, but those gaps do not validate a replacement model
   or calibrated promotion.
+- [Phase 3C.6A]: Bounded St Andrews source-model parity does not rescue the
+  lane. — Source-derived variants still fail locked thresholds; roughness and
+  back-reflection remain approximate, so stop before Phase 4 unless new source
+  evidence appears.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
 ### Active Approximations
 
-None yet.
+- Phase 3C.6A roughness uses a 50/50 air-TiN Bruggeman EMA layer for bounded
+  testing only.
+- Phase 3C.6A back-reflection uses a thick lossless incoherent glass-air
+  backside estimate for bounded testing only.
 
 **Convention Lock:**
 
@@ -186,14 +199,12 @@ None yet.
 - Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
   bundle can be recovered, or pivot to a new measurement/export. Current local
   search result: `blocked_needs_new_export`.
-- Phase 3B.1: perform a TiON evidence reality check / digitized plot intake, or
-  use Phase 3A.6 only if a clean CompleteEASE export/new measurement appears.
 - Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
-- Phase 3C.6: decide whether to implement bounded St Andrews source-model
-  parity support or park the lane as diagnostic-only.
+- Phase 3B.1: re-inventory TiON evidence and decide whether plot-level
+  reflectance can be registered as explicit `digitized_from_plot` context.
 
 ### Blockers/Concerns
 
@@ -205,9 +216,9 @@ None yet.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
-- Phase 3C.5 parity keeps St Andrews non-promoting; do not proceed to Phase 4,
-  change thresholds, or choose a replacement material/source model without a
-  Phase 3C.6 decision and leakage guard.
+- Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change
+  thresholds, or choose more source-model variants without new evidence for
+  exact roughness/back-reflection or CompleteEASE acquisition parity.
 
 ## Session Continuity
 

@@ -125,13 +125,19 @@ grounding phase:
   back-reflection settings that are not represented in the current clean-run
   stack. This records a credible parity gap but does not validate a replacement
   model or promote the lane.
+- The completed bounded implementation result is `Phase 3C.6A - Bounded St
+  Andrews source-model parity implementation`: source Cauchy substrate, inferred
+  source thickness, approximate 50/50 EMA roughness, and approximate incoherent
+  backside variants were tested without fitting to the holdout. All variants
+  failed the locked thresholds, and exact roughness/back-reflection parity
+  remains underdetermined. St Andrews is still not Phase 4-ready.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is to decide whether to implement a bounded St Andrews
-source-model parity runner/material update or park the lane as diagnostic-only,
-while keeping source-qualified TiN/TiON optical constants, thesis reflectance
-spectra, material models, and provenance gaps inside the registry without
-promoting them to calibrated evidence.
+The active step is to return to `Phase 3B.1 - TiON evidence reality check /
+digitized plot intake`, while keeping source-qualified TiN/TiON optical
+constants, thesis reflectance spectra, material models, St Andrews diagnostics,
+and provenance gaps inside the registry without promoting them to calibrated
+evidence.
 
 Current blocker:
 
@@ -184,10 +190,14 @@ Current blocker:
 - Phase 3A.12 has enough information to stop the current Phase 3A source path.
   Without a clean export, new measurement, or new user-supplied source file,
   continuing Phase 3A provenance searching is not recommended.
-- Phase 3C has enough information to continue productively: the public dataset
-  includes ellipsometry permittivity tables and `RT.xlsx` reflectance /
-  transmittance data, while the linked paper maps Figure 4 to 50 nm TiN on
-  glass at normal incidence over 400-1000 nm.
+- Phase 3C.6A has enough information to park the current St Andrews parity
+  branch: bounded source-derived variants failed the locked thresholds, and the
+  roughness/back-reflection pieces remain approximate without exact CompleteEASE
+  acquisition/source evidence.
+- Phase 3C had enough information to complete its bounded public-dataset
+  validation lane: the public dataset includes ellipsometry permittivity tables
+  and `RT.xlsx` reflectance / transmittance data, while the linked paper maps
+  Figure 4 to 50 nm TiN on glass at normal incidence over 400-1000 nm.
 - Phase 3C.1 has enough information to run a fail-closed validation candidate:
   the `RT.xlsx` reflectance minimum matches the paper description, the
   `50nm-MTiN-50c` epsilon table is registered as a frozen input, and R/T
@@ -211,8 +221,10 @@ Current blocker:
   and non-promoting.
 - Phase 3C.5 has enough information to record source-model parity gaps. It
   does not have enough information to silently revise the model or promote the
-  run: the next useful step is a Phase 3C.6 decision on whether to implement
-  bounded source-model parity code or park St Andrews as diagnostic-only.
+  run; Phase 3C.6A has now completed the bounded implementation decision.
+- Phase 3C.6A has enough information to stop before Phase 4. It does not have
+  enough information to continue St Andrews as a calibrated evidence lane or
+  choose more parity variants without new source evidence.
 
 ## Goal Usage In Codex
 

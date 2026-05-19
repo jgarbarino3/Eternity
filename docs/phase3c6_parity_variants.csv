@@ -1,0 +1,6 @@
+variant,rmse,mae,max_absolute_residual,dip_offset_nm,shape_correlation_minmax,threshold_status,failed_metrics
+clean_baseline_resimulated,0.178247,0.0847483,0.697624,-141.93,-0.111455,fail,mean_absolute_error|root_mean_square_error|max_absolute_residual|dip_wavelength_offset_nm|shape_correlation_minmax
+source_cauchy_glass_nominal_thickness,0.177976,0.0845013,0.696487,-141.93,-0.103259,fail,mean_absolute_error|root_mean_square_error|max_absolute_residual|dip_wavelength_offset_nm|shape_correlation_minmax
+source_cauchy_glass_source_thickness,0.184667,0.0984741,0.699227,-124.72,-0.075299,fail,mean_absolute_error|root_mean_square_error|max_absolute_residual|dip_wavelength_offset_nm|shape_correlation_minmax
+source_cauchy_thickness_roughness_ema,0.186612,0.097356,0.709863,-141.93,-0.0909679,fail,mean_absolute_error|root_mean_square_error|max_absolute_residual|dip_wavelength_offset_nm|shape_correlation_minmax
+source_cauchy_thickness_roughness_backside_estimate,0.18549,0.095636,0.707614,-141.93,-0.0932843,fail,mean_absolute_error|root_mean_square_error|max_absolute_residual|dip_wavelength_offset_nm|shape_correlation_minmax

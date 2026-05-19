@@ -55,9 +55,13 @@ Current progress:
   `.mod/.SE` inspection found Float Glass Cauchy substrate,
   film-thickness/roughness metadata, and back-reflection settings missing from
   the clean-run stack.
-- **Next**: Phase 3C.6 source-model parity implementation or lane park
-  decision. Choose bounded parity code with leakage guards, or park St Andrews
-  as diagnostic-only.
+- **Done**: Phase 3C.6A bounded St Andrews source-model parity implementation.
+  Source Cauchy substrate, inferred source thickness, approximate roughness,
+  and approximate backside variants all failed the locked thresholds; exact
+  roughness/back-reflection parity remains underdetermined.
+- **Next**: Phase 3B.1 TiON evidence reality check / digitized plot intake.
+  Re-inventory TiON evidence and decide whether plot-level reflectance can be
+  registered explicitly as `digitized_from_plot`.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -100,7 +104,8 @@ calibrated_linear_evidence
   -> COMPLETE/FAILED: Phase 3C.3 threshold lock / clean run decision
   -> COMPLETE/TRIAGED: Phase 3C.4 St Andrews failure triage
   -> COMPLETE/GAPS: Phase 3C.5 St Andrews source-model parity
-  -> NEXT/DECISION: Phase 3C.6 parity implementation or lane park
+  -> COMPLETE/PARKED: Phase 3C.6A bounded parity implementation
+  -> NEXT: Phase 3B.1 TiON evidence reality check
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -162,9 +167,11 @@ thickness/substrate-index sweeps do not repair the shape or dip. The next
 discriminating move became source-model parity against the raw Woollam
 `.mod/.SE` assumptions. Phase 3C.5 records that parity gap: the source model
 uses Float Glass Cauchy substrate assumptions, film-thickness/roughness
-metadata, and back-reflection settings missing from the clean-run stack. That
-does not promote the lane; it sets up a Phase 3C.6 decision on bounded parity
-implementation versus parking St Andrews as diagnostic-only.
+metadata, and back-reflection settings missing from the clean-run stack.
+Phase 3C.6A implements bounded source-derived variants, but all variants fail
+the locked thresholds and roughness/back-reflection remain approximate rather
+than exact CompleteEASE parity. St Andrews is parked before Phase 4 unless new
+source evidence appears.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

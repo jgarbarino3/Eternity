@@ -459,10 +459,52 @@ Result:
 - The gaps justify a Phase 3C.6 decision, but not a silent replacement model,
   threshold change, serious-core feed, or Phase 4 promotion.
 
+Completed next:
+
+- Phase 3C.6A implemented bounded source-model parity variants and parked the
+  current St Andrews lane before Phase 4.
+
+## Phase 3C.6A: Bounded St Andrews Source-Model Parity Implementation
+
+Status: completed / parked, no promotion
+
+Goal:
+
+- Implement only source-model parity pieces justified by the public St Andrews
+  packet: Float Glass Cauchy substrate, plausible source thickness, approximate
+  roughness, and an approximate backside-reflection estimate.
+- Decide whether those bounded variants resolve the Phase 3C.3 failure well
+  enough to continue toward Phase 4, without fitting to the holdout or changing
+  thresholds.
+
+Artifacts:
+
+- `src/eternity/phase3c6.py`
+- `tests/unit/test_phase3c6.py`
+- `docs/phase3c6_source_model_parity_decision.md`
+- `docs/phase3c6_source_model_parity_decision.json`
+- `docs/phase3c6_parity_variants.csv`
+
+Result:
+
+- Decision `parity_variants_failed_roughness_back_reflection_underdetermined`.
+- Source Cauchy substrate and inferred source thickness are implemented for a
+  bounded test.
+- Roughness and backside reflection remain approximate: 50/50 air-TiN
+  Bruggeman EMA and thick-glass incoherent backside estimate, not exact
+  CompleteEASE parity.
+- All bounded variants fail the locked Phase 3C.3 thresholds; best RMSE is the
+  Cauchy substrate with nominal 50 nm thickness, still failing all five metrics.
+- The St Andrews lane is not Phase 4-ready and cannot feed serious-core
+  evidence.
+
 Next:
 
-- Phase 3C.6 should decide whether to implement bounded source-model parity
-  support now or park the St Andrews lane as diagnostic-only.
+- Phase 3B.1 should re-inventory TiON evidence and decide whether plot-level
+  reflectance can be registered explicitly as `digitized_from_plot`, while raw
+  sample-matched R/T remains the promotion blocker.
+- Open Phase 3C.6B only if new St Andrews source evidence resolves exact
+  roughness/back-reflection or CompleteEASE acquisition parity.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
