@@ -1053,10 +1053,11 @@ then tested the local export route and found no local OPJU-to-CSV path. Phase
 pumped-transmission source data, but no static calibrated-linear holdout. Phase
 3D.4 inspected thermo-optic ITO and found rich public epsilon/Hall/SEM data, but
 again no independent measured static R/T holdout. Phase 3D.5 bounded the
-remaining known public leads: ACS/intracavity is access-blocked here, Saha is
-still OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
-CdO/high-crystallinity ITO are constants-only, and request-only papers remain
-rejected.
+remaining known public leads. Phase 3D.5A corrected the ACS/intracavity lead:
+manual browser downloads show `51010982` resolves to the SI PDF, not a raw
+source-data package. Saha is still OPJU-export blocked, AZO/ITO paper leads are
+not table-package-ready, CdO/high-crystallinity ITO are constants-only, and
+request-only papers remain rejected.
 
 That means the current calibrated-linear push has reached a real data blocker.
 The next move is to preserve the evidence bar and build the fallback machinery
@@ -1393,9 +1394,8 @@ Summary:
 - This was a bounded triage of known leads from the current public-search
   envelope, not a claim that all literature has been exhausted.
 - The ACS/intracavity ENZ source-data lead is not immediate-ingest-ready here:
-  the direct Figshare-style downloader returns an HTTP 202 WAF challenge, the
-  Figshare API did not expose a matching manifest, and ACS/DOI script routes
-  returned 403.
+  Phase 3D.5A showed the manual download of `51010982` resolves to the SI PDF,
+  not a separate raw source-data package.
 - Saha TiN/AZO remains parked until OPJU worksheets are exported to real tables.
 - Swatowska AZO and Rasheed/Barille ITO remain useful article/PDF leads, but no
   raw table package or calibrated split-ready numerical source was verified.
@@ -1409,6 +1409,35 @@ Outcome:
 - The calibrated-linear milestone remains valid but dataset-limited.
 - The next constructive move is the public-dataset gate / executive research
   assistant pivot, not threshold weakening or another forced validation run.
+
+#### Phase 3D.5A: ACS Intracavity PDF Correction
+
+Decision: `acs_intracavity_pdf_only_no_phase4_candidate`.
+
+Claim ceiling: `literature_reproduction_fixture`.
+
+Artifacts:
+
+- `docs/phase3d5a_acs_intracavity_pdf_correction.md`
+- `docs/phase3d5a_acs_intracavity_pdf_correction.json`
+
+Summary:
+
+- Manual browser downloads resolved the ACS/intracavity lead.
+- `51010982` is the ACS Supporting Information PDF, not a raw source-data
+  package.
+- The main article PDF and SI PDF contain useful structure, thickness,
+  roughness, ENZ-frequency, ellipsometry-instrument, and Drude-parameter
+  provenance.
+- Both PDFs contain `0` embedded files.
+- No machine-readable epsilon table or independent measured static R/T/A
+  holdout table was found.
+
+Outcome:
+
+- The candidate is no longer an access-blocked unknown.
+- It is a public PDF/SI-only literature fixture.
+- It remains non-promoting and not Phase 4-ready.
 
 ### Pivot Triggered By Current Phase 3D Run
 

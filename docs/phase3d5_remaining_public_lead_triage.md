@@ -31,7 +31,7 @@ Already executed before this triage:
 
 | Lead | Material | Current public access | Decision |
 | --- | --- | --- | --- |
-| Intracavity Epsilon-Near-Zero Dual-Range Frequency Switch | ITO | Direct Figshare-style `ndownloader` file `51010982` returns an HTTP 202 WAF challenge in this environment. Figshare API search did not expose a matching article record. DOI/ACS routes returned script-side 403. | Access-blocked source-data lead. Not immediate ingest-ready without manual/browser package access. |
+| Intracavity Epsilon-Near-Zero Dual-Range Frequency Switch | ITO | Corrected by Phase 3D.5A: manual browser downloads show the public package is the main article PDF plus Supporting Information PDF. The `51010982` lead resolves to the SI PDF, not a raw source-data package. | Public PDF/SI-only literature fixture. No raw tables or independent measured static R/T/A holdout found. |
 | Swatowska et al. ALD AZO/ZnO | AZO/ZnO | Public article lead with clearly separated SE and T/R measurement lanes, but no open raw/source-data package was verified here. | Useful workflow lead; not calibrated ingest-ready unless raw numerical T/R and optical-constant tables are found. |
 | Rasheed and Barille ITO on glass/PET | ITO | arXiv PDF route is reachable, but no companion raw repository or table package was verified. | Paper/PDF-only candidate until exact per-sample numerical data and split provenance are recovered. |
 | Nolen et al. n-doped CdO dielectric function | In:CdO | Public SI/generator route exists for dielectric-function model parameters. | Real material-model fixture; no independent measured holdout verified. |
@@ -60,6 +60,15 @@ Scripted checks in this environment found:
 - `https://my.vanderbilt.edu/caldwellgroup/dielectric-functions/`:
   HTTP `200`; useful constants/model route, not a validation holdout.
 
+Phase 3D.5A correction:
+
+- Manual browser download of `https://figshare.com/ndownloader/files/51010982`
+  resolved to `ph4c01322_si_001.pdf`, the ACS Supporting Information PDF.
+- The main article PDF and SI PDF were inspected locally.
+- Both PDFs contain `0` embedded files.
+- No raw source-data package, machine-readable epsilon table, or independent
+  measured static R/T/A holdout table was found.
+
 ## Decision
 
 Decision: `known_public_leads_bounded_triage_no_immediate_phase4_candidate`.
@@ -70,9 +79,9 @@ Serious-core promotion:
 
 - Can feed `calibrated_linear_evidence`: `false`.
 - Can enter Phase 4 now: `false`.
-- Can support an immediate additional package intake: `false`, unless the user
-  manually obtains the blocked ACS/intracavity source-data package or a real
-  Saha OPJU table export appears.
+- Can support an immediate additional package intake: `false`, unless a real
+  Saha OPJU table export appears or a separate raw ACS/intracavity source-data
+  package is found beyond the article/SI PDFs.
 - Can support the public-dataset gate / executive research assistant pivot:
   `true`.
 
@@ -86,8 +95,8 @@ conservatively:
 - Saha remains promising but table-export blocked.
 - Exeter spatiotemporal is nonlinear.
 - Thermo-optic ITO is constants-rich but holdout-free.
-- Remaining known leads are access-blocked, plots/PDF-only, constants-only, or
-  request-only.
+- Remaining known leads are plots/PDF-only, constants-only, request-only, or
+  export-blocked.
 
 The correct next move is not to force a green validation. The correct next move
 is to treat this as a successful gate failure and pivot the near-term milestone
@@ -100,8 +109,9 @@ Stop the current Phase 3D implementation run here.
 Reopen Phase 3D only if one of these appears:
 
 - A real CSV/TXT/XLSX/HDF5/JSON export for Saha Fig. 2b and Fig. 2c/d.
-- Manual/browser access to the ACS intracavity source-data package, with a
-  package manifest proving raw or table-ready ellipsometry plus measured R/T/A.
+- A separate ACS intracavity raw source-data package beyond the public article
+  and SI PDFs, with a package manifest proving raw or table-ready ellipsometry
+  plus measured R/T/A.
 - A new literature search finds a public package with same-sample optical
   constants and a separable measured static R/T or held-out ellipsometry lane.
 - New local lab data provide sample-matched R/T with geometry, units,
@@ -117,4 +127,3 @@ Reasoning effort: high planning, medium implementation.
 Helpful tools: repo-local scripts, GPD planner/verifier for phase framing,
 local registry/schema tests, and live literature tools only when adding new
 candidate cards.
-

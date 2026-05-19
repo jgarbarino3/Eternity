@@ -63,6 +63,19 @@ allowlisted radar commands and write Markdown artifacts only. They should not
 promote records, edit code, upgrade evidence states, or open lab-control
 surfaces without a separate human review gate.
 
+### Optional Browse.sh Support
+
+Browserbase Browse is installed as an optional browser and Browse.sh skill
+surface for agent-assisted discovery. The project-local skill
+`.agents/skills/search-papers/SKILL.md` documents a read-only arXiv Atom API
+workflow (`arxiv.org/search-papers-zv05w6`) that may be used for literature
+scouting and arXiv metadata lookups before human review.
+
+Browse results remain Research Memory/Radar inputs only. They do not promote
+records, validate claims, replace source archives, or upgrade evidence states.
+Google Scholar remains manual alert/export only. See
+`docs/agents/browserbase_browse.md` for setup, commands, and safety boundaries.
+
 ## Adding Records
 
 Add curated, reviewable YAML or JSON files under a committed examples directory

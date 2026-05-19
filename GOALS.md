@@ -192,11 +192,12 @@ Current blocker:
   DOI `10.5281/zenodo.10148545`. It contains many 210-2500 nm ITO epsilon
   tables plus Hall/SEM/supporting data, but no independent measured static R/T
   holdout. Its claim ceiling is `calibration_only_no_holdout`.
-- Phase 3D.5 bounded the remaining known public leads. The ACS/intracavity
-  source-data lead is access-blocked in this environment, Saha remains
-  OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
-  CdO/high-crystallinity ITO leads are constants-only, and request-only papers
-  stay rejected.
+- Phase 3D.5 bounded the remaining known public leads. Phase 3D.5A corrected
+  the ACS/intracavity source-data lead: manual browser downloads show the
+  public package is main article PDF plus SI PDF only, with no raw tables or
+  independent measured static R/T/A holdout. Saha remains OPJU-export blocked,
+  AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO
+  leads are constants-only, and request-only papers stay rejected.
 - The next public-data action is Phase 3E.1: build the public-dataset gate and
   executive research-assistant scaffold rather than forcing a Phase 4 attempt.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
@@ -302,9 +303,9 @@ Current blocker:
   calibrated-linear purposes: it is public and table-rich, but the inspected
   package exposes parameterized optical constants and support data rather than a
   separable measured optical holdout.
-- Phase 3D.5 has enough information to stop the current public-package run:
-  remaining known leads are access-blocked, paper/plot-only, constants-only, or
-  request-only unless new table-ready data appears.
+- Phase 3D.5A has enough information to stop the current public-package run:
+  remaining known leads are paper/plot/PDF-only, constants-only, export-blocked,
+  or request-only unless new table-ready data appears.
 
 Pivot triggered for the current Phase 3D run:
 

@@ -17,7 +17,7 @@
       "material": "ITO",
       "paper_doi": "10.1021/acsphotonics.4c01322",
       "known_source_data_lead": "https://figshare.com/ndownloader/files/51010982",
-      "public_access_status": "access_blocked_in_current_environment",
+      "public_access_status": "public_pdf_si_only_no_raw_tables",
       "checks": [
         {
           "url": "https://figshare.com/ndownloader/files/51010982",
@@ -34,13 +34,21 @@
         {
           "url": "https://doi.org/10.1021/acsphotonics.4c01322",
           "result": "script-side HTTP 403"
+        },
+        {
+          "url": "manual_download:/Users/joegarbarino/Downloads/intracavity-epsilon-near-zero-dual-range-frequency-switch.pdf",
+          "result": "main article PDF inspected; 0 embedded files"
+        },
+        {
+          "url": "manual_download:/Users/joegarbarino/Downloads/ph4c01322_si_001.pdf",
+          "result": "supporting information PDF inspected; 0 embedded files; 51010982 resolves to this SI PDF"
         }
       ],
-      "source_qualified_material_model_available": "unknown_until_package_access",
-      "independent_holdout_available": "unknown_until_package_access",
-      "machine_readable": "unknown_until_package_access",
-      "decision": "blocked_requires_manual_or_browser_source_package_access",
-      "claim_label": "rejected_candidate_until_public_table_package_access"
+      "source_qualified_material_model_available": "partial_drude_parameters_in_pdf",
+      "independent_holdout_available": false,
+      "machine_readable": false,
+      "decision": "pdf_si_only_no_raw_table_package",
+      "claim_label": "literature_reproduction_fixture"
     },
     {
       "candidate_id": "swatowska_ald_azo_zno_2021",
@@ -127,7 +135,7 @@
     "stop_current_phase3d_implementation_run": true,
     "reopen_conditions": [
       "Saha OPJU worksheets are exported to CSV/TXT/XLSX/HDF5/JSON with measured-vs-simulated labels preserved.",
-      "The ACS intracavity source-data package becomes manually or browser-accessible and exposes raw/table-ready ellipsometry plus measured R/T/A.",
+      "A separate ACS intracavity raw source-data package appears beyond the public article/SI PDFs and exposes raw/table-ready ellipsometry plus measured R/T/A.",
       "A new literature search finds a public package with same-sample optical constants and a separable measured static R/T or held-out ellipsometry lane.",
       "New local lab data provide sample-matched R/T with geometry, units, calibration, and sample identity."
     ]
@@ -140,4 +148,3 @@
     "reason": "The calibrated-linear path is blocked by data availability; the project can still advance by building the conservative gate, candidate registry, failed-validation memory, and evidence-aware assistant workflows."
   }
 }
-

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "search-papers": {
+      "source": "/Users/joegarbarino/.config/browserbase/skills/arxiv.org/search-papers-zv05w6",
+      "sourceType": "local",
+      "computedHash": "42f2ecbd679f7330754d6ed5faa618ff84932611f28330e965ad4531f32a3d0e"
+    }
+  }
+}

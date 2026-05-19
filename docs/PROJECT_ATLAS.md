@@ -6,7 +6,8 @@ with three authority-separated lanes:
 - **Serious Core**: calibrated ENZ digital twin, registry, material models,
   calibration/holdout, validation gates, reports, and claim status.
 - **Research Memory / Radar**: paper cards, lab observations, failure modes,
-  contradictions, weak-claim queues, digests, and Codex task drafts.
+  contradictions, weak-claim queues, digests, Codex task drafts, and optional
+  Browse.sh-assisted read-only scouting.
 - **Hypothesis Harness**: hypothesis cards, mechanism ranking, artifact
   skepticism, falsifiers, failed-hypothesis memory, and harness scores.
 
@@ -84,8 +85,10 @@ Current progress:
   package is public and table-rich, with many ITO epsilon tables and Hall/SEM
   support data, but no independent measured static R/T holdout.
 - **Done/pivot-triggered**: Phase 3D.5 remaining public source-data lead
-  triage. Remaining known leads are access-blocked, paper/plot-only,
-  constants-only, or request-only; no immediate Phase 4 candidate remains.
+  triage. Phase 3D.5A corrected ACS/intracavity to public PDF/SI-only, with no
+  raw tables or independent measured static R/T/A holdout. Remaining known leads
+  are paper/plot/PDF-only, constants-only, export-blocked, or request-only; no
+  immediate Phase 4 candidate remains.
 - **Next**: Phase 3E.1 public dataset gate and executive research assistant
   scaffold.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
@@ -234,9 +237,10 @@ inconsistent. Phase 3D.4 inspected the thermo-optic ITO Zenodo package: it has
 many public machine-readable epsilon tables, Hall data, SEM data, and figure
 artifacts, but no independent measured static R/T holdout. Phase 3D.5 bounded
 the remaining known public leads and found no immediate Phase 4 candidate:
-ACS/intracavity is access-blocked here, Saha remains OPJU-export blocked,
-AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
-constants-only, and request-only papers remain rejected. The next
+ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha remains
+OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
+CdO/high-crystallinity ITO are constants-only, and request-only papers remain
+rejected. The next
 discriminating move is Phase 3E.1, the public-dataset gate and executive
 research assistant scaffold.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
@@ -291,6 +295,7 @@ Eternity should keep parallel paths visible, but not equally authoritative:
 ```text
 Research Memory/Radar
   finds, stores, and organizes context
+  (optionally with Browse.sh read-only scouting)
         |
         v
 Hypothesis Harness

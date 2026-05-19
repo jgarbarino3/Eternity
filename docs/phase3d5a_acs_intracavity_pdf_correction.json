@@ -1,0 +1,62 @@
+{
+  "phase_id": "Phase 3D.5A",
+  "date": "2026-05-19",
+  "candidate_id": "intracavity_enz_dual_range_frequency_switch_2025",
+  "decision": "acs_intracavity_pdf_only_no_phase4_candidate",
+  "updated_classification": "public_pdf_si_only_no_raw_tables",
+  "claim_ceiling": "literature_reproduction_fixture",
+  "can_feed_calibrated_linear_evidence": false,
+  "phase4_ready": false,
+  "local_files": [
+    {
+      "path": "/Users/joegarbarino/Downloads/intracavity-epsilon-near-zero-dual-range-frequency-switch.pdf",
+      "kind": "main_article_pdf",
+      "size_bytes": 3463527,
+      "md5": "86e5085ae71210ac7819760155fff20a",
+      "sha256": "8862ccd440e43b6c041190b13c174985de7bc817fe0d43ce0f84ee3045bc568d",
+      "embedded_files": 0
+    },
+    {
+      "path": "/Users/joegarbarino/Downloads/ph4c01322_si_001.pdf",
+      "kind": "supporting_information_pdf",
+      "size_bytes": 4259892,
+      "md5": "5bd17b23eaab2713772a717bb1416160",
+      "sha256": "588d9257424994cf6a69128c5f88c82e20050206ba8be848ed69822f5847e7f6",
+      "embedded_files": 0
+    }
+  ],
+  "candidate_details": {
+    "paper_doi": "10.1021/acsphotonics.4c01322",
+    "structure": "ITO / silica glass / ITO Fabry-Perot nanostructure",
+    "silica_thickness_mm": 1.1,
+    "nominal_ito_thickness_nm": 135,
+    "ellipsometer": "J.A. Woollam RC2",
+    "ellipsometry_range_nm": [
+      210,
+      2500
+    ],
+    "measured_side_thickness_nm": [
+      133.49,
+      135.46
+    ],
+    "roughness_nm": [
+      "7.14 +/- 0.148",
+      "7.70 +/- 0.130"
+    ],
+    "enz_frequencies_thz": [
+      162.02,
+      156.85
+    ],
+    "drude_parameters_present_in_si": true,
+    "tmm_tra_curves_present_as_plots": true
+  },
+  "acceptance_gate": {
+    "source_qualified_material_model": "partial_drude_parameters_in_pdf",
+    "machine_readable_tables": false,
+    "independent_static_linear_holdout": false,
+    "absolute_rt_calibration_documented": false,
+    "calibration_holdout_split_predeclareable": false,
+    "reason": "The manual download resolved the source-data lead as the SI PDF, not a raw source-data package. The PDFs contain provenance and plotted/calculated curves but no machine-readable independent measured holdout."
+  },
+  "next_phase": "Phase 3E.1"
+}

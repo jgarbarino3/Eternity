@@ -23,12 +23,14 @@ are exhausted enough that no immediate Phase 4 attempt is honest:
 - Exeter spatiotemporal ITO is public and open-format, but nonlinear.
 - Thermo-optic ITO is public and constants-rich, but has no independent
   measured static R/T holdout.
-- Remaining known leads are access-blocked, plots/PDF-only, constants-only, or
+- Phase 3D.5A corrected the ACS/intracavity lead to public PDF/SI-only, with no
+  raw tables or independent measured static R/T/A holdout.
+- Remaining known leads are plots/PDF-only, constants-only, export-blocked, or
   request-only.
 
 Reopen the calibrated-linear data hunt only with a new table-ready public
-package, a real Saha export, manual access to the ACS/intracavity source-data
-package, or new local sample-matched R/T.
+package, a real Saha export, a separate ACS/intracavity raw source-data package,
+or new local sample-matched R/T.
 
 ## Pivot
 
