@@ -1,0 +1,91 @@
+{
+  "phase_id": "Phase 3D.1",
+  "title": "Exeter/Bohn ITO Package Intake",
+  "date": "2026-05-19",
+  "decision": {
+    "status": "package_downloaded_first_pass_intake_ready",
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.1A - Exeter/Bohn calibration-holdout split audit"
+  },
+  "source": {
+    "paper": "Bohn et al., All-optical switching of an epsilon-near-zero plasmon resonance in indium tin oxide",
+    "paper_doi": "10.1038/s41467-021-21332-y",
+    "dataset_doi": "10.24378/exe.3004",
+    "article_id": 29776322,
+    "file_id": 56807864,
+    "package": "OpenData.zip",
+    "download_url": "https://ndownloader.figshare.com/files/56807864",
+    "rights": "CC BY 4.0"
+  },
+  "local_snapshot": {
+    "raw_folder": "lab_data/raw/public_exeter_bohn_ito_2021/",
+    "metadata": "lab_data/raw/public_exeter_bohn_ito_2021/figshare_article_29776322.json",
+    "package": "lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip",
+    "file_manifest": "lab_data/raw/public_exeter_bohn_ito_2021/file_manifest_paths.txt",
+    "file_tree": "lab_data/raw/public_exeter_bohn_ito_2021/file_tree.txt",
+    "file_count": 53,
+    "size_bytes": 9082879,
+    "supplied_md5": "0d9c1a1b720795aa09f51a7aad4b51e4",
+    "local_md5": "0d9c1a1b720795aa09f51a7aad4b51e4",
+    "local_sha256": "9d04f668ec13586093963cef5a9cbea930dd5690eb30e64fc9619a53c9fc1215",
+    "zip_test": "pass"
+  },
+  "candidate_calibration_inputs": [
+    {
+      "path": "Figure1/DATA_ellipsometer_fit.txt",
+      "lines": 188,
+      "notes": "Header says Opt. Const. of Gen-Osc vs. nm with nm, e1/e2 Gen-Osc, and e1/e2 Ref columns."
+    },
+    {
+      "path": "Figure1/dispersion_export_w.dat",
+      "lines": 99
+    },
+    {
+      "path": "Figure1/dispersion_export_k.dat",
+      "lines": 99
+    }
+  ],
+  "candidate_holdout_or_calibration_files": [
+    {
+      "path": "Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv",
+      "lines": 373
+    },
+    {
+      "path": "Figure2/DATA/DATA_Figure2a,b,c_experiment.csv",
+      "lines": 65287
+    },
+    {
+      "path": "Figure3/DATA/DATA_Figure3_calibration_probe_TIR.csv",
+      "lines": 541
+    },
+    {
+      "path": "Figure3/DATA/DATA_Figure3_experiment.csv",
+      "lines": 12241
+    },
+    {
+      "path": "Figure4/DATA/DATA_Figure4_calibration_probe_TIR.csv",
+      "lines": 541
+    },
+    {
+      "path": "Figure4/DATA/DATA_Figure4a_experiment.csv",
+      "lines": 31876
+    },
+    {
+      "path": "Figure4/DATA/DATA_Figure4b,c_experiment.csv",
+      "lines": 31876
+    }
+  ],
+  "first_pass_risks": [
+    "Experiment CSVs are pump/probe dynamic tables, not yet proven to contain a clean static linear unpumped reflection holdout.",
+    "Notebook code may contain model parameters or processing choices tuned to the reflection data.",
+    "Angle conversion and prism/coverslip stack handling need explicit mapping into an Eternity geometry contract.",
+    "Figure 1 permittivity looks promising but is not yet linked to a leak-free holdout split."
+  ],
+  "forbidden_next": [
+    "Do not mark this dataset as calibrated_linear_evidence.",
+    "Do not fit ITO parameters, thickness, angle, scaling, or thresholds after inspecting reflection residuals.",
+    "Do not treat pump-probe dynamic rows as a linear holdout until static unpumped reconstruction is proven."
+  ]
+}

@@ -1,0 +1,58 @@
+Archive:  lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-21-2020 09:56   Figure1/.ipynb_checkpoints/
+    25968  08-21-2020 09:36   Figure1/.ipynb_checkpoints/Figure1-checkpoint.ipynb
+    90408  08-21-2020 09:56   Figure1/.ipynb_checkpoints/JUPYTER_Figure1b,c-checkpoint.ipynb
+     9684  10-29-2019 10:39   Figure1/DATA_ellipsometer_fit.txt
+     2107  12-04-2019 14:50   Figure1/dispersion_export_k.dat
+     2225  12-04-2019 14:50   Figure1/dispersion_export_w.dat
+   275219  12-23-2020 14:00   Figure1/Figure1.eps
+   380029  12-23-2020 14:01   Figure1/INKSCAPE_Fig1_complete.svg
+   228413  01-03-2021 11:51   Figure1/JUPYTER_Figure1b,c.ipynb
+   920740  10-13-2020 08:21   Figure1/MATHEMATICA_dispersion_calculator.nb
+        0  10-13-2020 13:56   Figure2/.ipynb_checkpoints/
+   194651  10-13-2020 13:56   Figure2/.ipynb_checkpoints/JUPYTER_dynamic_model_TE_(Suppl)-checkpoint.ipynb
+   114741  10-16-2020 16:54   Figure2/.ipynb_checkpoints/JUPYTER_dynamic_model-checkpoint.ipynb
+   639210  01-03-2021 12:21   Figure2/.ipynb_checkpoints/JUPYTER_Figure2a,b,c-checkpoint.ipynb
+        0  01-03-2021 12:06   Figure2/DATA/
+    23239  03-06-2020 17:54   Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv
+    69451  02-04-2020 16:01   Figure2/DATA/DATA_Figure2a,b,c_calibration_pump_filter.csv
+  4323807  01-03-2021 12:06   Figure2/DATA/DATA_Figure2a,b,c_experiment.csv
+        0  08-24-2020 13:48   Figure2/DynamicModelExports/
+      512  01-03-2021 12:03   Figure2/DynamicModelExports/c1.npy
+      320  01-03-2021 12:03   Figure2/DynamicModelExports/c2.npy
+      448  01-03-2021 12:03   Figure2/DynamicModelExports/c3.npy
+      224  01-03-2021 12:03   Figure2/DynamicModelExports/ind1.npy
+      176  01-03-2021 12:03   Figure2/DynamicModelExports/ind2.npy
+      208  01-03-2021 12:03   Figure2/DynamicModelExports/ind3.npy
+    24928  01-03-2021 12:03   Figure2/DynamicModelExports/Pincv.npy
+    24928  01-03-2021 12:03   Figure2/DynamicModelExports/Pv.npy
+      928  01-03-2021 12:03   Figure2/DynamicModelExports/tcv.npy
+  2088399  01-03-2021 13:01   Figure2/Figure2.eps
+  1848005  10-20-2020 10:34   Figure2/Inkscape_Figure S2.svg
+  2369035  01-03-2021 13:00   Figure2/INKSCAPE_Figure2.svg
+   335348  08-25-2020 08:43   Figure2/INKSCAPE_FigureS1.svg
+   791477  10-16-2020 15:28   Figure2/INKSCAPE_FigureS4.svg
+   328921  10-16-2020 11:00   Figure2/INKSCAPE_FigureS5.svg
+   287449  01-03-2021 12:05   Figure2/JUPYTER_dynamic_model.ipynb
+   205900  01-03-2021 12:39   Figure2/JUPYTER_dynamic_model_TE_(Suppl).ipynb
+   648366  01-03-2021 12:58   Figure2/JUPYTER_Figure2a,b,c.ipynb
+        0  08-25-2020 09:11   Figure3/.ipynb_checkpoints/
+   121454  01-04-2021 10:58   Figure3/.ipynb_checkpoints/JUPYTER_Figure3-checkpoint.ipynb
+        0  01-04-2021 10:55   Figure3/DATA/
+    36890  02-10-2020 12:55   Figure3/DATA/DATA_Figure3_calibration_probe_TIR.csv
+   920286  01-04-2021 10:55   Figure3/DATA/DATA_Figure3_experiment.csv
+  1135635  01-11-2021 16:28   Figure3/Figure3.eps
+   121415  01-11-2021 16:28   Figure3/JUPYTER_Figure3.ipynb
+        0  08-25-2020 09:37   Figure4/.ipynb_checkpoints/
+   183226  08-25-2020 14:45   Figure4/.ipynb_checkpoints/JUPYTER_Figure4a,b,c-checkpoint.ipynb
+        0  01-03-2021 13:09   Figure4/DATA/
+    36890  02-10-2020 12:55   Figure4/DATA/DATA_Figure4_calibration_probe_TIR.csv
+  2219052  01-03-2021 13:06   Figure4/DATA/DATA_Figure4a_experiment.csv
+  2240399  01-03-2021 13:09   Figure4/DATA/DATA_Figure4b,c_experiment.csv
+   391388  01-03-2021 13:24   Figure4/Figure4.eps
+   623699  01-03-2021 13:25   Figure4/INKSCAPE_Figure4.svg
+   244651  01-03-2021 13:22   Figure4/JUPYTER_Figure4a,b,c.ipynb
+---------                     -------
+ 24530449                     53 files

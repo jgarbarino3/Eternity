@@ -377,6 +377,42 @@ raw_artifacts:
       download encountered a web challenge.
     provenance_refs:
     - phase3c_public_tin_dataset_intake
+  public_exeter_bohn_ito_2021_opendata_zip:
+    raw_artifact_id: public_exeter_bohn_ito_2021_opendata_zip
+    kind: vendor_export
+    path: lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip
+    sha256: 9d04f668ec13586093963cef5a9cbea930dd5690eb30e64fc9619a53c9fc1215
+    bytes: 9082879
+    source_type: literature_table
+    immutable: true
+    original_filename: OpenData.zip
+    original_path: https://ndownloader.figshare.com/files/56807864
+    acquired_at: '2026-05-19'
+    source_notes: Public Exeter/Bohn ITO ENZ plasmon dataset for Nature Communications
+      2021, All-optical switching of an epsilon-near-zero plasmon resonance in indium
+      tin oxide. Archive contains Figure 1 ellipsometry/permittivity data, reflection
+      calibration/experiment CSVs, notebooks, and plotting/model code.
+    access_notes: Public University of Exeter ORE/Figshare dataset, DOI 10.24378/exe.3004,
+      licensed CC BY 4.0 in the Figshare metadata. Downloaded from the Figshare API
+      file URL after the ORE landing page returned a web challenge.
+    provenance_refs:
+    - phase3d1_exeter_bohn_ito_package_intake
+  public_exeter_bohn_ito_2021_figshare_metadata:
+    raw_artifact_id: public_exeter_bohn_ito_2021_figshare_metadata
+    kind: json
+    path: lab_data/raw/public_exeter_bohn_ito_2021/figshare_article_29776322.json
+    sha256: f34084b688c47684584d9cc3ad49825503c77fde8aa8c72fb732479f5fb9a25d
+    bytes: 8438
+    source_type: literature_table
+    immutable: true
+    original_filename: figshare_article_29776322.json
+    original_path: https://api.figshare.com/v2/articles/29776322
+    acquired_at: '2026-05-19'
+    source_notes: Figshare API metadata snapshot for the Exeter/Bohn ITO ENZ OpenData.zip
+      package, including file id, MD5, rights, authors, and notes.
+    access_notes: Public Figshare API metadata.
+    provenance_refs:
+    - phase3d1_exeter_bohn_ito_package_intake
   public_standrews_tin_2025_paper_pdf:
     raw_artifact_id: public_standrews_tin_2025_paper_pdf
     kind: vendor_export
