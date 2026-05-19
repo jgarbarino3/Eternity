@@ -80,3 +80,11 @@ the reflectance channel as an absolute fraction when the public paper/RT.xlsx
 normalization evidence is recorded. Transmittance remains auxiliary. A clean
 run that fails any locked metric is `failed_validation` for this lane, not a
 reason to loosen thresholds after inspection.
+
+Phase 3D.1A identifies Exeter/Bohn Figure 1 ellipsometry-derived epsilon and
+Figure 2 TIR-normalized pre-pump reflection as a promising split candidate, but
+not as calibrated evidence. Phase 3D.1B must canonically extract the Figure 1
+calibration input and Figure 2 `R0` holdout, lock package constants/nuisance
+values before residuals, and forbid any tuning of material, thickness, angle,
+scaling, wavelength, or thresholds after inspecting the Figure 2 reflection
+surface.

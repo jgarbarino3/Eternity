@@ -42,20 +42,22 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3C.5 | Completed/parity gaps recorded | St Andrews source-model parity diagnostic | Raw Woollam `.mod/.SE` inspection found source-model gaps: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are not represented in the current clean-run stack. No model revision or promotion is justified yet. |
 | Phase 3C.6 | Completed/decision implemented | Source-model parity implementation or lane park decision | Resolved by Phase 3C.6A: bounded parity code was implemented and the lane remains non-promoting. |
 | Phase 3C.6A | Completed/parked | Bounded St Andrews source-model parity implementation | Tested source Cauchy substrate, inferred source thickness, approximate roughness EMA, and approximate backside reflection. All variants failed locked thresholds; exact roughness/back-reflection parity remains underdetermined, so St Andrews is parked before Phase 4. |
-| Phase 3D | Recommended/blocked-on-external-search | Literature/public validation dataset search | Search current literature and public data repositories for a validation dataset with source-qualified optical constants plus independent R/T or ellipsometry holdout. This is the next meaningful validation-data path because local Phase 3A, 3B, and 3C sources are exhausted or parked under hard constraints. |
+| Phase 3D | Active/intake in progress | Literature/public validation dataset search | Public search identified Exeter/Bohn ITO ENZ as the first package to inspect and Saha TiN/AZO as backup. Broad search should pause while Exeter/Bohn is ingested. |
+| Phase 3D.1 | Completed/intake-ready | Exeter/Bohn ITO package intake | Downloaded and snapshotted `OpenData.zip` from DOI `10.24378/exe.3004`, verified archive hash/test, and found table/code candidates for ellipsometry-derived ITO epsilon plus TIR-normalized reflection. |
+| Phase 3D.1A | Completed/promising-no-promotion | Exeter/Bohn calibration-holdout split audit | Figure 1 provides source-qualified ellipsometry epsilon; Figure 2 provides the cleanest static pre-pump reflection candidate via TIR-normalized `R0`, but the split still needs no-fit extraction/locking before any residual claim. |
+| Phase 3D.1B | Recommended | Exeter/Bohn no-fit static R0 extraction and split lock | Extract Figure 1 optical constants and Figure 2 TIR/pre-pump `R0` into canonical artifacts, lock the split, and run only package-constant/no-fit model reconstruction. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D - Literature/Public Validation Dataset Search**.
+Current phase: **Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock**.
 
-Reason: Phase 3B.1 has now completed the local TiON reality check. The repo has
-TiON_48/TiON_49 epsilon tables, two material models, and calibration-only
-examples, but no raw R/T measurements and no usable plot candidates. The user
-has confirmed no CompleteEASE access, no TiON raw R/T, and no St Andrews author
-contact path. The next meaningful validation-data step is therefore not more
-local squeezing; it is a literature/public-data search for a dataset with both
-optical constants and independent holdout measurements.
+Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
+downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
+promising but non-promoting split: Figure 1 source-qualified ellipsometry
+epsilon and Figure 2 TIR-normalized pre-pump static reflection. The next
+meaningful step is not more broad search. It is canonical extraction and
+no-fit split locking for the Exeter/Bohn package.
 
 Information sufficiency:
 
@@ -115,6 +117,13 @@ Information sufficiency:
 - Enough to complete Phase 3B.1 as local evidence exhaustion: TiON_48/TiON_49
   epsilon tables and calibration-only examples are available, but no TiON raw
   R/T measurements or repo-local digitizable plot candidates exist.
+- Enough to complete Phase 3D.1 as Exeter/Bohn package intake: the ORE/Figshare
+  package was snapshotted, hash-verified, and found to contain notebooks, CSVs,
+  code, and Figure 1 optical data.
+- Enough to complete Phase 3D.1A as a split audit: Figure 1 has
+  ellipsometry-derived epsilon and Figure 2 has a table route to
+  TIR-normalized pre-pump static reflection, but the lane remains
+  non-promoting until no-fit extraction and split locking are done.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -136,13 +145,16 @@ Information sufficiency:
 - Not enough to continue local validation without new data: CompleteEASE
   re-export, TiON raw R/T, and St Andrews author contact are unavailable under
   the user's stated constraints.
+- Not enough to promote Exeter/Bohn yet: the Figure 2 notebook already compares
+  experiment and static model, and hard-coded Drude/geometry constants must be
+  locked before any residual evaluation.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D - Literature/Public Validation Dataset Search**. Planning:
-  GPT-5.5 `high`, because the task is evidence selection and leakage policy,
-  not routine coding. Implementation: `medium` for search/report intake, or
-  `high` if new dataset loaders/material-provider code are added.
+- **Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock**.
+  Planning: GPT-5.5 `high`, because leakage and split policy matter.
+  Implementation: `high` if adding canonical extraction/model code, or
+  `medium` for report-only canonical extraction artifacts.
 
 Helpful tools:
 

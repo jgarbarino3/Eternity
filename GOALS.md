@@ -140,9 +140,10 @@ grounding phase:
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 The active step is now `Phase 3D - literature/public validation dataset
-search`, while keeping source-qualified TiN/TiON optical constants, thesis
-reflectance spectra, material models, St Andrews diagnostics, and provenance
-gaps inside the registry without promoting them to calibrated evidence.
+search`, now narrowed to the Exeter/Bohn first-ingest package, while keeping
+source-qualified TiN/TiON optical constants, thesis reflectance spectra,
+material models, St Andrews diagnostics, and provenance gaps inside the
+registry without promoting them to calibrated evidence.
 
 Current blocker:
 
@@ -157,6 +158,13 @@ Current blocker:
 - The user has confirmed no CompleteEASE access, no known CompleteEASE contact,
   no TiON raw R/T, and no St Andrews author-contact path. Those are hard
   constraints, not active acquisition tasks.
+- Phase 3D.1 downloaded and verified the Exeter/Bohn ITO ENZ package.
+- Phase 3D.1A found a promising but non-promoting split: Figure 1
+  ellipsometry-derived epsilon and Figure 2 TIR-normalized pre-pump static
+  reflection. The next action is Phase 3D.1B no-fit extraction and split lock.
+- Until Exeter/Bohn Figure 1/2 data are canonically extracted, split-locked,
+  and evaluated with no residual-driven tuning, that package also cannot emit
+  `calibrated_linear_evidence`.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -240,7 +248,24 @@ Current blocker:
 - Phase 3B.1 has enough information to stop local TiON validation work: the repo
   contains TiON_48/TiON_49 epsilon tables and calibration-only examples, but no
   raw TiON R/T measurements and no usable repo-local plot candidates. The next
-  validation-data path requires Phase 3D literature/public-data search.
+  validation-data path required Phase 3D literature/public-data search.
+- Phase 3D.1A has enough information to stop broad searching for the moment and
+  continue with Exeter/Bohn: Figure 1 and Figure 2 form a promising
+  calibration/holdout split candidate, but it is not promotion-ready until
+  Phase 3D.1B canonical extraction and split locking are complete.
+
+Pivot if Phase 3D fails:
+
+- If Exeter/Bohn ITO, Saha TiN/AZO, and the strongest public packages cannot
+  support an honest calibrated-linear attempt, do not weaken the
+  `calibrated_linear_evidence` standard.
+- Promote the near-term milestone to the executive research assistant /
+  public-dataset gate described in
+  `docs/pivots/executive_research_assistant_fallback.md`.
+- Keep the assistant lane inside Eternity: Serious Core validates, Research
+  Memory remembers, and the Executive Research Assistant becomes the user's
+  evidence-aware right hand for planning, reports, prompts, dataset triage, and
+  next actions.
 
 ## Goal Usage In Codex
 

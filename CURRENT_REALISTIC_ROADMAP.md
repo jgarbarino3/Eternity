@@ -1042,17 +1042,15 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D - Literature/Public Validation Dataset Search`.
+Choose `Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock`.
 
 Recommended decision scope:
 
 ```text
-1. Search current literature and public data repositories for a validation
-   dataset that includes source-qualified optical constants plus independent
-   R/T or ellipsometry holdout.
-2. Record candidate datasets with sample/stack, wavelength range, geometry,
-   polarization, units, source license, and whether fitting/holdout leakage can
-   be avoided.
+1. Extract Exeter/Bohn Figure 1 optical constants and Figure 2 TIR/pre-pump
+   static `R0` from the verified `OpenData.zip` snapshot.
+2. Record sample/stack, wavelength range, geometry, polarization, units, source
+   license, and whether fitting/holdout leakage can be avoided.
 3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
@@ -1061,30 +1059,102 @@ Recommended decision scope:
 First implementation target:
 
 ```text
-Create a Phase 3D literature/public-data candidate report. Only add loader or
-registry code if one candidate has enough source detail to become a fail-closed
-validation candidate.
+Create canonical Phase 3D.1B extraction artifacts and a split-lock record. Only
+add model or registry code where needed to reproduce the package constants
+without fitting to Figure 2 reflection.
 ```
 
 First output:
 
 ```text
-docs/phase3d_literature_validation_dataset_search.md
-docs/phase3d_literature_validation_dataset_search.json
+docs/phase3d1b_exeter_bohn_static_r0_extraction.md
+docs/phase3d1b_exeter_bohn_static_r0_extraction.json
 ```
 
 The decision packet should include:
 
-- Which candidate datasets have both material-model inputs and independent
-  holdout measurements.
-- Which candidates have enough sample identity, stack, geometry, units,
-  polarization, and normalization detail to be usable.
-- Which candidates are rejected because they mix fitting and validation data,
-  lack raw/supplementary tables, or require author contact.
-- A leakage guard and claim-status ceiling for any selected candidate.
-- The next concrete repo intake target, if a candidate passes the source screen.
+- Which Exeter/Bohn source files define frozen calibration inputs.
+- Which Figure 2 rows define the static pre-pump holdout.
+- Which package constants and nuisance values are locked before residuals.
+- Which data are forbidden from fitting.
+- A leakage guard and claim-status ceiling for the no-fit run.
+- Whether the Saha TiN/AZO backup should be inspected next if Exeter/Bohn fails.
 
 That is the next brick on the direct path toward the AI researcher.
+
+#### Phase 3D.1: Exeter/Bohn ITO Package Intake
+
+Artifacts:
+
+- `docs/phase3d1_exeter_bohn_ito_package_intake.md`
+- `docs/phase3d1_exeter_bohn_ito_package_intake.json`
+- `lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip`
+
+Result:
+
+- Downloaded and hash-verified the public Exeter/Bohn ITO ENZ package from DOI
+  `10.24378/exe.3004`.
+- The package is a real data/code archive with Figure 1 optical constants,
+  notebooks, CSVs, Mathematica code, EPS/SVG figures, and TIR/reflection
+  experiment tables.
+- This intake did not promote any claim; it only made Phase 3D.1A possible.
+
+#### Phase 3D.1A: Exeter/Bohn Calibration-Holdout Split Audit
+
+Artifacts:
+
+- `docs/phase3d1a_exeter_bohn_split_audit.md`
+- `docs/phase3d1a_exeter_bohn_split_audit.json`
+
+Decision:
+
+- Status: `split_audit_promising_no_fit_reconstruction_needed`.
+- Current claim ceiling: `weak_within_dataset_holdout`.
+- Can feed serious core: `false`.
+- Can promote calibrated evidence: `false`.
+- Phase 4 ready: `false`.
+
+Findings:
+
+- Figure 1 provides source-qualified ellipsometry-derived ITO epsilon over
+  `1046.10498`-`1684.096069` nm.
+- Figure 2 provides the best static holdout candidate: TIR-normalized pre-pump
+  reflection reconstructed as `R0 = mean(power_norm for delay <= -0.4 ps)`.
+- Figure 2 has 65,286 experiment rows, all diagonal in
+  `wavelength_1 == wavelength_2`, with 8,866 pre-pump rows.
+- Figure 3/4 remain auxiliary because their first-use split is less clean.
+- The package is promising but cannot be promoted yet because the notebook
+  already compares experiment to static model and uses hard-coded Drude/geometry
+  constants that must be locked before residual inspection.
+
+Recommended next:
+
+- `Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock`.
+- Extract Figure 1 optical constants and Figure 2 TIR/pre-pump `R0` into
+  canonical artifacts.
+- Lock a calibration/holdout split that forbids Figure 2 reflection rows from
+  fitting.
+- Run only package-constant/no-fit reconstruction before emitting residuals.
+
+### Pivot If Phase 3D Fails
+
+If the strongest public packages cannot honestly support a calibrated-linear
+evidence attempt, keep the evidence bar intact and pivot the near-term milestone
+to the executive research assistant / public-dataset gate:
+
+```text
+public dataset gate -> candidate registry -> failed-validation memory ->
+conservative fixtures -> executive research assistant workflows
+```
+
+This pivot is recorded in
+`docs/pivots/executive_research_assistant_fallback.md`.
+
+The executive assistant lane should stay inside Eternity rather than splitting
+into a separate project by default. It becomes the user-facing right-hand layer
+for planning, summaries, prompts, reports, dataset triage, phase tracking, and
+evidence-aware next actions, while Serious Core keeps ownership of scientific
+claim validation.
 
 ## Pro Model Checkpoints
 

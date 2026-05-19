@@ -63,9 +63,14 @@ Current progress:
   TiON_48/TiON_49 epsilon tables, material models, and calibration-only
   examples are available; no raw R/T measurements or repo-local digitizable
   plot candidates were found.
-- **Next**: Phase 3D literature/public validation dataset search. Find a
-  source-qualified dataset with optical constants plus independent R/T or
-  ellipsometry holdout evidence.
+- **Next**: Phase 3D.1B Exeter/Bohn no-fit static R0 extraction and split lock.
+  Phase 3D.1A found a promising but non-promoting split: Figure 1
+  ellipsometry-derived ITO epsilon plus Figure 2 TIR-normalized pre-pump
+  static reflection.
+- **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
+  dataset, keep the evidence bar intact and promote the executive research
+  assistant / public-dataset gate lane recorded in
+  `docs/pivots/executive_research_assistant_fallback.md`.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -110,7 +115,9 @@ calibrated_linear_evidence
   -> COMPLETE/GAPS: Phase 3C.5 St Andrews source-model parity
   -> COMPLETE/PARKED: Phase 3C.6A bounded parity implementation
   -> COMPLETE/LOCAL EXHAUSTED: Phase 3B.1 TiON evidence reality check
-  -> NEXT: Phase 3D literature/public validation dataset search
+  -> COMPLETE: Phase 3D.1 Exeter/Bohn package intake
+  -> COMPLETE: Phase 3D.1A Exeter/Bohn split audit
+  -> NEXT: Phase 3D.1B no-fit static R0 extraction
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement

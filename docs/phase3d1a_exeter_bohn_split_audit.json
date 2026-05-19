@@ -1,0 +1,173 @@
+{
+  "phase_id": "Phase 3D.1A",
+  "title": "Exeter/Bohn Calibration-Holdout Split Audit",
+  "date": "2026-05-19",
+  "decision": {
+    "status": "split_audit_promising_no_fit_reconstruction_needed",
+    "best_candidate_lane": "Figure2_static_prepump_reflection",
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock"
+  },
+  "source": {
+    "paper": "Bohn et al., All-optical switching of an epsilon-near-zero plasmon resonance in indium tin oxide",
+    "paper_doi": "10.1038/s41467-021-21332-y",
+    "dataset_doi": "10.24378/exe.3004",
+    "package": "lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip"
+  },
+  "calibration_candidates": [
+    {
+      "path": "Figure1/DATA_ellipsometer_fit.txt",
+      "role": "source_qualified_ellipsometry_epsilon_table",
+      "rows": 187,
+      "columns": [
+        "nm",
+        "e1_gen_osc",
+        "e2_gen_osc",
+        "e1_ref",
+        "e2_ref"
+      ],
+      "wavelength_nm": [
+        1046.10498,
+        1684.096069
+      ],
+      "e1_gen_osc": [
+        -2.842321,
+        0.949581
+      ],
+      "e2_gen_osc": [
+        0.307948,
+        1.254444
+      ],
+      "e1_zero_crossing_nm_linear_interp": 1233.996860767486
+    },
+    {
+      "path": "Figure2/JUPYTER_Figure2a,b,c.ipynb",
+      "role": "package_static_model_constants",
+      "constants": {
+        "eps_inf": 3.42725287,
+        "wp0": 2856100000000000.0,
+        "gamma0": 223790000000000.0,
+        "t_ITO_nm": 60.0,
+        "dth_degrees": 3.4,
+        "incident_index_n": 1.43
+      },
+      "notes": "These are package-code constants, not yet an Eternity-locked calibration input."
+    }
+  ],
+  "primary_holdout_candidate": {
+    "lane": "Figure2_static_prepump_reflection",
+    "tir_reference_file": {
+      "path": "Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv",
+      "rows": 372,
+      "columns": [
+        "average",
+        "theta",
+        "filter_angle",
+        "wavelength_1",
+        "wavelength_2",
+        "delay",
+        "power_s",
+        "power_r",
+        "power_r_probe"
+      ],
+      "theta_degrees_raw": {
+        "count": 6,
+        "min": 45.0,
+        "max": 60.0
+      },
+      "wavelength_2_nm": {
+        "count": 31,
+        "min": 1150.0,
+        "max": 1550.0
+      },
+      "delay_ps": {
+        "count": 1,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "experiment_file": {
+      "path": "Figure2/DATA/DATA_Figure2a,b,c_experiment.csv",
+      "rows": 65286,
+      "columns": [
+        "average",
+        "theta",
+        "filter_angle",
+        "wavelength_1",
+        "wavelength_2",
+        "delay",
+        "power_s",
+        "power_r",
+        "power_r_probe",
+        "intensity"
+      ],
+      "theta_degrees_raw": {
+        "count": 26,
+        "min": 35.0,
+        "max": 60.0
+      },
+      "wavelength_1_nm": {
+        "count": 31,
+        "min": 1150.0,
+        "max": 1450.0
+      },
+      "wavelength_2_nm": {
+        "count": 31,
+        "min": 1150.0,
+        "max": 1450.0
+      },
+      "delay_ps": {
+        "count": 81,
+        "min": -0.6,
+        "max": 1.0
+      },
+      "intensity": {
+        "count": 1,
+        "min": 70.0,
+        "max": 70.0
+      },
+      "rows_wavelength1_eq_wavelength2": 65286,
+      "rows_delay_le_minus_0p4": 8866,
+      "rows_diag_and_delay_le_minus_0p4": 8866
+    },
+    "reconstruction_formula": {
+      "tir_reference": "mean(power_s) / mean(power_r_probe)",
+      "power_norm": "power_s / power_r_probe / f_1D_spline(wavelength_2)",
+      "R0": "mean(power_norm where delay <= -0.4 ps)"
+    }
+  },
+  "secondary_lanes": [
+    {
+      "lane": "Figure3",
+      "decision": "auxiliary_only_for_now",
+      "reason": "Experiment has fixed wavelength_1 = 1250 nm and no wavelength_1 == wavelength_2 rows."
+    },
+    {
+      "lane": "Figure4",
+      "decision": "auxiliary_only_for_now",
+      "reason": "Experiment has diagonal rows but only 150 diagonal pre-pump rows per table; notebook path includes signal-offset handling."
+    }
+  ],
+  "leakage_risks": [
+    "Figure 2 notebook already compares Experiment and Static model.",
+    "Hard-coded dth, incident index, thickness, and Drude parameters must not be tuned after residual inspection.",
+    "Static holdout is reconstructed from pre-pump rows inside a nonlinear pump-probe experiment.",
+    "The package Fresnel code includes a small complex-index workaround that needs reproduction review before any strong claim.",
+    "Any vertical scaling, wavelength shifting, thickness tuning, angle-offset tuning, or Drude refit against Figure 2 reflection would invalidate calibrated promotion."
+  ],
+  "allowed_next": [
+    "Extract Figure 1 optical constants into a frozen material input.",
+    "Extract Figure 2 TIR reference and pre-pump R0 into canonical artifacts.",
+    "Create a calibration_holdout_split that forbids Figure 2 reflection rows from fitting.",
+    "Run a no-fit package-constant reproduction and emit a conservative residual report."
+  ],
+  "forbidden_next": [
+    "Do not mark this dataset calibrated_linear_evidence from this audit alone.",
+    "Do not tune material, thickness, angle, scaling, wavelength, or threshold values after inspecting Figure 2 residuals.",
+    "Do not use Figure 3/4 offsets or dynamic rows to rescue a failed Figure 2 static comparison.",
+    "Do not proceed to Phase 4 without a locked split, reconstructed holdout table, no-fit model run, threshold policy, residual report, and claim-status review."
+  ]
+}
