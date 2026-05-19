@@ -1,0 +1,26 @@
+sweep,name,parameter,rmse,mae,max_absolute_residual,dip_offset_nm,shape_correlation_minmax,threshold_status
+alternate_material_tables,TiN-data_Pure/Ellipsometry/50nm TiN-RoomTemp.txt,,0.175762648,0.116123836,0.616256661,-141.93,-0.765624491,fail
+alternate_material_tables,TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt,,0.178246989,0.0847482652,0.697624274,-141.93,-0.111455015,fail
+alternate_material_tables,TiN-data_Pure/Ellipsometry/50 nm-MTiN-Anntemp-50C.txt,,0.182280132,0.0875438009,0.703740314,-91.63,0.0264105635,fail
+alternate_material_tables,TiN-data_Pure/Ellipsometry/50nm-MTiN-40c.txt,,0.192254452,0.155826828,0.625691928,-141.93,-0.0713093109,fail
+alternate_material_tables,TiN-data_Pure/Ellipsometry/50nm-MTiN-60c.txt,,0.221442403,0.177482327,0.681171238,60.24,0.540821102,fail
+selected_material_thickness_nm,55 nm,55.0,0.177973375,0.0857787262,0.701975799,-141.93,-0.127859648,fail
+selected_material_thickness_nm,50 nm,50.0,0.178246989,0.0847482652,0.697624274,-141.93,-0.111455015,fail
+selected_material_thickness_nm,60 nm,60.0,0.179368888,0.0889978196,0.708732291,-141.93,-0.140776896,fail
+selected_material_thickness_nm,45 nm,45.0,0.181001189,0.0902156522,0.696481339,-141.93,-0.0918177442,fail
+selected_material_thickness_nm,65 nm,65.0,0.181750514,0.0926350684,0.717027575,-141.93,-0.150151836,fail
+selected_material_thickness_nm,70 nm,70.0,0.184590597,0.0957464497,0.726013043,-141.93,-0.156097849,fail
+selected_material_thickness_nm,40 nm,40.0,0.187095427,0.105600793,0.699213823,-128.08,-0.0694165931,fail
+selected_material_thickness_nm,80 nm,80.0,0.190249401,0.0994887391,0.743167071,-141.93,-0.158765855,fail
+selected_material_thickness_nm,90 nm,90.0,0.194640173,0.100293125,0.756019994,-141.93,-0.151618733,fail
+selected_material_thickness_nm,100 nm,100.0,0.197279257,0.0994655552,0.763095088,-141.93,-0.138011261,fail
+selected_material_thickness_nm,35 nm,35.0,0.197304835,0.125882208,0.706293672,-115.02,-0.0449210728,fail
+selected_material_substrate_index,n=1.7,1.7,0.17737865,0.0876396433,0.700546302,-141.93,-0.157763951,fail
+selected_material_substrate_index,n=1.8,1.8,0.17741223,0.0900152522,0.701528822,-141.93,-0.172814678,fail
+selected_material_substrate_index,n=1.6,1.6,0.177550862,0.0858422987,0.699463239,-141.93,-0.140875455,fail
+selected_material_substrate_index,n=1.52,1.52,0.177852601,0.0850098548,0.698516638,-141.93,-0.125850109,fail
+selected_material_substrate_index,n=1.5,1.5,0.177952445,0.084887296,0.69826801,-141.93,-0.121861994,fail
+selected_material_substrate_index,n=1.45,1.45,0.178246989,0.0847482652,0.697624274,-141.93,-0.111455015,fail
+selected_material_substrate_index,n=1.4,1.4,0.178608313,0.0849687145,0.696947406,-141.93,-0.100385717,fail
+selected_material_substrate_index,n=1.33,1.33,0.179232636,0.0859293332,0.695940408,-141.93,-0.0836773084,fail
+affine_shape_check,best affine transform of existing prediction,,0.142748743,0.108238466,0.480885941,457.76,0.111453851,fail

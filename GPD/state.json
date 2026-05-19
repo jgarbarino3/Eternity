@@ -1,8 +1,8 @@
 {
   "project_reference": {
-    "project_md_updated": "2026-05-17",
+    "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3C.3 St Andrews threshold lock and clean-run decision"
+    "current_focus": "Phase 3C.6 source-model parity implementation or lane park decision"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -18,15 +18,15 @@
     "phase3a_ceiling_without_gates": "weak_within_dataset_holdout"
   },
   "position": {
-    "current_phase": "3C.3",
-    "current_phase_name": "St Andrews Threshold Lock + Clean Run Decision",
+    "current_phase": "3C.6",
+    "current_phase_name": "Source-Model Parity Implementation Or Lane Park Decision",
     "total_phases": 3,
-    "current_plan": "docs/phase3c3_clean_run_evaluation.md",
-    "total_plans_in_phase": 3,
-    "status": "Completed/failed validation",
-    "last_activity": "2026-05-17",
-    "last_activity_desc": "Locked conservative St Andrews reflectance thresholds before a new clean run; the clean run failed all five metrics and cannot move to Phase 4 as-is.",
-    "progress_percent": 92,
+    "current_plan": "docs/phase3c5_standrews_source_model_parity.md",
+    "total_plans_in_phase": 5,
+    "status": "Recommended/direction decision",
+    "last_activity": "2026-05-19",
+    "last_activity_desc": "Recorded Phase 3C.5 source-model parity gaps: the raw Woollam source model exposes Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings missing from the clean-run stack.",
+    "progress_percent": 96,
     "paused_at": null
   },
   "active_calculations": [
@@ -242,13 +242,50 @@
         "shape_correlation_minmax": -0.11145385096355263
       },
       "next": "Phase 3C.4 failure triage"
+    },
+    {
+      "phase": "3C.4",
+      "decision_ref": "docs/phase3c4_standrews_failure_triage.md",
+      "diagnostic_csv": "docs/phase3c4_diagnostic_sweeps.csv",
+      "decision": "failure_triaged_no_promotion",
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "phase4_ready": false,
+      "leading_failure_mode": "source_model_or_material_pairing_mismatch",
+      "dominant_failure_window_nm": [
+        400.0,
+        450.0
+      ],
+      "dominant_failure_window_mae": 0.5738337021865672,
+      "alternate_material_tables_threshold_status": "all_failed",
+      "simple_thickness_or_substrate_sweep_repaired_failure": false,
+      "next": "Phase 3C.5 source-model parity diagnostic"
+    },
+    {
+      "phase": "3C.5",
+      "decision_ref": "docs/phase3c5_standrews_source_model_parity.md",
+      "decision": "source_model_parity_gaps_recorded",
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "phase4_ready": false,
+      "source_model_revision_ready": false,
+      "selected_epsilon_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+      "raw_model_member": "TiN-data_Pure/Ellipsometry/raw file/50nm-MTiN-50c.mod",
+      "raw_se_member": "TiN-data_Pure/Ellipsometry/raw file/50nm-MTiN-50c.SE",
+      "parity_gaps": [
+        "film_thickness_mismatch_or_unit_unresolved",
+        "substrate_model_mismatch",
+        "roughness_missing_in_clean_run",
+        "back_reflection_settings_missing_or_not_modeled_in_clean_run"
+      ],
+      "next": "Phase 3C.6 source-model parity implementation or lane park decision"
     }
   ],
   "open_questions": [
     "What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
-    "Is the Phase 3C.3 failure caused by material-table pairing, substrate/roughness assumptions, or a limitation of the current zero-fit TMM model?"
+    "Should Phase 3C.6 implement bounded St Andrews source-model parity support now, or park the lane as diagnostic-only and return to another evidence path?"
   ],
   "resolved_questions": [],
   "performance_metrics": {
@@ -344,6 +381,16 @@
       "phase": "3C.3",
       "summary": "St Andrews threshold-locked clean run failed.",
       "rationale": "Reflectance normalization is acceptable for this public dataset policy, but the current 50 C epsilon / RT.xlsx pairing fails all five predeclared metrics and is not Phase 4-ready."
+    },
+    {
+      "phase": "3C.4",
+      "summary": "St Andrews failure triage points to source-model parity.",
+      "rationale": "The failure is not a near miss; blue-edge residuals dominate, alternate tables do not pass, and simple thickness/substrate sweeps do not repair the shape."
+    },
+    {
+      "phase": "3C.5",
+      "summary": "St Andrews source-model parity gaps are real but non-promoting.",
+      "rationale": "The raw Woollam source model includes Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings absent from the clean run, but those gaps do not validate a replacement model or calibrated promotion."
     }
   ],
   "approximations": [],
@@ -378,7 +425,7 @@
     "Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new measurement is needed.",
     "Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.",
     "Find a Woollam project file, plotting script, lab note, or other source that maps 30_20_10 filenames to a sample and stack.",
-    "Phase 3C.4: triage the St Andrews threshold failure before revising the material pairing/model or parking the lane as diagnostic-only."
+    "Phase 3C.6: decide whether to implement bounded St Andrews source-model parity support or park the lane as diagnostic-only."
   ],
   "blockers": [
     "TiON_48/TiON_49 raw R/T spectra are not registered.",
@@ -387,7 +434,7 @@
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
     "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
-    "Phase 3C.3 clean run failed all locked reflectance thresholds; do not proceed to Phase 4 without failure triage."
+    "Phase 3C.5 parity keeps St Andrews non-promoting; do not proceed to Phase 4, change thresholds, or choose a replacement material/source model without a Phase 3C.6 decision and leakage guard."
   ],
   "continuation": {
     "schema_version": 1,

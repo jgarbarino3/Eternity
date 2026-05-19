@@ -393,10 +393,76 @@ Result:
   dip-offset, and min-max shape-correlation gates.
 - Serious-core ingestion remains false; this lane is not Phase 4-ready as-is.
 
+Completed follow-up:
+
+- Phase 3C.4 triaged the failure before any model revision or parking decision.
+
+## Phase 3C.4: St Andrews Failure Triage
+
+Status: completed / triaged, no promotion
+
+Goal:
+
+- Explain the Phase 3C.3 threshold failure without loosening thresholds or
+  selecting a replacement model from the holdout.
+- Rank likely causes: material-table mismatch, source-model mismatch,
+  roughness/substrate assumptions, pairing ambiguity, and model limitations.
+
+Artifacts:
+
+- `src/eternity/phase3c4.py`
+- `docs/phase3c4_standrews_failure_triage.md`
+- `docs/phase3c4_standrews_failure_triage.json`
+- `docs/phase3c4_diagnostic_sweeps.csv`
+
+Result:
+
+- Decision `failure_triaged_no_promotion`.
+- The failure is not a near miss; all locked metrics still fail.
+- The dominant residual is at `400-450 nm`, where prediction is far below the
+  measured reflectance.
+- No candidate St Andrews epsilon table passes the locked thresholds.
+- Simple selected-table thickness and substrate-index sweeps do not fix the dip
+  offset or shape correlation.
+- Leading next question: source-model parity for the raw Woollam glass,
+  roughness, film-thickness, and back-reflection assumptions.
+
+Completed next:
+
+- Phase 3C.5 inspected St Andrews source-model parity before any material
+  pairing/model revision or lane parking decision.
+
+## Phase 3C.5: St Andrews Source-Model Parity Diagnostic
+
+Status: completed / parity gaps recorded, no promotion
+
+Goal:
+
+- Inspect the selected St Andrews raw Woollam `.mod/.SE` source-model
+  assumptions without tuning a replacement model against the holdout.
+- Record whether the clean-run stack omits source assumptions that could
+  plausibly explain the Phase 3C.3 failure.
+
+Artifacts:
+
+- `src/eternity/phase3c5.py`
+- `docs/phase3c5_standrews_source_model_parity.md`
+- `docs/phase3c5_standrews_source_model_parity.json`
+
+Result:
+
+- Decision `source_model_parity_gaps_recorded`.
+- The selected source model exposes Float Glass Cauchy substrate assumptions,
+  film-thickness/roughness metadata, and back-reflection settings.
+- The current clean run uses a simpler flat TiN-on-fixed-glass stack and does
+  not represent those source-model assumptions.
+- The gaps justify a Phase 3C.6 decision, but not a silent replacement model,
+  threshold change, serious-core feed, or Phase 4 promotion.
+
 Next:
 
-- Phase 3C.4 should triage the failure before revising the model or parking the
-  St Andrews lane.
+- Phase 3C.6 should decide whether to implement bounded source-model parity
+  support now or park the St Andrews lane as diagnostic-only.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

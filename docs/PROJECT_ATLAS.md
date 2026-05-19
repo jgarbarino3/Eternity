@@ -38,7 +38,7 @@ Current progress:
 - **Done**: Phase 3C public TiN dataset intake after Phase 3A exhaustion:
   the St Andrews 2025 public TiN archive and linked paper are snapshotted, and
   the dataset includes ellipsometry tables plus `RT.xlsx` R/T data.
-- **Doing**: Phase 3C.1 St Andrews TiN pairing + validation candidate:
+- **Done**: Phase 3C.1 St Andrews TiN pairing + validation candidate:
   canonical R/T CSV snapshots, the candidate `50nm-MTiN-50c` epsilon snapshot,
   registry records, and a fail-closed example now exist.
 - **Done**: Phase 3C.2 St Andrews candidate run audit + future-only threshold
@@ -47,9 +47,17 @@ Current progress:
 - **Done**: Phase 3C.3 St Andrews threshold lock + clean run decision. The
   clean run failed all five predeclared reflectance metrics and cannot move to
   Phase 4 as-is.
-- **Next**: Phase 3C.4 St Andrews failure triage. Decide whether the failure is
-  pairing/material-model mismatch, roughness/substrate assumptions, or a model
-  limitation before parking or revising the lane.
+- **Done**: Phase 3C.4 St Andrews failure triage. The failure is not a near
+  miss, blue-edge residuals dominate, no alternate St Andrews epsilon table
+  passes the locked thresholds, and simple thickness/substrate sweeps do not
+  repair the shape or dip.
+- **Done**: Phase 3C.5 St Andrews source-model parity diagnostic. Raw Woollam
+  `.mod/.SE` inspection found Float Glass Cauchy substrate,
+  film-thickness/roughness metadata, and back-reflection settings missing from
+  the clean-run stack.
+- **Next**: Phase 3C.6 source-model parity implementation or lane park
+  decision. Choose bounded parity code with leakage guards, or park St Andrews
+  as diagnostic-only.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -90,7 +98,9 @@ calibrated_linear_evidence
   -> COMPLETE: Phase 3C.1 St Andrews TiN pairing
   -> COMPLETE: Phase 3C.2 run audit / future-only policy
   -> COMPLETE/FAILED: Phase 3C.3 threshold lock / clean run decision
-  -> NEXT: Phase 3C.4 St Andrews failure triage
+  -> COMPLETE/TRIAGED: Phase 3C.4 St Andrews failure triage
+  -> COMPLETE/GAPS: Phase 3C.5 St Andrews source-model parity
+  -> NEXT/DECISION: Phase 3C.6 parity implementation or lane park
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -146,6 +156,15 @@ new clean run and accepts St Andrews reflectance normalization for this public
 dataset, but the run fails all five metrics. The conflict has moved from
 "can we lock thresholds?" to "is the failure caused by pairing/material-model
 mismatch, missing roughness/substrate physics, or a fundamental model limit?"
+Phase 3C.4 answers the first triage layer: the failure is not a near miss,
+blue-edge residuals dominate, alternate epsilon tables do not pass, and simple
+thickness/substrate-index sweeps do not repair the shape or dip. The next
+discriminating move became source-model parity against the raw Woollam
+`.mod/.SE` assumptions. Phase 3C.5 records that parity gap: the source model
+uses Float Glass Cauchy substrate assumptions, film-thickness/roughness
+metadata, and back-reflection settings missing from the clean-run stack. That
+does not promote the lane; it sets up a Phase 3C.6 decision on bounded parity
+implementation versus parking St Andrews as diagnostic-only.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

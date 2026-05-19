@@ -2,25 +2,25 @@
 
 ## Project Reference
 
-See: GPD/PROJECT.md (updated 2026-05-17)
+See: GPD/PROJECT.md (updated 2026-05-19)
 
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3C.3 St Andrews threshold lock and clean-run decision
+**Current focus:** Phase 3C.6 source-model parity implementation or lane park decision
 
 ## Current Position
 
-**Current Phase:** 3C.3
-**Current Phase Name:** St Andrews Threshold Lock + Clean Run Decision
+**Current Phase:** 3C.6
+**Current Phase Name:** Source-Model Parity Implementation Or Lane Park Decision
 **Total Phases:** 3
-**Current Plan:** docs/phase3c3_clean_run_evaluation.md
-**Total Plans in Phase:** 3
-**Status:** Completed/failed validation
-**Last Activity:** 2026-05-17
-**Last Activity Description:** Locked conservative St Andrews reflectance thresholds before a new clean run; the clean run failed all five metrics and cannot move to Phase 4 as-is.
+**Current Plan:** docs/phase3c5_standrews_source_model_parity.md
+**Total Plans in Phase:** 5
+**Status:** Recommended/direction decision
+**Last Activity:** 2026-05-19
+**Last Activity Description:** Recorded Phase 3C.5 source-model parity gaps: the raw Woollam source model exposes Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings missing from the clean-run stack.
 
-**Progress:** [█████████░] 92%
+**Progress:** [█████████░] 96%
 
 ## Active Calculations
 
@@ -79,6 +79,16 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   and `docs/phase3c3_clean_run_evaluation.md` / `.json`: clean run
   `run_f6ea582618328f44` failed all five predeclared metrics and is not ready
   for Phase 4 review.
+- Phase 3C.4 wrote `docs/phase3c4_standrews_failure_triage.md`, `.json`, and
+  `docs/phase3c4_diagnostic_sweeps.csv`: failure is not a near miss, blue-edge
+  residuals dominate, no alternate St Andrews epsilon table passes the locked
+  thresholds, and simple thickness/substrate-index sweeps do not repair the
+  shape or dip.
+- Phase 3C.5 wrote `docs/phase3c5_standrews_source_model_parity.md` and
+  `.json`: raw Woollam `.mod/.SE` inspection found Float Glass Cauchy
+  substrate assumptions, film-thickness/roughness metadata, and
+  back-reflection settings missing from the current clean-run stack. The lane
+  remains non-promoting and not Phase 4-ready.
 
 ## Open Questions
 
@@ -86,8 +96,8 @@ See: GPD/PROJECT.md (updated 2026-05-17)
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
-- Is the Phase 3C.3 failure caused by material-table pairing, substrate /
-  roughness assumptions, or a limitation of the current zero-fit TMM model?
+- Should Phase 3C.6 implement bounded St Andrews source-model parity support
+  now, or park the lane as diagnostic-only and return to another evidence path?
 
 ## Performance Metrics
 
@@ -144,6 +154,14 @@ See: GPD/PROJECT.md (updated 2026-05-17)
   dataset reflectance normalization is acceptable for this policy, but the
   current 50 C epsilon / RT.xlsx pairing fails all five metrics and is not
   Phase 4-ready.
+- [Phase 3C.4]: St Andrews failure triage points to source-model parity. — The
+  failure is not a near miss; blue-edge residuals dominate, alternate tables do
+  not pass, and simple thickness/substrate sweeps do not repair the shape.
+- [Phase 3C.5]: St Andrews source-model parity gaps are real but
+  non-promoting. — The raw Woollam source model includes Float Glass Cauchy
+  substrate, film-thickness/roughness metadata, and back-reflection settings
+  absent from the clean run, but those gaps do not validate a replacement model
+  or calibrated promotion.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -174,8 +192,8 @@ None yet.
   measurement is needed.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
-- Phase 3C.4: triage the St Andrews threshold failure before revising the
-  material pairing/model or parking the lane as diagnostic-only.
+- Phase 3C.6: decide whether to implement bounded St Andrews source-model
+  parity support or park the lane as diagnostic-only.
 
 ### Blockers/Concerns
 
@@ -187,8 +205,9 @@ None yet.
 - Absolute reflectance calibration for thesis `Intensity` exports remains
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
-- Phase 3C.3 clean run failed all locked reflectance thresholds; do not proceed
-  to Phase 4 without failure triage.
+- Phase 3C.5 parity keeps St Andrews non-promoting; do not proceed to Phase 4,
+  change thresholds, or choose a replacement material/source model without a
+  Phase 3C.6 decision and leakage guard.
 
 ## Session Continuity
 

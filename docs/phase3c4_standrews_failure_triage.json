@@ -1,0 +1,1383 @@
+{
+  "current_run": {
+    "claim_status": {
+      "can_feed_serious_core": false,
+      "reason": "A measured-holdout comparison was prepared under a predeclared threshold policy, but calibrated promotion still requires a separate clean-run evaluation and Phase 4 review.",
+      "status": "weak_within_dataset_holdout"
+    },
+    "geometry": {
+      "incidence_angle": {
+        "unit": "deg",
+        "value": 0.0
+      },
+      "incident_medium": "air",
+      "polarization": "TE",
+      "substrate": "glass"
+    },
+    "phase3c3_decision": {
+      "can_feed_serious_core": false,
+      "claim_status_decision": "failed_validation",
+      "clean_run_ready_for_phase4_review": false,
+      "existing_phase3c2_run_promotable": false,
+      "next_step": "inspect pairing/material-model mismatch or park St Andrews as diagnostic",
+      "status": "clean_run_failed_thresholds"
+    },
+    "phase3c3_metrics": {
+      "dip_wavelength_offset_nm": -141.92999999999995,
+      "max_absolute_residual": 0.697624347,
+      "mean_absolute_error": 0.084748221728215,
+      "measurement_dip": {
+        "value": 0.20377,
+        "wavelength_nm": 542.06
+      },
+      "prediction_dip": {
+        "value": 0.194253217,
+        "wavelength_nm": 400.13
+      },
+      "root_mean_square_error": 0.17824688885208068,
+      "shape_correlation_minmax": -0.11145385096355263,
+      "validation_points": 1785,
+      "wavelength_window_nm": [
+        400.13,
+        999.82
+      ]
+    },
+    "run_id": "run_f6ea582618328f44",
+    "sample_stack": {
+      "sample": {
+        "composition": "TiN, exact stoichiometry not in registry; electron-beam evaporated film on microscope glass.",
+        "material": "TiN",
+        "nominal_thickness": {
+          "uncertainty": null,
+          "unit": "nm",
+          "value": 50.0
+        },
+        "process_notes": [
+          "St Andrews paper describes low-temperature electron-beam evaporation of TiN on AmScope microscope glass slides.",
+          "Phase 3C.1 pairs the 50 nm / 50 C epsilon table to RT.xlsx as a supported reflectance-only validation candidate, not calibrated evidence."
+        ],
+        "provenance_refs": [
+          "public_standrews_tin_2025_dataset_zip",
+          "public_standrews_tin_2025_paper_pdf",
+          "public_standrews_tin_50nm_50c_epsilon"
+        ],
+        "sample_id": "public_standrews_tin_50nm_50c",
+        "source_type": "literature"
+      },
+      "spec_layers": [
+        {
+          "material": "TiN",
+          "material_model_ref": "public_standrews_tin_50nm_50c_epsilon_model",
+          "thickness": {
+            "unit": "nm",
+            "value": 50.0
+          }
+        }
+      ],
+      "stack": {
+        "layers": [
+          {
+            "material": "air",
+            "notes": "Normal-incidence R/T measurement in paper Figure 4.",
+            "role": "incident_medium",
+            "thickness": null
+          },
+          {
+            "material": "TiN",
+            "notes": "Candidate 50 nm / 50 C TiN table selected in Phase 3C.1.",
+            "role": "film",
+            "thickness": {
+              "uncertainty": null,
+              "unit": "nm",
+              "value": 50.0
+            }
+          },
+          {
+            "material": "glass",
+            "notes": "Paper states films were deposited on AmScope microscope glass slides; simulator uses lossless n=1.45 glass approximation.",
+            "role": "substrate",
+            "thickness": null
+          }
+        ],
+        "notes": "Phase 3C.1 public dataset validation candidate stack. Pairing is supported for reflectance but not sufficient for calibrated promotion without thresholds and final no-fit-leakage review.",
+        "sample_ref": "public_standrews_tin_50nm_50c",
+        "stack_id": "public_standrews_tin_50nm_50c_air_tin_glass"
+      }
+    },
+    "threshold_evaluation": {
+      "failed_metrics": [
+        "mean_absolute_error",
+        "root_mean_square_error",
+        "max_absolute_residual",
+        "dip_wavelength_offset_nm",
+        "shape_correlation_minmax"
+      ],
+      "metrics": [
+        {
+          "comparator": "less_equal",
+          "name": "mean_absolute_error",
+          "status": "fail",
+          "threshold": 0.04,
+          "value": 0.084748221728215
+        },
+        {
+          "comparator": "less_equal",
+          "name": "root_mean_square_error",
+          "status": "fail",
+          "threshold": 0.06,
+          "value": 0.17824688885208068
+        },
+        {
+          "comparator": "less_equal",
+          "name": "max_absolute_residual",
+          "status": "fail",
+          "threshold": 0.15,
+          "value": 0.697624347
+        },
+        {
+          "comparator": "abs_less_equal",
+          "name": "dip_wavelength_offset_nm",
+          "status": "fail",
+          "threshold": 40.0,
+          "value": -141.92999999999995
+        },
+        {
+          "comparator": "greater_equal",
+          "name": "shape_correlation_minmax",
+          "status": "fail",
+          "threshold": 0.9,
+          "value": -0.11145385096355263
+        }
+      ],
+      "status": "fail"
+    }
+  },
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "deprioritized_causes": [
+      "thresholds_only",
+      "simple_fixed_substrate_index_only",
+      "simple_thickness_offset_only"
+    ],
+    "leading_failure_mode": "source_model_or_material_pairing_mismatch",
+    "next_phase": "Phase 3C.5 - St Andrews source-model parity diagnostic",
+    "phase4_ready": false,
+    "secondary_failure_modes": [
+      "roughness_or_source_ellipsometry_model_not_reproduced",
+      "rt_xlsx_annealing_pairing_ambiguity"
+    ],
+    "status": "failure_triaged_no_promotion"
+  },
+  "diagnostic_sweeps": {
+    "affine_shape_check": {
+      "metrics": {
+        "dip_wavelength_offset_nm": 457.7600000000001,
+        "max_absolute_residual": 0.480885941112063,
+        "mean_absolute_error": 0.10823846601607652,
+        "measurement_dip": {
+          "value": 0.20377,
+          "wavelength_nm": 542.06
+        },
+        "measurement_range": [
+          0.20377,
+          0.89402
+        ],
+        "prediction_dip": {
+          "value": 0.362533065827273,
+          "wavelength_nm": 999.82
+        },
+        "prediction_range": [
+          0.362533065827273,
+          0.4136776302661225
+        ],
+        "root_mean_square_error": 0.14274874286112516,
+        "shape_correlation_minmax": 0.11145385096355247,
+        "validation_points": 1785,
+        "wavelength_window_nm": [
+          400.13,
+          999.82
+        ]
+      },
+      "name": "best affine transform of existing prediction",
+      "offset": 0.462962877938231,
+      "scale": -0.2537165069040197,
+      "threshold_status": {
+        "failed_metrics": [
+          "mean_absolute_error",
+          "root_mean_square_error",
+          "max_absolute_residual",
+          "dip_wavelength_offset_nm",
+          "shape_correlation_minmax"
+        ],
+        "status": "fail"
+      }
+    },
+    "alternate_material_tables": [
+      {
+        "enz_wavelengths_nm": [],
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6162566608144195,
+          "mean_absolute_error": 0.11612383648877642,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.272915354985027,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.272915354985027,
+            0.2955145642372554
+          ],
+          "root_mean_square_error": 0.17576264778332468,
+          "shape_correlation_minmax": -0.7656244908908797,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "TiN-data_Pure/Ellipsometry/50nm TiN-RoomTemp.txt",
+        "passivity_check": "pass",
+        "selected": false,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "enz_wavelengths_nm": [
+          664.334
+        ],
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6976242742691572,
+          "mean_absolute_error": 0.08474826520693628,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.1942533127977763,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.1942533127977763,
+            0.39583478699074925
+          ],
+          "root_mean_square_error": 0.17824698851751608,
+          "shape_correlation_minmax": -0.11145501533212368,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+        "passivity_check": "pass",
+        "selected": true,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "enz_wavelengths_nm": [
+          634.178
+        ],
+        "metrics": {
+          "dip_wavelength_offset_nm": -91.62999999999994,
+          "max_absolute_residual": 0.7037403144768037,
+          "mean_absolute_error": 0.08754380093827054,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.18685106046781974,
+            "wavelength_nm": 450.43
+          },
+          "prediction_range": [
+            0.18685106046781974,
+            0.4112420490269832
+          ],
+          "root_mean_square_error": 0.18228013199716828,
+          "shape_correlation_minmax": 0.026410563474184506,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "TiN-data_Pure/Ellipsometry/50 nm-MTiN-Anntemp-50C.txt",
+        "passivity_check": "pass",
+        "selected": false,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "enz_wavelengths_nm": [
+          597.146
+        ],
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6256919276770472,
+          "mean_absolute_error": 0.1558268283316882,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.26496965661023836,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.26496965661023836,
+            0.5791440192533298
+          ],
+          "root_mean_square_error": 0.19225445168359795,
+          "shape_correlation_minmax": -0.07130931092404197,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "TiN-data_Pure/Ellipsometry/50nm-MTiN-40c.txt",
+        "passivity_check": "pass",
+        "selected": false,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "enz_wavelengths_nm": [
+          978.144
+        ],
+        "metrics": {
+          "dip_wavelength_offset_nm": 60.24000000000001,
+          "max_absolute_residual": 0.6811712383947879,
+          "mean_absolute_error": 0.17748232669476413,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.17772828608047003,
+            "wavelength_nm": 602.3
+          },
+          "prediction_range": [
+            0.17772828608047003,
+            0.2553764960036865
+          ],
+          "root_mean_square_error": 0.22144240282037206,
+          "shape_correlation_minmax": 0.540821102247166,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "TiN-data_Pure/Ellipsometry/50nm-MTiN-60c.txt",
+        "passivity_check": "pass",
+        "selected": false,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      }
+    ],
+    "selected_material_substrate_index": [
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7005463015682011,
+          "mean_absolute_error": 0.08763964327681215,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.18895469004385665,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.18895469004385665,
+            0.41377376232357926
+          ],
+          "root_mean_square_error": 0.17737864968317676,
+          "shape_correlation_minmax": -0.1577639507567682,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.7",
+        "substrate_index": 1.7,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7015288219517203,
+          "mean_absolute_error": 0.09001525217030282,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.18709965835101902,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.18709965835101902,
+            0.42053906862809615
+          ],
+          "root_mean_square_error": 0.17741222988461944,
+          "shape_correlation_minmax": -0.17281467790809343,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.8",
+        "substrate_index": 1.8,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.699463238544411,
+          "mean_absolute_error": 0.08584229871980195,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19095340875225256,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.19095340875225256,
+            0.406778315260386
+          ],
+          "root_mean_square_error": 0.1775508621995487,
+          "shape_correlation_minmax": -0.1408754551587755,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.6",
+        "substrate_index": 1.6,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6985166383537535,
+          "mean_absolute_error": 0.08500985478379718,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19266558503157807,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.19266558503157807,
+            0.4010104734592558
+          ],
+          "root_mean_square_error": 0.1778526007116107,
+          "shape_correlation_minmax": -0.12585010856586917,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.52",
+        "substrate_index": 1.52,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6982680101090598,
+          "mean_absolute_error": 0.08488729597642225,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19311040670838067,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.19311040670838067,
+            0.3995441191598095
+          ],
+          "root_mean_square_error": 0.17795244487331574,
+          "shape_correlation_minmax": -0.1218619943614775,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.5",
+        "substrate_index": 1.5,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6976242742691572,
+          "mean_absolute_error": 0.08474826520693628,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.1942533127977763,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.1942533127977763,
+            0.39583478699074925
+          ],
+          "root_mean_square_error": 0.17824698851751608,
+          "shape_correlation_minmax": -0.11145501533212368,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.45",
+        "substrate_index": 1.45,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6969474060367705,
+          "mean_absolute_error": 0.08496871446905147,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.1954421024667467,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.1954421024667467,
+            0.3920625253722536
+          ],
+          "root_mean_square_error": 0.1786083126678329,
+          "shape_correlation_minmax": -0.10038571743830603,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.4",
+        "substrate_index": 1.4,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6959404081236166,
+          "mean_absolute_error": 0.08592933317963584,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19718805564561293,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.19718805564561293,
+            0.38667359444606003
+          ],
+          "root_mean_square_error": 0.17923263554545152,
+          "shape_correlation_minmax": -0.08367730842302998,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "n=1.33",
+        "substrate_index": 1.33,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      }
+    ],
+    "selected_material_thickness_nm": [
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7019757992056417,
+          "mean_absolute_error": 0.08577872623379847,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.188489558878133,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.188489558878133,
+            0.41459631723803914
+          ],
+          "root_mean_square_error": 0.1779733753248089,
+          "shape_correlation_minmax": -0.12785964848929712,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "55 nm",
+        "thickness_nm": 55.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6976242742691572,
+          "mean_absolute_error": 0.08474826520693628,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.1942533127977763,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.1942533127977763,
+            0.39583478699074925
+          ],
+          "root_mean_square_error": 0.17824698851751608,
+          "shape_correlation_minmax": -0.11145501533212368,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "50 nm",
+        "thickness_nm": 50.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7087322914113032,
+          "mean_absolute_error": 0.0889978196348174,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.18046917684939082,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.18046917684939082,
+            0.4303167529309591
+          ],
+          "root_mean_square_error": 0.17936888794772746,
+          "shape_correlation_minmax": -0.14077689575268812,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "60 nm",
+        "thickness_nm": 60.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.6964813389338453,
+          "mean_absolute_error": 0.09021565221795336,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19682162428244981,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.19682162428244981,
+            0.37380199788894675
+          ],
+          "root_mean_square_error": 0.18100118924821412,
+          "shape_correlation_minmax": -0.09181774423927327,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "45 nm",
+        "thickness_nm": 45.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7170275746806828,
+          "mean_absolute_error": 0.09263506842533856,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.17117616935158794,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.17117616935158794,
+            0.44324299024035513
+          ],
+          "root_mean_square_error": 0.1817505136344026,
+          "shape_correlation_minmax": -0.15015183557944126,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "65 nm",
+        "thickness_nm": 65.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7260130428170475,
+          "mean_absolute_error": 0.0957464497168701,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.16154292045819632,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.16154292045819632,
+            0.4536339677868713
+          ],
+          "root_mean_square_error": 0.1845905969369307,
+          "shape_correlation_minmax": -0.15609784918422373,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "70 nm",
+        "thickness_nm": 70.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -128.07999999999993,
+          "max_absolute_residual": 0.699213823019665,
+          "mean_absolute_error": 0.1056007926931409,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.19480154465897537,
+            "wavelength_nm": 413.98
+          },
+          "prediction_range": [
+            0.19480154465897537,
+            0.3482907811826169
+          ],
+          "root_mean_square_error": 0.1870954268446319,
+          "shape_correlation_minmax": -0.06941659314072375,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "40 nm",
+        "thickness_nm": 40.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7431670713277845,
+          "mean_absolute_error": 0.09948873905337295,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.14425486973555177,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.14425486973555177,
+            0.46787900334497984
+          ],
+          "root_mean_square_error": 0.19024940120673575,
+          "shape_correlation_minmax": -0.15876585451504127,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "80 nm",
+        "thickness_nm": 80.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.75601999408796,
+          "mean_absolute_error": 0.10029312475403346,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.13258554562214475,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.13258554562214475,
+            0.47518697353069533
+          ],
+          "root_mean_square_error": 0.19464017302275555,
+          "shape_correlation_minmax": -0.15161873265198306,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "90 nm",
+        "thickness_nm": 90.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -141.92999999999995,
+          "max_absolute_residual": 0.7630950876640891,
+          "mean_absolute_error": 0.09946555516335769,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.12738446979648496,
+            "wavelength_nm": 400.13
+          },
+          "prediction_range": [
+            0.12738446979648496,
+            0.4775753638022815
+          ],
+          "root_mean_square_error": 0.19727925731160045,
+          "shape_correlation_minmax": -0.1380112608020237,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "100 nm",
+        "thickness_nm": 100.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      },
+      {
+        "metrics": {
+          "dip_wavelength_offset_nm": -115.01999999999992,
+          "max_absolute_residual": 0.7062936721150338,
+          "mean_absolute_error": 0.12588220786988097,
+          "measurement_dip": {
+            "value": 0.20377,
+            "wavelength_nm": 542.06
+          },
+          "measurement_range": [
+            0.20377,
+            0.89402
+          ],
+          "prediction_dip": {
+            "value": 0.18714300062641234,
+            "wavelength_nm": 427.04
+          },
+          "prediction_range": [
+            0.18714300062641234,
+            0.31912755981459323
+          ],
+          "root_mean_square_error": 0.19730483513322386,
+          "shape_correlation_minmax": -0.044921072817905625,
+          "validation_points": 1785,
+          "wavelength_window_nm": [
+            400.13,
+            999.82
+          ]
+        },
+        "name": "35 nm",
+        "thickness_nm": 35.0,
+        "threshold_status": {
+          "failed_metrics": [
+            "mean_absolute_error",
+            "root_mean_square_error",
+            "max_absolute_residual",
+            "dip_wavelength_offset_nm",
+            "shape_correlation_minmax"
+          ],
+          "status": "fail"
+        }
+      }
+    ]
+  },
+  "dominant_failure_windows": [
+    {
+      "bias": -0.5738337021865672,
+      "max_absolute_residual": 0.697624347,
+      "mean_absolute_error": 0.5738337021865672,
+      "measurement_mean": 0.7732344029850745,
+      "points": 134,
+      "prediction_mean": 0.19940070079850747,
+      "window_nm": [
+        400.0,
+        450.0
+      ]
+    },
+    {
+      "bias": -0.2027552861029412,
+      "max_absolute_residual": 0.436516958,
+      "mean_absolute_error": 0.2027552861029412,
+      "measurement_mean": 0.41895772058823527,
+      "points": 136,
+      "prediction_mean": 0.21620243449264706,
+      "window_nm": [
+        450.0,
+        500.0
+      ]
+    }
+  ],
+  "generated_at": "2026-05-19T10:11:07.160880+00:00",
+  "inputs": {
+    "comparison_table": "results/runs/run_f6ea582618328f44/comparison_table.csv",
+    "evaluation_json": "docs/phase3c3_clean_run_evaluation.json",
+    "pairing_json": "docs/phase3c1_standrews_tin_pairing.json",
+    "run_dir": "results/runs/run_f6ea582618328f44",
+    "selected_material_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+    "source_archive": "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip"
+  },
+  "interpretation_boundary": "Phase 3C.4 is a diagnostic failure triage. It may rank likely failure causes, but it cannot tune thresholds, select a replacement model using the holdout, feed the serious core, or promote calibrated_linear_evidence.",
+  "phase_id": "Phase 3C.4",
+  "residual_segments": [
+    {
+      "bias": -0.5738337021865672,
+      "max_absolute_residual": 0.697624347,
+      "mean_absolute_error": 0.5738337021865672,
+      "measurement_mean": 0.7732344029850745,
+      "points": 134,
+      "prediction_mean": 0.19940070079850747,
+      "window_nm": [
+        400.0,
+        450.0
+      ]
+    },
+    {
+      "bias": -0.2027552861029412,
+      "max_absolute_residual": 0.436516958,
+      "mean_absolute_error": 0.2027552861029412,
+      "measurement_mean": 0.41895772058823527,
+      "points": 136,
+      "prediction_mean": 0.21620243449264706,
+      "window_nm": [
+        450.0,
+        500.0
+      ]
+    },
+    {
+      "bias": 0.018434185535394623,
+      "max_absolute_residual": 0.0439479807,
+      "mean_absolute_error": 0.021129256719604656,
+      "measurement_mean": 0.2333332616487455,
+      "points": 279,
+      "prediction_mean": 0.2517674471863799,
+      "window_nm": [
+        500.0,
+        600.0
+      ]
+    },
+    {
+      "bias": -0.008089853682751736,
+      "max_absolute_residual": 0.0321763532,
+      "mean_absolute_error": 0.01148324322758507,
+      "measurement_mean": 0.30664538194444446,
+      "points": 288,
+      "prediction_mean": 0.2985555282465278,
+      "window_nm": [
+        600.0,
+        700.0
+      ]
+    },
+    {
+      "bias": 0.012339832745371843,
+      "max_absolute_residual": 0.0262396236,
+      "mean_absolute_error": 0.012378801121413246,
+      "measurement_mean": 0.33172171052631577,
+      "points": 456,
+      "prediction_mean": 0.3440615432565789,
+      "window_nm": [
+        700.0,
+        850.0
+      ]
+    },
+    {
+      "bias": -0.06483645970127948,
+      "max_absolute_residual": 0.208117654,
+      "mean_absolute_error": 0.06495969674021444,
+      "measurement_mean": 0.4466860162601626,
+      "points": 492,
+      "prediction_mean": 0.381849556550813,
+      "window_nm": [
+        850.0,
+        1000.0
+      ]
+    }
+  ],
+  "title": "St Andrews Failure Triage",
+  "triage_findings": [
+    {
+      "evidence": "All Phase 3C.3 thresholds failed, including shape correlation and dip offset. The strongest residual concentration is at the blue edge.",
+      "finding": "failure_is_not_a_near_miss"
+    },
+    {
+      "evidence": "The 400-450 nm segment has the largest mean absolute residual, while the 500-850 nm middle bands are much closer.",
+      "finding": "blue_edge_residual_dominates"
+    },
+    {
+      "evidence": "No candidate St Andrews epsilon table passes the locked thresholds. Some alternatives improve one diagnostic, but degrade others.",
+      "finding": "alternate_tables_do_not_repair_the_lane"
+    },
+    {
+      "evidence": "The selected-table thickness and substrate-index sweeps do not move the predicted dip to the measured dip or restore the required shape correlation.",
+      "finding": "simple_substrate_or_thickness_changes_are_not_decisive"
+    },
+    {
+      "evidence": "The paper and archive point to Woollam ellipsometry modeling with glass substrate and roughness information, while the current clean run uses a single flat TiN layer on lossless n=1.45 glass.",
+      "finding": "source_model_parity_is_the_next_clean_question"
+    }
+  ]
+}

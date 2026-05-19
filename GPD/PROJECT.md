@@ -4,12 +4,16 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-17. Current mirrored focus is Phase 3C.3 St Andrews threshold
-lock and clean-run decision: the public archive and paper are snapshotted,
-`RT.xlsx` has canonical R/T CSV snapshots, the candidate `50nm-MTiN-50c`
-epsilon table is registered, and a threshold-locked clean run now failed all
-five reflectance metrics. Calibrated promotion remains blocked; the next useful
-step is Phase 3C.4 failure triage rather than threshold loosening.
+Updated: 2026-05-19. Current mirrored focus is Phase 3C.6 source-model parity
+implementation or lane park decision: the public archive and paper are
+snapshotted, `RT.xlsx` has canonical R/T CSV snapshots, the threshold-locked
+clean run failed all five reflectance metrics, Phase 3C.4 triaged the failure
+as a non-near-miss dominated by blue-edge residuals, and Phase 3C.5 recorded
+source-model parity gaps in the raw Woollam `.mod/.SE` files. The clean-run
+stack still lacks the source Float Glass Cauchy substrate, roughness metadata,
+and back-reflection settings. Calibrated promotion remains blocked; the next
+useful step is deciding whether to implement bounded parity code or park the
+St Andrews lane as diagnostic-only.
 
 Authoritative sources remain:
 

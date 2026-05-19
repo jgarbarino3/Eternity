@@ -667,15 +667,89 @@ Result:
   table / `RT.xlsx` pairing is not Phase 4-ready without deeper source or model
   reconciliation.
 
+Completed follow-up:
+
+- `Phase 3C.4 - St Andrews Failure Triage` inspected whether the failure is
+  driven by material-table mismatch, roughness/substrate assumptions,
+  ellipsometry-table pairing, or model limitations.
+
+#### Phase 3C.4: St Andrews Failure Triage
+
+Status: completed / triaged, no promotion.
+
+Implementation artifacts:
+
+- `src/eternity/phase3c4.py`
+- `docs/phase3c4_standrews_failure_triage.md`
+- `docs/phase3c4_standrews_failure_triage.json`
+- `docs/phase3c4_diagnostic_sweeps.csv`
+
+Phase 3C.4 converts the failed threshold-locked run into a reproducible
+failure packet. It keeps the same no-promotion boundary while checking
+residual localization, alternate St Andrews epsilon tables, selected-table
+thickness sensitivity, substrate-index sensitivity, and an affine shape check.
+
+Result:
+
+- Decision `failure_triaged_no_promotion`.
+- The failure is not a near miss: all locked metrics still fail.
+- The dominant residual is at the blue edge: `400-450 nm` has MAE about
+  `0.574` and bias about `-0.574`.
+- No candidate St Andrews epsilon table passes the locked thresholds.
+- Simple thickness or fixed substrate-index changes do not move the predicted
+  dip to the measured `542.06 nm` dip or restore the required shape
+  correlation.
+- The leading failure mode is now source-model or material-pairing mismatch,
+  with roughness/source-ellipsometry model parity and `RT.xlsx` annealing
+  ambiguity as the next clean questions.
+
+Completed next:
+
+- `Phase 3C.5 - St Andrews Source-Model Parity Diagnostic`: inspected the raw
+  Woollam `.mod/.SE` source-model assumptions for the selected 50 nm / 50 C
+  file and recorded parity gaps without changing thresholds, tuning a
+  replacement model, or promoting the lane.
+
+#### Phase 3C.5: St Andrews Source-Model Parity Diagnostic
+
+Status: completed / parity gaps recorded, no promotion.
+
+Implementation artifacts:
+
+- `src/eternity/phase3c5.py`
+- `docs/phase3c5_standrews_source_model_parity.md`
+- `docs/phase3c5_standrews_source_model_parity.json`
+
+Phase 3C.5 inspects the source-model assumptions that are readable from the
+selected St Andrews Woollam `.mod/.SE` files before any code-backed model
+revision. It is a no-promotion parity packet, not a model-fitting pass.
+
+Result:
+
+- Decision `source_model_parity_gaps_recorded`.
+- The selected source members are `50nm-MTiN-50c.mod` and
+  `50nm-MTiN-50c.SE` paired with the already selected
+  `50nm-MTiN-50c.txt` epsilon table.
+- The source model exposes a Float Glass Cauchy substrate, a raw film
+  thickness-like value of `417.36509145893865` (possibly `41.7365 nm` if the
+  raw unit is Angstrom), a raw roughness-like value of `114.62616711097938`,
+  and back-reflection settings.
+- The clean run uses a simpler flat TiN-on-fixed-glass stack and does not model
+  the source Cauchy substrate, roughness metadata, or back-reflection settings.
+- These gaps explain why a source-model parity implementation may be useful,
+  but they do not identify a validated replacement model and do not make the
+  St Andrews lane Phase 4-ready.
+
 Recommended next:
 
-- `Phase 3C.4 - St Andrews Failure Triage`: inspect whether the failure is
-  driven by material-table mismatch, roughness/substrate assumptions,
-  ellipsometry-table pairing, or model limitations. Planning should use GPT-5.5
-  `high`; implementation can use `medium` for report-only triage or `high` if
-  it changes material/provider logic. Use GPD verifier/checker and, if needed,
-  Consensus or current literature search to compare expected TiN R/T validation
-  tolerances.
+- `Phase 3C.6 - Source-Model Parity Implementation or Lane Park Decision`:
+  choose whether to implement a bounded source-model parity runner/material
+  update for the St Andrews lane or park the lane as diagnostic-only. Planning:
+  GPT-5.5 `high`; implementation: `high` if code changes are approved, or
+  `medium` for a report-only park/decision packet. Use the Phase 3C.5 parity
+  packet, local model/table inspection, GPD verifier/checker, and current
+  optical-model literature only if roughness/substrate/back-reflection
+  tolerance context is needed.
 
 ## Near-Term Reach With Current Tools
 
@@ -895,61 +969,45 @@ The win is:
 
 ## Immediate Next Step
 
-Initialize the repo and build V0.
+Choose `Phase 3C.6 - Source-Model Parity Implementation or Lane Park Decision`.
 
-Recommended starting implementation:
+Recommended decision scope:
 
 ```text
-src/eternity/
-  specs/
-  data/
-  materials/
-  pulses/
-  simulators/
-  results/
-  reports/
-  cli/
-
-experiments/
-  examples/
-
-lab_data/
-  README.md
-
-results/
-  .gitkeep
-
-tests/
+1. Decide whether the source-model parity gaps justify code changes now:
+   Float Glass Cauchy substrate, roughness metadata, film-thickness unit
+   decoding, and back-reflection settings.
+2. If yes, implement a bounded source-model parity run that does not tune to
+   the holdout or loosen thresholds.
+3. If no, park St Andrews as diagnostic-only and return to the next evidence
+   lane without promoting the failed clean run.
 ```
 
 First command target:
 
 ```text
-eternity run experiments/examples/linear_ito_toy.yaml
+eternity phase3c5-parity --output-dir docs
 ```
 
 First output:
 
 ```text
-results/<run_id>/
-  spec.yaml
-  manifest.json
-  metrics.json
-  plots/
-  report.md
+docs/phase3c6_source_model_parity_decision.md
+docs/phase3c6_source_model_parity_decision.json
 ```
 
-The first report should already include:
+The decision packet should include:
 
-- What was simulated.
-- Which model was used.
-- What assumptions were made.
-- What data was synthetic.
-- What the simulator predicts.
-- What is not trusted yet.
-- What follow-up would make it more real.
+- Whether source-model parity code changes are approved now.
+- The exact assumptions that would be implemented and which ones remain
+  unresolved.
+- A leakage guard forbidding holdout-derived parameter fitting or threshold
+  changes.
+- A stop rule for parking the lane if parity remains underdetermined.
+- Why the failed clean run still cannot feed serious-core evidence or Phase 4
+  promotion.
 
-That is the first brick on the direct path toward the AI researcher.
+That is the next brick on the direct path toward the AI researcher.
 
 ## Pro Model Checkpoints
 

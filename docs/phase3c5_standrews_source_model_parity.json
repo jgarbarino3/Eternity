@@ -1,0 +1,219 @@
+{
+  "blocking_parity_gaps": [
+    "film_thickness",
+    "substrate_model",
+    "roughness_model",
+    "back_reflection_settings"
+  ],
+  "clean_run_model": {
+    "geometry": {
+      "incidence_angle": {
+        "unit": "deg",
+        "value": 0.0
+      },
+      "incident_medium": "air",
+      "polarization": "TE",
+      "substrate": "glass"
+    },
+    "modeled_limitations": [
+      "single flat TiN layer",
+      "lossless fixed n=1.45 glass substrate",
+      "no source roughness layer",
+      "no source back-reflection settings",
+      "no detector or RT.xlsx acquisition model"
+    ],
+    "run_id": "run_f6ea582618328f44",
+    "sample_stack": {
+      "sample": {
+        "composition": "TiN, exact stoichiometry not in registry; electron-beam evaporated film on microscope glass.",
+        "material": "TiN",
+        "nominal_thickness": {
+          "uncertainty": null,
+          "unit": "nm",
+          "value": 50.0
+        },
+        "process_notes": [
+          "St Andrews paper describes low-temperature electron-beam evaporation of TiN on AmScope microscope glass slides.",
+          "Phase 3C.1 pairs the 50 nm / 50 C epsilon table to RT.xlsx as a supported reflectance-only validation candidate, not calibrated evidence."
+        ],
+        "provenance_refs": [
+          "public_standrews_tin_2025_dataset_zip",
+          "public_standrews_tin_2025_paper_pdf",
+          "public_standrews_tin_50nm_50c_epsilon"
+        ],
+        "sample_id": "public_standrews_tin_50nm_50c",
+        "source_type": "literature"
+      },
+      "spec_layers": [
+        {
+          "material": "TiN",
+          "material_model_ref": "public_standrews_tin_50nm_50c_epsilon_model",
+          "thickness": {
+            "unit": "nm",
+            "value": 50.0
+          }
+        }
+      ],
+      "stack": {
+        "layers": [
+          {
+            "material": "air",
+            "notes": "Normal-incidence R/T measurement in paper Figure 4.",
+            "role": "incident_medium",
+            "thickness": null
+          },
+          {
+            "material": "TiN",
+            "notes": "Candidate 50 nm / 50 C TiN table selected in Phase 3C.1.",
+            "role": "film",
+            "thickness": {
+              "uncertainty": null,
+              "unit": "nm",
+              "value": 50.0
+            }
+          },
+          {
+            "material": "glass",
+            "notes": "Paper states films were deposited on AmScope microscope glass slides; simulator uses lossless n=1.45 glass approximation.",
+            "role": "substrate",
+            "thickness": null
+          }
+        ],
+        "notes": "Phase 3C.1 public dataset validation candidate stack. Pairing is supported for reflectance but not sufficient for calibrated promotion without thresholds and final no-fit-leakage review.",
+        "sample_ref": "public_standrews_tin_50nm_50c",
+        "stack_id": "public_standrews_tin_50nm_50c_air_tin_glass"
+      }
+    }
+  },
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "next_phase": "Phase 3C.6 - source-model parity implementation or lane park decision",
+    "phase4_ready": false,
+    "source_model_revision_ready": false,
+    "status": "source_model_parity_gaps_recorded"
+  },
+  "generated_at": "2026-05-19T10:11:05.591243+00:00",
+  "inputs": {
+    "pairing_json": "docs/phase3c1_standrews_tin_pairing.json",
+    "raw_mod_member": "TiN-data_Pure/Ellipsometry/raw file/50nm-MTiN-50c.mod",
+    "raw_se_member": "TiN-data_Pure/Ellipsometry/raw file/50nm-MTiN-50c.SE",
+    "run_dir": "results/runs/run_f6ea582618328f44",
+    "selected_material_member": "TiN-data_Pure/Ellipsometry/50nm-MTiN-50c.txt",
+    "source_archive": "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+    "triage_json": "docs/phase3c4_standrews_failure_triage.json"
+  },
+  "interpretation_boundary": "Phase 3C.5 records source-model parity gaps only. It must not use the holdout to tune a replacement model, change thresholds, feed the serious core, or promote calibrated_linear_evidence.",
+  "parity_checks": [
+    {
+      "clean_run_value_nm": 50.0,
+      "name": "film_thickness",
+      "reason": "The clean run uses the nominal registry thickness. The raw Woollam model exposes a different internal thickness-like value whose unit must be decoded before using it.",
+      "source_model_possible_nm_if_raw_angstrom": 41.73650914589386,
+      "source_model_raw": 417.36509145893865,
+      "status": "mismatch_or_unit_unresolved"
+    },
+    {
+      "clean_run": {
+        "material": "glass",
+        "model": "lossless fixed n=1.45"
+      },
+      "name": "substrate_model",
+      "reason": "The clean run uses a fixed lossless glass index, while the source model uses a Float Glass Cauchy substrate.",
+      "source_model": {
+        "cauchy_A": 1.5052715793770524,
+        "cauchy_B": -0.018660648237365515,
+        "cauchy_C": -0.000833799619479561,
+        "exponent": 1.5,
+        "k_amplitude": 0.0,
+        "kind": "Float Glass - Air (Cauchy)"
+      },
+      "status": "mismatch"
+    },
+    {
+      "clean_run": "no roughness layer or effective-medium roughness model",
+      "name": "roughness_model",
+      "reason": "The source model exposes roughness metadata, but the clean run is a single flat TiN layer on glass.",
+      "source_mentions_surface_roughness": true,
+      "source_model_raw": 114.62616711097938,
+      "status": "missing_in_clean_run"
+    },
+    {
+      "clean_run": "semi-infinite substrate without source back-reflection settings",
+      "name": "back_reflection_settings",
+      "reason": "The Woollam model includes back-reflection settings that are not represented in the current clean-run stack.",
+      "source_model": {
+        "back_reflections_count": 5.0,
+        "first_reflection_percent": 100.0
+      },
+      "status": "missing_or_not_modeled_in_clean_run"
+    }
+  ],
+  "phase3c4_context": {
+    "decision": {
+      "can_feed_serious_core": false,
+      "can_promote_calibrated_linear_evidence": false,
+      "deprioritized_causes": [
+        "thresholds_only",
+        "simple_fixed_substrate_index_only",
+        "simple_thickness_offset_only"
+      ],
+      "leading_failure_mode": "source_model_or_material_pairing_mismatch",
+      "next_phase": "Phase 3C.5 - St Andrews source-model parity diagnostic",
+      "phase4_ready": false,
+      "secondary_failure_modes": [
+        "roughness_or_source_ellipsometry_model_not_reproduced",
+        "rt_xlsx_annealing_pairing_ambiguity"
+      ],
+      "status": "failure_triaged_no_promotion"
+    },
+    "dominant_failure_windows": [
+      {
+        "bias": -0.5738337021865672,
+        "max_absolute_residual": 0.697624347,
+        "mean_absolute_error": 0.5738337021865672,
+        "measurement_mean": 0.7732344029850745,
+        "points": 134,
+        "prediction_mean": 0.19940070079850747,
+        "window_nm": [
+          400.0,
+          450.0
+        ]
+      },
+      {
+        "bias": -0.2027552861029412,
+        "max_absolute_residual": 0.436516958,
+        "mean_absolute_error": 0.2027552861029412,
+        "measurement_mean": 0.41895772058823527,
+        "points": 136,
+        "prediction_mean": 0.21620243449264706,
+        "window_nm": [
+          450.0,
+          500.0
+        ]
+      }
+    ]
+  },
+  "phase_id": "Phase 3C.5",
+  "source_model": {
+    "back_reflections_count": 5.0,
+    "film_thickness_possible_nm_if_raw_angstrom": 41.73650914589386,
+    "film_thickness_raw": 417.36509145893865,
+    "film_thickness_raw_units": "unresolved_completeease_internal_units",
+    "first_reflection_percent": 100.0,
+    "layer_model": "TIN 3 (Lorentz)",
+    "roughness_raw": 114.62616711097938,
+    "roughness_raw_units": "unresolved_completeease_internal_units",
+    "source_mentions_surface_roughness": true,
+    "substrate_model": {
+      "cauchy_A": 1.5052715793770524,
+      "cauchy_B": -0.018660648237365515,
+      "cauchy_C": -0.000833799619479561,
+      "exponent": 1.5,
+      "k_amplitude": 0.0,
+      "kind": "Float Glass - Air (Cauchy)"
+    },
+    "thickness_nonuniformity_percent": 0.0
+  },
+  "title": "St Andrews Source-Model Parity Diagnostic"
+}

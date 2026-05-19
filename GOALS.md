@@ -114,11 +114,24 @@ grounding phase:
   clean run decision`: thresholds were locked before a new spec/run, the
   reflectance normalization gate passed for the public St Andrews dataset, and
   the clean run failed all five predeclared metrics. This is not Phase 4-ready.
+- The completed triage result is `Phase 3C.4 - St Andrews failure triage`:
+  the failure is not a threshold near-miss, blue-edge residuals dominate, no
+  alternate St Andrews epsilon table passes the locked thresholds, and simple
+  thickness/substrate-index sweeps do not repair the shape or dip. The leading
+  next question is source-model parity, not Phase 4 promotion.
+- The completed parity result is `Phase 3C.5 - St Andrews source-model parity
+  diagnostic`: the selected raw Woollam `.mod/.SE` source model exposes a
+  Float Glass Cauchy substrate, film-thickness/roughness metadata, and
+  back-reflection settings that are not represented in the current clean-run
+  stack. This records a credible parity gap but does not validate a replacement
+  model or promote the lane.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is to keep source-qualified TiN/TiON optical constants, thesis
-reflectance spectra, material models, and provenance gaps inside the registry
-without promoting them to calibrated evidence.
+The active step is to decide whether to implement a bounded St Andrews
+source-model parity runner/material update or park the lane as diagnostic-only,
+while keeping source-qualified TiN/TiON optical constants, thesis reflectance
+spectra, material models, and provenance gaps inside the registry without
+promoting them to calibrated evidence.
 
 Current blocker:
 
@@ -192,6 +205,14 @@ Current blocker:
   threshold-locked run failed MAE, RMSE, max residual, dip-offset, and shape
   correlation gates. The next useful work is failure triage, not threshold
   loosening.
+- Phase 3C.4 has enough information to complete failure triage. It does not
+  have enough information to choose a replacement material model or proceed to
+  Phase 4: the diagnostic sweeps rank likely causes but remain holdout-derived
+  and non-promoting.
+- Phase 3C.5 has enough information to record source-model parity gaps. It
+  does not have enough information to silently revise the model or promote the
+  run: the next useful step is a Phase 3C.6 decision on whether to implement
+  bounded source-model parity code or park St Andrews as diagnostic-only.
 
 ## Goal Usage In Codex
 

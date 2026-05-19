@@ -167,7 +167,10 @@
               <div class="progress-row done"><span>Done</span><strong>Phase 3C public TiN intake</strong></div>
               <div class="progress-row done"><span>Done</span><strong>Phase 3C.1 pairing candidate</strong></div>
               <div class="progress-row done"><span>Done</span><strong>Phase 3C.2 future-only audit</strong></div>
-              <div class="progress-row next"><span>Next</span><strong>Phase 3C.3 threshold lock</strong></div>
+              <div class="progress-row done"><span>Done</span><strong>Phase 3C.3 clean run failed</strong></div>
+              <div class="progress-row done"><span>Done</span><strong>Phase 3C.4 failure triage</strong></div>
+              <div class="progress-row done"><span>Done</span><strong>Phase 3C.5 parity gaps</strong></div>
+              <div class="progress-row next"><span>Next</span><strong>Phase 3C.6 parity decision</strong></div>
             </div>
           </div>
           <div class="goal-sequence" aria-label="Eternity goal sequence">
@@ -230,7 +233,9 @@
                   <div class="map-node complete"><span>Complete</span><strong>Phase 3C.1 pairing candidate</strong><div class="sub-branches"><em>RT.xlsx CSVs</em><em>50C epsilon</em><em>no leakage</em></div></div>
                   <div class="map-node complete"><span>Complete</span><strong>Phase 3C.2 future-only audit</strong><div class="sub-branches"><em>historical residuals</em><em>policy draft</em><em>clean run required</em></div></div>
                   <div class="map-node blocked"><span>Failed</span><strong>Phase 3C.3 clean run</strong><div class="sub-branches"><em>thresholds locked</em><em>all metrics failed</em><em>no Phase 4 yet</em></div></div>
-                  <div class="map-node in-progress"><span>Next</span><strong>Phase 3C.4 failure triage</strong><div class="sub-branches"><em>pairing mismatch</em><em>roughness/substrate</em><em>model limits</em></div></div>
+                  <div class="map-node complete"><span>Triaged</span><strong>Phase 3C.4 failure triage</strong><div class="sub-branches"><em>blue-edge residuals</em><em>no table pass</em><em>no promotion</em></div></div>
+                  <div class="map-node complete"><span>Gaps found</span><strong>Phase 3C.5 source-model parity</strong><div class="sub-branches"><em>Woollam .mod/.SE</em><em>glass/roughness</em><em>back reflection</em></div></div>
+                  <div class="map-node in-progress"><span>Decision</span><strong>Phase 3C.6 parity or park</strong><div class="sub-branches"><em>bounded code</em><em>leakage guard</em><em>diagnostic-only park</em></div></div>
                   <div class="map-node in-progress"><span>In progress</span><strong>Frozen tabulated model</strong><div class="sub-branches"><em>epsilon table</em><em>ENZ crossings</em><em>valid range</em></div></div>
                   <div class="map-node blocked"><span>Parked</span><strong>Phase 3B TiON R/T provenance</strong><div class="sub-branches"><em>sample match</em><em>plot-only R</em><em>raw tables missing</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>no fit leakage</em><em>residual threshold</em><em>claim gate</em></div></div>
@@ -544,7 +549,7 @@
                 diagnostics. Phase 3A.9 records the current relative-only run
                 packet: high normalized shape correlation, matched 400 nm dip
                 location, and shared increasing trend over 400-900 nm. The
-                Phase 3A.10 branch packet chose one bounded manual source follow-up on the top three quartz dynamic candidates. Phase 3A.11 recorded the exact review packet, and Phase 3A.12 exhausted it: the candidates are related provenance, not exact source identity or absolute reflectance proof. Phase 3C opened a cleaner public TiN dataset lane with St Andrews ellipsometry and paper-backed R/T. Phase 3C.1 registered the candidate 50 C epsilon table, extracted `RT.xlsx` into canonical R/T snapshots, and added a fail-closed validation candidate. Phase 3C.2 audited that run and kept it historical: the future threshold policy cannot apply to the already-inspected residuals. Phase 3C.3 locked thresholds before a new clean run; the clean run failed all five metrics, so the conflict is now whether that failure reflects pairing/material-model mismatch, missing roughness/substrate physics, or a real model limit.
+                Phase 3A.10 branch packet chose one bounded manual source follow-up on the top three quartz dynamic candidates. Phase 3A.11 recorded the exact review packet, and Phase 3A.12 exhausted it: the candidates are related provenance, not exact source identity or absolute reflectance proof. Phase 3C opened a cleaner public TiN dataset lane with St Andrews ellipsometry and paper-backed R/T. Phase 3C.1 registered the candidate 50 C epsilon table, extracted `RT.xlsx` into canonical R/T snapshots, and added a fail-closed validation candidate. Phase 3C.2 audited that run and kept it historical: the future threshold policy cannot apply to the already-inspected residuals. Phase 3C.3 locked thresholds before a new clean run; the clean run failed all five metrics. Phase 3C.4 triaged that failure as a non-near-miss dominated by blue-edge residuals: no alternate St Andrews epsilon table passes, and simple thickness/substrate sweeps do not repair the shape or dip. Phase 3C.5 found source-model parity gaps in the raw Woollam `.mod/.SE` files: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are missing from the current clean-run stack.
                 Phase 3A.2 separates the source-backed thesis d_10nm stack from
                 unresolved 30_20_10 exports. Phase 3A.1 keeps the
                 already-inspected residuals below calibrated promotion until
@@ -554,7 +559,7 @@
                 <dt>Forbidden overclaim</dt>
                 <dd>Calibrated TiN/TiON evidence exists.</dd>
                 <dt>Next discriminating test</dt>
-                <dd>Run Phase 3C.4: triage the St Andrews threshold failure before revising or parking the public dataset lane.</dd>
+                <dd>Choose Phase 3C.6: implement bounded source-model parity with leakage guards, or park the public dataset lane as diagnostic-only.</dd>
               </dl>
             </article>
             <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
@@ -652,7 +657,7 @@
           <div class="swimlanes">
             <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
               <h3>Serious Core</h3>
-              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet -> Phase 3A.12 exhausted -> Phase 3C public TiN intake -> Phase 3C.1 pairing candidate -> Phase 3C.2 future-only audit -> Phase 3C.3 threshold lock / clean run decision -> claim status.</p>
+              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet -> Phase 3A.12 exhausted -> Phase 3C public TiN intake -> Phase 3C.1 pairing candidate -> Phase 3C.2 future-only audit -> Phase 3C.3 threshold lock / clean run decision -> Phase 3C.4 failure triage -> Phase 3C.5 source-model parity gaps -> Phase 3C.6 parity/park decision -> claim status.</p>
             </article>
             <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
               <h3>Research Memory</h3>
