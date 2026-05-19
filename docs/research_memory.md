@@ -76,6 +76,18 @@ records, validate claims, replace source archives, or upgrade evidence states.
 Google Scholar remains manual alert/export only. See
 `docs/agents/browserbase_browse.md` for setup, commands, and safety boundaries.
 
+### Optional Plasmate Support
+
+Plasmate is available as an optional MCP surface for quick readable-text
+extraction and lightweight browser inspection of public literature, repository,
+dataset, supplement, and source-data pages. Use it more often with Browse.sh
+when it improves source coverage or speeds candidate triage.
+
+Plasmate results remain Research Memory/Radar inputs only. They can seed paper
+cards, candidate cards, and follow-up tasks, but they do not replace downloaded
+artifacts, checksums, machine-readable tables, repo-local scripts, or claim
+review. See `docs/agents/plasmate.md` for setup notes and safety boundaries.
+
 ## Adding Records
 
 Add curated, reviewable YAML or JSON files under a committed examples directory

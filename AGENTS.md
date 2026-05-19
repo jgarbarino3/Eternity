@@ -36,6 +36,24 @@ GPD is a planning mirror and claim-boundary checker, not the default execution e
 - Do not run a full GPD ritual just because work is research-adjacent. Bring it in when it materially reduces scientific overclaim risk or clarifies a phase decision.
 - Treat `GPD/PROJECT.md`, `GPD/ROADMAP.md`, `GPD/STATE.md`, and `GPD/state.json` as mirrors that should be updated when phase state changes, but prefer the authoritative sources listed there when they disagree.
 
+## Browser Research Tool Cadence Rule
+
+Use Browse.sh and Plasmate more often for Eternity literature scouting, public
+data portal inspection, and repeatable read-only web checks when they can improve
+speed, source coverage, or evidence capture.
+
+- Prefer Browse.sh for repeatable browser sessions, installed Browse.sh skills,
+  arXiv/API-backed scouting, and public-data portal smoke checks.
+- Prefer Plasmate for quick readable-text extraction and lightweight persistent
+  browser inspection of candidate paper, repository, dataset, or source-data
+  pages.
+- Use these tools as discovery and capture aids only. Their output can seed
+  Research Memory/Radar, candidate cards, and follow-up tasks, but it does not
+  by itself promote a claim, validate a dataset, or replace downloaded source
+  files, checksums, machine-readable data, repo scripts, or scientific review.
+- Do not use either tool for authenticated, payment, form-submission, or
+  rate-sensitive scraping workflows without a separate human review gate.
+
 ## Hard Data Availability Rule
 
 As of 2026-05-19, the project does not have CompleteEASE access, a CompleteEASE contact, raw sample-matched TiON_48/TiON_49 R/T spectra, or permission to contact the St Andrews authors.

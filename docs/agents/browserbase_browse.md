@@ -7,6 +7,10 @@ surface for Eternity agents. It is useful for repeatable read-only web tasks,
 especially literature search and site-specific browser workflows. It is not a
 serious-core validation dependency.
 
+Use it more often in this repo for literature sweeps, public-data portal checks,
+arXiv/radar scouting, and repeatable browser evidence capture when it improves
+coverage or reproducibility.
+
 ## Installed Surface
 
 - Global CLI: `browse@0.7.2`
@@ -34,6 +38,8 @@ pagination, date filtering, field-search limits, and rate-limit guidance.
   a Browse.sh skill exists and the workflow is read-only.
 - Discovery of candidate Browse.sh skills for future public-data portals before
   writing custom browser scripts.
+- Pairing with Plasmate when quick readable-text extraction or lightweight
+  browser inspection is more efficient than a full Browse session.
 
 ## Boundaries
 

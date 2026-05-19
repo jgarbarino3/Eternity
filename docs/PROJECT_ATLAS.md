@@ -7,7 +7,7 @@ with three authority-separated lanes:
   calibration/holdout, validation gates, reports, and claim status.
 - **Research Memory / Radar**: paper cards, lab observations, failure modes,
   contradictions, weak-claim queues, digests, Codex task drafts, and optional
-  Browse.sh-assisted read-only scouting.
+  Browse.sh/Plasmate-assisted read-only scouting.
 - **Hypothesis Harness**: hypothesis cards, mechanism ranking, artifact
   skepticism, falsifiers, failed-hypothesis memory, and harness scores.
 
@@ -295,7 +295,7 @@ Eternity should keep parallel paths visible, but not equally authoritative:
 ```text
 Research Memory/Radar
   finds, stores, and organizes context
-  (optionally with Browse.sh read-only scouting)
+  (optionally with Browse.sh and Plasmate read-only scouting)
         |
         v
 Hypothesis Harness
