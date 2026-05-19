@@ -139,10 +139,10 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.4 - next public source-data package intake`,
-after Phase 3D.3 confirmed the Exeter spatiotemporal ITO package is public,
-hash-verified, and open-format but nonlinear rather than a static
-calibrated-linear holdout. Source-qualified TiN/TiON optical
+The active step is now `Phase 3D.5 - remaining public source-data lead triage`,
+after Phase 3D.4 confirmed the thermo-optic ITO Zenodo package is public and
+table-rich but constants-only for the calibrated-linear gate. Source-qualified
+TiN/TiON optical
 constants, thesis reflectance spectra, material models, St Andrews diagnostics,
 and provenance gaps remain in the registry without promoting them to calibrated
 evidence.
@@ -189,8 +189,12 @@ Current blocker:
   for DOI `10.24378/exe.3644`. It contains table-ready ITO epsilon and open
   pumped-transmission/frequency-shift data, but no separable static absolute
   R/T holdout. Its claim ceiling is `literature_reproduction_fixture`.
-- The next public-data action is Phase 3D.4: inspect the next ranked public
-  package with priority on open-format static R/T or held-out ellipsometry.
+- Phase 3D.4 snapshotted and inspected the thermo-optic ITO Zenodo package for
+  DOI `10.5281/zenodo.10148545`. It contains many 210-2500 nm ITO epsilon
+  tables plus Hall/SEM/supporting data, but no independent measured static R/T
+  holdout. Its claim ceiling is `calibration_only_no_holdout`.
+- The next public-data action is Phase 3D.5: bound the remaining public leads
+  and decide whether any still justify package intake before pivoting.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -290,6 +294,10 @@ Current blocker:
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift
   data, not independent static absolute R/T.
+- Phase 3D.4 has enough information to stop on the thermo-optic ITO lane for
+  calibrated-linear purposes: it is public and table-rich, but the inspected
+  package exposes parameterized optical constants and support data rather than a
+  separable measured optical holdout.
 
 Pivot if Phase 3D fails:
 

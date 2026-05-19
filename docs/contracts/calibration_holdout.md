@@ -123,3 +123,10 @@ time-resolved transmission/frequency-shift data. It is capped at
 `literature_reproduction_fixture` for now and must not be promoted to
 `calibrated_linear_evidence` without a separate static linear holdout and a
 predeclared gate.
+
+Phase 3D.4 snapshotted the thermo-optic ITO Zenodo package for DOI
+`10.5281/zenodo.10148545`. The archive contains many public table-ready
+parameterized epsilon tables, plus Hall, SEM, MATLAB, and support data. No
+independent measured static R/T holdout was found. It is capped at
+`calibration_only_no_holdout` and must not be treated as a validation dataset
+without a separate measured optical holdout.

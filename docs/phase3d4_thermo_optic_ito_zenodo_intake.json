@@ -1,0 +1,122 @@
+{
+  "phase_id": "Phase 3D.4",
+  "date": "2026-05-19",
+  "candidate_id": "public_thermo_optic_ito_2024",
+  "decision": "source_package_snapshotted_calibration_fixture_no_holdout",
+  "claim_ceiling": "calibration_only_no_holdout",
+  "can_feed_calibrated_linear_evidence": false,
+  "phase4_ready": false,
+  "dataset": {
+    "title": "Thermo-optic epsilon-near-zero effects",
+    "doi": "10.5281/zenodo.10148545",
+    "paper_doi": "10.1038/s41467-024-45054-z",
+    "record_id": 10148545,
+    "concept_doi": "10.5281/zenodo.10148544",
+    "api_url": "https://zenodo.org/api/records/10148545",
+    "download_url": "https://zenodo.org/api/records/10148545/files/Zenodo_Data.zip/content",
+    "license": "cc-by-4.0",
+    "package_name": "Zenodo_Data.zip",
+    "size_bytes": 20337405,
+    "supplied_md5": "aeeb8ee5508416df612004f6f7343218",
+    "local_md5": "aeeb8ee5508416df612004f6f7343218",
+    "local_sha256": "14facee0809006c2d6ceb988c7183256fc4558f473d697fc20b61f76b96c0faf",
+    "archive_entries": 347,
+    "uncompressed_size_bytes": 27990803,
+    "committed_large_archive": false
+  },
+  "file_type_counts": {
+    ".txt": 160,
+    ".SE": 155,
+    ".m": 14,
+    ".mat": 4,
+    ".tif": 4,
+    ".xlsx": 2,
+    "directories": 8
+  },
+  "material_constant_families": [
+    {
+      "family": "1300",
+      "files": 23,
+      "rows_per_table": 1041,
+      "columns": [
+        "Wavelength (nm)",
+        "e1",
+        "e2"
+      ],
+      "wavelength_nm_min": 210,
+      "wavelength_nm_max": 2500,
+      "enz_nm_min": 1272.0037213817652,
+      "enz_nm_max": 1276.3333692257995
+    },
+    {
+      "family": "1550",
+      "files": 23,
+      "rows_per_table": 1041,
+      "columns": [
+        "Wavelength (nm)",
+        "e1",
+        "e2"
+      ],
+      "wavelength_nm_min": 210,
+      "wavelength_nm_max": 2500,
+      "enz_nm_min": 1545.1038083076692,
+      "enz_nm_max": 1550.9738065540312
+    },
+    {
+      "family": "2000",
+      "files": 23,
+      "rows_per_table": 1041,
+      "columns": [
+        "Wavelength (nm)",
+        "e1",
+        "e2"
+      ],
+      "wavelength_nm_min": 210,
+      "wavelength_nm_max": 2500,
+      "enz_nm_min": 1900.6438776333844,
+      "enz_nm_max": 1913.52725494989
+    },
+    {
+      "family": "inf",
+      "files": 23,
+      "rows_per_table": 1041,
+      "columns": [
+        "Wavelength (nm)",
+        "e1",
+        "e2"
+      ],
+      "wavelength_nm_min": 210,
+      "wavelength_nm_max": 2500,
+      "enz_nm_min": null,
+      "enz_nm_max": null
+    }
+  ],
+  "supporting_data": {
+    "mat_files": [
+      "Codes for Figures/MAT/Cycles.mat",
+      "Codes for Figures/MAT/ENZ_thermal_baseline.mat",
+      "Codes for Figures/MAT/ENZ_thermal_data.mat",
+      "Codes for Figures/MAT/Vacuum_Data.mat"
+    ],
+    "xlsx_files": [
+      "Experimental Data/20230803-CMi-Vacuum/Vacuum Test Comparison.xlsx",
+      "Experimental Data/20230823-PKU-THU-Hall Effect/Hall Effect Stat.xlsx"
+    ],
+    "sem_images": 4,
+    "cycle_processing_note": "ENZ wavelength difference compensations were applied because of non-uniformity from different measurement points; calibration is at 20 C near the sample center."
+  },
+  "acceptance_gate": {
+    "source_qualified_material_model": true,
+    "machine_readable_data": true,
+    "independent_static_linear_holdout": false,
+    "absolute_rt_calibration_documented": false,
+    "calibration_holdout_split_predeclareable": false,
+    "reason": "The package exposes parameterized optical constants and supporting data, but no independent measured static R/T holdout was found."
+  },
+  "warnings": [
+    "The .SE files are binary in this environment; the accessible optical outputs are paired text tables.",
+    "Figure scripts reference helper functions such as GetReflection, GetTransmittance, epsilon2nk, and epsilon2alphadB, but those helper definitions were not found in the included .m files during this pass.",
+    "Calculated reflectance/transmittance-like quantities in figure scripts are not measured holdouts."
+  ],
+  "next_action": "Move to the next known public candidate; keep this as a real material constants fixture."
+}

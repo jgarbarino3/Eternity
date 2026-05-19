@@ -80,7 +80,10 @@ Current progress:
   intake. The package is public, hash-verified, and open-format, with
   table-ready epsilon and pumped transmission/frequency-shift data, but no
   separable static absolute R/T holdout.
-- **Next**: Phase 3D.4 next public source-data package intake.
+- **Done/calibration-only**: Phase 3D.4 thermo-optic ITO Zenodo intake. The
+  package is public and table-rich, with many ITO epsilon tables and Hall/SEM
+  support data, but no independent measured static R/T holdout.
+- **Next**: Phase 3D.5 remaining public source-data lead triage.
 - **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
   dataset, keep the evidence bar intact and promote the executive research
   assistant / public-dataset gate lane recorded in
@@ -136,7 +139,8 @@ calibrated_linear_evidence
   -> COMPLETE/EXPORT-BLOCKED: Phase 3D.2 Saha TiN/AZO source-data intake
   -> COMPLETE/BLOCKED: Phase 3D.2A Saha OPJU worksheet export audit
   -> COMPLETE/NONLINEAR FIXTURE: Phase 3D.3 Exeter spatiotemporal ITO intake
-  -> NEXT: Phase 3D.4 next public source-data package intake
+  -> COMPLETE/CALIBRATION-ONLY: Phase 3D.4 thermo-optic ITO Zenodo intake
+  -> NEXT: Phase 3D.5 remaining public lead triage
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -222,8 +226,11 @@ found no usable OPJU-to-CSV export path. Phase 3D.3 then inspected the Exeter
 spatiotemporal ITO package: the source is public, hash-verified, and open-format
 with table-ready epsilon, but the measurement lane is nonlinear pumped
 transmission/frequency-shift data and the thicker-sample labels are internally
-inconsistent. The next discriminating move is Phase 3D.4, another public package
-intake focused on separable static linear holdouts.
+inconsistent. Phase 3D.4 inspected the thermo-optic ITO Zenodo package: it has
+many public machine-readable epsilon tables, Hall data, SEM data, and figure
+artifacts, but no independent measured static R/T holdout. The next
+discriminating move is Phase 3D.5, a bounded triage of the remaining public
+leads before pivoting.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

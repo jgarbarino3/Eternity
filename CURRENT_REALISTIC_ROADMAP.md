@@ -1042,7 +1042,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.4 - next public source-data package intake`.
+Choose `Phase 3D.5 - remaining public source-data lead triage`.
 
 Why:
 
@@ -1052,17 +1052,20 @@ its CLI only opens files/projects, its Origin import strings advertise OPJ
 rather than OPJU, and an offscreen `.opju` open attempt timed out without
 producing CSV. Phase 3D.3 then inspected the next public package, Exeter
 spatiotemporal ITO, and found open epsilon and nonlinear pumped-transmission
-source data, but no static calibrated-linear holdout. Saha is locally
-export-blocked and Exeter spatiotemporal is a nonlinear fixture, so the next
-move is another public package.
+source data, but no static calibrated-linear holdout. Phase 3D.4 inspected the
+thermo-optic ITO Zenodo package and found rich public epsilon/Hall/SEM data, but
+again no independent measured static R/T holdout. Saha is locally
+export-blocked, Exeter spatiotemporal is nonlinear, and thermo-optic ITO is
+constants-only for this gate, so the next move is bounded triage of remaining
+public leads before pivoting.
 
 Recommended decision scope:
 
 ```text
 1. Park Saha as an OPJU-blocked source-data lead unless a real table export
    appears.
-2. Inspect the next ranked public candidate package, prioritizing open static
-   R/T or held-out ellipsometry over nonlinear pump-probe packages.
+2. Inspect the remaining ranked public leads, prioritizing open static R/T or
+   held-out ellipsometry over constants-only and nonlinear pump-probe packages.
 3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
@@ -1120,7 +1123,7 @@ export route appears.
 
 Recommended next phase:
 
-- `Phase 3D.4 - next public source-data package intake`.
+- `Phase 3D.5 - remaining public source-data lead triage`.
 
 #### Phase 3D.2: Saha TiN/AZO Source-Data Intake
 
@@ -1280,12 +1283,14 @@ Findings:
 
 Recommended next:
 
-- `Phase 3D.4 - next public source-data package intake`.
+- `Phase 3D.5 - remaining public source-data lead triage`.
 - Phase 3D.2A has now shown that Saha is locally OPJU-export blocked.
 - Phase 3D.3 has now shown that the Exeter spatiotemporal ITO package is public
   and useful, but nonlinear rather than a static calibrated-linear holdout.
+- Phase 3D.4 has now shown that the thermo-optic ITO Zenodo package is public,
+  table-rich, and useful, but constants-only for this calibrated-linear gate.
 - If a real Saha table export appears later, reopen it; otherwise move to the
-  next public package before doing more modeling.
+  remaining public lead triage before doing more modeling.
 
 #### Phase 3D.3: Exeter Spatiotemporal ITO Source-Data Intake
 
@@ -1324,9 +1329,47 @@ Outcome:
 
 Recommended next:
 
-- `Phase 3D.4 - next public source-data package intake`.
+- `Phase 3D.5 - remaining public source-data lead triage`.
 - Prioritize public packages with open-format static R/T or held-out
   ellipsometry, not only nonlinear pump-probe data.
+
+#### Phase 3D.4: Thermo-Optic ITO Zenodo Source-Data Intake
+
+Decision: `source_package_snapshotted_calibration_fixture_no_holdout`.
+
+Claim ceiling: `calibration_only_no_holdout`.
+
+Artifacts:
+
+- `docs/phase3d4_thermo_optic_ito_zenodo_intake.md`
+- `docs/phase3d4_thermo_optic_ito_zenodo_intake.json`
+
+Summary:
+
+- The public Zenodo package `Zenodo_Data.zip` for DOI
+  `10.5281/zenodo.10148545` was downloaded locally, MD5-verified, and
+  inspected. The raw ZIP remains local-only.
+- The archive contains 160 `.txt` files, 155 binary `.SE` files, 14 MATLAB
+  scripts, 4 `.mat` files, 4 SEM `.tif` images, and 2 `.xlsx` support files.
+- The accessible optical-constant lane is strong: O-band (`1300`), C-band
+  (`1550`), 2-um (`2000`), and non-ENZ (`inf`) families have many
+  parameterized epsilon tables over `210-2500 nm`.
+- Approximate ENZ ranges from parsed tables are `1272.003721-1276.333369 nm`
+  for `1300`, `1545.103808-1550.973807 nm` for `1550`, and
+  `1900.643878-1913.527255 nm` for `2000`; the `inf` reference has no zero
+  crossing in the parsed range.
+- The package includes Hall-effect and SEM support data, plus cycle/vacuum
+  summaries.
+- No independent measured static R/T holdout was found. Figure scripts compute
+  reflectance/transmittance-like quantities from epsilon-derived `n,k`, but no
+  measured R/T table is exposed in the inspected package.
+
+Outcome:
+
+- Strong public real-material constants fixture.
+- Not Phase 4-ready.
+- Do not promote beyond `calibration_only_no_holdout` unless a separate
+  measured holdout appears.
 
 ### Pivot If Phase 3D Fails
 

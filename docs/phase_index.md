@@ -50,12 +50,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.2 | Completed/export-blocked | Saha TiN/AZO source-data intake | Snapshotted the public Figshare package, verified all 12 OPJU file MD5s, and confirmed Fig. 2b measured/simulated reflectance labels plus Fig. 2c/d TiN/AZO permittivity labels. No table-ready CSV exists yet because the worksheet data remain inside Origin `.opju` containers. |
 | Phase 3D.2A | Completed/blocked | Saha OPJU worksheet export or open-format alternate | Installed/probed LabPlot 2.12.1 and confirmed no local batch OPJU-to-CSV export path: CLI only opens files/projects, embedded Origin strings advertise OPJ rather than OPJU, and offscreen OPJU opening produced no tables. |
 | Phase 3D.3 | Completed/nonlinear-fixture | Exeter spatiotemporal ITO source-data intake | Snapshotted the public `10.24378/exe.3644` package, verified `OpenData.zip`, and found table-ready 115 nm / thicker-sample ITO epsilon plus open pumped transmission/frequency-shift data. The measurement lane is nonlinear and not a clean independent static absolute R/T holdout, so the claim ceiling is `literature_reproduction_fixture`. |
-| Phase 3D.4 | Recommended | Next public source-data package intake | Inspect the next ranked public package with priority on open-format tables and a separable static linear R/T or ellipsometry holdout. Reopen Saha only if an Origin/Origin Viewer export or open-format mirror appears. |
+| Phase 3D.4 | Completed/calibration-fixture | Thermo-optic ITO Zenodo source-data intake | Downloaded and MD5-verified `Zenodo_Data.zip` for DOI `10.5281/zenodo.10148545`. The package has many machine-readable 210-2500 nm ITO epsilon tables, Hall/SEM/supporting data, and MATLAB figure artifacts, but no independent measured static R/T holdout; claim ceiling is `calibration_only_no_holdout`. |
+| Phase 3D.5 | Recommended | Remaining public source-data lead triage | Inspect the remaining known public leads, prioritizing a dataset with both source-qualified optical constants and a separable static measured holdout. If the remaining leads are request-only, plots-only, constants-only, or nonlinear-only, record the bounded failure and pivot. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.4 - next public source-data package intake**.
+Current phase: **Phase 3D.5 - remaining public source-data lead triage**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -70,9 +71,11 @@ critical Fig. 2 worksheets are proprietary Origin `.opju` containers. Phase
 3D.2A tested the local export route and found it blocked. Phase 3D.3 then
 inspected the Exeter spatiotemporal ITO package: it is public, hash-verified,
 and open-format, but it is a nonlinear pumped-transmission/frequency-shift
-dataset rather than a separable static calibrated-linear holdout. The next
-meaningful step is another public package, not Saha residual modeling or
-forcing Phase 3D.3 into Phase 4.
+dataset rather than a separable static calibrated-linear holdout. Phase 3D.4
+then inspected the thermo-optic ITO Zenodo package: it is an excellent public
+constants fixture, but no independent measured static R/T holdout was found.
+The next meaningful step is bounded triage of the remaining public leads before
+pivoting.
 
 Information sufficiency:
 
@@ -159,6 +162,10 @@ Information sufficiency:
   epsilon and open measurement CSV/ASC files, but the measurement lane is
   pumped transmission/frequency-shift data and the thicker-sample thickness
   labels are internally inconsistent.
+- Enough to complete Phase 3D.4 as a calibration-only public source-data
+  intake: the thermo-optic ITO Zenodo package contains many machine-readable
+  parameterized ITO epsilon tables and supporting Hall/SEM data, but no
+  independent measured static R/T holdout.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -192,10 +199,13 @@ Information sufficiency:
 - Not enough to promote Phase 3D.3: no independent static absolute R/T holdout
   was found, and the open measurement files belong to a nonlinear
   spatiotemporal-refraction workflow.
+- Not enough to promote Phase 3D.4: the package is constants-rich and public,
+  but it does not expose a separable measured R/T holdout for the current
+  calibrated-linear gate.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.4 - next public source-data package intake**.
+- **Phase 3D.5 - remaining public source-data lead triage**.
   Planning: GPT-5.5 `medium`, because the acceptance pattern is now well
   established.
   Implementation: `medium` for package manifesting/extraction; `high` only if
