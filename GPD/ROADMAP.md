@@ -536,10 +536,15 @@ Result:
 
 Next:
 
-- Phase 3D should search literature/public repositories for a validation
-  dataset with optical constants plus independent R/T or ellipsometry holdout.
-- Do not reopen unavailable CompleteEASE, TiON raw R/T, or St Andrews author
-  contact paths unless the user supplies new access or data.
+- Phase 3D has now bounded the current public-package envelope. Exeter/Bohn,
+  Saha, Exeter spatiotemporal ITO, thermo-optic ITO, and the remaining known
+  leads do not currently provide an immediate Phase 4 calibrated-linear
+  candidate.
+- Phase 3E.1 should build the public-dataset gate and executive research
+  assistant scaffold while preserving the `calibrated_linear_evidence` bar.
+- Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact,
+  Saha OPJU export, or new literature-package paths only if the user supplies
+  new access or data.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

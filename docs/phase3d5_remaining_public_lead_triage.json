@@ -1,0 +1,143 @@
+{
+  "phase_id": "Phase 3D.5",
+  "date": "2026-05-19",
+  "decision": "known_public_leads_bounded_triage_no_immediate_phase4_candidate",
+  "claim_ceiling": "no_new_calibrated_claim",
+  "can_feed_calibrated_linear_evidence": false,
+  "phase4_ready": false,
+  "scope": {
+    "type": "bounded_known_lead_triage",
+    "is_full_literature_census": false,
+    "description": "Triage of known public leads after Exeter/Bohn, Saha, Exeter spatiotemporal ITO, and thermo-optic ITO package intakes."
+  },
+  "candidate_cards": [
+    {
+      "candidate_id": "intracavity_enz_dual_range_frequency_switch_2025",
+      "title": "Intracavity Epsilon-Near-Zero Dual-Range Frequency Switch",
+      "material": "ITO",
+      "paper_doi": "10.1021/acsphotonics.4c01322",
+      "known_source_data_lead": "https://figshare.com/ndownloader/files/51010982",
+      "public_access_status": "access_blocked_in_current_environment",
+      "checks": [
+        {
+          "url": "https://figshare.com/ndownloader/files/51010982",
+          "result": "HTTP 202 with x-amzn-waf-action challenge"
+        },
+        {
+          "url": "https://api.figshare.com/v2/file/download/51010982",
+          "result": "HTTP 400"
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles?search_for=Intracavity%20epsilon-near-zero%20dual-range%20frequency%20switch",
+          "result": "API returned unrelated article records, not a usable package manifest"
+        },
+        {
+          "url": "https://doi.org/10.1021/acsphotonics.4c01322",
+          "result": "script-side HTTP 403"
+        }
+      ],
+      "source_qualified_material_model_available": "unknown_until_package_access",
+      "independent_holdout_available": "unknown_until_package_access",
+      "machine_readable": "unknown_until_package_access",
+      "decision": "blocked_requires_manual_or_browser_source_package_access",
+      "claim_label": "rejected_candidate_until_public_table_package_access"
+    },
+    {
+      "candidate_id": "swatowska_ald_azo_zno_2021",
+      "title": "ALD AZO/ZnO on glass/Si workflow lead",
+      "material": "AZO/ZnO",
+      "paper_doi": "10.3390/en14196271",
+      "public_access_status": "public_article_lead_no_verified_raw_package",
+      "source_qualified_material_model_available": "likely_from_article_or_figures",
+      "independent_holdout_available": "likely_measurement_lane_in_article",
+      "machine_readable": "not_verified",
+      "decision": "downgrade_to_plot_or_article_only_lead",
+      "claim_label": "rejected_candidate_until_raw_tables_found"
+    },
+    {
+      "candidate_id": "rasheed_barille_ito_glass_pet_2017",
+      "title": "ITO thin films on glass and PET",
+      "material": "ITO",
+      "paper_doi": "10.48550/arXiv.1710.04814",
+      "public_access_status": "reachable_arxiv_pdf_no_verified_raw_package",
+      "source_qualified_material_model_available": "not_verified_as_table_package",
+      "independent_holdout_available": "not_verified_as_separable_table_package",
+      "machine_readable": "no_companion_package_verified",
+      "decision": "downgrade_to_paper_pdf_only_candidate",
+      "claim_label": "rejected_candidate_until_raw_tables_and_split_provenance_found"
+    },
+    {
+      "candidate_id": "nolen_doped_cdo_dielectric_function_2020",
+      "title": "Ultraviolet to far-infrared dielectric function of n-doped cadmium oxide thin films",
+      "material": "In:CdO",
+      "paper_doi": "10.1103/PhysRevMaterials.4.025202",
+      "public_access_status": "public_model_parameter_route",
+      "source_qualified_material_model_available": true,
+      "independent_holdout_available": false,
+      "machine_readable": "model_ready_not_holdout_ready",
+      "decision": "constants_fixture_only",
+      "claim_label": "calibration_only_no_holdout"
+    },
+    {
+      "candidate_id": "highly_crystalline_ito_enz_constants_benchmark",
+      "title": "Highly crystalline indium tin oxide ENZ constants benchmark",
+      "material": "ITO",
+      "public_access_status": "public_paper_or_supplement_trail_no_verified_holdout",
+      "source_qualified_material_model_available": true,
+      "independent_holdout_available": false,
+      "machine_readable": "not_sufficient_for_holdout_validation",
+      "decision": "constants_benchmark_only",
+      "claim_label": "calibration_only_no_holdout"
+    },
+    {
+      "candidate_id": "request_only_enz_papers",
+      "title": "Request-only TiN/ITO/nanocavity ENZ papers",
+      "material": "mixed",
+      "public_access_status": "author_contact_or_request_only",
+      "source_qualified_material_model_available": "varies",
+      "independent_holdout_available": "varies",
+      "machine_readable": false,
+      "decision": "reject_under_no_author_contact_rule",
+      "claim_label": "rejected_candidate"
+    }
+  ],
+  "phase3d_known_package_summary": [
+    {
+      "phase": "Phase 3D.1C",
+      "candidate": "Exeter/Bohn ITO",
+      "outcome": "weak_within_dataset_holdout_nonpromoting"
+    },
+    {
+      "phase": "Phase 3D.2A",
+      "candidate": "Saha TiN/AZO",
+      "outcome": "source_data_lead_export_blocked"
+    },
+    {
+      "phase": "Phase 3D.3",
+      "candidate": "Exeter spatiotemporal ITO",
+      "outcome": "literature_reproduction_fixture_nonlinear_not_static_holdout"
+    },
+    {
+      "phase": "Phase 3D.4",
+      "candidate": "Thermo-optic ITO Zenodo",
+      "outcome": "calibration_only_no_holdout"
+    }
+  ],
+  "stop_rule": {
+    "stop_current_phase3d_implementation_run": true,
+    "reopen_conditions": [
+      "Saha OPJU worksheets are exported to CSV/TXT/XLSX/HDF5/JSON with measured-vs-simulated labels preserved.",
+      "The ACS intracavity source-data package becomes manually or browser-accessible and exposes raw/table-ready ellipsometry plus measured R/T/A.",
+      "A new literature search finds a public package with same-sample optical constants and a separable measured static R/T or held-out ellipsometry lane.",
+      "New local lab data provide sample-matched R/T with geometry, units, calibration, and sample identity."
+    ]
+  },
+  "recommended_next_phase": {
+    "phase_id": "Phase 3E.1",
+    "name": "Public Dataset Gate And Executive Research Assistant Scaffold",
+    "planning_effort": "high",
+    "implementation_effort": "medium",
+    "reason": "The calibrated-linear path is blocked by data availability; the project can still advance by building the conservative gate, candidate registry, failed-validation memory, and evidence-aware assistant workflows."
+  }
+}
+

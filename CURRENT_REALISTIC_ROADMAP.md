@@ -1042,56 +1042,62 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.5 - remaining public source-data lead triage`.
+Choose `Phase 3E.1 - public dataset gate and executive research assistant
+scaffold`.
 
 Why:
 
 Phase 3D.2 completed the first Saha TiN/AZO source-data intake. Phase 3D.2A
-then tested the local export route: LabPlot 2.12.1 installed successfully, but
-its CLI only opens files/projects, its Origin import strings advertise OPJ
-rather than OPJU, and an offscreen `.opju` open attempt timed out without
-producing CSV. Phase 3D.3 then inspected the next public package, Exeter
-spatiotemporal ITO, and found open epsilon and nonlinear pumped-transmission
-source data, but no static calibrated-linear holdout. Phase 3D.4 inspected the
-thermo-optic ITO Zenodo package and found rich public epsilon/Hall/SEM data, but
-again no independent measured static R/T holdout. Saha is locally
-export-blocked, Exeter spatiotemporal is nonlinear, and thermo-optic ITO is
-constants-only for this gate, so the next move is bounded triage of remaining
-public leads before pivoting.
+then tested the local export route and found no local OPJU-to-CSV path. Phase
+3D.3 inspected Exeter spatiotemporal ITO and found open epsilon plus nonlinear
+pumped-transmission source data, but no static calibrated-linear holdout. Phase
+3D.4 inspected thermo-optic ITO and found rich public epsilon/Hall/SEM data, but
+again no independent measured static R/T holdout. Phase 3D.5 bounded the
+remaining known public leads: ACS/intracavity is access-blocked here, Saha is
+still OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
+CdO/high-crystallinity ITO are constants-only, and request-only papers remain
+rejected.
+
+That means the current calibrated-linear push has reached a real data blocker.
+The next move is to preserve the evidence bar and build the fallback machinery
+that still moves Eternity forward.
 
 Recommended decision scope:
 
 ```text
-1. Park Saha as an OPJU-blocked source-data lead unless a real table export
-   appears.
-2. Inspect the remaining ranked public leads, prioritizing open static R/T or
-   held-out ellipsometry over constants-only and nonlinear pump-probe packages.
-3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
-   do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
-   contact paths.
+1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
+2. Turn the Phase 3D failure memory into a structured candidate registry and
+   public-dataset acceptance gate.
+3. Promote the executive research assistant lane as the user-facing layer for
+   planning, summaries, prompts, reports, dataset triage, phase tracking, and
+   evidence-aware next actions.
+4. Keep Phase 3A, Phase 3B, Phase 3C, and Saha parked unless new evidence
+   appears; do not loop on unavailable CompleteEASE, TiON raw R/T, St Andrews
+   author contact, or local OPJU export paths.
 ```
 
 First implementation target:
 
 ```text
-Create a package manifest/candidate card for the next public lead, prioritizing
-public open-format numerical tables over OPJU-only packages.
+Create the Phase 3E.1 scaffold: candidate registry shape, acceptance-gate
+outputs, assistant-facing project brief, and conservative report-generation
+contracts.
 ```
 
 First output:
 
 ```text
-docs/phase3d3_*_source_intake.md
-docs/phase3d3_*_source_intake.json
+docs/phase3e1_public_dataset_gate_assistant_scaffold.md
+docs/phase3e1_public_dataset_gate_assistant_scaffold.json
 ```
 
 The decision packet should include:
 
-- Exact public files and hashes.
-- Whether optical constants and holdout measurements are table-ready.
-- Whether reflectance/transmission/ellipsometry units and geometry are explicit.
-- Whether the candidate can become a no-fit validation candidate, a literature
-  fixture, an export-blocked lead, or a rejected/downgraded backup.
+- The claim-status labels that assistant outputs are allowed to use.
+- The fields required for candidate cards and rejection cards.
+- How failed validations and blocked leads become useful project memory.
+- Which reports/prompts the assistant can generate without implying scientific
+  promotion.
 
 That is the next brick on the direct path toward the AI researcher.
 
@@ -1371,7 +1377,40 @@ Outcome:
 - Do not promote beyond `calibration_only_no_holdout` unless a separate
   measured holdout appears.
 
-### Pivot If Phase 3D Fails
+#### Phase 3D.5: Remaining Public Source-Data Lead Triage
+
+Decision: `known_public_leads_bounded_triage_no_immediate_phase4_candidate`.
+
+Claim ceiling: `no_new_calibrated_claim`.
+
+Artifacts:
+
+- `docs/phase3d5_remaining_public_lead_triage.md`
+- `docs/phase3d5_remaining_public_lead_triage.json`
+
+Summary:
+
+- This was a bounded triage of known leads from the current public-search
+  envelope, not a claim that all literature has been exhausted.
+- The ACS/intracavity ENZ source-data lead is not immediate-ingest-ready here:
+  the direct Figshare-style downloader returns an HTTP 202 WAF challenge, the
+  Figshare API did not expose a matching manifest, and ACS/DOI script routes
+  returned 403.
+- Saha TiN/AZO remains parked until OPJU worksheets are exported to real tables.
+- Swatowska AZO and Rasheed/Barille ITO remain useful article/PDF leads, but no
+  raw table package or calibrated split-ready numerical source was verified.
+- Nolen CdO and high-crystallinity ITO remain useful constants/model fixtures,
+  not independent holdout validation datasets.
+- Request-only papers remain rejected under the no-author-contact rule.
+
+Outcome:
+
+- Current public-data implementation run should stop before Phase 4.
+- The calibrated-linear milestone remains valid but dataset-limited.
+- The next constructive move is the public-dataset gate / executive research
+  assistant pivot, not threshold weakening or another forced validation run.
+
+### Pivot Triggered By Current Phase 3D Run
 
 If the strongest public packages cannot honestly support a calibrated-linear
 evidence attempt, keep the evidence bar intact and pivot the near-term milestone

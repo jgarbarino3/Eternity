@@ -11,6 +11,25 @@ cannot support an honest calibrated-linear evidence attempt.
 Do not treat that as project failure, and do not lower the
 `calibrated_linear_evidence` bar.
 
+## Current Status
+
+Phase 3D.5 triggered this pivot for the current implementation run.
+
+The known public leads are not all of literature, but the leads already in hand
+are exhausted enough that no immediate Phase 4 attempt is honest:
+
+- Exeter/Bohn ITO is useful but non-promoting after no-fit reconstruction.
+- Saha TiN/AZO is source-data-public but OPJU export-blocked locally.
+- Exeter spatiotemporal ITO is public and open-format, but nonlinear.
+- Thermo-optic ITO is public and constants-rich, but has no independent
+  measured static R/T holdout.
+- Remaining known leads are access-blocked, plots/PDF-only, constants-only, or
+  request-only.
+
+Reopen the calibrated-linear data hunt only with a new table-ready public
+package, a real Saha export, manual access to the ACS/intracavity source-data
+package, or new local sample-matched R/T.
+
 ## Pivot
 
 Keep Eternity as one project, but promote the user-facing executive research

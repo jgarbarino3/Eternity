@@ -139,13 +139,12 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.5 - remaining public source-data lead triage`,
-after Phase 3D.4 confirmed the thermo-optic ITO Zenodo package is public and
-table-rich but constants-only for the calibrated-linear gate. Source-qualified
-TiN/TiON optical
-constants, thesis reflectance spectra, material models, St Andrews diagnostics,
-and provenance gaps remain in the registry without promoting them to calibrated
-evidence.
+The active step is now `Phase 3E.1 - public dataset gate and executive research
+assistant scaffold`, after Phase 3D.5 bounded the remaining known public leads
+and found no immediate additional Phase 4 candidate. Source-qualified TiN/TiON
+optical constants, thesis reflectance spectra, material models, St Andrews
+diagnostics, public package failures, and provenance gaps remain in the
+registry without promoting them to calibrated evidence.
 
 Current blocker:
 
@@ -193,8 +192,13 @@ Current blocker:
   DOI `10.5281/zenodo.10148545`. It contains many 210-2500 nm ITO epsilon
   tables plus Hall/SEM/supporting data, but no independent measured static R/T
   holdout. Its claim ceiling is `calibration_only_no_holdout`.
-- The next public-data action is Phase 3D.5: bound the remaining public leads
-  and decide whether any still justify package intake before pivoting.
+- Phase 3D.5 bounded the remaining known public leads. The ACS/intracavity
+  source-data lead is access-blocked in this environment, Saha remains
+  OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
+  CdO/high-crystallinity ITO leads are constants-only, and request-only papers
+  stay rejected.
+- The next public-data action is Phase 3E.1: build the public-dataset gate and
+  executive research-assistant scaffold rather than forcing a Phase 4 attempt.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -298,8 +302,11 @@ Current blocker:
   calibrated-linear purposes: it is public and table-rich, but the inspected
   package exposes parameterized optical constants and support data rather than a
   separable measured optical holdout.
+- Phase 3D.5 has enough information to stop the current public-package run:
+  remaining known leads are access-blocked, paper/plot-only, constants-only, or
+  request-only unless new table-ready data appears.
 
-Pivot if Phase 3D fails:
+Pivot triggered for the current Phase 3D run:
 
 - If Exeter/Bohn ITO, Saha TiN/AZO, and the strongest public packages cannot
   support an honest calibrated-linear attempt, do not weaken the

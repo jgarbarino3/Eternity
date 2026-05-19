@@ -130,3 +130,12 @@ parameterized epsilon tables, plus Hall, SEM, MATLAB, and support data. No
 independent measured static R/T holdout was found. It is capped at
 `calibration_only_no_holdout` and must not be treated as a validation dataset
 without a separate measured optical holdout.
+
+Phase 3D.5 bounded the remaining known public leads from the current search
+envelope. The ACS/intracavity lead is access-blocked in this environment, Saha
+remains OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
+CdO/high-crystallinity ITO leads are constants-only, and request-only papers
+remain rejected. This triggers the public-dataset gate / executive research
+assistant pivot for the current implementation run. It does not lower the
+`calibrated_linear_evidence` bar and does not prove the whole literature is
+exhausted.

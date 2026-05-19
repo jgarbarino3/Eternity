@@ -42,7 +42,7 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3C.5 | Completed/parity gaps recorded | St Andrews source-model parity diagnostic | Raw Woollam `.mod/.SE` inspection found source-model gaps: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are not represented in the current clean-run stack. No model revision or promotion is justified yet. |
 | Phase 3C.6 | Completed/decision implemented | Source-model parity implementation or lane park decision | Resolved by Phase 3C.6A: bounded parity code was implemented and the lane remains non-promoting. |
 | Phase 3C.6A | Completed/parked | Bounded St Andrews source-model parity implementation | Tested source Cauchy substrate, inferred source thickness, approximate roughness EMA, and approximate backside reflection. All variants failed locked thresholds; exact roughness/back-reflection parity remains underdetermined, so St Andrews is parked before Phase 4. |
-| Phase 3D | Active/intake in progress | Literature/public validation dataset search | Public search identified Exeter/Bohn ITO ENZ as the first package to inspect and Saha TiN/AZO as backup. Broad search should pause while Exeter/Bohn is ingested. |
+| Phase 3D | Completed/current envelope exhausted | Literature/public validation dataset search | Known public leads from the current Phase 3D envelope were inspected or triaged. No immediate Phase 4 candidate remains without new table-ready data, a Saha export, manual ACS/intracavity package access, or a fresh literature search. |
 | Phase 3D.1 | Completed/intake-ready | Exeter/Bohn ITO package intake | Downloaded and snapshotted `OpenData.zip` from DOI `10.24378/exe.3004`, verified archive hash/test, and found table/code candidates for ellipsometry-derived ITO epsilon plus TIR-normalized reflection. |
 | Phase 3D.1A | Completed/promising-no-promotion | Exeter/Bohn calibration-holdout split audit | Figure 1 provides source-qualified ellipsometry epsilon; Figure 2 provides the cleanest static pre-pump reflection candidate via TIR-normalized `R0`, but the split still needs no-fit extraction/locking before any residual claim. |
 | Phase 3D.1B | Completed/split-locked | Exeter/Bohn no-fit static R0 extraction and split lock | Extracted Figure 1 optical constants, Figure 2 TIR reference, and Figure 2 pre-pump `R0` into canonical CSV artifacts; registered the Figure 1 epsilon model; and wrote a split-lock YAML that forbids residual-driven tuning. |
@@ -51,12 +51,15 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.2A | Completed/blocked | Saha OPJU worksheet export or open-format alternate | Installed/probed LabPlot 2.12.1 and confirmed no local batch OPJU-to-CSV export path: CLI only opens files/projects, embedded Origin strings advertise OPJ rather than OPJU, and offscreen OPJU opening produced no tables. |
 | Phase 3D.3 | Completed/nonlinear-fixture | Exeter spatiotemporal ITO source-data intake | Snapshotted the public `10.24378/exe.3644` package, verified `OpenData.zip`, and found table-ready 115 nm / thicker-sample ITO epsilon plus open pumped transmission/frequency-shift data. The measurement lane is nonlinear and not a clean independent static absolute R/T holdout, so the claim ceiling is `literature_reproduction_fixture`. |
 | Phase 3D.4 | Completed/calibration-fixture | Thermo-optic ITO Zenodo source-data intake | Downloaded and MD5-verified `Zenodo_Data.zip` for DOI `10.5281/zenodo.10148545`. The package has many machine-readable 210-2500 nm ITO epsilon tables, Hall/SEM/supporting data, and MATLAB figure artifacts, but no independent measured static R/T holdout; claim ceiling is `calibration_only_no_holdout`. |
-| Phase 3D.5 | Recommended | Remaining public source-data lead triage | Inspect the remaining known public leads, prioritizing a dataset with both source-qualified optical constants and a separable static measured holdout. If the remaining leads are request-only, plots-only, constants-only, or nonlinear-only, record the bounded failure and pivot. |
+| Phase 3D.5 | Completed/pivot-triggered | Remaining public source-data lead triage | Triage found no immediate additional ingest-ready Phase 4 candidate. Remaining leads are access-blocked, paper/plot-only, constants-only, or request-only; the current run should pivot rather than weaken the validation bar. |
+| Phase 3E | Active/pivot | Public dataset gate + executive research assistant | Keep the Serious Core claim gates intact while building the user-facing research-assistant substrate: candidate registry, rejection cards, conservative fixtures, reports, prompts, and evidence-aware next-action workflows. |
+| Phase 3E.1 | Recommended | Public Dataset Gate And Executive Research Assistant Scaffold | Turn Phase 3D's bounded failure into durable machinery: dataset acceptance gate, candidate-card registry, claim-status summaries, failed-validation memory, and assistant-facing project brief/report generation. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.5 - remaining public source-data lead triage**.
+Current phase: **Phase 3E.1 - public dataset gate and executive research
+assistant scaffold**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -74,8 +77,12 @@ and open-format, but it is a nonlinear pumped-transmission/frequency-shift
 dataset rather than a separable static calibrated-linear holdout. Phase 3D.4
 then inspected the thermo-optic ITO Zenodo package: it is an excellent public
 constants fixture, but no independent measured static R/T holdout was found.
-The next meaningful step is bounded triage of the remaining public leads before
-pivoting.
+Phase 3D.5 bounded the remaining known public leads: the ACS/intracavity lead
+is access-blocked in this environment, Saha is still OPJU-export blocked, the
+AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
+constants fixtures, and request-only papers remain rejected. The next meaningful
+step is the public-dataset gate / executive research assistant pivot, not a
+forced Phase 4 attempt.
 
 Information sufficiency:
 
@@ -202,14 +209,18 @@ Information sufficiency:
 - Not enough to promote Phase 3D.4: the package is constants-rich and public,
   but it does not expose a separable measured R/T holdout for the current
   calibrated-linear gate.
+- Not enough to open Phase 4 from the current public-data envelope: Phase 3D.5
+  found the remaining known leads are access-blocked, paper/plot-only,
+  constants-only, or request-only unless new table-ready data appears.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.5 - remaining public source-data lead triage**.
-  Planning: GPT-5.5 `medium`, because the acceptance pattern is now well
-  established.
-  Implementation: `medium` for package manifesting/extraction; `high` only if
-  source-data tooling or leakage becomes ambiguous.
+- **Phase 3E.1 - public dataset gate and executive research assistant
+  scaffold**.
+  Planning: GPT-5.5 `high`, because this is a project-shape pivot and should
+  keep the Serious Core, Research Memory, and assistant lanes cleanly separated.
+  Implementation: `medium` for registry/report scaffolding; `high` only if the
+  acceptance gate touches shared contracts or model/material-provider code.
 
 Helpful tools:
 
