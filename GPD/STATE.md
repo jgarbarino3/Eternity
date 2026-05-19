@@ -7,20 +7,20 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3D literature/public validation dataset search
+**Current focus:** Phase 3E public dataset gate and Wang non-ENZ baseline intake
 
 ## Current Position
 
-**Current Phase:** 3D
-**Current Phase Name:** Literature/Public Validation Dataset Search
+**Current Phase:** 3E
+**Current Phase Name:** Public Dataset Gate And Executive Research Assistant
 **Total Phases:** 3
-**Current Plan:** docs/phase3b1_tion_evidence_reality_check.md
-**Total Plans in Phase:** 7
-**Status:** Recommended / requires external literature-public data search
+**Current Plan:** docs/phase3e2a_wang_wo3_baseline_intake.md
+**Total Plans in Phase:** 9
+**Status:** Active / non-ENZ baseline intake recorded, semantics partial
 **Last Activity:** 2026-05-19
-**Last Activity Description:** Completed Phase 3B.1 TiON evidence reality check: TiON_48/TiON_49 epsilon tables and calibration-only examples are available, but no raw R/T measurements or repo-local digitizable plot candidates were found; local validation data are exhausted.
+**Last Activity Description:** Completed Phase 3E.2A Wang W/WO3 non-ENZ baseline intake: selected Figshare spreadsheets are public and MD5-verified, FigS2-nk.xlsx contains W/WO3 n,k tables, and Fig2f-R.xlsx is blocked for residuals until vertical-offset and measured-vs-simulated semantics are source-backed.
 
-**Progress:** [█████████░] 97%
+**Progress:** [██████████] 99%
 
 ## Active Calculations
 
@@ -100,6 +100,15 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   calibration-only examples are available, but the registry has no TiON R/T
   measurements and the repo scan found no usable plot candidates. Decision is
   `local_validation_data_exhausted_literature_or_external_data_needed`.
+- Phase 3E.1 wrote `docs/phase3e1_public_dataset_gate_assistant_scaffold.md`,
+  `.json`, `docs/phase3e1_claim_status_summary.json`, and the candidate
+  registry. The current registry evaluates 9 candidates and opens 0 Phase 4
+  candidates.
+- Phase 3E.2A wrote `docs/phase3e2a_wang_wo3_baseline_intake.md` and
+  `.json`: selected Wang W/WO3 Figshare spreadsheets are public and
+  MD5-verified. `FigS2-nk.xlsx` provides direct W/WO3 `n,k` tables, but
+  `Fig2f-R.xlsx` contains offset/unlabeled plotted traces, so Wang remains only
+  a non-ENZ planar TMM baseline candidate.
 
 ## Open Questions
 
@@ -107,6 +116,8 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   constants plus independent R/T or ellipsometry holdout without author contact?
 - If a candidate public dataset is found, what sample/stack, geometry,
   wavelength range, polarization, units, and leakage policy are source-proven?
+- Can Wang `Fig2f-R.xlsx` vertical offsets and measured-vs-simulated column
+  assignments be source-backed without arbitrary fitting?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?

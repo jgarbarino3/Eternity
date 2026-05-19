@@ -1094,7 +1094,7 @@ docs/phase3e1_claim_status_summary.json
 docs/phase3e1_dataset_candidate_registry.yaml
 ```
 
-The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 8 known
+The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 9 known
 candidates evaluated, 0 Phase 4 candidates opened, and the recommended next
 phase is `Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate`.
 
@@ -1105,6 +1105,40 @@ Phase 3E.2 should:
 - Inspect exact source-data files only when a candidate plausibly clears the
   hard public-data flags.
 - Keep Phase 4 closed unless every required flag passes.
+
+Phase 3E.2A implementation result:
+
+```text
+Ingest the Wang W/WO3 Figshare spreadsheets as a non-ENZ planar TMM baseline
+candidate, without promoting it as ENZ evidence.
+```
+
+Artifacts:
+
+- `lab_data/raw/public_wang_wo3_fp_2020/FigS1-W.xlsx`
+- `lab_data/raw/public_wang_wo3_fp_2020/FigS1-WO3.xlsx`
+- `lab_data/raw/public_wang_wo3_fp_2020/FigS2-nk.xlsx`
+- `lab_data/raw/public_wang_wo3_fp_2020/Fig2f-R.xlsx`
+- `docs/phase3e2a_wang_wo3_baseline_intake.md`
+- `docs/phase3e2a_wang_wo3_baseline_intake.json`
+
+Result:
+
+- The selected files are public and MD5-verified against Figshare metadata.
+- `FigS2-nk.xlsx` contains direct W and WO3 `n,k` tables across the visible
+  range.
+- `Fig2f-R.xlsx` exposes the expected 152, 163, 185, 200, 215, 233, and 250 nm
+  WO3 thickness series, but its trace values are vertically offset and
+  nonphysical as plain reflectance.
+- Measured-vs-simulated column assignment, absolute reflectance normalization,
+  and leakage status are not proven from the spreadsheets alone.
+- Claim ceiling: `non_enz_planar_tmm_baseline_candidate`.
+
+Next:
+
+- `Phase 3E.2B - Wang Fig. 2f semantics and no-fit baseline plan`.
+- Recover the source-backed Fig. 2f offset convention and measured/simulated
+  column assignment before any residual run.
 
 That is the next brick on the direct path toward the AI researcher.
 

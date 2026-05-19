@@ -27,7 +27,9 @@ A candidate may enter Phase 4 only when every flag is true:
 
 Failing any flag blocks Phase 4. The candidate may still be useful as a
 calibration-only fixture, literature-reproduction fixture, failed-validation
-memory, or public-data search lead.
+memory, non-ENZ planar TMM baseline, or public-data search lead. A non-ENZ
+baseline can test the machinery, but it does not satisfy the first ENZ
+calibrated-linear objective.
 
 ## Registry
 
@@ -45,6 +47,12 @@ Each candidate card records:
 - evidence flags;
 - proposed claim label;
 - decision, blockers, notes, and next file.
+
+The current non-ENZ baseline label is:
+
+- `non_enz_planar_tmm_baseline_candidate`: public source data may be useful for
+  baseline TMM plumbing, but it cannot be promoted as ENZ evidence and still
+  must clear file-semantics and leakage checks before any residual claim.
 
 ## CLI
 

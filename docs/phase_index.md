@@ -54,13 +54,15 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.5 | Completed/pivot-triggered | Remaining public source-data lead triage | Triage found no immediate additional ingest-ready Phase 4 candidate. Remaining leads are public PDF/SI-only, paper/plot-only, constants-only, export-blocked, or request-only; the current run should pivot rather than weaken the validation bar. |
 | Phase 3D.5A | Completed/correction | ACS intracavity PDF correction | Manual browser downloads show `51010982` resolves to the ACS SI PDF, not a raw source-data package. The public package is article PDF + SI PDF only, with no embedded files, raw tables, or independent measured static R/T/A holdout; claim ceiling is `literature_reproduction_fixture`. |
 | Phase 3E | Active/pivot | Public dataset gate + executive research assistant | Keep the Serious Core claim gates intact while building the user-facing research-assistant substrate: candidate registry, rejection cards, conservative fixtures, reports, prompts, and evidence-aware next-action workflows. |
-| Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 8 known candidates and opens 0 Phase 4 candidates. |
-| Phase 3E.2 | Recommended | Browse/Plasmate Public-Data Sweep Through Gate | Use Browse.sh, Plasmate, Deep Research, and 5.5 Pro outputs to add new candidate cards, run the public-dataset gate, and inspect exact files only for candidates that can plausibly clear the hard Phase 4 flags. |
+| Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 9 known candidates and opens 0 Phase 4 candidates. |
+| Phase 3E.2 | Active | Browse/Plasmate Public-Data Sweep Through Gate | Use Browse.sh, Plasmate, Deep Research, and 5.5 Pro outputs to add new candidate cards, run the public-dataset gate, and inspect exact files only for candidates that can plausibly clear the hard Phase 4 flags. |
+| Phase 3E.2A | Completed/non-ENZ baseline intake | Wang W/WO3 source-data intake | Snapshotted selected Figshare XLSX files, verified MD5s, confirmed direct W/WO3 n,k tables, and blocked residual modeling because Fig. 2f traces are offset/unlabeled plotted data. |
+| Phase 3E.2B | Recommended | Wang Fig. 2f semantics and no-fit baseline plan | Recover source-backed vertical-offset and measured/simulated column semantics before any no-fit TMM residual run. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3E.2 - Browse/Plasmate public-data sweep through gate**.
+Current phase: **Phase 3E.2B - Wang Fig. 2f semantics and no-fit baseline plan**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -83,8 +85,13 @@ the ACS/intracavity lead after manual downloads: `51010982` resolves to the SI
 PDF, not a raw source-data package. Saha is still OPJU-export blocked, the
 AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
 constants fixtures, and request-only papers remain rejected. The next meaningful
-step is the public-dataset gate / executive research assistant pivot, not a
-forced Phase 4 attempt.
+step was the public-dataset gate / executive research assistant pivot, not a
+forced Phase 4 attempt. Phase 3E.1 added that gate. Phase 3E.2A then ingested
+Wang W/WO3 as a non-ENZ planar TMM baseline candidate: selected XLSX files are
+public and MD5-verified, `FigS2-nk.xlsx` contains direct W/WO3 `n,k` tables, and
+`Fig2f-R.xlsx` exposes the expected thickness series but only as
+offset/unlabeled plotted traces. The next move is to resolve Fig. 2f semantics
+before any no-fit residual baseline run, while keeping Wang below ENZ evidence.
 
 Information sufficiency:
 
@@ -175,6 +182,10 @@ Information sufficiency:
   intake: the thermo-optic ITO Zenodo package contains many machine-readable
   parameterized ITO epsilon tables and supporting Hall/SEM data, but no
   independent measured static R/T holdout.
+- Enough to complete Phase 3E.2A as a non-ENZ baseline intake: Wang W/WO3
+  selected XLSX files are public and MD5-verified, and `FigS2-nk.xlsx` provides
+  W/WO3 constants, but `Fig2f-R.xlsx` requires source-backed offset/column
+  semantics before any residual run.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,

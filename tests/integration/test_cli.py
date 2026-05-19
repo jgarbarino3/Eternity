@@ -81,6 +81,18 @@ def test_phase3e1_scaffold_command_writes_gate_artifacts(tmp_path: Path) -> None
     assert summary["phase4_candidate_ids"] == []
 
 
+def test_phase3e2a_wang_intake_command_writes_artifacts(tmp_path: Path) -> None:
+    result = runner.invoke(app, ["phase3e2a-wang-intake", "--output-dir", str(tmp_path)])
+
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "phase3e2a_wang_wo3_baseline_intake.json").exists()
+    assert (tmp_path / "phase3e2a_wang_wo3_baseline_intake.md").exists()
+
+    packet = json.loads((tmp_path / "phase3e2a_wang_wo3_baseline_intake.json").read_text())
+    assert packet["decision"]["phase4_enz_ready"] is False
+    assert packet["decision"]["claim_status_ceiling"] == "non_enz_planar_tmm_baseline_candidate"
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

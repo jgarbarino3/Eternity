@@ -16,6 +16,7 @@ GateLabel = Literal[
     "weak_within_dataset_holdout",
     "calibration_only_no_holdout",
     "literature_reproduction_fixture",
+    "non_enz_planar_tmm_baseline_candidate",
     "failed_validation",
     "blocked_source_data_lead",
     "rejected_candidate",

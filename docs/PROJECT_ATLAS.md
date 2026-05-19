@@ -90,9 +90,13 @@ Current progress:
   are paper/plot/PDF-only, constants-only, export-blocked, or request-only; no
   immediate Phase 4 candidate remains.
 - **Done**: Phase 3E.1 public dataset gate and executive research assistant
-  scaffold. The registry evaluates 8 known candidates and opens 0 Phase 4
+  scaffold. The registry evaluates 9 known candidates and opens 0 Phase 4
   candidates.
-- **Next**: Phase 3E.2 Browse/Plasmate public-data sweep through the gate.
+- **Done/non-ENZ baseline**: Phase 3E.2A Wang W/WO3 source-data intake.
+  Selected Figshare XLSX files are public and MD5-verified, with direct W/WO3
+  `n,k` tables, but Fig. 2f traces are offset/unlabeled and cannot feed
+  residuals yet.
+- **Next**: Phase 3E.2B Wang Fig. 2f semantics and no-fit baseline plan.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -150,7 +154,8 @@ calibrated_linear_evidence
   -> COMPLETE/CALIBRATION-ONLY: Phase 3D.4 thermo-optic ITO Zenodo intake
   -> COMPLETE/PIVOT-TRIGGERED: Phase 3D.5 remaining public lead triage
   -> COMPLETE/GATE: Phase 3E.1 public dataset gate / executive assistant scaffold
-  -> NEXT: Phase 3E.2 Browse/Plasmate gated public-data sweep
+  -> COMPLETE/NON-ENZ BASELINE: Phase 3E.2A Wang W/WO3 source-data intake
+  -> NEXT: Phase 3E.2B Wang Fig. 2f semantics and no-fit baseline plan
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -244,9 +249,11 @@ ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha remains
 OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
 CdO/high-crystallinity ITO are constants-only, and request-only papers remain
 rejected. Phase 3E.1 turned those outcomes into a public-dataset gate and
-executive research assistant scaffold. The next discriminating move is Phase
-3E.2: add incoming search leads to the registry and run the gate before any
-new ingestion attempt.
+executive research assistant scaffold. Phase 3E.2A added Wang W/WO3 as a
+non-ENZ baseline candidate: the XLSX package has direct W/WO3 constants, but
+Fig. 2f is offset/unlabeled plotted data, so it cannot feed residuals yet. The
+next discriminating move is Phase 3E.2B: recover source-backed Fig. 2f offset
+and measured-column semantics before any no-fit baseline run.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

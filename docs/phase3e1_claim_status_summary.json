@@ -5,10 +5,11 @@
     "blocked_source_data_lead": 1,
     "calibration_only_no_holdout": 2,
     "literature_reproduction_fixture": 2,
+    "non_enz_planar_tmm_baseline_candidate": 1,
     "rejected_candidate": 1,
     "weak_within_dataset_holdout": 2
   },
-  "generated_at": "2026-05-19T14:33:28.158847+00:00",
+  "generated_at": "2026-05-19T15:24:28.190435+00:00",
   "phase4_candidate_ids": [],
   "phase_id": "Phase 3E.1",
   "recommended_next_phase": "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate"

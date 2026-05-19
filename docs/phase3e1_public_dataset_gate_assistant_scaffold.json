@@ -206,6 +206,46 @@
     },
     {
       "blockers": [
+        "W/WO3 Fabry-Perot is useful as a planar TMM baseline but is not ENZ evidence.",
+        "Fig2f-R.xlsx contains vertically offset/nonphysical plotted traces, not plain absolute reflectance columns.",
+        "Measured-vs-simulated column assignment and leakage status are not proven from the selected spreadsheets alone."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "wang_wo3_fp_2020_non_enz_baseline",
+      "computed_gate_label": "non_enz_planar_tmm_baseline_candidate",
+      "decision": "non_enz_baseline_source_data_snapshotted_semantics_partial",
+      "exact_next_file": "Fig2f-R.xlsx",
+      "gate_blockers": [
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "angle, polarization, side, and unit context specified",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "W/WO3",
+      "missing_required_flags": [
+        "absolute_calibration_documented",
+        "geometry_specified",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "non_enz_planar_tmm_baseline_candidate",
+      "serious_core_allowed_now": false,
+      "title": "Towards Full-colour Tunability of Inorganic Electrochromic Devices Using Ultracompact Fabry-Perot Nanocavities"
+    },
+    {
+      "blockers": [
         "Public model parameters are useful, but no independent measured holdout is identified."
       ],
       "can_enter_phase4": false,
@@ -339,16 +379,16 @@
       "opening Phase 4 from plot-only, PDF-only, constants-only, or request-only data"
     ]
   },
-  "generated_at": "2026-05-19T14:33:28.158847+00:00",
+  "generated_at": "2026-05-19T15:24:28.190435+00:00",
   "inputs": {
     "registry_path": "docs/phase3e1_dataset_candidate_registry.yaml"
   },
   "phase_id": "Phase 3E.1",
   "registry": {
     "acceptance_scope": "Public/literature thin-film optical datasets that might support a future calibrated-linear validation attempt after passing every public-data gate.",
-    "candidate_count": 8,
+    "candidate_count": 9,
     "phase_id": "Phase 3E.1",
-    "registry_version": 1,
+    "registry_version": 2,
     "updated_at": "2026-05-19"
   },
   "required_phase4_flags": {
@@ -367,21 +407,22 @@
   },
   "summary": {
     "blocker_counts": {
-      "absolute_calibration_documented": 6,
-      "calibration_holdout_split_predeclared": 6,
+      "absolute_calibration_documented": 7,
+      "calibration_holdout_split_predeclared": 7,
       "data_are_public": 1,
-      "geometry_specified": 1,
-      "holdout_not_known_used_for_fit": 6,
+      "geometry_specified": 2,
+      "holdout_not_known_used_for_fit": 7,
       "independent_measured_holdout": 4,
       "machine_readable_numerical_data": 4,
       "no_author_contact_required": 1,
       "no_existing_nonpromoting_validation": 4
     },
-    "candidate_count": 8,
+    "candidate_count": 9,
     "claim_label_counts": {
       "blocked_source_data_lead": 1,
       "calibration_only_no_holdout": 2,
       "literature_reproduction_fixture": 2,
+      "non_enz_planar_tmm_baseline_candidate": 1,
       "rejected_candidate": 1,
       "weak_within_dataset_holdout": 2
     },

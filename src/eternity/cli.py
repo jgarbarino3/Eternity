@@ -52,6 +52,16 @@ from eternity.phase3d1b import build_phase3d1b_packet_from_paths, write_phase3d1
 from eternity.phase3d1c import build_phase3d1c_packet, write_phase3d1c_packet
 from eternity.phase3d2 import build_phase3d2_packet, write_phase3d2_packet
 from eternity.phase3e1 import build_phase3e1_scaffold, write_phase3e1_scaffold
+from eternity.phase3e2a import (
+    DEFAULT_METADATA_PATH as DEFAULT_PHASE3E2A_METADATA_PATH,
+)
+from eternity.phase3e2a import (
+    DEFAULT_RAW_DIR as DEFAULT_PHASE3E2A_RAW_DIR,
+)
+from eternity.phase3e2a import (
+    build_phase3e2a_packet,
+    write_phase3e2a_packet,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -359,6 +369,21 @@ PHASE3E1_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and claim-summary artifacts.",
+)
+PHASE3E2A_METADATA_OPTION = typer.Option(
+    DEFAULT_PHASE3E2A_METADATA_PATH,
+    "--metadata",
+    help="Wang W/WO3 Figshare API metadata snapshot.",
+)
+PHASE3E2A_RAW_DIR_OPTION = typer.Option(
+    DEFAULT_PHASE3E2A_RAW_DIR,
+    "--raw-dir",
+    help="Directory containing selected Wang W/WO3 source-data spreadsheets.",
+)
+PHASE3E2A_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown Wang baseline intake artifacts.",
 )
 
 
@@ -881,6 +906,35 @@ def phase3e1_scaffold(
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         typer.echo(f"wrote {summary_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e2a-wang-intake")
+def phase3e2a_wang_intake(
+    metadata_path: Path = PHASE3E2A_METADATA_OPTION,
+    raw_dir: Path = PHASE3E2A_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3E2A_OUTPUT_DIR_OPTION,
+) -> None:
+    """Audit the Wang W/WO3 non-ENZ baseline source-data package."""
+
+    try:
+        packet = build_phase3e2a_packet(metadata_path, raw_dir)
+    except (
+        FileNotFoundError,
+        KeyError,
+        ValueError,
+        json.JSONDecodeError,
+        zipfile.BadZipFile,
+    ) as error:
+        typer.echo(f"Phase 3E.2A Wang intake failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e2a_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))

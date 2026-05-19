@@ -1,5 +1,5 @@
 phase_id: Phase 3E.1
-registry_version: 1
+registry_version: 2
 updated_at: "2026-05-19"
 acceptance_scope: >-
   Public/literature thin-film optical datasets that might support a future
@@ -171,6 +171,44 @@ candidates:
     exact_next_file: docs/phase3d4_thermo_optic_ito_zenodo_intake.json
     notes:
       - Useful constants fixture.
+
+  - candidate_id: wang_wo3_fp_2020_non_enz_baseline
+    title: Towards Full-colour Tunability of Inorganic Electrochromic Devices Using Ultracompact Fabry-Perot Nanocavities
+    material_family: W/WO3
+    source_type: figshare_xlsx_source_data
+    source_refs:
+      - DOI 10.1038/s41467-019-14194-y
+      - Figshare DOI 10.6084/m9.figshare.11154791
+    public_data_links:
+      - https://figshare.com/articles/dataset/Towards_Full-colour_Tunability_of_Inorganic_Electrochromic_Devices_Using_Ultracompact_Fabry-Perot_Nanocavities/11154791
+    exact_files:
+      - FigS1-W.xlsx
+      - FigS1-WO3.xlsx
+      - FigS2-nk.xlsx
+      - Fig2f-R.xlsx
+      - docs/phase3e2a_wang_wo3_baseline_intake.json
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: true
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: false
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: non_enz_planar_tmm_baseline_candidate
+    decision: non_enz_baseline_source_data_snapshotted_semantics_partial
+    blockers:
+      - W/WO3 Fabry-Perot is useful as a planar TMM baseline but is not ENZ evidence.
+      - Fig2f-R.xlsx contains vertically offset/nonphysical plotted traces, not plain absolute reflectance columns.
+      - Measured-vs-simulated column assignment and leakage status are not proven from the selected spreadsheets alone.
+    exact_next_file: Fig2f-R.xlsx
+    notes:
+      - Promote only as non-ENZ baseline machinery after Fig. 2f offset and measured-column semantics are source-backed.
 
   - candidate_id: cdo_dielectric_function_2020
     title: Ultraviolet to far-infrared dielectric function of n-doped cadmium oxide thin films

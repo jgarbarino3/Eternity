@@ -141,7 +141,7 @@ grounding phase:
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 Phase 3E.1 added the public-dataset gate and executive research assistant
 scaffold. The active step is now `Phase 3E.2 - Browse/Plasmate public-data sweep
-through gate`, after the initial registry evaluated 8 known candidates and
+through gate`, after the current registry evaluated 9 known candidates and
 opened 0 Phase 4 candidates. Source-qualified TiN/TiON optical constants,
 thesis reflectance spectra, material models, St Andrews diagnostics, public
 package failures, and provenance gaps remain in the registry without promoting
@@ -202,6 +202,11 @@ Current blocker:
 - Phase 3E.1 built the public-dataset gate and executive research-assistant
   scaffold rather than forcing a Phase 4 attempt. The next public-data action is
   Phase 3E.2: run incoming search leads through that gate.
+- Phase 3E.2A snapshotted the Wang W/WO3 Figshare source-data spreadsheets as a
+  non-ENZ planar TMM baseline candidate. `FigS2-nk.xlsx` provides direct W/WO3
+  `n,k` tables, but `Fig2f-R.xlsx` contains offset/unlabeled plotted traces and
+  cannot feed residuals until the vertical-offset and measured-vs-simulated
+  column semantics are source-backed.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold

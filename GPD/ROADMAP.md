@@ -536,12 +536,13 @@ Result:
 
 Next:
 
-- Phase 3D has now bounded the current public-package envelope. Exeter/Bohn,
-  Saha, Exeter spatiotemporal ITO, thermo-optic ITO, and the remaining known
-  leads do not currently provide an immediate Phase 4 calibrated-linear
-  candidate.
-- Phase 3E.1 should build the public-dataset gate and executive research
-  assistant scaffold while preserving the `calibrated_linear_evidence` bar.
+- Phase 3E.1 has built the public-dataset gate and executive research assistant
+  scaffold while preserving the `calibrated_linear_evidence` bar.
+- Phase 3E.2A has ingested Wang W/WO3 as a non-ENZ planar TMM baseline
+  candidate only. Its `FigS2-nk.xlsx` constants are machine-readable, but
+  `Fig2f-R.xlsx` remains offset/unlabeled plotted data, so no residual claim or
+  ENZ Phase 4 promotion is allowed.
+- Next is `Phase 3E.2B - Wang Fig. 2f semantics and no-fit baseline plan`.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact,
   Saha OPJU export, or new literature-package paths only if the user supplies
   new access or data.

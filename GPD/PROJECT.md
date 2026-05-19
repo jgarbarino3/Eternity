@@ -4,16 +4,14 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-19. Current mirrored focus is Phase 3D literature/public
-validation dataset search: Phase 3B.1 completed the local TiON evidence reality
-check after Phase 3C.6A parked St Andrews before Phase 4. TiON_48/TiON_49 have
-registered epsilon tables, material models, and calibration-only examples, but
-no repo-local raw R/T measurements or digitizable plot candidates were found.
-The user has confirmed no CompleteEASE access/contact, no TiON raw R/T, and no
-St Andrews author-contact path. Calibrated promotion remains blocked; the next
-useful step is exhausting current literature/public repositories for a dataset
-with source-qualified optical constants plus independent R/T or ellipsometry
-holdout evidence.
+Updated: 2026-05-19. Current mirrored focus is Phase 3E public-dataset gate and
+Wang W/WO3 non-ENZ baseline intake. Phase 3E.1 built the candidate registry and
+hard gate; Phase 3E.2A snapshotted the Wang Figshare spreadsheets as a useful
+non-ENZ planar TMM baseline candidate. The Wang constants table is public and
+machine-readable, but `Fig2f-R.xlsx` contains offset/unlabeled plotted traces,
+so no residual claim or ENZ Phase 4 promotion is allowed. The user has
+confirmed no CompleteEASE access/contact, no TiON raw R/T, and no St Andrews
+author-contact path.
 
 Authoritative sources remain:
 
