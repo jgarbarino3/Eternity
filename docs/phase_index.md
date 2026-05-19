@@ -49,12 +49,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.1C | Completed/non-promoting diagnostic | Exeter/Bohn package-constant no-fit model reconstruction | Reconstructed the package static Figure 2 model with locked constants. Shape agreement is strong in the plotted window, but absolute residuals are nontrivial, thresholds were not predeclared before residual inspection, and the result remains capped at `weak_within_dataset_holdout`. |
 | Phase 3D.2 | Completed/export-blocked | Saha TiN/AZO source-data intake | Snapshotted the public Figshare package, verified all 12 OPJU file MD5s, and confirmed Fig. 2b measured/simulated reflectance labels plus Fig. 2c/d TiN/AZO permittivity labels. No table-ready CSV exists yet because the worksheet data remain inside Origin `.opju` containers. |
 | Phase 3D.2A | Completed/blocked | Saha OPJU worksheet export or open-format alternate | Installed/probed LabPlot 2.12.1 and confirmed no local batch OPJU-to-CSV export path: CLI only opens files/projects, embedded Origin strings advertise OPJ rather than OPJU, and offscreen OPJU opening produced no tables. |
-| Phase 3D.3 | Recommended | Next public candidate source-data intake | Inspect the next ranked public package, prioritizing open-format tables over OPJU-only packages. Reopen Saha only if an Origin/Origin Viewer export or open-format mirror appears. |
+| Phase 3D.3 | Completed/nonlinear-fixture | Exeter spatiotemporal ITO source-data intake | Snapshotted the public `10.24378/exe.3644` package, verified `OpenData.zip`, and found table-ready 115 nm / thicker-sample ITO epsilon plus open pumped transmission/frequency-shift data. The measurement lane is nonlinear and not a clean independent static absolute R/T holdout, so the claim ceiling is `literature_reproduction_fixture`. |
+| Phase 3D.4 | Recommended | Next public source-data package intake | Inspect the next ranked public package with priority on open-format tables and a separable static linear R/T or ellipsometry holdout. Reopen Saha only if an Origin/Origin Viewer export or open-format mirror appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.3 - next public candidate source-data intake**.
+Current phase: **Phase 3D.4 - next public source-data package intake**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -66,8 +67,12 @@ package no-fit static model and found strong shape agreement but nontrivial
 absolute residuals, with promotion still forbidden. Phase 3D.2 then inspected
 the Saha TiN/AZO backup package: the source exists and is hash-verified, but the
 critical Fig. 2 worksheets are proprietary Origin `.opju` containers. Phase
-3D.2A tested the local export route and found it blocked, so the next meaningful
-step is the next public candidate package, not Saha residual modeling.
+3D.2A tested the local export route and found it blocked. Phase 3D.3 then
+inspected the Exeter spatiotemporal ITO package: it is public, hash-verified,
+and open-format, but it is a nonlinear pumped-transmission/frequency-shift
+dataset rather than a separable static calibrated-linear holdout. The next
+meaningful step is another public package, not Saha residual modeling or
+forcing Phase 3D.3 into Phase 4.
 
 Information sufficiency:
 
@@ -149,6 +154,11 @@ Information sufficiency:
 - Enough to complete Phase 3D.2A as a local export audit: LabPlot installed,
   but did not expose a usable OPJU-to-CSV export route, and offscreen opening
   timed out without producing table data.
+- Enough to complete Phase 3D.3 as a non-promoting public source-data intake:
+  the Exeter spatiotemporal ITO package contains table-ready ellipsometer
+  epsilon and open measurement CSV/ASC files, but the measurement lane is
+  pumped transmission/frequency-shift data and the thicker-sample thickness
+  labels are internally inconsistent.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -179,10 +189,13 @@ Information sufficiency:
 - Not enough to continue local Saha work without new external help: a Windows
   Origin/Origin Viewer export, an OPJU-capable GUI export, or an open-format
   mirror is required.
+- Not enough to promote Phase 3D.3: no independent static absolute R/T holdout
+  was found, and the open measurement files belong to a nonlinear
+  spatiotemporal-refraction workflow.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.3 - next public candidate source-data intake**.
+- **Phase 3D.4 - next public source-data package intake**.
   Planning: GPT-5.5 `medium`, because the acceptance pattern is now well
   established.
   Implementation: `medium` for package manifesting/extraction; `high` only if

@@ -1,0 +1,123 @@
+{
+  "phase_id": "Phase 3D.3",
+  "date": "2026-05-19",
+  "candidate_id": "public_exeter_spatiotemporal_ito_2021",
+  "decision": "source_package_snapshotted_nonlinear_fixture_not_calibrated",
+  "claim_ceiling": "literature_reproduction_fixture",
+  "can_feed_calibrated_linear_evidence": false,
+  "phase4_ready": false,
+  "dataset": {
+    "title": "Spatiotemporal refraction of light in an epsilon-near-zero ITO layer: frequency shifting effects arising from interfaces (dataset)",
+    "doi": "10.24378/exe.3644",
+    "article_id": 29783195,
+    "file_id": 56818877,
+    "public_url": "https://ore.exeter.ac.uk/articles/dataset/Spatiotemporal_refraction_of_light_in_an_epsilon-near-zero_ITO_layer_frequency_shifting_effects_arising_from_interfaces_dataset_/29783195",
+    "download_url": "https://ndownloader.figshare.com/files/56818877",
+    "license": "CC BY 4.0",
+    "package_name": "OpenData.zip",
+    "size_bytes": 261202936,
+    "supplied_md5": "03c4aac9c14cdbce244bf958ffb51dd6",
+    "local_md5": "03c4aac9c14cdbce244bf958ffb51dd6",
+    "local_sha256": "43ffb47cdf0ca22f1b9a7c174cf2b10ea6386d704ed38bd98b744dd43a002f7c",
+    "archive_entries": 52,
+    "uncompressed_size_bytes": 719120896,
+    "committed_large_archive": false
+  },
+  "material_constants": [
+    {
+      "file": "OpenData/Ellipsometer/DATA/ito_115nm.txt",
+      "rows": 179,
+      "columns": [
+        "nm",
+        "e1 Gen-Osc",
+        "e2 Gen-Osc"
+      ],
+      "wavelength_nm_min": 1073.067627,
+      "wavelength_nm_max": 1684.096069,
+      "epsilon_real_min": -3.347269,
+      "epsilon_real_max": 0.860182,
+      "epsilon_imag_min": 0.301793,
+      "epsilon_imag_max": 1.149184,
+      "enz_crossing_nm": 1221.3888093364237,
+      "enz_crossing_thz": 245.4521080497505,
+      "drude_fit": {
+        "eps_inf": 3.810047680075314,
+        "wp0": 3030653329384417.5,
+        "gamma0": 179586927494851.84
+      }
+    },
+    {
+      "file": "OpenData/Ellipsometer/DATA/ito_407nm.txt",
+      "rows": 143,
+      "columns": [
+        "nm",
+        "e1 Gen-Osc",
+        "e2 Gen-Osc"
+      ],
+      "wavelength_nm_min": 1194.928223,
+      "wavelength_nm_max": 1684.096069,
+      "epsilon_real_min": -1.371218,
+      "epsilon_real_max": 0.979404,
+      "epsilon_imag_min": 0.339879,
+      "epsilon_imag_max": 0.934374,
+      "enz_crossing_nm": 1417.1951688990641,
+      "enz_crossing_thz": 211.53928871553464,
+      "drude_fit": {
+        "eps_inf": 3.452052772428599,
+        "wp0": 2502101375647594.5,
+        "gamma0": 216678163849086.53
+      },
+      "warning": "Filenames/modeling code refer to 407nm/417nm, but the material-fitting notebook prints ITO thickness: 560."
+    }
+  ],
+  "measurement_lane": {
+    "format": "open_csv_and_asc",
+    "csv_columns": [
+      "average",
+      "theta",
+      "filter_angle",
+      "wavelength_1",
+      "wavelength_2",
+      "delay",
+      "power_s",
+      "power_r",
+      "power_r_probe",
+      "intensity"
+    ],
+    "rows_per_inspected_csv": 35428,
+    "theta_degrees": {
+      "min": 0,
+      "max": 80,
+      "step": 5
+    },
+    "delay_ps": {
+      "min": -0.6,
+      "max": 0.7,
+      "step": 0.0025
+    },
+    "intensity_values": [
+      100,
+      200,
+      300,
+      400
+    ],
+    "metadata_flags": {
+      "is_probe_calibration": false,
+      "is_pump_calibration": false,
+      "is_degenerate_scan": false,
+      "is_with_prism": false,
+      "is_in_transmission": true
+    },
+    "notebook_interpretation": "Measurement notebooks normalize pumped transmission spectra, compute frequency shifts and I/I0, and fit nonlinear temporal response / GRIN-vs-Airy dynamics."
+  },
+  "acceptance_gate": {
+    "source_qualified_material_model": true,
+    "machine_readable_data": true,
+    "independent_static_linear_holdout": false,
+    "absolute_rt_calibration_documented": false,
+    "calibration_holdout_split_predeclareable": false,
+    "tmm_static_linear_appropriate_for_holdout": false,
+    "reason": "The public measurement lane is pumped time-resolved transmission/frequency-shift data rather than an independent static absolute R/T holdout."
+  },
+  "next_action": "Move to the next public source-data package; revisit this package later only as a nonlinear or literature-reproduction fixture."
+}

@@ -139,10 +139,10 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.3 - next public candidate source-data intake`,
-after Phase 3D.2A confirmed the Saha TiN/AZO source-data package is public and
-hash-verified but locally blocked by proprietary Origin `.opju` worksheet
-export. Source-qualified TiN/TiON optical
+The active step is now `Phase 3D.4 - next public source-data package intake`,
+after Phase 3D.3 confirmed the Exeter spatiotemporal ITO package is public,
+hash-verified, and open-format but nonlinear rather than a static
+calibrated-linear holdout. Source-qualified TiN/TiON optical
 constants, thesis reflectance spectra, material models, St Andrews diagnostics,
 and provenance gaps remain in the registry without promoting them to calibrated
 evidence.
@@ -183,9 +183,14 @@ Current blocker:
   LabPlot does not provide a usable local OPJU-to-CSV path here: its CLI only
   opens files/projects, embedded Origin support strings identify OPJ rather than
   OPJU, and offscreen OPJU opening timed out without producing tables.
-- The next public-data action is Phase 3D.3: inspect the next ranked public
-  candidate package. Reopen Saha only if a real table export or open-format
-  mirror appears.
+- Phase 3D.2A's next action was Phase 3D.3: inspect the next ranked public
+  candidate package instead of continuing local Saha export attempts.
+- Phase 3D.3 snapshotted and inspected the Exeter spatiotemporal ITO package
+  for DOI `10.24378/exe.3644`. It contains table-ready ITO epsilon and open
+  pumped-transmission/frequency-shift data, but no separable static absolute
+  R/T holdout. Its claim ceiling is `literature_reproduction_fixture`.
+- The next public-data action is Phase 3D.4: inspect the next ranked public
+  package with priority on open-format static R/T or held-out ellipsometry.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -281,6 +286,10 @@ Current blocker:
   open-source LabPlot route was tried and failed to produce CSV. More Saha work
   now requires external Windows/Origin export, an OPJU-capable GUI workflow, or
   an open-format mirror.
+- Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
+  lane for calibrated-linear purposes: it is public and useful, but the
+  inspected measurement lane is nonlinear pumped transmission/frequency-shift
+  data, not independent static absolute R/T.
 
 Pivot if Phase 3D fails:
 

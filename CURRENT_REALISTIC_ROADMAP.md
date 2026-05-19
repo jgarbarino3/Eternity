@@ -1042,7 +1042,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.3 - next public candidate source-data intake`.
+Choose `Phase 3D.4 - next public source-data package intake`.
 
 Why:
 
@@ -1050,17 +1050,19 @@ Phase 3D.2 completed the first Saha TiN/AZO source-data intake. Phase 3D.2A
 then tested the local export route: LabPlot 2.12.1 installed successfully, but
 its CLI only opens files/projects, its Origin import strings advertise OPJ
 rather than OPJU, and an offscreen `.opju` open attempt timed out without
-producing CSV. The Saha package is still useful public source data, but it is
-locally export-blocked until the user can provide a Windows Origin/Origin Viewer
-export, an OPJU-capable GUI export, or an open-format mirror.
+producing CSV. Phase 3D.3 then inspected the next public package, Exeter
+spatiotemporal ITO, and found open epsilon and nonlinear pumped-transmission
+source data, but no static calibrated-linear holdout. Saha is locally
+export-blocked and Exeter spatiotemporal is a nonlinear fixture, so the next
+move is another public package.
 
 Recommended decision scope:
 
 ```text
 1. Park Saha as an OPJU-blocked source-data lead unless a real table export
    appears.
-2. Inspect the next ranked public candidate package rather than digitizing Saha
-   previews into calibrated evidence.
+2. Inspect the next ranked public candidate package, prioritizing open static
+   R/T or held-out ellipsometry over nonlinear pump-probe packages.
 3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
@@ -1118,7 +1120,7 @@ export route appears.
 
 Recommended next phase:
 
-- `Phase 3D.3 - next public candidate source-data intake`.
+- `Phase 3D.4 - next public source-data package intake`.
 
 #### Phase 3D.2: Saha TiN/AZO Source-Data Intake
 
@@ -1278,10 +1280,53 @@ Findings:
 
 Recommended next:
 
-- `Phase 3D.3 - next public candidate source-data intake`.
+- `Phase 3D.4 - next public source-data package intake`.
 - Phase 3D.2A has now shown that Saha is locally OPJU-export blocked.
+- Phase 3D.3 has now shown that the Exeter spatiotemporal ITO package is public
+  and useful, but nonlinear rather than a static calibrated-linear holdout.
 - If a real Saha table export appears later, reopen it; otherwise move to the
   next public package before doing more modeling.
+
+#### Phase 3D.3: Exeter Spatiotemporal ITO Source-Data Intake
+
+Decision: `source_package_snapshotted_nonlinear_fixture_not_calibrated`.
+
+Claim ceiling: `literature_reproduction_fixture`.
+
+Artifacts:
+
+- `docs/phase3d3_exeter_spatiotemporal_ito_source_intake.md`
+- `docs/phase3d3_exeter_spatiotemporal_ito_source_intake.json`
+
+Summary:
+
+- The public Exeter/ORE package `OpenData.zip` for DOI `10.24378/exe.3644`
+  was downloaded locally, MD5-verified, and inspected. The large ZIP remains
+  local-only rather than committed.
+- The package contains table-ready ellipsometer ITO permittivity for a 115 nm
+  lane and a thicker lane (`ito_407nm.txt`), with Drude fits in notebooks.
+- The inspected measurement files are open CSV/ASC pumped transmission scans
+  with angle, delay, probe/pump wavelength, power channels, and intensity. The
+  notebooks normalize spectra and model frequency-shift / `I/I0` nonlinear
+  dynamics.
+- No independent static absolute R/T holdout suitable for the current
+  calibrated-linear gate was found.
+- The thicker-sample lane has a warning: filenames and modeling code refer to
+  `407nm` / `417nm`, while the material-fitting notebook prints
+  `ITO thickness: 560`.
+
+Outcome:
+
+- Useful as public source-data memory and future nonlinear/literature
+  reproduction fixture.
+- Not Phase 4-ready.
+- Do not force this into calibrated-linear evidence.
+
+Recommended next:
+
+- `Phase 3D.4 - next public source-data package intake`.
+- Prioritize public packages with open-format static R/T or held-out
+  ellipsometry, not only nonlinear pump-probe data.
 
 ### Pivot If Phase 3D Fails
 

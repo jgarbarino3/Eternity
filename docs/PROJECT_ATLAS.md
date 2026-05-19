@@ -76,7 +76,11 @@ Current progress:
   require OPJU-to-CSV export.
 - **Done/blocked**: Phase 3D.2A Saha OPJU worksheet export audit. LabPlot was
   installed and probed, but no local OPJU-to-CSV path was found.
-- **Next**: Phase 3D.3 next public candidate source-data intake.
+- **Done/non-promoting**: Phase 3D.3 Exeter spatiotemporal ITO source-data
+  intake. The package is public, hash-verified, and open-format, with
+  table-ready epsilon and pumped transmission/frequency-shift data, but no
+  separable static absolute R/T holdout.
+- **Next**: Phase 3D.4 next public source-data package intake.
 - **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
   dataset, keep the evidence bar intact and promote the executive research
   assistant / public-dataset gate lane recorded in
@@ -131,7 +135,8 @@ calibrated_linear_evidence
   -> COMPLETE/NON-PROMOTING: Phase 3D.1C no-fit model reconstruction
   -> COMPLETE/EXPORT-BLOCKED: Phase 3D.2 Saha TiN/AZO source-data intake
   -> COMPLETE/BLOCKED: Phase 3D.2A Saha OPJU worksheet export audit
-  -> NEXT: Phase 3D.3 next public candidate source-data intake
+  -> COMPLETE/NONLINEAR FIXTURE: Phase 3D.3 Exeter spatiotemporal ITO intake
+  -> NEXT: Phase 3D.4 next public source-data package intake
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -213,8 +218,12 @@ Exeter/Bohn remains useful weak memory rather than Phase 4-ready evidence.
 Phase 3D.2 snapshotted the Saha TiN/AZO Figshare package and confirmed the
 expected Fig. 2 labels, but the critical numerical tables are still trapped in
 Origin `.opju` files. Phase 3D.2A tested the local open-source LabPlot route and
-found no usable OPJU-to-CSV export path. The next discriminating move is Phase
-3D.3, a new public candidate intake.
+found no usable OPJU-to-CSV export path. Phase 3D.3 then inspected the Exeter
+spatiotemporal ITO package: the source is public, hash-verified, and open-format
+with table-ready epsilon, but the measurement lane is nonlinear pumped
+transmission/frequency-shift data and the thicker-sample labels are internally
+inconsistent. The next discriminating move is Phase 3D.4, another public package
+intake focused on separable static linear holdouts.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

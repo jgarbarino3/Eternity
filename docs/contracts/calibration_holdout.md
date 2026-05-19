@@ -115,3 +115,11 @@ Phase 3D.2A tested the local OPJU export path and found it blocked: LabPlot
 installed on macOS but did not expose a batch OPJU-to-CSV route, and offscreen
 opening did not produce tables. Saha can be reopened only with a real table
 export or open-format mirror.
+
+Phase 3D.3 snapshotted the Exeter spatiotemporal ITO package for DOI
+`10.24378/exe.3644`. The archive contains public table-ready ITO epsilon and
+open measurement CSV/ASC files, but the inspected measurement lane is pumped
+time-resolved transmission/frequency-shift data. It is capped at
+`literature_reproduction_fixture` for now and must not be promoted to
+`calibrated_linear_evidence` without a separate static linear holdout and a
+predeclared gate.
