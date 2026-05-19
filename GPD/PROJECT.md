@@ -4,16 +4,16 @@ This is a thin Get Physics Done alignment layer for the Eternity repo. It
 mirrors the current Serious Core direction so GPD workflows can help plan and
 verify future phases without becoming the scientific source of truth.
 
-Updated: 2026-05-19. Current mirrored focus is Phase 3B.1 TiON evidence
-reality check / digitized plot intake: Phase 3C.6A implemented bounded
-St Andrews source-model parity variants after the threshold-locked clean run
-failed all five reflectance metrics. Source Cauchy substrate and inferred
-source thickness were tested, while roughness and back-reflection remain
-approximate rather than exact CompleteEASE parity. All variants failed the
-locked thresholds, so St Andrews stays parked before Phase 4. Calibrated
-promotion remains blocked; the next useful step is re-inventorying TiON
-evidence and deciding whether plot-level reflectance can be registered
-explicitly as `digitized_from_plot`.
+Updated: 2026-05-19. Current mirrored focus is Phase 3D literature/public
+validation dataset search: Phase 3B.1 completed the local TiON evidence reality
+check after Phase 3C.6A parked St Andrews before Phase 4. TiON_48/TiON_49 have
+registered epsilon tables, material models, and calibration-only examples, but
+no repo-local raw R/T measurements or digitizable plot candidates were found.
+The user has confirmed no CompleteEASE access/contact, no TiON raw R/T, and no
+St Andrews author-contact path. Calibrated promotion remains blocked; the next
+useful step is exhausting current literature/public repositories for a dataset
+with source-qualified optical constants plus independent R/T or ellipsometry
+holdout evidence.
 
 Authoritative sources remain:
 

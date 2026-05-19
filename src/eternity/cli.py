@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import typer
+import yaml
 from pydantic import ValidationError
 
 from eternity.artifacts import sha256_file
@@ -39,6 +40,7 @@ from eternity.phase3a12 import (
     build_phase3a12_result_from_path,
     write_phase3a12_result,
 )
+from eternity.phase3b1 import build_phase3b1_packet, write_phase3b1_packet
 from eternity.phase3c1 import build_phase3c1_packet_from_paths, write_phase3c1_packet
 from eternity.phase3c2 import build_phase3c2_audit, write_phase3c2_audit
 from eternity.phase3c3 import build_phase3c3_evaluation, write_phase3c3_evaluation
@@ -167,6 +169,21 @@ PHASE3A12_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown manual source review results.",
+)
+PHASE3B1_REGISTRY_OPTION = typer.Option(
+    Path("lab_data/registry.yaml"),
+    "--registry",
+    help="Registry used to inspect TiON evidence readiness.",
+)
+PHASE3B1_REPO_ROOT_OPTION = typer.Option(
+    Path("."),
+    "--repo-root",
+    help="Repository root to scan for TiON plot candidates.",
+)
+PHASE3B1_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown TiON evidence reality-check artifacts.",
 )
 PHASE3C1_ZIP_OPTION = typer.Option(
     Path("lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip"),
@@ -538,6 +555,29 @@ def phase3a12_result(
         return
 
     typer.echo(json.dumps(result, indent=2, sort_keys=True))
+
+
+@app.command("phase3b1-reality-check")
+def phase3b1_reality_check(
+    registry_path: Path = PHASE3B1_REGISTRY_OPTION,
+    repo_root: Path = PHASE3B1_REPO_ROOT_OPTION,
+    output_dir: Path | None = PHASE3B1_OUTPUT_DIR_OPTION,
+) -> None:
+    """Build the Phase 3B.1 TiON evidence reality-check packet."""
+
+    try:
+        packet = build_phase3b1_packet(registry_path, repo_root)
+    except (FileNotFoundError, yaml.YAMLError, KeyError, ValueError) as error:
+        typer.echo(f"Phase 3B.1 reality check failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3b1_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
 
 
 @app.command("phase3c1-intake")

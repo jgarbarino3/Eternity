@@ -500,11 +500,46 @@ Result:
 
 Next:
 
-- Phase 3B.1 should re-inventory TiON evidence and decide whether plot-level
-  reflectance can be registered explicitly as `digitized_from_plot`, while raw
-  sample-matched R/T remains the promotion blocker.
+- Phase 3B.1 should complete the local TiON evidence inventory before any
+  external validation-data search.
 - Open Phase 3C.6B only if new St Andrews source evidence resolves exact
   roughness/back-reflection or CompleteEASE acquisition parity.
+
+## Phase 3B.1: TiON Evidence Reality Check / Digitized Plot Intake
+
+Status: completed / local evidence exhausted, no promotion
+
+Goal:
+
+- Inventory TiON_48/TiON_49 local evidence under hard constraints: no
+  CompleteEASE access/contact, no TiON raw R/T, and no St Andrews author
+  contact.
+- Decide whether plot-derived evidence can be registered explicitly as
+  `digitized_from_plot`.
+- Keep calibrated promotion blocked without an independent holdout.
+
+Artifacts:
+
+- `src/eternity/phase3b1.py`
+- `tests/unit/test_phase3b1.py`
+- `docs/phase3b1_tion_evidence_reality_check.md`
+- `docs/phase3b1_tion_evidence_reality_check.json`
+- `experiments/examples/linear_tion_49_tabulated.yaml`
+
+Result:
+
+- Decision `local_validation_data_exhausted_literature_or_external_data_needed`.
+- TiON_48/TiON_49 epsilon measurements and material models are registered.
+- TiON_48/TiON_49 calibration-only examples are available and capped at
+  `calibration_only_no_holdout`.
+- No TiON R/T measurements and no repo-local plot candidates are available.
+
+Next:
+
+- Phase 3D should search literature/public repositories for a validation
+  dataset with optical constants plus independent R/T or ellipsometry holdout.
+- Do not reopen unavailable CompleteEASE, TiON raw R/T, or St Andrews author
+  contact paths unless the user supplies new access or data.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 
@@ -545,11 +580,18 @@ Status: partially reopened by Phase 3A, still blocked for calibrated promotion
 
 Needs one of:
 
-- recovered sample-matched TiON_48/TiON_49 R/T spectra;
-- newly measured R/T spectra with geometry and normalization notes;
-- raw ellipsometry psi/delta or another independent optical holdout.
+- a current literature/public dataset with source-qualified optical constants
+  plus independent R/T or ellipsometry holdout;
+- newly supplied local R/T or ellipsometry holdout with geometry and
+  normalization notes;
 - for TiN/SiO2 Phase 3A, a source-backed normalization decision plus
   predeclared residual thresholds before pass/fail interpretation.
+
+Unavailable under current constraints:
+
+- CompleteEASE re-export;
+- TiON_48/TiON_49 raw R/T acquisition from the user;
+- St Andrews author contact.
 
 ## Phase 3: Calibrated Linear Evidence Candidate
 

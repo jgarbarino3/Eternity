@@ -21,6 +21,11 @@ def test_validate_command_accepts_tabulated_tion_spec() -> None:
     assert result.exit_code == 0, result.output
     assert "valid: linear_tion_48_tabulated_001" in result.output
 
+    result = runner.invoke(app, ["validate", "experiments/examples/linear_tion_49_tabulated.yaml"])
+
+    assert result.exit_code == 0, result.output
+    assert "valid: linear_tion_49_tabulated_001" in result.output
+
 
 def test_validate_command_accepts_phase3a_validation_candidate_spec() -> None:
     result = runner.invoke(

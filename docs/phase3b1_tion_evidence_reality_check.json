@@ -1,0 +1,170 @@
+{
+  "allowed_now": [
+    "Run calibration-only TiON_48/TiON_49 TMM examples from frozen epsilon tables.",
+    "Use TiON optical constants for model exploration and mechanism planning.",
+    "Register plot-derived evidence only if actual plot files with usable axes are supplied.",
+    "Search literature/public repositories for a validation dataset with optical constants plus R/T."
+  ],
+  "decision": {
+    "calibration_only_modeling_ready": true,
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "phase4_ready": false,
+    "plot_digitization_ready": false,
+    "recommended_next_phase": "Phase 3D - literature/data search for validation datasets",
+    "status": "local_validation_data_exhausted_literature_or_external_data_needed",
+    "validation_ready": false
+  },
+  "evidence_inventory": {
+    "calibration_only_examples": [
+      {
+        "claim_status": "calibration_only_no_holdout",
+        "sample": "TiON_48",
+        "spec": "experiments/examples/linear_tion_48_tabulated.yaml",
+        "status": "available"
+      },
+      {
+        "claim_status": "calibration_only_no_holdout",
+        "sample": "TiON_49",
+        "spec": "experiments/examples/linear_tion_49_tabulated.yaml",
+        "status": "available"
+      }
+    ],
+    "epsilon_measurements": [
+      {
+        "geometry_polarization": "unknown",
+        "id": "tion_48_0p8pa_epsilon_measurement",
+        "instrument_or_source_notes": "40 nm TiON_48 optical constants, 0.8 Pa sputtering condition; raw R/T provenance not yet recovered.",
+        "kind": "epsilon_table",
+        "raw_artifact_ref": "tion_48_0p8pa_epsilon",
+        "sample_ref": "tion_48_40nm_0p8pa",
+        "stack_ref": "tion_48_40nm_0p8pa_air_film_unknown_substrate"
+      },
+      {
+        "geometry_polarization": "unknown",
+        "id": "tion_49_1p0pa_epsilon_measurement",
+        "instrument_or_source_notes": "40 nm TiON_49 optical constants, 1.0 Pa sputtering condition; raw R/T provenance not yet recovered.",
+        "kind": "epsilon_table",
+        "raw_artifact_ref": "tion_49_1p0pa_epsilon",
+        "sample_ref": "tion_49_40nm_1p0pa",
+        "stack_ref": "tion_49_40nm_1p0pa_air_film_unknown_substrate"
+      }
+    ],
+    "material_models": [
+      {
+        "enz_wavelengths_nm": [
+          497.271
+        ],
+        "id": "tion_48_0p8pa_epsilon_model",
+        "kind": "tabulated_epsilon",
+        "limitations": [
+          "No raw TiON R/T provenance registered yet.",
+          "Substrate and ellipsometry acquisition details need audit before calibrated evidence."
+        ],
+        "passivity_check": "pass",
+        "raw_artifact_ref": "tion_48_0p8pa_epsilon",
+        "sample_ref": "tion_48_40nm_0p8pa",
+        "source_type": "lab",
+        "wavelength_max_nm": 1707.810202,
+        "wavelength_min_nm": 433.428676
+      },
+      {
+        "enz_wavelengths_nm": [
+          546.387,
+          1213.844
+        ],
+        "id": "tion_49_1p0pa_epsilon_model",
+        "kind": "tabulated_epsilon",
+        "limitations": [
+          "No raw TiON R/T provenance registered yet.",
+          "Substrate and ellipsometry acquisition details need audit before calibrated evidence."
+        ],
+        "passivity_check": "pass",
+        "raw_artifact_ref": "tion_49_1p0pa_epsilon",
+        "sample_ref": "tion_49_40nm_1p0pa",
+        "source_type": "lab",
+        "wavelength_max_nm": 1707.810202,
+        "wavelength_min_nm": 412.7424238
+      }
+    ],
+    "raw_artifacts": [
+      {
+        "id": "tion_48_0p8pa_epsilon",
+        "kind": "txt",
+        "path": "lab_data/raw/tin_tion_v1/tion_48_0p8pa_epsilon.txt",
+        "sha256": "659a8463e421104133ec5bb85d2a4c7d68f315df765b74d1164004d11507a7ff",
+        "source_notes": "40 nm TiON_48 optical constants, 0.8 Pa sputtering condition; raw R/T provenance not yet recovered.",
+        "source_type": "lab"
+      },
+      {
+        "id": "tion_49_1p0pa_epsilon",
+        "kind": "txt",
+        "path": "lab_data/raw/tin_tion_v1/tion_49_1p0pa_epsilon.txt",
+        "sha256": "a28855b46b08a1747dc3d499aee20d3851040e886147da6a4ff35884496fca00",
+        "source_notes": "40 nm TiON_49 optical constants, 1.0 Pa sputtering condition; raw R/T provenance not yet recovered.",
+        "source_type": "lab"
+      }
+    ],
+    "repo_plot_candidates": [],
+    "rt_measurements": [],
+    "samples": [
+      {
+        "composition": "TiON; exact stoichiometry not recorded in this registry yet",
+        "id": "tion_48_40nm_0p8pa",
+        "material": "TiON",
+        "nominal_thickness": {
+          "uncertainty": null,
+          "unit": "nm",
+          "value": 40
+        },
+        "process_notes": [
+          "40 nm TiON_48 optical constants, 0.8 Pa sputtering condition; raw R/T provenance not yet recovered."
+        ],
+        "provenance_refs": [
+          "tion_48_0p8pa_epsilon"
+        ]
+      },
+      {
+        "composition": "TiON; exact stoichiometry not recorded in this registry yet",
+        "id": "tion_49_40nm_1p0pa",
+        "material": "TiON",
+        "nominal_thickness": {
+          "uncertainty": null,
+          "unit": "nm",
+          "value": 40
+        },
+        "process_notes": [
+          "40 nm TiON_49 optical constants, 1.0 Pa sputtering condition; raw R/T provenance not yet recovered."
+        ],
+        "provenance_refs": [
+          "tion_49_1p0pa_epsilon"
+        ]
+      }
+    ]
+  },
+  "forbidden_now": [
+    "Treat TiON optical constants alone as calibrated validation evidence.",
+    "Treat unavailable raw R/T or unavailable CompleteEASE exports as active next tasks.",
+    "Keep iterating St Andrews source-model parity without new external source evidence.",
+    "Map FROG or pump-probe labels to TiON_48/TiON_49 without authoritative evidence."
+  ],
+  "generated_at": "2026-05-19T11:12:03.278208+00:00",
+  "hard_constraints": {
+    "completeease_available": false,
+    "completeease_contact_available": false,
+    "notes": [
+      "Unavailable CompleteEASE/export paths are treated as hard blockers, not active tasks.",
+      "Unavailable TiON raw R/T is treated as a hard validation blocker.",
+      "St Andrews remains parked unless new source evidence appears externally."
+    ],
+    "st_andrews_author_contact_available": false,
+    "tion_raw_rt_available": false
+  },
+  "inputs": {
+    "registry_path": "lab_data/registry.yaml",
+    "repo_root": "."
+  },
+  "phase_id": "Phase 3B.1",
+  "stop_condition": "Local repo evidence is exhausted for calibrated validation if no TiON R/T or digitizable plot candidates are present. The next meaningful validation step is a literature/public-data search for a new dataset.",
+  "title": "TiON Evidence Reality Check / Digitized Plot Intake"
+}

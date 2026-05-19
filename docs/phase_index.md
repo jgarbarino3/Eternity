@@ -1,6 +1,6 @@
 # Eternity Phase Index
 
-Date: 2026-05-17
+Date: 2026-05-19
 
 This file gives stable phase IDs for next-step recommendations. `CURRENT_REALISTIC_ROADMAP.md` and `GOALS.md` remain the roadmap authorities; this index keeps the numbering consistent across Codex sessions.
 
@@ -32,8 +32,8 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3A.10 | Completed/decision | Manual source follow-up vs Phase 3B return | Chooses one bounded manual follow-up pass on the top three quartz dynamic `.SEsnap` candidates before falling back to Phase 3A.6 clean export/new measurement or Phase 3B TiON evidence gathering. |
 | Phase 3A.11 | Completed/packet-ready | Bounded manual source follow-up packet | Converts the Phase 3A.10 branch choice into a three-candidate review packet with exact proof gates, stop rules, and non-promotion boundaries. |
 | Phase 3A.12 | Completed/exhausted | Manual source review result or clean export pivot | Inspected the three bounded candidates and found related provenance but no exact `3L2/Quartz`, 30/10/20 stack, absolute `%R`, or `d_10nm` source-lineage proof. Phase 3A should not continue without new user-supplied source evidence or a clean export/measurement. |
-| Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; attached plots provide reflectance evidence only at image/digitization level unless raw R/T appears. |
-| Phase 3B.1 | Recommended/available | TiON evidence reality check / digitized plot intake | Inventory TiON_48/TiON_49 evidence, decide whether plot-derived reflectance can be registered as explicit `digitized_from_plot`, and keep calibrated promotion blocked until raw sample-matched R/T appears. |
+| Phase 3B | Blocked/parked | TiON optical constants and plot-level reflectance provenance | TiON_48/TiON_49 have epsilon tables and grower guidance; no repo-local raw R/T or digitizable plot candidates are available. Calibration-only examples are allowed, but calibrated promotion is blocked. |
+| Phase 3B.1 | Completed/local-exhausted | TiON evidence reality check / digitized plot intake | Inventory found TiON_48/TiON_49 epsilon tables, two material models, and TiON_48/TiON_49 calibration-only examples, but zero R/T measurements and zero repo plot candidates. Decision: `local_validation_data_exhausted_literature_or_external_data_needed`. |
 | Phase 3C | Completed/intake-ready | Public TiN dataset validation lane | St Andrews 2025 public TiN dataset has paper-backed 50 nm TiN-on-glass normal-incidence unpolarized R/T plus ellipsometry tables. Snapshot and intake report are ready. |
 | Phase 3C.1 | Completed/fail-closed candidate | St Andrews TiN pairing + validation candidate | Extracted `RT.xlsx` into canonical R/T CSV snapshots, registered `50nm-MTiN-50c` as the candidate frozen epsilon input, added the St Andrews sample/stack/material/split records, and created a normal-incidence validation candidate capped at `weak_within_dataset_holdout`. |
 | Phase 3C.2 | Completed/future-only policy | St Andrews candidate run audit + threshold policy decision | Audited `run_42fe0ad6dd295019`, preserved residuals as historical context, and wrote a pending future-only threshold policy with `applies_to_existing_run: false`. |
@@ -42,19 +42,20 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3C.5 | Completed/parity gaps recorded | St Andrews source-model parity diagnostic | Raw Woollam `.mod/.SE` inspection found source-model gaps: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are not represented in the current clean-run stack. No model revision or promotion is justified yet. |
 | Phase 3C.6 | Completed/decision implemented | Source-model parity implementation or lane park decision | Resolved by Phase 3C.6A: bounded parity code was implemented and the lane remains non-promoting. |
 | Phase 3C.6A | Completed/parked | Bounded St Andrews source-model parity implementation | Tested source Cauchy substrate, inferred source thickness, approximate roughness EMA, and approximate backside reflection. All variants failed locked thresholds; exact roughness/back-reflection parity remains underdetermined, so St Andrews is parked before Phase 4. |
+| Phase 3D | Recommended/blocked-on-external-search | Literature/public validation dataset search | Search current literature and public data repositories for a validation dataset with source-qualified optical constants plus independent R/T or ellipsometry holdout. This is the next meaningful validation-data path because local Phase 3A, 3B, and 3C sources are exhausted or parked under hard constraints. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3B.1 - TiON evidence reality check / digitized plot intake**.
+Current phase: **Phase 3D - Literature/Public Validation Dataset Search**.
 
-Reason: the TiN/SiO2 thesis path is exhausted without absolute-normalization
-proof, and TiON_48/TiON_49 remain parked without raw sample-matched R/T. The
-St Andrews 2025 public TiN dataset was the cleanest recent public lane, but
-Phase 3C.6A has now parked it before Phase 4. The next actionable evidence lane
-is TiON reality checking because TiON remains central to the project and its
-raw sample-matched R/T blocker has not been re-inventoried after the St Andrews
-negative result.
+Reason: Phase 3B.1 has now completed the local TiON reality check. The repo has
+TiON_48/TiON_49 epsilon tables, two material models, and calibration-only
+examples, but no raw R/T measurements and no usable plot candidates. The user
+has confirmed no CompleteEASE access, no TiON raw R/T, and no St Andrews author
+contact path. The next meaningful validation-data step is therefore not more
+local squeezing; it is a literature/public-data search for a dataset with both
+optical constants and independent holdout measurements.
 
 Information sufficiency:
 
@@ -111,6 +112,9 @@ Information sufficiency:
   source-derived parity variants were implemented and all failed the locked
   thresholds, while roughness/back-reflection remain approximate and
   underdetermined.
+- Enough to complete Phase 3B.1 as local evidence exhaustion: TiON_48/TiON_49
+  epsilon tables and calibration-only examples are available, but no TiON raw
+  R/T measurements or repo-local digitizable plot candidates exist.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -129,14 +133,16 @@ Information sufficiency:
   holdout-derived sweeps without leakage; source-model parity must come first.
 - Not enough to continue St Andrews toward Phase 4: Phase 3C.6A failed the
   bounded parity test and exact source-model parity remains unavailable.
+- Not enough to continue local validation without new data: CompleteEASE
+  re-export, TiON raw R/T, and St Andrews author contact are unavailable under
+  the user's stated constraints.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake**.
-  Planning: GPT-5.5 `high`, because the next step decides whether plot-level
-  TiON evidence can be registered as explicitly digitized context or whether
-  the lane must wait for raw R/T. Implementation: `medium` for a report/intake
-  packet; `high` only if new loader/material-provider code is added.
+- **Phase 3D - Literature/Public Validation Dataset Search**. Planning:
+  GPT-5.5 `high`, because the task is evidence selection and leakage policy,
+  not routine coding. Implementation: `medium` for search/report intake, or
+  `high` if new dataset loaders/material-provider code are added.
 
 Helpful tools:
 
@@ -144,6 +150,10 @@ Helpful tools:
 - Local `unzip`, `strings`, `pdftotext`, `shasum`, registry validation, and pytest commands.
 - The `eternity phase3c6-parity` CLI for repeatable St Andrews stop-state context.
 - The `eternity phase3a7-recovery` CLI for repeatable read-only source scans when comparing source-provenance rules.
-- Consensus MCP for literature context on reflectance validation policy if the
-  next phase needs published threshold/normalization precedent.
-- Plot digitization only if TiON plot-level reflectance needs to become an explicitly labeled `digitized_from_plot` artifact later.
+- Consensus MCP or current literature search for candidate datasets and
+  published validation context.
+- Local registry validation, pytest, `pdftotext`, `tabula`/spreadsheet tooling,
+  and artifact hashing if a public dataset is selected for intake.
+- Plot digitization only if a specific public figure is chosen and is explicitly
+  labeled as `digitized_from_plot`; do not treat it as calibrated validation
+  without an approved policy.

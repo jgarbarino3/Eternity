@@ -501,10 +501,11 @@ Result:
 - Phase 3A remains `relative_intensity_only` with ceiling
   `weak_within_dataset_holdout`.
 - Continuing Phase 3A source searching is not recommended unless the user adds
-  new source evidence or a clean CompleteEASE export/new measurement.
-- Recommended pivot is Phase 3B evidence reality check / digitized plot intake,
-  while keeping TiON calibrated evidence blocked until raw sample-matched R/T
-  or explicitly registered plot-derived data exists.
+  new source evidence. CompleteEASE re-export is now a hard unavailable path
+  under the user's stated constraints.
+- The Phase 3B evidence reality check is now complete: TiON calibrated evidence
+  remains blocked until new local data or an external public/literature dataset
+  supplies an independent holdout.
 
 #### Phase 3C: Public TiN Dataset Validation Lane
 
@@ -781,17 +782,47 @@ Result:
 
 Recommended next:
 
-- `Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake`: return
-  to the TiON lane and decide whether existing plot-level evidence can be
-  registered explicitly as `digitized_from_plot`, while keeping calibrated
-  evidence blocked until raw sample-matched R/T is available. Planning:
-  GPT-5.5 `high`; implementation: `medium` for a report/intake packet. Use
-  local plot/table inspection, registry validation, plot digitizer if needed,
-  and GPD only as a claim-boundary/phase-check mirror.
+- `Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake`: complete
+  a local TiON evidence inventory before any new validation-data search. Use
+  local plot/table inspection, registry validation, plot digitizer only if
+  usable plot files exist, and GPD only as a claim-boundary/phase-check mirror.
 - `Phase 3C.6B` should be opened only if new St Andrews source evidence appears
   that resolves the exact roughness/back-reflection implementation or
   CompleteEASE acquisition geometry. Without that evidence, do not continue
   iterating St Andrews parity variants.
+
+#### Phase 3B.1: TiON Evidence Reality Check / Digitized Plot Intake
+
+Artifacts:
+
+- `docs/phase3b1_tion_evidence_reality_check.md`
+- `docs/phase3b1_tion_evidence_reality_check.json`
+- `experiments/examples/linear_tion_49_tabulated.yaml`
+
+Phase 3B.1 re-inventories the local TiON lane under the hard constraints the
+user confirmed: no CompleteEASE access, no CompleteEASE contact, no TiON raw
+R/T, and no St Andrews author contact.
+
+Result:
+
+- Decision `local_validation_data_exhausted_literature_or_external_data_needed`.
+- TiON_48/TiON_49 epsilon tables and material models are registered.
+- TiON_48 and TiON_49 calibration-only examples are available and capped at
+  `calibration_only_no_holdout`.
+- No TiON R/T measurements are registered.
+- No repo-local TiON plot candidates were found for explicit
+  `digitized_from_plot` intake.
+- Phase 4 remains blocked because there is no independent holdout.
+
+Recommended next:
+
+- `Phase 3D - Literature/Public Validation Dataset Search`: search current
+  literature and public repositories for a dataset with source-qualified optical
+  constants plus independent R/T or ellipsometry holdout. Planning: GPT-5.5
+  `high`; implementation: `medium` for search/report intake, `high` if a new
+  dataset loader or material-provider path is added.
+- Do not reopen Phase 3A CompleteEASE re-export, TiON raw R/T acquisition, or
+  St Andrews author contact unless the user supplies new data or access.
 
 ## Near-Term Reach With Current Tools
 
@@ -1011,44 +1042,47 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3B.1 - TiON Evidence Reality Check / Digitized Plot Intake`.
+Choose `Phase 3D - Literature/Public Validation Dataset Search`.
 
 Recommended decision scope:
 
 ```text
-1. Inventory the existing TiON_48/TiON_49 plot-level reflectance evidence,
-   grower guidance, and registered optical constants without treating plots as
-   raw measured tables.
-2. Decide whether a bounded `digitized_from_plot` artifact is worth creating
-   now, with explicit uncertainty and no calibrated-evidence promotion.
-3. Keep Phase 3C parked unless new source evidence resolves exact roughness,
-   back-reflection, or CompleteEASE acquisition parity.
+1. Search current literature and public data repositories for a validation
+   dataset that includes source-qualified optical constants plus independent
+   R/T or ellipsometry holdout.
+2. Record candidate datasets with sample/stack, wavelength range, geometry,
+   polarization, units, source license, and whether fitting/holdout leakage can
+   be avoided.
+3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
+   do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
+   contact paths.
 ```
 
 First implementation target:
 
 ```text
-Add a bounded Phase 3B.1 report/CLI only after inspecting the existing TiON
-files and registry entries.
+Create a Phase 3D literature/public-data candidate report. Only add loader or
+registry code if one candidate has enough source detail to become a fail-closed
+validation candidate.
 ```
 
 First output:
 
 ```text
-docs/phase3b1_tion_evidence_reality_check.md
-docs/phase3b1_tion_evidence_reality_check.json
+docs/phase3d_literature_validation_dataset_search.md
+docs/phase3d_literature_validation_dataset_search.json
 ```
 
 The decision packet should include:
 
-- Which TiON evidence exists as raw tables, optical constants, notes, plots, or
-  inferred/digitized artifacts.
-- Whether any plot digitization is explicit enough to register as
-  `digitized_from_plot`.
-- Why raw sample-matched R/T remains the promotion blocker.
-- A leakage guard forbidding plot-derived evidence from becoming calibrated
-  validation evidence without raw data or an approved source policy.
-- The next concrete acquisition/re-export target if Phase 3B.1 stays blocked.
+- Which candidate datasets have both material-model inputs and independent
+  holdout measurements.
+- Which candidates have enough sample identity, stack, geometry, units,
+  polarization, and normalization detail to be usable.
+- Which candidates are rejected because they mix fitting and validation data,
+  lack raw/supplementary tables, or require author contact.
+- A leakage guard and claim-status ceiling for any selected candidate.
+- The next concrete repo intake target, if a candidate passes the source screen.
 
 That is the next brick on the direct path toward the AI researcher.
 

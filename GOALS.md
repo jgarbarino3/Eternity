@@ -1,6 +1,6 @@
 # Eternity Goals
 
-Date: 2026-05-07
+Date: 2026-05-19
 
 ## Active Codex Goal
 
@@ -71,11 +71,12 @@ grounding phase:
   RC2/CompleteEASE, thesis, SDSU slide/report, and scanned lab-notebook
   provenance, but no exact export/project/recipe/lab-note proof that the
   `d_10nm` `Intensity` columns are calibrated absolute `%R`.
-- The active packet phase is `Phase 3A.6 - CompleteEASE re-export /
-  measurement packet`: use the exact source-evidence request and future-only
-  policy boundary before any future absolute-reflectance validation run.
-- The active recovery phase is `Phase 3A.7 - CompleteEASE source recovery +
-  3L2 provenance lock`: a read-only scanner now records local `.SE`, `.SEsnap`,
+- The archival packet phase is `Phase 3A.6 - CompleteEASE re-export /
+  measurement packet`: the exact source-evidence request and future-only policy
+  boundary are preserved, but a new CompleteEASE re-export is not an active task
+  because the user does not have CompleteEASE access.
+- The completed recovery phase is `Phase 3A.7 - CompleteEASE source recovery +
+  3L2 provenance lock`: a read-only scanner recorded local `.SE`, `.SEsnap`,
   `.iSE`, and DoD SAFE zip-contained candidates. It strengthens source
   provenance but keeps absolute reflectance blocked.
 - The active triage result is `Phase 3A.8 - Source candidate triage +
@@ -131,22 +132,31 @@ grounding phase:
   backside variants were tested without fitting to the holdout. All variants
   failed the locked thresholds, and exact roughness/back-reflection parity
   remains underdetermined. St Andrews is still not Phase 4-ready.
+- The completed local-exhaustion result is `Phase 3B.1 - TiON evidence reality
+  check / digitized plot intake`: TiON_48 and TiON_49 have registered epsilon
+  tables, material models, and calibration-only examples, but no repo-local
+  raw R/T measurements or digitizable plot candidates were found. The decision
+  is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is to return to `Phase 3B.1 - TiON evidence reality check /
-digitized plot intake`, while keeping source-qualified TiN/TiON optical
-constants, thesis reflectance spectra, material models, St Andrews diagnostics,
-and provenance gaps inside the registry without promoting them to calibrated
-evidence.
+The active step is now `Phase 3D - literature/public validation dataset
+search`, while keeping source-qualified TiN/TiON optical constants, thesis
+reflectance spectra, material models, St Andrews diagnostics, and provenance
+gaps inside the registry without promoting them to calibrated evidence.
 
 Current blocker:
 
 - TiON_48/TiON_49 raw R/T spectra and authoritative FROG-label mapping are not
-  registered. Until that is fixed, TiON runs cannot emit
+  registered and are not currently obtainable from the user. Until new local
+  data or an external public/literature dataset appears, TiON runs cannot emit
   `calibrated_linear_evidence`.
 - TiON grower guidance and attached plots are useful provenance, but they are
   not raw sample-matched R/T tables unless explicitly digitized and labeled as
-  plot-derived evidence.
+  plot-derived evidence. Phase 3B.1 found no repo-local digitizable plot
+  candidates.
+- The user has confirmed no CompleteEASE access, no known CompleteEASE contact,
+  no TiON raw R/T, and no St Andrews author-contact path. Those are hard
+  constraints, not active acquisition tasks.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -159,17 +169,19 @@ Current blocker:
   The thesis/figure evidence is enough for provenance, not calibration.
 - Phase 3A.4 keeps that result fail-closed after checking the local thesis,
   figures, copied data hashes, CompleteEASE manual evidence, and nearby
-  Woollam/CompleteEASE artifacts. A new export, project/recipe record, lab note,
-  or Pro/user-approved relative-only policy is still needed before any future
-  calibrated-evidence attempt.
+  Woollam/CompleteEASE artifacts. A source-backed export, project/recipe record,
+  lab note, or approved relative-only policy would still be needed before any
+  future calibrated-evidence attempt, but CompleteEASE re-export is not
+  currently available.
 - Phase 3A.5 has now searched the likely local source locations, the desktop
   SDSU Google Drive folder, targeted Google Drive thesis/defense hits, and the
   scanned lab notebook. It keeps the status at `blocked_needs_new_export`. The
   current data are still useful for provenance and relative-intensity
   diagnostics, but not for calibrated promotion.
-- Phase 3A.6 has enough information to request or perform a clean re-export /
-  measurement intake. It does not yet have enough information to approve
-  absolute normalization, write numeric thresholds, or promote any existing run.
+- Phase 3A.6 has enough information to define what a clean re-export /
+  measurement intake would need, but the user has confirmed CompleteEASE is not
+  available. It does not approve absolute normalization, write numeric
+  thresholds, or promote any existing run.
 - Phase 3A.7 has enough information to confirm the thesis-backed `3L2/Quartz`
   stack and to rank related local CompleteEASE/Woollam source candidates. It
   still does not have enough information to treat exported `Intensity` columns
@@ -225,6 +237,10 @@ Current blocker:
 - Phase 3C.6A has enough information to stop before Phase 4. It does not have
   enough information to continue St Andrews as a calibrated evidence lane or
   choose more parity variants without new source evidence.
+- Phase 3B.1 has enough information to stop local TiON validation work: the repo
+  contains TiON_48/TiON_49 epsilon tables and calibration-only examples, but no
+  raw TiON R/T measurements and no usable repo-local plot candidates. The next
+  validation-data path requires Phase 3D literature/public-data search.
 
 ## Goal Usage In Codex
 

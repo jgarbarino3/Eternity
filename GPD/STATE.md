@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3B.1 TiON evidence reality check / digitized plot intake
+**Current focus:** Phase 3D literature/public validation dataset search
 
 ## Current Position
 
-**Current Phase:** 3B.1
-**Current Phase Name:** TiON Evidence Reality Check / Digitized Plot Intake
+**Current Phase:** 3D
+**Current Phase Name:** Literature/Public Validation Dataset Search
 **Total Phases:** 3
-**Current Plan:** docs/phase3c6_source_model_parity_decision.md
-**Total Plans in Phase:** 6
-**Status:** Recommended/available
+**Current Plan:** docs/phase3b1_tion_evidence_reality_check.md
+**Total Plans in Phase:** 7
+**Status:** Recommended / requires external literature-public data search
 **Last Activity:** 2026-05-19
-**Last Activity Description:** Completed Phase 3C.6A bounded St Andrews source-model parity: all source-derived variants failed the locked thresholds, roughness/back-reflection remain approximate, and St Andrews is parked before Phase 4.
+**Last Activity Description:** Completed Phase 3B.1 TiON evidence reality check: TiON_48/TiON_49 epsilon tables and calibration-only examples are available, but no raw R/T measurements or repo-local digitizable plot candidates were found; local validation data are exhausted.
 
 **Progress:** [█████████░] 97%
 
@@ -95,15 +95,21 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   approximate backside-reflection variants all failed the locked thresholds.
   Exact roughness/back-reflection parity remains underdetermined, so St Andrews
   is parked before Phase 4.
+- Phase 3B.1 wrote `docs/phase3b1_tion_evidence_reality_check.md` and
+  `.json`: TiON_48/TiON_49 epsilon tables, material models, and
+  calibration-only examples are available, but the registry has no TiON R/T
+  measurements and the repo scan found no usable plot candidates. Decision is
+  `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 ## Open Questions
 
-- What exact substrate and ellipsometry acquisition geometry apply to TiON_48 and TiON_49?
+- Which current literature/public dataset can provide source-qualified optical
+  constants plus independent R/T or ellipsometry holdout without author contact?
+- If a candidate public dataset is found, what sample/stack, geometry,
+  wavelength range, polarization, units, and leakage policy are source-proven?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
-- Can TiON plot-level reflectance evidence be registered explicitly as
-  `digitized_from_plot`, or should Phase 3B wait for raw sample-matched R/T?
 
 ## Performance Metrics
 
@@ -172,6 +178,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   lane. — Source-derived variants still fail locked thresholds; roughness and
   back-reflection remain approximate, so stop before Phase 4 unless new source
   evidence appears.
+- [Phase 3B.1]: Local TiON validation evidence is exhausted. — TiON_48/TiON_49
+  epsilon tables and calibration-only examples are available, but no raw R/T
+  measurements or repo-local plot candidates exist; the next validation-data
+  path is literature/public search.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -192,22 +202,22 @@ None yet.
 
 ### Pending Todos
 
-- Recover or measure sample-matched TiON_48/TiON_49 R/T spectra with geometry notes.
+- Phase 3D: search current literature/public repositories for a validation
+  dataset with source-qualified optical constants plus independent R/T or
+  ellipsometry holdout.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.
-- Phase 3A.5: decide whether a real CompleteEASE/Woollam project/export/debug
-  bundle can be recovered, or pivot to a new measurement/export. Current local
-  search result: `blocked_needs_new_export`.
-- Phase 3A.6 packet remains available if a fresh CompleteEASE re-export or new
-  measurement is needed.
+- Phase 3A.6 packet remains archived as the acceptance template if new source
+  evidence or a future measurement appears; CompleteEASE re-export is not
+  available under current constraints.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
-- Phase 3B.1: re-inventory TiON evidence and decide whether plot-level
-  reflectance can be registered as explicit `digitized_from_plot` context.
 
 ### Blockers/Concerns
 
+- CompleteEASE access/contact, TiON_48/TiON_49 raw R/T, and St Andrews author
+  contact are unavailable under the user's stated constraints.
 - TiON_48/TiON_49 raw R/T spectra are not registered.
 - FROG labels are not authoritatively mapped to TiON_48/TiON_49.
 - Phase 3A `thresholds_predeclared` gate is blocked.
@@ -217,8 +227,9 @@ None yet.
   unresolved and currently blocked after Phase 3A.8 source triage, even with
   related CompleteEASE/Woollam source candidates.
 - Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change
-  thresholds, or choose more source-model variants without new evidence for
-  exact roughness/back-reflection or CompleteEASE acquisition parity.
+  thresholds, contact authors, or choose more source-model variants without new
+  evidence for exact roughness/back-reflection or CompleteEASE acquisition
+  parity.
 
 ## Session Continuity
 

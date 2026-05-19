@@ -59,9 +59,13 @@ Current progress:
   Source Cauchy substrate, inferred source thickness, approximate roughness,
   and approximate backside variants all failed the locked thresholds; exact
   roughness/back-reflection parity remains underdetermined.
-- **Next**: Phase 3B.1 TiON evidence reality check / digitized plot intake.
-  Re-inventory TiON evidence and decide whether plot-level reflectance can be
-  registered explicitly as `digitized_from_plot`.
+- **Done**: Phase 3B.1 TiON evidence reality check / digitized plot intake.
+  TiON_48/TiON_49 epsilon tables, material models, and calibration-only
+  examples are available; no raw R/T measurements or repo-local digitizable
+  plot candidates were found.
+- **Next**: Phase 3D literature/public validation dataset search. Find a
+  source-qualified dataset with optical constants plus independent R/T or
+  ellipsometry holdout evidence.
 - **Blocked/parked**: Phase 3B TiON_48/TiON_49 raw R/T remains missing; grower
   notes and plots are useful provenance but only plot-level reflectance unless
   raw tables or explicit digitized artifacts are registered.
@@ -91,7 +95,7 @@ calibrated_linear_evidence
   -> IN PROGRESS: Phase 3A.3 figure/data provenance reconciliation
   -> COMPLETE: Phase 3A.4 absolute-reflectance decision
   -> BLOCKED: Phase 3A.5 export/provenance retrieval
-  -> ACTIVE/PACKET READY: Phase 3A.6 re-export or measurement packet
+  -> ARCHIVED/PACKET READY: Phase 3A.6 re-export or measurement packet
   -> COMPLETE/BLOCKED: Phase 3A.7 source recovery
   -> COMPLETE/BLOCKED: Phase 3A.8 source candidate triage
   -> COMPLETE/DIAGNOSTIC: Phase 3A.9 relative-only packet
@@ -105,7 +109,8 @@ calibrated_linear_evidence
   -> COMPLETE/TRIAGED: Phase 3C.4 St Andrews failure triage
   -> COMPLETE/GAPS: Phase 3C.5 St Andrews source-model parity
   -> COMPLETE/PARKED: Phase 3C.6A bounded parity implementation
-  -> NEXT: Phase 3B.1 TiON evidence reality check
+  -> COMPLETE/LOCAL EXHAUSTED: Phase 3B.1 TiON evidence reality check
+  -> NEXT: Phase 3D literature/public validation dataset search
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -128,9 +133,10 @@ likely local source locations, the desktop SDSU Google Drive folder, targeted
 Google Drive thesis/defense hits, SDSU slides/reports, and the scanned lab
 notebook. It found related RC2/CompleteEASE and `3L2/Quartz` provenance but no
 exact absolute-`%R` export proof, so the decision is `blocked_needs_new_export`.
-Phase 3A.6 produced a packet and acceptance policy: the project can request or
-perform a clean source-backed re-export rather than pretending the current data
-are enough. Phase 3A.7 then recovered related local CompleteEASE/Woollam source
+Phase 3A.6 produced a packet and acceptance policy: the project has an archived
+template for a clean source-backed intake if new access ever appears, but
+CompleteEASE re-export is not an active path. Phase 3A.7 then recovered related
+local CompleteEASE/Woollam source
 candidates, including DoD SAFE zip-contained snapshots for quartz cap-test and
 10 nm SiO2 pulsed/dynamic runs, but still found no source-backed calibrated
 absolute-`%R` proof. Phase 3A.8 deduplicates those candidates, separates quartz
@@ -171,7 +177,12 @@ metadata, and back-reflection settings missing from the clean-run stack.
 Phase 3C.6A implements bounded source-derived variants, but all variants fail
 the locked thresholds and roughness/back-reflection remain approximate rather
 than exact CompleteEASE parity. St Andrews is parked before Phase 4 unless new
-source evidence appears.
+source evidence appears. Phase 3B.1 then exhausts the local TiON lane: the repo
+has TiON_48/TiON_49 epsilon tables, material models, and calibration-only
+examples, but no raw R/T measurements and no digitizable plot candidates. The
+user has confirmed no CompleteEASE access/contact, no TiON raw R/T, and no
+St Andrews author-contact path, so the next validation-data step is Phase 3D
+literature/public dataset search rather than more local squeezing.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

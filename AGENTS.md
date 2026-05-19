@@ -36,6 +36,15 @@ GPD is a planning mirror and claim-boundary checker, not the default execution e
 - Do not run a full GPD ritual just because work is research-adjacent. Bring it in when it materially reduces scientific overclaim risk or clarifies a phase decision.
 - Treat `GPD/PROJECT.md`, `GPD/ROADMAP.md`, `GPD/STATE.md`, and `GPD/state.json` as mirrors that should be updated when phase state changes, but prefer the authoritative sources listed there when they disagree.
 
+## Hard Data Availability Rule
+
+As of 2026-05-19, the project does not have CompleteEASE access, a CompleteEASE contact, raw sample-matched TiON_48/TiON_49 R/T spectra, or permission to contact the St Andrews authors.
+
+- Treat unavailable CompleteEASE re-exports, unavailable TiON raw R/T, and St Andrews author contact as hard constraints, not active next steps.
+- Do not recommend Phase 3A clean CompleteEASE re-export, TiON raw R/T acquisition, or St Andrews author contact again unless the user supplies new information.
+- Local TiON_48/TiON_49 epsilon tables may support `calibration_only_no_holdout` examples only.
+- The next meaningful validation-data path after local evidence exhaustion is a literature/public-data search for a dataset with both optical constants and independent R/T or ellipsometry holdout evidence.
+
 ## Git Push Cadence Rule
 
 - Prefer pushing coherent, verified chunks to GitHub as work progresses.
