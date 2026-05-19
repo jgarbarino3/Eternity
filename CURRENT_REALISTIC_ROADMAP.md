@@ -993,6 +993,10 @@ Possible later uses:
 - A report-drafting assistant that follows Eternity's cautious reporting style.
 - A mechanism-comparison assistant that proposes alternative explanations from
   structured result manifests.
+- A sandboxed ERA-style optimization harness for scorable code-generation loops
+  only, such as parser experiments, fixture regressions, or bounded model-variant
+  sweeps. Do not make `google-research/era` a backend dependency or claim-status
+  authority unless an isolated trial proves it adds real value.
 
 Use this track only after the project has enough high-quality internal data:
 

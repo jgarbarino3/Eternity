@@ -226,6 +226,10 @@ None yet.
   available under current constraints.
 - Bring back Pro/user guidance for Phase 3A.1 absolute-normalization and future threshold policy.
 - Find source evidence for the `30_20_10` filename-to-sample mapping, or leave it parked as unresolved provenance.
+- Later, run a sandboxed `google-research/era` fit trial only for scorable
+  code-generation loops such as parser experiments, fixture regressions, or
+  bounded model-variant sweeps. Do not adopt ERA as an Eternity backend or
+  evidence/claim authority without that trial.
 
 ### Blockers/Concerns
 
