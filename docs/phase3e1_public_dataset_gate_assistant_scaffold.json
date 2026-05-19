@@ -1,0 +1,392 @@
+{
+  "candidate_evaluations": [
+    {
+      "blockers": [
+        "Phase 3D.1C no-fit static reconstruction did not establish a Phase 4-ready calibrated-linear candidate.",
+        "Keep as useful public package memory unless a cleaner source split appears."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "exeter_bohn_ito_2021",
+      "computed_gate_label": "weak_within_dataset_holdout",
+      "decision": "inspected_nonpromoting_no_fit_reconstruction",
+      "exact_next_file": "docs/phase3d1c_exeter_bohn_no_fit_reconstruction.json",
+      "gate_blockers": [
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "no_existing_nonpromoting_validation"
+      ],
+      "proposed_claim_label": "weak_within_dataset_holdout",
+      "serious_core_allowed_now": false,
+      "title": "All-optical switching of an epsilon-near-zero plasmon resonance in indium tin oxide"
+    },
+    {
+      "blockers": [
+        "Public OPJU files are downloaded and integrity-checked, but not exported to CSV.",
+        "Reflectance normalization and leakage/separability remain unresolved."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "saha_tin_azo_2023",
+      "computed_gate_label": "blocked_source_data_lead",
+      "decision": "opju_export_blocked_source_data_lead",
+      "exact_next_file": "Source data for Fig 2b.opju",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable numerical calibration and holdout data",
+          "flag": "machine_readable_numerical_data"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "TiN/AZO",
+      "missing_required_flags": [
+        "machine_readable_numerical_data",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "blocked_source_data_lead",
+      "serious_core_allowed_now": false,
+      "title": "Engineering the temporal dynamics of all-optical switching with fast and slow materials"
+    },
+    {
+      "blockers": [
+        "Public source-data lead resolves to SI PDF, not raw tables.",
+        "No machine-readable epsilon or independent measured static R/T/A holdout found."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "acs_intracavity_ito_2025",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "public_pdf_si_only_no_raw_tables",
+      "exact_next_file": "docs/phase3d5a_acs_intracavity_pdf_correction.json",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "machine-readable numerical calibration and holdout data",
+          "flag": "machine_readable_numerical_data"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "angle, polarization, side, and unit context specified",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "machine_readable_numerical_data",
+        "absolute_calibration_documented",
+        "geometry_specified",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "no_existing_nonpromoting_validation"
+      ],
+      "proposed_claim_label": "literature_reproduction_fixture",
+      "serious_core_allowed_now": false,
+      "title": "Intracavity epsilon-near-zero dual-range frequency switch"
+    },
+    {
+      "blockers": [
+        "Package is useful but centered on nonlinear spatiotemporal data.",
+        "No clean static absolute R/T holdout was identified."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "exeter_spatiotemporal_ito_2021",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_reference_package_no_static_holdout",
+      "exact_next_file": "docs/phase3d3_exeter_spatiotemporal_ito_source_intake.json",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "no_existing_nonpromoting_validation"
+      ],
+      "proposed_claim_label": "literature_reproduction_fixture",
+      "serious_core_allowed_now": false,
+      "title": "Spatiotemporal refraction of light in an epsilon-near-zero ITO layer"
+    },
+    {
+      "blockers": [
+        "Public package exposes epsilon/model/support data rather than a separable measured R/T holdout."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "thermo_optic_ito_2024",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "public_constants_rich_no_measured_static_holdout",
+      "exact_next_file": "docs/phase3d4_thermo_optic_ito_zenodo_intake.json",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "no_existing_nonpromoting_validation"
+      ],
+      "proposed_claim_label": "calibration_only_no_holdout",
+      "serious_core_allowed_now": false,
+      "title": "Thermo-optic epsilon-near-zero effects in indium tin oxide"
+    },
+    {
+      "blockers": [
+        "Public model parameters are useful, but no independent measured holdout is identified."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "cdo_dielectric_function_2020",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "constants_fixture_no_independent_holdout",
+      "exact_next_file": "CdO_dielectric_function_generator.m",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "In:CdO",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "calibration_only_no_holdout",
+      "serious_core_allowed_now": false,
+      "title": "Ultraviolet to far-infrared dielectric function of n-doped cadmium oxide thin films"
+    },
+    {
+      "blockers": [
+        "Looks scientifically promising, but no raw numerical spectral package is verified.",
+        "May require plot digitization, capping claim below calibrated evidence."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "al_doped_zno_ald_energies_2021",
+      "computed_gate_label": "weak_within_dataset_holdout",
+      "decision": "article_lead_raw_tables_not_verified",
+      "exact_next_file": null,
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable numerical calibration and holdout data",
+          "flag": "machine_readable_numerical_data"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "AZO",
+      "missing_required_flags": [
+        "machine_readable_numerical_data",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "weak_within_dataset_holdout",
+      "serious_core_allowed_now": false,
+      "title": "ALD ZnO and Al-doped ZnO films with spectroscopic ellipsometry and T-R measurements"
+    },
+    {
+      "blockers": [
+        "Data available only from corresponding author upon reasonable request.",
+        "User has ruled out author contact."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "request_only_tin_microbolometer",
+      "computed_gate_label": "rejected_candidate",
+      "decision": "rejected_request_only",
+      "exact_next_file": null,
+      "gate_blockers": [
+        {
+          "criterion": "public data access without private credentials",
+          "flag": "data_are_public"
+        },
+        {
+          "criterion": "no author contact or request-only dependency",
+          "flag": "no_author_contact_required"
+        },
+        {
+          "criterion": "machine-readable numerical calibration and holdout data",
+          "flag": "machine_readable_numerical_data"
+        }
+      ],
+      "material_family": "TiN",
+      "missing_required_flags": [
+        "data_are_public",
+        "no_author_contact_required",
+        "machine_readable_numerical_data"
+      ],
+      "proposed_claim_label": "rejected_candidate",
+      "serious_core_allowed_now": false,
+      "title": "Maximal absorption in ultrathin TiN films for microbolometer applications"
+    }
+  ],
+  "decision": {
+    "can_feed_serious_core_now": false,
+    "can_open_phase4_now": false,
+    "claim_standard_changed": false,
+    "recommended_next_phase": "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate",
+    "status": "phase3e1_scaffold_ready_no_phase4_candidate"
+  },
+  "executive_assistant_contract": {
+    "allowed_outputs": [
+      "candidate cards and rejection cards",
+      "dataset-gate reports and claim-label summaries",
+      "phase-state briefs and next-action recommendations",
+      "literature-search prompts and Browse/Plasmate scouting plans",
+      "failed-validation memory summaries"
+    ],
+    "forbidden_outputs": [
+      "promoting a candidate without all gate flags passing",
+      "treating Browse/Plasmate text extraction as validation evidence",
+      "lowering calibrated_linear_evidence standards to proceed",
+      "recommending unavailable CompleteEASE, TiON raw R/T, or author-contact paths",
+      "opening Phase 4 from plot-only, PDF-only, constants-only, or request-only data"
+    ]
+  },
+  "generated_at": "2026-05-19T14:33:28.158847+00:00",
+  "inputs": {
+    "registry_path": "docs/phase3e1_dataset_candidate_registry.yaml"
+  },
+  "phase_id": "Phase 3E.1",
+  "registry": {
+    "acceptance_scope": "Public/literature thin-film optical datasets that might support a future calibrated-linear validation attempt after passing every public-data gate.",
+    "candidate_count": 8,
+    "phase_id": "Phase 3E.1",
+    "registry_version": 1,
+    "updated_at": "2026-05-19"
+  },
+  "required_phase4_flags": {
+    "absolute_calibration_documented": "documented absolute R/T/A or ellipsometry scale",
+    "calibration_holdout_split_predeclared": "calibration/holdout split can be predeclared",
+    "data_are_public": "public data access without private credentials",
+    "geometry_specified": "angle, polarization, side, and unit context specified",
+    "holdout_not_known_used_for_fit": "holdout is not known to have fit/tuned the model",
+    "identified_sample_stack": "identified sample, stack, substrate, and thickness context",
+    "independent_measured_holdout": "independent measured optical holdout",
+    "machine_readable_numerical_data": "machine-readable numerical calibration and holdout data",
+    "no_author_contact_required": "no author contact or request-only dependency",
+    "no_existing_nonpromoting_validation": "candidate has not already failed or downgraded here",
+    "source_qualified_material_model": "source-qualified optical constants or fitted model",
+    "tmm_appropriate": "planar linear TMM is physically appropriate"
+  },
+  "summary": {
+    "blocker_counts": {
+      "absolute_calibration_documented": 6,
+      "calibration_holdout_split_predeclared": 6,
+      "data_are_public": 1,
+      "geometry_specified": 1,
+      "holdout_not_known_used_for_fit": 6,
+      "independent_measured_holdout": 4,
+      "machine_readable_numerical_data": 4,
+      "no_author_contact_required": 1,
+      "no_existing_nonpromoting_validation": 4
+    },
+    "candidate_count": 8,
+    "claim_label_counts": {
+      "blocked_source_data_lead": 1,
+      "calibration_only_no_holdout": 2,
+      "literature_reproduction_fixture": 2,
+      "rejected_candidate": 1,
+      "weak_within_dataset_holdout": 2
+    },
+    "phase4_candidate_count": 0,
+    "phase4_candidate_ids": []
+  },
+  "title": "Public Dataset Gate And Executive Research Assistant Scaffold"
+}

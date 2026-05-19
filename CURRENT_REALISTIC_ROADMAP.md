@@ -1042,8 +1042,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3E.1 - public dataset gate and executive research assistant
-scaffold`.
+Choose `Phase 3E.2 - Browse/Plasmate public-data sweep through gate`.
 
 Why:
 
@@ -1060,8 +1059,9 @@ not table-package-ready, CdO/high-crystallinity ITO are constants-only, and
 request-only papers remain rejected.
 
 That means the current calibrated-linear push has reached a real data blocker.
-The next move is to preserve the evidence bar and build the fallback machinery
-that still moves Eternity forward.
+Phase 3E.1 now preserves the evidence bar in code and project memory through a
+candidate registry, hard acceptance flags, scaffold report, and assistant
+contract. The next move is to run new search leads through that machinery.
 
 Recommended decision scope:
 
@@ -1077,7 +1077,7 @@ Recommended decision scope:
    author contact, or local OPJU export paths.
 ```
 
-First implementation target:
+Phase 3E.1 implementation target completed:
 
 ```text
 Create the Phase 3E.1 scaffold: candidate registry shape, acceptance-gate
@@ -1090,15 +1090,21 @@ First output:
 ```text
 docs/phase3e1_public_dataset_gate_assistant_scaffold.md
 docs/phase3e1_public_dataset_gate_assistant_scaffold.json
+docs/phase3e1_claim_status_summary.json
+docs/phase3e1_dataset_candidate_registry.yaml
 ```
 
-The decision packet should include:
+The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 8 known
+candidates evaluated, 0 Phase 4 candidates opened, and the recommended next
+phase is `Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate`.
 
-- The claim-status labels that assistant outputs are allowed to use.
-- The fields required for candidate cards and rejection cards.
-- How failed validations and blocked leads become useful project memory.
-- Which reports/prompts the assistant can generate without implying scientific
-  promotion.
+Phase 3E.2 should:
+
+- Add new Deep Research / 5.5 Pro / Browse / Plasmate leads as candidate cards.
+- Run the gate before spending ingestion time.
+- Inspect exact source-data files only when a candidate plausibly clears the
+  hard public-data flags.
+- Keep Phase 4 closed unless every required flag passes.
 
 That is the next brick on the direct path toward the AI researcher.
 
@@ -1448,6 +1454,12 @@ to the executive research assistant / public-dataset gate:
 ```text
 public dataset gate -> candidate registry -> failed-validation memory ->
 conservative fixtures -> executive research assistant workflows
+```
+
+Phase 3E.1 has implemented the first half of this pivot:
+
+```text
+candidate registry -> public-dataset gate -> claim summary -> assistant contract
 ```
 
 This pivot is recorded in

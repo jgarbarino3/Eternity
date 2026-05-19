@@ -89,8 +89,10 @@ Current progress:
   raw tables or independent measured static R/T/A holdout. Remaining known leads
   are paper/plot/PDF-only, constants-only, export-blocked, or request-only; no
   immediate Phase 4 candidate remains.
-- **Next**: Phase 3E.1 public dataset gate and executive research assistant
-  scaffold.
+- **Done**: Phase 3E.1 public dataset gate and executive research assistant
+  scaffold. The registry evaluates 8 known candidates and opens 0 Phase 4
+  candidates.
+- **Next**: Phase 3E.2 Browse/Plasmate public-data sweep through the gate.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -147,7 +149,8 @@ calibrated_linear_evidence
   -> COMPLETE/NONLINEAR FIXTURE: Phase 3D.3 Exeter spatiotemporal ITO intake
   -> COMPLETE/CALIBRATION-ONLY: Phase 3D.4 thermo-optic ITO Zenodo intake
   -> COMPLETE/PIVOT-TRIGGERED: Phase 3D.5 remaining public lead triage
-  -> NEXT: Phase 3E.1 public dataset gate / executive assistant scaffold
+  -> COMPLETE/GATE: Phase 3E.1 public dataset gate / executive assistant scaffold
+  -> NEXT: Phase 3E.2 Browse/Plasmate gated public-data sweep
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -240,9 +243,10 @@ the remaining known public leads and found no immediate Phase 4 candidate:
 ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha remains
 OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
 CdO/high-crystallinity ITO are constants-only, and request-only papers remain
-rejected. The next
-discriminating move is Phase 3E.1, the public-dataset gate and executive
-research assistant scaffold.
+rejected. Phase 3E.1 turned those outcomes into a public-dataset gate and
+executive research assistant scaffold. The next discriminating move is Phase
+3E.2: add incoming search leads to the registry and run the gate before any
+new ingestion attempt.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

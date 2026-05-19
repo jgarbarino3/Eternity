@@ -67,6 +67,20 @@ def test_memory_subcommand_is_registered_without_breaking_v0_cli() -> None:
     assert "Research memory" in result.output
 
 
+def test_phase3e1_scaffold_command_writes_gate_artifacts(tmp_path: Path) -> None:
+    result = runner.invoke(app, ["phase3e1-scaffold", "--output-dir", str(tmp_path)])
+
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "phase3e1_public_dataset_gate_assistant_scaffold.json").exists()
+    assert (tmp_path / "phase3e1_public_dataset_gate_assistant_scaffold.md").exists()
+    assert (tmp_path / "phase3e1_claim_status_summary.json").exists()
+
+    summary = json.loads((tmp_path / "phase3e1_claim_status_summary.json").read_text())
+    assert summary["can_open_phase4_now"] is False
+    assert summary["can_feed_serious_core_now"] is False
+    assert summary["phase4_candidate_ids"] == []
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

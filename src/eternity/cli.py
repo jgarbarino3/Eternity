@@ -51,6 +51,7 @@ from eternity.phase3c6 import build_phase3c6_packet, write_phase3c6_packet
 from eternity.phase3d1b import build_phase3d1b_packet_from_paths, write_phase3d1b_packet
 from eternity.phase3d1c import build_phase3d1c_packet, write_phase3d1c_packet
 from eternity.phase3d2 import build_phase3d2_packet, write_phase3d2_packet
+from eternity.phase3e1 import build_phase3e1_scaffold, write_phase3e1_scaffold
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -348,6 +349,16 @@ PHASE3D2_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown source-data intake artifacts.",
+)
+PHASE3E1_REGISTRY_OPTION = typer.Option(
+    Path("docs/phase3e1_dataset_candidate_registry.yaml"),
+    "--registry",
+    help="Phase 3E.1 public dataset candidate registry.",
+)
+PHASE3E1_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and claim-summary artifacts.",
 )
 
 
@@ -847,6 +858,29 @@ def phase3d2_intake(
         json_path, md_path = write_phase3d2_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e1-scaffold")
+def phase3e1_scaffold(
+    registry_path: Path = PHASE3E1_REGISTRY_OPTION,
+    output_dir: Path | None = PHASE3E1_OUTPUT_DIR_OPTION,
+) -> None:
+    """Build the Phase 3E.1 public-dataset gate and assistant scaffold."""
+
+    try:
+        packet = build_phase3e1_scaffold(registry_path)
+    except (FileNotFoundError, yaml.YAMLError, ValueError) as error:
+        typer.echo(f"Phase 3E.1 scaffold failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, summary_path = write_phase3e1_scaffold(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {summary_path}")
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))

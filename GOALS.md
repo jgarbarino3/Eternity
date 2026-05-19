@@ -139,12 +139,13 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3E.1 - public dataset gate and executive research
-assistant scaffold`, after Phase 3D.5 bounded the remaining known public leads
-and found no immediate additional Phase 4 candidate. Source-qualified TiN/TiON
-optical constants, thesis reflectance spectra, material models, St Andrews
-diagnostics, public package failures, and provenance gaps remain in the
-registry without promoting them to calibrated evidence.
+Phase 3E.1 added the public-dataset gate and executive research assistant
+scaffold. The active step is now `Phase 3E.2 - Browse/Plasmate public-data sweep
+through gate`, after the initial registry evaluated 8 known candidates and
+opened 0 Phase 4 candidates. Source-qualified TiN/TiON optical constants,
+thesis reflectance spectra, material models, St Andrews diagnostics, public
+package failures, and provenance gaps remain in the registry without promoting
+them to calibrated evidence.
 
 Current blocker:
 
@@ -198,8 +199,9 @@ Current blocker:
   independent measured static R/T/A holdout. Saha remains OPJU-export blocked,
   AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO
   leads are constants-only, and request-only papers stay rejected.
-- The next public-data action is Phase 3E.1: build the public-dataset gate and
-  executive research-assistant scaffold rather than forcing a Phase 4 attempt.
+- Phase 3E.1 built the public-dataset gate and executive research-assistant
+  scaffold rather than forcing a Phase 4 attempt. The next public-data action is
+  Phase 3E.2: run incoming search leads through that gate.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -312,9 +314,9 @@ Pivot triggered for the current Phase 3D run:
 - If Exeter/Bohn ITO, Saha TiN/AZO, and the strongest public packages cannot
   support an honest calibrated-linear attempt, do not weaken the
   `calibrated_linear_evidence` standard.
-- Promote the near-term milestone to the executive research assistant /
-  public-dataset gate described in
-  `docs/pivots/executive_research_assistant_fallback.md`.
+- Use the Phase 3E.1 executive research assistant / public-dataset gate
+  artifacts to triage incoming literature leads without lowering the evidence
+  bar.
 - Keep the assistant lane inside Eternity: Serious Core validates, Research
   Memory remembers, and the Executive Research Assistant becomes the user's
   evidence-aware right hand for planning, reports, prompts, dataset triage, and

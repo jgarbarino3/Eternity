@@ -1,0 +1,267 @@
+phase_id: Phase 3E.1
+registry_version: 1
+updated_at: "2026-05-19"
+acceptance_scope: >-
+  Public/literature thin-film optical datasets that might support a future
+  calibrated-linear validation attempt after passing every public-data gate.
+candidates:
+  - candidate_id: exeter_bohn_ito_2021
+    title: All-optical switching of an epsilon-near-zero plasmon resonance in indium tin oxide
+    material_family: ITO
+    source_type: institutional_repository_zip
+    source_refs:
+      - DOI 10.1038/s41467-021-21332-y
+      - Dataset DOI 10.24378/exe.3004
+    public_data_links:
+      - https://ore.exeter.ac.uk/articles/dataset/All-Optical_Switching_of_an_Epsilon-Near-Zero_Plasmon_Resonance_in_Indium_Tin_Oxide_dataset_/29776322
+    exact_files:
+      - OpenData.zip
+      - lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv
+      - docs/phase3d1b_exeter_bohn_split_lock.yaml
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: true
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: true
+      geometry_specified: true
+      calibration_holdout_split_predeclared: true
+      holdout_not_known_used_for_fit: true
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: weak_within_dataset_holdout
+    decision: inspected_nonpromoting_no_fit_reconstruction
+    blockers:
+      - Phase 3D.1C no-fit static reconstruction did not establish a Phase 4-ready calibrated-linear candidate.
+      - Keep as useful public package memory unless a cleaner source split appears.
+    exact_next_file: docs/phase3d1c_exeter_bohn_no_fit_reconstruction.json
+    notes:
+      - Strong public package, but current project state says do not open Phase 4 from this inspected split.
+
+  - candidate_id: saha_tin_azo_2023
+    title: Engineering the temporal dynamics of all-optical switching with fast and slow materials
+    material_family: TiN/AZO
+    source_type: figshare_origin_source_data
+    source_refs:
+      - DOI 10.1038/s41467-023-41377-5
+      - Figshare DOI 10.6084/m9.figshare.23734116
+    public_data_links:
+      - https://springernature.figshare.com/articles/dataset/Engineering_the_Temporal_Dynamics_of_All-Optical_Switching_with_Fast_and_Slow_Materials/23734116
+    exact_files:
+      - Source data for Fig 2b.opju
+      - Source data for Fig 2cd.opju
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: true
+      machine_readable_numerical_data: false
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: blocked_source_data_lead
+    decision: opju_export_blocked_source_data_lead
+    blockers:
+      - Public OPJU files are downloaded and integrity-checked, but not exported to CSV.
+      - Reflectance normalization and leakage/separability remain unresolved.
+    exact_next_file: Source data for Fig 2b.opju
+    notes:
+      - Best backup if table export becomes available.
+
+  - candidate_id: acs_intracavity_ito_2025
+    title: Intracavity epsilon-near-zero dual-range frequency switch
+    material_family: ITO
+    source_type: acs_pdf_si
+    source_refs:
+      - DOI 10.1021/acsphotonics.4c01322
+    public_data_links:
+      - https://figshare.com/ndownloader/files/51010982
+    exact_files:
+      - intracavity-epsilon-near-zero-dual-range-frequency-switch.pdf
+      - ph4c01322_si_001.pdf
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: false
+      absolute_calibration_documented: false
+      geometry_specified: false
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: literature_reproduction_fixture
+    decision: public_pdf_si_only_no_raw_tables
+    blockers:
+      - Public source-data lead resolves to SI PDF, not raw tables.
+      - No machine-readable epsilon or independent measured static R/T/A holdout found.
+    exact_next_file: docs/phase3d5a_acs_intracavity_pdf_correction.json
+    notes:
+      - Useful as a literature fixture only.
+
+  - candidate_id: exeter_spatiotemporal_ito_2021
+    title: Spatiotemporal refraction of light in an epsilon-near-zero ITO layer
+    material_family: ITO
+    source_type: institutional_repository_zip
+    source_refs:
+      - DOI 10.1364/OPTICA.436324
+      - Dataset DOI 10.24378/exe.3644
+    public_data_links:
+      - https://ore.exeter.ac.uk/articles/dataset/Spatiotemporal_refraction_of_light_in_an_epsilon-near-zero_ITO_layer_frequency_shifting_effects_arising_from_interfaces_dataset_/29783195
+    exact_files:
+      - OpenData.zip
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: literature_reproduction_fixture
+    decision: nonlinear_reference_package_no_static_holdout
+    blockers:
+      - Package is useful but centered on nonlinear spatiotemporal data.
+      - No clean static absolute R/T holdout was identified.
+    exact_next_file: docs/phase3d3_exeter_spatiotemporal_ito_source_intake.json
+    notes:
+      - Keep for nonlinear/reference memory, not Phase 4.
+
+  - candidate_id: thermo_optic_ito_2024
+    title: Thermo-optic epsilon-near-zero effects in indium tin oxide
+    material_family: ITO
+    source_type: zenodo_source_data
+    source_refs:
+      - DOI 10.1038/s41467-024-45054-z
+      - Zenodo DOI 10.5281/zenodo.10148545
+    public_data_links:
+      - https://zenodo.org/records/10148545
+    exact_files:
+      - Zenodo source-data package
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: calibration_only_no_holdout
+    decision: public_constants_rich_no_measured_static_holdout
+    blockers:
+      - Public package exposes epsilon/model/support data rather than a separable measured R/T holdout.
+    exact_next_file: docs/phase3d4_thermo_optic_ito_zenodo_intake.json
+    notes:
+      - Useful constants fixture.
+
+  - candidate_id: cdo_dielectric_function_2020
+    title: Ultraviolet to far-infrared dielectric function of n-doped cadmium oxide thin films
+    material_family: In:CdO
+    source_type: supplementary_model_parameters
+    source_refs:
+      - DOI 10.1103/PhysRevMaterials.4.025202
+    public_data_links:
+      - https://journals.aps.org/prmaterials/supplemental/10.1103/PhysRevMaterials.4.025202/CdO_Dielectric_Function_final-SI.pdf
+      - https://my.vanderbilt.edu/caldwellgroup/dielectric-functions/
+    exact_files:
+      - CdO_Dielectric_Function_final-SI.pdf
+      - CdO_dielectric_function_generator.m
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: calibration_only_no_holdout
+    decision: constants_fixture_no_independent_holdout
+    blockers:
+      - Public model parameters are useful, but no independent measured holdout is identified.
+    exact_next_file: CdO_dielectric_function_generator.m
+    notes:
+      - Good model-provenance fixture if the project needs CdO constants.
+
+  - candidate_id: al_doped_zno_ald_energies_2021
+    title: ALD ZnO and Al-doped ZnO films with spectroscopic ellipsometry and T-R measurements
+    material_family: AZO
+    source_type: open_article_plot_tables_unverified
+    source_refs:
+      - Energies 2021 ALD AZO open article lead
+    public_data_links:
+      - https://www.mdpi.com/
+    exact_files: []
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: true
+      machine_readable_numerical_data: false
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: weak_within_dataset_holdout
+    decision: article_lead_raw_tables_not_verified
+    blockers:
+      - Looks scientifically promising, but no raw numerical spectral package is verified.
+      - May require plot digitization, capping claim below calibrated evidence.
+    exact_next_file: null
+    notes:
+      - Search only if new raw tables or supplements are found.
+
+  - candidate_id: request_only_tin_microbolometer
+    title: Maximal absorption in ultrathin TiN films for microbolometer applications
+    material_family: TiN
+    source_type: request_only
+    source_refs:
+      - AIP ultrathin TiN microbolometer lead
+    public_data_links: []
+    exact_files: []
+    evidence:
+      data_are_public: false
+      no_author_contact_required: false
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: true
+      machine_readable_numerical_data: false
+      absolute_calibration_documented: true
+      geometry_specified: true
+      calibration_holdout_split_predeclared: true
+      holdout_not_known_used_for_fit: true
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: rejected_candidate
+    decision: rejected_request_only
+    blockers:
+      - Data available only from corresponding author upon reasonable request.
+      - User has ruled out author contact.
+    exact_next_file: null
+    notes:
+      - Do not revisit unless public files appear independently.

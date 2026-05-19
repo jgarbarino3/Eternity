@@ -54,13 +54,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.5 | Completed/pivot-triggered | Remaining public source-data lead triage | Triage found no immediate additional ingest-ready Phase 4 candidate. Remaining leads are public PDF/SI-only, paper/plot-only, constants-only, export-blocked, or request-only; the current run should pivot rather than weaken the validation bar. |
 | Phase 3D.5A | Completed/correction | ACS intracavity PDF correction | Manual browser downloads show `51010982` resolves to the ACS SI PDF, not a raw source-data package. The public package is article PDF + SI PDF only, with no embedded files, raw tables, or independent measured static R/T/A holdout; claim ceiling is `literature_reproduction_fixture`. |
 | Phase 3E | Active/pivot | Public dataset gate + executive research assistant | Keep the Serious Core claim gates intact while building the user-facing research-assistant substrate: candidate registry, rejection cards, conservative fixtures, reports, prompts, and evidence-aware next-action workflows. |
-| Phase 3E.1 | Recommended | Public Dataset Gate And Executive Research Assistant Scaffold | Turn Phase 3D's bounded failure into durable machinery: dataset acceptance gate, candidate-card registry, claim-status summaries, failed-validation memory, and assistant-facing project brief/report generation. |
+| Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 8 known candidates and opens 0 Phase 4 candidates. |
+| Phase 3E.2 | Recommended | Browse/Plasmate Public-Data Sweep Through Gate | Use Browse.sh, Plasmate, Deep Research, and 5.5 Pro outputs to add new candidate cards, run the public-dataset gate, and inspect exact files only for candidates that can plausibly clear the hard Phase 4 flags. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3E.1 - public dataset gate and executive research
-assistant scaffold**.
+Current phase: **Phase 3E.2 - Browse/Plasmate public-data sweep through gate**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -217,16 +217,16 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3E.1 - public dataset gate and executive research assistant
-  scaffold**.
-  Planning: GPT-5.5 `high`, because this is a project-shape pivot and should
-  keep the Serious Core, Research Memory, and assistant lanes cleanly separated.
-  Implementation: `medium` for registry/report scaffolding; `high` only if the
-  acceptance gate touches shared contracts or model/material-provider code.
+- **Phase 3E.2 - Browse/Plasmate public-data sweep through gate**.
+  Planning: GPT-5.5 `high`, because incoming Deep Research / Pro leads need
+  strict evidence triage without reopening parked local blockers. Implementation:
+  `medium` for candidate-card insertion and gate reports; `high` only if a
+  candidate passes every gate and triggers Phase 4 preparation.
 
 Helpful tools:
 
-- GPD planning/checking/verifier workflows for phase design and scientific claim boundaries.
+- Browse.sh and Plasmate for read-only public-data scouting and source-page inspection.
+- GPD planning/checking/verifier workflows only if a candidate appears to clear the gate or a claim-boundary decision becomes ambiguous.
 - Local `unzip`, `strings`, `pdftotext`, `shasum`, registry validation, and pytest commands.
 - Origin/Origin Viewer on Windows, or LabPlot GUI import/export, for OPJU-to-CSV
   extraction if the user can provide access.
