@@ -1,6 +1,6 @@
 # Eternity Current Realistic Roadmap
 
-Date: 2026-05-07
+Date: 2026-05-19
 
 ## Framing
 
@@ -1042,15 +1042,15 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock`.
+Choose `Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction`.
 
 Recommended decision scope:
 
 ```text
-1. Extract Exeter/Bohn Figure 1 optical constants and Figure 2 TIR/pre-pump
-   static `R0` from the verified `OpenData.zip` snapshot.
-2. Record sample/stack, wavelength range, geometry, polarization, units, source
-   license, and whether fitting/holdout leakage can be avoided.
+1. Use the Phase 3D.1B split lock and canonical artifacts as immutable inputs:
+   Figure 1 epsilon, Figure 2 TIR reference, and Figure 2 static `R0`.
+2. Reconstruct the package static Figure 2 model path with locked material,
+   thickness, incident-index, angle-offset, and normalization choices.
 3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
@@ -1059,25 +1059,25 @@ Recommended decision scope:
 First implementation target:
 
 ```text
-Create canonical Phase 3D.1B extraction artifacts and a split-lock record. Only
-add model or registry code where needed to reproduce the package constants
-without fitting to Figure 2 reflection.
+Create a Phase 3D.1C no-fit reconstruction packet. Do not tune material
+parameters, thickness, incident index, angle offset, vertical scale, wavelength
+axis, or thresholds after inspecting Figure 2 residuals.
 ```
 
 First output:
 
 ```text
-docs/phase3d1b_exeter_bohn_static_r0_extraction.md
-docs/phase3d1b_exeter_bohn_static_r0_extraction.json
+docs/phase3d1c_exeter_bohn_no_fit_reconstruction.md
+docs/phase3d1c_exeter_bohn_no_fit_reconstruction.json
 ```
 
 The decision packet should include:
 
-- Which Exeter/Bohn source files define frozen calibration inputs.
-- Which Figure 2 rows define the static pre-pump holdout.
-- Which package constants and nuisance values are locked before residuals.
-- Which data are forbidden from fitting.
-- A leakage guard and claim-status ceiling for the no-fit run.
+- Which package constants and nuisance values were used without tuning.
+- Which solver path reconstructs the package static reflection calculation.
+- Residual metrics against the locked static `R0` surface.
+- Whether the result is `weak_within_dataset_holdout`, `failed_validation`, or
+  a Phase 4 candidate needing final promotion review.
 - Whether the Saha TiN/AZO backup should be inspected next if Exeter/Bohn fails.
 
 That is the next brick on the direct path toward the AI researcher.
@@ -1135,6 +1135,45 @@ Recommended next:
 - Lock a calibration/holdout split that forbids Figure 2 reflection rows from
   fitting.
 - Run only package-constant/no-fit reconstruction before emitting residuals.
+
+#### Phase 3D.1B: Exeter/Bohn No-Fit Static R0 Extraction and Split Lock
+
+Artifacts:
+
+- `docs/phase3d1b_exeter_bohn_static_r0_extraction.md`
+- `docs/phase3d1b_exeter_bohn_static_r0_extraction.json`
+- `docs/phase3d1b_exeter_bohn_split_lock.yaml`
+- `lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_ito_fig1_epsilon.csv`
+- `lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_tir_reference.csv`
+- `lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv`
+
+Decision:
+
+- Status: `static_r0_extracted_split_locked_no_residuals`.
+- Current claim ceiling: `weak_within_dataset_holdout`.
+- Can feed serious core: `false`.
+- Can promote calibrated evidence: `false`.
+- Phase 4 ready: `false`.
+
+Findings:
+
+- Figure 1 epsilon is now a canonical 187-row CSV over
+  `1046.10498`-`1684.096069` nm, with ENZ crossing at `1233.996861` nm.
+- Figure 2 TIR normalization is now a 31-row locked reference.
+- Figure 2 static pre-pump `R0` is now an 806-row surface over 31 wavelengths
+  and 26 prism angles, with 11 pre-pump rows averaged per grid point.
+- The registry records the Figure 1 epsilon artifact, sample, stack mirror,
+  measurement, and tabulated material model; the 2D `R0` surface remains governed
+  by the split-lock YAML rather than being misregistered as a 1D spectrum.
+- No residuals were run and no claim was promoted.
+
+Recommended next:
+
+- `Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction`.
+- Use only the locked Phase 3D.1B artifacts and package constants/nuisance
+  values.
+- Compare to the locked `R0` surface only after the model path is frozen.
+- Emit a residual report and conservative claim-status decision.
 
 ### Pivot If Phase 3D Fails
 

@@ -88,3 +88,12 @@ calibration input and Figure 2 `R0` holdout, lock package constants/nuisance
 values before residuals, and forbid any tuning of material, thickness, angle,
 scaling, wavelength, or thresholds after inspecting the Figure 2 reflection
 surface.
+
+Phase 3D.1B completed that extraction and wrote
+`docs/phase3d1b_exeter_bohn_split_lock.yaml`. Phase 3D.1C may only use the
+locked artifacts and predeclared package constants/nuisance values for no-fit
+model reconstruction. Figure 2 `R0` values remain forbidden for material,
+thickness, incident-index, angle-offset, vertical-scale, wavelength-axis, or
+threshold tuning. Any Phase 3D.1C residual report remains capped at
+`weak_within_dataset_holdout` unless a later promotion review proves full
+independence, uncertainty handling, and claim-status criteria.

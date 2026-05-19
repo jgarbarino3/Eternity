@@ -1,0 +1,33 @@
+phase_id: Phase 3D.1B
+split_id: public_exeter_bohn_ito_2021_fig1_fig2_no_fit_static_r0
+created_at: '2026-05-19'
+claim_status_ceiling: weak_within_dataset_holdout
+calibration:
+  material_input: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_ito_fig1_epsilon.csv
+  source_member: Figure1/DATA_ellipsometer_fit.txt
+  allowed_inputs:
+  - tabulated Figure 1 epsilon columns
+  - package Drude constants only if explicitly selected before residuals
+holdout:
+  static_r0_surface: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv
+  tir_reference: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_tir_reference.csv
+  source_members:
+  - Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv
+  - Figure2/DATA/DATA_Figure2a,b,c_experiment.csv
+  selection: Figure 2 rows with wavelength_1 == wavelength_2 and delay <= -0.4 ps
+locked_nuisance_values:
+  ito_thickness_nm: 60.0
+  incident_index_n: 1.43
+  angle_offset_dth_deg: 3.4
+  tir_reference_interpolation: not_a_knot_cubic_spline_matching_scipy_interp1d_kind_cubic
+forbidden_after_residuals:
+- material parameter refit
+- thickness tuning
+- incident-index tuning
+- angle-offset tuning
+- vertical scaling
+- wavelength shifting
+- threshold loosening
+- using Figure 3/4 to rescue Figure 2
+fitting_may_access_holdout_y: false
+ai_playground_may_access_holdout_y_before_fit: false

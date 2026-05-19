@@ -1,0 +1,138 @@
+{
+  "allowed_next": [
+    "Use the locked Figure 1/Figure 2 artifacts for a package-constant no-fit reconstruction.",
+    "Compare against Figure 2 static R0 only after model constants and thresholds are fixed.",
+    "Keep Figure 3/4 auxiliary unless Figure 2 is explicitly parked."
+  ],
+  "artifacts": {
+    "fig1_epsilon": {
+      "bytes": 9201,
+      "path": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_ito_fig1_epsilon.csv",
+      "role": "calibration_material_input",
+      "sha256": "cf0c0e365334fe5257ac313d56f3e17a679624bbef81572a057ae173436f1489",
+      "source_member": "Figure1/DATA_ellipsometer_fit.txt"
+    },
+    "fig2_static_r0": {
+      "bytes": 84627,
+      "path": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv",
+      "role": "holdout_static_prepump_reflection_surface",
+      "sha256": "e9a5109b4878373559cf367b020358c14fe187371babc1a087afee860eefa67a",
+      "source_member": "Figure2/DATA/DATA_Figure2a,b,c_experiment.csv"
+    },
+    "fig2_tir_reference": {
+      "bytes": 1325,
+      "path": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_tir_reference.csv",
+      "role": "holdout_normalization_reference",
+      "sha256": "a68892c9c66ddb8bb19b66aa27a59e4babefe698921b985a8c51003f29aff894",
+      "source_member": "Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv"
+    }
+  },
+  "calibration_summary": {
+    "enz_wavelengths_nm": [
+      1233.996861
+    ],
+    "epsilon_imag": [
+      0.307948,
+      1.254444
+    ],
+    "epsilon_real": [
+      -2.842321,
+      0.949581
+    ],
+    "passivity_check": "pass",
+    "rows": 187,
+    "wavelength_nm": [
+      1046.10498,
+      1684.096069
+    ]
+  },
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction",
+    "status": "static_r0_extracted_split_locked_no_residuals"
+  },
+  "forbidden_next": [
+    "material parameter refit",
+    "thickness tuning",
+    "incident-index tuning",
+    "angle-offset tuning",
+    "vertical scaling",
+    "wavelength shifting",
+    "threshold loosening",
+    "using Figure 3/4 to rescue Figure 2"
+  ],
+  "generated_at": "2026-05-19T12:39:57.301602+00:00",
+  "holdout_summary": {
+    "prepump_rows_per_point": [
+      11
+    ],
+    "r0_grid": {
+      "theta_count": 26,
+      "wavelength_count": 31
+    },
+    "r0_reflectance_fraction": [
+      0.0033301334422230875,
+      0.5116302643901643
+    ],
+    "static_r0_rows": 806,
+    "theta_prism_deg": [
+      38.35222290717139,
+      54.93588374048224
+    ],
+    "tir_reference_rows": 31,
+    "wavelength_nm": [
+      1150.0,
+      1450.0
+    ]
+  },
+  "inputs": {
+    "raw_output_dir": "lab_data/raw/public_exeter_bohn_ito_2021",
+    "zip_path": "lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip"
+  },
+  "phase_id": "Phase 3D.1B",
+  "split_lock": {
+    "ai_playground_may_access_holdout_y_before_fit": false,
+    "calibration": {
+      "allowed_inputs": [
+        "tabulated Figure 1 epsilon columns",
+        "package Drude constants only if explicitly selected before residuals"
+      ],
+      "material_input": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_ito_fig1_epsilon.csv",
+      "source_member": "Figure1/DATA_ellipsometer_fit.txt"
+    },
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "created_at": "2026-05-19",
+    "fitting_may_access_holdout_y": false,
+    "forbidden_after_residuals": [
+      "material parameter refit",
+      "thickness tuning",
+      "incident-index tuning",
+      "angle-offset tuning",
+      "vertical scaling",
+      "wavelength shifting",
+      "threshold loosening",
+      "using Figure 3/4 to rescue Figure 2"
+    ],
+    "holdout": {
+      "selection": "Figure 2 rows with wavelength_1 == wavelength_2 and delay <= -0.4 ps",
+      "source_members": [
+        "Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv",
+        "Figure2/DATA/DATA_Figure2a,b,c_experiment.csv"
+      ],
+      "static_r0_surface": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv",
+      "tir_reference": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_tir_reference.csv"
+    },
+    "locked_nuisance_values": {
+      "angle_offset_dth_deg": 3.4,
+      "incident_index_n": 1.43,
+      "ito_thickness_nm": 60.0,
+      "tir_reference_interpolation": "not_a_knot_cubic_spline_matching_scipy_interp1d_kind_cubic"
+    },
+    "phase_id": "Phase 3D.1B",
+    "split_id": "public_exeter_bohn_ito_2021_fig1_fig2_no_fit_static_r0"
+  },
+  "title": "Exeter/Bohn No-Fit Static R0 Extraction and Split Lock"
+}

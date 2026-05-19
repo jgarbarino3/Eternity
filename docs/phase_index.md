@@ -45,19 +45,23 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D | Active/intake in progress | Literature/public validation dataset search | Public search identified Exeter/Bohn ITO ENZ as the first package to inspect and Saha TiN/AZO as backup. Broad search should pause while Exeter/Bohn is ingested. |
 | Phase 3D.1 | Completed/intake-ready | Exeter/Bohn ITO package intake | Downloaded and snapshotted `OpenData.zip` from DOI `10.24378/exe.3004`, verified archive hash/test, and found table/code candidates for ellipsometry-derived ITO epsilon plus TIR-normalized reflection. |
 | Phase 3D.1A | Completed/promising-no-promotion | Exeter/Bohn calibration-holdout split audit | Figure 1 provides source-qualified ellipsometry epsilon; Figure 2 provides the cleanest static pre-pump reflection candidate via TIR-normalized `R0`, but the split still needs no-fit extraction/locking before any residual claim. |
-| Phase 3D.1B | Recommended | Exeter/Bohn no-fit static R0 extraction and split lock | Extract Figure 1 optical constants and Figure 2 TIR/pre-pump `R0` into canonical artifacts, lock the split, and run only package-constant/no-fit model reconstruction. |
+| Phase 3D.1B | Completed/split-locked | Exeter/Bohn no-fit static R0 extraction and split lock | Extracted Figure 1 optical constants, Figure 2 TIR reference, and Figure 2 pre-pump `R0` into canonical CSV artifacts; registered the Figure 1 epsilon model; and wrote a split-lock YAML that forbids residual-driven tuning. |
+| Phase 3D.1C | Recommended | Exeter/Bohn package-constant no-fit model reconstruction | Reconstruct the package static Figure 2 model using locked constants/nuisance values and compare to the locked `R0` surface only after the model path is frozen. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock**.
+Current phase: **Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
 promising but non-promoting split: Figure 1 source-qualified ellipsometry
-epsilon and Figure 2 TIR-normalized pre-pump static reflection. The next
-meaningful step is not more broad search. It is canonical extraction and
-no-fit split locking for the Exeter/Bohn package.
+epsilon and Figure 2 TIR-normalized pre-pump static reflection. Phase 3D.1B
+extracted the canonical Figure 1 epsilon, TIR reference, and static `R0`
+surface, then locked the split before residuals. The next meaningful step is
+not more broad search. It is reconstructing the package no-fit model path
+against the locked holdout without changing material, thickness, angle,
+normalization, wavelength, or thresholds after seeing residuals.
 
 Information sufficiency:
 
@@ -124,6 +128,10 @@ Information sufficiency:
   ellipsometry-derived epsilon and Figure 2 has a table route to
   TIR-normalized pre-pump static reflection, but the lane remains
   non-promoting until no-fit extraction and split locking are done.
+- Enough to complete Phase 3D.1B as extraction/split lock: canonical Figure 1
+  epsilon, Figure 2 TIR reference, and Figure 2 static `R0` artifacts now exist,
+  the Figure 1 epsilon model is registered, and holdout-driven fitting is
+  explicitly forbidden by `docs/phase3d1b_exeter_bohn_split_lock.yaml`.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -145,16 +153,17 @@ Information sufficiency:
 - Not enough to continue local validation without new data: CompleteEASE
   re-export, TiON raw R/T, and St Andrews author contact are unavailable under
   the user's stated constraints.
-- Not enough to promote Exeter/Bohn yet: the Figure 2 notebook already compares
-  experiment and static model, and hard-coded Drude/geometry constants must be
-  locked before any residual evaluation.
+- Not enough to promote Exeter/Bohn yet: the locked artifacts have not yet been
+  run through a package-constant no-fit reconstruction, residual report,
+  uncertainty/threshold gate, and leakage review.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.1B - Exeter/Bohn no-fit static R0 extraction and split lock**.
-  Planning: GPT-5.5 `high`, because leakage and split policy matter.
-  Implementation: `high` if adding canonical extraction/model code, or
-  `medium` for report-only canonical extraction artifacts.
+- **Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction**.
+  Planning: GPT-5.5 `high`, because the package model path includes hard-coded
+  constants and leakage-sensitive choices.
+  Implementation: `high` if adding solver/model code, or `medium` if the
+  existing package code can be wrapped without changing material/provider logic.
 
 Helpful tools:
 

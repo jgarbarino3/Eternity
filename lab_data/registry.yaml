@@ -481,6 +481,55 @@ raw_artifacts:
     access_notes: Member-derived snapshot from the public St Andrews CC BY dataset archive.
     provenance_refs:
     - phase3c1_standrews_tin_pairing
+  public_exeter_bohn_ito_2021_fig1_epsilon:
+    raw_artifact_id: public_exeter_bohn_ito_2021_fig1_epsilon
+    kind: csv
+    path: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_ito_fig1_epsilon.csv
+    sha256: cf0c0e365334fe5257ac313d56f3e17a679624bbef81572a057ae173436f1489
+    bytes: 9201
+    source_type: literature_table
+    immutable: true
+    original_filename: Figure1/DATA_ellipsometer_fit.txt
+    original_path: lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip::Figure1/DATA_ellipsometer_fit.txt
+    acquired_at: '2026-05-19'
+    source_notes: Phase 3D.1B canonical CSV extracted from Exeter/Bohn Figure 1
+      ellipsometry fit data without smoothing or fitting in Eternity.
+    access_notes: Member-derived snapshot from the public Exeter/Bohn CC BY dataset archive.
+    provenance_refs:
+    - phase3d1b_exeter_bohn_static_r0_extraction
+  public_exeter_bohn_ito_2021_fig2_tir_reference:
+    raw_artifact_id: public_exeter_bohn_ito_2021_fig2_tir_reference
+    kind: csv
+    path: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_tir_reference.csv
+    sha256: a68892c9c66ddb8bb19b66aa27a59e4babefe698921b985a8c51003f29aff894
+    bytes: 1325
+    source_type: literature_table
+    immutable: true
+    original_filename: Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv
+    original_path: lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip::Figure2/DATA/DATA_Figure2a,b,c_calibration_probe_TIR.csv
+    acquired_at: '2026-05-19'
+    source_notes: Phase 3D.1B TIR reference table computed from the package calibration
+      CSV as mean(power_s/power_r_probe) for theta >= 45 deg, matching the notebook
+      normalization lane.
+    access_notes: Member-derived snapshot from the public Exeter/Bohn CC BY dataset archive.
+    provenance_refs:
+    - phase3d1b_exeter_bohn_static_r0_extraction
+  public_exeter_bohn_ito_2021_fig2_static_r0:
+    raw_artifact_id: public_exeter_bohn_ito_2021_fig2_static_r0
+    kind: csv
+    path: lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv
+    sha256: e9a5109b4878373559cf367b020358c14fe187371babc1a087afee860eefa67a
+    bytes: 84627
+    source_type: literature_table
+    immutable: true
+    original_filename: Figure2/DATA/DATA_Figure2a,b,c_experiment.csv
+    original_path: lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip::Figure2/DATA/DATA_Figure2a,b,c_experiment.csv
+    acquired_at: '2026-05-19'
+    source_notes: Phase 3D.1B static pre-pump R0 surface extracted from diagonal
+      wavelength rows with delay <= -0.4 ps, normalized by the locked TIR reference.
+    access_notes: Member-derived snapshot from the public Exeter/Bohn CC BY dataset archive.
+    provenance_refs:
+    - phase3d1b_exeter_bohn_static_r0_extraction
 samples:
   tin_50nm_dc_sputtered_master:
     sample_id: tin_50nm_dc_sputtered_master
@@ -670,6 +719,26 @@ samples:
     - public_standrews_tin_2025_dataset_zip
     - public_standrews_tin_2025_paper_pdf
     - public_standrews_tin_50nm_50c_epsilon
+  public_exeter_bohn_ito_60nm:
+    sample_id: public_exeter_bohn_ito_60nm
+    material: ITO
+    source_type: literature
+    nominal_thickness:
+      value: 60
+      unit: nm
+      uncertainty: null
+    composition: ITO sputtered on cover glass for the Exeter/Bohn 2021 ENZ plasmon
+      dataset; exact annealing condition for the selected Figure 1/Figure 2 lane is
+      kept source-qualified to the package.
+    process_notes:
+    - Phase 3D.1A found a promising but not yet calibrated split between Figure 1 epsilon
+      and Figure 2 static pre-pump reflection.
+    - Phase 3D.1B extracted canonical no-fit artifacts and locked nuisance values before
+      residuals.
+    provenance_refs:
+    - public_exeter_bohn_ito_2021_opendata_zip
+    - public_exeter_bohn_ito_2021_fig1_epsilon
+    - public_exeter_bohn_ito_2021_fig2_static_r0
 stacks:
   tin_50nm_dc_sputtered_master_air_film_unknown_substrate:
     stack_id: tin_50nm_dc_sputtered_master_air_film_unknown_substrate
@@ -958,6 +1027,30 @@ stacks:
     notes: Phase 3C.1 public dataset validation candidate stack. Pairing is supported for
       reflectance but not sufficient for calibrated promotion without thresholds and final
       no-fit-leakage review.
+  public_exeter_bohn_ito_60nm_prism_ito_air:
+    stack_id: public_exeter_bohn_ito_60nm_prism_ito_air
+    sample_ref: public_exeter_bohn_ito_60nm
+    layers:
+    - role: incident_medium
+      material: cover_glass_prism_effective_n_1p43
+      thickness: null
+      notes: Figure 2 static-model notebook uses incident index n=1.43 in the
+        package Fresnel/Kretschmann calculation.
+    - role: film
+      material: ITO
+      thickness:
+        value: 60
+        unit: nm
+        uncertainty: null
+      notes: Phase 3D.1B split lock freezes the package value of 60 nm before residuals.
+    - role: substrate
+      material: air
+      thickness: null
+      notes: Package static model treats the transmitted side as air. The physical
+        coverslip/prism handling should stay explicit in Phase 3D.1C.
+    notes: Phase 3D.1B model-reconstruction stack mirror for the package Figure 2
+      static path. This is not yet calibrated evidence because residuals have not been
+      run and the static holdout is from the pre-pump lane of a nonlinear experiment.
 measurements:
   tin_50nm_lorentz_epsilon_measurement:
     measurement_id: tin_50nm_lorentz_epsilon_measurement
@@ -1634,6 +1727,34 @@ measurements:
     preprocessing:
     - Extracted from RT.xlsx without smoothing or normalization changes.
     forbidden_for_fitting: true
+  public_exeter_bohn_ito_2021_fig1_epsilon_measurement:
+    measurement_id: public_exeter_bohn_ito_2021_fig1_epsilon_measurement
+    kind: epsilon_table
+    raw_artifact_ref: public_exeter_bohn_ito_2021_fig1_epsilon
+    sample_ref: public_exeter_bohn_ito_60nm
+    stack_ref: public_exeter_bohn_ito_60nm_prism_ito_air
+    x_axis:
+      quantity: vacuum_wavelength
+      unit: nm
+      values_column: wavelength_nm
+    y_quantity: complex_dielectric_function
+    y_unit: dimensionless
+    y_values_column: epsilon_real
+    y_values_columns:
+      epsilon_real: epsilon_real
+      epsilon_imag: epsilon_imag
+    uncertainty_type: unknown
+    geometry_incidence_angle:
+      value: 0
+      unit: deg
+      uncertainty: null
+    geometry_polarization: unknown
+    instrument_or_source_notes: Exeter/Bohn Figure 1 Gen-Osc ellipsometry fit table
+      extracted from OpenData.zip in Phase 3D.1B.
+    preprocessing:
+    - Converted from the package text member to canonical CSV without smoothing or
+      material-parameter fitting in Eternity.
+    forbidden_for_fitting: false
 material_models:
   tin_50nm_lorentz_epsilon_model:
     material_model_id: tin_50nm_lorentz_epsilon_model
@@ -1779,6 +1900,35 @@ material_models:
     limitations:
     - RT.xlsx does not independently label the annealing condition.
     - Transmittance is auxiliary until scaling/noise is audited.
+  public_exeter_bohn_ito_2021_fig1_epsilon_model:
+    material_model_id: public_exeter_bohn_ito_2021_fig1_epsilon_model
+    sample_ref: public_exeter_bohn_ito_60nm
+    kind: tabulated_epsilon
+    source_type: literature_table
+    raw_artifact_ref: public_exeter_bohn_ito_2021_fig1_epsilon
+    source_measurement_ref: public_exeter_bohn_ito_2021_fig1_epsilon_measurement
+    equation_convention: epsilon = epsilon_real + i epsilon_imag
+    sign_convention: exp(-i omega t) optics convention assumed for passive positive
+      epsilon_imag tables
+    interpolation: linear
+    extrapolation: forbidden
+    enz_definition: vacuum wavelength where Re(epsilon) crosses zero by linear interpolation
+    enz_wavelengths_nm:
+    - 1233.996861
+    wavelength_min_nm: 1046.10498
+    wavelength_max_nm: 1684.096069
+    passivity_check: pass
+    fit_provenance: Loaded from the Phase 3D.1B canonical Figure 1 epsilon CSV; no
+      fitting performed in Eternity.
+    validity_notes:
+    - Use only inside the tabulated wavelength range.
+    - Phase 3D.1B locks this as calibration-side material input before any Figure 2
+      residuals are computed.
+    limitations:
+    - The Figure 2 static R0 surface is a 2D holdout artifact governed by the split-lock
+      YAML, not a registry reflection_spectrum measurement.
+    - The current claim ceiling remains weak_within_dataset_holdout until no-fit model
+      reconstruction and leakage review pass.
 splits:
   synthetic_v0_contract_split:
     split_id: synthetic_v0_contract_split

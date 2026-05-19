@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import zipfile
 from pathlib import Path
 
 import typer
@@ -47,6 +48,7 @@ from eternity.phase3c3 import build_phase3c3_evaluation, write_phase3c3_evaluati
 from eternity.phase3c4 import build_phase3c4_triage, write_phase3c4_triage
 from eternity.phase3c5 import build_phase3c5_parity_packet, write_phase3c5_parity_packet
 from eternity.phase3c6 import build_phase3c6_packet, write_phase3c6_packet
+from eternity.phase3d1b import build_phase3d1b_packet_from_paths, write_phase3d1b_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -299,6 +301,21 @@ PHASE3C6_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and CSV source-model parity artifacts.",
+)
+PHASE3D1B_ZIP_OPTION = typer.Option(
+    Path("lab_data/raw/public_exeter_bohn_ito_2021/OpenData.zip"),
+    "--zip-path",
+    help="Exeter/Bohn ITO OpenData.zip snapshot.",
+)
+PHASE3D1B_RAW_OUTPUT_DIR_OPTION = typer.Option(
+    Path("lab_data/raw/public_exeter_bohn_ito_2021"),
+    "--raw-output-dir",
+    help="Directory for canonical Exeter/Bohn extracted CSV artifacts.",
+)
+PHASE3D1B_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and YAML split-lock artifacts.",
 )
 
 
@@ -725,6 +742,30 @@ def phase3c6_parity(
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         typer.echo(f"wrote {csv_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3d1b-extract")
+def phase3d1b_extract(
+    zip_path: Path = PHASE3D1B_ZIP_OPTION,
+    raw_output_dir: Path = PHASE3D1B_RAW_OUTPUT_DIR_OPTION,
+    output_dir: Path | None = PHASE3D1B_OUTPUT_DIR_OPTION,
+) -> None:
+    """Extract Exeter/Bohn Figure 1 epsilon and Figure 2 static R0 artifacts."""
+
+    try:
+        packet = build_phase3d1b_packet_from_paths(zip_path, raw_output_dir)
+    except (FileNotFoundError, KeyError, ValueError, zipfile.BadZipFile) as error:
+        typer.echo(f"Phase 3D.1B extraction failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, split_path = write_phase3d1b_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {split_path}")
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))

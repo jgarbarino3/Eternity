@@ -139,11 +139,12 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D - literature/public validation dataset
-search`, now narrowed to the Exeter/Bohn first-ingest package, while keeping
-source-qualified TiN/TiON optical constants, thesis reflectance spectra,
-material models, St Andrews diagnostics, and provenance gaps inside the
-registry without promoting them to calibrated evidence.
+The active step is now `Phase 3D.1C - Exeter/Bohn package-constant no-fit model
+reconstruction`, after Phase 3D search narrowed to Exeter/Bohn and Phase 3D.1B
+created locked canonical artifacts. Source-qualified TiN/TiON optical
+constants, thesis reflectance spectra, material models, St Andrews diagnostics,
+and provenance gaps remain in the registry without promoting them to calibrated
+evidence.
 
 Current blocker:
 
@@ -161,10 +162,14 @@ Current blocker:
 - Phase 3D.1 downloaded and verified the Exeter/Bohn ITO ENZ package.
 - Phase 3D.1A found a promising but non-promoting split: Figure 1
   ellipsometry-derived epsilon and Figure 2 TIR-normalized pre-pump static
-  reflection. The next action is Phase 3D.1B no-fit extraction and split lock.
-- Until Exeter/Bohn Figure 1/2 data are canonically extracted, split-locked,
-  and evaluated with no residual-driven tuning, that package also cannot emit
-  `calibrated_linear_evidence`.
+  reflection.
+- Phase 3D.1B extracted and registered canonical Figure 1 epsilon, Figure 2
+  TIR reference, and Figure 2 static pre-pump `R0` artifacts, then locked the
+  split before residuals. The next action is Phase 3D.1C package-constant
+  no-fit model reconstruction.
+- Until Exeter/Bohn is evaluated through the locked no-fit model path, residual
+  report, uncertainty/threshold gate, and leakage review, that package also
+  cannot emit `calibrated_linear_evidence`.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -249,10 +254,11 @@ Current blocker:
   contains TiON_48/TiON_49 epsilon tables and calibration-only examples, but no
   raw TiON R/T measurements and no usable repo-local plot candidates. The next
   validation-data path required Phase 3D literature/public-data search.
-- Phase 3D.1A has enough information to stop broad searching for the moment and
-  continue with Exeter/Bohn: Figure 1 and Figure 2 form a promising
-  calibration/holdout split candidate, but it is not promotion-ready until
-  Phase 3D.1B canonical extraction and split locking are complete.
+- Phase 3D.1B has enough information to stop broad searching for the moment and
+  continue with Exeter/Bohn: Figure 1 epsilon, the TIR reference, and Figure 2
+  static `R0` are now canonical and split-locked, but the lane is not
+  promotion-ready until Phase 3D.1C package-constant no-fit reconstruction,
+  residual reporting, and leakage review are complete.
 
 Pivot if Phase 3D fails:
 

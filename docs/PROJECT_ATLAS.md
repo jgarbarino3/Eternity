@@ -63,10 +63,13 @@ Current progress:
   TiON_48/TiON_49 epsilon tables, material models, and calibration-only
   examples are available; no raw R/T measurements or repo-local digitizable
   plot candidates were found.
-- **Next**: Phase 3D.1B Exeter/Bohn no-fit static R0 extraction and split lock.
-  Phase 3D.1A found a promising but non-promoting split: Figure 1
-  ellipsometry-derived ITO epsilon plus Figure 2 TIR-normalized pre-pump
-  static reflection.
+- **Done**: Phase 3D.1B Exeter/Bohn no-fit static R0 extraction and split lock.
+  Figure 1 epsilon, Figure 2 TIR reference, and Figure 2 static pre-pump `R0`
+  are canonical artifacts now, and the split-lock YAML forbids residual-driven
+  tuning.
+- **Next**: Phase 3D.1C Exeter/Bohn package-constant no-fit model
+  reconstruction. Use only locked artifacts/constants before comparing against
+  the static `R0` surface.
 - **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
   dataset, keep the evidence bar intact and promote the executive research
   assistant / public-dataset gate lane recorded in
@@ -117,7 +120,8 @@ calibrated_linear_evidence
   -> COMPLETE/LOCAL EXHAUSTED: Phase 3B.1 TiON evidence reality check
   -> COMPLETE: Phase 3D.1 Exeter/Bohn package intake
   -> COMPLETE: Phase 3D.1A Exeter/Bohn split audit
-  -> NEXT: Phase 3D.1B no-fit static R0 extraction
+  -> COMPLETE: Phase 3D.1B no-fit static R0 extraction
+  -> NEXT: Phase 3D.1C no-fit model reconstruction
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -189,7 +193,12 @@ has TiON_48/TiON_49 epsilon tables, material models, and calibration-only
 examples, but no raw R/T measurements and no digitizable plot candidates. The
 user has confirmed no CompleteEASE access/contact, no TiON raw R/T, and no
 St Andrews author-contact path, so the next validation-data step is Phase 3D
-literature/public dataset search rather than more local squeezing.
+literature/public dataset search rather than more local squeezing. Phase 3D.1
+and Phase 3D.1A then selected Exeter/Bohn ITO as the first public package and
+identified a promising Figure 1 epsilon / Figure 2 static `R0` split. Phase
+3D.1B extracted those canonical artifacts and locked the split, so the next
+discriminating move is Phase 3D.1C no-fit model reconstruction rather than
+more search or residual-driven tuning.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks
