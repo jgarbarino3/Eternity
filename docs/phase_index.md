@@ -47,12 +47,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.1A | Completed/promising-no-promotion | Exeter/Bohn calibration-holdout split audit | Figure 1 provides source-qualified ellipsometry epsilon; Figure 2 provides the cleanest static pre-pump reflection candidate via TIR-normalized `R0`, but the split still needs no-fit extraction/locking before any residual claim. |
 | Phase 3D.1B | Completed/split-locked | Exeter/Bohn no-fit static R0 extraction and split lock | Extracted Figure 1 optical constants, Figure 2 TIR reference, and Figure 2 pre-pump `R0` into canonical CSV artifacts; registered the Figure 1 epsilon model; and wrote a split-lock YAML that forbids residual-driven tuning. |
 | Phase 3D.1C | Completed/non-promoting diagnostic | Exeter/Bohn package-constant no-fit model reconstruction | Reconstructed the package static Figure 2 model with locked constants. Shape agreement is strong in the plotted window, but absolute residuals are nontrivial, thresholds were not predeclared before residual inspection, and the result remains capped at `weak_within_dataset_holdout`. |
-| Phase 3D.2 | Recommended | Saha TiN/AZO source-data intake | Inspect the public Figshare source-data package for measured Fig. 2b reflectance and Fig. 2c/d TiN/AZO permittivity; decide whether leakage and Origin-format extraction allow a stronger backup lane. |
+| Phase 3D.2 | Completed/export-blocked | Saha TiN/AZO source-data intake | Snapshotted the public Figshare package, verified all 12 OPJU file MD5s, and confirmed Fig. 2b measured/simulated reflectance labels plus Fig. 2c/d TiN/AZO permittivity labels. No table-ready CSV exists yet because the worksheet data remain inside Origin `.opju` containers. |
+| Phase 3D.2A | Recommended/blocker | Saha OPJU worksheet export or open-format alternate | Export Fig. 2b and Fig. 2c/d worksheets to CSV using Origin/Origin Viewer on Windows, LabPlot GUI import/export, or an open-format mirror. Without table export, Saha must stay non-promoting. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.2 - Saha TiN/AZO source-data intake**.
+Current phase: **Phase 3D.2A - Saha OPJU worksheet export or open-format alternate**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -61,9 +62,10 @@ epsilon and Figure 2 TIR-normalized pre-pump static reflection. Phase 3D.1B
 extracted the canonical Figure 1 epsilon, TIR reference, and static `R0`
 surface, then locked the split before residuals. Phase 3D.1C reconstructed the
 package no-fit static model and found strong shape agreement but nontrivial
-absolute residuals, with promotion still forbidden. The next meaningful step is
-to inspect the Saha TiN/AZO backup package rather than continuing to squeeze
-Exeter/Bohn into a calibrated claim.
+absolute residuals, with promotion still forbidden. Phase 3D.2 then inspected
+the Saha TiN/AZO backup package: the source exists and is hash-verified, but the
+critical Fig. 2 worksheets are proprietary Origin `.opju` containers. The next
+meaningful step is export/open-format recovery, not residual modeling.
 
 Information sufficiency:
 
@@ -138,6 +140,10 @@ Information sufficiency:
   package static model was reconstructed with locked constants, and the plotted
   window has 324 points, RMSE `0.03417097064799868`, and shape correlation
   `0.9808096173689084`.
+- Enough to complete Phase 3D.2 as Saha source-data intake: all 12 public OPJU
+  files were downloaded from Figshare and matched supplied MD5 digests; Fig. 2b
+  labels identify measured `Rp`/`Rs` at 50 degrees; Fig. 2c/d labels identify
+  TiN/AZO permittivity and 130 nm / 250 nm thickness comments.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -162,19 +168,24 @@ Information sufficiency:
 - Not enough to promote Exeter/Bohn: Phase 3D.1C residuals are now inspected
   without predeclared numeric pass/fail thresholds, and the holdout is still
   within the source package's nonlinear experiment lane.
+- Not enough to run Saha residuals or promote Saha: Fig. 2b and Fig. 2c/d are
+  still inside `.opju` files, and only the embedded worksheet previews/labels
+  have been inspected. Preview images are audit aids, not calibrated data.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.2 - Saha TiN/AZO source-data intake**.
-  Planning: GPT-5.5 `high`, because the source-data package is Origin-heavy and
-  leakage/separability are uncertain.
-  Implementation: `medium` for package manifesting/extraction; `high` if custom
-  `.opju` extraction or model-code changes are needed.
+- **Phase 3D.2A - Saha OPJU worksheet export or open-format alternate**.
+  Planning: GPT-5.5 `medium`, because the scientific split is straightforward
+  but the data-export route is tooling-sensitive.
+  Implementation: `medium` for documented CSV export; `high` only if attempting
+  custom `.opju` parsing or GUI automation.
 
 Helpful tools:
 
 - GPD planning/checking/verifier workflows for phase design and scientific claim boundaries.
 - Local `unzip`, `strings`, `pdftotext`, `shasum`, registry validation, and pytest commands.
+- Origin/Origin Viewer on Windows, or LabPlot GUI import/export, for OPJU-to-CSV
+  extraction if the user can provide access.
 - The `eternity phase3c6-parity` CLI for repeatable St Andrews stop-state context.
 - The `eternity phase3a7-recovery` CLI for repeatable read-only source scans when comparing source-provenance rules.
 - Consensus MCP or current literature search for candidate datasets and

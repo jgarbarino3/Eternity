@@ -1,0 +1,338 @@
+{
+  "authors": [
+    {
+      "first_name": "Soham",
+      "full_name": "Soham Saha",
+      "id": 16618764,
+      "is_active": true,
+      "last_name": "Saha",
+      "orcid_id": "",
+      "url_name": "Soham_Saha"
+    },
+    {
+      "first_name": "Benjamin T.",
+      "full_name": "Benjamin T. Diroll",
+      "id": 16637384,
+      "is_active": false,
+      "last_name": "Diroll",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Mustafa Goksu",
+      "full_name": "Mustafa Goksu Ozlu",
+      "id": 12476655,
+      "is_active": true,
+      "last_name": "Ozlu",
+      "orcid_id": "",
+      "url_name": "Mustafa_Goksu_Ozlu"
+    },
+    {
+      "first_name": "Sarah Nahar",
+      "full_name": "Sarah Nahar Chowdhury",
+      "id": 9215831,
+      "is_active": true,
+      "last_name": "Chowdhury",
+      "orcid_id": "",
+      "url_name": "Sarah_Nahar_Chowdhury"
+    },
+    {
+      "first_name": "Samuel",
+      "full_name": "Samuel Peana",
+      "id": 8979485,
+      "is_active": false,
+      "last_name": "Peana",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Zhaxylyk",
+      "full_name": "Zhaxylyk Kudyshev",
+      "id": 4015445,
+      "is_active": false,
+      "last_name": "Kudyshev",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Richard D.",
+      "full_name": "Richard D. Schaller",
+      "id": 8656019,
+      "is_active": false,
+      "last_name": "Schaller",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Zubin",
+      "full_name": "Zubin Jacob",
+      "id": 1686070,
+      "is_active": false,
+      "last_name": "Jacob",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Vladimir",
+      "full_name": "Vladimir Shalaev",
+      "id": 5250140,
+      "is_active": false,
+      "last_name": "Shalaev",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Alexandar",
+      "full_name": "Alexandar Kildishev",
+      "id": 16637386,
+      "is_active": false,
+      "last_name": "Kildishev",
+      "orcid_id": "",
+      "url_name": "_"
+    },
+    {
+      "first_name": "Alexandra",
+      "full_name": "Alexandra Boltasseva",
+      "id": 16637389,
+      "is_active": false,
+      "last_name": "Boltasseva",
+      "orcid_id": "",
+      "url_name": "_"
+    }
+  ],
+  "categories": [
+    {
+      "id": 107,
+      "parent_id": 6,
+      "path": "",
+      "source_id": "",
+      "taxonomy_id": 10,
+      "title": "Applied Physics"
+    }
+  ],
+  "citation": "Saha, Soham; Diroll, Benjamin T.; Ozlu, Mustafa Goksu; Chowdhury, Sarah Nahar; Peana, Samuel; Kudyshev, Zhaxylyk; et al. (2023). Engineering the Temporal Dynamics \nof All-Optical Switching with Fast and Slow Materials. figshare. Dataset. https://doi.org/10.6084/m9.figshare.23734116.v1",
+  "confidential_reason": "",
+  "created_date": "2023-09-29T11:27:45Z",
+  "custom_fields": [
+    {
+      "field_type": "text",
+      "is_mandatory": false,
+      "name": "Research Data Support",
+      "order": null,
+      "settings": {
+        "placeholder": "Complete where RDS data are part of RDS submission",
+        "validations": {
+          "max_length": 250,
+          "min_length": 1
+        }
+      },
+      "value": ""
+    },
+    {
+      "field_type": "text",
+      "is_mandatory": false,
+      "name": "Manuscript #",
+      "order": null,
+      "settings": {
+        "placeholder": "Manuscript Identifier from eJP",
+        "validations": {
+          "max_length": 250,
+          "min_length": 1
+        }
+      },
+      "value": ""
+    }
+  ],
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "description": "Source data for Fig 1d. Contains the tables of Time (pump probe delay) vs the measured and the normalized optical density. The time axis for different data runs have been shifted to align the maximum signals for easier data comparison. The normalized data in each graph has been shifted vertically by 0.3 with respect to the next graph to compare the decay rates. \nBecause of different experimental configurations for the NIR and the visible wavelength probes, the pump probe delay at with the peak of each experiment occurs is slightly shifted. The time axes for the longer wavelengths (900 to 1300 nm) have been shifted by 0.6 ps to align the peaks for easier comparison.\nFor normalization, the intensity of each modulation graph has been divided by the peak intensity (positive or negative, depending on the wavelength).\n\nSource data for Fig 2b. Contains the tables of simulated reflectance of p polarized (Rp) and s polarized (Rs) light from the device, as well as experimentally measured reflectance, versus the wavelength. \n\nSource data for Fig 2cd. Contains the tables of wavelength and permittivities of TiN and AZO films. The comments contain the film thicknesses. \n\nSource data for Fig 3b. Contains the color map of the reflectance modulation for TiN versus wavelength (nm) and pump-probe delay (ps) \n\nSource data for Fig 3c. Contains the normalized transient reflectance modulation vs time of TiN on Si at a wavelength of 505 nm. \n\nSource data for Fig 3d. Contains the color map of the reflectance modulation of AZO film vs wavelength and pump probe delay. \n\nSource data for Fig 3e. Contains the normalized transient reflectance modulation vs time of AZO at a wavelength of 1210 nm. \n\nSource data for Fig 4a. Contains the color map of the reflectance modulation of the device under a visible probe, versus the wavelength and the pump-probe delay. \n\nSource data for Fig 4b. Contains the color map of the reflectance modulation of the device under an infrared probe, versus the wavelength and the pump-probe delay. \n\nSource data for Fig 4c. Contains the absorbance of light versus the wavelength in the TiN and the AZO layers, simulated by COMSOL Multiphysics \n\nSource data for Fig 4d. Contains the normalized reflectance modulation of TiN film (505nm wavelength), AZO film (1210nm wavelength), Device (508 and 1180 nm wavelength), versus the pump probe delay. The time axes have been shifted to align the maximum reflectance modulation of the device with that of the individual films.\n\nSource data for Fig 5b. Contains the Normalized reflectance modulation of the device at various wavelengths versus the time, together with the fits from the model. All wavelengths are in nm and time is in ps, unless otherwise stated. The data processing and labeling is same as that of Fig 1d.\n\nAll wavelengths are in nm and time is in ps, unless otherwise stated.",
+  "doi": "10.6084/m9.figshare.23734116.v1",
+  "download_disabled": false,
+  "embargo_date": null,
+  "embargo_options": [],
+  "embargo_reason": "",
+  "embargo_title": "",
+  "embargo_type": "file",
+  "figshare_url": "https://springernature.figshare.com/articles/dataset/Engineering_the_Temporal_Dynamics_of_All-Optical_Switching_with_Fast_and_Slow_Materials/23734116",
+  "files": [
+    {
+      "computed_md5": "dbe940d32b63ff07cda7d34f4dd5d22e",
+      "download_url": "https://ndownloader.figshare.com/files/41997609",
+      "id": 41997609,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 1d.opju",
+      "size": 136886,
+      "supplied_md5": "dbe940d32b63ff07cda7d34f4dd5d22e"
+    },
+    {
+      "computed_md5": "6b125fbafaf5d48a1222cb993502fe75",
+      "download_url": "https://ndownloader.figshare.com/files/41997612",
+      "id": 41997612,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 2b.opju",
+      "size": 45921,
+      "supplied_md5": "6b125fbafaf5d48a1222cb993502fe75"
+    },
+    {
+      "computed_md5": "3f06d2f8d06172ac89cac7878d6e50cb",
+      "download_url": "https://ndownloader.figshare.com/files/41997615",
+      "id": 41997615,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 2cd.opju",
+      "size": 45264,
+      "supplied_md5": "3f06d2f8d06172ac89cac7878d6e50cb"
+    },
+    {
+      "computed_md5": "e3715c91562034abb9bf889b97194db7",
+      "download_url": "https://ndownloader.figshare.com/files/41997618",
+      "id": 41997618,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3b.opju",
+      "size": 1128085,
+      "supplied_md5": "e3715c91562034abb9bf889b97194db7"
+    },
+    {
+      "computed_md5": "7cb5456c708256dcdcfd99fa038badef",
+      "download_url": "https://ndownloader.figshare.com/files/41997621",
+      "id": 41997621,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3c.opju",
+      "size": 70098,
+      "supplied_md5": "7cb5456c708256dcdcfd99fa038badef"
+    },
+    {
+      "computed_md5": "a7d154976bdd61fe9f033415dec13bb5",
+      "download_url": "https://ndownloader.figshare.com/files/41997624",
+      "id": 41997624,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3d.opju",
+      "size": 523535,
+      "supplied_md5": "a7d154976bdd61fe9f033415dec13bb5"
+    },
+    {
+      "computed_md5": "023f04d93621efadb34bfb697b486c5f",
+      "download_url": "https://ndownloader.figshare.com/files/41997627",
+      "id": 41997627,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3e.opju",
+      "size": 275204,
+      "supplied_md5": "023f04d93621efadb34bfb697b486c5f"
+    },
+    {
+      "computed_md5": "2153d4e1a90cf830456f8652fe75bd29",
+      "download_url": "https://ndownloader.figshare.com/files/41997630",
+      "id": 41997630,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4a.opju",
+      "size": 668835,
+      "supplied_md5": "2153d4e1a90cf830456f8652fe75bd29"
+    },
+    {
+      "computed_md5": "f0866d97c28044e1c404feaef2838ee2",
+      "download_url": "https://ndownloader.figshare.com/files/41997633",
+      "id": 41997633,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4b.opju",
+      "size": 718797,
+      "supplied_md5": "f0866d97c28044e1c404feaef2838ee2"
+    },
+    {
+      "computed_md5": "e1acb959477236a4536bf47a5c499b79",
+      "download_url": "https://ndownloader.figshare.com/files/41997636",
+      "id": 41997636,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4c.opju",
+      "size": 25961,
+      "supplied_md5": "e1acb959477236a4536bf47a5c499b79"
+    },
+    {
+      "computed_md5": "2bfe92f7cbc4e14e55b45b72c4e26244",
+      "download_url": "https://ndownloader.figshare.com/files/41997639",
+      "id": 41997639,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4d.opju",
+      "size": 443062,
+      "supplied_md5": "2bfe92f7cbc4e14e55b45b72c4e26244"
+    },
+    {
+      "computed_md5": "18f752f542681195f8785db01da39309",
+      "download_url": "https://ndownloader.figshare.com/files/41997642",
+      "id": 41997642,
+      "is_link_only": false,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig5b.opju",
+      "size": 561743,
+      "supplied_md5": "18f752f542681195f8785db01da39309"
+    }
+  ],
+  "folder_structure": {},
+  "funding": null,
+  "funding_list": [],
+  "group_id": 2832,
+  "handle": "",
+  "has_linked_file": false,
+  "id": 23734116,
+  "is_confidential": false,
+  "is_embargoed": false,
+  "is_metadata_record": false,
+  "is_public": true,
+  "keywords": [
+    "Optical switching",
+    "optical materials",
+    "pump-probe spectroscopy"
+  ],
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "value": 1
+  },
+  "metadata_reason": "",
+  "modified_date": "2023-11-17T08:11:08Z",
+  "published_date": "2023-09-29T11:27:45Z",
+  "references": [
+    "https://doi.org/10.1038/s41467-023-41377-5"
+  ],
+  "related_materials": [
+    {
+      "id": 149852407,
+      "identifier": "10.1038/s41467-023-41377-5",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.1038/s41467-023-41377-5",
+      "relation": "IsSupplementTo",
+      "title": "Engineering the temporal dynamics of all-optical switching with fast and slow materials"
+    }
+  ],
+  "resource_doi": "10.1038/s41467-023-41377-5",
+  "resource_title": "Engineering the temporal dynamics of all-optical switching with fast and slow materials",
+  "size": 4643391,
+  "status": "public",
+  "tags": [
+    "Optical switching",
+    "optical materials",
+    "pump-probe spectroscopy"
+  ],
+  "thumb": "",
+  "timeline": {
+    "firstOnline": "2023-09-29",
+    "posted": "2023-09-29T11:27:45"
+  },
+  "title": "Engineering the Temporal Dynamics \nof All-Optical Switching with Fast and Slow Materials",
+  "url": "https://api.figshare.com/v2/articles/23734116",
+  "url_private_api": "https://api.figshare.com/v2/account/articles/23734116",
+  "url_private_html": "https://figshare.com/account/articles/23734116",
+  "url_public_api": "https://api.figshare.com/v2/articles/23734116",
+  "url_public_html": "https://springernature.figshare.com/articles/dataset/Engineering_the_Temporal_Dynamics_of_All-Optical_Switching_with_Fast_and_Slow_Materials/23734116",
+  "version": 1
+}

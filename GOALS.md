@@ -139,9 +139,10 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.2 - Saha TiN/AZO source-data intake`, after
-Phase 3D.1C reconstructed the Exeter/Bohn no-fit static model but kept it
-non-promoting. Source-qualified TiN/TiON optical
+The active step is now `Phase 3D.2A - Saha OPJU worksheet export or open-format
+alternate`, after Phase 3D.2 confirmed the Saha TiN/AZO source-data package is
+public and hash-verified but blocked by proprietary Origin `.opju` worksheet
+export. Source-qualified TiN/TiON optical
 constants, thesis reflectance spectra, material models, St Andrews diagnostics,
 and provenance gaps remain in the registry without promoting them to calibrated
 evidence.
@@ -171,7 +172,13 @@ Current blocker:
   correlation `0.9808096173689084`, but the result is non-promoting because
   residual thresholds were not predeclared before inspection and the holdout is
   still within the source package's nonlinear experiment lane.
-- The next public-data action is Phase 3D.2 Saha TiN/AZO source-data intake.
+- Phase 3D.2 snapshotted the Saha TiN/AZO Figshare package. All 12 OPJU
+  source-data files matched their supplied MD5 digests. Fig. 2b labels identify
+  measured `Rp`/`Rs` at 50 degrees, and Fig. 2c/d labels identify TiN/AZO
+  permittivity with 130 nm / 250 nm film-thickness comments.
+- The next public-data action is Phase 3D.2A Saha OPJU worksheet export or
+  open-format alternate. Until Fig. 2b and Fig. 2c/d are exported to CSV or
+  equivalent tables, Saha cannot feed residuals or Phase 4 promotion.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -259,6 +266,10 @@ Current blocker:
 - Phase 3D.1C has enough information to stop squeezing Exeter/Bohn: the no-fit
   reconstruction is useful weak-within-dataset memory, but not Phase 4-ready.
   The next available candidate is the Saha TiN/AZO Figshare source-data package.
+- Phase 3D.2 has enough information to stop at an extraction blocker: the Saha
+  source package exists and is hash-verified, but Fig. 2b and Fig. 2c/d are
+  inside Origin `.opju` files. Without CSV/table export, the Saha lane cannot
+  emit residuals or promote beyond an OPJU-blocked source-data lead.
 
 Pivot if Phase 3D fails:
 

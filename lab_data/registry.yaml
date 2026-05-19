@@ -413,6 +413,61 @@ raw_artifacts:
     access_notes: Public Figshare API metadata.
     provenance_refs:
     - phase3d1_exeter_bohn_ito_package_intake
+  public_saha_tin_azo_2023_figshare_metadata:
+    raw_artifact_id: public_saha_tin_azo_2023_figshare_metadata
+    kind: json
+    path: lab_data/raw/public_saha_tin_azo_2023/figshare_article_23734116.json
+    sha256: f161309f8e916324befdc09cec36dc775d2cfad36b899fa8a3dfff1398f29cb7
+    bytes: 13295
+    source_type: literature_table
+    immutable: true
+    original_filename: figshare_article_23734116.json
+    original_path: https://api.figshare.com/v2/articles/23734116
+    acquired_at: '2026-05-19'
+    source_notes: Figshare API metadata snapshot for the Saha et al. TiN/AZO
+      source-data package, including all OPJU file ids, file sizes, download URLs,
+      supplied MD5 digests, license, and public-access status.
+    access_notes: Public Springer Nature Figshare dataset, DOI 10.6084/m9.figshare.23734116,
+      licensed CC BY 4.0 in the Figshare metadata.
+    provenance_refs:
+    - phase3d2_saha_tin_azo_source_intake
+  public_saha_tin_azo_2023_fig2b_opju:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2b_opju
+    kind: vendor_export
+    path: lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju
+    sha256: 568de9e9f85459555d86ef256784846c99b32a90ce8f39e61f83b48fe083e2a8
+    bytes: 45921
+    source_type: literature_table
+    immutable: true
+    original_filename: Source data for Fig 2b.opju
+    original_path: https://ndownloader.figshare.com/files/41997612
+    acquired_at: '2026-05-19'
+    source_notes: Public Origin source-data file for Saha et al. Fig. 2b. Embedded
+      labels identify wavelength, simulated Rp, measured Rp, measured Rs, and simulated
+      Rs at 50 degrees. Worksheet values still require OPJU export before modeling.
+    access_notes: Downloaded from public Figshare file URL; local MD5 matched supplied
+      Figshare MD5 6b125fbafaf5d48a1222cb993502fe75.
+    provenance_refs:
+    - phase3d2_saha_tin_azo_source_intake
+  public_saha_tin_azo_2023_fig2cd_opju:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2cd_opju
+    kind: vendor_export
+    path: lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju
+    sha256: 3482bc25416b90c6c989ed13eb0f859142d02d5894aad66166e28a3c974afd63
+    bytes: 45264
+    source_type: literature_table
+    immutable: true
+    original_filename: Source data for Fig 2cd.opju
+    original_path: https://ndownloader.figshare.com/files/41997615
+    acquired_at: '2026-05-19'
+    source_notes: Public Origin source-data file for Saha et al. Fig. 2c/d.
+      Embedded labels identify TiN/AZO real and imaginary permittivity versus wavelength
+      and film thickness comments of 130 nm TiN and 250 nm AZO. Worksheet values still
+      require OPJU export before model use.
+    access_notes: Downloaded from public Figshare file URL; local MD5 matched supplied
+      Figshare MD5 3f06d2f8d06172ac89cac7878d6e50cb.
+    provenance_refs:
+    - phase3d2_saha_tin_azo_source_intake
   public_standrews_tin_2025_paper_pdf:
     raw_artifact_id: public_standrews_tin_2025_paper_pdf
     kind: vendor_export

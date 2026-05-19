@@ -1042,16 +1042,30 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.2 - Saha TiN/AZO source-data intake`.
+Choose `Phase 3D.2A - Saha OPJU worksheet export or open-format alternate`.
+
+Why:
+
+Phase 3D.2 completed the first Saha TiN/AZO source-data intake. The Figshare
+package is public, hash-verified, and contains the expected Fig. 2b reflectance
+and Fig. 2c/d permittivity Origin files. Embedded labels identify measured
+`Rp`/`Rs` at 50 degrees and TiN/AZO permittivity with 130 nm / 250 nm film
+thickness comments. The blocker is format, not source existence: the worksheet
+values remain inside proprietary `.opju` containers, and the current local Mac
+environment cannot export them to CSV.
 
 Recommended decision scope:
 
 ```text
-1. Inspect the public Saha TiN/AZO Figshare package and exact source-data
-   files, especially measured Fig. 2b reflectance and Fig. 2c/d permittivity.
-2. Decide whether the permittivity and reflectance lanes are separable enough
-   for a no-fit validation candidate without Origin-format or fitting leakage.
-3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
+1. Export Saha Fig. 2b and Fig. 2c/d OPJU worksheets to CSV using Origin,
+   Origin Viewer on Windows, LabPlot GUI import/export, or an open-format mirror.
+2. If CSV export succeeds, inspect units/columns and only then decide whether
+   the permittivity and reflectance lanes are separable enough for a no-fit
+   validation candidate.
+3. If CSV export cannot be done, park Saha as a source-data lead and move to
+   the next public package candidate instead of digitizing previews into a
+   calibrated claim.
+4. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
 ```
@@ -1059,28 +1073,64 @@ Recommended decision scope:
 First implementation target:
 
 ```text
-Create a Phase 3D.2 package manifest and candidate card. Extract table-ready
-source data only if the public package files are accessible and do not require
-closed/manual software beyond what can be documented.
+Create canonical CSV exports from:
+
+lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju
+lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju
 ```
 
 First output:
 
 ```text
-docs/phase3d2_saha_tin_azo_source_intake.md
-docs/phase3d2_saha_tin_azo_source_intake.json
+lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_reflectance.csv
+lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_permittivity.csv
+docs/phase3d2a_saha_tin_azo_table_export.md
 ```
 
 The decision packet should include:
 
-- Exact Figshare files and hashes.
-- Which files contain measured reflectance versus TiN/AZO permittivity.
+- Export tool and version.
+- Exact worksheet/column names and units.
 - Whether reflectance is absolute, normalized, or figure-only.
-- Whether Origin files can be extracted reproducibly.
-- Whether Saha becomes a no-fit validation candidate, a literature fixture, or
-  a rejected/downgraded backup.
+- Whether measured and simulated curves are separable.
+- Whether Saha becomes a no-fit validation candidate, a literature fixture, an
+  OPJU-blocked source lead, or a rejected/downgraded backup.
 
 That is the next brick on the direct path toward the AI researcher.
+
+#### Phase 3D.2: Saha TiN/AZO Source-Data Intake
+
+Artifacts:
+
+- `docs/phase3d2_saha_tin_azo_source_intake.md`
+- `docs/phase3d2_saha_tin_azo_source_intake.json`
+- `lab_data/raw/public_saha_tin_azo_2023/figshare_article_23734116.json`
+- `lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju`
+- `lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju`
+
+Result:
+
+- Status: `source_package_snapshotted_origin_export_blocked`.
+- Figshare DOI: `10.6084/m9.figshare.23734116.v1`.
+- Download integrity: all 12 public source-data files matched the supplied
+  Figshare MD5 digests.
+- Fig. 2b labels identify wavelength, simulated `Rp`, measured `Rp`, measured
+  `Rs`, and simulated `Rs` at 50 degrees.
+- Fig. 2c/d labels identify TiN/AZO real and imaginary permittivity versus
+  wavelength, with 130 nm TiN and 250 nm AZO thickness comments.
+- Phase 4 ready: `false`.
+- Promotion allowed: `false`.
+
+Interpretation:
+
+Saha is not dead; it is export-blocked. The source package looks structurally
+useful, but no calibrated residual run may start until the OPJU worksheets are
+exported to table-ready data with preserved columns, units, and measured-vs-
+simulated separation.
+
+Recommended next phase:
+
+- `Phase 3D.2A - Saha OPJU worksheet export or open-format alternate`.
 
 #### Phase 3D.1: Exeter/Bohn ITO Package Intake
 
@@ -1206,11 +1256,11 @@ Findings:
 
 Recommended next:
 
-- `Phase 3D.2 - Saha TiN/AZO source-data intake`.
-- Inspect Figshare source-data files for Fig. 2b reflectance and Fig. 2c/d
-  permittivity.
-- Decide whether the backup can become a cleaner no-fit validation candidate,
-  or should be downgraded before more modeling work.
+- `Phase 3D.2A - Saha OPJU worksheet export or open-format alternate`.
+- Phase 3D.2 has already confirmed the Saha Figshare source-data package and
+  target Fig. 2 labels; the remaining blocker is table export from `.opju`.
+- If table export succeeds, decide whether the backup can become a cleaner
+  no-fit validation candidate; if not, park Saha before more modeling work.
 
 ### Pivot If Phase 3D Fails
 

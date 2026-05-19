@@ -1,0 +1,302 @@
+{
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "candidate_unclassified_until_table_export",
+    "download_integrity": "all_downloaded_md5_match",
+    "fig2_evidence_present": true,
+    "fig2_label_evidence_present": true,
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.2A - Saha OPJU worksheet export or open-format alternate",
+    "result_interpretation": "The public Figshare package contains the expected Fig. 2b reflectance and Fig. 2c/d permittivity Origin files, and their embedded labels match the intended calibration/holdout lanes. The current local environment cannot export the proprietary OPJU worksheet tables to CSV, so no residual run or promotion decision is allowed yet.",
+    "status": "source_package_snapshotted_origin_export_blocked"
+  },
+  "external_tool_notes": "OriginLab documents worksheet data access in the free Origin Viewer, but CSV export is a Windows Viewer feature. LabPlot documents Origin project import and spreadsheet export, but that path is GUI-mediated here.",
+  "extraction_options": [
+    "Export the two OPJU worksheets to CSV with Origin or free Origin Viewer on Windows.",
+    "Try LabPlot GUI import/export if installed on a compatible macOS system.",
+    "Find a publisher-provided open-format mirror for Fig. 2b and Fig. 2c/d.",
+    "If only plot/image digitization is possible, downgrade to literature_reproduction_fixture."
+  ],
+  "files": [
+    {
+      "bytes": 136886,
+      "download_url": "https://ndownloader.figshare.com/files/41997609",
+      "downloaded": true,
+      "figshare_bytes": 136886,
+      "figshare_file_id": 41997609,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 1d.opju",
+      "md5": "dbe940d32b63ff07cda7d34f4dd5d22e",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 1d.opju",
+      "sha256": "8da7ea073284b3b5ed9528df7df0762f3d8ed4f8f0b9ee47a6938306bc14073a",
+      "supplied_md5": "dbe940d32b63ff07cda7d34f4dd5d22e"
+    },
+    {
+      "bytes": 45921,
+      "download_url": "https://ndownloader.figshare.com/files/41997612",
+      "downloaded": true,
+      "figshare_bytes": 45921,
+      "figshare_file_id": 41997612,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju",
+      "md5": "6b125fbafaf5d48a1222cb993502fe75",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 2b.opju",
+      "sha256": "568de9e9f85459555d86ef256784846c99b32a90ce8f39e61f83b48fe083e2a8",
+      "supplied_md5": "6b125fbafaf5d48a1222cb993502fe75"
+    },
+    {
+      "bytes": 45264,
+      "download_url": "https://ndownloader.figshare.com/files/41997615",
+      "downloaded": true,
+      "figshare_bytes": 45264,
+      "figshare_file_id": 41997615,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju",
+      "md5": "3f06d2f8d06172ac89cac7878d6e50cb",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 2cd.opju",
+      "sha256": "3482bc25416b90c6c989ed13eb0f859142d02d5894aad66166e28a3c974afd63",
+      "supplied_md5": "3f06d2f8d06172ac89cac7878d6e50cb"
+    },
+    {
+      "bytes": 1128085,
+      "download_url": "https://ndownloader.figshare.com/files/41997618",
+      "downloaded": true,
+      "figshare_bytes": 1128085,
+      "figshare_file_id": 41997618,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 3b.opju",
+      "md5": "e3715c91562034abb9bf889b97194db7",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3b.opju",
+      "sha256": "c13b80da910c5fc37ec8520996c873c5d12effa9c6de859ac1b6f821d3b30d49",
+      "supplied_md5": "e3715c91562034abb9bf889b97194db7"
+    },
+    {
+      "bytes": 70098,
+      "download_url": "https://ndownloader.figshare.com/files/41997621",
+      "downloaded": true,
+      "figshare_bytes": 70098,
+      "figshare_file_id": 41997621,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 3c.opju",
+      "md5": "7cb5456c708256dcdcfd99fa038badef",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3c.opju",
+      "sha256": "3d1d615c1cc12c4d60e22dd168199f6483a9d761d9212e82b823bd768cd60bfb",
+      "supplied_md5": "7cb5456c708256dcdcfd99fa038badef"
+    },
+    {
+      "bytes": 523535,
+      "download_url": "https://ndownloader.figshare.com/files/41997624",
+      "downloaded": true,
+      "figshare_bytes": 523535,
+      "figshare_file_id": 41997624,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 3d.opju",
+      "md5": "a7d154976bdd61fe9f033415dec13bb5",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3d.opju",
+      "sha256": "ad0a590fa80b0ef93a853956804d0b1378dd1d1f57bed617b072d9140ea71a6a",
+      "supplied_md5": "a7d154976bdd61fe9f033415dec13bb5"
+    },
+    {
+      "bytes": 275204,
+      "download_url": "https://ndownloader.figshare.com/files/41997627",
+      "downloaded": true,
+      "figshare_bytes": 275204,
+      "figshare_file_id": 41997627,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 3e.opju",
+      "md5": "023f04d93621efadb34bfb697b486c5f",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 3e.opju",
+      "sha256": "9721490c33cee464c8a9d9e6d94a92b1befc62d3a26b40ed8e4cacff0bd93183",
+      "supplied_md5": "023f04d93621efadb34bfb697b486c5f"
+    },
+    {
+      "bytes": 668835,
+      "download_url": "https://ndownloader.figshare.com/files/41997630",
+      "downloaded": true,
+      "figshare_bytes": 668835,
+      "figshare_file_id": 41997630,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 4a.opju",
+      "md5": "2153d4e1a90cf830456f8652fe75bd29",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4a.opju",
+      "sha256": "3e5e042b2677b2ef84ddbe8571f0475a0b02507369c1d9e725badb339306af50",
+      "supplied_md5": "2153d4e1a90cf830456f8652fe75bd29"
+    },
+    {
+      "bytes": 718797,
+      "download_url": "https://ndownloader.figshare.com/files/41997633",
+      "downloaded": true,
+      "figshare_bytes": 718797,
+      "figshare_file_id": 41997633,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 4b.opju",
+      "md5": "f0866d97c28044e1c404feaef2838ee2",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4b.opju",
+      "sha256": "cc85535dbd5da51b5de88acfe50d07b72371f7dc1725888d1dcc8e895b18969c",
+      "supplied_md5": "f0866d97c28044e1c404feaef2838ee2"
+    },
+    {
+      "bytes": 25961,
+      "download_url": "https://ndownloader.figshare.com/files/41997636",
+      "downloaded": true,
+      "figshare_bytes": 25961,
+      "figshare_file_id": 41997636,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 4c.opju",
+      "md5": "e1acb959477236a4536bf47a5c499b79",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4c.opju",
+      "sha256": "93242637afedf0d65b3b4cb72ef860355c223daead6a022d1e288b8612a120e8",
+      "supplied_md5": "e1acb959477236a4536bf47a5c499b79"
+    },
+    {
+      "bytes": 443062,
+      "download_url": "https://ndownloader.figshare.com/files/41997639",
+      "downloaded": true,
+      "figshare_bytes": 443062,
+      "figshare_file_id": 41997639,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 4d.opju",
+      "md5": "2bfe92f7cbc4e14e55b45b72c4e26244",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig 4d.opju",
+      "sha256": "c2d7c1cfe3c24a10ca2e4e4e83ac64a0dffd2b1c83406e01a5a98f92ec704b6f",
+      "supplied_md5": "2bfe92f7cbc4e14e55b45b72c4e26244"
+    },
+    {
+      "bytes": 561743,
+      "download_url": "https://ndownloader.figshare.com/files/41997642",
+      "downloaded": true,
+      "figshare_bytes": 561743,
+      "figshare_file_id": 41997642,
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig5b.opju",
+      "md5": "18f752f542681195f8785db01da39309",
+      "md5_matches_figshare": true,
+      "mimetype": "application/octet-stream",
+      "name": "Source data for Fig5b.opju",
+      "sha256": "7913108186a54c5b8df8f27fa0094f1d6e21b053f2b1fd6eb58c177f06a47c8f",
+      "supplied_md5": "18f752f542681195f8785db01da39309"
+    }
+  ],
+  "generated_at": "2026-05-19T13:07:26.149027+00:00",
+  "inputs": {
+    "metadata_path": "lab_data/raw/public_saha_tin_azo_2023/figshare_article_23734116.json",
+    "raw_dir": "lab_data/raw/public_saha_tin_azo_2023"
+  },
+  "local_tool_status": {
+    "labplot_on_path": false,
+    "python_liborigin_importable": false,
+    "python_opj2dat_importable": false,
+    "python_originpro_importable": false,
+    "python_pyorigin_importable": false,
+    "scidavis_on_path": false
+  },
+  "phase_id": "Phase 3D.2",
+  "source": {
+    "api_url": "https://api.figshare.com/v2/articles/23734116",
+    "doi": "10.6084/m9.figshare.23734116.v1",
+    "figshare_url": "https://springernature.figshare.com/articles/dataset/Engineering_the_Temporal_Dynamics_of_All-Optical_Switching_with_Fast_and_Slow_Materials/23734116",
+    "file_count": 12,
+    "is_public": true,
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "value": 1
+    },
+    "published_date": "2023-09-29T11:27:45Z",
+    "status": "public",
+    "title": "Engineering the Temporal Dynamics \nof All-Optical Switching with Fast and Slow Materials"
+  },
+  "target_inspection": {
+    "fig2b_reflectance": {
+      "downloaded": true,
+      "embedded_preview_png": {
+        "bytes": 32204,
+        "complete": true,
+        "height_px": 200,
+        "present": true,
+        "sha256": "8c524bcfb622ff64db93bdfde7c05567357b16ae4beab682506d9a4fce9f74e9",
+        "start_byte": 11061,
+        "width_px": 200
+      },
+      "filename": "Source data for Fig 2b.opju",
+      "hashes": {
+        "bytes": 45921,
+        "md5": "6b125fbafaf5d48a1222cb993502fe75",
+        "sha256": "568de9e9f85459555d86ef256784846c99b32a90ce8f39e61f83b48fe083e2a8"
+      },
+      "labels_found": [
+        "Wavelength",
+        "Simulated Rp",
+        "50 deg",
+        "Measured Rp",
+        "50 deg",
+        "Wavelength",
+        "Measured Rs",
+        "50 deg",
+        "Wavelength",
+        "Simulated Rs",
+        "50 deg"
+      ],
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju",
+      "table_extraction_status": "blocked_by_origin_binary_container",
+      "written_preview_png": {
+        "bytes": 32204,
+        "md5": "46d8ad7ee8e625934f429b0eb883ded9",
+        "path": "lab_data/raw/public_saha_tin_azo_2023/Source_data_for_Fig_2b_embedded_preview.png",
+        "sha256": "8c524bcfb622ff64db93bdfde7c05567357b16ae4beab682506d9a4fce9f74e9",
+        "written": true
+      }
+    },
+    "fig2cd_permittivity": {
+      "downloaded": true,
+      "embedded_preview_png": {
+        "bytes": 33183,
+        "complete": true,
+        "height_px": 200,
+        "present": true,
+        "sha256": "b97ceb10fb8a1e05a7423a7889c9a47f9c9dab1c460ffcd6944291291e9908e9",
+        "start_byte": 9421,
+        "width_px": 200
+      },
+      "filename": "Source data for Fig 2cd.opju",
+      "hashes": {
+        "bytes": 45264,
+        "md5": "3f06d2f8d06172ac89cac7878d6e50cb",
+        "sha256": "3482bc25416b90c6c989ed13eb0f859142d02d5894aad66166e28a3c974afd63"
+      },
+      "labels_found": [
+        "'&Wavelength",
+        "Film thickness 130 nm",
+        "TiN real part of permittivity",
+        "'&Wavelength",
+        "Film thickness 250 nm",
+        "AZO real part of permittivity",
+        "Wavelength",
+        "$#TiN imaginary part of permittivity",
+        "Wavelength",
+        "$#AZO imaginary part of permittivity"
+      ],
+      "local_path": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju",
+      "table_extraction_status": "blocked_by_origin_binary_container",
+      "written_preview_png": {
+        "bytes": 33183,
+        "md5": "0a45034bc6918b34447f2c4ba37bbe98",
+        "path": "lab_data/raw/public_saha_tin_azo_2023/Source_data_for_Fig_2cd_embedded_preview.png",
+        "sha256": "b97ceb10fb8a1e05a7423a7889c9a47f9c9dab1c460ffcd6944291291e9908e9",
+        "written": true
+      }
+    }
+  },
+  "title": "Saha TiN/AZO Source-Data Intake"
+}

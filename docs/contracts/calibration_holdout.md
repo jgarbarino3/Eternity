@@ -102,5 +102,11 @@ Phase 3D.1C inspected residuals and therefore cannot become a calibrated
 promotion run after the fact. Its output is a non-promoting reconstruction
 diagnostic. Any future Exeter/Bohn promotion attempt would require a separate
 predeclared gate that is not tuned to these inspected residuals; the immediate
-next public-data step is Saha TiN/AZO intake rather than loosening the Exeter
-threshold story.
+next public-data step is not loosening the Exeter threshold story.
+
+Phase 3D.2 snapshotted the Saha TiN/AZO Figshare source-data package and
+confirmed the target Fig. 2b and Fig. 2c/d Origin worksheet labels, but it did
+not extract table-ready numerical data. Embedded OPJU worksheet previews may be
+used only as audit evidence for file contents. They must not be digitized into a
+calibrated holdout unless a separate policy explicitly labels the result as
+plot-derived and caps its claim status below `calibrated_linear_evidence`.

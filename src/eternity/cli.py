@@ -50,6 +50,7 @@ from eternity.phase3c5 import build_phase3c5_parity_packet, write_phase3c5_parit
 from eternity.phase3c6 import build_phase3c6_packet, write_phase3c6_packet
 from eternity.phase3d1b import build_phase3d1b_packet_from_paths, write_phase3d1b_packet
 from eternity.phase3d1c import build_phase3d1c_packet, write_phase3d1c_packet
+from eternity.phase3d2 import build_phase3d2_packet, write_phase3d2_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -332,6 +333,21 @@ PHASE3D1C_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and CSV no-fit reconstruction artifacts.",
+)
+PHASE3D2_METADATA_OPTION = typer.Option(
+    Path("lab_data/raw/public_saha_tin_azo_2023/figshare_article_23734116.json"),
+    "--metadata",
+    help="Saha TiN/AZO Figshare API metadata snapshot.",
+)
+PHASE3D2_RAW_DIR_OPTION = typer.Option(
+    Path("lab_data/raw/public_saha_tin_azo_2023"),
+    "--raw-dir",
+    help="Directory containing downloaded Saha TiN/AZO OPJU source-data files.",
+)
+PHASE3D2_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown source-data intake artifacts.",
 )
 
 
@@ -811,6 +827,29 @@ def phase3d1c_reconstruct(
     packet_without_table = dict(packet)
     packet_without_table.pop("table", None)
     typer.echo(json.dumps(packet_without_table, indent=2, sort_keys=True))
+
+
+@app.command("phase3d2-intake")
+def phase3d2_intake(
+    metadata_path: Path = PHASE3D2_METADATA_OPTION,
+    raw_dir: Path = PHASE3D2_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3D2_OUTPUT_DIR_OPTION,
+) -> None:
+    """Audit the Saha TiN/AZO Figshare OPJU source-data package."""
+
+    try:
+        packet = build_phase3d2_packet(metadata_path, raw_dir)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3D.2 intake failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3d2_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
