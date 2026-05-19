@@ -52,6 +52,22 @@ If no available MCP, plugin, skill, or local command obviously fits, search curr
 
 For model benchmark values, pricing, API capabilities, or tool availability, treat local PDFs and old notes as snapshots. If a value is unclear, clipped, stale, or important for the recommendation, refresh from the live/current source before relying on it.
 
+## GPD Cadence
+
+Use GPD deliberately, not automatically.
+
+- Reach for GPD when the next step is a phase decision, claim-status review,
+  validation/promotion gate, blocker inventory, or final scientific review.
+- Skip GPD for routine code edits, CLI/report plumbing, local artifact
+  inspection, atlas updates, and ordinary test/lint/build verification unless a
+  claim-boundary risk is present.
+- If a GPD workflow is blocked by GPD runtime/schema state, do not treat that as
+  a blocker on direct repo work when the repo evidence is sufficient. Continue
+  with direct verification and report the GPD limitation.
+- Keep `GPD/` files synchronized after phase-state changes, but treat them as
+  mirrors of the authoritative roadmap, contracts, generated artifacts, and
+  claim-status code.
+
 ## Deferred Task Tracking
 
 When information is missing, leave a visible handle for it:

@@ -26,6 +26,16 @@ Eternity is a long-term personal research project for building toward an AI rese
 - If the atlas is deployed, redeploy the Netlify site after atlas changes and report the live URL.
 - Keep the simple roadmap, reverse mind maps, authority map, evidence ladder, and conflict board aligned with the newest repo state.
 
+## GPD Usage Cadence Rule
+
+GPD is a planning mirror and claim-boundary checker, not the default execution engine and not the scientific source of truth.
+
+- Use GPD for phase planning, phase transitions, claim-status decisions, validation/promotion decisions, blocker inventory, and final scientific review.
+- Use repo-local docs, scripts, tests, generated artifacts, and direct inspection for ordinary implementation, report generation, CLI plumbing, artifact inspection, atlas/docs updates, and routine verification.
+- If GPD blocks on its own runtime/schema state, continue with direct repo verification when the repo evidence is sufficient, and report the GPD limitation plainly.
+- Do not run a full GPD ritual just because work is research-adjacent. Bring it in when it materially reduces scientific overclaim risk or clarifies a phase decision.
+- Treat `GPD/PROJECT.md`, `GPD/ROADMAP.md`, `GPD/STATE.md`, and `GPD/state.json` as mirrors that should be updated when phase state changes, but prefer the authoritative sources listed there when they disagree.
+
 ## Git Push Cadence Rule
 
 - Prefer pushing coherent, verified chunks to GitHub as work progresses.
