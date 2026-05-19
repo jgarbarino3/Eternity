@@ -1042,30 +1042,26 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.2A - Saha OPJU worksheet export or open-format alternate`.
+Choose `Phase 3D.3 - next public candidate source-data intake`.
 
 Why:
 
-Phase 3D.2 completed the first Saha TiN/AZO source-data intake. The Figshare
-package is public, hash-verified, and contains the expected Fig. 2b reflectance
-and Fig. 2c/d permittivity Origin files. Embedded labels identify measured
-`Rp`/`Rs` at 50 degrees and TiN/AZO permittivity with 130 nm / 250 nm film
-thickness comments. The blocker is format, not source existence: the worksheet
-values remain inside proprietary `.opju` containers, and the current local Mac
-environment cannot export them to CSV.
+Phase 3D.2 completed the first Saha TiN/AZO source-data intake. Phase 3D.2A
+then tested the local export route: LabPlot 2.12.1 installed successfully, but
+its CLI only opens files/projects, its Origin import strings advertise OPJ
+rather than OPJU, and an offscreen `.opju` open attempt timed out without
+producing CSV. The Saha package is still useful public source data, but it is
+locally export-blocked until the user can provide a Windows Origin/Origin Viewer
+export, an OPJU-capable GUI export, or an open-format mirror.
 
 Recommended decision scope:
 
 ```text
-1. Export Saha Fig. 2b and Fig. 2c/d OPJU worksheets to CSV using Origin,
-   Origin Viewer on Windows, LabPlot GUI import/export, or an open-format mirror.
-2. If CSV export succeeds, inspect units/columns and only then decide whether
-   the permittivity and reflectance lanes are separable enough for a no-fit
-   validation candidate.
-3. If CSV export cannot be done, park Saha as a source-data lead and move to
-   the next public package candidate instead of digitizing previews into a
-   calibrated claim.
-4. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
+1. Park Saha as an OPJU-blocked source-data lead unless a real table export
+   appears.
+2. Inspect the next ranked public candidate package rather than digitizing Saha
+   previews into calibrated evidence.
+3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
 ```
@@ -1073,30 +1069,56 @@ Recommended decision scope:
 First implementation target:
 
 ```text
-Create canonical CSV exports from:
-
-lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju
-lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju
+Create a package manifest/candidate card for the next public lead, prioritizing
+public open-format numerical tables over OPJU-only packages.
 ```
 
 First output:
 
 ```text
-lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_reflectance.csv
-lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_permittivity.csv
-docs/phase3d2a_saha_tin_azo_table_export.md
+docs/phase3d3_*_source_intake.md
+docs/phase3d3_*_source_intake.json
 ```
 
 The decision packet should include:
 
-- Export tool and version.
-- Exact worksheet/column names and units.
-- Whether reflectance is absolute, normalized, or figure-only.
-- Whether measured and simulated curves are separable.
-- Whether Saha becomes a no-fit validation candidate, a literature fixture, an
-  OPJU-blocked source lead, or a rejected/downgraded backup.
+- Exact public files and hashes.
+- Whether optical constants and holdout measurements are table-ready.
+- Whether reflectance/transmission/ellipsometry units and geometry are explicit.
+- Whether the candidate can become a no-fit validation candidate, a literature
+  fixture, an export-blocked lead, or a rejected/downgraded backup.
 
 That is the next brick on the direct path toward the AI researcher.
+
+#### Phase 3D.2A: Saha OPJU Worksheet Export Audit
+
+Artifacts:
+
+- `docs/phase3d2a_saha_opju_export_audit.md`
+- `docs/phase3d2a_saha_opju_export_audit.json`
+
+Result:
+
+- Status: `local_opju_export_blocked`.
+- LabPlot 2.12.1 installed successfully on macOS, but its CLI does not expose
+  batch import/export and its embedded Origin support strings identify `OPJ`,
+  not `OPJU`.
+- Offscreen opening of Saha Fig. 2c/d `.opju` timed out in GUI/dialog behavior
+  and produced no CSV.
+- `JNisk/convert-opju` is a possible future Windows/Origin workflow, not a
+  local Mac solution.
+- Phase 4 ready: `false`.
+- Promotion allowed: `false`.
+
+Interpretation:
+
+Saha remains a public source-data lead, not a calibrated validation input. The
+project should not spend more local time on Saha unless a real OPJU-to-CSV
+export route appears.
+
+Recommended next phase:
+
+- `Phase 3D.3 - next public candidate source-data intake`.
 
 #### Phase 3D.2: Saha TiN/AZO Source-Data Intake
 
@@ -1256,11 +1278,10 @@ Findings:
 
 Recommended next:
 
-- `Phase 3D.2A - Saha OPJU worksheet export or open-format alternate`.
-- Phase 3D.2 has already confirmed the Saha Figshare source-data package and
-  target Fig. 2 labels; the remaining blocker is table export from `.opju`.
-- If table export succeeds, decide whether the backup can become a cleaner
-  no-fit validation candidate; if not, park Saha before more modeling work.
+- `Phase 3D.3 - next public candidate source-data intake`.
+- Phase 3D.2A has now shown that Saha is locally OPJU-export blocked.
+- If a real Saha table export appears later, reopen it; otherwise move to the
+  next public package before doing more modeling.
 
 ### Pivot If Phase 3D Fails
 

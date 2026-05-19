@@ -48,12 +48,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.1B | Completed/split-locked | Exeter/Bohn no-fit static R0 extraction and split lock | Extracted Figure 1 optical constants, Figure 2 TIR reference, and Figure 2 pre-pump `R0` into canonical CSV artifacts; registered the Figure 1 epsilon model; and wrote a split-lock YAML that forbids residual-driven tuning. |
 | Phase 3D.1C | Completed/non-promoting diagnostic | Exeter/Bohn package-constant no-fit model reconstruction | Reconstructed the package static Figure 2 model with locked constants. Shape agreement is strong in the plotted window, but absolute residuals are nontrivial, thresholds were not predeclared before residual inspection, and the result remains capped at `weak_within_dataset_holdout`. |
 | Phase 3D.2 | Completed/export-blocked | Saha TiN/AZO source-data intake | Snapshotted the public Figshare package, verified all 12 OPJU file MD5s, and confirmed Fig. 2b measured/simulated reflectance labels plus Fig. 2c/d TiN/AZO permittivity labels. No table-ready CSV exists yet because the worksheet data remain inside Origin `.opju` containers. |
-| Phase 3D.2A | Recommended/blocker | Saha OPJU worksheet export or open-format alternate | Export Fig. 2b and Fig. 2c/d worksheets to CSV using Origin/Origin Viewer on Windows, LabPlot GUI import/export, or an open-format mirror. Without table export, Saha must stay non-promoting. |
+| Phase 3D.2A | Completed/blocked | Saha OPJU worksheet export or open-format alternate | Installed/probed LabPlot 2.12.1 and confirmed no local batch OPJU-to-CSV export path: CLI only opens files/projects, embedded Origin strings advertise OPJ rather than OPJU, and offscreen OPJU opening produced no tables. |
+| Phase 3D.3 | Recommended | Next public candidate source-data intake | Inspect the next ranked public package, prioritizing open-format tables over OPJU-only packages. Reopen Saha only if an Origin/Origin Viewer export or open-format mirror appears. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3D.2A - Saha OPJU worksheet export or open-format alternate**.
+Current phase: **Phase 3D.3 - next public candidate source-data intake**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -64,8 +65,9 @@ surface, then locked the split before residuals. Phase 3D.1C reconstructed the
 package no-fit static model and found strong shape agreement but nontrivial
 absolute residuals, with promotion still forbidden. Phase 3D.2 then inspected
 the Saha TiN/AZO backup package: the source exists and is hash-verified, but the
-critical Fig. 2 worksheets are proprietary Origin `.opju` containers. The next
-meaningful step is export/open-format recovery, not residual modeling.
+critical Fig. 2 worksheets are proprietary Origin `.opju` containers. Phase
+3D.2A tested the local export route and found it blocked, so the next meaningful
+step is the next public candidate package, not Saha residual modeling.
 
 Information sufficiency:
 
@@ -144,6 +146,9 @@ Information sufficiency:
   files were downloaded from Figshare and matched supplied MD5 digests; Fig. 2b
   labels identify measured `Rp`/`Rs` at 50 degrees; Fig. 2c/d labels identify
   TiN/AZO permittivity and 130 nm / 250 nm thickness comments.
+- Enough to complete Phase 3D.2A as a local export audit: LabPlot installed,
+  but did not expose a usable OPJU-to-CSV export route, and offscreen opening
+  timed out without producing table data.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -171,14 +176,17 @@ Information sufficiency:
 - Not enough to run Saha residuals or promote Saha: Fig. 2b and Fig. 2c/d are
   still inside `.opju` files, and only the embedded worksheet previews/labels
   have been inspected. Preview images are audit aids, not calibrated data.
+- Not enough to continue local Saha work without new external help: a Windows
+  Origin/Origin Viewer export, an OPJU-capable GUI export, or an open-format
+  mirror is required.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3D.2A - Saha OPJU worksheet export or open-format alternate**.
-  Planning: GPT-5.5 `medium`, because the scientific split is straightforward
-  but the data-export route is tooling-sensitive.
-  Implementation: `medium` for documented CSV export; `high` only if attempting
-  custom `.opju` parsing or GUI automation.
+- **Phase 3D.3 - next public candidate source-data intake**.
+  Planning: GPT-5.5 `medium`, because the acceptance pattern is now well
+  established.
+  Implementation: `medium` for package manifesting/extraction; `high` only if
+  source-data tooling or leakage becomes ambiguous.
 
 Helpful tools:
 

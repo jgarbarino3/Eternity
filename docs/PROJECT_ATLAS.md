@@ -74,7 +74,9 @@ Current progress:
   Figshare source files are public and hash-verified; Fig. 2b and Fig. 2c/d
   contain the expected Origin worksheet labels, but the numerical tables still
   require OPJU-to-CSV export.
-- **Next**: Phase 3D.2A Saha OPJU worksheet export or open-format alternate.
+- **Done/blocked**: Phase 3D.2A Saha OPJU worksheet export audit. LabPlot was
+  installed and probed, but no local OPJU-to-CSV path was found.
+- **Next**: Phase 3D.3 next public candidate source-data intake.
 - **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
   dataset, keep the evidence bar intact and promote the executive research
   assistant / public-dataset gate lane recorded in
@@ -128,7 +130,8 @@ calibrated_linear_evidence
   -> COMPLETE: Phase 3D.1B no-fit static R0 extraction
   -> COMPLETE/NON-PROMOTING: Phase 3D.1C no-fit model reconstruction
   -> COMPLETE/EXPORT-BLOCKED: Phase 3D.2 Saha TiN/AZO source-data intake
-  -> NEXT: Phase 3D.2A Saha OPJU worksheet export
+  -> COMPLETE/BLOCKED: Phase 3D.2A Saha OPJU worksheet export audit
+  -> NEXT: Phase 3D.3 next public candidate source-data intake
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -209,8 +212,9 @@ nontrivial absolute residuals and no predeclared residual thresholds, so
 Exeter/Bohn remains useful weak memory rather than Phase 4-ready evidence.
 Phase 3D.2 snapshotted the Saha TiN/AZO Figshare package and confirmed the
 expected Fig. 2 labels, but the critical numerical tables are still trapped in
-Origin `.opju` files. The next discriminating move is Phase 3D.2A OPJU-to-CSV
-export or an open-format alternate.
+Origin `.opju` files. Phase 3D.2A tested the local open-source LabPlot route and
+found no usable OPJU-to-CSV export path. The next discriminating move is Phase
+3D.3, a new public candidate intake.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

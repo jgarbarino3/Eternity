@@ -1,0 +1,68 @@
+{
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "opju_blocked_source_data_lead",
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.3 - next public candidate source-data intake",
+    "result_interpretation": "Phase 3D.2A tested the local open-source export route rather than leaving it as a vague TODO. LabPlot 2.12.1 can be installed on this Mac, but its command-line help only opens files/projects, its embedded Origin import strings advertise OPJ rather than OPJU, and an offscreen attempt to open the Saha Fig. 2c/d OPJU timed out in GUI/dialog behavior without producing CSV. The Saha source package remains useful and public, but local table export is blocked without Origin/Origin Viewer on Windows, a working OPJU-capable GUI export, or an open-format mirror.",
+    "status": "local_opju_export_blocked"
+  },
+  "external_routes": [
+    {
+      "route": "Origin or Origin Viewer on Windows",
+      "status": "not_available_locally",
+      "notes": "OriginLab documents worksheet access in Origin Viewer and Windows Viewer CSV export, but this Mac does not have the Windows toolchain or Origin."
+    },
+    {
+      "route": "JNisk/convert-opju",
+      "status": "not_available_locally",
+      "notes": "The tool is useful provenance for an eventual Windows/Origin export script, but its published requirements are Windows 11, Origin 2024b, and Origin's Python integration."
+    },
+    {
+      "route": "LabPlot 2.12.1 macOS cask",
+      "status": "installed_but_not_batch_opju_export_capable",
+      "notes": "Installed through Homebrew and probed locally. The bundled CLI exposes open/project options only; embedded strings identify Origin OPJ import, not OPJU CSV export."
+    },
+    {
+      "route": "Online converter",
+      "status": "approval_sensitive_not_used",
+      "notes": "The Saha files are public, but uploading research artifacts to a third-party converter is not an authoritative or repo-reproducible scientific export path without explicit user approval."
+    }
+  ],
+  "generated_at": "2026-05-19T13:22:05Z",
+  "inputs": {
+    "fig2b_opju": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju",
+    "fig2cd_opju": "lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju",
+    "phase3d2_packet": "docs/phase3d2_saha_tin_azo_source_intake.json"
+  },
+  "local_probe_evidence": {
+    "labplot_app": "/Applications/LabPlot.app",
+    "labplot_cli": "/Applications/LabPlot.app/Contents/MacOS/labplot",
+    "labplot_help_summary": [
+      "--no-splash disables splash screen",
+      "--presenter starts presenter mode",
+      "+[file] opens a project file",
+      "no documented command-line import/export or CSV batch mode was shown"
+    ],
+    "labplot_origin_strings": [
+      "importing Origin OPJ project files",
+      "Origin Project (OPJ)...",
+      "Import a project from an OriginLab Origin project file (.opj)",
+      "Origin OPJ Projects (%1)"
+    ],
+    "labplot_opju_string_found": false,
+    "offscreen_open_probe": {
+      "command_basis": "QT_QPA_PLATFORM=offscreen labplot --no-splash Source data for Fig 2cd.opju",
+      "status": "timeout_after_12_seconds",
+      "stdout": "",
+      "stderr_summary": [
+        "Qt offscreen plugin warnings",
+        "GUI/dialog behavior observed",
+        "no CSV or open-format worksheet output produced"
+      ]
+    }
+  },
+  "phase_id": "Phase 3D.2A",
+  "title": "Saha OPJU Worksheet Export Audit"
+}

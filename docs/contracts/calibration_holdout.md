@@ -110,3 +110,8 @@ not extract table-ready numerical data. Embedded OPJU worksheet previews may be
 used only as audit evidence for file contents. They must not be digitized into a
 calibrated holdout unless a separate policy explicitly labels the result as
 plot-derived and caps its claim status below `calibrated_linear_evidence`.
+
+Phase 3D.2A tested the local OPJU export path and found it blocked: LabPlot
+installed on macOS but did not expose a batch OPJU-to-CSV route, and offscreen
+opening did not produce tables. Saha can be reopened only with a real table
+export or open-format mirror.

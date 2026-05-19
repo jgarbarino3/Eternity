@@ -139,9 +139,9 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.2A - Saha OPJU worksheet export or open-format
-alternate`, after Phase 3D.2 confirmed the Saha TiN/AZO source-data package is
-public and hash-verified but blocked by proprietary Origin `.opju` worksheet
+The active step is now `Phase 3D.3 - next public candidate source-data intake`,
+after Phase 3D.2A confirmed the Saha TiN/AZO source-data package is public and
+hash-verified but locally blocked by proprietary Origin `.opju` worksheet
 export. Source-qualified TiN/TiON optical
 constants, thesis reflectance spectra, material models, St Andrews diagnostics,
 and provenance gaps remain in the registry without promoting them to calibrated
@@ -179,6 +179,13 @@ Current blocker:
 - The next public-data action is Phase 3D.2A Saha OPJU worksheet export or
   open-format alternate. Until Fig. 2b and Fig. 2c/d are exported to CSV or
   equivalent tables, Saha cannot feed residuals or Phase 4 promotion.
+- Phase 3D.2A installed/probed LabPlot as the local open-source export route.
+  LabPlot does not provide a usable local OPJU-to-CSV path here: its CLI only
+  opens files/projects, embedded Origin support strings identify OPJ rather than
+  OPJU, and offscreen OPJU opening timed out without producing tables.
+- The next public-data action is Phase 3D.3: inspect the next ranked public
+  candidate package. Reopen Saha only if a real table export or open-format
+  mirror appears.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -270,6 +277,10 @@ Current blocker:
   source package exists and is hash-verified, but Fig. 2b and Fig. 2c/d are
   inside Origin `.opju` files. Without CSV/table export, the Saha lane cannot
   emit residuals or promote beyond an OPJU-blocked source-data lead.
+- Phase 3D.2A has enough information to stop local Saha export attempts: the
+  open-source LabPlot route was tried and failed to produce CSV. More Saha work
+  now requires external Windows/Origin export, an OPJU-capable GUI workflow, or
+  an open-format mirror.
 
 Pivot if Phase 3D fails:
 
