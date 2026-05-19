@@ -1,0 +1,121 @@
+{
+  "decision": {
+    "can_feed_serious_core": false,
+    "can_promote_calibrated_linear_evidence": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "phase4_ready": false,
+    "recommended_next_phase": "Phase 3D.2 - Saha TiN/AZO source-data intake",
+    "result_interpretation": "The locked package model reconstructs the Figure 2 static pattern well in shape but not at calibrated-evidence authority. Numeric pass/fail thresholds were not predeclared before residual inspection, and the holdout is still within the source package's nonlinear experiment lane.",
+    "status": "no_fit_reconstruction_completed_nonpromoting"
+  },
+  "generated_at": "2026-05-19T12:53:37.899019+00:00",
+  "inputs": {
+    "split_lock_path": "docs/phase3d1b_exeter_bohn_split_lock.yaml",
+    "static_r0_path": "lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv"
+  },
+  "interpretation_boundary": "This phase is a no-fit reconstruction diagnostic. It may preserve a weak-within-dataset holdout result, but it cannot become calibrated linear evidence without an independent promotion review that was not contaminated by these inspected residuals.",
+  "leakage_guard": {
+    "forbidden_after_residuals": [
+      "material parameter refit",
+      "thickness tuning",
+      "incident-index tuning",
+      "angle-offset tuning",
+      "vertical scaling",
+      "wavelength shifting",
+      "threshold loosening",
+      "using Figure 3/4 to rescue Figure 2"
+    ],
+    "holdout_y_used_for_fitting": false,
+    "promotion_for_this_run": "forbidden",
+    "residuals_seen_before_numeric_thresholds": true
+  },
+  "locked_package_constants": {
+    "angle_offset_dth_deg": 3.4,
+    "eps_inf": 3.42725287,
+    "epsilon_model": "Drude constants from Figure2/JUPYTER_Figure2a,b,c.ipynb",
+    "gamma0_rad_s": 223790000000000.0,
+    "gamma2_per_gw_cm2": 0.0,
+    "incident_index_n": 1.43,
+    "intensity_gw_cm2": 0.0,
+    "ito_thickness_nm": 60.0,
+    "polarization": "p",
+    "second_interface_index_offset": "-0.0001j",
+    "wp0_rad_s": 2856100000000000.0,
+    "wp2_per_gw_cm2": -0.003
+  },
+  "metrics": {
+    "all_locked_points": {
+      "bias_prediction_minus_observed": 0.019190219303903015,
+      "frequency_thz": [
+        206.7534193103448,
+        260.68909391304345
+      ],
+      "max_absolute_residual": 0.10728730358906674,
+      "mean_absolute_error": 0.03656240349220666,
+      "normalized_rmse_over_observed_span": 0.08405315122223903,
+      "observed_range": [
+        0.0033301334422230875,
+        0.5116302643901643
+      ],
+      "points": 806,
+      "prediction_range": [
+        9.889459295483114e-05,
+        0.5456182538693783
+      ],
+      "root_mean_square_error": 0.0427242277728512,
+      "shape_correlation": 0.940546451239311,
+      "shape_correlation_minmax": 0.9405464512393112,
+      "theta_prism_deg": [
+        38.35222290717139,
+        54.93588374048224
+      ],
+      "wavelength_nm": [
+        1150.0,
+        1450.0
+      ]
+    },
+    "figure2_plotted_window": {
+      "bias_prediction_minus_observed": 0.021456378944852555,
+      "frequency_thz": [
+        211.12144929577462,
+        258.441774137931
+      ],
+      "max_absolute_residual": 0.08606848520735677,
+      "mean_absolute_error": 0.026830606617177004,
+      "normalized_rmse_over_observed_span": 0.07524642054041972,
+      "observed_range": [
+        0.004494835897320877,
+        0.4586157150379205
+      ],
+      "points": 324,
+      "prediction_range": [
+        0.0014339721657799414,
+        0.4883723480549704
+      ],
+      "root_mean_square_error": 0.03417097064799868,
+      "shape_correlation": 0.9808096173689084,
+      "shape_correlation_minmax": 0.9808096173689083,
+      "theta_prism_deg": [
+        43.000507904505824,
+        50.32367774142317
+      ],
+      "wavelength_nm": [
+        1160.0,
+        1420.0
+      ]
+    }
+  },
+  "phase_id": "Phase 3D.1C",
+  "title": "Exeter/Bohn Package-Constant No-Fit Model Reconstruction",
+  "window_definition": {
+    "basis": "Figure 2 notebook contour axes",
+    "frequency_thz": [
+      210.0,
+      260.0
+    ],
+    "theta_prism_deg": [
+      42.5,
+      50.5
+    ]
+  }
+}

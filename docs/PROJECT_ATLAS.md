@@ -67,9 +67,11 @@ Current progress:
   Figure 1 epsilon, Figure 2 TIR reference, and Figure 2 static pre-pump `R0`
   are canonical artifacts now, and the split-lock YAML forbids residual-driven
   tuning.
-- **Next**: Phase 3D.1C Exeter/Bohn package-constant no-fit model
-  reconstruction. Use only locked artifacts/constants before comparing against
-  the static `R0` surface.
+- **Done**: Phase 3D.1C Exeter/Bohn package-constant no-fit model
+  reconstruction. The static pattern reconstructs well in shape, but absolute
+  residuals are nontrivial and the result remains non-promoting.
+- **Next**: Phase 3D.2 Saha TiN/AZO source-data intake. Inspect Figshare
+  source files for measured Fig. 2b reflectance and Fig. 2c/d permittivity.
 - **Pivot if needed**: If Phase 3D cannot find an honest calibrated-linear
   dataset, keep the evidence bar intact and promote the executive research
   assistant / public-dataset gate lane recorded in
@@ -121,7 +123,8 @@ calibrated_linear_evidence
   -> COMPLETE: Phase 3D.1 Exeter/Bohn package intake
   -> COMPLETE: Phase 3D.1A Exeter/Bohn split audit
   -> COMPLETE: Phase 3D.1B no-fit static R0 extraction
-  -> NEXT: Phase 3D.1C no-fit model reconstruction
+  -> COMPLETE/NON-PROMOTING: Phase 3D.1C no-fit model reconstruction
+  -> NEXT: Phase 3D.2 Saha TiN/AZO source-data intake
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -196,9 +199,11 @@ St Andrews author-contact path, so the next validation-data step is Phase 3D
 literature/public dataset search rather than more local squeezing. Phase 3D.1
 and Phase 3D.1A then selected Exeter/Bohn ITO as the first public package and
 identified a promising Figure 1 epsilon / Figure 2 static `R0` split. Phase
-3D.1B extracted those canonical artifacts and locked the split, so the next
-discriminating move is Phase 3D.1C no-fit model reconstruction rather than
-more search or residual-driven tuning.
+3D.1B extracted those canonical artifacts and locked the split. Phase 3D.1C
+reconstructed the package static model with strong shape agreement but
+nontrivial absolute residuals and no predeclared residual thresholds, so
+Exeter/Bohn remains useful weak memory rather than Phase 4-ready evidence. The
+next discriminating move is Phase 3D.2 Saha TiN/AZO source-data intake.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

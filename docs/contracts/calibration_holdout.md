@@ -97,3 +97,10 @@ thickness, incident-index, angle-offset, vertical-scale, wavelength-axis, or
 threshold tuning. Any Phase 3D.1C residual report remains capped at
 `weak_within_dataset_holdout` unless a later promotion review proves full
 independence, uncertainty handling, and claim-status criteria.
+
+Phase 3D.1C inspected residuals and therefore cannot become a calibrated
+promotion run after the fact. Its output is a non-promoting reconstruction
+diagnostic. Any future Exeter/Bohn promotion attempt would require a separate
+predeclared gate that is not tuned to these inspected residuals; the immediate
+next public-data step is Saha TiN/AZO intake rather than loosening the Exeter
+threshold story.

@@ -139,9 +139,9 @@ grounding phase:
   is `local_validation_data_exhausted_literature_or_external_data_needed`.
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
-The active step is now `Phase 3D.1C - Exeter/Bohn package-constant no-fit model
-reconstruction`, after Phase 3D search narrowed to Exeter/Bohn and Phase 3D.1B
-created locked canonical artifacts. Source-qualified TiN/TiON optical
+The active step is now `Phase 3D.2 - Saha TiN/AZO source-data intake`, after
+Phase 3D.1C reconstructed the Exeter/Bohn no-fit static model but kept it
+non-promoting. Source-qualified TiN/TiON optical
 constants, thesis reflectance spectra, material models, St Andrews diagnostics,
 and provenance gaps remain in the registry without promoting them to calibrated
 evidence.
@@ -165,11 +165,13 @@ Current blocker:
   reflection.
 - Phase 3D.1B extracted and registered canonical Figure 1 epsilon, Figure 2
   TIR reference, and Figure 2 static pre-pump `R0` artifacts, then locked the
-  split before residuals. The next action is Phase 3D.1C package-constant
-  no-fit model reconstruction.
-- Until Exeter/Bohn is evaluated through the locked no-fit model path, residual
-  report, uncertainty/threshold gate, and leakage review, that package also
-  cannot emit `calibrated_linear_evidence`.
+  split before residuals.
+- Phase 3D.1C reconstructed the locked Exeter/Bohn package static model. The
+  Figure 2 plotted window has 324 points, RMSE `0.03417097064799868`, and shape
+  correlation `0.9808096173689084`, but the result is non-promoting because
+  residual thresholds were not predeclared before inspection and the holdout is
+  still within the source package's nonlinear experiment lane.
+- The next public-data action is Phase 3D.2 Saha TiN/AZO source-data intake.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -254,11 +256,9 @@ Current blocker:
   contains TiON_48/TiON_49 epsilon tables and calibration-only examples, but no
   raw TiON R/T measurements and no usable repo-local plot candidates. The next
   validation-data path required Phase 3D literature/public-data search.
-- Phase 3D.1B has enough information to stop broad searching for the moment and
-  continue with Exeter/Bohn: Figure 1 epsilon, the TIR reference, and Figure 2
-  static `R0` are now canonical and split-locked, but the lane is not
-  promotion-ready until Phase 3D.1C package-constant no-fit reconstruction,
-  residual reporting, and leakage review are complete.
+- Phase 3D.1C has enough information to stop squeezing Exeter/Bohn: the no-fit
+  reconstruction is useful weak-within-dataset memory, but not Phase 4-ready.
+  The next available candidate is the Saha TiN/AZO Figshare source-data package.
 
 Pivot if Phase 3D fails:
 

@@ -49,6 +49,7 @@ from eternity.phase3c4 import build_phase3c4_triage, write_phase3c4_triage
 from eternity.phase3c5 import build_phase3c5_parity_packet, write_phase3c5_parity_packet
 from eternity.phase3c6 import build_phase3c6_packet, write_phase3c6_packet
 from eternity.phase3d1b import build_phase3d1b_packet_from_paths, write_phase3d1b_packet
+from eternity.phase3d1c import build_phase3d1c_packet, write_phase3d1c_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -316,6 +317,21 @@ PHASE3D1B_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and YAML split-lock artifacts.",
+)
+PHASE3D1C_STATIC_R0_OPTION = typer.Option(
+    Path("lab_data/raw/public_exeter_bohn_ito_2021/exeter_bohn_fig2_static_r0.csv"),
+    "--static-r0",
+    help="Phase 3D.1B canonical Exeter/Bohn static R0 surface.",
+)
+PHASE3D1C_SPLIT_LOCK_OPTION = typer.Option(
+    Path("docs/phase3d1b_exeter_bohn_split_lock.yaml"),
+    "--split-lock",
+    help="Phase 3D.1B split-lock YAML.",
+)
+PHASE3D1C_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and CSV no-fit reconstruction artifacts.",
 )
 
 
@@ -769,6 +785,32 @@ def phase3d1b_extract(
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3d1c-reconstruct")
+def phase3d1c_reconstruct(
+    static_r0_path: Path = PHASE3D1C_STATIC_R0_OPTION,
+    split_lock_path: Path = PHASE3D1C_SPLIT_LOCK_OPTION,
+    output_dir: Path | None = PHASE3D1C_OUTPUT_DIR_OPTION,
+) -> None:
+    """Run the Exeter/Bohn package-constant no-fit static reconstruction."""
+
+    try:
+        packet = build_phase3d1c_packet(static_r0_path, split_lock_path)
+    except (FileNotFoundError, KeyError, ValueError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3D.1C reconstruction failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, csv_path = write_phase3d1c_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {csv_path}")
+        return
+
+    packet_without_table = dict(packet)
+    packet_without_table.pop("table", None)
+    typer.echo(json.dumps(packet_without_table, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

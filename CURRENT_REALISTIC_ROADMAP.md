@@ -1042,15 +1042,15 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3D.1C - Exeter/Bohn package-constant no-fit model reconstruction`.
+Choose `Phase 3D.2 - Saha TiN/AZO source-data intake`.
 
 Recommended decision scope:
 
 ```text
-1. Use the Phase 3D.1B split lock and canonical artifacts as immutable inputs:
-   Figure 1 epsilon, Figure 2 TIR reference, and Figure 2 static `R0`.
-2. Reconstruct the package static Figure 2 model path with locked material,
-   thickness, incident-index, angle-offset, and normalization choices.
+1. Inspect the public Saha TiN/AZO Figshare package and exact source-data
+   files, especially measured Fig. 2b reflectance and Fig. 2c/d permittivity.
+2. Decide whether the permittivity and reflectance lanes are separable enough
+   for a no-fit validation candidate without Origin-format or fitting leakage.
 3. Keep Phase 3A, Phase 3B, and Phase 3C parked unless new evidence appears;
    do not loop on unavailable CompleteEASE, TiON raw R/T, or St Andrews author
    contact paths.
@@ -1059,26 +1059,26 @@ Recommended decision scope:
 First implementation target:
 
 ```text
-Create a Phase 3D.1C no-fit reconstruction packet. Do not tune material
-parameters, thickness, incident index, angle offset, vertical scale, wavelength
-axis, or thresholds after inspecting Figure 2 residuals.
+Create a Phase 3D.2 package manifest and candidate card. Extract table-ready
+source data only if the public package files are accessible and do not require
+closed/manual software beyond what can be documented.
 ```
 
 First output:
 
 ```text
-docs/phase3d1c_exeter_bohn_no_fit_reconstruction.md
-docs/phase3d1c_exeter_bohn_no_fit_reconstruction.json
+docs/phase3d2_saha_tin_azo_source_intake.md
+docs/phase3d2_saha_tin_azo_source_intake.json
 ```
 
 The decision packet should include:
 
-- Which package constants and nuisance values were used without tuning.
-- Which solver path reconstructs the package static reflection calculation.
-- Residual metrics against the locked static `R0` surface.
-- Whether the result is `weak_within_dataset_holdout`, `failed_validation`, or
-  a Phase 4 candidate needing final promotion review.
-- Whether the Saha TiN/AZO backup should be inspected next if Exeter/Bohn fails.
+- Exact Figshare files and hashes.
+- Which files contain measured reflectance versus TiN/AZO permittivity.
+- Whether reflectance is absolute, normalized, or figure-only.
+- Whether Origin files can be extracted reproducibly.
+- Whether Saha becomes a no-fit validation candidate, a literature fixture, or
+  a rejected/downgraded backup.
 
 That is the next brick on the direct path toward the AI researcher.
 
@@ -1174,6 +1174,43 @@ Recommended next:
   values.
 - Compare to the locked `R0` surface only after the model path is frozen.
 - Emit a residual report and conservative claim-status decision.
+
+#### Phase 3D.1C: Exeter/Bohn Package-Constant No-Fit Model Reconstruction
+
+Artifacts:
+
+- `docs/phase3d1c_exeter_bohn_no_fit_reconstruction.md`
+- `docs/phase3d1c_exeter_bohn_no_fit_reconstruction.json`
+- `docs/phase3d1c_exeter_bohn_no_fit_comparison.csv`
+
+Decision:
+
+- Status: `no_fit_reconstruction_completed_nonpromoting`.
+- Current claim ceiling: `weak_within_dataset_holdout`.
+- Can feed serious core: `false`.
+- Can promote calibrated evidence: `false`.
+- Phase 4 ready: `false`.
+
+Findings:
+
+- The Figure 2 plotted window has 324 points, RMSE
+  `0.03417097064799868`, MAE `0.026830606617177004`, and shape correlation
+  `0.9808096173689084`.
+- The all-locked-point grid has 806 points, RMSE `0.0427242277728512`, and
+  shape correlation `0.940546451239311`.
+- The package model reconstructs the static pattern well in shape, but absolute
+  residuals are nontrivial.
+- Promotion remains forbidden because numeric pass/fail thresholds were not
+  predeclared before residual inspection and the holdout is still inside the
+  source package's nonlinear experiment lane.
+
+Recommended next:
+
+- `Phase 3D.2 - Saha TiN/AZO source-data intake`.
+- Inspect Figshare source-data files for Fig. 2b reflectance and Fig. 2c/d
+  permittivity.
+- Decide whether the backup can become a cleaner no-fit validation candidate,
+  or should be downgraded before more modeling work.
 
 ### Pivot If Phase 3D Fails
 
