@@ -92,11 +92,12 @@ Current progress:
 - **Done**: Phase 3E.1 public dataset gate and executive research assistant
   scaffold. The registry evaluates 9 known candidates and opens 0 Phase 4
   candidates.
-- **Done/non-ENZ baseline**: Phase 3E.2A Wang W/WO3 source-data intake.
+- **Done/non-ENZ baseline**: Phase 3E.2A-3E.2D Wang W/WO3 source-data fixture.
   Selected Figshare XLSX files are public and MD5-verified, with direct W/WO3
-  `n,k` tables, but Fig. 2f traces are offset/unlabeled and cannot feed
-  residuals yet.
-- **Next**: Phase 3E.2B Wang Fig. 2f semantics and no-fit baseline plan.
+  `n,k` tables. Fig. 2f source semantics are now bounded into a de-offseted
+  reproduction fixture, not a no-fit validation residual.
+- **Next/gated**: Phase 3E.3 ENZ source-data lead intake or Saha OPJU conversion
+  only when new table-ready data or a real conversion path appears.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -155,7 +156,8 @@ calibrated_linear_evidence
   -> COMPLETE/PIVOT-TRIGGERED: Phase 3D.5 remaining public lead triage
   -> COMPLETE/GATE: Phase 3E.1 public dataset gate / executive assistant scaffold
   -> COMPLETE/NON-ENZ BASELINE: Phase 3E.2A Wang W/WO3 source-data intake
-  -> NEXT: Phase 3E.2B Wang Fig. 2f semantics and no-fit baseline plan
+  -> COMPLETE/FIXTURE: Phase 3E.2B-3E.2D Wang de-offseted reproduction handoff
+  -> NEXT/GATED: Phase 3E.3 ENZ source-data lead intake or Saha OPJU conversion
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -251,9 +253,11 @@ CdO/high-crystallinity ITO are constants-only, and request-only papers remain
 rejected. Phase 3E.1 turned those outcomes into a public-dataset gate and
 executive research assistant scaffold. Phase 3E.2A added Wang W/WO3 as a
 non-ENZ baseline candidate: the XLSX package has direct W/WO3 constants, but
-Fig. 2f is offset/unlabeled plotted data, so it cannot feed residuals yet. The
-next discriminating move is Phase 3E.2B: recover source-backed Fig. 2f offset
-and measured-column semantics before any no-fit baseline run.
+Fig. 2f is offset/unlabeled plotted data. Phase 3E.2B-3E.2D completed the
+honest Wang lane: source-backed offsets and inferred measured/simulated columns
+support a bounded de-offseted reproduction fixture, while full no-fit validation
+remains blocked by missing workbook labels and non-independent source-simulation
+semantics.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3E public dataset gate and Wang non-ENZ baseline intake
+**Current focus:** Phase 3E public dataset gate and assistant fixture substrate
 
 ## Current Position
 
 **Current Phase:** 3E
 **Current Phase Name:** Public Dataset Gate And Executive Research Assistant
 **Total Phases:** 3
-**Current Plan:** docs/phase3e2a_wang_wo3_baseline_intake.md
+**Current Plan:** docs/phase3e2d_wang_claim_boundary_handoff.md
 **Total Plans in Phase:** 9
-**Status:** Active / non-ENZ baseline intake recorded, semantics partial
+**Status:** Active / Wang fixture complete, waiting on new ENZ data or OPJU path
 **Last Activity:** 2026-05-19
-**Last Activity Description:** Completed Phase 3E.2A Wang W/WO3 non-ENZ baseline intake: selected Figshare spreadsheets are public and MD5-verified, FigS2-nk.xlsx contains W/WO3 n,k tables, and Fig2f-R.xlsx is blocked for residuals until vertical-offset and measured-vs-simulated semantics are source-backed.
+**Last Activity Description:** Completed Phase 3E.2B-3E.2D: Wang Fig. 2f source semantics were bounded, a 3017-row de-offseted reproduction fixture was written, and the lane was locked as `literature_reproduction_fixture` rather than validation evidence.
 
 **Progress:** [██████████] 99%
 
@@ -109,6 +109,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   MD5-verified. `FigS2-nk.xlsx` provides direct W/WO3 `n,k` tables, but
   `Fig2f-R.xlsx` contains offset/unlabeled plotted traces, so Wang remains only
   a non-ENZ planar TMM baseline candidate.
+- Phase 3E.2B-3E.2D wrote Wang semantics, de-offseted fixture, and handoff
+  artifacts. The source paper/SI back the figure-level measured/simulated
+  semantics and model inputs, but the workbook lacks explicit measured/simulated
+  labels, so Wang is locked as `literature_reproduction_fixture`, not validation.
 
 ## Open Questions
 
@@ -116,8 +120,6 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   constants plus independent R/T or ellipsometry holdout without author contact?
 - If a candidate public dataset is found, what sample/stack, geometry,
   wavelength range, polarization, units, and leakage policy are source-proven?
-- Can Wang `Fig2f-R.xlsx` vertical offsets and measured-vs-simulated column
-  assignments be source-backed without arbitrary fitting?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?

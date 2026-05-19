@@ -93,6 +93,27 @@ def test_phase3e2a_wang_intake_command_writes_artifacts(tmp_path: Path) -> None:
     assert packet["decision"]["claim_status_ceiling"] == "non_enz_planar_tmm_baseline_candidate"
 
 
+def test_phase3e2bcd_wang_commands_write_artifacts(tmp_path: Path) -> None:
+    result = runner.invoke(app, ["phase3e2b-wang-semantics", "--output-dir", str(tmp_path)])
+
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "phase3e2b_wang_fig2f_semantics_audit.json").exists()
+    assert (tmp_path / "phase3e2b_wang_fig2f_semantics_audit.md").exists()
+
+    result = runner.invoke(app, ["phase3e2c-wang-fixture", "--output-dir", str(tmp_path)])
+
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "phase3e2c_wang_deoffset_reproduction_fixture.json").exists()
+    assert (tmp_path / "phase3e2c_wang_deoffset_reproduction_fixture.md").exists()
+    assert (tmp_path / "phase3e2c_wang_deoffset_reproduction_fixture.csv").exists()
+
+    result = runner.invoke(app, ["phase3e2d-wang-handoff", "--output-dir", str(tmp_path)])
+
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "phase3e2d_wang_claim_boundary_handoff.json").exists()
+    assert (tmp_path / "phase3e2d_wang_claim_boundary_handoff.md").exists()
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

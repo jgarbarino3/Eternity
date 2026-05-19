@@ -57,12 +57,15 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 9 known candidates and opens 0 Phase 4 candidates. |
 | Phase 3E.2 | Active | Browse/Plasmate Public-Data Sweep Through Gate | Use Browse.sh, Plasmate, Deep Research, and 5.5 Pro outputs to add new candidate cards, run the public-dataset gate, and inspect exact files only for candidates that can plausibly clear the hard Phase 4 flags. |
 | Phase 3E.2A | Completed/non-ENZ baseline intake | Wang W/WO3 source-data intake | Snapshotted selected Figshare XLSX files, verified MD5s, confirmed direct W/WO3 n,k tables, and blocked residual modeling because Fig. 2f traces are offset/unlabeled plotted data. |
-| Phase 3E.2B | Recommended | Wang Fig. 2f semantics and no-fit baseline plan | Recover source-backed vertical-offset and measured/simulated column semantics before any no-fit TMM residual run. |
+| Phase 3E.2B | Completed/fixture-gated | Wang Fig. 2f semantics and no-fit baseline plan | Source paper/SI back the Fig. 2f measured/simulated figure semantics and model inputs, but the workbook has no chart XML, series labels, or measured/simulated headers; full no-fit validation is blocked. |
+| Phase 3E.2C | Completed/fixture | Wang bounded de-offseted reproduction fixture | Applied the source-encoded stacked-trace offsets to produce a 3017-row de-offseted measured-vs-source-simulated CSV and residual diagnostics. Claim ceiling is `literature_reproduction_fixture`. |
+| Phase 3E.2D | Completed/handoff | Wang lane claim-boundary and assistant handoff | Locked Wang as a non-promoting public-data fixture that strengthens assistant parsing/gating behavior but does not create calibrated-linear or ENZ evidence. |
+| Phase 3E.3 | Gated/waiting-on-new-data | ENZ public-data lead intake or Saha OPJU conversion | Resume only when a new table-ready ENZ/TCO/TiN/AZO package appears or a real OPJU-to-CSV conversion path becomes available. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3E.2B - Wang Fig. 2f semantics and no-fit baseline plan**.
+Current phase: **Phase 3E.3 - gated ENZ data lead intake when new source data exists**.
 
 Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
 downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
@@ -90,8 +93,12 @@ forced Phase 4 attempt. Phase 3E.1 added that gate. Phase 3E.2A then ingested
 Wang W/WO3 as a non-ENZ planar TMM baseline candidate: selected XLSX files are
 public and MD5-verified, `FigS2-nk.xlsx` contains direct W/WO3 `n,k` tables, and
 `Fig2f-R.xlsx` exposes the expected thickness series but only as
-offset/unlabeled plotted traces. The next move is to resolve Fig. 2f semantics
-before any no-fit residual baseline run, while keeping Wang below ENZ evidence.
+offset/unlabeled plotted traces. Phase 3E.2B-3E.2D resolved the honest lane:
+the source paper/SI back the figure-level measured/simulated semantics and model
+inputs, the workbook lacks explicit line/series labels, and the de-offseted
+3017-row fixture is useful source-data reproduction rather than validation.
+The next move requires a new table-ready ENZ lead or a real Saha OPJU export
+path; otherwise do not continue searching casually.
 
 Information sufficiency:
 
@@ -186,6 +193,10 @@ Information sufficiency:
   selected XLSX files are public and MD5-verified, and `FigS2-nk.xlsx` provides
   W/WO3 constants, but `Fig2f-R.xlsx` requires source-backed offset/column
   semantics before any residual run.
+- Enough to complete Phase 3E.2B-3E.2D as a non-promoting Wang literature
+  reproduction fixture: the source figure semantics and offsets are bounded,
+  but the workbook lacks measured/simulated labels and cannot support a clean
+  no-fit validation residual.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -228,10 +239,10 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3E.2 - Browse/Plasmate public-data sweep through gate**.
-  Planning: GPT-5.5 `high`, because incoming Deep Research / Pro leads need
-  strict evidence triage without reopening parked local blockers. Implementation:
-  `medium` for candidate-card insertion and gate reports; `high` only if a
+- **Phase 3E.3 - gated ENZ data lead intake or Saha OPJU conversion**.
+  Planning: GPT-5.5 `high` if a new lead appears, because the next candidate
+  must pass strict source-data and claim-boundary triage. Implementation:
+  `medium` for candidate-card insertion and package intake; `high` only if a
   candidate passes every gate and triggers Phase 4 preparation.
 
 Helpful tools:

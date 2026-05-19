@@ -1,0 +1,59 @@
+{
+  "artifacts_expected": [
+    "docs/phase3e2b_wang_fig2f_semantics_audit.json",
+    "docs/phase3e2b_wang_fig2f_semantics_audit.md",
+    "docs/phase3e2c_wang_deoffset_reproduction_fixture.json",
+    "docs/phase3e2c_wang_deoffset_reproduction_fixture.md",
+    "docs/phase3e2c_wang_deoffset_reproduction_fixture.csv",
+    "docs/phase3e2d_wang_claim_boundary_handoff.json",
+    "docs/phase3e2d_wang_claim_boundary_handoff.md"
+  ],
+  "assistant_capabilities_added": [
+    "public source-data package intake",
+    "XLSX chart/label absence detection",
+    "stacked-plot de-offset fixture generation",
+    "claim-label downgrade when semantics are incomplete",
+    "machine-readable residual diagnostics for non-promoting source reproduction"
+  ],
+  "decision": {
+    "claim_standard_changed": false,
+    "goal_progress": "requested Wang 3E.2B-3E.2D work is complete once artifacts are written and verified",
+    "recommended_next_phase": "Phase 3E.3 - gated ENZ data lead intake when new source data exists",
+    "status": "phase3e2b_through_3e2d_complete"
+  },
+  "generated_at": "2026-05-19T16:50:11.903050+00:00",
+  "inputs": {
+    "fixture_status": "bounded_deoffset_reproduction_fixture_ready",
+    "raw_dir": "lab_data/raw/public_wang_wo3_fp_2020",
+    "semantics_status": "source_backed_offsets_inferred_columns_not_source_labeled"
+  },
+  "lane_decision": {
+    "candidate_label": "literature_reproduction_fixture",
+    "phase4_candidate": false,
+    "phase4_enz_ready": false,
+    "serious_core_allowed": false,
+    "status": "wang_lane_fixture_complete_not_validation",
+    "why_not_validation": [
+      "Wang is W/WO3, not ENZ/TCO/TiN/AZO evidence.",
+      "Fig2f-R.xlsx contains stacked plotted traces rather than plain absolute reflectance columns.",
+      "Measured/simulated assignment is inferred from source caption plus trace character, not workbook labels.",
+      "The source simulated curve may already include author modeling choices and is not an independent holdout contract."
+    ]
+  },
+  "next_search_policy": {
+    "do_now_without_new_data": [
+      "Use Wang only as a parser/fixture regression input.",
+      "Keep Saha TiN/AZO parked until OPJU conversion becomes available.",
+      "Accept a new Phase 4 candidate only when all public-dataset gate flags pass."
+    ],
+    "preferred_next_phase": "Phase 3E.3 - ENZ public-data lead intake or Saha OPJU conversion if a real conversion path appears",
+    "status": "resume_enz_data_search_or_opju_conversion_only_with_new_lead",
+    "stop_conditions": [
+      "No new ENZ table-ready source-data package is available.",
+      "Only plot/PDF/request-only data remain.",
+      "A proposed next step would require weakening calibrated-linear standards."
+    ]
+  },
+  "phase_id": "Phase 3E.2D",
+  "title": "Wang Lane Claim Boundary And Assistant Handoff"
+}

@@ -62,6 +62,13 @@ from eternity.phase3e2a import (
     build_phase3e2a_packet,
     write_phase3e2a_packet,
 )
+from eternity.phase3e2b import build_phase3e2b_packet, write_phase3e2b_packet
+from eternity.phase3e2c import (
+    build_phase3e2c_fixture_rows,
+    build_phase3e2c_packet,
+    write_phase3e2c_packet,
+)
+from eternity.phase3e2d import build_phase3e2d_packet, write_phase3e2d_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -384,6 +391,11 @@ PHASE3E2A_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown Wang baseline intake artifacts.",
+)
+PHASE3E2_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and fixture artifacts.",
 )
 
 
@@ -933,6 +945,74 @@ def phase3e2a_wang_intake(
 
     if output_dir is not None:
         json_path, md_path = write_phase3e2a_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e2b-wang-semantics")
+def phase3e2b_wang_semantics(
+    raw_dir: Path = PHASE3E2A_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3E2_OUTPUT_DIR_OPTION,
+) -> None:
+    """Audit Wang Fig. 2f source-data semantics before residual use."""
+
+    try:
+        packet = build_phase3e2b_packet(raw_dir)
+    except (FileNotFoundError, KeyError, ValueError, zipfile.BadZipFile) as error:
+        typer.echo(f"Phase 3E.2B Wang semantics audit failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e2b_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e2c-wang-fixture")
+def phase3e2c_wang_fixture(
+    raw_dir: Path = PHASE3E2A_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3E2_OUTPUT_DIR_OPTION,
+) -> None:
+    """Generate the Wang bounded de-offseted source-data reproduction fixture."""
+
+    try:
+        packet = build_phase3e2c_packet(raw_dir)
+        rows = build_phase3e2c_fixture_rows(raw_dir)
+    except (FileNotFoundError, KeyError, ValueError, zipfile.BadZipFile) as error:
+        typer.echo(f"Phase 3E.2C Wang fixture failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, csv_path = write_phase3e2c_packet(output_dir, packet, rows)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {csv_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e2d-wang-handoff")
+def phase3e2d_wang_handoff(
+    raw_dir: Path = PHASE3E2A_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3E2_OUTPUT_DIR_OPTION,
+) -> None:
+    """Write the Wang claim-boundary and assistant handoff packet."""
+
+    try:
+        packet = build_phase3e2d_packet(raw_dir)
+    except (FileNotFoundError, KeyError, ValueError, zipfile.BadZipFile) as error:
+        typer.echo(f"Phase 3E.2D Wang handoff failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e2d_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         return

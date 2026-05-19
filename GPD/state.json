@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3E public dataset gate and Wang non-ENZ baseline intake"
+    "current_focus": "Phase 3E public dataset gate and assistant fixture substrate"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -28,11 +28,11 @@
     "current_phase": "3E",
     "current_phase_name": "Public Dataset Gate And Executive Research Assistant",
     "total_phases": 3,
-    "current_plan": "docs/phase3e2a_wang_wo3_baseline_intake.md",
+    "current_plan": "docs/phase3e2d_wang_claim_boundary_handoff.md",
     "total_plans_in_phase": 9,
-    "status": "Active / non-ENZ baseline intake recorded, semantics partial",
+    "status": "Active / Wang fixture complete, waiting on new ENZ data or OPJU path",
     "last_activity": "2026-05-19",
-    "last_activity_desc": "Completed Phase 3E.2A Wang W/WO3 non-ENZ baseline intake: selected Figshare spreadsheets are public and MD5-verified, FigS2-nk.xlsx contains W/WO3 n,k tables, and Fig2f-R.xlsx is blocked for residuals until vertical-offset and measured-vs-simulated semantics are source-backed.",
+    "last_activity_desc": "Completed Phase 3E.2B-3E.2D: Wang Fig. 2f source semantics were bounded, a 3017-row de-offseted reproduction fixture was written, and the lane was locked as literature_reproduction_fixture rather than validation evidence.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -355,18 +355,53 @@
       "selected_files_md5_match": true,
       "constants_file": "FigS2-nk.xlsx",
       "holdout_blocker": "Fig2f-R.xlsx offset plot traces and unlabeled pairs",
-      "next": "Phase 3E.2B Wang Fig. 2f semantics and no-fit baseline plan"
+      "next": "Phase 3E.2B-3E.2D Wang fixture/handoff completed"
+    },
+    {
+      "phase": "3E.2B",
+      "decision_ref": "docs/phase3e2b_wang_fig2f_semantics_audit.md",
+      "decision_json": "docs/phase3e2b_wang_fig2f_semantics_audit.json",
+      "decision": "source_backed_offsets_inferred_columns_not_source_labeled",
+      "claim_status_ceiling": "literature_reproduction_fixture",
+      "full_no_fit_tmm_validation_allowed": false,
+      "bounded_deoffset_reproduction_fixture_allowed": true,
+      "phase4_enz_ready": false,
+      "next": "Phase 3E.2C Wang bounded de-offseted reproduction fixture"
+    },
+    {
+      "phase": "3E.2C",
+      "decision_ref": "docs/phase3e2c_wang_deoffset_reproduction_fixture.md",
+      "decision_json": "docs/phase3e2c_wang_deoffset_reproduction_fixture.json",
+      "fixture_csv": "docs/phase3e2c_wang_deoffset_reproduction_fixture.csv",
+      "decision": "bounded_deoffset_reproduction_fixture_ready",
+      "claim_status_ceiling": "literature_reproduction_fixture",
+      "row_count": 3017,
+      "global_mae_percent": 3.11818,
+      "global_rmse_percent": 4.039468,
+      "full_no_fit_tmm_validation_allowed": false,
+      "next": "Phase 3E.2D Wang lane claim-boundary and assistant handoff"
+    },
+    {
+      "phase": "3E.2D",
+      "decision_ref": "docs/phase3e2d_wang_claim_boundary_handoff.md",
+      "decision_json": "docs/phase3e2d_wang_claim_boundary_handoff.json",
+      "decision": "phase3e2b_through_3e2d_complete",
+      "candidate_label": "literature_reproduction_fixture",
+      "phase4_candidate": false,
+      "serious_core_allowed": false,
+      "next": "Phase 3E.3 gated ENZ data lead intake when new source data exists"
     }
   ],
   "open_questions": [
     "Which current literature/public dataset can provide source-qualified optical constants plus independent R/T or ellipsometry holdout without author contact?",
     "If a candidate public dataset is found, what sample/stack, geometry, wavelength range, polarization, units, and leakage policy are source-proven?",
-    "Can Wang Fig2f-R.xlsx vertical offsets and measured-vs-simulated column assignments be source-backed without arbitrary fitting?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
     "Can a Woollam project file, plotting script, or lab note map the 30_20_10 exports to a sample and stack?"
   ],
-  "resolved_questions": [],
+  "resolved_questions": [
+    "Wang Fig2f-R.xlsx offsets are bounded enough for a de-offseted reproduction fixture, but measured/simulated columns are inferred rather than workbook-labeled, so no validation residual is allowed."
+  ],
   "performance_metrics": {
     "rows": []
   },

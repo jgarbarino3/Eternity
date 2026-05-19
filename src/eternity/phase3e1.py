@@ -142,6 +142,16 @@ def build_phase3e1_scaffold(registry_path: Path) -> dict[str, Any]:
     phase4_candidates = [
         item["candidate_id"] for item in evaluations if item["can_enter_phase4"]
     ]
+    wang_fixture_complete = any(
+        candidate.candidate_id == "wang_wo3_fp_2020_non_enz_baseline"
+        and candidate.decision == "bounded_deoffset_reproduction_fixture_not_validation"
+        for candidate in registry.candidates
+    )
+    fallback_next_phase = (
+        "Phase 3E.3 - gated ENZ data lead intake when new source data exists"
+        if wang_fixture_complete
+        else "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate"
+    )
     return {
         "phase_id": "Phase 3E.1",
         "title": "Public Dataset Gate And Executive Research Assistant Scaffold",
@@ -175,7 +185,7 @@ def build_phase3e1_scaffold(registry_path: Path) -> dict[str, Any]:
             "recommended_next_phase": (
                 "Phase 4 - calibrated-linear attempt for gated candidate"
                 if phase4_candidates
-                else "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate"
+                else fallback_next_phase
             ),
         },
         "executive_assistant_contract": {

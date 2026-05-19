@@ -187,28 +187,32 @@ candidates:
       - FigS2-nk.xlsx
       - Fig2f-R.xlsx
       - docs/phase3e2a_wang_wo3_baseline_intake.json
+      - docs/phase3e2b_wang_fig2f_semantics_audit.json
+      - docs/phase3e2c_wang_deoffset_reproduction_fixture.json
+      - docs/phase3e2d_wang_claim_boundary_handoff.json
     evidence:
       data_are_public: true
       no_author_contact_required: true
       identified_sample_stack: true
       source_qualified_material_model: true
-      independent_measured_holdout: true
+      independent_measured_holdout: false
       machine_readable_numerical_data: true
       absolute_calibration_documented: false
-      geometry_specified: false
+      geometry_specified: true
       calibration_holdout_split_predeclared: false
       holdout_not_known_used_for_fit: false
       tmm_appropriate: true
-      no_existing_nonpromoting_validation: true
-    proposed_claim_label: non_enz_planar_tmm_baseline_candidate
-    decision: non_enz_baseline_source_data_snapshotted_semantics_partial
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: literature_reproduction_fixture
+    decision: bounded_deoffset_reproduction_fixture_not_validation
     blockers:
       - W/WO3 Fabry-Perot is useful as a planar TMM baseline but is not ENZ evidence.
       - Fig2f-R.xlsx contains vertically offset/nonphysical plotted traces, not plain absolute reflectance columns.
-      - Measured-vs-simulated column assignment and leakage status are not proven from the selected spreadsheets alone.
-    exact_next_file: Fig2f-R.xlsx
+      - Measured-vs-simulated column assignment is inferred from source caption plus trace character, not workbook labels.
+      - The de-offseted residual fixture is source-data reproduction, not independent validation.
+    exact_next_file: docs/phase3e2d_wang_claim_boundary_handoff.json
     notes:
-      - Promote only as non-ENZ baseline machinery after Fig. 2f offset and measured-column semantics are source-backed.
+      - Phase 3E.2B-3E.2D completed the Wang lane as a non-promoting literature reproduction fixture.
 
   - candidate_id: cdo_dielectric_function_2020
     title: Ultraviolet to far-infrared dielectric function of n-doped cadmium oxide thin films

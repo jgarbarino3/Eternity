@@ -538,11 +538,13 @@ Next:
 
 - Phase 3E.1 has built the public-dataset gate and executive research assistant
   scaffold while preserving the `calibrated_linear_evidence` bar.
-- Phase 3E.2A has ingested Wang W/WO3 as a non-ENZ planar TMM baseline
-  candidate only. Its `FigS2-nk.xlsx` constants are machine-readable, but
-  `Fig2f-R.xlsx` remains offset/unlabeled plotted data, so no residual claim or
-  ENZ Phase 4 promotion is allowed.
-- Next is `Phase 3E.2B - Wang Fig. 2f semantics and no-fit baseline plan`.
+- Phase 3E.2A-3E.2D has completed Wang W/WO3 as a non-ENZ literature
+  reproduction fixture only. Its `FigS2-nk.xlsx` constants are machine-readable,
+  and `Fig2f-R.xlsx` now has a bounded de-offseted CSV/residual artifact, but
+  the measured/simulated columns remain inferred rather than workbook-labeled.
+  No validation claim or ENZ Phase 4 promotion is allowed.
+- Next is `Phase 3E.3 - gated ENZ data lead intake or Saha OPJU conversion`,
+  only if a new table-ready package or real conversion path appears.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact,
   Saha OPJU export, or new literature-package paths only if the user supplies
   new access or data.

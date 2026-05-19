@@ -1,0 +1,94 @@
+{
+  "decision": {
+    "assistant_value": "This fixture lets the assistant parse stacked source-data plots, record inferred line semantics, and compute bounded diagnostics while preserving the calibrated-evidence gate.",
+    "claim_status_ceiling": "literature_reproduction_fixture",
+    "full_no_fit_tmm_validation_allowed": false,
+    "phase4_candidate": false,
+    "phase4_enz_ready": false,
+    "recommended_next_phase": "Phase 3E.2D - Wang lane claim-boundary and assistant handoff",
+    "status": "bounded_deoffset_reproduction_fixture_ready"
+  },
+  "fixture_contract": {
+    "deoffset_rule": "add 420, 350, 280, 210, 140, 70, and 0 percent offsets across the stacked thickness groups",
+    "fitted_parameters": [],
+    "fixture_kind": "source_data_reproduction_not_validation",
+    "forbidden_uses": [
+      "calibrated_linear_evidence",
+      "ENZ evidence",
+      "absolute reflectance validation",
+      "proof that the source simulation was independent of Fig. 2f tuning"
+    ],
+    "measured_column_rule": "first y column per thickness pair is inferred measured",
+    "residual_quantity": "inferred measured percent minus source simulated percent",
+    "simulated_column_rule": "second y column per thickness pair is inferred simulated"
+  },
+  "generated_at": "2026-05-19T16:50:11.881260+00:00",
+  "inputs": {
+    "fig2f_workbook": "lab_data/raw/public_wang_wo3_fp_2020/Fig2f-R.xlsx",
+    "raw_dir": "lab_data/raw/public_wang_wo3_fp_2020",
+    "semantics_status": "source_backed_offsets_inferred_columns_not_source_labeled"
+  },
+  "metrics": {
+    "by_thickness_nm": {
+      "152": {
+        "mae_percent": 3.224547,
+        "max_abs_percent": 20.1313,
+        "mean_signed_percent": 1.017759,
+        "point_count": 431,
+        "rmse_percent": 4.006775
+      },
+      "163": {
+        "mae_percent": 3.804623,
+        "max_abs_percent": 17.7402,
+        "mean_signed_percent": 0.968226,
+        "point_count": 431,
+        "rmse_percent": 4.733076
+      },
+      "185": {
+        "mae_percent": 2.953187,
+        "max_abs_percent": 8.67385,
+        "mean_signed_percent": 1.15837,
+        "point_count": 431,
+        "rmse_percent": 3.582306
+      },
+      "200": {
+        "mae_percent": 3.003732,
+        "max_abs_percent": 12.4881,
+        "mean_signed_percent": 0.310488,
+        "point_count": 431,
+        "rmse_percent": 3.563555
+      },
+      "215": {
+        "mae_percent": 2.828869,
+        "max_abs_percent": 18.18,
+        "mean_signed_percent": 1.819007,
+        "point_count": 431,
+        "rmse_percent": 3.60746
+      },
+      "233": {
+        "mae_percent": 2.114421,
+        "max_abs_percent": 21.8973,
+        "mean_signed_percent": -1.029462,
+        "point_count": 431,
+        "rmse_percent": 3.687969
+      },
+      "250": {
+        "mae_percent": 3.897607,
+        "max_abs_percent": 16.04739,
+        "mean_signed_percent": -1.006963,
+        "point_count": 431,
+        "rmse_percent": 4.857458
+      }
+    },
+    "global": {
+      "mae_percent": 3.118141,
+      "max_abs_percent": 21.8973,
+      "mean_signed_percent": 0.462489,
+      "point_count": 3017,
+      "rmse_percent": 4.039057
+    }
+  },
+  "phase_id": "Phase 3E.2C",
+  "row_count": 3017,
+  "title": "Wang Bounded De-Offseted Reproduction Fixture"
+}

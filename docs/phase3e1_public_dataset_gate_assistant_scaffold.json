@@ -208,21 +208,22 @@
       "blockers": [
         "W/WO3 Fabry-Perot is useful as a planar TMM baseline but is not ENZ evidence.",
         "Fig2f-R.xlsx contains vertically offset/nonphysical plotted traces, not plain absolute reflectance columns.",
-        "Measured-vs-simulated column assignment and leakage status are not proven from the selected spreadsheets alone."
+        "Measured-vs-simulated column assignment is inferred from source caption plus trace character, not workbook labels.",
+        "The de-offseted residual fixture is source-data reproduction, not independent validation."
       ],
       "can_enter_phase4": false,
       "candidate_id": "wang_wo3_fp_2020_non_enz_baseline",
-      "computed_gate_label": "non_enz_planar_tmm_baseline_candidate",
-      "decision": "non_enz_baseline_source_data_snapshotted_semantics_partial",
-      "exact_next_file": "Fig2f-R.xlsx",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "bounded_deoffset_reproduction_fixture_not_validation",
+      "exact_next_file": "docs/phase3e2d_wang_claim_boundary_handoff.json",
       "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
         {
           "criterion": "documented absolute R/T/A or ellipsometry scale",
           "flag": "absolute_calibration_documented"
-        },
-        {
-          "criterion": "angle, polarization, side, and unit context specified",
-          "flag": "geometry_specified"
         },
         {
           "criterion": "calibration/holdout split can be predeclared",
@@ -231,16 +232,21 @@
         {
           "criterion": "holdout is not known to have fit/tuned the model",
           "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
         }
       ],
       "material_family": "W/WO3",
       "missing_required_flags": [
+        "independent_measured_holdout",
         "absolute_calibration_documented",
-        "geometry_specified",
         "calibration_holdout_split_predeclared",
-        "holdout_not_known_used_for_fit"
+        "holdout_not_known_used_for_fit",
+        "no_existing_nonpromoting_validation"
       ],
-      "proposed_claim_label": "non_enz_planar_tmm_baseline_candidate",
+      "proposed_claim_label": "literature_reproduction_fixture",
       "serious_core_allowed_now": false,
       "title": "Towards Full-colour Tunability of Inorganic Electrochromic Devices Using Ultracompact Fabry-Perot Nanocavities"
     },
@@ -360,7 +366,7 @@
     "can_feed_serious_core_now": false,
     "can_open_phase4_now": false,
     "claim_standard_changed": false,
-    "recommended_next_phase": "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate",
+    "recommended_next_phase": "Phase 3E.3 - gated ENZ data lead intake when new source data exists",
     "status": "phase3e1_scaffold_ready_no_phase4_candidate"
   },
   "executive_assistant_contract": {
@@ -379,7 +385,7 @@
       "opening Phase 4 from plot-only, PDF-only, constants-only, or request-only data"
     ]
   },
-  "generated_at": "2026-05-19T15:24:28.190435+00:00",
+  "generated_at": "2026-05-19T16:53:34.603309+00:00",
   "inputs": {
     "registry_path": "docs/phase3e1_dataset_candidate_registry.yaml"
   },
@@ -410,19 +416,18 @@
       "absolute_calibration_documented": 7,
       "calibration_holdout_split_predeclared": 7,
       "data_are_public": 1,
-      "geometry_specified": 2,
+      "geometry_specified": 1,
       "holdout_not_known_used_for_fit": 7,
-      "independent_measured_holdout": 4,
+      "independent_measured_holdout": 5,
       "machine_readable_numerical_data": 4,
       "no_author_contact_required": 1,
-      "no_existing_nonpromoting_validation": 4
+      "no_existing_nonpromoting_validation": 5
     },
     "candidate_count": 9,
     "claim_label_counts": {
       "blocked_source_data_lead": 1,
       "calibration_only_no_holdout": 2,
-      "literature_reproduction_fixture": 2,
-      "non_enz_planar_tmm_baseline_candidate": 1,
+      "literature_reproduction_fixture": 3,
       "rejected_candidate": 1,
       "weak_within_dataset_holdout": 2
     },

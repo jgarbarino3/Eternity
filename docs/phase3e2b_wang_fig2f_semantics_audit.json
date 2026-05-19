@@ -1,0 +1,299 @@
+{
+  "decision": {
+    "bounded_deoffset_reproduction_fixture_allowed": true,
+    "claim_status_ceiling": "literature_reproduction_fixture",
+    "full_no_fit_tmm_validation_allowed": false,
+    "phase4_candidate": false,
+    "phase4_enz_ready": false,
+    "reason": "The source paper backs the measured/simulated figure semantics and the SI backs the model inputs, but Fig2f-R.xlsx has no chart XML, no series labels, and no workbook-level measured/simulated headers. A de-offseted reproduction fixture is honest; a clean no-fit validation residual is not.",
+    "recommended_next_phase": "Phase 3E.2C - Wang bounded de-offseted reproduction fixture",
+    "status": "source_backed_offsets_inferred_columns_not_source_labeled"
+  },
+  "fig2f_layout": {
+    "column_count": 15,
+    "expected_thicknesses_match": true,
+    "measured_simulated_assignment": {
+      "basis": [
+        "article caption separates simulated dashed and measured solid traces",
+        "paired columns are not labeled in the workbook",
+        "first y columns have visibly noisier point-to-point structure than second y columns"
+      ],
+      "inferred_measured_column": "first_y_column_of_each_thickness_pair",
+      "inferred_simulated_column": "second_y_column_of_each_thickness_pair",
+      "workbook_has_explicit_labels": false
+    },
+    "offset_rule": {
+      "added_offsets_percent_by_thickness": {
+        "152": 420,
+        "163": 350,
+        "185": 280,
+        "200": 210,
+        "215": 140,
+        "233": 70,
+        "250": 0
+      },
+      "all_deoffseted_ranges_are_reflectance_like_percent": true,
+      "rule": "add 70 percent reflectance steps from 420 to 0 across the seven stacked thickness groups",
+      "status": "source_figure_encoded_not_workbook_labeled"
+    },
+    "pairs": [
+      {
+        "deoffseted_y_range_percent": [
+          3.5364700000000084,
+          61.647400000000005
+        ],
+        "first_y_mean_abs_step": 0.422574,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 420,
+        "point_count": 431,
+        "raw_y_range": [
+          -416.46353,
+          -358.3526
+        ],
+        "second_y_mean_abs_step": 0.267626,
+        "source_columns": {
+          "first_y": "B",
+          "second_y": "C",
+          "wavelength": "A"
+        },
+        "thickness_nm": 152,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          3.341130000000021,
+          62.32679999999999
+        ],
+        "first_y_mean_abs_step": 0.437812,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 350,
+        "point_count": 431,
+        "raw_y_range": [
+          -346.65887,
+          -287.6732
+        ],
+        "second_y_mean_abs_step": 0.317456,
+        "source_columns": {
+          "first_y": "D",
+          "second_y": "E",
+          "wavelength": "A"
+        },
+        "thickness_nm": 163,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          0.5951600000000212,
+          61.022999999999996
+        ],
+        "first_y_mean_abs_step": 0.474842,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 280,
+        "point_count": 431,
+        "raw_y_range": [
+          -279.40484,
+          -218.977
+        ],
+        "second_y_mean_abs_step": 0.388412,
+        "source_columns": {
+          "first_y": "F",
+          "second_y": "G",
+          "wavelength": "A"
+        },
+        "thickness_nm": 185,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          1.3417399999999873,
+          55.93100000000001
+        ],
+        "first_y_mean_abs_step": 0.477106,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 210,
+        "point_count": 431,
+        "raw_y_range": [
+          -208.65826,
+          -154.069
+        ],
+        "second_y_mean_abs_step": 0.442705,
+        "source_columns": {
+          "first_y": "H",
+          "second_y": "I",
+          "wavelength": "A"
+        },
+        "thickness_nm": 200,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          2.703800000000001,
+          58.046400000000006
+        ],
+        "first_y_mean_abs_step": 0.504267,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 140,
+        "point_count": 431,
+        "raw_y_range": [
+          -137.2962,
+          -81.9536
+        ],
+        "second_y_mean_abs_step": 0.433574,
+        "source_columns": {
+          "first_y": "J",
+          "second_y": "K",
+          "wavelength": "A"
+        },
+        "thickness_nm": 215,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          3.6799800000000005,
+          58.2
+        ],
+        "first_y_mean_abs_step": 0.498606,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 70,
+        "point_count": 431,
+        "raw_y_range": [
+          -66.32002,
+          -11.8
+        ],
+        "second_y_mean_abs_step": 0.450477,
+        "source_columns": {
+          "first_y": "L",
+          "second_y": "M",
+          "wavelength": "A"
+        },
+        "thickness_nm": 233,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      },
+      {
+        "deoffseted_y_range_percent": [
+          1.4396,
+          57.5364
+        ],
+        "first_y_mean_abs_step": 0.532084,
+        "inferred_first_y_is_measured": true,
+        "inferred_second_y_is_simulated": true,
+        "offset_added_percent": 0,
+        "point_count": 431,
+        "raw_y_range": [
+          1.4396,
+          57.5364
+        ],
+        "second_y_mean_abs_step": 0.482267,
+        "source_columns": {
+          "first_y": "N",
+          "second_y": "O",
+          "wavelength": "A"
+        },
+        "thickness_nm": 250,
+        "wavelength_nm_range": [
+          350.0,
+          780.0
+        ]
+      }
+    ],
+    "row_count": 435,
+    "sheet_name": "Sheet1",
+    "thicknesses_nm": [
+      152,
+      163,
+      185,
+      200,
+      215,
+      233,
+      250
+    ],
+    "wavelength_axis": {
+      "column": "A",
+      "direction": "descending",
+      "range_nm": [
+        350.0,
+        780.0
+      ]
+    }
+  },
+  "generated_at": "2026-05-19T16:50:11.858587+00:00",
+  "guardrails": [
+    "Do not use Wang as ENZ evidence.",
+    "Do not count de-offseting as experimental calibration.",
+    "Do not promote inferred measured/simulated columns to source-labeled holdout columns.",
+    "Use residuals only as source-data reproduction diagnostics."
+  ],
+  "inputs": {
+    "article_pdf_url": "https://www.nature.com/articles/s41467-019-14194-y.pdf",
+    "article_url": "https://www.nature.com/articles/s41467-019-14194-y",
+    "fig2f_workbook": "lab_data/raw/public_wang_wo3_fp_2020/Fig2f-R.xlsx",
+    "figshare_url": "https://figshare.com/articles/dataset/Towards_Full-colour_Tunability_of_Inorganic_Electrochromic_Devices_Using_Ultracompact_Fabry-Perot_Nanocavities/11154791",
+    "raw_dir": "lab_data/raw/public_wang_wo3_fp_2020",
+    "supplementary_pdf_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-019-14194-y/MediaObjects/41467_2019_14194_MOESM1_ESM.pdf"
+  },
+  "phase_id": "Phase 3E.2B",
+  "source_evidence": {
+    "article": [
+      "Figure 2f is described as simulated dashed lines and measured solid lines.",
+      "The thickness series is 152, 163, 185, 200, 215, 233, and 250 nm WO3.",
+      "The paper text says the underlying metallic W layer is fixed at 100 nm for the calculated thickness sweep."
+    ],
+    "figshare": [
+      "The public source-data package contains Fig2f-R.xlsx and FigS2-nk.xlsx."
+    ],
+    "supplementary_information": [
+      "W and WO3 optical constants are derived from spectroscopic ellipsometry on single-layer films.",
+      "The supplementary methods describe characteristic-matrix reflectance/transmittance calculations.",
+      "The supplementary methods state normal incidence is used for the study.",
+      "FDTD simulations use the W and WO3 optical constants shown in Supplementary Figure 2."
+    ]
+  },
+  "title": "Wang Fig. 2f Semantics And No-Fit Baseline Plan",
+  "workbook_archive_features": {
+    "has_chart_xml": false,
+    "has_comment_xml": false,
+    "has_drawing_xml": false,
+    "has_media": false,
+    "has_table_xml": false,
+    "member_count": 12,
+    "members": [
+      "[Content_Types].xml",
+      "_rels/.rels",
+      "xl/workbook.xml",
+      "xl/_rels/workbook.xml.rels",
+      "xl/worksheets/sheet1.xml",
+      "xl/theme/theme1.xml",
+      "xl/styles.xml",
+      "xl/sharedStrings.xml",
+      "xl/worksheets/_rels/sheet1.xml.rels",
+      "xl/printerSettings/printerSettings1.bin",
+      "docProps/core.xml",
+      "docProps/app.xml"
+    ],
+    "shared_strings_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<sst xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" count=\"2\" uniqueCount=\"1\"><si><t>--</t></si></sst>"
+  }
+}
