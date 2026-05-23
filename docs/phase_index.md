@@ -1,6 +1,6 @@
 # Eternity Phase Index
 
-Date: 2026-05-19
+Date: 2026-05-23
 
 This file gives stable phase IDs for next-step recommendations. `CURRENT_REALISTIC_ROADMAP.md` and `GOALS.md` remain the roadmap authorities; this index keeps the numbering consistent across Codex sessions.
 
@@ -42,7 +42,7 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3C.5 | Completed/parity gaps recorded | St Andrews source-model parity diagnostic | Raw Woollam `.mod/.SE` inspection found source-model gaps: Float Glass Cauchy substrate, film-thickness/roughness metadata, and back-reflection settings are not represented in the current clean-run stack. No model revision or promotion is justified yet. |
 | Phase 3C.6 | Completed/decision implemented | Source-model parity implementation or lane park decision | Resolved by Phase 3C.6A: bounded parity code was implemented and the lane remains non-promoting. |
 | Phase 3C.6A | Completed/parked | Bounded St Andrews source-model parity implementation | Tested source Cauchy substrate, inferred source thickness, approximate roughness EMA, and approximate backside reflection. All variants failed locked thresholds; exact roughness/back-reflection parity remains underdetermined, so St Andrews is parked before Phase 4. |
-| Phase 3D | Completed/current envelope exhausted | Literature/public validation dataset search | Known public leads from the current Phase 3D envelope were inspected or triaged. No immediate Phase 4 candidate remains without new table-ready data, a Saha export, a separate ACS/intracavity raw source-data package, or a fresh literature search. |
+| Phase 3D | Completed/current envelope exhausted | Literature/public validation dataset search | Known public leads from the current Phase 3D envelope were inspected or triaged. No immediate Phase 4 candidate remains without new table-ready data, a complete stack-contract source package, or a fresh literature search. |
 | Phase 3D.1 | Completed/intake-ready | Exeter/Bohn ITO package intake | Downloaded and snapshotted `OpenData.zip` from DOI `10.24378/exe.3004`, verified archive hash/test, and found table/code candidates for ellipsometry-derived ITO epsilon plus TIR-normalized reflection. |
 | Phase 3D.1A | Completed/promising-no-promotion | Exeter/Bohn calibration-holdout split audit | Figure 1 provides source-qualified ellipsometry epsilon; Figure 2 provides the cleanest static pre-pump reflection candidate via TIR-normalized `R0`, but the split still needs no-fit extraction/locking before any residual claim. |
 | Phase 3D.1B | Completed/split-locked | Exeter/Bohn no-fit static R0 extraction and split lock | Extracted Figure 1 optical constants, Figure 2 TIR reference, and Figure 2 pre-pump `R0` into canonical CSV artifacts; registered the Figure 1 epsilon model; and wrote a split-lock YAML that forbids residual-driven tuning. |
@@ -51,10 +51,10 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3D.2A | Completed/blocked | Saha OPJU worksheet export or open-format alternate | Installed/probed LabPlot 2.12.1 and confirmed no local batch OPJU-to-CSV export path: CLI only opens files/projects, embedded Origin strings advertise OPJ rather than OPJU, and offscreen OPJU opening produced no tables. |
 | Phase 3D.3 | Completed/nonlinear-fixture | Exeter spatiotemporal ITO source-data intake | Snapshotted the public `10.24378/exe.3644` package, verified `OpenData.zip`, and found table-ready 115 nm / thicker-sample ITO epsilon plus open pumped transmission/frequency-shift data. The measurement lane is nonlinear and not a clean independent static absolute R/T holdout, so the claim ceiling is `literature_reproduction_fixture`. |
 | Phase 3D.4 | Completed/calibration-fixture | Thermo-optic ITO Zenodo source-data intake | Downloaded and MD5-verified `Zenodo_Data.zip` for DOI `10.5281/zenodo.10148545`. The package has many machine-readable 210-2500 nm ITO epsilon tables, Hall/SEM/supporting data, and MATLAB figure artifacts, but no independent measured static R/T holdout; claim ceiling is `calibration_only_no_holdout`. |
-| Phase 3D.5 | Completed/pivot-triggered | Remaining public source-data lead triage | Triage found no immediate additional ingest-ready Phase 4 candidate. Remaining leads are public PDF/SI-only, paper/plot-only, constants-only, export-blocked, or request-only; the current run should pivot rather than weaken the validation bar. |
-| Phase 3D.5A | Completed/correction | ACS intracavity PDF correction | Manual browser downloads show `51010982` resolves to the ACS SI PDF, not a raw source-data package. The public package is article PDF + SI PDF only, with no embedded files, raw tables, or independent measured static R/T/A holdout; claim ceiling is `literature_reproduction_fixture`. |
+| Phase 3D.5 | Completed/pivot-triggered | Remaining public source-data lead triage | Triage found no immediate additional ingest-ready Phase 4 candidate. Remaining leads were public PDF/SI-only, paper/plot-only, constants-only, export-blocked, or request-only; the current run pivoted rather than weakening the validation bar. |
+| Phase 3D.5A | Completed/figshare-path-correction | ACS intracavity Figshare-download correction | Manual browser downloads showed `51010982` resolves to the ACS SI PDF, not a raw source-data package. Phase 3E.4 later found a separate Zenodo MATLAB package for the same paper, so this row is now the Figshare-path result rather than the full lane classification. |
 | Phase 3E | Active/pivot | Public dataset gate + executive research assistant | Keep the Serious Core claim gates intact while building the user-facing research-assistant substrate: candidate registry, rejection cards, conservative fixtures, reports, prompts, and evidence-aware next-action workflows. |
-| Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 9 known candidates and opens 0 Phase 4 candidates. |
+| Phase 3E.1 | Completed/scaffold | Public Dataset Gate And Executive Research Assistant Scaffold | Added a candidate registry, hard Phase 4 acceptance flags, CLI scaffold report, claim-status summary, assistant contract, and tests. The current registry evaluates 15 known candidates and opens 0 Phase 4 candidates. |
 | Phase 3E.2 | Active | Browse/Plasmate Public-Data Sweep Through Gate | Use Browse.sh, Plasmate, Deep Research, and 5.5 Pro outputs to add new candidate cards, run the public-dataset gate, and inspect exact files only for candidates that can plausibly clear the hard Phase 4 flags. |
 | Phase 3E.2A | Completed/non-ENZ baseline intake | Wang W/WO3 source-data intake | Snapshotted selected Figshare XLSX files, verified MD5s, confirmed direct W/WO3 n,k tables, and blocked residual modeling because Fig. 2f traces are offset/unlabeled plotted data. |
 | Phase 3E.2B | Completed/fixture-gated | Wang Fig. 2f semantics and no-fit baseline plan | Source paper/SI back the Fig. 2f measured/simulated figure semantics and model inputs, but the workbook has no chart XML, series labels, or measured/simulated headers; full no-fit validation is blocked. |
@@ -63,7 +63,7 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3E.3 | Completed/source-exported-and-blocked | Saha OPJU conversion and ENZ candidate gate | The real OPJU-to-CSV conversion path is now available for Saha Fig. 2b and Fig. 2c/d. Phase 3E.3A canonicalized the exported tables, and Phase 3E.3B blocked TMM residual modeling because the frozen substrate/backside stack-model contract is not source-backed. |
 | Phase 3E.3A | Completed/tmm-blocked | Saha exported-table audit and candidate gate | Split the Origin Viewer exports into canonical measured reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon CSVs; verified source semantics against paper/Figshare evidence; and stopped before TMM because substrate optical constants, backside treatment, and full source-model leakage boundaries are not frozen. |
 | Phase 3E.3B | Completed/stack-contract-blocked | Saha frozen-stack model provenance and no-fit adapter gate | Confirmed stack order, film thicknesses, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residuals were run. |
-| Phase 3E.4 | Next/gated | Renewed ENZ public-data search through stack-contract gate | Search for a new table-ready ENZ/TCO/TiN/AZO public dataset whose source package already clears material constants, independent measured holdout, geometry, stack/substrate/backside contract, and leakage gates before residual inspection. |
+| Phase 3E.4 | Active/search-snapshot-no-phase4-candidate | Renewed ENZ public-data search through stack-contract gate | First renewed pass inspected 7 live-source leads and opened 0 Phase 4 candidates. It corrected the ACS/intracavity lane to include a Zenodo MATLAB package, but that package is still a literature fixture rather than a calibrated-linear candidate. Continue only through the stricter material/holdout/geometry/stack/substrate/backside/leakage gate. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
@@ -92,11 +92,13 @@ dataset rather than a separable static calibrated-linear holdout. Phase 3D.4
 then inspected the thermo-optic ITO Zenodo package: it is an excellent public
 constants fixture, but no independent measured static R/T holdout was found.
 Phase 3D.5 bounded the remaining known public leads, and Phase 3D.5A corrected
-the ACS/intracavity lead after manual downloads: `51010982` resolves to the SI
-PDF, not a raw source-data package. Saha is now CSV-exported and canonicalized
-but stack-contract-blocked before TMM, the AZO/ITO paper leads are not table-package-ready,
-CdO/high-crystallinity ITO are constants fixtures, and request-only papers
-remain rejected. The next meaningful step was the public-dataset gate /
+the ACS/intracavity Figshare-download path: `51010982` resolves to the SI PDF,
+not a raw source-data package. Phase 3E.4 later found the separate ACS
+intracavity Zenodo MATLAB package, correcting the global registry from
+PDF/SI-only to a non-promoting source-code/data fixture. Saha is now
+CSV-exported and canonicalized but stack-contract-blocked before TMM, the
+AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
+constants fixtures, and request-only papers remain rejected. The next meaningful step was the public-dataset gate /
 executive research assistant pivot, not a forced Phase 4 attempt. Phase 3E.1
 added that gate. Phase 3E.2A then ingested
 Wang W/WO3 as a non-ENZ planar TMM baseline candidate: selected XLSX files are
@@ -106,9 +108,12 @@ offset/unlabeled plotted traces. Phase 3E.2B-3E.2D resolved the honest lane:
 the source paper/SI back the figure-level measured/simulated semantics and model
 inputs, the workbook lacks explicit line/series labels, and the de-offseted
 3017-row fixture is useful source-data reproduction rather than validation.
-The next move is a renewed ENZ public-data search through the stricter
-stack-contract gate; do not continue Saha residual modeling from a guessed
-silicon/backside model.
+Phase 3E.4 then ran the first renewed source search through the stricter
+stack-contract gate: ACS/intracavity Zenodo, Linkoping ITO/PEDOT, ITO/glass/SiO2
+constants, space-time ITO source data, the natural-ENZ compendium, LBSO
+Ferrell-Berreman, and ENZ metal-oxide reflector leads all opened 0 Phase 4
+candidates. Continue the renewed search, but do not continue Saha residual
+modeling from a guessed silicon/backside model.
 
 Information sufficiency:
 
@@ -246,9 +251,10 @@ Information sufficiency:
 - Not enough to promote Phase 3D.4: the package is constants-rich and public,
   but it does not expose a separable measured R/T holdout for the current
   calibrated-linear gate.
-- Not enough to open Phase 4 from the current public-data envelope: Phase 3D.5A
-  found the remaining known leads are paper/plot/PDF-only, constants-only,
-  export-blocked, or request-only unless new table-ready data appears.
+- Not enough to open Phase 4 from the current public-data envelope: Phase 3E.4
+  found the newest inspected leads are MATLAB/source-data fixtures,
+  nonlinear packages, constants-only compendia, PDF/SI-only leads, or otherwise
+  missing the full stack/substrate/backside/leakage contract.
 
 Recommended next phase under the current GPT-5.5 assumption:
 

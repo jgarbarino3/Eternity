@@ -1,6 +1,6 @@
 phase_id: Phase 3E.1
 registry_version: 2
-updated_at: "2026-05-19"
+updated_at: "2026-05-23"
 acceptance_scope: >-
   Public/literature thin-film optical datasets that might support a future
   calibrated-linear validation attempt after passing every public-data gate.
@@ -85,19 +85,205 @@ candidates:
   - candidate_id: acs_intracavity_ito_2025
     title: Intracavity epsilon-near-zero dual-range frequency switch
     material_family: ITO
-    source_type: acs_pdf_si
+    source_type: zenodo_matlab_package_and_prior_pdf_si
     source_refs:
       - DOI 10.1021/acsphotonics.4c01322
+      - Zenodo DOI 10.5281/zenodo.14236212
     public_data_links:
       - https://figshare.com/ndownloader/files/51010982
+      - https://zenodo.org/records/14236212
     exact_files:
       - intracavity-epsilon-near-zero-dual-range-frequency-switch.pdf
       - ph4c01322_si_001.pdf
+      - Zenodo_Data.zip
+      - Article_Figure_1_Modes.m
+      - SI_Figure_1_Ellipsometery.m
+      - Data_ellipsometer_FP_2um.mat
+      - Data_TMM_TRA_diff_thickness.mat
     evidence:
       data_are_public: true
       no_author_contact_required: true
       identified_sample_stack: true
       source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: false
+      no_existing_nonpromoting_validation: false
+    proposed_claim_label: literature_reproduction_fixture
+    decision: zenodo_matlab_package_found_not_phase4_ready
+    blockers:
+      - Phase 3E.4 found Zenodo_Data.zip, correcting the older PDF/SI-only registry wording.
+      - The ZIP is a MATLAB source-code/data fixture, not a clean independent static linear R/T/A holdout with a frozen stack/substrate/backside contract.
+      - Intracavity and nanostructure operation is not a current planar no-fit TMM Phase 4 candidate.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - Useful as a literature reproduction fixture only; do not use the old Figshare PDF-only route as the whole source-package picture.
+
+  - candidate_id: linkoping_ito_pedot_2026
+    title: Electrotunable coupling between an epsilon-near-zero thin film and conducting polymer nanoantennas
+    material_family: ITO/PEDOT
+    source_type: zenodo_figure_zip_source_data
+    source_refs:
+      - DOI 10.1073/pnas.2517549123
+      - Zenodo DOI 10.5281/zenodo.18412236
+    public_data_links:
+      - https://zenodo.org/records/18412236
+      - https://pubmed.ncbi.nlm.nih.gov/41671185/
+    exact_files:
+      - Figure 1.zip
+      - Figure 2.zip
+      - Figure 3.zip
+      - Figure 4.zip
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: false
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: false
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: literature_reproduction_fixture
+    decision: table_ready_fixture_not_planar_phase4_candidate
+    blockers:
+      - Figure 2 contains measured and simulated angle/polarization extinction spectra for a 50 nm ITO film on glass, but no promotion-clean material/holdout split is frozen.
+      - The main device lane is nanorod/ITO hybrid coupling rather than a plain planar TMM validation target.
+      - Substrate/backside/coherence and source-model leakage contracts are not Phase 4-ready.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - Useful as a public ENZ coupling fixture and possible assistant parsing test.
+
+  - candidate_id: ito_glass_sio2_optical_properties_2025
+    title: ITO, soda lime float glass and SiO2 buffer layer optical properties
+    material_family: ITO/glass/SiO2
+    source_type: zenodo_optical_constants
+    source_refs:
+      - DOI 10.5281/zenodo.15055400
+      - Article DOI 10.1016/j.omx.2025.100408
+    public_data_links:
+      - https://zenodo.org/records/15055400
+    exact_files:
+      - ITO nk.opju
+      - ITO_20 Ohm_105 nm_e1e2.mat
+      - ITO_glass_SiO2 buffer.7z
+      - SiO2 buffer_e1e2.mat
+      - Soda lime_e1e2.mat
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: false
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: calibration_only_no_holdout
+    decision: constants_fixture_no_independent_holdout
+    blockers:
+      - Public record provides optical constants for ITO, soda-lime glass, and SiO2, but no independent measured R/T/A holdout.
+      - Good calibration fixture, not a validation candidate.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - The inspected ITO e1/e2 file is plain text despite its .mat extension.
+
+  - candidate_id: spacetime_synthetic_motion_ito_2025
+    title: Space-Time Optical Diffraction from Synthetic Motion
+    material_family: ITO
+    source_type: figshare_nonlinear_source_data
+    source_refs:
+      - DOI 10.1038/s41467-025-60159-9
+      - Figshare DOI 10.6084/m9.figshare.27925419.v3
+    public_data_links:
+      - https://figshare.com/projects/Space-Time_Optical_Diffraction_from_Synthetic_Motion_-_Source_data/229662
+      - https://figshare.com/articles/dataset/Data_for_Fig_2b/27925419
+    exact_files:
+      - Fig2b Source Data.xlsx
+      - FigS2b Source Data.xlsx
+      - +ve_GRAD_Data.npz
+      - -ve_GRAD_Data.npz
+      - 2-slit-delay=267.00fsFT-interp-th,f,amp2.txt
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: true
+      source_qualified_material_model: false
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: true
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: false
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: literature_reproduction_fixture
+    decision: nonlinear_source_data_fixture_no_static_holdout
+    blockers:
+      - Public source data are for nonlinear space-time diffraction and pump-probe timing, not static absolute R/T.
+      - No independent frozen material/holdout split for current linear planar TMM.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - Useful for future nonlinear/research-memory context, not Phase 4.
+
+  - candidate_id: natural_enz_compendium_2025
+    title: Compendium of Natural Epsilon-Near-Zero Materials
+    material_family: mixed natural ENZ materials
+    source_type: acs_figshare_constants_compendium
+    source_refs:
+      - DOI 10.1021/acsphotonics.5c00199
+      - Figshare DOI 10.1021/acsphotonics.5c00199.s002
+    public_data_links:
+      - https://acs.figshare.com/articles/dataset/Compendium_of_Natural_Epsilon-Near-Zero_Materials/29134854
+    exact_files:
+      - ph5c00199_si_002.xlsx
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: false
+      source_qualified_material_model: true
+      independent_measured_holdout: false
+      machine_readable_numerical_data: true
+      absolute_calibration_documented: false
+      geometry_specified: false
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: false
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: calibration_only_no_holdout
+    decision: constants_compendium_not_validation_dataset
+    blockers:
+      - Public XLSX compendium has n/k and epsilon values across spectral bands, but no sample-specific thin-film stack or measured holdout.
+      - Useful for literature memory, not calibrated validation.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - Good search index for possible material families, not a Phase 4 dataset.
+
+  - candidate_id: acs_lbsno_ferrell_berreman_2026
+    title: Active Tuning of the Ferrell-Berreman Mode of La-Doped BaSnO3
+    material_family: La-doped BaSnO3
+    source_type: acs_figshare_si_pdf_only
+    source_refs:
+      - DOI 10.1021/acs.jpcc.5c07927
+    public_data_links:
+      - https://acs.figshare.com/articles/journal_contribution/Active_Tuning_of_the_Ferrell-Berreman_Mode_of_La-Doped_BaSnO_sub_3_sub_/31618292
+    exact_files:
+      - jp5c07927_si_001.pdf
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: false
+      source_qualified_material_model: false
       independent_measured_holdout: false
       machine_readable_numerical_data: false
       absolute_calibration_documented: false
@@ -105,15 +291,47 @@ candidates:
       calibration_holdout_split_predeclared: false
       holdout_not_known_used_for_fit: false
       tmm_appropriate: true
-      no_existing_nonpromoting_validation: false
-    proposed_claim_label: literature_reproduction_fixture
-    decision: public_pdf_si_only_no_raw_tables
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: blocked_source_data_lead
+    decision: public_si_pdf_only
     blockers:
-      - Public source-data lead resolves to SI PDF, not raw tables.
-      - No machine-readable epsilon or independent measured static R/T/A holdout found.
-    exact_next_file: docs/phase3d5a_acs_intracavity_pdf_correction.json
+      - Figshare exposes the ACS supporting-information PDF only, not raw numerical source tables.
+      - Interesting ENZ mode lead, but not table-package-ready.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
     notes:
-      - Useful as a literature fixture only.
+      - Revisit only if a public numerical package appears.
+
+  - candidate_id: enz_metal_oxide_reflectors_2024
+    title: Epsilon-Near-Zero Metal Oxide-Based Spectrally Selective Reflectors
+    material_family: metal oxide ENZ multilayer
+    source_type: acs_figshare_si_pdf_only
+    source_refs:
+      - DOI 10.1021/acsaom.4c00124
+    public_data_links:
+      - https://acs.figshare.com/articles/journal_contribution/Epsilon-Near-Zero_Metal_Oxide-Based_Spectrally_Selective_Reflectors/26097966
+    exact_files:
+      - ot4c00124_si_001.pdf
+    evidence:
+      data_are_public: true
+      no_author_contact_required: true
+      identified_sample_stack: false
+      source_qualified_material_model: false
+      independent_measured_holdout: false
+      machine_readable_numerical_data: false
+      absolute_calibration_documented: false
+      geometry_specified: false
+      calibration_holdout_split_predeclared: false
+      holdout_not_known_used_for_fit: false
+      tmm_appropriate: true
+      no_existing_nonpromoting_validation: true
+    proposed_claim_label: blocked_source_data_lead
+    decision: public_si_pdf_only
+    blockers:
+      - Figshare exposes the ACS supporting-information PDF only, not raw numerical source tables.
+      - No table-ready measured holdout or source-backed stack contract found in this pass.
+    exact_next_file: docs/phase3e4_renewed_public_data_search.json
+    notes:
+      - Potentially relevant thin-film reflector paper, but blocked at the source-data gate.
 
   - candidate_id: exeter_spatiotemporal_ito_2021
     title: Spatiotemporal refraction of light in an epsilon-near-zero ITO layer

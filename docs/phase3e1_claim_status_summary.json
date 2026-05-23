@@ -2,12 +2,13 @@
   "can_feed_serious_core_now": false,
   "can_open_phase4_now": false,
   "claim_label_counts": {
-    "calibration_only_no_holdout": 2,
-    "literature_reproduction_fixture": 3,
+    "blocked_source_data_lead": 2,
+    "calibration_only_no_holdout": 4,
+    "literature_reproduction_fixture": 5,
     "rejected_candidate": 1,
     "weak_within_dataset_holdout": 3
   },
-  "generated_at": "2026-05-23T15:02:01.642789+00:00",
+  "generated_at": "2026-05-23T15:30:48.185419+00:00",
   "phase4_candidate_ids": [],
   "phase_id": "Phase 3E.1",
   "recommended_next_phase": "Phase 3E.4 - renewed ENZ public-data search through stack-contract gate"

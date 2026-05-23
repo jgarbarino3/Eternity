@@ -64,15 +64,270 @@
     },
     {
       "blockers": [
-        "Public source-data lead resolves to SI PDF, not raw tables.",
-        "No machine-readable epsilon or independent measured static R/T/A holdout found."
+        "Phase 3E.4 found Zenodo_Data.zip, correcting the older PDF/SI-only registry wording.",
+        "The ZIP is a MATLAB source-code/data fixture, not a clean independent static linear R/T/A holdout with a frozen stack/substrate/backside contract.",
+        "Intracavity and nanostructure operation is not a current planar no-fit TMM Phase 4 candidate."
       ],
       "can_enter_phase4": false,
       "candidate_id": "acs_intracavity_ito_2025",
       "computed_gate_label": "literature_reproduction_fixture",
-      "decision": "public_pdf_si_only_no_raw_tables",
-      "exact_next_file": "docs/phase3d5a_acs_intracavity_pdf_correction.json",
+      "decision": "zenodo_matlab_package_found_not_phase4_ready",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
       "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "planar linear TMM is physically appropriate",
+          "flag": "tmm_appropriate"
+        },
+        {
+          "criterion": "candidate has not already failed or downgraded here",
+          "flag": "no_existing_nonpromoting_validation"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "tmm_appropriate",
+        "no_existing_nonpromoting_validation"
+      ],
+      "proposed_claim_label": "literature_reproduction_fixture",
+      "serious_core_allowed_now": false,
+      "title": "Intracavity epsilon-near-zero dual-range frequency switch"
+    },
+    {
+      "blockers": [
+        "Figure 2 contains measured and simulated angle/polarization extinction spectra for a 50 nm ITO film on glass, but no promotion-clean material/holdout split is frozen.",
+        "The main device lane is nanorod/ITO hybrid coupling rather than a plain planar TMM validation target.",
+        "Substrate/backside/coherence and source-model leakage contracts are not Phase 4-ready."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "linkoping_ito_pedot_2026",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "table_ready_fixture_not_planar_phase4_candidate",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "source-qualified optical constants or fitted model",
+          "flag": "source_qualified_material_model"
+        },
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "planar linear TMM is physically appropriate",
+          "flag": "tmm_appropriate"
+        }
+      ],
+      "material_family": "ITO/PEDOT",
+      "missing_required_flags": [
+        "source_qualified_material_model",
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "tmm_appropriate"
+      ],
+      "proposed_claim_label": "literature_reproduction_fixture",
+      "serious_core_allowed_now": false,
+      "title": "Electrotunable coupling between an epsilon-near-zero thin film and conducting polymer nanoantennas"
+    },
+    {
+      "blockers": [
+        "Public record provides optical constants for ITO, soda-lime glass, and SiO2, but no independent measured R/T/A holdout.",
+        "Good calibration fixture, not a validation candidate."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "ito_glass_sio2_optical_properties_2025",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "constants_fixture_no_independent_holdout",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "angle, polarization, side, and unit context specified",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "ITO/glass/SiO2",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "geometry_specified",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "calibration_only_no_holdout",
+      "serious_core_allowed_now": false,
+      "title": "ITO, soda lime float glass and SiO2 buffer layer optical properties"
+    },
+    {
+      "blockers": [
+        "Public source data are for nonlinear space-time diffraction and pump-probe timing, not static absolute R/T.",
+        "No independent frozen material/holdout split for current linear planar TMM."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "spacetime_synthetic_motion_ito_2025",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_source_data_fixture_no_static_holdout",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "source-qualified optical constants or fitted model",
+          "flag": "source_qualified_material_model"
+        },
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "planar linear TMM is physically appropriate",
+          "flag": "tmm_appropriate"
+        }
+      ],
+      "material_family": "ITO",
+      "missing_required_flags": [
+        "source_qualified_material_model",
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "tmm_appropriate"
+      ],
+      "proposed_claim_label": "literature_reproduction_fixture",
+      "serious_core_allowed_now": false,
+      "title": "Space-Time Optical Diffraction from Synthetic Motion"
+    },
+    {
+      "blockers": [
+        "Public XLSX compendium has n/k and epsilon values across spectral bands, but no sample-specific thin-film stack or measured holdout.",
+        "Useful for literature memory, not calibrated validation."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "natural_enz_compendium_2025",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "constants_compendium_not_validation_dataset",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "identified sample, stack, substrate, and thickness context",
+          "flag": "identified_sample_stack"
+        },
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "angle, polarization, side, and unit context specified",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        },
+        {
+          "criterion": "planar linear TMM is physically appropriate",
+          "flag": "tmm_appropriate"
+        }
+      ],
+      "material_family": "mixed natural ENZ materials",
+      "missing_required_flags": [
+        "identified_sample_stack",
+        "independent_measured_holdout",
+        "absolute_calibration_documented",
+        "geometry_specified",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit",
+        "tmm_appropriate"
+      ],
+      "proposed_claim_label": "calibration_only_no_holdout",
+      "serious_core_allowed_now": false,
+      "title": "Compendium of Natural Epsilon-Near-Zero Materials"
+    },
+    {
+      "blockers": [
+        "Figshare exposes the ACS supporting-information PDF only, not raw numerical source tables.",
+        "Interesting ENZ mode lead, but not table-package-ready."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "acs_lbsno_ferrell_berreman_2026",
+      "computed_gate_label": "blocked_source_data_lead",
+      "decision": "public_si_pdf_only",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "identified sample, stack, substrate, and thickness context",
+          "flag": "identified_sample_stack"
+        },
+        {
+          "criterion": "source-qualified optical constants or fitted model",
+          "flag": "source_qualified_material_model"
+        },
         {
           "criterion": "independent measured optical holdout",
           "flag": "independent_measured_holdout"
@@ -96,25 +351,81 @@
         {
           "criterion": "holdout is not known to have fit/tuned the model",
           "flag": "holdout_not_known_used_for_fit"
-        },
-        {
-          "criterion": "candidate has not already failed or downgraded here",
-          "flag": "no_existing_nonpromoting_validation"
         }
       ],
-      "material_family": "ITO",
+      "material_family": "La-doped BaSnO3",
       "missing_required_flags": [
+        "identified_sample_stack",
+        "source_qualified_material_model",
         "independent_measured_holdout",
         "machine_readable_numerical_data",
         "absolute_calibration_documented",
         "geometry_specified",
         "calibration_holdout_split_predeclared",
-        "holdout_not_known_used_for_fit",
-        "no_existing_nonpromoting_validation"
+        "holdout_not_known_used_for_fit"
       ],
-      "proposed_claim_label": "literature_reproduction_fixture",
+      "proposed_claim_label": "blocked_source_data_lead",
       "serious_core_allowed_now": false,
-      "title": "Intracavity epsilon-near-zero dual-range frequency switch"
+      "title": "Active Tuning of the Ferrell-Berreman Mode of La-Doped BaSnO3"
+    },
+    {
+      "blockers": [
+        "Figshare exposes the ACS supporting-information PDF only, not raw numerical source tables.",
+        "No table-ready measured holdout or source-backed stack contract found in this pass."
+      ],
+      "can_enter_phase4": false,
+      "candidate_id": "enz_metal_oxide_reflectors_2024",
+      "computed_gate_label": "blocked_source_data_lead",
+      "decision": "public_si_pdf_only",
+      "exact_next_file": "docs/phase3e4_renewed_public_data_search.json",
+      "gate_blockers": [
+        {
+          "criterion": "identified sample, stack, substrate, and thickness context",
+          "flag": "identified_sample_stack"
+        },
+        {
+          "criterion": "source-qualified optical constants or fitted model",
+          "flag": "source_qualified_material_model"
+        },
+        {
+          "criterion": "independent measured optical holdout",
+          "flag": "independent_measured_holdout"
+        },
+        {
+          "criterion": "machine-readable numerical calibration and holdout data",
+          "flag": "machine_readable_numerical_data"
+        },
+        {
+          "criterion": "documented absolute R/T/A or ellipsometry scale",
+          "flag": "absolute_calibration_documented"
+        },
+        {
+          "criterion": "angle, polarization, side, and unit context specified",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "calibration/holdout split can be predeclared",
+          "flag": "calibration_holdout_split_predeclared"
+        },
+        {
+          "criterion": "holdout is not known to have fit/tuned the model",
+          "flag": "holdout_not_known_used_for_fit"
+        }
+      ],
+      "material_family": "metal oxide ENZ multilayer",
+      "missing_required_flags": [
+        "identified_sample_stack",
+        "source_qualified_material_model",
+        "independent_measured_holdout",
+        "machine_readable_numerical_data",
+        "absolute_calibration_documented",
+        "geometry_specified",
+        "calibration_holdout_split_predeclared",
+        "holdout_not_known_used_for_fit"
+      ],
+      "proposed_claim_label": "blocked_source_data_lead",
+      "serious_core_allowed_now": false,
+      "title": "Epsilon-Near-Zero Metal Oxide-Based Spectrally Selective Reflectors"
     },
     {
       "blockers": [
@@ -384,17 +695,17 @@
       "opening Phase 4 from plot-only, PDF-only, constants-only, or request-only data"
     ]
   },
-  "generated_at": "2026-05-23T15:02:01.642789+00:00",
+  "generated_at": "2026-05-23T15:30:48.185419+00:00",
   "inputs": {
     "registry_path": "docs/phase3e1_dataset_candidate_registry.yaml"
   },
   "phase_id": "Phase 3E.1",
   "registry": {
     "acceptance_scope": "Public/literature thin-film optical datasets that might support a future calibrated-linear validation attempt after passing every public-data gate.",
-    "candidate_count": 9,
+    "candidate_count": 15,
     "phase_id": "Phase 3E.1",
     "registry_version": 2,
-    "updated_at": "2026-05-19"
+    "updated_at": "2026-05-23"
   },
   "required_phase4_flags": {
     "absolute_calibration_documented": "documented absolute R/T/A or ellipsometry scale",
@@ -412,20 +723,24 @@
   },
   "summary": {
     "blocker_counts": {
-      "absolute_calibration_documented": 7,
-      "calibration_holdout_split_predeclared": 7,
+      "absolute_calibration_documented": 13,
+      "calibration_holdout_split_predeclared": 13,
       "data_are_public": 1,
-      "geometry_specified": 1,
-      "holdout_not_known_used_for_fit": 7,
-      "independent_measured_holdout": 5,
-      "machine_readable_numerical_data": 3,
+      "geometry_specified": 4,
+      "holdout_not_known_used_for_fit": 13,
+      "identified_sample_stack": 3,
+      "independent_measured_holdout": 11,
+      "machine_readable_numerical_data": 4,
       "no_author_contact_required": 1,
-      "no_existing_nonpromoting_validation": 5
+      "no_existing_nonpromoting_validation": 5,
+      "source_qualified_material_model": 4,
+      "tmm_appropriate": 4
     },
-    "candidate_count": 9,
+    "candidate_count": 15,
     "claim_label_counts": {
-      "calibration_only_no_holdout": 2,
-      "literature_reproduction_fixture": 3,
+      "blocked_source_data_lead": 2,
+      "calibration_only_no_holdout": 4,
+      "literature_reproduction_fixture": 5,
       "rejected_candidate": 1,
       "weak_within_dataset_holdout": 3
     },

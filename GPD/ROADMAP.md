@@ -550,8 +550,12 @@ Next:
   thickness, 50 degree s/p geometry, and canonical material tables are
   source-backed, but silicon constants, substrate/backside/coherence handling,
   and interface/oxide assumptions are not source-backed enough for no-fit TMM.
-- Next is `Phase 3E.4 - renewed ENZ public-data search through stack-contract
-  gate`.
+- Phase 3E.4 has completed a first renewed public-data search snapshot: seven
+  live-source leads were inspected, the ACS/intracavity lane was corrected to a
+  non-promoting Zenodo MATLAB fixture, the registry now tracks 15 candidates,
+  and zero Phase 4 candidates opened.
+- Continue `Phase 3E.4 - renewed ENZ public-data search through
+  stack-contract gate`.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

@@ -95,21 +95,23 @@ Current progress:
   package is public and table-rich, with many ITO epsilon tables and Hall/SEM
   support data, but no independent measured static R/T holdout.
 - **Done/pivot-triggered**: Phase 3D.5 remaining public source-data lead
-  triage. Phase 3D.5A corrected ACS/intracavity to public PDF/SI-only, with no
-  raw tables or independent measured static R/T/A holdout. Remaining known leads
-  are paper/plot/PDF-only, constants-only, export-blocked, or request-only; no
-  immediate Phase 4 candidate remains.
+  triage. Phase 3D.5A corrected the ACS/intracavity Figshare-download path to
+  SI PDF only; Phase 3E.4 later found the separate Zenodo MATLAB package and
+  keeps that lane as a non-promoting source-code/data fixture. Remaining known
+  leads are paper/plot/PDF-only, constants-only, fixture-only, or request-only;
+  no immediate Phase 4 candidate remains.
 - **Done**: Phase 3E.1 public dataset gate and executive research assistant
-  scaffold. The registry evaluates 9 known candidates and opens 0 Phase 4
+  scaffold. The registry evaluates 15 known candidates and opens 0 Phase 4
   candidates.
 - **Done/non-ENZ baseline**: Phase 3E.2A-3E.2D Wang W/WO3 source-data fixture.
   Selected Figshare XLSX files are public and MD5-verified, with direct W/WO3
   `n,k` tables. Fig. 2f source semantics are now bounded into a de-offseted
   reproduction fixture, not a no-fit validation residual.
-- **Next/gated**: Phase 3E.4 renewed ENZ public-data search through
-  stack-contract gate. Candidate intake now requires source-backed material
-  constants, measured holdout, geometry, stack/substrate/backside handling, and
-  leakage boundaries before residual inspection.
+- **Active/search-snapshot-no-phase4-candidate**: Phase 3E.4 renewed ENZ
+  public-data search through stack-contract gate. Seven live-source leads were
+  inspected; zero opened Phase 4. Candidate intake now requires source-backed
+  material constants, measured holdout, geometry, stack/substrate/backside
+  handling, and leakage boundaries before residual inspection.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -171,7 +173,7 @@ calibrated_linear_evidence
   -> COMPLETE/FIXTURE: Phase 3E.2B-3E.2D Wang de-offseted reproduction handoff
   -> COMPLETE/TMM-BLOCKED: Phase 3E.3A Saha exported-table audit
   -> COMPLETE/STACK-BLOCKED: Phase 3E.3B Saha frozen-stack model provenance gate
-  -> NEXT/GATED: Phase 3E.4 renewed ENZ public-data search
+  -> ACTIVE/0-PHASE-4: Phase 3E.4 renewed ENZ public-data search
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -269,9 +271,11 @@ transmission/frequency-shift data and the thicker-sample labels are internally
 inconsistent. Phase 3D.4 inspected the thermo-optic ITO Zenodo package: it has
 many public machine-readable epsilon tables, Hall data, SEM data, and figure
 artifacts, but no independent measured static R/T holdout. Phase 3D.5 bounded
-the remaining known public leads and found no immediate Phase 4 candidate:
-ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha is now
-CSV-exported and canonicalized but stack-contract-blocked before TMM, AZO/ITO paper leads are not
+the remaining known public leads and found no immediate Phase 4 candidate.
+Phase 3D.5A corrected only the ACS/intracavity Figshare-download path; Phase
+3E.4 later found the separate Zenodo MATLAB package and corrected the global
+registry to a non-promoting fixture. Saha is now CSV-exported and canonicalized
+but stack-contract-blocked before TMM, AZO/ITO paper leads are not
 table-package-ready, CdO/high-crystallinity ITO are constants-only, and
 request-only papers remain rejected. Phase 3E.1 turned those outcomes into a
 public-dataset gate and
@@ -281,7 +285,10 @@ Fig. 2f is offset/unlabeled plotted data. Phase 3E.2B-3E.2D completed the
 honest Wang lane: source-backed offsets and inferred measured/simulated columns
 support a bounded de-offseted reproduction fixture, while full no-fit validation
 remains blocked by missing workbook labels and non-independent source-simulation
-semantics.
+semantics. Phase 3E.4 inspected ACS/intracavity Zenodo, Linkoping ITO/PEDOT,
+ITO/glass/SiO2, space-time ITO, natural-ENZ compendium, LBSO, and ENZ
+metal-oxide reflector leads; all remain fixtures or blocked cards, not Phase 4
+candidates.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

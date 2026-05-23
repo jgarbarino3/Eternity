@@ -14,11 +14,11 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Current Phase:** 3E
 **Current Phase Name:** Public Dataset Gate And Executive Research Assistant
 **Total Phases:** 3
-**Current Plan:** docs/phase3e3b_saha_stack_model_gate.md
-**Total Plans in Phase:** 9
-**Status:** Active / Saha stack contract blocked before TMM; renewed ENZ public-data search next
+**Current Plan:** docs/phase3e4_renewed_public_data_search.md
+**Total Plans in Phase:** 10
+**Status:** Active / renewed ENZ public-data search snapshot opened 0 Phase 4 candidates
 **Last Activity:** 2026-05-23
-**Last Activity Description:** Completed Phase 3E.3B: Saha stack order, thickness, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate/backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residual modeling was performed.
+**Last Activity Description:** Completed a Phase 3E.4 renewed public-data search snapshot. Seven live-source leads were inspected through the stricter stack-contract gate; the ACS/intracavity lane was corrected to include a Zenodo MATLAB package, but no lead cleared measured holdout, stack/substrate/backside, and leakage gates. No residual modeling or TMM adapter work was performed.
 
 **Progress:** [██████████] 99%
 
@@ -102,7 +102,7 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   `local_validation_data_exhausted_literature_or_external_data_needed`.
 - Phase 3E.1 wrote `docs/phase3e1_public_dataset_gate_assistant_scaffold.md`,
   `.json`, `docs/phase3e1_claim_status_summary.json`, and the candidate
-  registry. The current registry evaluates 9 candidates and opens 0 Phase 4
+  registry. The current registry evaluates 15 candidates and opens 0 Phase 4
   candidates.
 - Phase 3E.2A wrote `docs/phase3e2a_wang_wo3_baseline_intake.md` and
   `.json`: selected Wang W/WO3 Figshare spreadsheets are public and
@@ -126,6 +126,11 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   because silicon optical constants, substrate/backside/coherence handling, and
   interface/oxide assumptions are not source-backed tightly enough for a no-fit
   TMM residual run.
+- Phase 3E.4 wrote `docs/phase3e4_renewed_public_data_search.md` and `.json`,
+  updated the public candidate registry to 15 candidates, and regenerated the
+  Phase 3E.1 gate scaffold. It inspected ACS/intracavity Zenodo, Linkoping
+  ITO/PEDOT, ITO/glass/SiO2, space-time ITO, natural-ENZ compendium, LBSO, and
+  ENZ metal-oxide reflector leads. Zero Phase 4 candidates opened.
 
 ## Open Questions
 
@@ -216,6 +221,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   source package does not freeze silicon optical constants,
   substrate/backside/coherence handling, or interface/oxide assumptions, so no
   no-fit TMM adapter or residual report may run from guessed settings.
+- [Phase 3E.4]: Renewed public-data search keeps Phase 4 closed. — The newest
+  inspected leads are useful fixtures or blocked cards, but none clears the
+  measured holdout, stack/substrate/backside, and leakage gates required before
+  residual inspection.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 

@@ -1,6 +1,6 @@
 # Eternity Goals
 
-Date: 2026-05-19
+Date: 2026-05-23
 
 ## Active Codex Goal
 
@@ -140,9 +140,9 @@ grounding phase:
 
 This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 Phase 3E.1 added the public-dataset gate and executive research assistant
-scaffold. The active step is now `Phase 3E.2 - Browse/Plasmate public-data sweep
-through gate`, after the current registry evaluated 9 known candidates and
-opened 0 Phase 4 candidates. Source-qualified TiN/TiON optical constants,
+scaffold. The active step is now `Phase 3E.4 - renewed ENZ public-data search
+through stack-contract gate`, after the current registry evaluated 15 known
+candidates and opened 0 Phase 4 candidates. Source-qualified TiN/TiON optical constants,
 thesis reflectance spectra, material models, St Andrews diagnostics, public
 package failures, and provenance gaps remain in the registry without promoting
 them to calibrated evidence.
@@ -200,20 +200,27 @@ Current blocker:
   tables plus Hall/SEM/supporting data, but no independent measured static R/T
   holdout. Its claim ceiling is `calibration_only_no_holdout`.
 - Phase 3D.5 bounded the remaining known public leads. Phase 3D.5A corrected
-  the ACS/intracavity source-data lead: manual browser downloads show the
-  public package is main article PDF plus SI PDF only, with no raw tables or
-  independent measured static R/T/A holdout. Saha is now CSV-exported and
+  the ACS/intracavity Figshare-download path: manual browser downloads showed
+  the Figshare file was SI PDF, not raw source data. Phase 3E.4 later found the
+  separate ACS/intracavity Zenodo MATLAB package and corrected the global
+  registry to a non-promoting source-code/data fixture. Saha is CSV-exported and
   canonicalized but stack-contract-blocked before TMM, AZO/ITO paper leads are
   not table-package-ready, CdO/high-crystallinity ITO leads are constants-only,
   and request-only papers stay rejected.
 - Phase 3E.1 built the public-dataset gate and executive research-assistant
-  scaffold rather than forcing a Phase 4 attempt. The next public-data action is
-  Phase 3E.2: run incoming search leads through that gate.
+  scaffold rather than forcing a Phase 4 attempt. The current public-data action
+  is Phase 3E.4: continue incoming search leads through the stricter
+  stack-contract gate.
 - Phase 3E.2A snapshotted the Wang W/WO3 Figshare source-data spreadsheets as a
   non-ENZ planar TMM baseline candidate. `FigS2-nk.xlsx` provides direct W/WO3
   `n,k` tables, but `Fig2f-R.xlsx` contains offset/unlabeled plotted traces and
   cannot feed residuals until the vertical-offset and measured-vs-simulated
   column semantics are source-backed.
+- Phase 3E.4 ran the first renewed ENZ public-data search through the stricter
+  stack-contract gate. Seven live-source leads were inspected and the registry
+  now evaluates 15 candidates; zero open Phase 4. The strongest new
+  non-promoting fixtures are ACS/intracavity Zenodo MATLAB data, Linkoping
+  ITO/PEDOT source-data ZIPs, and ITO/glass/SiO2 optical constants.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -309,6 +316,10 @@ Current blocker:
   package does not freeze silicon optical constants, substrate/backside/coherence
   handling, interface/oxide assumptions, or full source-model leakage boundaries
   for a no-fit TMM adapter.
+- Phase 3E.4 has enough information to keep the renewed source search active
+  without opening Phase 4: the inspected live-source leads are useful fixtures
+  or blocked cards, but none clears measured holdout, stack/substrate/backside,
+  and leakage gates before residual inspection.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

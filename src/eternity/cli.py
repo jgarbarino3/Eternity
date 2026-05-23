@@ -80,6 +80,10 @@ from eternity.phase3e3b import (
     DEFAULT_PHASE3E3A_AUDIT_PATH as DEFAULT_PHASE3E3B_AUDIT_PATH,
 )
 from eternity.phase3e3b import build_phase3e3b_packet, write_phase3e3b_packet
+from eternity.phase3e4 import (
+    DEFAULT_REGISTRY_PATH as DEFAULT_PHASE3E4_REGISTRY_PATH,
+)
+from eternity.phase3e4 import build_phase3e4_packet, write_phase3e4_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -442,6 +446,16 @@ PHASE3E3B_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown Saha stack-gate artifacts.",
+)
+PHASE3E4_REGISTRY_OPTION = typer.Option(
+    DEFAULT_PHASE3E4_REGISTRY_PATH,
+    "--registry",
+    help="Phase 3E.1 public dataset candidate registry used for context.",
+)
+PHASE3E4_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown renewed-search artifacts.",
 )
 
 
@@ -1108,6 +1122,28 @@ def phase3e3b_saha_stack_gate(
 
     if output_dir is not None:
         json_path, md_path = write_phase3e3b_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e4-public-data-search")
+def phase3e4_public_data_search(
+    registry_path: Path = PHASE3E4_REGISTRY_OPTION,
+    output_dir: Path | None = PHASE3E4_OUTPUT_DIR_OPTION,
+) -> None:
+    """Write the Phase 3E.4 renewed public-data search gate packet."""
+
+    try:
+        packet = build_phase3e4_packet(registry_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3E.4 public-data search failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e4_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         return

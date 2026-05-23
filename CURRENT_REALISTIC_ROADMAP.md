@@ -1,6 +1,6 @@
 # Eternity Current Realistic Roadmap
 
-Date: 2026-05-19
+Date: 2026-05-23
 
 ## Framing
 
@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3E.2 - Browse/Plasmate public-data sweep through gate`.
+Choose `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`.
 
 Why:
 
@@ -1061,17 +1061,19 @@ substrate/backside stack contract is not source-backed. Phase
 pumped-transmission source data, but no static calibrated-linear holdout. Phase
 3D.4 inspected thermo-optic ITO and found rich public epsilon/Hall/SEM data, but
 again no independent measured static R/T holdout. Phase 3D.5 bounded the
-remaining known public leads. Phase 3D.5A corrected the ACS/intracavity lead:
-manual browser downloads show `51010982` resolves to the SI PDF, not a raw
-source-data package. Saha is now CSV-exported and canonicalized but
-stack-contract-blocked before TMM, AZO/ITO paper leads are not
-table-package-ready, CdO/high-crystallinity ITO are constants-only, and
-request-only papers remain rejected.
+remaining known public leads. Phase 3D.5A corrected the ACS/intracavity
+Figshare-download path: `51010982` resolves to the SI PDF, not a raw source-data
+package. Phase 3E.4 later found the separate ACS/intracavity Zenodo MATLAB
+package and corrected that lane to a non-promoting source-code/data fixture.
+Saha is CSV-exported and canonicalized but stack-contract-blocked before TMM,
+AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
+constants-only, and request-only papers remain rejected.
 
 That means the current calibrated-linear push has reached a real data blocker.
 Phase 3E.1 now preserves the evidence bar in code and project memory through a
 candidate registry, hard acceptance flags, scaffold report, and assistant
-contract. The next move is to run new search leads through that machinery.
+contract. Phase 3E.4 is now running new search leads through the stricter stack
+contract before any residual or adapter work.
 
 Recommended decision scope:
 
@@ -1105,11 +1107,12 @@ docs/phase3e1_claim_status_summary.json
 docs/phase3e1_dataset_candidate_registry.yaml
 ```
 
-The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 9 known
-candidates evaluated, 0 Phase 4 candidates opened, and the recommended next
-phase is `Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate`.
+The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 15
+known candidates evaluated, 0 Phase 4 candidates opened, and the recommended
+next phase is `Phase 3E.4 - renewed ENZ public-data search through
+stack-contract gate`.
 
-Phase 3E.2 should:
+Phase 3E.4 should:
 
 - Add new Deep Research / 5.5 Pro / Browse / Plasmate leads as candidate cards.
 - Run the gate before spending ingestion time.
@@ -1204,6 +1207,33 @@ Result:
 Recommended next phase:
 
 - `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`.
+
+#### Phase 3E.4: Renewed ENZ Public-Data Search Through Stack-Contract Gate
+
+Artifacts:
+
+- `docs/phase3e4_renewed_public_data_search.md`
+- `docs/phase3e4_renewed_public_data_search.json`
+
+Result:
+
+- Status: `phase3e4_search_snapshot_no_phase4_candidate`.
+- Seven live-source leads were inspected through the stricter stack-contract
+  gate, and zero Phase 4 candidates opened.
+- The ACS/intracavity lane is corrected: a separate Zenodo MATLAB package exists
+  and is useful as source-code/data memory, but it still lacks the clean
+  independent static R/T/A holdout plus frozen stack/substrate/backside/leakage
+  contract needed for calibrated-linear evidence.
+- Linkoping ITO/PEDOT, space-time ITO, and ACS metal-oxide/LBSO leads are
+  useful fixtures or blocked source-data cards, not current planar no-fit TMM
+  candidates.
+- ITO/glass/SiO2 and the natural-ENZ compendium are constants fixtures, not
+  validation datasets.
+
+Recommended next phase:
+
+- `Phase 3E.4 - continue renewed ENZ public-data search through the
+  stack-contract gate`.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 
@@ -1500,9 +1530,10 @@ Summary:
 
 - This was a bounded triage of known leads from the current public-search
   envelope, not a claim that all literature has been exhausted.
-- The ACS/intracavity ENZ source-data lead is not immediate-ingest-ready here:
-  Phase 3D.5A showed the manual download of `51010982` resolves to the SI PDF,
-  not a separate raw source-data package.
+- The ACS/intracavity ENZ Figshare-download path is not immediate-ingest-ready
+  here: Phase 3D.5A showed the manual download of `51010982` resolves to the SI
+  PDF, not a separate raw source-data package. Phase 3E.4 later found the
+  separate Zenodo MATLAB package and keeps it as a non-promoting fixture.
 - Saha TiN/AZO remains canonical source-table memory. Phase 3E.3B found that
   the frozen substrate/backside model contract cannot be source-backed from the
   current package before residual inspection.
@@ -1532,7 +1563,7 @@ Artifacts:
 
 Summary:
 
-- Manual browser downloads resolved the ACS/intracavity lead.
+- Manual browser downloads resolved the ACS/intracavity Figshare-download path.
 - `51010982` is the ACS Supporting Information PDF, not a raw source-data
   package.
 - The main article PDF and SI PDF contain useful structure, thickness,
@@ -1545,7 +1576,10 @@ Summary:
 Outcome:
 
 - The candidate is no longer an access-blocked unknown.
-- It is a public PDF/SI-only literature fixture.
+- Phase 3E.4 later found a separate Zenodo MATLAB package for the same ACS
+  paper, correcting the global registry beyond this Figshare-specific result.
+- The ACS/intracavity lane is a public literature/source-code fixture, not a
+  calibrated-linear candidate.
 - It remains non-promoting and not Phase 4-ready.
 
 ### Pivot Triggered By Current Phase 3D Run
