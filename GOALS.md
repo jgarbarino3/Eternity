@@ -176,9 +176,15 @@ Current blocker:
   source-data files matched their supplied MD5 digests. Fig. 2b labels identify
   measured `Rp`/`Rs` at 50 degrees, and Fig. 2c/d labels identify TiN/AZO
   permittivity with 130 nm / 250 nm film-thickness comments.
-- The next public-data action is Phase 3D.2A Saha OPJU worksheet export or
-  open-format alternate. Until Fig. 2b and Fig. 2c/d are exported to CSV or
-  equivalent tables, Saha cannot feed residuals or Phase 4 promotion.
+- The Saha OPJU worksheet export blocker was later cleared with official
+  Windows Origin Viewer 9.9.5. Phase 3E.3A split the exported Fig. 2b and
+  Fig. 2c/d tables into canonical measured-reflectance, source-simulated
+  reflectance, TiN epsilon, and AZO epsilon CSVs.
+- Phase 3E.3B checked the Saha frozen-stack model provenance and failed closed:
+  stack order, thickness, and 50 degree s/p source semantics are backed, but
+  silicon optical constants, substrate/backside/coherence handling, and
+  interface/oxide assumptions are not source-backed tightly enough for a no-fit
+  TMM residual run.
 - Phase 3D.2A installed/probed LabPlot as the local open-source export route.
   LabPlot does not provide a usable local OPJU-to-CSV path here: its CLI only
   opens files/projects, embedded Origin support strings identify OPJ rather than
@@ -196,9 +202,10 @@ Current blocker:
 - Phase 3D.5 bounded the remaining known public leads. Phase 3D.5A corrected
   the ACS/intracavity source-data lead: manual browser downloads show the
   public package is main article PDF plus SI PDF only, with no raw tables or
-  independent measured static R/T/A holdout. Saha remains OPJU-export blocked,
-  AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO
-  leads are constants-only, and request-only papers stay rejected.
+  independent measured static R/T/A holdout. Saha is now CSV-exported and
+  canonicalized but stack-contract-blocked before TMM, AZO/ITO paper leads are
+  not table-package-ready, CdO/high-crystallinity ITO leads are constants-only,
+  and request-only papers stay rejected.
 - Phase 3E.1 built the public-dataset gate and executive research-assistant
   scaffold rather than forcing a Phase 4 attempt. The next public-data action is
   Phase 3E.2: run incoming search leads through that gate.
@@ -294,14 +301,14 @@ Current blocker:
 - Phase 3D.1C has enough information to stop squeezing Exeter/Bohn: the no-fit
   reconstruction is useful weak-within-dataset memory, but not Phase 4-ready.
   The next available candidate is the Saha TiN/AZO Figshare source-data package.
-- Phase 3D.2 has enough information to stop at an extraction blocker: the Saha
-  source package exists and is hash-verified, but Fig. 2b and Fig. 2c/d are
-  inside Origin `.opju` files. Without CSV/table export, the Saha lane cannot
-  emit residuals or promote beyond an OPJU-blocked source-data lead.
-- Phase 3D.2A has enough information to stop local Saha export attempts: the
-  open-source LabPlot route was tried and failed to produce CSV. More Saha work
-  now requires external Windows/Origin export, an OPJU-capable GUI workflow, or
-  an open-format mirror.
+- Phase 3D.2 and Phase 3D.2A have enough information to preserve the original
+  Saha source-package and local-export blocker history: the package was
+  hash-verified, and LabPlot failed as a local OPJU-to-CSV route.
+- Phase 3E.3A and Phase 3E.3B have enough information to stop before Saha
+  residual modeling: canonical Saha source-table CSVs now exist, but the source
+  package does not freeze silicon optical constants, substrate/backside/coherence
+  handling, interface/oxide assumptions, or full source-model leakage boundaries
+  for a no-fit TMM adapter.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

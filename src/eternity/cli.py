@@ -69,6 +69,17 @@ from eternity.phase3e2c import (
     write_phase3e2c_packet,
 )
 from eternity.phase3e2d import build_phase3e2d_packet, write_phase3e2d_packet
+from eternity.phase3e3a import (
+    DEFAULT_METADATA_PATH as DEFAULT_PHASE3E3A_METADATA_PATH,
+)
+from eternity.phase3e3a import (
+    DEFAULT_RAW_DIR as DEFAULT_PHASE3E3A_RAW_DIR,
+)
+from eternity.phase3e3a import build_phase3e3a_packet, write_phase3e3a_packet
+from eternity.phase3e3b import (
+    DEFAULT_PHASE3E3A_AUDIT_PATH as DEFAULT_PHASE3E3B_AUDIT_PATH,
+)
+from eternity.phase3e3b import build_phase3e3b_packet, write_phase3e3b_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -396,6 +407,41 @@ PHASE3E2_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and fixture artifacts.",
+)
+PHASE3E3A_METADATA_OPTION = typer.Option(
+    DEFAULT_PHASE3E3A_METADATA_PATH,
+    "--metadata",
+    help="Saha TiN/AZO Figshare API metadata snapshot.",
+)
+PHASE3E3A_RAW_DIR_OPTION = typer.Option(
+    DEFAULT_PHASE3E3A_RAW_DIR,
+    "--raw-dir",
+    help="Directory containing Saha TiN/AZO Origin Viewer CSV exports.",
+)
+PHASE3E3A_CANONICAL_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--canonical-output-dir",
+    help="Optional directory for canonical Saha CSV artifacts; defaults to the raw data dir.",
+)
+PHASE3E3A_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown Saha audit artifacts.",
+)
+PHASE3E3B_AUDIT_OPTION = typer.Option(
+    DEFAULT_PHASE3E3B_AUDIT_PATH,
+    "--phase3e3a-audit",
+    help="Completed Phase 3E.3A Saha exported-table audit JSON.",
+)
+PHASE3E3B_RAW_DIR_OPTION = typer.Option(
+    DEFAULT_PHASE3E3A_RAW_DIR,
+    "--raw-dir",
+    help="Directory containing Saha TiN/AZO canonical source-table artifacts.",
+)
+PHASE3E3B_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown Saha stack-gate artifacts.",
 )
 
 
@@ -1013,6 +1059,55 @@ def phase3e2d_wang_handoff(
 
     if output_dir is not None:
         json_path, md_path = write_phase3e2d_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e3a-saha-audit")
+def phase3e3a_saha_audit(
+    metadata_path: Path = PHASE3E3A_METADATA_OPTION,
+    raw_dir: Path = PHASE3E3A_RAW_DIR_OPTION,
+    canonical_output_dir: Path | None = PHASE3E3A_CANONICAL_OUTPUT_DIR_OPTION,
+    output_dir: Path | None = PHASE3E3A_OUTPUT_DIR_OPTION,
+) -> None:
+    """Audit Saha Origin Viewer exports and write canonical source-table artifacts."""
+
+    try:
+        packet = build_phase3e3a_packet(metadata_path, raw_dir, canonical_output_dir)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3E.3A Saha audit failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e3a_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        for artifact in packet["artifacts"].values():
+            typer.echo(f"wrote {artifact['path']}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e3b-saha-stack-gate")
+def phase3e3b_saha_stack_gate(
+    phase3e3a_audit_path: Path = PHASE3E3B_AUDIT_OPTION,
+    raw_dir: Path = PHASE3E3B_RAW_DIR_OPTION,
+    output_dir: Path | None = PHASE3E3B_OUTPUT_DIR_OPTION,
+) -> None:
+    """Gate Saha no-fit TMM on source-backed stack/substrate provenance."""
+
+    try:
+        packet = build_phase3e3b_packet(phase3e3a_audit_path, raw_dir)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3E.3B Saha stack gate failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3e3b_packet(output_dir, packet)
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         return

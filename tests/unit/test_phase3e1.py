@@ -14,13 +14,19 @@ def test_phase3e1_registry_blocks_current_candidates_from_phase4() -> None:
     assert packet["decision"]["can_open_phase4_now"] is False
     assert packet["decision"]["can_feed_serious_core_now"] is False
     assert packet["decision"]["claim_standard_changed"] is False
+    assert packet["decision"]["recommended_next_phase"] == (
+        "Phase 3E.4 - renewed ENZ public-data search through stack-contract gate"
+    )
     assert packet["summary"]["candidate_count"] >= 8
     assert packet["summary"]["phase4_candidate_count"] == 0
     assert packet["summary"]["phase4_candidate_ids"] == []
 
     by_id = {item["candidate_id"]: item for item in packet["candidate_evaluations"]}
-    assert by_id["saha_tin_azo_2023"]["computed_gate_label"] == "blocked_source_data_lead"
-    assert "machine_readable_numerical_data" in by_id["saha_tin_azo_2023"][
+    assert by_id["saha_tin_azo_2023"]["computed_gate_label"] == "weak_within_dataset_holdout"
+    assert "machine_readable_numerical_data" not in by_id["saha_tin_azo_2023"][
+        "missing_required_flags"
+    ]
+    assert "absolute_calibration_documented" in by_id["saha_tin_azo_2023"][
         "missing_required_flags"
     ]
     assert by_id["acs_intracavity_ito_2025"]["computed_gate_label"] == (

@@ -543,11 +543,17 @@ Next:
   and `Fig2f-R.xlsx` now has a bounded de-offseted CSV/residual artifact, but
   the measured/simulated columns remain inferred rather than workbook-labeled.
   No validation claim or ENZ Phase 4 promotion is allowed.
-- Next is `Phase 3E.3 - gated ENZ data lead intake or Saha OPJU conversion`,
-  only if a new table-ready package or real conversion path appears.
-- Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact,
-  Saha OPJU export, or new literature-package paths only if the user supplies
-  new access or data.
+- Phase 3E.3A has completed the Saha exported-table audit: canonical measured
+  reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon CSVs
+  exist, but no residual model may run yet.
+- Phase 3E.3B has completed the Saha frozen-stack model gate: stack order,
+  thickness, 50 degree s/p geometry, and canonical material tables are
+  source-backed, but silicon constants, substrate/backside/coherence handling,
+  and interface/oxide assumptions are not source-backed enough for no-fit TMM.
+- Next is `Phase 3E.4 - renewed ENZ public-data search through stack-contract
+  gate`.
+- Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
+  new literature-package paths only if the user supplies new access or data.
 
 ## Phase 3A.1: Normalization And Threshold Gate Hardening
 

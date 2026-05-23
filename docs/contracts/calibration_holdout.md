@@ -135,9 +135,10 @@ Phase 3D.5 bounded the remaining known public leads from the current search
 envelope. Phase 3D.5A corrected the ACS/intracavity lead: manual browser
 downloads show the public package is the main article PDF plus Supporting
 Information PDF, and `51010982` resolves to the SI PDF rather than a raw
-source-data package. Saha remains OPJU-export blocked, AZO/ITO paper leads are
-not table-package-ready, CdO/high-crystallinity ITO leads are constants-only,
-and request-only papers remain rejected. This triggers the public-dataset gate /
+source-data package. Saha is now CSV-exported and canonicalized but
+stack-contract-blocked before TMM residuals, AZO/ITO paper leads are not
+table-package-ready, CdO/high-crystallinity ITO leads are constants-only, and
+request-only papers remain rejected. This triggers the public-dataset gate /
 executive research assistant pivot for the current implementation run. It does
 not lower the `calibrated_linear_evidence` bar and does not prove the whole
 literature is exhausted.

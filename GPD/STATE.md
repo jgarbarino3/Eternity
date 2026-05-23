@@ -14,11 +14,11 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Current Phase:** 3E
 **Current Phase Name:** Public Dataset Gate And Executive Research Assistant
 **Total Phases:** 3
-**Current Plan:** docs/phase3e2d_wang_claim_boundary_handoff.md
+**Current Plan:** docs/phase3e3b_saha_stack_model_gate.md
 **Total Plans in Phase:** 9
-**Status:** Active / Wang fixture complete, waiting on new ENZ data or OPJU path
-**Last Activity:** 2026-05-19
-**Last Activity Description:** Completed Phase 3E.2B-3E.2D: Wang Fig. 2f source semantics were bounded, a 3017-row de-offseted reproduction fixture was written, and the lane was locked as `literature_reproduction_fixture` rather than validation evidence.
+**Status:** Active / Saha stack contract blocked before TMM; renewed ENZ public-data search next
+**Last Activity:** 2026-05-23
+**Last Activity Description:** Completed Phase 3E.3B: Saha stack order, thickness, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate/backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residual modeling was performed.
 
 **Progress:** [██████████] 99%
 
@@ -113,6 +113,19 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   artifacts. The source paper/SI back the figure-level measured/simulated
   semantics and model inputs, but the workbook lacks explicit measured/simulated
   labels, so Wang is locked as `literature_reproduction_fixture`, not validation.
+- Phase 3E.3A wrote `docs/phase3e3a_saha_exported_table_audit.md` and
+  `.json`, plus four canonical Saha CSVs under
+  `lab_data/raw/public_saha_tin_azo_2023/`. The measured/source-simulated
+  split and 50-degree s/p semantics are source-backed, but the TMM adapter is
+  blocked before residuals because the source tables do not freeze silicon
+  substrate optical constants, substrate/backside handling, or full leakage
+  boundaries.
+- Phase 3E.3B wrote `docs/phase3e3b_saha_stack_model_gate.md` and `.json`.
+  It found the Saha stack order, thickness, 50-degree s/p geometry, and
+  canonical material tables source-backed, but failed the frozen-stack gate
+  because silicon optical constants, substrate/backside/coherence handling, and
+  interface/oxide assumptions are not source-backed tightly enough for a no-fit
+  TMM residual run.
 
 ## Open Questions
 
@@ -195,6 +208,14 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   epsilon tables and calibration-only examples are available, but no raw R/T
   measurements or repo-local plot candidates exist; the next validation-data
   path is literature/public search.
+- [Phase 3E.3A]: Saha is source-table-ready but TMM-blocked. — Canonical
+  measured reflectance and material epsilon artifacts now exist, but no residual
+  model may run until a frozen substrate/backside model contract is recorded
+  before looking at residuals.
+- [Phase 3E.3B]: Saha remains canonical source-table memory only. — The
+  source package does not freeze silicon optical constants,
+  substrate/backside/coherence handling, or interface/oxide assumptions, so no
+  no-fit TMM adapter or residual report may run from guessed settings.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 

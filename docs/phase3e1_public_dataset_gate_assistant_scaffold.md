@@ -6,7 +6,7 @@
 - Can open Phase 4 now: `false`
 - Can feed Serious Core now: `false`
 - Claim standard changed: `false`
-- Recommended next phase: `Phase 3E.3 - gated ENZ data lead intake when new source data exists`
+- Recommended next phase: `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`
 
 ## Candidate Gate Summary
 
@@ -16,7 +16,7 @@
 | Candidate | Label | Phase 4? | Main Blockers |
 | --- | --- | --- | --- |
 | exeter_bohn_ito_2021 | `weak_within_dataset_holdout` | no | no_existing_nonpromoting_validation |
-| saha_tin_azo_2023 | `blocked_source_data_lead` | no | machine_readable_numerical_data, absolute_calibration_documented, calibration_holdout_split_predeclared, holdout_not_known_used_for_fit |
+| saha_tin_azo_2023 | `weak_within_dataset_holdout` | no | absolute_calibration_documented, calibration_holdout_split_predeclared, holdout_not_known_used_for_fit |
 | acs_intracavity_ito_2025 | `literature_reproduction_fixture` | no | independent_measured_holdout, machine_readable_numerical_data, absolute_calibration_documented, geometry_specified, ... |
 | exeter_spatiotemporal_ito_2021 | `literature_reproduction_fixture` | no | independent_measured_holdout, absolute_calibration_documented, calibration_holdout_split_predeclared, holdout_not_known_used_for_fit, ... |
 | thermo_optic_ito_2024 | `calibration_only_no_holdout` | no | independent_measured_holdout, absolute_calibration_documented, calibration_holdout_split_predeclared, holdout_not_known_used_for_fit, ... |

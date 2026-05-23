@@ -468,6 +468,123 @@ raw_artifacts:
       Figshare MD5 3f06d2f8d06172ac89cac7878d6e50cb.
     provenance_refs:
     - phase3d2_saha_tin_azo_source_intake
+  public_saha_tin_azo_2023_fig2b_origin_viewer_csv:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2b_origin_viewer_csv
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv
+    sha256: b8134a6ff368a2c8707453ca80dae862b27608bffbb1b9ad4bdb163a8cf2d0b2
+    bytes: 12424
+    source_type: literature_table
+    immutable: true
+    original_filename: Source data for Fig 2b.opju
+    original_path: lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2b.opju
+    acquired_at: '2026-05-23'
+    source_notes: Official Windows Origin Viewer 9.9.5 CSV export of the public
+      Saha et al. Fig. 2b OPJU worksheet. Labels preserve wavelength, simulated
+      Rp, measured Rp, measured Rs, and simulated Rs columns; comments preserve
+      50 degree geometry labels. Scientific claim status remains pending audit.
+    access_notes: Exported on a temporary AirGPU Windows VM using Origin Viewer
+      File -> Export Data to CSV, then transferred back to the Mac via a temporary
+      public file-transfer URL.
+    provenance_refs:
+    - phase3e3_saha_opju_origin_viewer_export
+  public_saha_tin_azo_2023_fig2cd_origin_viewer_csv:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2cd_origin_viewer_csv
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv
+    sha256: 436a6db455883ae66cc6f3880e563c0287c6f04842eb231150567737cc1caaa8
+    bytes: 11823
+    source_type: literature_table
+    immutable: true
+    original_filename: Source data for Fig 2cd.opju
+    original_path: lab_data/raw/public_saha_tin_azo_2023/Source data for Fig 2cd.opju
+    acquired_at: '2026-05-23'
+    source_notes: Official Windows Origin Viewer 9.9.5 CSV export of the public
+      Saha et al. Fig. 2c/d OPJU worksheet. Labels preserve TiN/AZO real and
+      imaginary permittivity columns; comments preserve 130 nm TiN and 250 nm
+      AZO film-thickness metadata. Scientific claim status remains pending audit.
+    access_notes: Exported on a temporary AirGPU Windows VM using Origin Viewer
+      File -> Export Data to CSV, then transferred back to the Mac via a temporary
+      public file-transfer URL.
+    provenance_refs:
+    - phase3e3_saha_opju_origin_viewer_export
+  public_saha_tin_azo_2023_fig2b_measured_reflectance_canonical:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2b_measured_reflectance_canonical
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv
+    sha256: 1a9d799fa66b157bb629b28aa6052a7696e8c246abbf5e7e514eaae37c2a2455
+    bytes: 4380
+    source_type: literature_table
+    immutable: true
+    original_filename: saha_fig2b_origin_viewer_export.csv::measured_Rp_Rs
+    original_path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv
+    acquired_at: '2026-05-23'
+    source_notes: Phase 3E.3A canonical measured-reflectance split from the
+      Saha et al. Fig. 2b Origin Viewer CSV export. Contains source-labeled
+      measured Rp and measured Rs reflectance-fraction columns at 50 degrees,
+      without smoothing, fitting, scaling, or residual inspection.
+    access_notes: Derived from the official Windows Origin Viewer CSV export
+      of the public Figshare OPJU source table; source-simulated columns are
+      intentionally split into a separate artifact.
+    provenance_refs:
+    - phase3e3a_saha_exported_table_audit
+  public_saha_tin_azo_2023_fig2b_source_simulated_reflectance_canonical:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2b_source_simulated_reflectance_canonical
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv
+    sha256: 436e0197e2efed80197f067ef19de12716f61aaa3aa9ebec6f3b778490f45dc8
+    bytes: 4374
+    source_type: literature_table
+    immutable: true
+    original_filename: saha_fig2b_origin_viewer_export.csv::source_simulated_Rp_Rs
+    original_path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv
+    acquired_at: '2026-05-23'
+    source_notes: Phase 3E.3A canonical source-simulated reflectance split from
+      the Saha et al. Fig. 2b Origin Viewer CSV export. This artifact is useful
+      for source reproduction and semantics auditing only, not as a holdout.
+    access_notes: Derived from the official Windows Origin Viewer CSV export
+      of the public Figshare OPJU source table; measured columns are intentionally
+      split into a separate artifact.
+    provenance_refs:
+    - phase3e3a_saha_exported_table_audit
+  public_saha_tin_azo_2023_fig2cd_tin_epsilon_canonical:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2cd_tin_epsilon_canonical
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv
+    sha256: 8542dc38f6a31c9a825d0fff0f23e7f8b76c9b069b55f37a080924a8552f1cfe
+    bytes: 5346
+    source_type: literature_table
+    immutable: true
+    original_filename: saha_fig2cd_origin_viewer_export.csv::TiN_permittivity
+    original_path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv
+    acquired_at: '2026-05-23'
+    source_notes: Phase 3E.3A canonical TiN epsilon table split from the Saha
+      et al. Fig. 2c/d Origin Viewer CSV export. The source worksheet comment
+      identifies film thickness 130 nm; values are copied without smoothing or
+      refitting.
+    access_notes: Derived from the official Windows Origin Viewer CSV export
+      of the public Figshare OPJU source table.
+    provenance_refs:
+    - phase3e3a_saha_exported_table_audit
+  public_saha_tin_azo_2023_fig2cd_azo_epsilon_canonical:
+    raw_artifact_id: public_saha_tin_azo_2023_fig2cd_azo_epsilon_canonical
+    kind: csv
+    path: lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv
+    sha256: 56750fe9a771d79228d417bbbabeb3d833b094dbd39f68993a27e21f2e0aa75f
+    bytes: 5174
+    source_type: literature_table
+    immutable: true
+    original_filename: saha_fig2cd_origin_viewer_export.csv::AZO_permittivity
+    original_path: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv
+    acquired_at: '2026-05-23'
+    source_notes: Phase 3E.3A canonical AZO epsilon table split from the Saha
+      et al. Fig. 2c/d Origin Viewer CSV export. The source worksheet comment
+      identifies film thickness 250 nm; values are copied without smoothing or
+      refitting.
+    access_notes: Derived from the official Windows Origin Viewer CSV export
+      of the public Figshare OPJU source table.
+    provenance_refs:
+    - phase3e3a_saha_exported_table_audit
   public_standrews_tin_2025_paper_pdf:
     raw_artifact_id: public_standrews_tin_2025_paper_pdf
     kind: vendor_export

@@ -26,19 +26,19 @@
     },
     {
       "blockers": [
-        "Public OPJU files are downloaded and integrity-checked, but not exported to CSV.",
-        "Reflectance normalization and leakage/separability remain unresolved."
+        "Phase 3E.3A split the Origin Viewer exports into canonical measured reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon CSVs.",
+        "Phase 3E.3B found that source-backed stack order, thickness, 50 degree geometry, and material tables are enough for source-table memory but not a frozen no-fit TMM adapter.",
+        "The paper, Supplementary Information, Figshare metadata, and exported source tables do not freeze silicon optical constants.",
+        "The same source package does not freeze substrate thickness, backside condition, wedge/roughness, or coherent versus incoherent backside handling.",
+        "Holdout independence remains weak within the same paper/source package; no source text proves a promotion-clean calibration/holdout split.",
+        "Do not run Saha residuals from a convenience silicon table or guessed backside model."
       ],
       "can_enter_phase4": false,
       "candidate_id": "saha_tin_azo_2023",
-      "computed_gate_label": "blocked_source_data_lead",
-      "decision": "opju_export_blocked_source_data_lead",
-      "exact_next_file": "Source data for Fig 2b.opju",
+      "computed_gate_label": "weak_within_dataset_holdout",
+      "decision": "frozen_stack_contract_not_source_backed_tmm_blocked",
+      "exact_next_file": "docs/phase3e3b_saha_stack_model_gate.json",
       "gate_blockers": [
-        {
-          "criterion": "machine-readable numerical calibration and holdout data",
-          "flag": "machine_readable_numerical_data"
-        },
         {
           "criterion": "documented absolute R/T/A or ellipsometry scale",
           "flag": "absolute_calibration_documented"
@@ -54,12 +54,11 @@
       ],
       "material_family": "TiN/AZO",
       "missing_required_flags": [
-        "machine_readable_numerical_data",
         "absolute_calibration_documented",
         "calibration_holdout_split_predeclared",
         "holdout_not_known_used_for_fit"
       ],
-      "proposed_claim_label": "blocked_source_data_lead",
+      "proposed_claim_label": "weak_within_dataset_holdout",
       "serious_core_allowed_now": false,
       "title": "Engineering the temporal dynamics of all-optical switching with fast and slow materials"
     },
@@ -366,7 +365,7 @@
     "can_feed_serious_core_now": false,
     "can_open_phase4_now": false,
     "claim_standard_changed": false,
-    "recommended_next_phase": "Phase 3E.3 - gated ENZ data lead intake when new source data exists",
+    "recommended_next_phase": "Phase 3E.4 - renewed ENZ public-data search through stack-contract gate",
     "status": "phase3e1_scaffold_ready_no_phase4_candidate"
   },
   "executive_assistant_contract": {
@@ -385,7 +384,7 @@
       "opening Phase 4 from plot-only, PDF-only, constants-only, or request-only data"
     ]
   },
-  "generated_at": "2026-05-19T16:53:34.603309+00:00",
+  "generated_at": "2026-05-23T15:02:01.642789+00:00",
   "inputs": {
     "registry_path": "docs/phase3e1_dataset_candidate_registry.yaml"
   },
@@ -419,17 +418,16 @@
       "geometry_specified": 1,
       "holdout_not_known_used_for_fit": 7,
       "independent_measured_holdout": 5,
-      "machine_readable_numerical_data": 4,
+      "machine_readable_numerical_data": 3,
       "no_author_contact_required": 1,
       "no_existing_nonpromoting_validation": 5
     },
     "candidate_count": 9,
     "claim_label_counts": {
-      "blocked_source_data_lead": 1,
       "calibration_only_no_holdout": 2,
       "literature_reproduction_fixture": 3,
       "rejected_candidate": 1,
-      "weak_within_dataset_holdout": 2
+      "weak_within_dataset_holdout": 3
     },
     "phase4_candidate_count": 0,
     "phase4_candidate_ids": []

@@ -147,8 +147,22 @@ def build_phase3e1_scaffold(registry_path: Path) -> dict[str, Any]:
         and candidate.decision == "bounded_deoffset_reproduction_fixture_not_validation"
         for candidate in registry.candidates
     )
+    saha_table_audit_complete = any(
+        candidate.candidate_id == "saha_tin_azo_2023"
+        and candidate.decision == "canonical_tables_ready_tmm_adapter_blocked"
+        for candidate in registry.candidates
+    )
+    saha_stack_gate_complete = any(
+        candidate.candidate_id == "saha_tin_azo_2023"
+        and candidate.decision == "frozen_stack_contract_not_source_backed_tmm_blocked"
+        for candidate in registry.candidates
+    )
     fallback_next_phase = (
-        "Phase 3E.3 - gated ENZ data lead intake when new source data exists"
+        "Phase 3E.4 - renewed ENZ public-data search through stack-contract gate"
+        if saha_stack_gate_complete
+        else "Phase 3E.3B - Saha frozen-stack model provenance and no-fit adapter gate"
+        if saha_table_audit_complete
+        else "Phase 3E.3 - gated ENZ data lead intake when new source data exists"
         if wang_fixture_complete
         else "Phase 3E.2 - Browse/Plasmate-assisted literature sweep through gate"
     )

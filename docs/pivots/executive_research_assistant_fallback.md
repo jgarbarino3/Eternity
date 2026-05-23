@@ -19,7 +19,10 @@ The known public leads are not all of literature, but the leads already in hand
 are exhausted enough that no immediate Phase 4 attempt is honest:
 
 - Exeter/Bohn ITO is useful but non-promoting after no-fit reconstruction.
-- Saha TiN/AZO is source-data-public but OPJU export-blocked locally.
+- Saha TiN/AZO is source-data-public and now CSV-canonicalized, but
+  stack-contract-blocked: Phase 3E.3B found no source-backed silicon constants,
+  substrate/backside/coherence handling, or interface/oxide assumptions for a
+  no-fit residual run.
 - Exeter spatiotemporal ITO is public and open-format, but nonlinear.
 - Thermo-optic ITO is public and constants-rich, but has no independent
   measured static R/T holdout.
@@ -29,8 +32,8 @@ are exhausted enough that no immediate Phase 4 attempt is honest:
   request-only.
 
 Reopen the calibrated-linear data hunt only with a new table-ready public
-package, a real Saha export, a separate ACS/intracavity raw source-data package,
-or new local sample-matched R/T.
+package that clears the stack-contract gate, a separate ACS/intracavity raw
+source-data package, or new local sample-matched R/T.
 
 ## Pivot
 

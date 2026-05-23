@@ -1,0 +1,119 @@
+{
+  "blocked_items": [
+    "silicon_optical_constants",
+    "substrate_backside_and_coherence",
+    "interface_roughness_or_native_oxide"
+  ],
+  "contract_items": {
+    "canonical_material_epsilon": {
+      "basis": "Phase 3E.3A produced separate TiN and AZO epsilon canonical CSVs from the Fig. 2c/d source table.",
+      "status": "pass"
+    },
+    "canonical_measured_reflectance": {
+      "basis": "Phase 3E.3A produced a measured-only Fig. 2b Rp/Rs canonical CSV with source labels preserved.",
+      "status": "pass"
+    },
+    "incidence_and_polarization": {
+      "basis": "Fig. 2b source labels preserve 50 degree p/s reflectance channels.",
+      "status": "pass"
+    },
+    "interface_roughness_or_native_oxide": {
+      "basis": "No source-backed interfacial roughness, native oxide, or EMA layer contract was found for a no-fit adapter.",
+      "status": "not_source_backed"
+    },
+    "silicon_optical_constants": {
+      "basis": "Any choice of Palik/Green/Aspnes/crystalline-Si constants would be an external predeclared assumption, not a source-backed Saha Fig. 2 contract.",
+      "status": "blocked"
+    },
+    "silicon_substrate_material": {
+      "basis": "The source identifies silicon as the substrate, but does not publish the silicon optical-constant table or model used for Fig. 2b.",
+      "status": "partial"
+    },
+    "source_model_leakage_boundary": {
+      "basis": "Measured and source-simulated Fig. 2b curves are separable, but the article/source package includes author simulations and does not publish a full model-settings file or a promotion-clean calibration/holdout split.",
+      "status": "partial_not_promotion_clean"
+    },
+    "stack_order_and_thickness": {
+      "basis": "Paper/source evidence supports air/AZO/TiN/silicon with 250 nm AZO and 130 nm TiN.",
+      "status": "pass_for_source_semantics"
+    },
+    "substrate_backside_and_coherence": {
+      "basis": "The source does not freeze substrate thickness, backside condition, wedge/roughness, or coherent versus incoherent backside handling.",
+      "status": "blocked"
+    }
+  },
+  "decision": {
+    "adapter_contract_frozen": false,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "current_claim_label": "source_tables_audited_stack_contract_blocked",
+    "full_no_fit_tmm_validation_allowed": false,
+    "phase4_candidate": false,
+    "recommended_next_phase": "Phase 3E.4 - renewed ENZ public-data search through stack-contract gate",
+    "residual_modeling_performed": false,
+    "serious_core_allowed": false,
+    "status": "frozen_stack_contract_not_source_backed_tmm_blocked",
+    "stop_rule_reason": "Stop before TMM residual modeling: silicon optical constants, substrate/backside/coherence handling, and source-model leakage boundaries are not source-backed tightly enough to freeze a no-fit adapter without guessing.",
+    "stop_rule_triggered": true
+  },
+  "forbidden_next": [
+    "Do not run Saha TMM residuals from a convenience silicon optical-constant table.",
+    "Do not tune substrate constants, backside handling, roughness, scale, or offsets.",
+    "Do not use source-simulated Fig. 2b curves as an independent holdout.",
+    "Do not promote Saha above weak-within-dataset holdout without a future predeclared source-backed stack contract and uncertainty policy."
+  ],
+  "generated_at": "2026-05-23T15:01:26.675670+00:00",
+  "inputs": {
+    "phase3e3a_audit_path": "docs/phase3e3a_saha_exported_table_audit.json",
+    "phase3e3a_claim_status_ceiling": "weak_within_dataset_holdout",
+    "phase3e3a_status": "canonical_tables_ready_tmm_adapter_blocked",
+    "raw_dir": "lab_data/raw/public_saha_tin_azo_2023"
+  },
+  "phase3e3a_artifacts": {
+    "fig2b_measured_reflectance": {
+      "bytes": 4380,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv",
+      "role": "holdout_candidate_measured_reflectance_source_labeled",
+      "sha256": "1a9d799fa66b157bb629b28aa6052a7696e8c246abbf5e7e514eaae37c2a2455",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv"
+    },
+    "fig2b_source_simulated_reflectance": {
+      "bytes": 4374,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv",
+      "role": "source_simulated_reference_for_audit_not_holdout",
+      "sha256": "436e0197e2efed80197f067ef19de12716f61aaa3aa9ebec6f3b778490f45dc8",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv"
+    },
+    "fig2cd_azo_epsilon": {
+      "bytes": 5174,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv",
+      "role": "calibration_material_input_candidate_azo",
+      "sha256": "56750fe9a771d79228d417bbbabeb3d833b094dbd39f68993a27e21f2e0aa75f",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv"
+    },
+    "fig2cd_tin_epsilon": {
+      "bytes": 5346,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv",
+      "role": "calibration_material_input_candidate_tin",
+      "sha256": "8542dc38f6a31c9a825d0fff0f23e7f8b76c9b069b55f37a080924a8552f1cfe",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv"
+    }
+  },
+  "phase_id": "Phase 3E.3B",
+  "source_evidence": {
+    "article_url": "https://www.nature.com/articles/s41467-023-41377-5",
+    "figshare_api_url": "https://api.figshare.com/v2/articles/23734116",
+    "missing_for_frozen_tmm_contract": [
+      "No source table or methods text found here freezes silicon optical constants.",
+      "No source table or methods text found here specifies silicon substrate thickness, backside polish/roughness/wedge, or coherent/incoherent backside treatment.",
+      "No complete source TMM settings file is published with the Fig. 2b source-simulated curves."
+    ],
+    "paper_and_figshare_support": [
+      "The article/Fig. 2 source context supports a 250 nm AZO layer on 130 nm TiN on silicon, with Fig. 2b measured and simulated 50 degree s/p reflectance spectra.",
+      "Figshare describes Fig. 2b as simulated Rp/Rs and experimentally measured reflectance versus wavelength, and Fig. 2c/d as TiN/AZO permittivity tables with film thickness comments.",
+      "The supplementary information says TiN films were measured by VASE at 50 and 70 degrees and modeled with a Drude-Lorentz form.",
+      "The supplementary information says AZO was grown on TiN layers on silicon, and also discusses AZO on silicon/fused-silica comparison samples."
+    ],
+    "supplementary_pdf_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-41377-5/MediaObjects/41467_2023_41377_MOESM1_ESM.pdf"
+  },
+  "title": "Saha Frozen-Stack Model Provenance And No-Fit Adapter Gate"
+}

@@ -28,11 +28,11 @@
     "current_phase": "3E",
     "current_phase_name": "Public Dataset Gate And Executive Research Assistant",
     "total_phases": 3,
-    "current_plan": "docs/phase3e2d_wang_claim_boundary_handoff.md",
+    "current_plan": "docs/phase3e3b_saha_stack_model_gate.md",
     "total_plans_in_phase": 9,
-    "status": "Active / Wang fixture complete, waiting on new ENZ data or OPJU path",
-    "last_activity": "2026-05-19",
-    "last_activity_desc": "Completed Phase 3E.2B-3E.2D: Wang Fig. 2f source semantics were bounded, a 3017-row de-offseted reproduction fixture was written, and the lane was locked as literature_reproduction_fixture rather than validation evidence.",
+    "status": "Active / Saha stack contract blocked before TMM; renewed ENZ public-data search next",
+    "last_activity": "2026-05-23",
+    "last_activity_desc": "Completed Phase 3E.3B: Saha stack order, thickness, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate/backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residual modeling was performed.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -390,6 +390,44 @@
       "phase4_candidate": false,
       "serious_core_allowed": false,
       "next": "Phase 3E.3 gated ENZ data lead intake when new source data exists"
+    },
+    {
+      "phase": "3E.3A",
+      "decision_ref": "docs/phase3e3a_saha_exported_table_audit.md",
+      "decision_json": "docs/phase3e3a_saha_exported_table_audit.json",
+      "decision": "canonical_tables_ready_tmm_adapter_blocked",
+      "claim_status_ceiling": "weak_within_dataset_holdout",
+      "canonical_artifacts": [
+        "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv",
+        "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv",
+        "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv",
+        "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv"
+      ],
+      "full_no_fit_tmm_validation_allowed": false,
+      "stop_rule_triggered": true,
+      "phase4_candidate": false,
+      "serious_core_allowed": false,
+      "blocker": "substrate optical constants, substrate/backside handling, and full source-model leakage boundaries are not frozen before residual inspection",
+      "next": "Phase 3E.3B Saha frozen-stack model provenance and no-fit adapter gate"
+    },
+    {
+      "phase": "3E.3B",
+      "decision_ref": "docs/phase3e3b_saha_stack_model_gate.md",
+      "decision_json": "docs/phase3e3b_saha_stack_model_gate.json",
+      "decision": "frozen_stack_contract_not_source_backed_tmm_blocked",
+      "claim_status_ceiling": "weak_within_dataset_holdout",
+      "adapter_contract_frozen": false,
+      "full_no_fit_tmm_validation_allowed": false,
+      "residual_modeling_performed": false,
+      "stop_rule_triggered": true,
+      "phase4_candidate": false,
+      "serious_core_allowed": false,
+      "blocked_items": [
+        "silicon_optical_constants",
+        "substrate_backside_and_coherence",
+        "interface_roughness_or_native_oxide"
+      ],
+      "next": "Phase 3E.4 renewed ENZ public-data search through stack-contract gate"
     }
   ],
   "open_questions": [
@@ -515,6 +553,16 @@
       "phase": "3B.1",
       "summary": "Local TiON validation evidence is exhausted.",
       "rationale": "TiON_48/TiON_49 epsilon tables and calibration-only examples are available, but no raw R/T measurements or repo-local plot candidates exist; the next validation-data path is literature/public search."
+    },
+    {
+      "phase": "3E.3A",
+      "summary": "Saha is source-table-ready but TMM-blocked.",
+      "rationale": "Canonical measured reflectance and material epsilon artifacts now exist, but no residual model may run until a frozen substrate/backside model contract is recorded before looking at residuals."
+    },
+    {
+      "phase": "3E.3B",
+      "summary": "Saha is stack-contract-blocked before no-fit TMM.",
+      "rationale": "Stack order, thickness, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon constants, substrate/backside/coherence handling, and interface/oxide assumptions are not; no residual model may run from guessed settings."
     }
   ],
   "approximations": [

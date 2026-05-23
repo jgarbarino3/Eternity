@@ -1051,15 +1051,21 @@ Choose `Phase 3E.2 - Browse/Plasmate public-data sweep through gate`.
 Why:
 
 Phase 3D.2 completed the first Saha TiN/AZO source-data intake. Phase 3D.2A
-then tested the local export route and found no local OPJU-to-CSV path. Phase
+then tested the local export route and found no local OPJU-to-CSV path. The
+later official Windows Origin Viewer export cleared the table-extraction
+blocker, Phase 3E.3A canonicalized the Saha measured reflectance,
+source-simulated reflectance, TiN epsilon, and AZO epsilon tables while stopping
+before TMM residual modeling, and Phase 3E.3B confirmed that the frozen
+substrate/backside stack contract is not source-backed. Phase
 3D.3 inspected Exeter spatiotemporal ITO and found open epsilon plus nonlinear
 pumped-transmission source data, but no static calibrated-linear holdout. Phase
 3D.4 inspected thermo-optic ITO and found rich public epsilon/Hall/SEM data, but
 again no independent measured static R/T holdout. Phase 3D.5 bounded the
 remaining known public leads. Phase 3D.5A corrected the ACS/intracavity lead:
 manual browser downloads show `51010982` resolves to the SI PDF, not a raw
-source-data package. Saha is still OPJU-export blocked, AZO/ITO paper leads are
-not table-package-ready, CdO/high-crystallinity ITO are constants-only, and
+source-data package. Saha is now CSV-exported and canonicalized but
+stack-contract-blocked before TMM, AZO/ITO paper leads are not
+table-package-ready, CdO/high-crystallinity ITO are constants-only, and
 request-only papers remain rejected.
 
 That means the current calibrated-linear push has reached a real data blocker.
@@ -1076,9 +1082,10 @@ Recommended decision scope:
 3. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
-4. Keep Phase 3A, Phase 3B, Phase 3C, and Saha parked unless new evidence
-   appears; do not loop on unavailable CompleteEASE, TiON raw R/T, St Andrews
-   author contact, or local OPJU export paths.
+4. Keep Phase 3A, Phase 3B, Phase 3C, and Saha residual modeling parked unless
+   new source-backed evidence appears; do not loop on unavailable CompleteEASE,
+   TiON raw R/T, St Andrews author contact, already-resolved local OPJU export
+   paths, or guessed silicon/backside Saha models.
 ```
 
 Phase 3E.1 implementation target completed:
@@ -1146,6 +1153,58 @@ Next:
 
 That is the next brick on the direct path toward the AI researcher.
 
+#### Phase 3E.3A: Saha Exported-Table Audit And Candidate Gate
+
+Artifacts:
+
+- `docs/phase3e3a_saha_exported_table_audit.md`
+- `docs/phase3e3a_saha_exported_table_audit.json`
+- `lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv`
+- `lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv`
+- `lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv`
+- `lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv`
+
+Result:
+
+- Status: `canonical_tables_ready_tmm_adapter_blocked`.
+- Claim-status ceiling: `weak_within_dataset_holdout`.
+- Full no-fit TMM validation allowed: `false`.
+- The Origin Viewer exports preserve explicit measured/source-simulated
+  reflectance labels and 50 degree s/p semantics.
+- TiN and AZO epsilon tables are canonicalized with source comments for 130 nm
+  TiN and 250 nm AZO.
+- Stop before TMM residual modeling because silicon substrate optical constants,
+  substrate/backside treatment, and full source-model leakage boundaries are
+  not frozen by the source tables.
+
+Recommended next phase:
+
+- `Phase 3E.3B - Saha frozen-stack model provenance and no-fit adapter gate`.
+
+#### Phase 3E.3B: Saha Frozen-Stack Model Provenance And No-Fit Adapter Gate
+
+Artifacts:
+
+- `docs/phase3e3b_saha_stack_model_gate.md`
+- `docs/phase3e3b_saha_stack_model_gate.json`
+
+Result:
+
+- Status: `frozen_stack_contract_not_source_backed_tmm_blocked`.
+- Claim-status ceiling: `weak_within_dataset_holdout`.
+- Full no-fit TMM validation allowed: `false`.
+- Residual modeling performed: `false`.
+- Source-backed: canonical measured Fig. 2b reflectance, canonical TiN/AZO
+  epsilon tables, air/AZO/TiN/silicon stack order, 250 nm AZO, 130 nm TiN, and
+  50 degree s/p reflectance semantics.
+- Not source-backed tightly enough: silicon optical constants,
+  substrate/backside/coherence handling, interface/oxide assumptions, and a
+  promotion-clean source-model leakage boundary.
+
+Recommended next phase:
+
+- `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`.
+
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 
 Artifacts:
@@ -1168,9 +1227,10 @@ Result:
 
 Interpretation:
 
-Saha remains a public source-data lead, not a calibrated validation input. The
-project should not spend more local time on Saha unless a real OPJU-to-CSV
-export route appears.
+This is now historical blocker context. Phase 3E.3 later used official Windows
+Origin Viewer to export the key Fig. 2 tables. Saha remains a public source-data
+lead, not calibrated validation input, because Phase 3E.3A stopped before TMM
+residual modeling on source-model contract gaps.
 
 Recommended next phase:
 
@@ -1201,10 +1261,10 @@ Result:
 
 Interpretation:
 
-Saha is not dead; it is export-blocked. The source package looks structurally
-useful, but no calibrated residual run may start until the OPJU worksheets are
-exported to table-ready data with preserved columns, units, and measured-vs-
-simulated separation.
+This original intake is now superseded by Phase 3E.3A for table readiness. The
+source package remains structurally useful, but no calibrated residual run may
+start until a frozen no-fit stack-model contract is recorded before residual
+inspection.
 
 Recommended next phase:
 
@@ -1335,13 +1395,16 @@ Findings:
 Recommended next:
 
 - `Phase 3D.5 - remaining public source-data lead triage`.
-- Phase 3D.2A has now shown that Saha is locally OPJU-export blocked.
+- Phase 3E.3B has now shown that Saha is table-ready but stack-contract-blocked
+  before residual modeling.
 - Phase 3D.3 has now shown that the Exeter spatiotemporal ITO package is public
   and useful, but nonlinear rather than a static calibrated-linear holdout.
 - Phase 3D.4 has now shown that the thermo-optic ITO Zenodo package is public,
   table-rich, and useful, but constants-only for this calibrated-linear gate.
-- If a real Saha table export appears later, reopen it; otherwise move to the
-  remaining public lead triage before doing more modeling.
+- Phase 3E.3B has now shown that a real Saha table export exists and is
+  canonicalized, but TMM residual modeling is blocked by missing source-backed
+  silicon constants, substrate/backside/coherence handling, and interface
+  assumptions.
 
 #### Phase 3D.3: Exeter Spatiotemporal ITO Source-Data Intake
 
@@ -1440,7 +1503,9 @@ Summary:
 - The ACS/intracavity ENZ source-data lead is not immediate-ingest-ready here:
   Phase 3D.5A showed the manual download of `51010982` resolves to the SI PDF,
   not a separate raw source-data package.
-- Saha TiN/AZO remains parked until OPJU worksheets are exported to real tables.
+- Saha TiN/AZO remains canonical source-table memory. Phase 3E.3B found that
+  the frozen substrate/backside model contract cannot be source-backed from the
+  current package before residual inspection.
 - Swatowska AZO and Rasheed/Barille ITO remain useful article/PDF leads, but no
   raw table package or calibrated split-ready numerical source was verified.
 - Nolen CdO and high-crystallinity ITO remain useful constants/model fixtures,

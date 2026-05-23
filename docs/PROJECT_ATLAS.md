@@ -71,10 +71,20 @@ Current progress:
 - **Done**: Phase 3D.1C Exeter/Bohn package-constant no-fit model
   reconstruction. The static pattern reconstructs well in shape, but absolute
   residuals are nontrivial and the result remains non-promoting.
-- **Done/export-blocked**: Phase 3D.2 Saha TiN/AZO source-data intake.
+- **Done/source-exported**: Phase 3D.2/3E.3 Saha TiN/AZO source-data intake.
   Figshare source files are public and hash-verified; Fig. 2b and Fig. 2c/d
-  contain the expected Origin worksheet labels, but the numerical tables still
-  require OPJU-to-CSV export.
+  now have Windows Origin Viewer CSV exports with measured/simulated
+  reflectance labels, TiN/AZO permittivity labels, and thickness comments.
+- **Done/TMM-blocked**: Phase 3E.3A Saha exported-table audit and candidate
+  gate. Canonical measured reflectance, source-simulated reflectance, TiN
+  epsilon, and AZO epsilon CSVs now exist, but TMM residual modeling is stopped
+  until silicon substrate optics, substrate/backside treatment, and leakage
+  boundaries are frozen before residual inspection.
+- **Done/stack-contract-blocked**: Phase 3E.3B Saha frozen-stack model
+  provenance and no-fit adapter gate. Stack order, thickness, and 50 degree
+  s/p source semantics are backed, but silicon optical constants,
+  substrate/backside/coherence handling, and interface/oxide assumptions are not
+  source-backed enough to freeze a no-fit TMM adapter.
 - **Done/blocked**: Phase 3D.2A Saha OPJU worksheet export audit. LabPlot was
   installed and probed, but no local OPJU-to-CSV path was found.
 - **Done/non-promoting**: Phase 3D.3 Exeter spatiotemporal ITO source-data
@@ -96,8 +106,10 @@ Current progress:
   Selected Figshare XLSX files are public and MD5-verified, with direct W/WO3
   `n,k` tables. Fig. 2f source semantics are now bounded into a de-offseted
   reproduction fixture, not a no-fit validation residual.
-- **Next/gated**: Phase 3E.3 ENZ source-data lead intake or Saha OPJU conversion
-  only when new table-ready data or a real conversion path appears.
+- **Next/gated**: Phase 3E.4 renewed ENZ public-data search through
+  stack-contract gate. Candidate intake now requires source-backed material
+  constants, measured holdout, geometry, stack/substrate/backside handling, and
+  leakage boundaries before residual inspection.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -149,7 +161,7 @@ calibrated_linear_evidence
   -> COMPLETE: Phase 3D.1A Exeter/Bohn split audit
   -> COMPLETE: Phase 3D.1B no-fit static R0 extraction
   -> COMPLETE/NON-PROMOTING: Phase 3D.1C no-fit model reconstruction
-  -> COMPLETE/EXPORT-BLOCKED: Phase 3D.2 Saha TiN/AZO source-data intake
+  -> COMPLETE/SOURCE-EXPORTED: Phase 3D.2 Saha TiN/AZO source-data intake
   -> COMPLETE/BLOCKED: Phase 3D.2A Saha OPJU worksheet export audit
   -> COMPLETE/NONLINEAR FIXTURE: Phase 3D.3 Exeter spatiotemporal ITO intake
   -> COMPLETE/CALIBRATION-ONLY: Phase 3D.4 thermo-optic ITO Zenodo intake
@@ -157,7 +169,9 @@ calibrated_linear_evidence
   -> COMPLETE/GATE: Phase 3E.1 public dataset gate / executive assistant scaffold
   -> COMPLETE/NON-ENZ BASELINE: Phase 3E.2A Wang W/WO3 source-data intake
   -> COMPLETE/FIXTURE: Phase 3E.2B-3E.2D Wang de-offseted reproduction handoff
-  -> NEXT/GATED: Phase 3E.3 ENZ source-data lead intake or Saha OPJU conversion
+  -> COMPLETE/TMM-BLOCKED: Phase 3E.3A Saha exported-table audit
+  -> COMPLETE/STACK-BLOCKED: Phase 3E.3B Saha frozen-stack model provenance gate
+  -> NEXT/GATED: Phase 3E.4 renewed ENZ public-data search
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -237,9 +251,18 @@ reconstructed the package static model with strong shape agreement but
 nontrivial absolute residuals and no predeclared residual thresholds, so
 Exeter/Bohn remains useful weak memory rather than Phase 4-ready evidence.
 Phase 3D.2 snapshotted the Saha TiN/AZO Figshare package and confirmed the
-expected Fig. 2 labels, but the critical numerical tables are still trapped in
-Origin `.opju` files. Phase 3D.2A tested the local open-source LabPlot route and
-found no usable OPJU-to-CSV export path. Phase 3D.3 then inspected the Exeter
+expected Fig. 2 labels. Phase 3D.2A tested the local open-source LabPlot route
+and found no usable OPJU-to-CSV export path. Phase 3E.3 then used official
+Windows Origin Viewer 9.9.5 to export the Fig. 2b and Fig. 2c/d source
+worksheets to CSV, clearing the table-extraction blocker but not the leakage or
+claim-status audit. Phase 3E.3A then split those exports into canonical measured
+reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon tables;
+it stopped before TMM because the source tables do not freeze substrate optical
+constants, substrate/backside treatment, or full source-model leakage
+boundaries. Phase 3E.3B then checked whether the missing contract could be
+frozen from paper/SI/Figshare provenance and failed closed: silicon optical
+constants, substrate backside/coherence handling, and interface/oxide assumptions
+remain unbacked by the source package. Phase 3D.3 then inspected the Exeter
 spatiotemporal ITO package: the source is public, hash-verified, and open-format
 with table-ready epsilon, but the measurement lane is nonlinear pumped
 transmission/frequency-shift data and the thicker-sample labels are internally
@@ -247,10 +270,11 @@ inconsistent. Phase 3D.4 inspected the thermo-optic ITO Zenodo package: it has
 many public machine-readable epsilon tables, Hall data, SEM data, and figure
 artifacts, but no independent measured static R/T holdout. Phase 3D.5 bounded
 the remaining known public leads and found no immediate Phase 4 candidate:
-ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha remains
-OPJU-export blocked, AZO/ITO paper leads are not table-package-ready,
-CdO/high-crystallinity ITO are constants-only, and request-only papers remain
-rejected. Phase 3E.1 turned those outcomes into a public-dataset gate and
+ACS/intracavity is public PDF/SI-only after Phase 3D.5A, Saha is now
+CSV-exported and canonicalized but stack-contract-blocked before TMM, AZO/ITO paper leads are not
+table-package-ready, CdO/high-crystallinity ITO are constants-only, and
+request-only papers remain rejected. Phase 3E.1 turned those outcomes into a
+public-dataset gate and
 executive research assistant scaffold. Phase 3E.2A added Wang W/WO3 as a
 non-ENZ baseline candidate: the XLSX package has direct W/WO3 constants, but
 Fig. 2f is offset/unlabeled plotted data. Phase 3E.2B-3E.2D completed the

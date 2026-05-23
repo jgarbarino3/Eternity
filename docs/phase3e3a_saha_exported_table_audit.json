@@ -1,0 +1,225 @@
+{
+  "artifacts": {
+    "fig2b_measured_reflectance": {
+      "bytes": 4380,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv",
+      "role": "holdout_candidate_measured_reflectance_source_labeled",
+      "sha256": "1a9d799fa66b157bb629b28aa6052a7696e8c246abbf5e7e514eaae37c2a2455",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv"
+    },
+    "fig2b_source_simulated_reflectance": {
+      "bytes": 4374,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv",
+      "role": "source_simulated_reference_for_audit_not_holdout",
+      "sha256": "436e0197e2efed80197f067ef19de12716f61aaa3aa9ebec6f3b778490f45dc8",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv"
+    },
+    "fig2cd_azo_epsilon": {
+      "bytes": 5174,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv",
+      "role": "calibration_material_input_candidate_azo",
+      "sha256": "56750fe9a771d79228d417bbbabeb3d833b094dbd39f68993a27e21f2e0aa75f",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv"
+    },
+    "fig2cd_tin_epsilon": {
+      "bytes": 5346,
+      "path": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv",
+      "role": "calibration_material_input_candidate_tin",
+      "sha256": "8542dc38f6a31c9a825d0fff0f23e7f8b76c9b069b55f37a080924a8552f1cfe",
+      "source_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv"
+    }
+  },
+  "decision": {
+    "canonical_tables_ready": true,
+    "claim_status_ceiling": "weak_within_dataset_holdout",
+    "current_claim_label": "source_tables_audited_not_tmm_ready",
+    "full_no_fit_tmm_validation_allowed": false,
+    "phase4_candidate": false,
+    "phase4_enz_ready": false,
+    "recommended_next_phase": "Phase 3E.3B - Saha frozen-stack model provenance and no-fit adapter gate",
+    "serious_core_allowed": false,
+    "status": "canonical_tables_ready_tmm_adapter_blocked",
+    "stop_rule_reason": "Stop before TMM residual modeling because substrate optical constants, substrate/backside treatment, and full source-model leakage boundaries are not frozen by the source tables.",
+    "stop_rule_triggered": true
+  },
+  "figshare": {
+    "description_evidence": {
+      "fig2b": "Figshare description identifies Fig. 2b as simulated Rp/Rs and experimentally measured reflectance versus wavelength.",
+      "fig2cd": "Figshare description identifies Fig. 2c/d as wavelength and permittivity tables for TiN and AZO, with thicknesses in comments."
+    },
+    "doi": "10.6084/m9.figshare.23734116.v1",
+    "fig2b_file": {
+      "download_url": "https://ndownloader.figshare.com/files/41997612",
+      "size": 45921,
+      "supplied_md5": "6b125fbafaf5d48a1222cb993502fe75"
+    },
+    "fig2cd_file": {
+      "download_url": "https://ndownloader.figshare.com/files/41997615",
+      "size": 45264,
+      "supplied_md5": "3f06d2f8d06172ac89cac7878d6e50cb"
+    },
+    "license": "CC BY 4.0",
+    "modified_date": "2023-11-17T08:11:08Z",
+    "title": "Engineering the Temporal Dynamics \nof All-Optical Switching with Fast and Slow Materials",
+    "version": 1
+  },
+  "forbidden_next": [
+    "Do not use source-simulated Fig. 2b curves as a holdout measurement.",
+    "Do not tune TiN/AZO epsilon, thickness, roughness, substrate constants, scale, or offsets to Fig. 2b residuals.",
+    "Do not run or report a TMM residual until a frozen substrate/backside model contract is recorded.",
+    "Do not promote Saha beyond weak-within-dataset holdout without a future predeclared residual and uncertainty policy."
+  ],
+  "gate_review": {
+    "geometry_gate": {
+      "basis": "Source comments and paper text agree on 50 degree s/p reflectance from the air/AZO/TiN/silicon stack.",
+      "status": "pass_for_source_semantics"
+    },
+    "leakage_gate": {
+      "basis": "The source backs VASE/Drude-Lorentz material fitting, and no source text found here says Fig. 2b measured reflectance was used to fit the Fig. 2c/d epsilon tables. However, the same article contains the source simulated Fig. 2b curves, TMM calculations, and device design, so independence is only weak-within-dataset.",
+      "status": "partial_not_promotion_clean"
+    },
+    "normalization_gate": {
+      "basis": "Figshare and paper call Fig. 2b reflectance, not normalized modulation; all measured values are unit-interval fractions. The source does not provide a separate instrument calibration record, so this is not calibrated-linear evidence.",
+      "status": "conditional_pass_for_weak_holdout_only"
+    },
+    "split_gate": {
+      "basis": "Origin Viewer export preserves explicit measured Rp/Rs and source-simulated Rp/Rs labels. Canonical artifacts keep those families in separate CSV files.",
+      "status": "pass"
+    },
+    "stack_model_gate": {
+      "basis": "A reproducible no-fit TMM adapter still needs a frozen silicon substrate optical-constant source and substrate/backside handling. Those are not specified by the exported Fig. 2 source tables.",
+      "status": "blocked"
+    }
+  },
+  "generated_at": "2026-05-23T14:54:20.789497+00:00",
+  "inputs": {
+    "canonical_output_dir": "lab_data/raw/public_saha_tin_azo_2023",
+    "fig2b_origin_viewer_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv",
+    "fig2b_sha256": "b8134a6ff368a2c8707453ca80dae862b27608bffbb1b9ad4bdb163a8cf2d0b2",
+    "fig2cd_origin_viewer_export": "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv",
+    "fig2cd_sha256": "436a6db455883ae66cc6f3880e563c0287c6f04842eb231150567737cc1caaa8",
+    "metadata_path": "lab_data/raw/public_saha_tin_azo_2023/figshare_article_23734116.json",
+    "raw_dir": "lab_data/raw/public_saha_tin_azo_2023"
+  },
+  "phase_id": "Phase 3E.3A",
+  "source_evidence": {
+    "article": [
+      "The paper describes a 130 nm TiN layer on silicon with a 250 nm AZO layer deposited on top.",
+      "The paper describes 50 degree reflectance measurements and Fig. 2b as s- and p-polarized reflectance spectra.",
+      "The paper says spectroscopic ellipsometry followed by Drude-Lorentz fitting gives the TiN and AZO permittivity curves.",
+      "The author-contribution section says TMM calculations were performed, but the Fig. 2 source tables do not publish a complete TMM settings file."
+    ],
+    "article_url": "https://www.nature.com/articles/s41467-023-41377-5",
+    "figshare_api_url": "https://api.figshare.com/v2/articles/23734116",
+    "supplementary_information": [
+      "Supplementary Section S3 says TiN films were measured by VASE at 50 and 70 degrees and modeled with a Drude-Lorentz form.",
+      "Supplementary growth notes say AZO was grown on TiN layers on silicon; the source table comments carry the 130 nm TiN and 250 nm AZO values."
+    ],
+    "supplementary_pdf_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-41377-5/MediaObjects/41467_2023_41377_MOESM1_ESM.pdf"
+  },
+  "table_audit": {
+    "fig2b_reflectance": {
+      "columns": {
+        "measured_rp": {
+          "comment": "50 deg",
+          "source_columns": [
+            "C",
+            "D"
+          ]
+        },
+        "measured_rs": {
+          "comment": "50 deg",
+          "source_columns": [
+            "E",
+            "F"
+          ]
+        },
+        "simulated_rp": {
+          "comment": "50 deg",
+          "source_columns": [
+            "A",
+            "B"
+          ]
+        },
+        "simulated_rs": {
+          "comment": "50 deg",
+          "source_columns": [
+            "G",
+            "H"
+          ]
+        }
+      },
+      "measured_and_source_simulated_split": "explicit_source_labels",
+      "measured_rp_reflectance_fraction": [
+        0.000542849,
+        0.661244
+      ],
+      "measured_rs_reflectance_fraction": [
+        0.0974151,
+        0.844539
+      ],
+      "numeric_rows": 175,
+      "simulated_rp_reflectance_fraction": [
+        0.000704476,
+        0.674147
+      ],
+      "simulated_rs_reflectance_fraction": [
+        0.0986437,
+        0.849372
+      ],
+      "source_rows_total": 178,
+      "unit_interval_check": "pass",
+      "wavelength_nm": [
+        260.0,
+        2000.0
+      ],
+      "wavelength_step_nm": 10.0
+    },
+    "fig2cd_permittivity": {
+      "azo": {
+        "enz_wavelengths_nm": [
+          1364.223257
+        ],
+        "epsilon_imag": [
+          0.0570776178,
+          1.6210297
+        ],
+        "epsilon_real": [
+          -3.77856128,
+          7.14181405
+        ],
+        "numeric_rows": 171,
+        "passivity_check": "pass",
+        "source_comment": "Film thickness 250 nm",
+        "wavelength_nm": [
+          300.0,
+          2000.0
+        ],
+        "wavelength_step_nm": 10.0
+      },
+      "source_rows_total": 184,
+      "tin": {
+        "enz_wavelengths_nm": [
+          484.054679
+        ],
+        "epsilon_imag": [
+          2.7291454,
+          42.8092028
+        ],
+        "epsilon_real": [
+          -103.798888,
+          4.77342914
+        ],
+        "numeric_rows": 181,
+        "passivity_check": "pass",
+        "source_comment": "Film thickness 130 nm",
+        "wavelength_nm": [
+          300.0,
+          2100.0
+        ],
+        "wavelength_step_nm": 10.0
+      }
+    }
+  },
+  "title": "Saha Exported-Table Audit And Candidate Gate"
+}

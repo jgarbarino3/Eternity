@@ -52,27 +52,35 @@ candidates:
     exact_files:
       - Source data for Fig 2b.opju
       - Source data for Fig 2cd.opju
+      - lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv
+      - lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv
+      - lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv
+      - lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv
     evidence:
       data_are_public: true
       no_author_contact_required: true
       identified_sample_stack: true
       source_qualified_material_model: true
       independent_measured_holdout: true
-      machine_readable_numerical_data: false
+      machine_readable_numerical_data: true
       absolute_calibration_documented: false
       geometry_specified: true
       calibration_holdout_split_predeclared: false
       holdout_not_known_used_for_fit: false
       tmm_appropriate: true
       no_existing_nonpromoting_validation: true
-    proposed_claim_label: blocked_source_data_lead
-    decision: opju_export_blocked_source_data_lead
+    proposed_claim_label: weak_within_dataset_holdout
+    decision: frozen_stack_contract_not_source_backed_tmm_blocked
     blockers:
-      - Public OPJU files are downloaded and integrity-checked, but not exported to CSV.
-      - Reflectance normalization and leakage/separability remain unresolved.
-    exact_next_file: Source data for Fig 2b.opju
+      - Phase 3E.3A split the Origin Viewer exports into canonical measured reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon CSVs.
+      - Phase 3E.3B found that source-backed stack order, thickness, 50 degree geometry, and material tables are enough for source-table memory but not a frozen no-fit TMM adapter.
+      - The paper, Supplementary Information, Figshare metadata, and exported source tables do not freeze silicon optical constants.
+      - The same source package does not freeze substrate thickness, backside condition, wedge/roughness, or coherent versus incoherent backside handling.
+      - Holdout independence remains weak within the same paper/source package; no source text proves a promotion-clean calibration/holdout split.
+      - Do not run Saha residuals from a convenience silicon table or guessed backside model.
+    exact_next_file: docs/phase3e3b_saha_stack_model_gate.json
     notes:
-      - Best backup if table export becomes available.
+      - Best ENZ backup remains canonical source-table memory, but TMM residual modeling is intentionally blocked.
 
   - candidate_id: acs_intracavity_ito_2025
     title: Intracavity epsilon-near-zero dual-range frequency switch
