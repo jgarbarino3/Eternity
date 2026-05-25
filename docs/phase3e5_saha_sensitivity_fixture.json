@@ -1,0 +1,1232 @@
+{
+  "assumption_space": {
+    "backside_models": [
+      "semi_infinite_substrate",
+      "incoherent_air_backside_upper_bound"
+    ],
+    "interface_models": [
+      "none",
+      "sio2_2nm_between_tin_and_si"
+    ],
+    "substrate_models": [
+      "si_lossless_fixed_n3p5",
+      "si_weak_absorbing_fixed_n3p7_k0p02",
+      "si_synthetic_blue_absorbing_dispersion"
+    ],
+    "variant_count": 12
+  },
+  "decision": {
+    "calibrated_linear_evidence_allowed": false,
+    "claim_label": "non_promoting_sensitivity_fixture",
+    "claim_standard_changed": false,
+    "claim_status_ceiling": "literature_reproduction_fixture",
+    "diagnostic_comparisons_performed": true,
+    "phase4_candidate": false,
+    "recommended_next_phase": "Phase 3F - simulator-validation fallback on simpler public thin-film data",
+    "rmse_vs_measured_range_across_all_diagnostics": [
+      0.020063230205651903,
+      0.03640189281831629
+    ],
+    "serious_core_allowed": false,
+    "status": "phase3e5_saha_sensitivity_fixture_ready",
+    "tmm_adapter_frozen": false,
+    "validation_residual_modeling_performed": false
+  },
+  "generated_at": "2026-05-25T13:59:13.161042+00:00",
+  "inputs": {
+    "azo_epsilon": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_azo_epsilon_canonical.csv",
+    "incidence_angle_deg": 50.0,
+    "measured_reflectance": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_measured_reflectance_canonical.csv",
+    "phase3e3b_gate_path": "docs/phase3e3b_saha_stack_model_gate.json",
+    "points": 171,
+    "source_simulated_reflectance": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2b_source_simulated_reflectance_canonical.csv",
+    "stack": "air / 250 nm AZO / 130 nm TiN / assumed silicon substrate",
+    "tin_epsilon": "lab_data/raw/public_saha_tin_azo_2023/saha_fig2cd_tin_epsilon_canonical.csv",
+    "wavelength_window_nm": [
+      300.0,
+      2000.0
+    ]
+  },
+  "phase_id": "Phase 3E.5",
+  "reference_comparisons": {
+    "rp": {
+      "max_absolute_residual": 0.08582519999999999,
+      "max_absolute_residual_wavelength_nm": 310.0,
+      "mean_absolute_error": 0.016660360029239762,
+      "points": 171,
+      "prediction_range": [
+        0.000704476,
+        0.674147
+      ],
+      "root_mean_square_error": 0.020255840832933462,
+      "shape_correlation_minmax": 0.9947608294167393,
+      "target_range": [
+        0.000542849,
+        0.661244
+      ],
+      "wavelength_window_nm": [
+        300.0,
+        2000.0
+      ]
+    },
+    "rs": {
+      "max_absolute_residual": 0.15529700000000002,
+      "max_absolute_residual_wavelength_nm": 310.0,
+      "mean_absolute_error": 0.022431823391812867,
+      "points": 171,
+      "prediction_range": [
+        0.0986437,
+        0.849372
+      ],
+      "root_mean_square_error": 0.030022172225766197,
+      "shape_correlation_minmax": 0.9924083620575338,
+      "target_range": [
+        0.0974151,
+        0.844539
+      ],
+      "wavelength_window_nm": [
+        300.0,
+        2000.0
+      ]
+    }
+  },
+  "remembered_next_work": {
+    "acceptance_target": "Find a boring public planar thin-film dataset with machine-readable n/k or epsilon, measured R/T or ellipsometry, geometry, stack, and substrate details sufficient to validate the TMM machinery without making an ENZ evidence claim.",
+    "phase_id": "Phase 3F",
+    "reason": "Public ENZ packages are proving useful as fixtures but unlikely to supply a fully frozen calibrated-linear validation contract.",
+    "title": "Simulator-Validation Fallback On Simpler Public Thin-Film Data"
+  },
+  "spread_summary": {
+    "rp": {
+      "max_prediction": 0.6770885011320809,
+      "max_spread": 0.0015190883102929598,
+      "max_spread_wavelength_nm": 450.0,
+      "mean_spread": 0.00012630588420510793,
+      "median_spread": 6.652257755160318e-06,
+      "min_prediction": 6.8538718341564e-05,
+      "variant_count": 12
+    },
+    "rs": {
+      "max_prediction": 0.8515116351684301,
+      "max_spread": 0.0034645432183387226,
+      "max_spread_wavelength_nm": 420.0,
+      "mean_spread": 0.0002420654151917054,
+      "median_spread": 5.975170431382626e-06,
+      "min_prediction": 0.09184137391225788,
+      "variant_count": 12
+    }
+  },
+  "title": "Saha No-Claim Stack-Assumption Sensitivity Fixture",
+  "variant_records": [
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07918881692584603,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016990876848639338,
+            "points": 171,
+            "prediction_range": [
+              8.671436012713262e-05,
+              0.6770880264697849
+            ],
+            "root_mean_square_error": 0.020106800075499684,
+            "shape_correlation_minmax": 0.9955622358332884,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.02628539967127763,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007563770335426572,
+            "points": 171,
+            "prediction_range": [
+              8.671436012713262e-05,
+              0.6770880264697849
+            ],
+            "root_mean_square_error": 0.00997113027610423,
+            "shape_correlation_minmax": 0.9991288825390842,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14607666574574768,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029534948401270543,
+            "points": 171,
+            "prediction_range": [
+              0.09464996652767642,
+              0.8515112747169922
+            ],
+            "root_mean_square_error": 0.03638643667512188,
+            "shape_correlation_minmax": 0.99013505303319,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08554115533691614,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016540182549243342,
+            "points": 171,
+            "prediction_range": [
+              0.09464996652767642,
+              0.8515112747169922
+            ],
+            "root_mean_square_error": 0.02555596344408997,
+            "shape_correlation_minmax": 0.9942416403368671,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_lossless_fixed_n3p5",
+      "variant_id": "si_lossless_fixed_n3p5__none__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.0791888173267883,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016992665284332242,
+            "points": 171,
+            "prediction_range": [
+              0.0002566965933138265,
+              0.6770880265123906
+            ],
+            "root_mean_square_error": 0.0201102337785542,
+            "shape_correlation_minmax": 0.9955615319198643,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.02628823386201945,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007566174827599593,
+            "points": 171,
+            "prediction_range": [
+              0.0002566965933138265,
+              0.6770880265123906
+            ],
+            "root_mean_square_error": 0.009976861795911065,
+            "shape_correlation_minmax": 0.9991282819320975,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14607666595430935,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029535677182523597,
+            "points": 171,
+            "prediction_range": [
+              0.09480878704833182,
+              0.851511274735027
+            ],
+            "root_mean_square_error": 0.03638871554834927,
+            "shape_correlation_minmax": 0.9901361113363487,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08554645627572227,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016540917612912032,
+            "points": 171,
+            "prediction_range": [
+              0.09480878704833182,
+              0.851511274735027
+            ],
+            "root_mean_square_error": 0.025559261603896585,
+            "shape_correlation_minmax": 0.9942410741633648,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_lossless_fixed_n3p5",
+      "variant_id": "si_lossless_fixed_n3p5__none__incoherent_air_backside_upper_bound"
+    },
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07918975865689792,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016993455332913004,
+            "points": 171,
+            "prediction_range": [
+              7.361282036216284e-05,
+              0.6770880395557012
+            ],
+            "root_mean_square_error": 0.020105550780413792,
+            "shape_correlation_minmax": 0.9955609489815364,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026246104112353452,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007566487742579155,
+            "points": 171,
+            "prediction_range": [
+              7.361282036216284e-05,
+              0.6770880395557012
+            ],
+            "root_mean_square_error": 0.009974717645770154,
+            "shape_correlation_minmax": 0.999126541312581,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.1460784294272891,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.02955512389603121,
+            "points": 171,
+            "prediction_range": [
+              0.09419919254463455,
+              0.8515112786643289
+            ],
+            "root_mean_square_error": 0.036399719117176196,
+            "shape_correlation_minmax": 0.9901211718464675,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.0854189757407618,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.01655566375134836,
+            "points": 171,
+            "prediction_range": [
+              0.09419919254463455,
+              0.8515112786643289
+            ],
+            "root_mean_square_error": 0.025582694217130865,
+            "shape_correlation_minmax": 0.9942266642156226,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_lossless_fixed_n3p5",
+      "variant_id": "si_lossless_fixed_n3p5__sio2_2nm_between_tin_and_si__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07918975903853588,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016995198092926062,
+            "points": 171,
+            "prediction_range": [
+              0.00024007670813047774,
+              0.6770880395977052
+            ],
+            "root_mean_square_error": 0.020108914471317102,
+            "shape_correlation_minmax": 0.9955602490109934,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026248789814033002,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007568834072066385,
+            "points": 171,
+            "prediction_range": [
+              0.00024007670813047774,
+              0.6770880395977052
+            ],
+            "root_mean_square_error": 0.009980333465315936,
+            "shape_correlation_minmax": 0.9991259431380963,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.146078429619237,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029555810406230794,
+            "points": 171,
+            "prediction_range": [
+              0.09435174507937594,
+              0.8515112786819993
+            ],
+            "root_mean_square_error": 0.03640189281831629,
+            "shape_correlation_minmax": 0.9901221667897724,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08542384208713732,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016556374503800375,
+            "points": 171,
+            "prediction_range": [
+              0.09435174507937594,
+              0.8515112786819993
+            ],
+            "root_mean_square_error": 0.025585872410937845,
+            "shape_correlation_minmax": 0.9942260983995531,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_lossless_fixed_n3p5",
+      "variant_id": "si_lossless_fixed_n3p5__sio2_2nm_between_tin_and_si__incoherent_air_backside_upper_bound"
+    },
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07918901995109334,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016981153497613765,
+            "points": 171,
+            "prediction_range": [
+              8.544375666468279e-05,
+              0.6770884914234255
+            ],
+            "root_mean_square_error": 0.02009592142967187,
+            "shape_correlation_minmax": 0.9955702799479144,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026359299278683246,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.0075667960280041,
+            "points": 171,
+            "prediction_range": [
+              8.544375666468279e-05,
+              0.6770884914234255
+            ],
+            "root_mean_square_error": 0.009974121459063205,
+            "shape_correlation_minmax": 0.9991298539414372,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14607694820867095,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029521770339020818,
+            "points": 171,
+            "prediction_range": [
+              0.09435587101926349,
+              0.8515116351471071
+            ],
+            "root_mean_square_error": 0.03637364242779795,
+            "shape_correlation_minmax": 0.9901468762124086,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08560125295580684,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016538689035454673,
+            "points": 171,
+            "prediction_range": [
+              0.09435587101926349,
+              0.8515116351471071
+            ],
+            "root_mean_square_error": 0.025549968330044106,
+            "shape_correlation_minmax": 0.9942457667169721,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_weak_absorbing_fixed_n3p7_k0p02",
+      "variant_id": "si_weak_absorbing_fixed_n3p7_k0p02__none__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07918902037490205,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.01698300183799752,
+            "points": 171,
+            "prediction_range": [
+              0.0002617916439310899,
+              0.6770884914730014
+            ],
+            "root_mean_square_error": 0.020099460958414066,
+            "shape_correlation_minmax": 0.9955695584826045,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026362253245519274,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007569258774530347,
+            "points": 171,
+            "prediction_range": [
+              0.0002617916439310899,
+              0.6770884914730014
+            ],
+            "root_mean_square_error": 0.009979998129974561,
+            "shape_correlation_minmax": 0.9991292447163298,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14607694843069996,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.02952253367403679,
+            "points": 171,
+            "prediction_range": [
+              0.0945199662987039,
+              0.8515116351684301
+            ],
+            "root_mean_square_error": 0.036376012646094545,
+            "shape_correlation_minmax": 0.9901479578141967,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08560677175257725,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016539426683179582,
+            "points": 171,
+            "prediction_range": [
+              0.0945199662987039,
+              0.8515116351684301
+            ],
+            "root_mean_square_error": 0.02555334955849853,
+            "shape_correlation_minmax": 0.9942451967302938,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_weak_absorbing_fixed_n3p7_k0p02",
+      "variant_id": "si_weak_absorbing_fixed_n3p7_k0p02__none__incoherent_air_backside_upper_bound"
+    },
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07919002732938972,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016984109196229873,
+            "points": 171,
+            "prediction_range": [
+              7.1539847643366e-05,
+              0.6770885010833025
+            ],
+            "root_mean_square_error": 0.020094853570842765,
+            "shape_correlation_minmax": 0.9955686985352005,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026314864152663875,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007569498664131333,
+            "points": 171,
+            "prediction_range": [
+              7.1539847643366e-05,
+              0.6770885010833025
+            ],
+            "root_mean_square_error": 0.009977655673168833,
+            "shape_correlation_minmax": 0.9991273794021819,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14607881721419674,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.02954350004736019,
+            "points": 171,
+            "prediction_range": [
+              0.09388763253123904,
+              0.851511634098593
+            ],
+            "root_mean_square_error": 0.03638807201808617,
+            "shape_correlation_minmax": 0.9901318051857186,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08546872672718425,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016555004754006314,
+            "points": 171,
+            "prediction_range": [
+              0.09388763253123904,
+              0.851511634098593
+            ],
+            "root_mean_square_error": 0.02557821723541958,
+            "shape_correlation_minmax": 0.9942298861670644,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_weak_absorbing_fixed_n3p7_k0p02",
+      "variant_id": "si_weak_absorbing_fixed_n3p7_k0p02__sio2_2nm_between_tin_and_si__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07919002773113684,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.01698590711207923,
+            "points": 171,
+            "prediction_range": [
+              0.00024397406542082516,
+              0.6770885011320809
+            ],
+            "root_mean_square_error": 0.02009831648777094,
+            "shape_correlation_minmax": 0.995567981102596,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026317653122786888,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007571898024868185,
+            "points": 171,
+            "prediction_range": [
+              0.00024397406542082516,
+              0.6770885011320809
+            ],
+            "root_mean_square_error": 0.009983406962433801,
+            "shape_correlation_minmax": 0.9991267724010506,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.1460788174172673,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.02954421662839781,
+            "points": 171,
+            "prediction_range": [
+              0.0940448539412882,
+              0.8515116341194264
+            ],
+            "root_mean_square_error": 0.036390326250799056,
+            "shape_correlation_minmax": 0.9901328184997644,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08547376686934655,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.01655571728010839,
+            "points": 171,
+            "prediction_range": [
+              0.0940448539412882,
+              0.8515116341194264
+            ],
+            "root_mean_square_error": 0.025581468690240895,
+            "shape_correlation_minmax": 0.994229315849798,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_weak_absorbing_fixed_n3p7_k0p02",
+      "variant_id": "si_weak_absorbing_fixed_n3p7_k0p02__sio2_2nm_between_tin_and_si__incoherent_air_backside_upper_bound"
+    },
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07919422588119081,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016951049232114455,
+            "points": 171,
+            "prediction_range": [
+              8.714689563534097e-05,
+              0.6770879107591814
+            ],
+            "root_mean_square_error": 0.020063903321960945,
+            "shape_correlation_minmax": 0.9955855476047198,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026411179710391475,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007529281912460373,
+            "points": 171,
+            "prediction_range": [
+              8.714689563534097e-05,
+              0.6770879107591814
+            ],
+            "root_mean_square_error": 0.009918768139876787,
+            "shape_correlation_minmax": 0.999143041087415,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.1460838605530923,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029485024994292956,
+            "points": 171,
+            "prediction_range": [
+              0.09238321272189594,
+              0.8515111837687968
+            ],
+            "root_mean_square_error": 0.036338451203113784,
+            "shape_correlation_minmax": 0.9901708313378798,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08565966563357236,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016536960993499373,
+            "points": 171,
+            "prediction_range": [
+              0.09238321272189594,
+              0.8515111837687968
+            ],
+            "root_mean_square_error": 0.025537982082599095,
+            "shape_correlation_minmax": 0.9942513138389897,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_synthetic_blue_absorbing_dispersion",
+      "variant_id": "si_synthetic_blue_absorbing_dispersion__none__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "none",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07919422631381116,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016952980428193015,
+            "points": 171,
+            "prediction_range": [
+              0.0002765447074389565,
+              0.6770879108000459
+            ],
+            "root_mean_square_error": 0.020067642622098657,
+            "shape_correlation_minmax": 0.9955847762743075,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026414211315342384,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007531765754326315,
+            "points": 171,
+            "prediction_range": [
+              0.0002765447074389565,
+              0.6770879108000459
+            ],
+            "root_mean_square_error": 0.00992487921991526,
+            "shape_correlation_minmax": 0.9991424210419965,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14608386078670843,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029485842943766234,
+            "points": 171,
+            "prediction_range": [
+              0.0925538631427795,
+              0.8515111837860191
+            ],
+            "root_mean_square_error": 0.03634098165565399,
+            "shape_correlation_minmax": 0.9901718999231398,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08566537875416702,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016537651796694877,
+            "points": 171,
+            "prediction_range": [
+              0.0925538631427795,
+              0.8515111837860191
+            ],
+            "root_mean_square_error": 0.02554142965493064,
+            "shape_correlation_minmax": 0.9942507549957671,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_synthetic_blue_absorbing_dispersion",
+      "variant_id": "si_synthetic_blue_absorbing_dispersion__none__incoherent_air_backside_upper_bound"
+    },
+    {
+      "backside_model": "semi_infinite_substrate",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.07919546879201549,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016955243766381422,
+            "points": 171,
+            "prediction_range": [
+              6.8538718341564e-05,
+              0.6770879242386104
+            ],
+            "root_mean_square_error": 0.020063230205651903,
+            "shape_correlation_minmax": 0.9955836111734724,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.026363050987966485,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007534170042533902,
+            "points": 171,
+            "prediction_range": [
+              6.8538718341564e-05,
+              0.6770879242386104
+            ],
+            "root_mean_square_error": 0.009926295855110156,
+            "shape_correlation_minmax": 0.9991394493657884,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14608599194383814,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029514395684536947,
+            "points": 171,
+            "prediction_range": [
+              0.09184137391225788,
+              0.851511188493921
+            ],
+            "root_mean_square_error": 0.036358363088465136,
+            "shape_correlation_minmax": 0.9901517723195378,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08551643583998014,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.016557385741361515,
+            "points": 171,
+            "prediction_range": [
+              0.09184137391225788,
+              0.851511188493921
+            ],
+            "root_mean_square_error": 0.02557303857073813,
+            "shape_correlation_minmax": 0.9942320305305493,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_synthetic_blue_absorbing_dispersion",
+      "variant_id": "si_synthetic_blue_absorbing_dispersion__sio2_2nm_between_tin_and_si__semi_infinite_substrate"
+    },
+    {
+      "backside_model": "incoherent_air_backside_upper_bound",
+      "interface_model": "sio2_2nm_between_tin_and_si",
+      "polarization_metrics": {
+        "rp": {
+          "vs_measured": {
+            "max_absolute_residual": 0.0791954691836012,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.016957100014492157,
+            "points": 171,
+            "prediction_range": [
+              0.00025187033977839006,
+              0.6770879242789154
+            ],
+            "root_mean_square_error": 0.02006686023774883,
+            "shape_correlation_minmax": 0.9955828498320829,
+            "target_range": [
+              0.000542849,
+              0.661244
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.02636590588714033,
+            "max_absolute_residual_wavelength_nm": 660.0,
+            "mean_absolute_error": 0.007536581955281607,
+            "points": 171,
+            "prediction_range": [
+              0.00025187033977839006,
+              0.6770879242789154
+            ],
+            "root_mean_square_error": 0.009932256876622192,
+            "shape_correlation_minmax": 0.9991388281005587,
+            "target_range": [
+              0.000704476,
+              0.674147
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        },
+        "rs": {
+          "vs_measured": {
+            "max_absolute_residual": 0.14608599214312257,
+            "max_absolute_residual_wavelength_nm": 310.0,
+            "mean_absolute_error": 0.029515145385824757,
+            "points": 171,
+            "prediction_range": [
+              0.09200222838082796,
+              0.8515111885108058
+            ],
+            "root_mean_square_error": 0.03636072694935921,
+            "shape_correlation_minmax": 0.9901527642913843,
+            "target_range": [
+              0.0974151,
+              0.844539
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          },
+          "vs_source_simulated": {
+            "max_absolute_residual": 0.08552162570062816,
+            "max_absolute_residual_wavelength_nm": 630.0,
+            "mean_absolute_error": 0.01655805800770434,
+            "points": 171,
+            "prediction_range": [
+              0.09200222838082796,
+              0.8515111885108058
+            ],
+            "root_mean_square_error": 0.025576326197743415,
+            "shape_correlation_minmax": 0.994231467896564,
+            "target_range": [
+              0.0986437,
+              0.849372
+            ],
+            "wavelength_window_nm": [
+              300.0,
+              2000.0
+            ]
+          }
+        }
+      },
+      "substrate_model": "si_synthetic_blue_absorbing_dispersion",
+      "variant_id": "si_synthetic_blue_absorbing_dispersion__sio2_2nm_between_tin_and_si__incoherent_air_backside_upper_bound"
+    }
+  ],
+  "warnings": [
+    "Every silicon/backside/interface variant is an external sensitivity assumption, not a recovered Saha author model.",
+    "The source-simulated Fig. 2b curves are not an independent holdout; comparisons to them are author-curve context only.",
+    "The incoherent backside variant is an upper-bound diagnostic that ignores substrate bulk absorption and must not be treated as a measurement model.",
+    "Do not promote Saha or tune variants from these diagnostic metrics."
+  ]
+}

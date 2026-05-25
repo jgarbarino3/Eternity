@@ -107,11 +107,20 @@ Current progress:
   Selected Figshare XLSX files are public and MD5-verified, with direct W/WO3
   `n,k` tables. Fig. 2f source semantics are now bounded into a de-offseted
   reproduction fixture, not a no-fit validation residual.
-- **Active/search-snapshot-no-phase4-candidate**: Phase 3E.4 renewed ENZ
+- **Done/search-snapshot-no-phase4-candidate**: Phase 3E.4 renewed ENZ
   public-data search through stack-contract gate. Seven live-source leads were
   inspected; zero opened Phase 4. Candidate intake now requires source-backed
   material constants, measured holdout, geometry, stack/substrate/backside
   handling, and leakage boundaries before residual inspection.
+- **Done/non-promoting sensitivity fixture**: Phase 3E.5 Saha no-claim
+  stack-assumption sensitivity fixture. Twelve external silicon/interface/
+  backside variants show very small spread against the canonical Saha exported
+  tables, but this is diagnostic only and does not recover the author model,
+  select a variant, validate Saha, or open Phase 4.
+- **Next**: Phase 3F simulator-validation fallback on simpler public thin-film
+  data. Use a boring public planar stack with source-backed material constants,
+  measured R/T or ellipsometry, geometry, substrate/backside handling, and
+  leakage boundaries to test the TMM machinery without making an ENZ claim.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -173,7 +182,9 @@ calibrated_linear_evidence
   -> COMPLETE/FIXTURE: Phase 3E.2B-3E.2D Wang de-offseted reproduction handoff
   -> COMPLETE/TMM-BLOCKED: Phase 3E.3A Saha exported-table audit
   -> COMPLETE/STACK-BLOCKED: Phase 3E.3B Saha frozen-stack model provenance gate
-  -> ACTIVE/0-PHASE-4: Phase 3E.4 renewed ENZ public-data search
+  -> COMPLETE/0-PHASE-4: Phase 3E.4 renewed ENZ public-data search
+  -> COMPLETE/SENSITIVITY: Phase 3E.5 Saha stack-assumption fixture
+  -> NEXT: Phase 3F simulator-validation fallback on simple public thin-film data
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -288,7 +299,13 @@ remains blocked by missing workbook labels and non-independent source-simulation
 semantics. Phase 3E.4 inspected ACS/intracavity Zenodo, Linkoping ITO/PEDOT,
 ITO/glass/SiO2, space-time ITO, natural-ENZ compendium, LBSO, and ENZ
 metal-oxide reflector leads; all remain fixtures or blocked cards, not Phase 4
-candidates.
+candidates. Phase 3E.5 then ran a no-claim Saha sensitivity fixture over 12
+external silicon/interface/backside variants. The tested assumption spread is
+small, but this is still not validation: the author substrate/backside/source
+model is not recovered and residual-driven variant selection would leak.
+Phase 3F is the next serious-core fallback: validate the TMM machinery on a
+simpler public planar thin-film dataset with a complete source-backed contract
+before returning to ENZ evidence attempts.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

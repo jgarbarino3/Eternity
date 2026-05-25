@@ -554,8 +554,15 @@ Next:
   live-source leads were inspected, the ACS/intracavity lane was corrected to a
   non-promoting Zenodo MATLAB fixture, the registry now tracks 15 candidates,
   and zero Phase 4 candidates opened.
-- Continue `Phase 3E.4 - renewed ENZ public-data search through
-  stack-contract gate`.
+- Phase 3E.5 has completed a no-claim Saha stack-assumption sensitivity
+  fixture. Twelve external silicon/interface/backside variants produced small
+  spread against the canonical Saha tables, but Saha remains non-promoting and
+  no residual-driven variant selection is allowed.
+- Continue `Phase 3F - simulator-validation fallback on simpler public
+  thin-film data`: find a boring public planar stack with source-backed
+  material constants, measured R/T or ellipsometry, geometry,
+  substrate/backside handling, and leakage boundaries sufficient to test the
+  local TMM machinery without making an ENZ evidence claim.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

@@ -1,6 +1,6 @@
 # Eternity Current Realistic Roadmap
 
-Date: 2026-05-23
+Date: 2026-05-25
 
 ## Framing
 
@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`.
+Choose `Phase 3F - simulator-validation fallback on simpler public thin-film data`.
 
 Why:
 
@@ -1069,22 +1069,28 @@ Saha is CSV-exported and canonicalized but stack-contract-blocked before TMM,
 AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
 constants-only, and request-only papers remain rejected.
 
-That means the current calibrated-linear push has reached a real data blocker.
-Phase 3E.1 now preserves the evidence bar in code and project memory through a
-candidate registry, hard acceptance flags, scaffold report, and assistant
-contract. Phase 3E.4 is now running new search leads through the stricter stack
-contract before any residual or adapter work.
+That means the current calibrated-linear ENZ push has reached a real data
+blocker. Phase 3E.1 preserves the evidence bar in code and project memory
+through a candidate registry, hard acceptance flags, scaffold report, and
+assistant contract. Phase 3E.4 completed the first renewed search snapshot with
+0 Phase 4 candidates. Phase 3E.5 then ran a no-claim Saha sensitivity fixture:
+the tested silicon/interface/backside spread is small, but every variant is an
+external assumption and no residual-driven variant selection is allowed.
+The useful next step is to validate the local TMM machinery on a simpler public
+planar thin-film dataset whose stack and measurement contract are complete.
 
 Recommended decision scope:
 
 ```text
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
-2. Turn the Phase 3D failure memory into a structured candidate registry and
-   public-dataset acceptance gate.
-3. Promote the executive research assistant lane as the user-facing layer for
+2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
+   and public-dataset acceptance gate.
+3. Use Phase 3F to find or ingest a boring public planar thin-film validation
+   fixture for simulator validation, independent of ENZ claim pressure.
+4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
-4. Keep Phase 3A, Phase 3B, Phase 3C, and Saha residual modeling parked unless
+5. Keep Phase 3A, Phase 3B, Phase 3C, and Saha residual modeling parked unless
    new source-backed evidence appears; do not loop on unavailable CompleteEASE,
    TiON raw R/T, St Andrews author contact, already-resolved local OPJU export
    paths, or guessed silicon/backside Saha models.
@@ -1108,17 +1114,20 @@ docs/phase3e1_dataset_candidate_registry.yaml
 ```
 
 The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 15
-known candidates evaluated, 0 Phase 4 candidates opened, and the recommended
-next phase is `Phase 3E.4 - renewed ENZ public-data search through
-stack-contract gate`.
+known candidates evaluated, 0 Phase 4 candidates opened. Phase 3E.4 and Phase
+3E.5 have now run; the current recommended next phase is `Phase 3F -
+simulator-validation fallback on simpler public thin-film data`.
 
-Phase 3E.4 should:
+Phase 3F should:
 
-- Add new Deep Research / 5.5 Pro / Browse / Plasmate leads as candidate cards.
-- Run the gate before spending ingestion time.
-- Inspect exact source-data files only when a candidate plausibly clears the
-  hard public-data flags.
-- Keep Phase 4 closed unless every required flag passes.
+- Search for a deliberately simple public planar thin-film dataset rather than
+  another ENZ-first package.
+- Require machine-readable optical constants plus measured R/T or ellipsometry,
+  source-backed geometry, stack, substrate/backside treatment, and leakage
+  boundaries before any residual run.
+- Use the result to test the TMM implementation and reporting machinery, not to
+  make an ENZ evidence claim.
+- Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
 
 Phase 3E.2A implementation result:
 
@@ -1206,7 +1215,7 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3E.4 - renewed ENZ public-data search through stack-contract gate`.
+- `Phase 3E.5 - Saha no-claim stack-assumption sensitivity fixture`.
 
 #### Phase 3E.4: Renewed ENZ Public-Data Search Through Stack-Contract Gate
 
@@ -1232,8 +1241,42 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3E.4 - continue renewed ENZ public-data search through the
-  stack-contract gate`.
+- `Phase 3E.5 - Saha no-claim stack-assumption sensitivity fixture`, followed
+  by `Phase 3F - simulator-validation fallback on simpler public thin-film
+  data` if Saha remains non-promoting.
+
+#### Phase 3E.5: Saha No-Claim Stack-Assumption Sensitivity Fixture
+
+Artifacts:
+
+- `src/eternity/phase3e5.py`
+- `tests/unit/test_phase3e5.py`
+- `docs/phase3e5_saha_sensitivity_fixture.md`
+- `docs/phase3e5_saha_sensitivity_fixture.json`
+- `docs/phase3e5_saha_sensitivity_curves.csv`
+
+Result:
+
+- Status: `phase3e5_saha_sensitivity_fixture_ready`.
+- Claim label: `non_promoting_sensitivity_fixture`.
+- Claim-status ceiling: `literature_reproduction_fixture`.
+- Twelve external silicon/interface/backside variants were run over the
+  300-2000 nm overlap window. Variant spread is small under this assumption
+  set: `rp` max spread about `0.00152` and `rs` max spread about `0.00346`.
+- The source-simulated Fig. 2b curves remain author-curve context, not an
+  independent holdout. This fixture does not recover the author substrate or
+  backside model and does not choose a variant from residuals.
+- Saha remains source-table memory and a non-promoting reproduction fixture;
+  no Phase 4 candidate or calibrated-linear evidence is opened.
+
+Recommended next phase:
+
+- `Phase 3F - simulator-validation fallback on simpler public thin-film data`.
+  Find a boring public planar thin-film dataset with machine-readable material
+  constants and measured R/T or ellipsometry whose geometry, stack,
+  substrate/backside handling, and leakage boundaries are source-backed enough
+  to test the local TMM machinery without making an ENZ claim. The plan is
+  recorded in `docs/phase3f_simulator_validation_fallback_plan.md`.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

@@ -1,6 +1,6 @@
 # Eternity Phase Index
 
-Date: 2026-05-23
+Date: 2026-05-25
 
 This file gives stable phase IDs for next-step recommendations. `CURRENT_REALISTIC_ROADMAP.md` and `GOALS.md` remain the roadmap authorities; this index keeps the numbering consistent across Codex sessions.
 
@@ -63,57 +63,29 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3E.3 | Completed/source-exported-and-blocked | Saha OPJU conversion and ENZ candidate gate | The real OPJU-to-CSV conversion path is now available for Saha Fig. 2b and Fig. 2c/d. Phase 3E.3A canonicalized the exported tables, and Phase 3E.3B blocked TMM residual modeling because the frozen substrate/backside stack-model contract is not source-backed. |
 | Phase 3E.3A | Completed/tmm-blocked | Saha exported-table audit and candidate gate | Split the Origin Viewer exports into canonical measured reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon CSVs; verified source semantics against paper/Figshare evidence; and stopped before TMM because substrate optical constants, backside treatment, and full source-model leakage boundaries are not frozen. |
 | Phase 3E.3B | Completed/stack-contract-blocked | Saha frozen-stack model provenance and no-fit adapter gate | Confirmed stack order, film thicknesses, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residuals were run. |
-| Phase 3E.4 | Active/search-snapshot-no-phase4-candidate | Renewed ENZ public-data search through stack-contract gate | First renewed pass inspected 7 live-source leads and opened 0 Phase 4 candidates. It corrected the ACS/intracavity lane to include a Zenodo MATLAB package, but that package is still a literature fixture rather than a calibrated-linear candidate. Continue only through the stricter material/holdout/geometry/stack/substrate/backside/leakage gate. |
+| Phase 3E.4 | Completed/search-snapshot-no-phase4-candidate | Renewed ENZ public-data search through stack-contract gate | First renewed pass inspected 7 live-source leads and opened 0 Phase 4 candidates. It corrected the ACS/intracavity lane to include a Zenodo MATLAB package, but that package is still a literature fixture rather than a calibrated-linear candidate. Continue only through the stricter material/holdout/geometry/stack/substrate/backside/leakage gate. |
+| Phase 3E.5 | Completed/non-promoting-sensitivity-fixture | Saha no-claim stack-assumption sensitivity fixture | Tested 12 external silicon/interface/backside assumptions against the exported Saha tables. Variant spread was tiny under this assumption set, but the exercise is diagnostic only: it does not recover the author model, does not validate Saha, and does not permit residual-based promotion. |
+| Phase 3F | Next | Simulator-validation fallback on simpler public thin-film data | Find or use a boring public planar thin-film dataset with source-backed optical constants, measured R/T or ellipsometry, geometry, stack, substrate/backside handling, and leakage boundaries sufficient to test the TMM machinery without making an ENZ evidence claim. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3E.4 - renewed ENZ public-data search through stack-contract gate**.
+Current phase: **Phase 3F - simulator-validation fallback on simpler public thin-film data**.
 
-Reason: Phase 3D search found a concrete first-ingest package. Phase 3D.1
-downloaded and verified Exeter/Bohn ITO `OpenData.zip`; Phase 3D.1A found a
-promising but non-promoting split: Figure 1 source-qualified ellipsometry
-epsilon and Figure 2 TIR-normalized pre-pump static reflection. Phase 3D.1B
-extracted the canonical Figure 1 epsilon, TIR reference, and static `R0`
-surface, then locked the split before residuals. Phase 3D.1C reconstructed the
-package no-fit static model and found strong shape agreement but nontrivial
-absolute residuals, with promotion still forbidden. Phase 3D.2 then inspected
-the Saha TiN/AZO backup package: the source exists and is hash-verified, but the
-critical Fig. 2 worksheets were proprietary Origin `.opju` containers. Phase
-3D.2A tested the local export route and found it blocked. A later official
-Windows Origin Viewer export cleared the table-extraction blocker, and Phase
-3E.3A canonicalized those tables while blocking residual modeling on source-model
-contract gaps. Phase 3E.3B then confirmed that the source-backed Saha contract
-still lacks silicon optical constants, substrate backside/coherence handling,
-and interface/oxide assumptions needed to freeze a no-fit TMM adapter. Phase 3D.3 then
-inspected the Exeter spatiotemporal ITO package: it is public, hash-verified,
-and open-format, but it is a nonlinear pumped-transmission/frequency-shift
-dataset rather than a separable static calibrated-linear holdout. Phase 3D.4
-then inspected the thermo-optic ITO Zenodo package: it is an excellent public
-constants fixture, but no independent measured static R/T holdout was found.
-Phase 3D.5 bounded the remaining known public leads, and Phase 3D.5A corrected
-the ACS/intracavity Figshare-download path: `51010982` resolves to the SI PDF,
-not a raw source-data package. Phase 3E.4 later found the separate ACS
-intracavity Zenodo MATLAB package, correcting the global registry from
-PDF/SI-only to a non-promoting source-code/data fixture. Saha is now
-CSV-exported and canonicalized but stack-contract-blocked before TMM, the
-AZO/ITO paper leads are not table-package-ready, CdO/high-crystallinity ITO are
-constants fixtures, and request-only papers remain rejected. The next meaningful step was the public-dataset gate /
-executive research assistant pivot, not a forced Phase 4 attempt. Phase 3E.1
-added that gate. Phase 3E.2A then ingested
-Wang W/WO3 as a non-ENZ planar TMM baseline candidate: selected XLSX files are
-public and MD5-verified, `FigS2-nk.xlsx` contains direct W/WO3 `n,k` tables, and
-`Fig2f-R.xlsx` exposes the expected thickness series but only as
-offset/unlabeled plotted traces. Phase 3E.2B-3E.2D resolved the honest lane:
-the source paper/SI back the figure-level measured/simulated semantics and model
-inputs, the workbook lacks explicit line/series labels, and the de-offseted
-3017-row fixture is useful source-data reproduction rather than validation.
-Phase 3E.4 then ran the first renewed source search through the stricter
-stack-contract gate: ACS/intracavity Zenodo, Linkoping ITO/PEDOT, ITO/glass/SiO2
-constants, space-time ITO source data, the natural-ENZ compendium, LBSO
-Ferrell-Berreman, and ENZ metal-oxide reflector leads all opened 0 Phase 4
-candidates. Continue the renewed search, but do not continue Saha residual
-modeling from a guessed silicon/backside model.
+Reason: The known ENZ public-data lanes now mostly function as conservative
+fixtures rather than calibrated validation candidates. Saha cleared the
+proprietary OPJU export blocker and Phase 3E.3A/3E.3B established useful
+canonical tables plus source-backed stack order, thickness, and 50 degree s/p
+geometry. It still cannot support a frozen no-fit TMM candidate because silicon
+optical constants, substrate backside/coherence handling, interface/oxide
+assumptions, and source-model leakage boundaries are not source-backed tightly
+enough. Phase 3E.5 therefore ran only a no-claim sensitivity fixture over 12
+external silicon/interface/backside variants. The tested variant spread is tiny
+under those assumptions, but this does not recover the author model or validate
+the measured Fig. 2b curve. The useful next move is not a Saha residual
+victory lap. It is to validate the local TMM machinery against a simpler public
+planar thin-film dataset whose stack and measurement contract are boring and
+complete.
 
 Information sufficiency:
 
@@ -216,6 +188,14 @@ Information sufficiency:
   Viewer CSVs split cleanly into canonical measured reflectance,
   source-simulated reflectance, TiN epsilon, and AZO epsilon artifacts, with
   source-backed 50 degree s/p labels and 130 nm / 250 nm thickness comments.
+- Enough to complete Phase 3E.5 as a no-claim Saha sensitivity fixture: 12
+  external silicon/interface/backside variants were run against the canonical
+  tables over 300-2000 nm, showing very small assumption spread under the
+  tested variants while preserving the non-promoting claim boundary.
+- Enough to start Phase 3F as a simulator-validation fallback: the next useful
+  goal is to test the TMM machinery on a simpler public planar thin-film
+  dataset with a complete source-backed stack/measurement contract, not to
+  force ENZ evidence from underdetermined packages.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -245,6 +225,10 @@ Information sufficiency:
   the source package still does not freeze silicon optical constants,
   substrate/backside/coherence handling, interface/oxide assumptions, or
   promotion-clean source-model leakage boundaries before a no-fit TMM adapter.
+- Not enough to reinterpret Phase 3E.5 as validation: the sensitivity variants
+  are external assumptions, the source-simulated Fig. 2b curves are author-curve
+  context rather than an independent holdout, and no variant can be selected by
+  residual fit without leakage.
 - Not enough to promote Phase 3D.3: no independent static absolute R/T holdout
   was found, and the open measurement files belong to a nonlinear
   spatiotemporal-refraction workflow.
@@ -258,11 +242,12 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3E.4 - renewed ENZ public-data search through stack-contract gate**.
-  Planning: GPT-5.5 `high`, because candidate selection now includes a stricter
-  substrate/backside and leakage contract before residuals. Implementation:
-  `medium` for source-card/report work; `high` only if a candidate has complete
-  table-ready measured holdout plus frozen stack-model inputs.
+- **Phase 3F - simulator-validation fallback on simpler public thin-film data**.
+  Planning: GPT-5.5 `high`, because the search should optimize for a clean
+  stack/measurement contract rather than ENZ relevance. Implementation:
+  `medium` for intake/report work; `high` only if a candidate clears the
+  complete contract and needs a frozen no-fit adapter. Plan:
+  `docs/phase3f_simulator_validation_fallback_plan.md`.
 
 Helpful tools:
 

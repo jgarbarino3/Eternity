@@ -84,6 +84,10 @@ from eternity.phase3e4 import (
     DEFAULT_REGISTRY_PATH as DEFAULT_PHASE3E4_REGISTRY_PATH,
 )
 from eternity.phase3e4 import build_phase3e4_packet, write_phase3e4_packet
+from eternity.phase3e5 import (
+    DEFAULT_PHASE3E3B_GATE_PATH as DEFAULT_PHASE3E5_GATE_PATH,
+)
+from eternity.phase3e5 import build_phase3e5_packet, write_phase3e5_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -456,6 +460,16 @@ PHASE3E4_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON and Markdown renewed-search artifacts.",
+)
+PHASE3E5_GATE_OPTION = typer.Option(
+    DEFAULT_PHASE3E5_GATE_PATH,
+    "--phase3e3b-gate",
+    help="Completed Phase 3E.3B Saha stack-gate JSON.",
+)
+PHASE3E5_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON, Markdown, and CSV sensitivity artifacts.",
 )
 
 
@@ -1149,6 +1163,30 @@ def phase3e4_public_data_search(
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3e5-saha-sensitivity")
+def phase3e5_saha_sensitivity(
+    phase3e3b_gate_path: Path = PHASE3E5_GATE_OPTION,
+    output_dir: Path | None = PHASE3E5_OUTPUT_DIR_OPTION,
+) -> None:
+    """Write the Phase 3E.5 no-claim Saha stack-assumption sensitivity fixture."""
+
+    try:
+        packet, curve_rows = build_phase3e5_packet(phase3e3b_gate_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3E.5 Saha sensitivity failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, csv_path = write_phase3e5_packet(output_dir, packet, curve_rows)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {csv_path}")
+        return
+
+    packet_without_rows = dict(packet)
+    typer.echo(json.dumps(packet_without_rows, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

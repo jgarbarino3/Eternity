@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3E public dataset gate and assistant fixture substrate
+**Current focus:** Phase 3F simulator-validation fallback on simpler public thin-film data
 
 ## Current Position
 
-**Current Phase:** 3E
-**Current Phase Name:** Public Dataset Gate And Executive Research Assistant
+**Current Phase:** 3F
+**Current Phase Name:** Simulator-Validation Fallback On Simpler Public Thin-Film Data
 **Total Phases:** 3
-**Current Plan:** docs/phase3e4_renewed_public_data_search.md
-**Total Plans in Phase:** 10
-**Status:** Active / renewed ENZ public-data search snapshot opened 0 Phase 4 candidates
-**Last Activity:** 2026-05-23
-**Last Activity Description:** Completed a Phase 3E.4 renewed public-data search snapshot. Seven live-source leads were inspected through the stricter stack-contract gate; the ACS/intracavity lane was corrected to include a Zenodo MATLAB package, but no lead cleared measured holdout, stack/substrate/backside, and leakage gates. No residual modeling or TMM adapter work was performed.
+**Current Plan:** docs/phase3f_simulator_validation_fallback_plan.md
+**Total Plans in Phase:** 11
+**Status:** Active / Phase 3F simulator-validation fallback next
+**Last Activity:** 2026-05-25
+**Last Activity Description:** Completed a Phase 3E.5 no-claim Saha stack-assumption sensitivity fixture. Twelve external silicon/interface/backside variants produced very small spread against the canonical exported Saha tables, but the exercise remains diagnostic only and does not recover the author model, validate Saha, or open Phase 4. Next remembered work is Phase 3F: validate the TMM machinery on a simpler public planar thin-film dataset with a complete source-backed contract.
 
 **Progress:** [██████████] 99%
 
@@ -131,11 +131,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   Phase 3E.1 gate scaffold. It inspected ACS/intracavity Zenodo, Linkoping
   ITO/PEDOT, ITO/glass/SiO2, space-time ITO, natural-ENZ compendium, LBSO, and
   ENZ metal-oxide reflector leads. Zero Phase 4 candidates opened.
+- Phase 3E.5 wrote `docs/phase3e5_saha_sensitivity_fixture.md`, `.json`, and
+  `docs/phase3e5_saha_sensitivity_curves.csv`. Twelve external
+  silicon/interface/backside variants were compared as diagnostics only. The
+  spread is small under the tested assumptions, but Saha remains
+  non-promoting because the author substrate/backside/source-model contract is
+  not recovered and residual-driven variant selection would leak.
 
 ## Open Questions
 
-- Which current literature/public dataset can provide source-qualified optical
-  constants plus independent R/T or ellipsometry holdout without author contact?
+- Which simple public planar thin-film dataset can provide source-qualified
+  optical constants plus independent R/T or ellipsometry holdout without author
+  contact, so the TMM machinery can be tested before another ENZ claim attempt?
 - If a candidate public dataset is found, what sample/stack, geometry,
   wavelength range, polarization, units, and leakage policy are source-proven?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
@@ -225,6 +232,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   inspected leads are useful fixtures or blocked cards, but none clears the
   measured holdout, stack/substrate/backside, and leakage gates required before
   residual inspection.
+- [Phase 3E.5]: Saha sensitivity is non-promoting. — The tested
+  silicon/interface/backside variants produce small spread, but every variant
+  is an external assumption, the source-simulated Fig. 2b curves are
+  author-curve context, and no residual-driven selection is allowed.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
