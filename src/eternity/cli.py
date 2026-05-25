@@ -88,6 +88,10 @@ from eternity.phase3e5 import (
     DEFAULT_PHASE3E3B_GATE_PATH as DEFAULT_PHASE3E5_GATE_PATH,
 )
 from eternity.phase3e5 import build_phase3e5_packet, write_phase3e5_packet
+from eternity.phase3f1 import (
+    DEFAULT_REGISTRY_PATH as DEFAULT_PHASE3F1_REGISTRY_PATH,
+)
+from eternity.phase3f1 import build_phase3f1_packet, write_phase3f1_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -470,6 +474,16 @@ PHASE3E5_OUTPUT_DIR_OPTION = typer.Option(
     None,
     "--output-dir",
     help="Optional directory for JSON, Markdown, and CSV sensitivity artifacts.",
+)
+PHASE3F1_REGISTRY_OPTION = typer.Option(
+    DEFAULT_PHASE3F1_REGISTRY_PATH,
+    "--registry",
+    help="Phase 3F.1 simulator-validation candidate scout registry.",
+)
+PHASE3F1_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown scout artifacts.",
 )
 
 
@@ -1187,6 +1201,28 @@ def phase3e5_saha_sensitivity(
 
     packet_without_rows = dict(packet)
     typer.echo(json.dumps(packet_without_rows, indent=2, sort_keys=True))
+
+
+@app.command("phase3f1-simulator-validation-scout")
+def phase3f1_simulator_validation_scout(
+    registry_path: Path = PHASE3F1_REGISTRY_OPTION,
+    output_dir: Path | None = PHASE3F1_OUTPUT_DIR_OPTION,
+) -> None:
+    """Write the Phase 3F.1 simple thin-film simulator-validation scout packet."""
+
+    try:
+        packet = build_phase3f1_packet(registry_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3F.1 simulator-validation scout failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3f1_packet(output_dir, packet)
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

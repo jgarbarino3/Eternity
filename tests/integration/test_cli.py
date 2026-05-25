@@ -114,6 +114,24 @@ def test_phase3e2bcd_wang_commands_write_artifacts(tmp_path: Path) -> None:
     assert (tmp_path / "phase3e2d_wang_claim_boundary_handoff.md").exists()
 
 
+def test_phase3f1_simulator_validation_scout_command_writes_artifacts(
+    tmp_path: Path,
+) -> None:
+    result = runner.invoke(
+        app,
+        ["phase3f1-simulator-validation-scout", "--output-dir", str(tmp_path)],
+    )
+
+    assert result.exit_code == 0, result.output
+    json_path = tmp_path / "phase3f1_simulator_validation_scout.json"
+    assert json_path.exists()
+    assert (tmp_path / "phase3f1_simulator_validation_scout.md").exists()
+
+    packet = json.loads(json_path.read_text(encoding="utf-8"))
+    assert packet["decision"]["phase3f2_intake_allowed"] is False
+    assert packet["decision"]["residual_modeling_performed"] is False
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

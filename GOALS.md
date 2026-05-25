@@ -142,11 +142,15 @@ This is a synthetic thin-film experiment runner, not yet a calibrated lab twin.
 Phase 3E.1 added the public-dataset gate and executive research assistant
 scaffold. Phase 3E.4 evaluated 15 known candidates and opened 0 Phase 4
 candidates, and Phase 3E.5 preserved Saha as a non-promoting sensitivity
-fixture. The active next step is now `Phase 3F - simulator-validation fallback
-on simpler public thin-film data`. Source-qualified TiN/TiON optical constants,
+fixture. Phase 3F.1 then ran a bounded simple thin-film simulator-validation
+scout: 10 public simple/thin-film-adjacent leads were gated, 0 cleared every
+hard flag, no Phase 3F.2 intake opened, and no TMM adapter or residual modeling
+ran. The active next step is now `Phase 3F.1 - continue bounded scout with
+stricter simple-stack leads`. Source-qualified TiN/TiON optical constants,
 thesis reflectance spectra, material models, St Andrews diagnostics, public
-package failures, Saha sensitivity diagnostics, and provenance gaps remain in
-the registry without promoting them to calibrated evidence.
+package failures, Saha sensitivity diagnostics, Phase 3F.1 rejection cards, and
+provenance gaps remain in the registry without promoting them to calibrated
+evidence.
 
 Current blocker:
 
@@ -227,10 +231,14 @@ Current blocker:
   against the canonical exported Saha tables, but the result is diagnostic
   only: Saha remains non-promoting and no residual-driven variant selection is
   allowed.
-- The next remembered action is `Phase 3F - simulator-validation fallback on
-  simpler public thin-film data`: test the local TMM machinery on a boring
-  public planar thin-film dataset with a complete source-backed
-  stack/measurement contract before returning to ENZ evidence attempts.
+- Phase 3F.1 ran a contract-first simulator-validation scout over 10 public
+  simple/thin-film-adjacent leads. Zero candidates cleared the full hard gate,
+  so the result is useful failure memory rather than a validation fixture.
+- The next remembered action is `Phase 3F.1 - continue bounded scout with
+  stricter simple-stack leads`: evaluate the user's 5.5 Pro lead list, if
+  supplied, or run another bounded source search for a boring public planar
+  thin-film dataset with a complete source-backed stack/measurement contract
+  before returning to ENZ evidence attempts.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -331,6 +339,10 @@ Current blocker:
   leads are useful fixtures or blocked cards, and the Saha sensitivity spread is
   diagnostic only because the substrate/backside/source-model contract remains
   underdetermined.
+- Phase 3F.1 has enough information to stop before intake: the first bounded
+  simulator-validation scout found 0 hard-gate-ready candidates across 10
+  public simple/thin-film-adjacent leads, so Phase 3F remains open and Phase
+  3F.2 stays closed.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

@@ -558,11 +558,15 @@ Next:
   fixture. Twelve external silicon/interface/backside variants produced small
   spread against the canonical Saha tables, but Saha remains non-promoting and
   no residual-driven variant selection is allowed.
-- Continue `Phase 3F - simulator-validation fallback on simpler public
-  thin-film data`: find a boring public planar stack with source-backed
-  material constants, measured R/T or ellipsometry, geometry,
-  substrate/backside handling, and leakage boundaries sufficient to test the
-  local TMM machinery without making an ENZ evidence claim.
+- Phase 3F.1 has completed its first bounded simulator-validation scout. Ten
+  public simple/thin-film-adjacent leads were gated, zero cleared every hard
+  flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual
+  modeling ran.
+- Continue `Phase 3F.1 - strict simple-stack simulator-validation scout`:
+  evaluate the user's 5.5 Pro lead list if supplied, or run another bounded
+  source search for a boring public planar stack with source-backed material
+  constants, measured R/T or ellipsometry, geometry, substrate/backside
+  handling, leakage boundaries, and source/hash readiness.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

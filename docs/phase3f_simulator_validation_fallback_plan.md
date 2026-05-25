@@ -73,3 +73,13 @@ It may not produce:
   the full contract and needs a frozen adapter.
 - Tools: Browse.sh or Plasmate for read-only source scouting, local hashing and
   table inspection for artifacts, GPD only for claim-boundary review.
+
+## Phase 3F.1 Result
+
+The first bounded scout pass is recorded in
+`docs/phase3f1_simulator_validation_scout.md` and
+`docs/phase3f_simulator_validation_candidate_registry.yaml`.
+
+Result: 10 public simple/thin-film-adjacent leads were gated, 0 cleared every
+hard flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual
+modeling was run. Phase 3F remains open under the same stop rules.

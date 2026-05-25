@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3F - simulator-validation fallback on simpler public thin-film data`.
+Choose `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
 
 Why:
 
@@ -1076,8 +1076,12 @@ assistant contract. Phase 3E.4 completed the first renewed search snapshot with
 0 Phase 4 candidates. Phase 3E.5 then ran a no-claim Saha sensitivity fixture:
 the tested silicon/interface/backside spread is small, but every variant is an
 external assumption and no residual-driven variant selection is allowed.
-The useful next step is to validate the local TMM machinery on a simpler public
-planar thin-film dataset whose stack and measurement contract are complete.
+Phase 3F.1 then ran the first bounded simulator-validation scout over 10
+simple/thin-film-adjacent public leads. Zero candidates cleared every hard
+flag, so no Phase 3F.2 intake opened, no TMM adapter started, and no residual
+modeling was run. The useful next step is to continue the simple-stack scout
+until one source-backed public dataset is complete enough to validate the local
+TMM machinery without ENZ claim pressure.
 
 Recommended decision scope:
 
@@ -1085,8 +1089,8 @@ Recommended decision scope:
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
 2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
    and public-dataset acceptance gate.
-3. Use Phase 3F to find or ingest a boring public planar thin-film validation
-   fixture for simulator validation, independent of ENZ claim pressure.
+3. Continue Phase 3F.1 until a boring public planar thin-film validation
+   fixture clears the hard gate; only then open Phase 3F.2 intake.
 4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
@@ -1115,10 +1119,11 @@ docs/phase3e1_dataset_candidate_registry.yaml
 
 The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 15
 known candidates evaluated, 0 Phase 4 candidates opened. Phase 3E.4 and Phase
-3E.5 have now run; the current recommended next phase is `Phase 3F -
-simulator-validation fallback on simpler public thin-film data`.
+3E.5 have now run, and Phase 3F.1 completed its first bounded scout with 10
+candidate cards and 0 hard-gate passes. The current recommended next phase is
+`Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
 
-Phase 3F should:
+Phase 3F.1 continuation should:
 
 - Search for a deliberately simple public planar thin-film dataset rather than
   another ENZ-first package.
@@ -1128,6 +1133,8 @@ Phase 3F should:
 - Use the result to test the TMM implementation and reporting machinery, not to
   make an ENZ evidence claim.
 - Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
+- Keep Phase 3F.2 closed until exactly one candidate clears every hard scout
+  flag and can be ingested without fitting or guessing.
 
 Phase 3E.2A implementation result:
 
@@ -1271,12 +1278,44 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F - simulator-validation fallback on simpler public thin-film data`.
-  Find a boring public planar thin-film dataset with machine-readable material
-  constants and measured R/T or ellipsometry whose geometry, stack,
-  substrate/backside handling, and leakage boundaries are source-backed enough
-  to test the local TMM machinery without making an ENZ claim. The plan is
-  recorded in `docs/phase3f_simulator_validation_fallback_plan.md`.
+- `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
+  The first scout pass found no candidate ready for Phase 3F.2 intake, so the
+  next pass should either evaluate the user's 5.5 Pro lead list through the
+  same registry or run another bounded source search for simpler, cleaner
+  stacks.
+
+#### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
+
+Artifacts:
+
+- `src/eternity/phase3f1.py`
+- `tests/unit/test_phase3f1.py`
+- `docs/phase3f_simulator_validation_candidate_registry.yaml`
+- `docs/phase3f1_simulator_validation_scout.md`
+- `docs/phase3f1_simulator_validation_scout.json`
+
+Result:
+
+- Status: `phase3f1_no_candidate_ready_keep_phase3f_open`.
+- Ten public simple/thin-film-adjacent leads were inspected through the fixed
+  hard flags: public access, machine-readable material constants,
+  machine-readable measured holdout, geometry, stack/thickness,
+  substrate/backside/coherence, leakage-safe split, TMM suitability, and
+  source/hash readiness.
+- Hard-gate pass count: `0`.
+- Selected next candidate: `none`.
+- Phase 3F.2 intake allowed: `false`.
+- TMM adapter started: `false`.
+- Residual modeling performed: `false`.
+- Phase 4 candidate: `false`.
+- Candidate cards are preserved as failure memory rather than evidence.
+
+Recommended next phase:
+
+- `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
+  Planning: GPT-5.5 `high`; implementation: `medium` for another scout/report
+  pass, `high` only if a candidate clears every hard flag and the work moves to
+  Phase 3F.2 source-file intake.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

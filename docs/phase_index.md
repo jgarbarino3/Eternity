@@ -65,12 +65,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3E.3B | Completed/stack-contract-blocked | Saha frozen-stack model provenance and no-fit adapter gate | Confirmed stack order, film thicknesses, 50 degree s/p geometry, and canonical material tables are source-backed, but silicon optical constants, substrate backside/coherence handling, and interface/oxide assumptions are not source-backed enough to freeze a no-fit TMM adapter. No residuals were run. |
 | Phase 3E.4 | Completed/search-snapshot-no-phase4-candidate | Renewed ENZ public-data search through stack-contract gate | First renewed pass inspected 7 live-source leads and opened 0 Phase 4 candidates. It corrected the ACS/intracavity lane to include a Zenodo MATLAB package, but that package is still a literature fixture rather than a calibrated-linear candidate. Continue only through the stricter material/holdout/geometry/stack/substrate/backside/leakage gate. |
 | Phase 3E.5 | Completed/non-promoting-sensitivity-fixture | Saha no-claim stack-assumption sensitivity fixture | Tested 12 external silicon/interface/backside assumptions against the exported Saha tables. Variant spread was tiny under this assumption set, but the exercise is diagnostic only: it does not recover the author model, does not validate Saha, and does not permit residual-based promotion. |
-| Phase 3F | Next | Simulator-validation fallback on simpler public thin-film data | Find or use a boring public planar thin-film dataset with source-backed optical constants, measured R/T or ellipsometry, geometry, stack, substrate/backside handling, and leakage boundaries sufficient to test the TMM machinery without making an ENZ evidence claim. |
+| Phase 3F | Active | Simulator-validation fallback on simpler public thin-film data | Find or use a boring public planar thin-film dataset with source-backed optical constants, measured R/T or ellipsometry, geometry, stack, substrate/backside handling, and leakage boundaries sufficient to test the TMM machinery without making an ENZ evidence claim. |
+| Phase 3F.1 | Completed/no-candidate-ready | Simple thin-film simulator-validation scout | Added a contract-first scout/gate CLI, candidate registry, and report. Ten public simple/thin-film-adjacent leads were inspected through the hard flags; zero cleared every gate, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3F - simulator-validation fallback on simpler public thin-film data**.
+Current phase: **Phase 3F.1 - continue bounded scout with stricter simple-stack leads**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -82,10 +83,12 @@ assumptions, and source-model leakage boundaries are not source-backed tightly
 enough. Phase 3E.5 therefore ran only a no-claim sensitivity fixture over 12
 external silicon/interface/backside variants. The tested variant spread is tiny
 under those assumptions, but this does not recover the author model or validate
-the measured Fig. 2b curve. The useful next move is not a Saha residual
-victory lap. It is to validate the local TMM machinery against a simpler public
-planar thin-film dataset whose stack and measurement contract are boring and
-complete.
+the measured Fig. 2b curve. Phase 3F.1 then ran a bounded simulator-validation
+scout over 10 simple/thin-film-adjacent public leads and found 0 candidates that
+clear the full material/holdout/geometry/stack/substrate/backside/leakage/hash
+gate. The useful next move is still not a Saha residual victory lap. It is to
+continue the simple-stack scout until one source-backed public dataset is clean
+enough for a Phase 3F.2 intake.
 
 Information sufficiency:
 
@@ -196,6 +199,9 @@ Information sufficiency:
   goal is to test the TMM machinery on a simpler public planar thin-film
   dataset with a complete source-backed stack/measurement contract, not to
   force ENZ evidence from underdetermined packages.
+- Enough to complete the first Phase 3F.1 scout pass: the registry records 10
+  candidate cards, the generated report records 0 hard-gate passes, and the
+  stop rule kept downloads, adapters, and residual modeling closed.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -239,15 +245,21 @@ Information sufficiency:
   found the newest inspected leads are MATLAB/source-data fixtures,
   nonlinear packages, constants-only compendia, PDF/SI-only leads, or otherwise
   missing the full stack/substrate/backside/leakage contract.
+- Not enough to open Phase 3F.2: no Phase 3F.1 scout candidate cleared all hard
+  flags for public access, machine-readable material constants and measured
+  holdout, source-backed geometry/stack/substrate/backside semantics, leakage
+  safety, TMM suitability, and source/hash readiness.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3F - simulator-validation fallback on simpler public thin-film data**.
-  Planning: GPT-5.5 `high`, because the search should optimize for a clean
-  stack/measurement contract rather than ENZ relevance. Implementation:
-  `medium` for intake/report work; `high` only if a candidate clears the
-  complete contract and needs a frozen no-fit adapter. Plan:
-  `docs/phase3f_simulator_validation_fallback_plan.md`.
+- **Phase 3F.1 - continue bounded scout with stricter simple-stack leads**.
+  Planning: GPT-5.5 `high`, because the next pass should optimize for a clean
+  boring stack/measurement contract rather than ENZ relevance or residual
+  excitement. Implementation: `medium` for additional registry/report work;
+  `high` only if a candidate clears every hard flag and Phase 3F.2 opens a
+  frozen no-fit intake. Current artifacts:
+  `docs/phase3f_simulator_validation_candidate_registry.yaml` and
+  `docs/phase3f1_simulator_validation_scout.md`.
 
 Helpful tools:
 

@@ -1,0 +1,405 @@
+phase_id: Phase 3F.1
+registry_version: 1
+updated_at: "2026-05-25"
+search_scope: >-
+  Bounded first scout for simple public planar thin-film datasets that might
+  validate the local TMM machinery without making an ENZ claim. Source
+  inspection is limited to public landing pages, article pages, and visible file
+  metadata; no source files are ingested in this phase.
+candidate_limit: 10
+candidates:
+  - candidate_id: filmoptics_inverse_solutions_2022
+    title: Extracting Film Thickness and Optical Constants from Spectrophotometric Data
+    material_family: ITO, NiO, MAPbI3
+    source_type: zenodo_github_article_package
+    source_refs:
+      - DOI 10.1371/journal.pone.0276555
+      - Zenodo DOI 10.5281/zenodo.7228228
+      - GitHub Autonomous-Scientific-Discovery/FilmOptics-InverseSolutions
+    source_urls:
+      - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0276555
+      - https://zenodo.org/records/7228228
+      - https://github.com/Autonomous-Scientific-Discovery/FilmOptics-InverseSolutions
+    exact_files_or_records:
+      - experimental ITO and MAPbI3 spectrophotometric examples
+      - measured R/T spectra described over 350-1000 nm
+    scouting_notes:
+      - Article states experimental data include metal oxides and MAPbI3, with spectrophotometric R/T measurements.
+      - Article states light falls normally on the films for the present spectrophotometry.
+      - Optical constants are extracted from the same R/T spectra by optimization, so the material/holdout split is not leakage-safe for this phase.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: promising_but_blocked
+    decision: blocked_by_leakage_and_substrate_contract
+    blockers:
+      - Optical constants are extracted from the measured spectra rather than independent source inputs.
+      - Substrate/backside/coherence treatment is not source-backed enough from landing-page inspection.
+      - No source-file hashes were recorded in Phase 3F.1.
+    exact_next_action: inspect Zenodo/GitHub file tree only if no cleaner candidate appears
+
+  - candidate_id: self_consistent_sio2_ta2o5_2016
+    title: Self-consistent optical constants of SiO2 and Ta2O5 films
+    material_family: SiO2/Ta2O5
+    source_type: open_article_pdf_no_table_package_seen
+    source_refs:
+      - DOI 10.1364/OME.6.003622
+    source_urls:
+      - https://opg.optica.org/viewmedia.cfm?html=true&r=1&rwjcode=ome&uri=ome-6-11-3622
+      - https://gold.io.csic.es/wp-content/uploads/2020/05/2016-Self-consistent-optical-constants-of-SiO2-and-Ta2O5-films.pdf
+    exact_files_or_records:
+      - article figures for transmittance, reflectance, and ellipsometry
+      - oxide-film optical constants described in article text
+    scouting_notes:
+      - Source describes SiO2 and Ta2O5 films on MgF2 and Si substrates with transmittance, reflectance, and ellipsometry.
+      - The search found an open PDF/article route but no machine-readable measured holdout table package.
+      - Optical constants are self-consistent outputs of the same measurement set, not an obvious no-fit split.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: promising_but_blocked
+    decision: blocked_by_plot_pdf_only_and_leakage
+    blockers:
+      - No machine-readable measurement tables were found in this scout.
+      - Optical constants and measurements are part of one self-consistency workflow.
+      - Article/PDF sources are useful context but not enough for Phase 3F.2 intake.
+    exact_next_action: search specifically for supplementary data tables from the authors
+
+  - candidate_id: self_consistent_peald_al2o3_2025
+    title: Self-consistent optical properties of PEALD-Al2O3 thin films
+    material_family: Al2O3
+    source_type: open_article_no_table_package_seen
+    source_refs:
+      - Optical Materials Express 2025 article page
+    source_urls:
+      - https://opg.optica.org/ome/viewmedia.cfm?html=true&seq=0&uri=ome-15-7-1750
+    exact_files_or_records:
+      - article reports transmittance, reflectance, and ellipsometry over broad spectral range
+    scouting_notes:
+      - Article page reports PEALD-Al2O3 films on Si and MgF2 substrates with broad-range optical measurements.
+      - Search did not reveal a public machine-readable source-data package during this bounded pass.
+      - Measurement and constants belong to a Kramers-Kronig self-consistency workflow.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: promising_but_blocked
+    decision: blocked_by_missing_machine_readable_tables
+    blockers:
+      - Public article text is promising but not enough for source-file intake.
+      - No separate calibration/holdout split is visible from landing-page inspection.
+    exact_next_action: search for author data repository or supplementary files
+
+  - candidate_id: refractiveindex_info_dataset_2024
+    title: refractiveindex.info data set
+    material_family: broad optical constants database
+    source_type: figshare_yaml_database
+    source_refs:
+      - DOI 10.1038/s41597-023-02898-2
+      - Figshare DOI 10.6084/m9.figshare.c.6868000.v1
+    source_urls:
+      - https://www.nature.com/articles/s41597-023-02898-2
+      - https://springernature.figshare.com/articles/dataset/refractiveindex_info_data_set/24256639
+      - https://github.com/polyanskiy/refractiveindex.info-database
+    exact_files_or_records:
+      - YAML optical-constants records
+    scouting_notes:
+      - Public dataset has machine-readable optical constants and source references.
+      - It is a material-constants database, not a sample-matched measured R/T holdout package.
+      - It may supply material constants for future candidates, but cannot itself validate a stack.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: constants_only_fixture
+    decision: constants_database_not_validation_dataset
+    blockers:
+      - No measured stack holdout.
+      - No sample stack, substrate/backside, or geometry contract.
+    exact_next_action: use only as auxiliary constants source for a separate measured-stack candidate
+
+  - candidate_id: ekhi_radiative_properties_2026
+    title: EKHI open database of optical and thermal radiative properties of solids
+    material_family: broad solid materials
+    source_type: figshare_database
+    source_refs:
+      - DOI 10.1038/s41597-026-07083-9
+      - Figshare DOI 10.6084/m9.figshare.30581240
+    source_urls:
+      - https://www.nature.com/articles/s41597-026-07083-9
+      - https://doi.org/10.6084/m9.figshare.30581240
+      - https://thermomat.ehu.eus/ekhi
+    exact_files_or_records:
+      - curated reflectance, transmittance, absorptance, and emittance curves
+    scouting_notes:
+      - Data descriptor reports 1251 curves and 18999 numerical values with metadata.
+      - It is a broad radiative-property database, not a source-backed thin-film stack package.
+      - Original data are digitized from historical sources, so primary-source stack details would need separate review.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: measured_only_fixture
+    decision: broad_radiative_database_not_stack_validation
+    blockers:
+      - No source-backed film stack contract in the database-level scout.
+      - No paired machine-readable optical constants and measured holdout for one stack.
+    exact_next_action: query database only if a specific simple coating record has full metadata
+
+  - candidate_id: fused_quartz_transmission_ellipsometry_2026
+    title: Optical transmission and spectroscopic ellipsometry data of fused Quartz
+    material_family: fused quartz
+    source_type: mendeley_data_article
+    source_refs:
+      - DOI 10.1016/j.dib.2026.112781
+      - Mendeley Data DOI 10.17632/jz2wc5rzyx.4
+    source_urls:
+      - https://www.sciencedirect.com/science/article/pii/S2352340926003343
+      - https://pmc.ncbi.nlm.nih.gov/articles/PMC13112477/
+    exact_files_or_records:
+      - FQ_JGS2_Transmission_stepsize.dat
+      - Spectroscopic_Ellipsometry_FQ_JGS2.dat
+    scouting_notes:
+      - Source describes ASCII transmission and ellipsometry files with wavelength, transmittance, n, and k columns.
+      - This is a bulk fused-quartz sample, not a thin-film stack.
+      - It may be useful later as a substrate sanity fixture, but not as Phase 3F.2 thin-film validation.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: bulk_substrate_sanity_fixture
+    decision: bulk_substrate_not_thin_film_stack
+    blockers:
+      - No film layer or thin-film stack.
+      - Substrate thickness/backside treatment is not a thin-film-stack contract.
+      - Material constants and transmission are not a leakage-safe film holdout split.
+    exact_next_action: keep as possible substrate sanity check outside Phase 3F.2
+
+  - candidate_id: ksemaw_sample_workdirs_2023
+    title: KSEMAW open source thin-film characterization software
+    material_family: assorted thin-film examples
+    source_type: zenodo_article_github_software
+    source_refs:
+      - DOI 10.12688/openreseurope.13842.2
+      - Zenodo record 7505236
+    source_urls:
+      - https://zenodo.org/records/7505236
+      - https://github.com/mmonty1960/ksemaw
+    exact_files_or_records:
+      - software repository sample working directories
+    scouting_notes:
+      - Zenodo article states the GitHub repository includes sample working directories with assorted files.
+      - The scout did not identify one source-backed simple stack with paired independent material constants and measured holdout.
+      - This is promising software context but not yet a concrete dataset card.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 4
+      normal_incidence: false
+      open_format_priority: 3
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: software_or_simulation_fixture
+    decision: software_context_not_single_validation_candidate
+    blockers:
+      - No exact candidate sample selected.
+      - No hard material/holdout split visible from landing-page inspection.
+    exact_next_action: inspect repository sample directories only if source search stalls
+
+  - candidate_id: tmmax_material_database_2026
+    title: TMMax transfer-matrix method material database and examples
+    material_family: broad optical coating materials
+    source_type: software_documentation
+    source_refs:
+      - TMMax documentation
+    source_urls:
+      - https://tmmax.readthedocs.io/en/latest/user_guide/code_structure.html
+      - https://tmmax.readthedocs.io/en/latest/user_guide/motivation.html
+    exact_files_or_records:
+      - nk_data material database
+      - TMM analysis examples
+    scouting_notes:
+      - Documentation describes a TMM codebase using refractiveindex.info-derived n,k data.
+      - It is a software/reference implementation, not a measured thin-film validation dataset.
+      - Useful for implementation comparison only after a real source-data candidate is selected.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: software_or_simulation_fixture
+    decision: software_reference_not_measured_holdout
+    blockers:
+      - No independent measured R/T or ellipsometry holdout.
+      - No single source-backed stack selected.
+    exact_next_action: use as code comparison reference only after Phase 3F.2 candidate intake
+
+  - candidate_id: solpoc_multilayer_stack_2026
+    title: SolPOC optical response of multilayer stacks in Python
+    material_family: solar-energy multilayer coatings
+    source_type: software_article_zenodo_archive
+    source_refs:
+      - DOI 10.5334/jors.523
+      - Zenodo record 17347238
+    source_urls:
+      - https://openresearchsoftware.metajnl.com/articles/10.5334/jors.523
+      - https://zenodo.org/records/17347238
+      - https://github.com/SolPOCandCo/SolPOC
+    exact_files_or_records:
+      - Python optical-stack simulation code
+    scouting_notes:
+      - Article describes software for optical response of multilayer stacks.
+      - No source-backed measured stack holdout was identified during landing-page inspection.
+      - Useful software context, not a validation dataset.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: software_or_simulation_fixture
+    decision: software_not_measured_validation_dataset
+    blockers:
+      - No independent measured holdout.
+      - No source-backed material/holdout split.
+    exact_next_action: do not intake unless a measured example package is found
+
+  - candidate_id: multilayer_app_validation_examples_2026
+    title: Multilayer Stack Calculator validation and examples
+    material_family: generic optical thin films
+    source_type: browser_tmm_calculator
+    source_refs:
+      - Multilayer Stack Calculator public web app
+    source_urls:
+      - https://multilayer.app/
+    exact_files_or_records:
+      - calculator examples and validation page
+    scouting_notes:
+      - Public browser TMM calculator supports R/T/A and uses refractiveindex.info material data.
+      - This is a simulation tool, not an experimental measured-data package.
+      - It could be useful for cross-checking a chosen stack, but not as Phase 3F.2 data.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 4
+      normal_incidence: true
+      open_format_priority: 5
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: software_or_simulation_fixture
+    decision: simulation_tool_not_measured_holdout
+    blockers:
+      - No measured holdout.
+      - No source-file hash or archival source-data package.
+    exact_next_action: use only as independent calculator comparison if a real candidate clears gates

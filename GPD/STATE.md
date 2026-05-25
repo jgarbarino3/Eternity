@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3F simulator-validation fallback on simpler public thin-film data
+**Current focus:** Phase 3F.1 strict simple-stack simulator-validation scout
 
 ## Current Position
 
-**Current Phase:** 3F
-**Current Phase Name:** Simulator-Validation Fallback On Simpler Public Thin-Film Data
+**Current Phase:** 3F.1
+**Current Phase Name:** Simple Thin-Film Simulator-Validation Scout
 **Total Phases:** 3
-**Current Plan:** docs/phase3f_simulator_validation_fallback_plan.md
-**Total Plans in Phase:** 11
-**Status:** Active / Phase 3F simulator-validation fallback next
+**Current Plan:** docs/phase3f1_simulator_validation_scout.md
+**Total Plans in Phase:** 12
+**Status:** Active / Phase 3F.1 scout found 0 hard-gate candidates
 **Last Activity:** 2026-05-25
-**Last Activity Description:** Completed a Phase 3E.5 no-claim Saha stack-assumption sensitivity fixture. Twelve external silicon/interface/backside variants produced very small spread against the canonical exported Saha tables, but the exercise remains diagnostic only and does not recover the author model, validate Saha, or open Phase 4. Next remembered work is Phase 3F: validate the TMM machinery on a simpler public planar thin-film dataset with a complete source-backed contract.
+**Last Activity Description:** Completed the first Phase 3F.1 simple thin-film simulator-validation scout. Ten public simple/thin-film-adjacent leads were checked through the hard gate; zero cleared every flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is continuing Phase 3F.1 with stricter simple-stack leads or a pasted 5.5 Pro lead list.
 
 **Progress:** [██████████] 99%
 
@@ -137,12 +137,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   spread is small under the tested assumptions, but Saha remains
   non-promoting because the author substrate/backside/source-model contract is
   not recovered and residual-driven variant selection would leak.
+- Phase 3F.1 wrote `docs/phase3f1_simulator_validation_scout.md`, `.json`,
+  `docs/phase3f_simulator_validation_candidate_registry.yaml`, and the
+  `phase3f1-simulator-validation-scout` CLI. Ten public simple/thin-film-
+  adjacent candidate cards were gated; zero cleared every hard flag, no Phase
+  3F.2 intake opened, no TMM adapter started, and no residual modeling was run.
 
 ## Open Questions
 
-- Which simple public planar thin-film dataset can provide source-qualified
-  optical constants plus independent R/T or ellipsometry holdout without author
-  contact, so the TMM machinery can be tested before another ENZ claim attempt?
+- Which stricter simple public planar thin-film dataset can provide
+  source-qualified optical constants plus independent R/T or ellipsometry
+  holdout without author contact, so the TMM machinery can be tested before
+  another ENZ claim attempt?
 - If a candidate public dataset is found, what sample/stack, geometry,
   wavelength range, polarization, units, and leakage policy are source-proven?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
@@ -236,6 +242,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   silicon/interface/backside variants produce small spread, but every variant
   is an external assumption, the source-simulated Fig. 2b curves are
   author-curve context, and no residual-driven selection is allowed.
+- [Phase 3F.1]: The first simulator-validation scout found no intake-ready
+  simple stack. — Ten public simple/thin-film-adjacent leads were useful
+  failure memory, but zero cleared the full material/holdout/geometry/stack/
+  substrate/backside/leakage/hash gate, so Phase 3F.2 remains closed.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -256,9 +266,9 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3D: search current literature/public repositories for a validation
-  dataset with source-qualified optical constants plus independent R/T or
-  ellipsometry holdout.
+- Phase 3F.1: continue the bounded scout with stricter simple-stack leads or
+  a pasted 5.5 Pro lead list until one source-backed candidate clears every
+  hard flag.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

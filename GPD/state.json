@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3F simulator-validation fallback on simpler public thin-film data"
+    "current_focus": "Phase 3F.1 strict simple-stack simulator-validation scout"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -25,14 +25,14 @@
     }
   },
   "position": {
-    "current_phase": "3F",
-    "current_phase_name": "Simulator-Validation Fallback On Simpler Public Thin-Film Data",
+    "current_phase": "3F.1",
+    "current_phase_name": "Simple Thin-Film Simulator-Validation Scout",
     "total_phases": 3,
-    "current_plan": "docs/phase3f_simulator_validation_fallback_plan.md",
-    "total_plans_in_phase": 11,
-    "status": "Active / Phase 3F simulator-validation fallback next",
+    "current_plan": "docs/phase3f1_simulator_validation_scout.md",
+    "total_plans_in_phase": 12,
+    "status": "Active / Phase 3F.1 scout found 0 hard-gate candidates",
     "last_activity": "2026-05-25",
-    "last_activity_desc": "Completed a Phase 3E.5 no-claim Saha stack-assumption sensitivity fixture. Twelve external silicon/interface/backside variants produced very small spread against the canonical exported Saha tables, but the exercise remains diagnostic only and does not recover the author model, validate Saha, or open Phase 4. Next remembered work is Phase 3F: validate the TMM machinery on a simpler public planar thin-film dataset with a complete source-backed contract.",
+    "last_activity_desc": "Completed the first Phase 3F.1 simple thin-film simulator-validation scout. Ten public simple/thin-film-adjacent leads were checked through the hard gate; zero cleared every flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is continuing Phase 3F.1 with stricter simple-stack leads or a pasted 5.5 Pro lead list.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -466,10 +466,26 @@
       "phase4_candidate": false,
       "serious_core_allowed": false,
       "next": "Phase 3F simulator-validation fallback on simpler public thin-film data"
+    },
+    {
+      "phase": "3F.1",
+      "decision_ref": "docs/phase3f1_simulator_validation_scout.md",
+      "decision_json": "docs/phase3f1_simulator_validation_scout.json",
+      "candidate_registry": "docs/phase3f_simulator_validation_candidate_registry.yaml",
+      "decision": "phase3f1_no_candidate_ready_keep_phase3f_open",
+      "candidate_count": 10,
+      "hard_gate_pass_count": 0,
+      "selected_next_candidate_id": null,
+      "phase3f2_intake_allowed": false,
+      "residual_modeling_performed": false,
+      "tmm_adapter_started": false,
+      "phase4_candidate": false,
+      "serious_core_allowed": false,
+      "next": "Phase 3F.1 continue bounded scout with stricter simple-stack leads"
     }
   ],
   "open_questions": [
-    "Which simple public planar thin-film dataset can provide source-qualified optical constants plus independent R/T or ellipsometry holdout without author contact, so the TMM machinery can be tested before another ENZ claim attempt?",
+    "Which stricter simple public planar thin-film dataset can provide source-qualified optical constants plus independent R/T or ellipsometry holdout without author contact, so the TMM machinery can be tested before another ENZ claim attempt?",
     "If a candidate public dataset is found, what sample/stack, geometry, wavelength range, polarization, units, and leakage policy are source-proven?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
@@ -611,6 +627,11 @@
       "phase": "3E.5",
       "summary": "Saha sensitivity is non-promoting.",
       "rationale": "The tested silicon/interface/backside variants produce small spread, but every variant is an external assumption, the source-simulated Fig. 2b curves are author-curve context, and no residual-driven selection is allowed."
+    },
+    {
+      "phase": "3F.1",
+      "summary": "The first simulator-validation scout found no intake-ready simple stack.",
+      "rationale": "Ten public simple/thin-film-adjacent leads were useful failure memory, but zero cleared the full material/holdout/geometry/stack/substrate/backside/leakage/hash gate, so Phase 3F.2 remains closed."
     }
   ],
   "approximations": [
@@ -650,7 +671,7 @@
   },
   "propagated_uncertainties": [],
   "pending_todos": [
-    "Phase 3D: search current literature/public repositories for a validation dataset with source-qualified optical constants plus independent R/T or ellipsometry holdout.",
+    "Phase 3F.1: continue the bounded scout with stricter simple-stack leads or a pasted 5.5 Pro lead list until one source-backed candidate clears every hard flag.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.6 packet remains archived as the acceptance template if new source evidence or a future measurement appears; CompleteEASE re-export is not available under current constraints.",
@@ -666,7 +687,8 @@
     "Phase 3A normalization_gate is blocked.",
     "30_20_10 filename-to-thesis provenance is unresolved.",
     "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
-    "Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change thresholds, contact authors, or choose more source-model variants without new evidence for exact roughness/back-reflection or CompleteEASE acquisition parity."
+    "Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change thresholds, contact authors, or choose more source-model variants without new evidence for exact roughness/back-reflection or CompleteEASE acquisition parity.",
+    "Phase 3F.1 found no hard-gate-ready simple thin-film candidate in the first 10-card scout, so Phase 3F.2 intake and residual modeling remain blocked."
   ],
   "continuation": {
     "schema_version": 1,
