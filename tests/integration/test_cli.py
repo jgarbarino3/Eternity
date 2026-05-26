@@ -119,13 +119,19 @@ def test_phase3f1_simulator_validation_scout_command_writes_artifacts(
 ) -> None:
     result = runner.invoke(
         app,
-        ["phase3f1-simulator-validation-scout", "--output-dir", str(tmp_path)],
+        [
+            "phase3f1-simulator-validation-scout",
+            "--output-dir",
+            str(tmp_path),
+            "--report-stem",
+            "phase3f1_cli_smoke",
+        ],
     )
 
     assert result.exit_code == 0, result.output
-    json_path = tmp_path / "phase3f1_simulator_validation_scout.json"
+    json_path = tmp_path / "phase3f1_cli_smoke.json"
     assert json_path.exists()
-    assert (tmp_path / "phase3f1_simulator_validation_scout.md").exists()
+    assert (tmp_path / "phase3f1_cli_smoke.md").exists()
 
     packet = json.loads(json_path.read_text(encoding="utf-8"))
     assert packet["decision"]["phase3f2_intake_allowed"] is False

@@ -15,11 +15,17 @@ DEFAULT_REGISTRY_PATH = Path("docs/phase3f_simulator_validation_candidate_regist
 
 HardGateLabel = Literal[
     "simulator_validation_candidate",
+    "simulator_validation_fallback",
     "promising_but_blocked",
     "constants_only_fixture",
     "measured_only_fixture",
     "software_or_simulation_fixture",
     "bulk_substrate_sanity_fixture",
+    "weak_within_dataset_holdout",
+    "literature_reproduction_fixture",
+    "calibration_only_no_holdout",
+    "blocked_source_data_lead",
+    "rejected_request_only",
     "rejected_candidate",
 ]
 
@@ -94,10 +100,17 @@ class Phase3F1Candidate(BaseModel):
 
 class Phase3F1Registry(BaseModel):
     phase_id: str
+    report_title: str = "Simple Thin-Film Simulator-Validation Scout"
     registry_version: int
     updated_at: str
     search_scope: str
-    candidate_limit: int = Field(ge=1, le=15)
+    candidate_limit: int = Field(ge=1, le=20)
+    selected_next_phase: str = (
+        "Phase 3F.2 - source-file intake for selected simple thin-film candidate"
+    )
+    blocked_next_phase: str = (
+        "Phase 3F.1 - continue bounded scout with stricter simple-stack leads"
+    )
     candidates: list[Phase3F1Candidate]
 
     model_config = ConfigDict(extra="forbid")
@@ -182,8 +195,8 @@ def build_phase3f1_packet(registry_path: Path = DEFAULT_REGISTRY_PATH) -> dict[s
     )
     selected_id = selected.candidate_id if selected else None
     return {
-        "phase_id": "Phase 3F.1",
-        "title": "Simple Thin-Film Simulator-Validation Scout",
+        "phase_id": registry.phase_id,
+        "title": registry.report_title,
         "generated_at": datetime.now(tz=UTC).isoformat(),
         "inputs": {"registry_path": str(registry_path)},
         "search_bounds": {
@@ -221,16 +234,14 @@ def build_phase3f1_packet(registry_path: Path = DEFAULT_REGISTRY_PATH) -> dict[s
             "serious_core_allowed_now": False,
             "claim_standard_changed": False,
             "recommended_next_phase": (
-                "Phase 3F.2 - source-file intake for selected simple thin-film candidate"
-                if selected
-                else "Phase 3F.1 - continue bounded scout with stricter simple-stack leads"
+                registry.selected_next_phase if selected else registry.blocked_next_phase
             ),
         },
         "stop_rule": {
             "residual_modeling_stop_active": True,
             "reason": (
-                "Phase 3F.1 is scouting/gating only; residuals require a later "
-                "Phase 3F.2 source-file intake and frozen no-fit adapter."
+                f"{registry.phase_id} is scouting/gating only; residuals require a "
+                "later Phase 3F.2 source-file intake and frozen no-fit adapter."
             ),
         },
     }
@@ -262,7 +273,7 @@ def phase3f1_markdown(packet: dict[str, Any]) -> str:
     selected = decision["selected_next_candidate_id"] or "none"
     return "\n".join(
         [
-            "# Phase 3F.1 - Simple Thin-Film Simulator-Validation Scout",
+            f"# {packet['phase_id']} - {packet['title']}",
             "",
             "## Decision",
             "",
@@ -307,10 +318,13 @@ def phase3f1_markdown(packet: dict[str, Any]) -> str:
 def write_phase3f1_packet(
     output_dir: Path,
     packet: dict[str, Any],
+    report_stem: str = "phase3f1_simulator_validation_scout",
 ) -> tuple[Path, Path]:
+    if report_stem != Path(report_stem).name or not report_stem:
+        raise ValueError("report_stem must be a non-empty filename stem")
     output_dir.mkdir(parents=True, exist_ok=True)
-    json_path = output_dir / "phase3f1_simulator_validation_scout.json"
-    md_path = output_dir / "phase3f1_simulator_validation_scout.md"
+    json_path = output_dir / f"{report_stem}.json"
+    md_path = output_dir / f"{report_stem}.md"
     json_path.write_text(json.dumps(packet, indent=2, sort_keys=True), encoding="utf-8")
     md_path.write_text(phase3f1_markdown(packet), encoding="utf-8")
     return json_path, md_path

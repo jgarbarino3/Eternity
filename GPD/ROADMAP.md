@@ -562,11 +562,14 @@ Next:
   public simple/thin-film-adjacent leads were gated, zero cleared every hard
   flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual
   modeling ran.
-- Continue `Phase 3F.1 - strict simple-stack simulator-validation scout`:
-  evaluate the user's 5.5 Pro lead list if supplied, or run another bounded
-  source search for a boring public planar stack with source-backed material
-  constants, measured R/T or ellipsometry, geometry, substrate/backside
-  handling, leakage boundaries, and source/hash readiness.
+- Phase 3F.1B has completed the pasted GPT-5.5 Pro lead gate. Sixteen leads
+  were encoded as candidate cards and gated; zero cleared every hard flag, no
+  Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling
+  ran.
+- Continue `Phase 3F.1C - strict simple-stack source search or clean-lead
+  intake`: search for or receive one boring public planar stack with
+  source-backed material constants, measured R/T or ellipsometry, geometry,
+  substrate/backside handling, leakage boundaries, and source/hash readiness.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

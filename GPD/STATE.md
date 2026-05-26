@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3F.1 strict simple-stack simulator-validation scout
+**Current focus:** Phase 3F.1C strict simple-stack simulator-validation scout
 
 ## Current Position
 
-**Current Phase:** 3F.1
-**Current Phase Name:** Simple Thin-Film Simulator-Validation Scout
+**Current Phase:** 3F.1C
+**Current Phase Name:** Strict Simple-Stack Source Search Or Clean-Lead Intake
 **Total Phases:** 3
-**Current Plan:** docs/phase3f1_simulator_validation_scout.md
-**Total Plans in Phase:** 12
-**Status:** Active / Phase 3F.1 scout found 0 hard-gate candidates
-**Last Activity:** 2026-05-25
-**Last Activity Description:** Completed the first Phase 3F.1 simple thin-film simulator-validation scout. Ten public simple/thin-film-adjacent leads were checked through the hard gate; zero cleared every flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is continuing Phase 3F.1 with stricter simple-stack leads or a pasted 5.5 Pro lead list.
+**Current Plan:** docs/phase3f1b_pro_lead_gate.md
+**Total Plans in Phase:** 13
+**Status:** Active / Phase 3F.1B Pro lead gate found 0 hard-gate candidates
+**Last Activity:** 2026-05-26
+**Last Activity Description:** Completed Phase 3F.1B by encoding the pasted GPT-5.5 Pro list into 16 candidate cards and running the same strict scout gate. Zero candidates cleared every hard flag; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1C: continue strict simple-stack source search or intake a newly supplied clean lead.
 
 **Progress:** [██████████] 99%
 
@@ -142,6 +142,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   `phase3f1-simulator-validation-scout` CLI. Ten public simple/thin-film-
   adjacent candidate cards were gated; zero cleared every hard flag, no Phase
   3F.2 intake opened, no TMM adapter started, and no residual modeling was run.
+- Phase 3F.1B wrote `docs/phase3f1b_pro_lead_candidate_registry.yaml`,
+  `docs/phase3f1b_pro_lead_gate.md`, and `.json`. Sixteen pasted GPT-5.5 Pro
+  leads were gated; zero cleared every hard flag, no Phase 3F.2 intake opened,
+  no TMM adapter started, and no residual modeling was run.
 
 ## Open Questions
 
@@ -246,6 +250,9 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   simple stack. — Ten public simple/thin-film-adjacent leads were useful
   failure memory, but zero cleared the full material/holdout/geometry/stack/
   substrate/backside/leakage/hash gate, so Phase 3F.2 remains closed.
+- [Phase 3F.1B]: The 5.5 Pro lead list found no intake-ready candidate either.
+  — Sixteen pasted leads yielded useful fallback/rejection memory, but zero
+  cleared the full hard gate, so Phase 3F.2 remains closed.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -266,9 +273,8 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3F.1: continue the bounded scout with stricter simple-stack leads or
-  a pasted 5.5 Pro lead list until one source-backed candidate clears every
-  hard flag.
+- Phase 3F.1C: continue strict simple-stack source search or intake a newly
+  supplied clean lead until one source-backed candidate clears every hard flag.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

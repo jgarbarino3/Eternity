@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3F.1 strict simple-stack simulator-validation scout"
+    "current_focus": "Phase 3F.1C strict simple-stack simulator-validation scout"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -25,14 +25,14 @@
     }
   },
   "position": {
-    "current_phase": "3F.1",
-    "current_phase_name": "Simple Thin-Film Simulator-Validation Scout",
+    "current_phase": "3F.1C",
+    "current_phase_name": "Strict Simple-Stack Source Search Or Clean-Lead Intake",
     "total_phases": 3,
-    "current_plan": "docs/phase3f1_simulator_validation_scout.md",
-    "total_plans_in_phase": 12,
-    "status": "Active / Phase 3F.1 scout found 0 hard-gate candidates",
-    "last_activity": "2026-05-25",
-    "last_activity_desc": "Completed the first Phase 3F.1 simple thin-film simulator-validation scout. Ten public simple/thin-film-adjacent leads were checked through the hard gate; zero cleared every flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is continuing Phase 3F.1 with stricter simple-stack leads or a pasted 5.5 Pro lead list.",
+    "current_plan": "docs/phase3f1b_pro_lead_gate.md",
+    "total_plans_in_phase": 13,
+    "status": "Active / Phase 3F.1B Pro lead gate found 0 hard-gate candidates",
+    "last_activity": "2026-05-26",
+    "last_activity_desc": "Completed Phase 3F.1B by encoding the pasted GPT-5.5 Pro list into 16 candidate cards and running the same strict scout gate. Zero candidates cleared every hard flag; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1C: continue strict simple-stack source search or intake a newly supplied clean lead.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -482,6 +482,31 @@
       "phase4_candidate": false,
       "serious_core_allowed": false,
       "next": "Phase 3F.1 continue bounded scout with stricter simple-stack leads"
+    },
+    {
+      "phase": "3F.1B",
+      "decision_ref": "docs/phase3f1b_pro_lead_gate.md",
+      "decision_json": "docs/phase3f1b_pro_lead_gate.json",
+      "candidate_registry": "docs/phase3f1b_pro_lead_candidate_registry.yaml",
+      "decision": "phase3f1_no_candidate_ready_keep_phase3f_open",
+      "candidate_count": 16,
+      "hard_gate_pass_count": 0,
+      "selected_next_candidate_id": null,
+      "phase3f2_intake_allowed": false,
+      "residual_modeling_performed": false,
+      "tmm_adapter_started": false,
+      "phase4_candidate": false,
+      "serious_core_allowed": false,
+      "closest_non_enz_fallbacks": [
+        "structural_color_froc_2023",
+        "fano_ultrathin_coatings_froc_2021",
+        "ultrathin_gold_absorber_2020",
+        "sb2s3_tamm_cavity_2023",
+        "transparent_electrode_umtf_2020",
+        "pfpe_pvdf_thin_films_2021"
+      ],
+      "closest_tin_enz_adjacent_lead": "tin_mkid_optical_stack_2022",
+      "next": "Phase 3F.1C continue strict simple-stack source search or intake a newly supplied clean lead"
     }
   ],
   "open_questions": [
@@ -632,6 +657,11 @@
       "phase": "3F.1",
       "summary": "The first simulator-validation scout found no intake-ready simple stack.",
       "rationale": "Ten public simple/thin-film-adjacent leads were useful failure memory, but zero cleared the full material/holdout/geometry/stack/substrate/backside/leakage/hash gate, so Phase 3F.2 remains closed."
+    },
+    {
+      "phase": "3F.1B",
+      "summary": "The 5.5 Pro lead list found no intake-ready candidate either.",
+      "rationale": "Sixteen pasted leads yielded useful fallback/rejection memory, but zero cleared the full hard gate, so Phase 3F.2 remains closed."
     }
   ],
   "approximations": [
@@ -671,7 +701,7 @@
   },
   "propagated_uncertainties": [],
   "pending_todos": [
-    "Phase 3F.1: continue the bounded scout with stricter simple-stack leads or a pasted 5.5 Pro lead list until one source-backed candidate clears every hard flag.",
+    "Phase 3F.1C: continue strict simple-stack source search or intake a newly supplied clean lead until one source-backed candidate clears every hard flag.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.6 packet remains archived as the acceptance template if new source evidence or a future measurement appears; CompleteEASE re-export is not available under current constraints.",
@@ -688,7 +718,8 @@
     "30_20_10 filename-to-thesis provenance is unresolved.",
     "Absolute reflectance calibration for thesis Intensity exports remains unresolved and currently blocked after Phase 3A.12 manual source review, even with related CompleteEASE/Woollam source candidates.",
     "Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change thresholds, contact authors, or choose more source-model variants without new evidence for exact roughness/back-reflection or CompleteEASE acquisition parity.",
-    "Phase 3F.1 found no hard-gate-ready simple thin-film candidate in the first 10-card scout, so Phase 3F.2 intake and residual modeling remain blocked."
+    "Phase 3F.1 found no hard-gate-ready simple thin-film candidate in the first 10-card scout, so Phase 3F.2 intake and residual modeling remain blocked.",
+    "Phase 3F.1B found no hard-gate-ready candidate in the pasted 16-lead GPT-5.5 Pro list, so Phase 3F.2 intake and residual modeling remain blocked."
   ],
   "continuation": {
     "schema_version": 1,

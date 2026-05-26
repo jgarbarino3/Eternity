@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
+Choose `Phase 3F.1C - continue strict simple-stack source search or intake a newly supplied clean lead`.
 
 Why:
 
@@ -1081,7 +1081,11 @@ simple/thin-film-adjacent public leads. Zero candidates cleared every hard
 flag, so no Phase 3F.2 intake opened, no TMM adapter started, and no residual
 modeling was run. The useful next step is to continue the simple-stack scout
 until one source-backed public dataset is complete enough to validate the local
-TMM machinery without ENZ claim pressure.
+TMM machinery without ENZ claim pressure. Phase 3F.1B then encoded the pasted
+GPT-5.5 Pro lead list as 16 candidate cards and ran the same hard gate. It
+again found 0 hard-gate passes, with the best non-ENZ simulator fallbacks still
+blocked by unproven independent constants, leakage boundaries, file-level
+semantics, or source/hash readiness.
 
 Recommended decision scope:
 
@@ -1089,7 +1093,7 @@ Recommended decision scope:
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
 2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
    and public-dataset acceptance gate.
-3. Continue Phase 3F.1 until a boring public planar thin-film validation
+3. Continue Phase 3F.1C until a boring public planar thin-film validation
    fixture clears the hard gate; only then open Phase 3F.2 intake.
 4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
@@ -1119,11 +1123,13 @@ docs/phase3e1_dataset_candidate_registry.yaml
 
 The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 15
 known candidates evaluated, 0 Phase 4 candidates opened. Phase 3E.4 and Phase
-3E.5 have now run, and Phase 3F.1 completed its first bounded scout with 10
-candidate cards and 0 hard-gate passes. The current recommended next phase is
-`Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
+3E.5 have now run, Phase 3F.1 completed its first bounded scout with 10
+candidate cards and 0 hard-gate passes, and Phase 3F.1B processed the pasted
+GPT-5.5 Pro list with 16 candidate cards and 0 hard-gate passes. The current
+recommended next phase is `Phase 3F.1C - continue strict simple-stack source
+search or intake a newly supplied clean lead`.
 
-Phase 3F.1 continuation should:
+Phase 3F.1C continuation should:
 
 - Search for a deliberately simple public planar thin-film dataset rather than
   another ENZ-first package.
@@ -1278,11 +1284,12 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
-  The first scout pass found no candidate ready for Phase 3F.2 intake, so the
-  next pass should either evaluate the user's 5.5 Pro lead list through the
-  same registry or run another bounded source search for simpler, cleaner
-  stacks.
+- `Phase 3F.1C - continue strict simple-stack source search or intake a newly
+  supplied clean lead`. The first scout pass and the Pro-lead pass both found
+  no candidate ready for Phase 3F.2 intake, so the next pass should either
+  inspect a newly supplied clean source-file package or search specifically for
+  boring teaching/benchmark coating datasets with independent constants and
+  measured R/T.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1312,10 +1319,43 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1 - continue bounded scout with stricter simple-stack leads`.
-  Planning: GPT-5.5 `high`; implementation: `medium` for another scout/report
-  pass, `high` only if a candidate clears every hard flag and the work moves to
-  Phase 3F.2 source-file intake.
+- `Phase 3F.1B - 5.5 Pro lead gate`, now completed, followed by `Phase 3F.1C -
+  continue strict simple-stack source search or intake a newly supplied clean
+  lead`.
+
+#### Phase 3F.1B: 5.5 Pro Lead Gate
+
+Artifacts:
+
+- `docs/phase3f1b_pro_lead_candidate_registry.yaml`
+- `docs/phase3f1b_pro_lead_gate.md`
+- `docs/phase3f1b_pro_lead_gate.json`
+
+Result:
+
+- Status: `phase3f1_no_candidate_ready_keep_phase3f_open`.
+- Sixteen pasted GPT-5.5 Pro leads were encoded as candidate cards and gated
+  with the same Phase 3F.1 hard flags.
+- Hard-gate pass count: `0`.
+- Selected next candidate: `none`.
+- Phase 3F.2 intake allowed: `false`.
+- TMM adapter started: `false`.
+- Residual modeling performed: `false`.
+- Phase 4 candidate: `false`.
+- Closest non-ENZ simulator fallbacks: structural-color FROC, FROC 2021,
+  ultrathin Au absorber, Sb2S3 Tamm cavity, transparent electrode, and PFPE/PVDF.
+  They remain source-file audit targets only because at least one hard flag
+  remains unresolved.
+- Closest TiN/ENZ-adjacent lead: TiN MKID absorber stack. It remains weak only
+  because fabricated final-stack thicknesses were not measured and the exact
+  Zenodo file contract was not verified in this scout.
+
+Recommended next phase:
+
+- `Phase 3F.1C - continue strict simple-stack source search or intake a newly
+  supplied clean lead`. Planning: GPT-5.5 `high`; implementation: `medium` for
+  another scout/report pass, `high` only if a candidate clears every hard flag
+  and the work moves to Phase 3F.2 source-file intake.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

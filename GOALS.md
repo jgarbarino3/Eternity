@@ -145,12 +145,14 @@ candidates, and Phase 3E.5 preserved Saha as a non-promoting sensitivity
 fixture. Phase 3F.1 then ran a bounded simple thin-film simulator-validation
 scout: 10 public simple/thin-film-adjacent leads were gated, 0 cleared every
 hard flag, no Phase 3F.2 intake opened, and no TMM adapter or residual modeling
-ran. The active next step is now `Phase 3F.1 - continue bounded scout with
-stricter simple-stack leads`. Source-qualified TiN/TiON optical constants,
+ran. Phase 3F.1B then gated the pasted GPT-5.5 Pro list: 16 candidate cards,
+0 hard-gate passes, no Phase 3F.2 intake, and no residual modeling. The active
+next step is now `Phase 3F.1C - continue strict simple-stack source search or
+intake a newly supplied clean lead`. Source-qualified TiN/TiON optical constants,
 thesis reflectance spectra, material models, St Andrews diagnostics, public
-package failures, Saha sensitivity diagnostics, Phase 3F.1 rejection cards, and
-provenance gaps remain in the registry without promoting them to calibrated
-evidence.
+package failures, Saha sensitivity diagnostics, Phase 3F.1/3F.1B rejection
+cards, and provenance gaps remain in the registry without promoting them to
+calibrated evidence.
 
 Current blocker:
 
@@ -234,11 +236,13 @@ Current blocker:
 - Phase 3F.1 ran a contract-first simulator-validation scout over 10 public
   simple/thin-film-adjacent leads. Zero candidates cleared the full hard gate,
   so the result is useful failure memory rather than a validation fixture.
-- The next remembered action is `Phase 3F.1 - continue bounded scout with
-  stricter simple-stack leads`: evaluate the user's 5.5 Pro lead list, if
-  supplied, or run another bounded source search for a boring public planar
-  thin-film dataset with a complete source-backed stack/measurement contract
-  before returning to ENZ evidence attempts.
+- Phase 3F.1B gated the user's pasted GPT-5.5 Pro list. Sixteen candidate cards
+  produced zero hard-gate passes. The closest non-ENZ simulator fallbacks are
+  useful source-file audit targets, but none is Phase 3F.2-ready.
+- The next remembered action is `Phase 3F.1C - continue strict simple-stack
+  source search or intake a newly supplied clean lead`: search for a boring
+  public planar thin-film dataset with a complete source-backed stack/
+  measurement contract before returning to ENZ evidence attempts.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -343,6 +347,10 @@ Current blocker:
   simulator-validation scout found 0 hard-gate-ready candidates across 10
   public simple/thin-film-adjacent leads, so Phase 3F remains open and Phase
   3F.2 stays closed.
+- Phase 3F.1B has enough information to stop before intake: the pasted GPT-5.5
+  Pro list produced 16 candidate cards and 0 hard-gate-ready candidates. This
+  confirms the no-ENZ-public-candidate boundary while giving a better shortlist
+  of non-ENZ simulator-validation fallback leads for future source-file audit.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

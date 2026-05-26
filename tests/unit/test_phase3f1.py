@@ -120,9 +120,15 @@ def test_phase3f1_evaluation_reports_specific_missing_flags() -> None:
 
 def test_phase3f1_writes_report_artifacts(tmp_path: Path) -> None:
     packet = build_phase3f1_packet(DEFAULT_REGISTRY_PATH)
-    json_path, md_path = write_phase3f1_packet(tmp_path, packet)
+    json_path, md_path = write_phase3f1_packet(
+        tmp_path,
+        packet,
+        report_stem="custom_phase3f1_report",
+    )
 
+    assert json_path.name == "custom_phase3f1_report.json"
     assert json_path.exists()
+    assert md_path.name == "custom_phase3f1_report.md"
     assert md_path.exists()
     assert "Simple Thin-Film Simulator-Validation Scout" in md_path.read_text(
         encoding="utf-8"

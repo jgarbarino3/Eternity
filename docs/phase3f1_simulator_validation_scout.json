@@ -530,7 +530,7 @@
     "status": "phase3f1_no_candidate_ready_keep_phase3f_open",
     "tmm_adapter_started": false
   },
-  "generated_at": "2026-05-25T14:30:02.772472+00:00",
+  "generated_at": "2026-05-26T08:54:03.111586+00:00",
   "hard_gate_flags": {
     "geometry_specified": "source-backed wavelength axis, angle, polarization, and units",
     "leakage_safe_no_fit_split": "material model and measured holdout can be used without residual-driven tuning",

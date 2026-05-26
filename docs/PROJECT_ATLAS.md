@@ -121,10 +121,14 @@ Current progress:
   simulator-validation scout. Ten public simple/thin-film-adjacent leads were
   gated; zero cleared every hard flag, no Phase 3F.2 intake opened, no TMM
   adapter started, and no residual modeling ran.
-- **Next**: Continue Phase 3F.1 with stricter simple-stack leads or the user's
-  5.5 Pro lead list. Use the same hard gate and open Phase 3F.2 only if one
-  boring public stack has source-backed material constants, measured R/T or
-  ellipsometry, geometry, substrate/backside handling, and leakage boundaries.
+- **Done/pro-leads-no-candidate-ready**: Phase 3F.1B 5.5 Pro lead gate. The
+  pasted 16-lead list was encoded into candidate cards and gated; zero cleared
+  every hard flag, no Phase 3F.2 intake opened, and no residual modeling ran.
+- **Next**: Continue Phase 3F.1C strict simple-stack source search or intake a
+  newly supplied clean lead. Use the same hard gate and open Phase 3F.2 only if
+  one boring public stack has source-backed material constants, measured R/T or
+  ellipsometry, geometry, substrate/backside handling, leakage boundaries, and
+  source/hash readiness.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -189,7 +193,8 @@ calibrated_linear_evidence
   -> COMPLETE/0-PHASE-4: Phase 3E.4 renewed ENZ public-data search
   -> COMPLETE/SENSITIVITY: Phase 3E.5 Saha stack-assumption fixture
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1 simulator-validation scout
-  -> NEXT: continue Phase 3F.1 strict simple-stack source search
+  -> COMPLETE/NO-CANDIDATE: Phase 3F.1B 5.5 Pro lead gate
+  -> NEXT: continue Phase 3F.1C strict simple-stack source search
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -310,9 +315,10 @@ small, but this is still not validation: the author substrate/backside/source
 model is not recovered and residual-driven variant selection would leak.
 Phase 3F.1 then ran a bounded simple thin-film simulator-validation scout:
 10 public leads were recorded as candidate cards, but 0 cleared every hard
-gate. Phase 3F remains open as the next serious-core fallback; Phase 3F.2
-intake stays closed until a simpler public planar thin-film dataset has a
-complete source-backed contract.
+gate. Phase 3F.1B then encoded the pasted GPT-5.5 Pro list as 16 candidate
+cards and again found 0 hard-gate passes. Phase 3F remains open as the next
+serious-core fallback; Phase 3F.2 intake stays closed until a simpler public
+planar thin-film dataset has a complete source-backed contract.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

@@ -485,6 +485,11 @@ PHASE3F1_OUTPUT_DIR_OPTION = typer.Option(
     "--output-dir",
     help="Optional directory for JSON and Markdown scout artifacts.",
 )
+PHASE3F1_REPORT_STEM_OPTION = typer.Option(
+    "phase3f1_simulator_validation_scout",
+    "--report-stem",
+    help="Output filename stem for Phase 3F.1 scout artifacts.",
+)
 
 
 @app.command()
@@ -1207,6 +1212,7 @@ def phase3e5_saha_sensitivity(
 def phase3f1_simulator_validation_scout(
     registry_path: Path = PHASE3F1_REGISTRY_OPTION,
     output_dir: Path | None = PHASE3F1_OUTPUT_DIR_OPTION,
+    report_stem: str = PHASE3F1_REPORT_STEM_OPTION,
 ) -> None:
     """Write the Phase 3F.1 simple thin-film simulator-validation scout packet."""
 
@@ -1217,7 +1223,11 @@ def phase3f1_simulator_validation_scout(
         raise typer.Exit(1) from error
 
     if output_dir is not None:
-        json_path, md_path = write_phase3f1_packet(output_dir, packet)
+        json_path, md_path = write_phase3f1_packet(
+            output_dir,
+            packet,
+            report_stem=report_stem,
+        )
         typer.echo(f"wrote {json_path}")
         typer.echo(f"wrote {md_path}")
         return

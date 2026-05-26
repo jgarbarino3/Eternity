@@ -83,3 +83,15 @@ The first bounded scout pass is recorded in
 Result: 10 public simple/thin-film-adjacent leads were gated, 0 cleared every
 hard flag, no Phase 3F.2 intake opened, no TMM adapter started, and no residual
 modeling was run. Phase 3F remains open under the same stop rules.
+
+## Phase 3F.1B Result
+
+The pasted GPT-5.5 Pro lead list is recorded in
+`docs/phase3f1b_pro_lead_candidate_registry.yaml`, with generated reports at
+`docs/phase3f1b_pro_lead_gate.md` and
+`docs/phase3f1b_pro_lead_gate.json`.
+
+Result: 16 candidate cards were gated, 0 cleared every hard flag, no Phase
+3F.2 intake opened, no TMM adapter started, and no residual modeling was run.
+The best non-ENZ simulator fallbacks are useful future source-file audit
+targets, but they are not intake-ready validation candidates yet.

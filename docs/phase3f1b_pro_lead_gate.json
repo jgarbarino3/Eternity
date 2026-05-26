@@ -1,0 +1,900 @@
+{
+  "candidate_evaluations": [
+    {
+      "blockers": [
+        "Fabricated final-stack layer thicknesses were not measured by the source paper.",
+        "Exact machine-readable Zenodo files were not verified in this scout pass.",
+        "Any locked TMM run would use nominal design thicknesses, not measured final-stack thicknesses."
+      ],
+      "candidate_id": "tin_mkid_optical_stack_2022",
+      "computed_gate_label": "weak_within_dataset_holdout",
+      "decision": "blocked_by_unmeasured_fabricated_stack_thicknesses_and_unverified_zenodo_file_contract",
+      "exact_next_action": "inspect Zenodo 5549994 file manifest only as a weak TiN fixture, not as calibrated evidence",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "TiN / SiO2 / Al absorber stack",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "stack_thickness_specified",
+        "leakage_safe_no_fit_split",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "weak_within_dataset_holdout",
+      "source_type": "springer_zenodo_lead",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": true,
+        "open_format_priority": 3,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 1
+      },
+      "title": "Model and Measurements of an Optical Stack for Broadband Visible to Near-Infrared Absorption in TiN MKIDs"
+    },
+    {
+      "blockers": [
+        "Source-page inspection does not yet prove a single sample with independent constants and measured holdout.",
+        "Geometry and stack/thickness semantics need file-level audit before Phase 3F.2.",
+        "Leakage boundary is not proven from the README alone."
+      ],
+      "candidate_id": "fano_ultrathin_coatings_froc_2021",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "promising_but_requires_repository_contract_audit",
+      "exact_next_action": "clone or download repository in a later intake only if selected by a stricter Phase 3F.2 plan",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "metal/dielectric ultrathin Fano-resonant coatings",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "github_article_source_data",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": false,
+        "open_format_priority": 2,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "Fano-resonant ultrathin-film optical coatings"
+    },
+    {
+      "blockers": [
+        "Independent material constants are not proven from source-page inspection.",
+        "Source-page inspection does not prove comparison spectra were generated without measured-holdout tuning."
+      ],
+      "candidate_id": "structural_color_froc_2023",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "promising_but_leakage_boundary_unproven_before_source_file_audit",
+      "exact_next_action": "inspect source-data workbook sheets and GitHub code only under a Phase 3F.2 candidate-intake plan",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ultrathin metal/dielectric color coatings",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "nature_source_data_github_code",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": false,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "Fano resonant optical coatings platform for full gamut and high-purity structural colors"
+    },
+    {
+      "blockers": [
+        "Support-layer constants and ultrathin Au model are derived from the same spectral workflow.",
+        "Substrate/backside/coherence treatment still needs source-file audit."
+      ],
+      "candidate_id": "ultrathin_gold_absorber_2020",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "promising_but_material_parameters_and_holdout_are_not_cleanly_split",
+      "exact_next_action": "inspect Zenodo/source-data files only if the fallback suite prioritizes IR absorber validation",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "SiN / ultrathin Au absorber stack",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "nature_source_data_zenodo",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 3
+      },
+      "title": "Ultrathin 2 nm gold as impedance-matched absorber for infrared light"
+    },
+    {
+      "blockers": [
+        "Public source page does not prove included n,k tables are independent of measured holdout.",
+        "Code is request-only, so source-model parity is unavailable without author contact."
+      ],
+      "candidate_id": "sb2s3_tamm_cavity_2023",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "promising_but_source_data_mixes_experimental_and_simulation_outputs",
+      "exact_next_action": "inspect Source Data workbook/zip only under a Phase 3F.2 intake plan",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "Au / SiO2 / Sb2S3 / multilayer Tamm cavity",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "nature_source_data_matlab_request",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": false,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "Tunable Tamm plasmon cavity based on phase-change material Sb2S3"
+    },
+    {
+      "blockers": [
+        "Machine-readable measured holdout is not proven from source-page inspection.",
+        "Substrate/backside handling and leakage boundary remain partial."
+      ],
+      "candidate_id": "transparent_electrode_umtf_2020",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "blocked_until_source_data_proves_independent_holdout_and_backside_contract",
+      "exact_next_action": "inspect source-data workbook for absolute T/R, n,k, and thickness tables before considering intake",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "PET / TiO2 / Ag / dielectric transparent electrode",
+      "missing_required_flags": [
+        "machine_readable_measured_holdout",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "nature_source_data",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 3
+      },
+      "title": "Ultrathin-metal-film-based transparent electrodes with relative transmittance surpassing 100 percent"
+    },
+    {
+      "blockers": [
+        "Refractive indices and corrected transmission are produced inside one measurement/modeling workflow.",
+        "Coherent film versus incoherent substrate treatment is not source-frozen at scout level."
+      ],
+      "candidate_id": "pfpe_pvdf_thin_films_2021",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "boring_and_public_but_leakage_and_coherence_are_not_gate_clear",
+      "exact_next_action": "inspect downloaded CSV metadata only if a deliberately simple polymer fallback is desired",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "PFPE substrate / PVDF thin film",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "mendeley_csv_data_article",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 1,
+        "substrate_backside_clarity_rank": 3
+      },
+      "title": "Data for optical transmission and refractive index of PFPE and PVDF thin films"
+    },
+    {
+      "blockers": [
+        "Model constants are fitted from the same spectra that would be compared.",
+        "Substrate/backside treatment still needs source-file audit."
+      ],
+      "candidate_id": "filmoptics_inverse_solutions_2022_pro",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "calibration_only_inverse_workflow_no_independent_holdout",
+      "exact_next_action": "keep as inverse-workflow fixture, not simulator-validation intake",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO / NiO / MAPbI3 on glass",
+      "missing_required_flags": [
+        "machine_readable_measured_holdout",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "calibration_only_no_holdout",
+      "source_type": "zenodo_github_inverse_workflow",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 2,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 4
+      },
+      "title": "Extracting film thickness and optical constants from spectrophotometric data by evolutionary optimization"
+    },
+    {
+      "blockers": [
+        "Voltage-dependent electrochemical/nanocrystal state is outside simple linear planar TMM validation.",
+        "Effective n,k and static measured holdout are not paired from source-page inspection."
+      ],
+      "candidate_id": "azo_infrared_emissivity_regulator_2023",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_dynamic_device_not_static_tmm_validation",
+      "exact_next_action": "keep as future nonlinear/AZO fixture unless source files expose a static zero-bias simple-stack subset",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "AZO nanocrystal film / ITO / BaF2 electrochemical emitter",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable"
+      ],
+      "proposed_scout_label": "literature_reproduction_fixture",
+      "source_type": "nature_source_data_nonlinear_dynamic_fixture",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 4
+      },
+      "title": "Transparent dynamic infrared emissivity regulators"
+    },
+    {
+      "blockers": [
+        "Measured optical holdout is nonlinear SHG/time-varying physics, not static R/T.",
+        "Material constants and stack/backside contract are not source-proven from the public page."
+      ],
+      "candidate_id": "shg_time_varying_interface_2024",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_source_data_not_static_tmm_validation",
+      "exact_next_action": "inspect only for future nonlinear-fixture memory, not Phase 3F.2 static validation",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO/Au ENZ nonlinear interface",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable"
+      ],
+      "proposed_scout_label": "literature_reproduction_fixture",
+      "source_type": "nature_figshare_nonlinear_fixture",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 3,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Second harmonic generation at a time-varying interface"
+    },
+    {
+      "blockers": [
+        "Measurement target is nonlinear spatial information transfer, not a static absolute R/T holdout.",
+        "Stack and substrate/backside contract are not source-proven for TMM validation."
+      ],
+      "candidate_id": "enz_time_gate_scattering_media_2026",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_scattering_media_fixture_not_static_tmm_validation",
+      "exact_next_action": "keep in nonlinear fixture bucket unless source files expose static characterization tables",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "sub-micron ITO ENZ film nonlinear FWM time gate",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable"
+      ],
+      "proposed_scout_label": "literature_reproduction_fixture",
+      "source_type": "nature_figshare_nonlinear_fixture",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 3,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Epsilon-near-zero time-gate for high-fidelity spatial information transfer through dynamic scattering media"
+    },
+    {
+      "blockers": [
+        "No static measured R/T holdout is source-proven.",
+        "Measurement is not a planar linear TMM target."
+      ],
+      "candidate_id": "double_slit_time_diffraction_2023",
+      "computed_gate_label": "literature_reproduction_fixture",
+      "decision": "nonlinear_time_diffraction_fixture_not_static_tmm_validation",
+      "exact_next_action": "keep out of Phase 3F.2 unless source archive unexpectedly contains linear characterization tables",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO ENZ temporal diffraction film",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable"
+      ],
+      "proposed_scout_label": "literature_reproduction_fixture",
+      "source_type": "figshare_nonlinear_source_data",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 3,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Double-slit time diffraction at optical frequencies"
+    },
+    {
+      "blockers": [
+        "No public source-data package was found.",
+        "Nonlinear time-refraction experiment is not a static TMM validation target."
+      ],
+      "candidate_id": "time_refraction_enz_2020",
+      "computed_gate_label": "rejected_request_only",
+      "decision": "rejected_public_access_gate_fails",
+      "exact_next_action": "reject unless a public source-data package appears later",
+      "gate_blockers": [
+        {
+          "criterion": "public data access without private credentials or author contact",
+          "flag": "public_access"
+        },
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO ENZ film / ITO-glass sandwich",
+      "missing_required_flags": [
+        "public_access",
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "rejected_request_only",
+      "source_type": "request_only_nonlinear_article",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 5,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Broadband frequency translation through time refraction in an ENZ material"
+    },
+    {
+      "blockers": [
+        "Public data gate fails.",
+        "Nonlinear/time-varying mirror is not a static planar TMM holdout."
+      ],
+      "candidate_id": "saturable_time_varying_mirror_2022",
+      "computed_gate_label": "rejected_request_only",
+      "decision": "rejected_request_only_and_nonlinear",
+      "exact_next_action": "reject unless a public repository is released",
+      "gate_blockers": [
+        {
+          "criterion": "public data access without private credentials or author contact",
+          "flag": "public_access"
+        },
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ENZ time-varying mirror",
+      "missing_required_flags": [
+        "public_access",
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "rejected_request_only",
+      "source_type": "request_only_nonlinear_article",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 5,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Saturable time-varying mirror based on an ENZ material"
+    },
+    {
+      "blockers": [
+        "Ring-resonator device is not a planar linear TMM validation target.",
+        "No machine-readable source-data package is identified."
+      ],
+      "candidate_id": "ito_ring_resonator_enz_2023",
+      "computed_gate_label": "blocked_source_data_lead",
+      "decision": "blocked_device_geometry_and_source_data_missing",
+      "exact_next_action": "inspect SI only if future work needs ITO device background",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO/SOI ring resonator",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "blocked_source_data_lead",
+      "source_type": "article_si_device_geometry",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 5,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "All-optical modulation in a vertically coupled ITO ring resonator employing ENZ state"
+    },
+    {
+      "blockers": [
+        "No public machine-readable source package was identified.",
+        "Constants and optical measurements do not form a clean independent validation split from public source-page evidence."
+      ],
+      "candidate_id": "annealing_free_ito_2023",
+      "computed_gate_label": "blocked_source_data_lead",
+      "decision": "blocked_article_si_only_no_independent_holdout",
+      "exact_next_action": "inspect SI for numeric epsilon tables only if ITO constants background is needed",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ITO thin films on substrate",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "blocked_source_data_lead",
+      "source_type": "article_si_constants_lead",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": false,
+        "normal_incidence": false,
+        "open_format_priority": 5,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "Annealing-free fabrication of high-quality ITO films for free-carrier nanophotonics"
+    }
+  ],
+  "decision": {
+    "claim_standard_changed": false,
+    "phase3f2_intake_allowed": false,
+    "phase4_candidate": false,
+    "recommended_next_phase": "Phase 3F.1C - continue strict simple-stack source search or intake a newly supplied clean lead",
+    "residual_modeling_performed": false,
+    "selected_next_candidate_id": null,
+    "serious_core_allowed_now": false,
+    "status": "phase3f1_no_candidate_ready_keep_phase3f_open",
+    "tmm_adapter_started": false
+  },
+  "generated_at": "2026-05-26T08:54:03.117411+00:00",
+  "hard_gate_flags": {
+    "geometry_specified": "source-backed wavelength axis, angle, polarization, and units",
+    "leakage_safe_no_fit_split": "material model and measured holdout can be used without residual-driven tuning",
+    "machine_readable_material_constants": "machine-readable n,k, epsilon, or model constants",
+    "machine_readable_measured_holdout": "machine-readable measured R/T or ellipsometry holdout",
+    "public_access": "public data access without private credentials or author contact",
+    "source_hash_ready": "source-page files can be hashed or provide checksums before intake",
+    "stack_thickness_specified": "source-backed layer order and thicknesses",
+    "substrate_backside_coherence_specified": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+    "tmm_suitable": "measurement is a planar linear TMM target"
+  },
+  "inputs": {
+    "registry_path": "docs/phase3f1b_pro_lead_candidate_registry.yaml"
+  },
+  "phase_id": "Phase 3F.1B",
+  "registry": {
+    "candidate_count": 16,
+    "phase_id": "Phase 3F.1B",
+    "registry_version": 1,
+    "updated_at": "2026-05-26"
+  },
+  "search_bounds": {
+    "candidate_limit": 16,
+    "residual_modeling_allowed": false,
+    "search_scope": "Conservative gate pass over the 16 pasted GPT-5.5 Pro leads, with targeted live source-page inspection for the strongest source-data claims. This is a scout/gate pass only: source files are not downloaded, no TMM adapter is started, and no residual modeling is allowed unless a later Phase 3F.2 intake explicitly opens.",
+    "tmm_adapter_allowed": false
+  },
+  "stop_rule": {
+    "reason": "Phase 3F.1B is scouting/gating only; residuals require a later Phase 3F.2 source-file intake and frozen no-fit adapter.",
+    "residual_modeling_stop_active": true
+  },
+  "summary": {
+    "blocker_counts": {
+      "geometry_specified": 7,
+      "leakage_safe_no_fit_split": 16,
+      "machine_readable_material_constants": 14,
+      "machine_readable_measured_holdout": 10,
+      "public_access": 2,
+      "source_hash_ready": 5,
+      "stack_thickness_specified": 9,
+      "substrate_backside_coherence_specified": 12,
+      "tmm_suitable": 7
+    },
+    "candidate_count": 16,
+    "claim_label_counts": {
+      "blocked_source_data_lead": 2,
+      "calibration_only_no_holdout": 1,
+      "literature_reproduction_fixture": 4,
+      "rejected_request_only": 2,
+      "simulator_validation_fallback": 6,
+      "weak_within_dataset_holdout": 1
+    },
+    "hard_gate_pass_count": 0,
+    "selected_next_candidate_id": null
+  },
+  "title": "5.5 Pro Lead Gate"
+}

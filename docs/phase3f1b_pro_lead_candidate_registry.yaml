@@ -1,0 +1,639 @@
+phase_id: Phase 3F.1B
+report_title: 5.5 Pro Lead Gate
+registry_version: 1
+updated_at: "2026-05-26"
+search_scope: >-
+  Conservative gate pass over the 16 pasted GPT-5.5 Pro leads, with targeted
+  live source-page inspection for the strongest source-data claims. This is a
+  scout/gate pass only: source files are not downloaded, no TMM adapter is
+  started, and no residual modeling is allowed unless a later Phase 3F.2 intake
+  explicitly opens.
+candidate_limit: 16
+selected_next_phase: Phase 3F.2 - source-file intake for selected simple thin-film candidate
+blocked_next_phase: Phase 3F.1C - continue strict simple-stack source search or intake a newly supplied clean lead
+candidates:
+  - candidate_id: tin_mkid_optical_stack_2022
+    title: Model and Measurements of an Optical Stack for Broadband Visible to Near-Infrared Absorption in TiN MKIDs
+    material_family: TiN / SiO2 / Al absorber stack
+    source_type: springer_zenodo_lead
+    source_refs:
+      - DOI 10.1007/s10909-022-02774-0
+      - Zenodo DOI 10.5281/zenodo.5549994
+      - GPT-5.5 Pro rank 1
+    source_urls:
+      - https://link.springer.com/article/10.1007/s10909-022-02774-0
+      - https://doi.org/10.5281/zenodo.5549994
+    exact_files_or_records:
+      - TiN ellipsometry-derived n,k/permittivity target file in Zenodo record
+      - measured reflection/transmission or absorption target file in Zenodo record
+    scouting_notes:
+      - Paper source backs the nominal stack as 85 nm SiO2 / 60 nm TiN / 23 nm SiO2 / 100 nm Al on sapphire.
+      - Paper source backs measured reflection/transmission from 400-1550 nm with an integrating sphere and effectively zero transmission through the Al mirror.
+      - Paper explicitly says the fabricated sample layer thicknesses were not measured, so this cannot be no-fit calibrated validation.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: true
+      open_format_priority: 3
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 1
+    proposed_scout_label: weak_within_dataset_holdout
+    decision: blocked_by_unmeasured_fabricated_stack_thicknesses_and_unverified_zenodo_file_contract
+    blockers:
+      - Fabricated final-stack layer thicknesses were not measured by the source paper.
+      - Exact machine-readable Zenodo files were not verified in this scout pass.
+      - Any locked TMM run would use nominal design thicknesses, not measured final-stack thicknesses.
+    exact_next_action: inspect Zenodo 5549994 file manifest only as a weak TiN fixture, not as calibrated evidence
+
+  - candidate_id: fano_ultrathin_coatings_froc_2021
+    title: Fano-resonant ultrathin-film optical coatings
+    material_family: metal/dielectric ultrathin Fano-resonant coatings
+    source_type: github_article_source_data
+    source_refs:
+      - DOI 10.1038/s41565-020-00841-9
+      - GitHub hincz-lab/Fano-resonant-ultrathin-film-optical-coatings-FROC
+      - GPT-5.5 Pro rank 2
+    source_urls:
+      - https://github.com/hincz-lab/Fano-resonant-ultrathin-film-optical-coatings-FROC
+      - https://www.nature.com/articles/s41565-020-00841-9
+    exact_files_or_records:
+      - Figure_1
+      - Figure_2
+      - Figure_3
+      - Figure_4
+      - theory-plots
+    scouting_notes:
+      - GitHub README says data are arranged by figures and include SVG, IPYNB, OPJ, and TXT files.
+      - Public repo makes this a strong simulator-validation fallback lead.
+      - The material constants, exact stack contract, and no-fit leakage boundary still require repository-level inspection.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: false
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: simulator_validation_fallback
+    decision: promising_but_requires_repository_contract_audit
+    blockers:
+      - Source-page inspection does not yet prove a single sample with independent constants and measured holdout.
+      - Geometry and stack/thickness semantics need file-level audit before Phase 3F.2.
+      - Leakage boundary is not proven from the README alone.
+    exact_next_action: clone or download repository in a later intake only if selected by a stricter Phase 3F.2 plan
+
+  - candidate_id: structural_color_froc_2023
+    title: Fano resonant optical coatings platform for full gamut and high-purity structural colors
+    material_family: ultrathin metal/dielectric color coatings
+    source_type: nature_source_data_github_code
+    source_refs:
+      - DOI 10.1038/s41467-023-39602-2
+      - GitHub hincz-lab/structural_color_FROCs
+      - GPT-5.5 Pro rank 3
+    source_urls:
+      - https://www.nature.com/articles/s41467-023-39602-2
+      - https://github.com/hincz-lab/structural_color_FROCs
+    exact_files_or_records:
+      - 41467_2023_39602_MOESM3_ESM.xlsx
+      - structural_color_FROCs code repository
+    scouting_notes:
+      - Nature page says experimental and comparison data are in the Source Data file.
+      - Nature page says simulation and optimization code are freely available on GitHub.
+      - Leakage remains unresolved because the same source-data package may contain both measured and comparison/tuned outputs.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: simulator_validation_fallback
+    decision: promising_but_leakage_boundary_unproven_before_source_file_audit
+    blockers:
+      - Independent material constants are not proven from source-page inspection.
+      - Source-page inspection does not prove comparison spectra were generated without measured-holdout tuning.
+    exact_next_action: inspect source-data workbook sheets and GitHub code only under a Phase 3F.2 candidate-intake plan
+
+  - candidate_id: ultrathin_gold_absorber_2020
+    title: Ultrathin 2 nm gold as impedance-matched absorber for infrared light
+    material_family: SiN / ultrathin Au absorber stack
+    source_type: nature_source_data_zenodo
+    source_refs:
+      - DOI 10.1038/s41467-020-15762-3
+      - Zenodo DOI 10.5281/zenodo.3667418
+      - GPT-5.5 Pro rank 4
+    source_urls:
+      - https://www.nature.com/articles/s41467-020-15762-3
+      - https://zenodo.org/records/3667418
+    exact_files_or_records:
+      - Nature Source Data for Figs. 2-5 and supplementary figures
+      - Zenodo record 3667418
+    scouting_notes:
+      - Nature page says source data for main and supplementary figures are provided and also available in an online repository.
+      - Paper text says support-layer optical constants were fitted from FTIR data, and Au spectra are also fit with a Drude model.
+      - This is a useful simulator fallback but not a clean independent material/holdout split from source-page inspection.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 3
+    proposed_scout_label: simulator_validation_fallback
+    decision: promising_but_material_parameters_and_holdout_are_not_cleanly_split
+    blockers:
+      - Support-layer constants and ultrathin Au model are derived from the same spectral workflow.
+      - Substrate/backside/coherence treatment still needs source-file audit.
+    exact_next_action: inspect Zenodo/source-data files only if the fallback suite prioritizes IR absorber validation
+
+  - candidate_id: sb2s3_tamm_cavity_2023
+    title: Tunable Tamm plasmon cavity based on phase-change material Sb2S3
+    material_family: Au / SiO2 / Sb2S3 / multilayer Tamm cavity
+    source_type: nature_source_data_matlab_request
+    source_refs:
+      - DOI 10.1038/s41467-023-42854-7
+      - GPT-5.5 Pro rank 5
+    source_urls:
+      - https://www.nature.com/articles/s41467-023-42854-7
+    exact_files_or_records:
+      - Nature Source Data for experimental and simulation data
+    scouting_notes:
+      - Nature page says experimental and simulation data are provided in the Source Data file.
+      - Nature page says code is available from authors on request, not public.
+      - Good angle/polarization TMM fallback lead, but no-fit split and material constants need source-file audit.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: simulator_validation_fallback
+    decision: promising_but_source_data_mixes_experimental_and_simulation_outputs
+    blockers:
+      - Public source page does not prove included n,k tables are independent of measured holdout.
+      - Code is request-only, so source-model parity is unavailable without author contact.
+    exact_next_action: inspect Source Data workbook/zip only under a Phase 3F.2 intake plan
+
+  - candidate_id: transparent_electrode_umtf_2020
+    title: Ultrathin-metal-film-based transparent electrodes with relative transmittance surpassing 100 percent
+    material_family: PET / TiO2 / Ag / dielectric transparent electrode
+    source_type: nature_source_data
+    source_refs:
+      - DOI 10.1038/s41467-020-17107-6
+      - GPT-5.5 Pro rank 6
+    source_urls:
+      - https://www.nature.com/articles/s41467-020-17107-6
+    exact_files_or_records:
+      - 41467_2020_17107_MOESM3_ESM.xlsx
+    scouting_notes:
+      - Nature page provides Source Data XLSX for selected supplementary figures.
+      - TMM code is available only by request.
+      - The source page does not prove a complete no-fit measured holdout and independent material constants package.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 3
+    proposed_scout_label: simulator_validation_fallback
+    decision: blocked_until_source_data_proves_independent_holdout_and_backside_contract
+    blockers:
+      - Machine-readable measured holdout is not proven from source-page inspection.
+      - Substrate/backside handling and leakage boundary remain partial.
+    exact_next_action: inspect source-data workbook for absolute T/R, n,k, and thickness tables before considering intake
+
+  - candidate_id: pfpe_pvdf_thin_films_2021
+    title: Data for optical transmission and refractive index of PFPE and PVDF thin films
+    material_family: PFPE substrate / PVDF thin film
+    source_type: mendeley_csv_data_article
+    source_refs:
+      - DOI 10.1016/j.dib.2021.107461
+      - Mendeley Data DOI 10.17632/bwtzc9rzb9.2
+      - GPT-5.5 Pro rank 7
+    source_urls:
+      - https://data.mendeley.com/datasets/bwtzc9rzb9/2
+    exact_files_or_records:
+      - spectroscopic-scan-PFPE-refractive-indices-cauchy-V1.csv
+      - spectroscopic-scan-PVDF-refractive-indices-cauchy-V1.csv
+      - transmission/absorption CSVs
+    scouting_notes:
+      - Mendeley page says public CSV-style datasets include measured refractive indices and corrected transmission/absorption spectra.
+      - The source page describes Cauchy modeling and Fresnel correction within the same data workflow.
+      - This is boring and machine-readable but leakage/substrate coherence are not clean enough at scout level.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 1
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 3
+    proposed_scout_label: simulator_validation_fallback
+    decision: boring_and_public_but_leakage_and_coherence_are_not_gate_clear
+    blockers:
+      - Refractive indices and corrected transmission are produced inside one measurement/modeling workflow.
+      - Coherent film versus incoherent substrate treatment is not source-frozen at scout level.
+    exact_next_action: inspect downloaded CSV metadata only if a deliberately simple polymer fallback is desired
+
+  - candidate_id: filmoptics_inverse_solutions_2022_pro
+    title: Extracting film thickness and optical constants from spectrophotometric data by evolutionary optimization
+    material_family: ITO / NiO / MAPbI3 on glass
+    source_type: zenodo_github_inverse_workflow
+    source_refs:
+      - DOI 10.1371/journal.pone.0276555
+      - Zenodo DOI 10.5281/zenodo.7228228
+      - GPT-5.5 Pro rank 8
+    source_urls:
+      - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0276555
+      - https://zenodo.org/records/7228228
+      - https://github.com/Autonomous-Scientific-Discovery/FilmOptics-InverseSolutions
+    exact_files_or_records:
+      - experimental spectra and inverse-solver files
+    scouting_notes:
+      - Already seen in Phase 3F.1; useful for reproducing an inverse TMM workflow.
+      - It is not a no-fit validation candidate because model parameters are extracted from the same R/T spectra.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: calibration_only_no_holdout
+    decision: calibration_only_inverse_workflow_no_independent_holdout
+    blockers:
+      - Model constants are fitted from the same spectra that would be compared.
+      - Substrate/backside treatment still needs source-file audit.
+    exact_next_action: keep as inverse-workflow fixture, not simulator-validation intake
+
+  - candidate_id: azo_infrared_emissivity_regulator_2023
+    title: Transparent dynamic infrared emissivity regulators
+    material_family: AZO nanocrystal film / ITO / BaF2 electrochemical emitter
+    source_type: nature_source_data_nonlinear_dynamic_fixture
+    source_refs:
+      - DOI 10.1038/s41467-023-40902-w
+      - GPT-5.5 Pro rank 9
+    source_urls:
+      - https://www.nature.com/articles/s41467-023-40902-w
+    exact_files_or_records:
+      - 41467_2023_40902_MOESM7_ESM.xlsx
+    scouting_notes:
+      - Nature page backs a complex electrochemical AZO/ITO/BaF2 infrared-emissivity regulator.
+      - Active voltage-dependent nanocrystal/electrolyte behavior is not a clean static planar TMM holdout.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 1
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: literature_reproduction_fixture
+    decision: nonlinear_dynamic_device_not_static_tmm_validation
+    blockers:
+      - Voltage-dependent electrochemical/nanocrystal state is outside simple linear planar TMM validation.
+      - Effective n,k and static measured holdout are not paired from source-page inspection.
+    exact_next_action: keep as future nonlinear/AZO fixture unless source files expose a static zero-bias simple-stack subset
+
+  - candidate_id: shg_time_varying_interface_2024
+    title: Second harmonic generation at a time-varying interface
+    material_family: ITO/Au ENZ nonlinear interface
+    source_type: nature_figshare_nonlinear_fixture
+    source_refs:
+      - DOI 10.1038/s41467-024-51588-z
+      - Figshare DOI 10.6084/m9.figshare.26198594.v1
+      - GPT-5.5 Pro rank 10
+    source_urls:
+      - https://www.nature.com/articles/s41467-024-51588-z
+      - https://doi.org/10.6084/m9.figshare.26198594.v1
+    exact_files_or_records:
+      - Figshare source-data archive for main and extended figures
+    scouting_notes:
+      - Public ENZ source-data lead, but article target is nonlinear SHG at a time-varying interface.
+      - No public source-page evidence of a static independent R/T holdout with source-backed constants.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 3
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: literature_reproduction_fixture
+    decision: nonlinear_source_data_not_static_tmm_validation
+    blockers:
+      - Measured optical holdout is nonlinear SHG/time-varying physics, not static R/T.
+      - Material constants and stack/backside contract are not source-proven from the public page.
+    exact_next_action: inspect only for future nonlinear-fixture memory, not Phase 3F.2 static validation
+
+  - candidate_id: enz_time_gate_scattering_media_2026
+    title: Epsilon-near-zero time-gate for high-fidelity spatial information transfer through dynamic scattering media
+    material_family: sub-micron ITO ENZ film nonlinear FWM time gate
+    source_type: nature_figshare_nonlinear_fixture
+    source_refs:
+      - DOI 10.1038/s41467-026-71039-1
+      - Figshare DOI 10.6084/m9.figshare.28780994
+      - GPT-5.5 Pro rank 11
+    source_urls:
+      - https://www.nature.com/articles/s41467-026-71039-1
+      - https://doi.org/10.6084/m9.figshare.28780994
+    exact_files_or_records:
+      - Figshare source-data file for article figures
+    scouting_notes:
+      - Public ENZ source-data lead, but the stated geometry is nonlinear/scattering-media time gating.
+      - It is not a static planar thin-film TMM benchmark from source-page inspection.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 3
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: literature_reproduction_fixture
+    decision: nonlinear_scattering_media_fixture_not_static_tmm_validation
+    blockers:
+      - Measurement target is nonlinear spatial information transfer, not a static absolute R/T holdout.
+      - Stack and substrate/backside contract are not source-proven for TMM validation.
+    exact_next_action: keep in nonlinear fixture bucket unless source files expose static characterization tables
+
+  - candidate_id: double_slit_time_diffraction_2023
+    title: Double-slit time diffraction at optical frequencies
+    material_family: ITO ENZ temporal diffraction film
+    source_type: figshare_nonlinear_source_data
+    source_refs:
+      - DOI 10.1038/s41567-023-01993-w
+      - Figshare DOI 10.6084/m9.figshare.21968435
+      - GPT-5.5 Pro rank 12
+    source_urls:
+      - https://figshare.com/articles/dataset/Double-slit_time_diffraction_at_optical_frequencies_-_Source_Data/21968435
+    exact_files_or_records:
+      - Figshare source data for main and extended figures
+    scouting_notes:
+      - Public source data exist, but the experiment is nonlinear time diffraction.
+      - No source-page evidence of an independent static absolute R/T holdout.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 3
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: literature_reproduction_fixture
+    decision: nonlinear_time_diffraction_fixture_not_static_tmm_validation
+    blockers:
+      - No static measured R/T holdout is source-proven.
+      - Measurement is not a planar linear TMM target.
+    exact_next_action: keep out of Phase 3F.2 unless source archive unexpectedly contains linear characterization tables
+
+  - candidate_id: time_refraction_enz_2020
+    title: Broadband frequency translation through time refraction in an ENZ material
+    material_family: ITO ENZ film / ITO-glass sandwich
+    source_type: request_only_nonlinear_article
+    source_refs:
+      - DOI 10.1038/s41467-020-15682-2
+      - GPT-5.5 Pro rank 13
+    source_urls:
+      - https://www.nature.com/articles/s41467-020-15682-2
+    exact_files_or_records: []
+    scouting_notes:
+      - Pro search found data/code by author request rather than a public source-data package.
+      - Nonlinear time-refraction target is outside static planar TMM validation.
+    evidence:
+      public_access: false
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: rejected_request_only
+    decision: rejected_public_access_gate_fails
+    blockers:
+      - No public source-data package was found.
+      - Nonlinear time-refraction experiment is not a static TMM validation target.
+    exact_next_action: reject unless a public source-data package appears later
+
+  - candidate_id: saturable_time_varying_mirror_2022
+    title: Saturable time-varying mirror based on an ENZ material
+    material_family: ENZ time-varying mirror
+    source_type: request_only_nonlinear_article
+    source_refs:
+      - DOI 10.1103/PhysRevApplied.18.054067
+      - GPT-5.5 Pro rank 14
+    source_urls:
+      - https://www.researchgate.net/publication/358603795_Saturable_time-varying_mirror_based_on_an_ENZ_material
+    exact_files_or_records: []
+    scouting_notes:
+      - Pro search found no public dataset.
+      - Nonlinear/time-varying mirror target fails the Phase 3F static TMM scope.
+    evidence:
+      public_access: false
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: rejected_request_only
+    decision: rejected_request_only_and_nonlinear
+    blockers:
+      - Public data gate fails.
+      - Nonlinear/time-varying mirror is not a static planar TMM holdout.
+    exact_next_action: reject unless a public repository is released
+
+  - candidate_id: ito_ring_resonator_enz_2023
+    title: All-optical modulation in a vertically coupled ITO ring resonator employing ENZ state
+    material_family: ITO/SOI ring resonator
+    source_type: article_si_device_geometry
+    source_refs:
+      - DOI 10.1038/s41598-023-44438-3
+      - GPT-5.5 Pro rank 15
+    source_urls:
+      - https://www.nature.com/articles/s41598-023-44438-3
+    exact_files_or_records:
+      - article and supplementary information only
+    scouting_notes:
+      - ENZ/ITO relevance is high, but device geometry is a ring resonator rather than a planar film.
+      - No separate raw source-data package surfaced in the Pro search.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: blocked_source_data_lead
+    decision: blocked_device_geometry_and_source_data_missing
+    blockers:
+      - Ring-resonator device is not a planar linear TMM validation target.
+      - No machine-readable source-data package is identified.
+    exact_next_action: inspect SI only if future work needs ITO device background
+
+  - candidate_id: annealing_free_ito_2023
+    title: Annealing-free fabrication of high-quality ITO films for free-carrier nanophotonics
+    material_family: ITO thin films on substrate
+    source_type: article_si_constants_lead
+    source_refs:
+      - DOI 10.1038/s41598-023-45651-w
+      - GPT-5.5 Pro rank 16
+    source_urls:
+      - https://www.nature.com/articles/s41598-023-45651-w
+    exact_files_or_records:
+      - article and supplementary information only unless hidden tables exist
+    scouting_notes:
+      - Potentially useful as ITO constants/background.
+      - No separate public machine-readable source-data package surfaced in the Pro search.
+      - Likely constants/calibration context rather than independent measured holdout.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: false
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: blocked_source_data_lead
+    decision: blocked_article_si_only_no_independent_holdout
+    blockers:
+      - No public machine-readable source package was identified.
+      - Constants and optical measurements do not form a clean independent validation split from public source-page evidence.
+    exact_next_action: inspect SI for numeric epsilon tables only if ITO constants background is needed
