@@ -95,3 +95,22 @@ Result: 16 candidate cards were gated, 0 cleared every hard flag, no Phase
 3F.2 intake opened, no TMM adapter started, and no residual modeling was run.
 The best non-ENZ simulator fallbacks are useful future source-file audit
 targets, but they are not intake-ready validation candidates yet.
+
+## Phase 3F.1C Result
+
+The top-three source-file audit is recorded in
+`docs/phase3f1c_source_file_audit.md` and
+`docs/phase3f1c_source_file_audit.json`.
+
+Result: the three best practical fallback packages from Phase 3F.1B were
+downloaded, hash-verified, and inspected. `structural_color_froc_2023` is
+blocked because its Source Data workbook is chromaticity/comparison coordinate
+data rather than measured spectral R/T holdout, and its optimization output is
+not present in the public archive. `fano_ultrathin_coatings_froc_2021` is
+blocked because measured figure data are Origin OPJ containers rather than open
+machine-readable tables. `ultrathin_gold_absorber_2020` has rich raw FTIR R/T
+tables, but is blocked because material constants/model parameters are fitted
+from the same optical measurements and the processing code is request-only.
+
+No candidate cleared every hard flag, no Phase 3F.2 intake opened, no TMM
+adapter started, and no residual modeling was run.

@@ -1,6 +1,6 @@
 # Eternity Goals
 
-Date: 2026-05-25
+Date: 2026-05-26
 
 ## Active Codex Goal
 
@@ -146,13 +146,19 @@ fixture. Phase 3F.1 then ran a bounded simple thin-film simulator-validation
 scout: 10 public simple/thin-film-adjacent leads were gated, 0 cleared every
 hard flag, no Phase 3F.2 intake opened, and no TMM adapter or residual modeling
 ran. Phase 3F.1B then gated the pasted GPT-5.5 Pro list: 16 candidate cards,
-0 hard-gate passes, no Phase 3F.2 intake, and no residual modeling. The active
-next step is now `Phase 3F.1C - continue strict simple-stack source search or
-intake a newly supplied clean lead`. Source-qualified TiN/TiON optical constants,
-thesis reflectance spectra, material models, St Andrews diagnostics, public
-package failures, Saha sensitivity diagnostics, Phase 3F.1/3F.1B rejection
-cards, and provenance gaps remain in the registry without promoting them to
-calibrated evidence.
+0 hard-gate passes, no Phase 3F.2 intake, and no residual modeling. Phase
+3F.1C downloaded and hash-verified the top-three practical fallback packages.
+Structural color FROC 2023 is blocked because its source workbook is
+chromaticity/comparison data rather than measured spectral R/T holdout, FROC
+2021 is blocked because measured data remain in Origin OPJ containers, and the
+ultrathin Au absorber is source-data-rich but leakage-blocked because optical
+constants/model parameters are fit from the same measurements and processing
+code is request-only. The active next step is now `Phase 3F.1D - targeted
+benchmark/source-data search or explicit code-regression fixture lane`.
+Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
+material models, St Andrews diagnostics, public package failures, Saha
+sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
+in the registry without promoting them to calibrated evidence.
 
 Current blocker:
 
@@ -239,10 +245,14 @@ Current blocker:
 - Phase 3F.1B gated the user's pasted GPT-5.5 Pro list. Sixteen candidate cards
   produced zero hard-gate passes. The closest non-ENZ simulator fallbacks are
   useful source-file audit targets, but none is Phase 3F.2-ready.
-- The next remembered action is `Phase 3F.1C - continue strict simple-stack
-  source search or intake a newly supplied clean lead`: search for a boring
+- Phase 3F.1C downloaded and source-audited the top-three fallback packages.
+  Structural color FROC, FROC 2021, and ultrathin Au all failed at least one
+  hard gate, so Phase 3F.2 remains closed.
+- The next remembered action is `Phase 3F.1D - targeted benchmark/source-data
+  search or explicit code-regression fixture lane`: either search for a boring
   public planar thin-film dataset with a complete source-backed stack/
-  measurement contract before returning to ENZ evidence attempts.
+  measurement contract, or deliberately demote a blocked package into a
+  non-promoting code-regression fixture.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold

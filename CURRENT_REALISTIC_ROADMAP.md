@@ -1,6 +1,6 @@
 # Eternity Current Realistic Roadmap
 
-Date: 2026-05-25
+Date: 2026-05-26
 
 ## Framing
 
@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3F.1C - continue strict simple-stack source search or intake a newly supplied clean lead`.
+Choose `Phase 3F.1D - targeted benchmark/source-data search or explicit code-regression fixture lane`.
 
 Why:
 
@@ -1085,7 +1085,12 @@ TMM machinery without ENZ claim pressure. Phase 3F.1B then encoded the pasted
 GPT-5.5 Pro lead list as 16 candidate cards and ran the same hard gate. It
 again found 0 hard-gate passes, with the best non-ENZ simulator fallbacks still
 blocked by unproven independent constants, leakage boundaries, file-level
-semantics, or source/hash readiness.
+semantics, or source/hash readiness. Phase 3F.1C then downloaded and inspected
+the top-three practical fallback packages. The result was again 0 hard-gate
+passes: structural color FROC has open code/constants but no open measured
+spectral R/T holdout package, FROC 2021 leaves measured data in Origin OPJ
+containers, and ultrathin Au has raw FTIR R/T but not a leakage-safe no-fit
+material split.
 
 Recommended decision scope:
 
@@ -1093,8 +1098,10 @@ Recommended decision scope:
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
 2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
    and public-dataset acceptance gate.
-3. Continue Phase 3F.1C until a boring public planar thin-film validation
-   fixture clears the hard gate; only then open Phase 3F.2 intake.
+3. Continue as Phase 3F.1D only if the search target is narrowed to benchmark
+   or teaching-style source-data packages, or explicitly open a non-promoting
+   code-regression fixture lane. Only open Phase 3F.2 after every hard flag
+   clears.
 4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
@@ -1125,19 +1132,21 @@ The generated decision is `phase3e1_scaffold_ready_no_phase4_candidate`: 15
 known candidates evaluated, 0 Phase 4 candidates opened. Phase 3E.4 and Phase
 3E.5 have now run, Phase 3F.1 completed its first bounded scout with 10
 candidate cards and 0 hard-gate passes, and Phase 3F.1B processed the pasted
-GPT-5.5 Pro list with 16 candidate cards and 0 hard-gate passes. The current
-recommended next phase is `Phase 3F.1C - continue strict simple-stack source
-search or intake a newly supplied clean lead`.
+GPT-5.5 Pro list with 16 candidate cards and 0 hard-gate passes. Phase 3F.1C
+then source-audited the top three fallback packages and found 0 intake-ready
+candidates. The current recommended next phase is `Phase 3F.1D - targeted
+benchmark/source-data search or explicit code-regression fixture lane`.
 
-Phase 3F.1C continuation should:
+Phase 3F.1D should:
 
 - Search for a deliberately simple public planar thin-film dataset rather than
   another ENZ-first package.
 - Require machine-readable optical constants plus measured R/T or ellipsometry,
   source-backed geometry, stack, substrate/backside treatment, and leakage
   boundaries before any residual run.
-- Use the result to test the TMM implementation and reporting machinery, not to
-  make an ENZ evidence claim.
+- If no clean package appears, explicitly decide whether to build a
+  non-promoting code-regression fixture from a blocked but useful package such
+  as ultrathin Au or structural-color FROC.
 - Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
 - Keep Phase 3F.2 closed until exactly one candidate clears every hard scout
   flag and can be ingested without fitting or guessing.
@@ -1284,12 +1293,12 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1C - continue strict simple-stack source search or intake a newly
-  supplied clean lead`. The first scout pass and the Pro-lead pass both found
-  no candidate ready for Phase 3F.2 intake, so the next pass should either
-  inspect a newly supplied clean source-file package or search specifically for
-  boring teaching/benchmark coating datasets with independent constants and
-  measured R/T.
+- `Phase 3F.1D - targeted benchmark/source-data search or explicit
+  code-regression fixture lane`. The first scout pass, the Pro-lead pass, and
+  the top-three source-file audit all found no candidate ready for Phase 3F.2
+  intake, so the next pass should either inspect a newly supplied clean
+  source-file package or search specifically for boring teaching/benchmark
+  coating datasets with independent constants and measured R/T.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1319,9 +1328,8 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1B - 5.5 Pro lead gate`, now completed, followed by `Phase 3F.1C -
-  continue strict simple-stack source search or intake a newly supplied clean
-  lead`.
+- `Phase 3F.1B - 5.5 Pro lead gate`, completed, followed by `Phase 3F.1C -
+  top-candidate source-file audit`, also completed with 0 hard-gate candidates.
 
 #### Phase 3F.1B: 5.5 Pro Lead Gate
 
@@ -1352,10 +1360,41 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1C - continue strict simple-stack source search or intake a newly
-  supplied clean lead`. Planning: GPT-5.5 `high`; implementation: `medium` for
-  another scout/report pass, `high` only if a candidate clears every hard flag
-  and the work moves to Phase 3F.2 source-file intake.
+- `Phase 3F.1C - top-candidate source-file audit`, completed in the next pass.
+
+#### Phase 3F.1C: Top-Candidate Source-File Audit
+
+Artifacts:
+
+- `docs/phase3f1c_source_file_audit.md`
+- `docs/phase3f1c_source_file_audit.json`
+
+Result:
+
+- Status: `completed_source_file_audit_no_candidate_ready`.
+- The top-three practical fallback packages were downloaded, hash-verified, and
+  inspected.
+- Structural color FROC 2023 is blocked because its source workbook contains
+  chromaticity/comparison coordinates rather than measured spectral R/T holdout,
+  and the public archive does not include the optimization output artifact.
+- FROC 2021 is blocked because measured figure data are Origin OPJ containers;
+  open text files are theory outputs rather than measured holdout tables.
+- Ultrathin Au absorber 2020 is source-data-rich, with raw FTIR R/T `.dpt`
+  files, but is blocked because optical constants/model parameters are fit from
+  the same measurements and processing code is request-only.
+- Hard-gate pass count: `0`.
+- Selected next candidate: `none`.
+- Phase 3F.2 intake allowed: `false`.
+- TMM adapter started: `false`.
+- Residual modeling performed: `false`.
+- Phase 4 candidate: `false`.
+
+Recommended next phase:
+
+- `Phase 3F.1D - targeted benchmark/source-data search or explicit
+  code-regression fixture lane`. Planning: GPT-5.5 `high`; implementation:
+  `medium` for another report-only scout, `high` only if a candidate clears
+  every hard flag and the work moves to Phase 3F.2 source-file intake.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

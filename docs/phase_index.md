@@ -1,6 +1,6 @@
 # Eternity Phase Index
 
-Date: 2026-05-25
+Date: 2026-05-26
 
 This file gives stable phase IDs for next-step recommendations. `CURRENT_REALISTIC_ROADMAP.md` and `GOALS.md` remain the roadmap authorities; this index keeps the numbering consistent across Codex sessions.
 
@@ -68,11 +68,12 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3F | Active | Simulator-validation fallback on simpler public thin-film data | Find or use a boring public planar thin-film dataset with source-backed optical constants, measured R/T or ellipsometry, geometry, stack, substrate/backside handling, and leakage boundaries sufficient to test the TMM machinery without making an ENZ evidence claim. |
 | Phase 3F.1 | Completed/no-candidate-ready | Simple thin-film simulator-validation scout | Added a contract-first scout/gate CLI, candidate registry, and report. Ten public simple/thin-film-adjacent leads were inspected through the hard flags; zero cleared every gate, no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. |
 | Phase 3F.1B | Completed/pro-leads-no-candidate-ready | 5.5 Pro lead gate | Encoded the pasted 16-lead GPT-5.5 Pro list into a companion registry and ran it through the same hard gate. Zero candidates cleared every flag. The closest non-ENZ simulator fallbacks remain promising source-file audit targets, but Phase 3F.2 stays closed until material constants, measured holdout, geometry, stack/backside, leakage, and source/hash readiness are all proven. |
+| Phase 3F.1C | Completed/source-file-audit-no-candidate-ready | Top-candidate source-file audit | Downloaded and hash-verified the top-three practical fallback packages from Phase 3F.1B. Structural color FROC is chromaticity/source-code memory without measured spectral holdout, FROC 2021 is blocked by Origin OPJ measured-data containers, and ultrathin Au is source-data-rich but leakage-blocked by same-measurement fitting and request-only processing code. Phase 3F.2 remains closed. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3F.1C - continue strict simple-stack source search or intake a newly supplied clean lead**.
+Current phase: **Phase 3F.1D - targeted benchmark/source-data search or explicit code-regression fixture lane**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -91,7 +92,14 @@ gate. The useful next move is still not a Saha residual victory lap. It is to
 continue the simple-stack scout until one source-backed public dataset is clean
 enough for a Phase 3F.2 intake. Phase 3F.1B then processed the pasted 16-lead
 GPT-5.5 Pro list; it confirmed the same boundary: 0 hard-gate passes, no
-Phase 3F.2 intake, no TMM adapter, and no residual modeling.
+Phase 3F.2 intake, no TMM adapter, and no residual modeling. Phase 3F.1C then
+downloaded and inspected the three best practical fallback packages. The result
+was still 0 hard-gate passes: structural color FROC lacks an open measured
+spectral holdout package, FROC 2021 leaves measured data in Origin OPJ
+containers, and ultrathin Au has raw R/T but not a leakage-safe no-fit material
+split. The next move is either a narrower benchmark/source-data search for a
+clean public teaching or coating package, or an explicitly non-promoting
+code-regression fixture lane using one of the blocked but useful packages.
 
 Information sufficiency:
 
@@ -260,17 +268,21 @@ Information sufficiency:
   lead still has at least one hard blocker, most often unproven independent
   material constants, unproven leakage boundary, missing final-stack thickness,
   request-only code/data, nonlinear geometry, or device/non-planar scope.
+- Not enough to open Phase 3F.2 after the top-three source-file audit either:
+  structural-color FROC lacks open measured spectral holdout, FROC 2021 measured
+  data are Origin OPJ containers, and ultrathin Au is leakage-blocked by
+  same-measurement fitting plus request-only processing code.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3F.1C - continue strict simple-stack source search or intake a newly
-  supplied clean lead**. Planning: GPT-5.5 `high`, because the next pass should
-  optimize for a clean boring stack/measurement contract rather than ENZ
-  relevance or residual excitement. Implementation: `medium` for additional
-  registry/report work; `high` only if a candidate clears every hard flag and
-  Phase 3F.2 opens a frozen no-fit intake. Current artifacts:
-  `docs/phase3f1b_pro_lead_candidate_registry.yaml` and
-  `docs/phase3f1b_pro_lead_gate.md`.
+- **Phase 3F.1D - targeted benchmark/source-data search or explicit
+  code-regression fixture lane**. Planning: GPT-5.5 `high`, because the next
+  pass should either narrow the search to clean boring benchmark packages or
+  deliberately demote a useful blocked package into a non-promoting regression
+  fixture. Implementation: `medium` for additional registry/report work; `high`
+  only if a candidate clears every hard flag and Phase 3F.2 opens a frozen
+  no-fit intake. Current artifacts: `docs/phase3f1c_source_file_audit.md` and
+  `docs/phase3f1c_source_file_audit.json`.
 
 Helpful tools:
 

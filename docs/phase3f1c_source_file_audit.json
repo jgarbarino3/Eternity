@@ -1,0 +1,143 @@
+{
+  "phase_id": "Phase 3F.1C",
+  "title": "Top-candidate source-file audit",
+  "date": "2026-05-26",
+  "status": "completed_source_file_audit_no_candidate_ready",
+  "decision": {
+    "selected_next_candidate_id": null,
+    "hard_gate_pass_count": 0,
+    "phase3f2_intake_allowed": false,
+    "tmm_adapter_started": false,
+    "residual_modeling_performed": false,
+    "phase4_candidate": false,
+    "serious_core_claim_allowed": false,
+    "recommended_next_phase": "Phase 3F.1D - targeted benchmark/source-data search or explicit code-regression fixture lane"
+  },
+  "source_packages": [
+    {
+      "candidate_id": "structural_color_froc_2023",
+      "artifact": "Nature Source Data XLSX",
+      "local_path": "lab_data/raw/phase3f1c_structural_color_froc_2023/41467_2023_39602_MOESM3_ESM.xlsx",
+      "source_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-39602-2/MediaObjects/41467_2023_39602_MOESM3_ESM.xlsx",
+      "sha256": "5aae6bd74d386a6222a84c0e73535a110c0a4d69f6ab7bc13afc29d01edf9db9",
+      "bytes": 49854,
+      "tracked_in_git": false
+    },
+    {
+      "candidate_id": "structural_color_froc_2023",
+      "artifact": "GitHub source archive",
+      "local_path": "lab_data/raw/phase3f1c_structural_color_froc_2023/structural_color_FROCs_7c0998d.zip",
+      "source_url": "https://github.com/hincz-lab/structural_color_FROCs/archive/7c0998d720c387f1efbffe6d1417593ba2f845b1.zip",
+      "source_revision": "7c0998d720c387f1efbffe6d1417593ba2f845b1",
+      "sha256": "9d595ac110fc203b500780c97393a070c876fc81c5b75e7c20f0e1abf7949d92",
+      "bytes": 321170,
+      "tracked_in_git": false
+    },
+    {
+      "candidate_id": "fano_ultrathin_coatings_froc_2021",
+      "artifact": "GitHub source archive",
+      "local_path": "lab_data/raw/phase3f1c_fano_ultrathin_froc_2021/Fano-resonant-ultrathin-film-optical-coatings-FROC_fb41dbd.zip",
+      "source_url": "https://github.com/hincz-lab/Fano-resonant-ultrathin-film-optical-coatings-FROC/archive/fb41dbd10b0a34645e5ee6611c4ab7faa15de9b8.zip",
+      "source_revision": "fb41dbd10b0a34645e5ee6611c4ab7faa15de9b8",
+      "sha256": "f858c31647b806514fb805feafe9ec2a809448532e8d707e9fb6e7feb26e7edf",
+      "bytes": 2649293,
+      "tracked_in_git": false
+    },
+    {
+      "candidate_id": "ultrathin_gold_absorber_2020",
+      "artifact": "Nature Source Data ZIP",
+      "local_path": "lab_data/raw/phase3f1c_ultrathin_gold_absorber_2020/41467_2020_15762_MOESM3_ESM.zip",
+      "source_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-15762-3/MediaObjects/41467_2020_15762_MOESM3_ESM.zip",
+      "repository_url": "https://doi.org/10.5281/zenodo.3667418",
+      "sha256": "b765e13c6cc6c2dfc832ee643e134139fb61da9288c1640ad04c2a94cf5641d5",
+      "bytes": 44262760,
+      "tracked_in_git": false
+    }
+  ],
+  "candidate_audits": [
+    {
+      "candidate_id": "structural_color_froc_2023",
+      "claim_label_after_audit": "simulator_validation_fallback_source_audit_blocked",
+      "gate_pass": false,
+      "hard_flags": {
+        "public_access": true,
+        "machine_readable_material_constants": true,
+        "machine_readable_measured_holdout": false,
+        "geometry_specified": true,
+        "stack_thickness_specified": false,
+        "substrate_backside_coherence_specified": true,
+        "leakage_safe_no_fit_split": false,
+        "tmm_suitable": true,
+        "source_hash_ready": true
+      },
+      "local_evidence": [
+        "Source-data workbook has sheets Fig3 and Fig5 only; inspected rows are CIE x/y chromaticity or comparison coordinates, not spectral R/T holdout tables.",
+        "GitHub archive contains machine-readable optical constants and a TMM notebook, but the notebook writes optimization_results.npy and later loads it; no .npy artifact is present in the downloaded archive.",
+        "The local source package is useful for code and material-library comparison but does not supply a frozen measured spectral holdout plus source-backed optimized stack for no-fit validation."
+      ],
+      "blocking_gates": [
+        "machine_readable_measured_holdout",
+        "stack_thickness_specified",
+        "leakage_safe_no_fit_split"
+      ]
+    },
+    {
+      "candidate_id": "fano_ultrathin_coatings_froc_2021",
+      "claim_label_after_audit": "proprietary_figure_source_fixture",
+      "gate_pass": false,
+      "hard_flags": {
+        "public_access": true,
+        "machine_readable_material_constants": false,
+        "machine_readable_measured_holdout": false,
+        "geometry_specified": false,
+        "stack_thickness_specified": false,
+        "substrate_backside_coherence_specified": true,
+        "leakage_safe_no_fit_split": false,
+        "tmm_suitable": true,
+        "source_hash_ready": true
+      },
+      "local_evidence": [
+        "Repository README states the data types are SVG, IPYNB, OPJ, and TXT, with OPJ requiring Origin.",
+        "Figure 2, 3, and 4 source-data payloads are Origin OPJ files. The local machine-readable TXT files are theory-plot oscillator files, not measured spectral holdout tables.",
+        "This is good literature/source memory, but not a public open-table no-fit validation candidate without a separate OPJ export phase."
+      ],
+      "blocking_gates": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "leakage_safe_no_fit_split"
+      ]
+    },
+    {
+      "candidate_id": "ultrathin_gold_absorber_2020",
+      "claim_label_after_audit": "source_data_rich_leakage_blocked",
+      "gate_pass": false,
+      "hard_flags": {
+        "public_access": true,
+        "machine_readable_material_constants": false,
+        "machine_readable_measured_holdout": true,
+        "geometry_specified": true,
+        "stack_thickness_specified": true,
+        "substrate_backside_coherence_specified": false,
+        "leakage_safe_no_fit_split": false,
+        "tmm_suitable": true,
+        "source_hash_ready": true
+      },
+      "local_evidence": [
+        "Source-data ZIP contains 174 extracted files, including 57 .dpt spectra. The Fig. 3 and Fig. 4 READMEs state that .dpt files are raw FTIR reflectivity/transmittance with first column wavenumber and second column measured R or T.",
+        "The same READMEs state Plotter.m is code-on-request and outputs SiN_data.mat or measurements.mat. No .m or .mat files were present in the downloaded public source-data ZIP.",
+        "The article and source README describe optical constants and Drude parameters as fitted from the same bare-SiN and metal-SiN optical measurements, so the no-fit material/holdout split is not leakage-safe."
+      ],
+      "blocking_gates": [
+        "machine_readable_material_constants",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split"
+      ]
+    }
+  ],
+  "stop_rule": {
+    "active": true,
+    "reason": "No audited top-three candidate establishes all source-backed material constants, measured holdout, geometry, stack/substrate/backside/coherence, and leakage gates. TMM residual modeling would require fitting or guessing."
+  }
+}

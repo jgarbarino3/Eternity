@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3F.1C strict simple-stack simulator-validation scout
+**Current focus:** Phase 3F.1D targeted benchmark/source-data search or code-regression fixture lane
 
 ## Current Position
 
-**Current Phase:** 3F.1C
-**Current Phase Name:** Strict Simple-Stack Source Search Or Clean-Lead Intake
+**Current Phase:** 3F.1D
+**Current Phase Name:** Targeted Benchmark Source-Data Search Or Code-Regression Fixture Lane
 **Total Phases:** 3
-**Current Plan:** docs/phase3f1b_pro_lead_gate.md
+**Current Plan:** docs/phase3f1c_source_file_audit.md
 **Total Plans in Phase:** 13
-**Status:** Active / Phase 3F.1B Pro lead gate found 0 hard-gate candidates
+**Status:** Active / Phase 3F.1C source-file audit found 0 hard-gate candidates
 **Last Activity:** 2026-05-26
-**Last Activity Description:** Completed Phase 3F.1B by encoding the pasted GPT-5.5 Pro list into 16 candidate cards and running the same strict scout gate. Zero candidates cleared every hard flag; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1C: continue strict simple-stack source search or intake a newly supplied clean lead.
+**Last Activity Description:** Completed Phase 3F.1C by downloading and source-auditing the top-three practical fallback packages from Phase 3F.1B. Structural color FROC 2023, FROC 2021, and ultrathin Au absorber 2020 all failed at least one hard gate; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1D: targeted benchmark/source-data search or explicit code-regression fixture lane.
 
 **Progress:** [██████████] 99%
 
@@ -146,6 +146,13 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   `docs/phase3f1b_pro_lead_gate.md`, and `.json`. Sixteen pasted GPT-5.5 Pro
   leads were gated; zero cleared every hard flag, no Phase 3F.2 intake opened,
   no TMM adapter started, and no residual modeling was run.
+- Phase 3F.1C wrote `docs/phase3f1c_source_file_audit.md` and `.json`. The
+  top-three practical fallback packages were downloaded, hash-verified, and
+  inspected. Structural color FROC lacks an open measured spectral holdout
+  package, FROC 2021 measured data are Origin OPJ containers, and ultrathin Au
+  is leakage-blocked by same-measurement fitting plus request-only processing
+  code. Zero cleared every hard flag, no Phase 3F.2 intake opened, no TMM
+  adapter started, and no residual modeling was run.
 
 ## Open Questions
 
@@ -253,6 +260,9 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 - [Phase 3F.1B]: The 5.5 Pro lead list found no intake-ready candidate either.
   — Sixteen pasted leads yielded useful fallback/rejection memory, but zero
   cleared the full hard gate, so Phase 3F.2 remains closed.
+- [Phase 3F.1C]: The top-three source-file audit found no intake-ready
+  candidate either. — Structural color FROC, FROC 2021, and ultrathin Au each
+  failed at least one hard gate, so Phase 3F.2 remains closed.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -273,8 +283,9 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3F.1C: continue strict simple-stack source search or intake a newly
-  supplied clean lead until one source-backed candidate clears every hard flag.
+- Phase 3F.1D: either search narrowly for a benchmark/source-data package that
+  clears every hard flag, or explicitly open a non-promoting code-regression
+  fixture lane from a useful blocked package.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

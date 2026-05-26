@@ -566,10 +566,18 @@ Next:
   were encoded as candidate cards and gated; zero cleared every hard flag, no
   Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling
   ran.
-- Continue `Phase 3F.1C - strict simple-stack source search or clean-lead
-  intake`: search for or receive one boring public planar stack with
-  source-backed material constants, measured R/T or ellipsometry, geometry,
-  substrate/backside handling, leakage boundaries, and source/hash readiness.
+- Phase 3F.1C has completed the top-candidate source-file audit. The top-three
+  practical fallback packages were downloaded, hash-verified, and inspected;
+  structural color FROC lacks open measured spectral holdout, FROC 2021
+  measured data are Origin OPJ containers, and ultrathin Au is leakage-blocked
+  by same-measurement fitting plus request-only processing code. Zero cleared
+  every hard flag, so Phase 3F.2 remains closed.
+- Continue `Phase 3F.1D - targeted benchmark/source-data search or explicit
+  code-regression fixture lane`: search for or receive one boring public planar
+  stack with source-backed material constants, measured R/T or ellipsometry,
+  geometry, substrate/backside handling, leakage boundaries, and source/hash
+  readiness, or explicitly demote a useful blocked package into a
+  non-promoting code-regression fixture.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

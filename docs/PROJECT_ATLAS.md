@@ -124,11 +124,17 @@ Current progress:
 - **Done/pro-leads-no-candidate-ready**: Phase 3F.1B 5.5 Pro lead gate. The
   pasted 16-lead list was encoded into candidate cards and gated; zero cleared
   every hard flag, no Phase 3F.2 intake opened, and no residual modeling ran.
-- **Next**: Continue Phase 3F.1C strict simple-stack source search or intake a
-  newly supplied clean lead. Use the same hard gate and open Phase 3F.2 only if
-  one boring public stack has source-backed material constants, measured R/T or
-  ellipsometry, geometry, substrate/backside handling, leakage boundaries, and
-  source/hash readiness.
+- **Done/source-file-audit-no-candidate-ready**: Phase 3F.1C top-candidate
+  source-file audit. The top-three fallback packages were downloaded and
+  hash-verified; structural color FROC lacks open measured spectral holdout,
+  FROC 2021 leaves measured data in Origin OPJ containers, and ultrathin Au is
+  leakage-blocked by same-measurement fitting plus request-only processing code.
+- **Next**: Continue as Phase 3F.1D only if the target is narrowed to
+  benchmark/source-data packages, or explicitly open a non-promoting
+  code-regression fixture lane. Keep Phase 3F.2 closed until one boring public
+  stack has source-backed material constants, measured R/T or ellipsometry,
+  geometry, substrate/backside handling, leakage boundaries, and source/hash
+  readiness.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -194,7 +200,8 @@ calibrated_linear_evidence
   -> COMPLETE/SENSITIVITY: Phase 3E.5 Saha stack-assumption fixture
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1 simulator-validation scout
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1B 5.5 Pro lead gate
-  -> NEXT: continue Phase 3F.1C strict simple-stack source search
+  -> COMPLETE/NO-CANDIDATE: Phase 3F.1C source-file audit
+  -> NEXT: Phase 3F.1D benchmark search or code-regression fixture lane
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -316,9 +323,16 @@ model is not recovered and residual-driven variant selection would leak.
 Phase 3F.1 then ran a bounded simple thin-film simulator-validation scout:
 10 public leads were recorded as candidate cards, but 0 cleared every hard
 gate. Phase 3F.1B then encoded the pasted GPT-5.5 Pro list as 16 candidate
-cards and again found 0 hard-gate passes. Phase 3F remains open as the next
-serious-core fallback; Phase 3F.2 intake stays closed until a simpler public
-planar thin-film dataset has a complete source-backed contract.
+cards and again found 0 hard-gate passes. Phase 3F.1C then downloaded and
+hash-verified the top-three practical fallback packages: structural color FROC,
+FROC 2021, and ultrathin Au. The audit again found 0 hard-gate passes.
+Structural color FROC has open code/constants but no open measured spectral
+R/T holdout package, FROC 2021 measured data are Origin OPJ containers, and
+ultrathin Au has public raw FTIR R/T but fails the leakage-safe no-fit split
+because constants/model parameters are fit from the same optical measurements.
+Phase 3F remains open as the next serious-core fallback; Phase 3F.2 intake
+stays closed until a simpler public planar thin-film dataset has a complete
+source-backed contract.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks
