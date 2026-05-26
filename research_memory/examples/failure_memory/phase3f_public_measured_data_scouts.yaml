@@ -1,0 +1,33 @@
+schema_version: "0.1"
+record_type: source
+title: Phase 3F public measured-data scouting found no hard-gate candidate
+summary: Phase 3F.1 through Phase 3F.1D inspected 37 public scout, Pro-list, source-file, benchmark, source-data, or software-fixture leads and found zero measured-data hard-gate passes.
+body: This record preserves the failure memory from Phase 3F so future searches do not re-litigate the same broad public-data envelope. Phase 3F.1E supplied only code-regression coverage, and Phase 3F.1F paused measured-data scouting.
+evidence_state: literature_supported
+review_state: reviewed
+source_refs:
+  - source_type: local_note
+    locator: docs/phase3f1f_measured_data_scouting_decision.md
+    description: Phase 3F.1F scouting pause decision and evidence basis.
+  - source_type: local_note
+    locator: docs/phase3f_simulator_validation_fallback_plan.md
+    description: Phase 3F running plan and result summary.
+created_at: "2026-05-26T00:00:00Z"
+tags: [phase3f, measured_data, failure_memory, public_dataset_gate]
+project_areas: [calibrated_linear_evidence, research_memory]
+related_record_ids: []
+claims:
+  - The current broad Phase 3F public measured-data search envelope produced zero hard-gate candidates.
+limitations:
+  - A new source package, new lead list, or narrower benchmark target class can still reopen scouting.
+  - This record is not evidence that no suitable dataset exists anywhere.
+next_actions:
+  - Use the Phase 3G.1 intake queue before reopening measured-data scouting.
+warnings:
+  - no_phase3f2_without_all_hard_gates
+  - no_measured_residual_modeling_from_queue_memory
+source_kind: phase_decision
+canonical_id: phase3f_public_measured_data_scouts_failure_memory
+license_notes: Repo-local phase memory only.
+trust_notes: Derived from committed Phase 3F reports and decision artifacts.
+

@@ -1,0 +1,29 @@
+lead_id: new_source_data_lead
+title: Paper or dataset title
+material_family: material / stack
+intended_use: simulator_validation
+source_type: paper_dataset_repository
+source_refs:
+  - DOI or citation
+source_urls:
+  - https://example.test/source
+exact_files_or_records:
+  - nk.csv
+  - measured_rt.csv
+evidence:
+  public_access: unknown
+  source_qualified_constants_or_model: unknown
+  independent_measured_holdout: unknown
+  machine_readable_files: unknown
+  geometry_backed: unknown
+  stack_thickness_backed: unknown
+  substrate_backside_coherence_clear: unknown
+  leakage_safe_no_fit_split: unknown
+  planar_linear_tmm_suitable: unknown
+  source_hash_ready: unknown
+priority_rank: 3
+known_failure_memory: []
+notes:
+  - Set each evidence field to pass, missing, unknown, risk, or not_applicable.
+  - Do not mark pass until the source file or paper text explicitly supports the gate.
+exact_next_action: Inspect source files and hash machine-readable data.

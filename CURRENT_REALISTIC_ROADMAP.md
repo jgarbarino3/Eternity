@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3G - Research Memory / Executive Research Assistant measured-data intake queue`.
+Choose `Phase 3G.2 - assistant intake ergonomics and research-memory record promotion`.
 
 Why:
 
@@ -1080,9 +1080,10 @@ Phase 3F.1 then ran the first bounded simulator-validation scout over 10
 simple/thin-film-adjacent public leads. Zero candidates cleared every hard
 flag, so no Phase 3F.2 intake opened, no TMM adapter started, and no residual
 modeling was run. The useful next step is to continue the simple-stack scout
-until one source-backed public dataset is complete enough to validate the local
-TMM machinery without ENZ claim pressure. Phase 3F.1B then encoded the pasted
-GPT-5.5 Pro lead list as 16 candidate cards and ran the same hard gate. It
+only while the search envelope still has fresh source-backed leads; the later
+Phase 3F.1F decision pauses broad scouting instead of looping. Phase 3F.1B
+then encoded the pasted GPT-5.5 Pro lead list as 16 candidate cards and ran the
+same hard gate. It
 again found 0 hard-gate passes, with the best non-ENZ simulator fallbacks still
 blocked by unproven independent constants, leakage boundaries, file-level
 semantics, or source/hash readiness. Phase 3F.1C then downloaded and inspected
@@ -1150,20 +1151,28 @@ software-fixture leads, again found 0 measured-data hard-gate passes, and
 selected the non-promoting `structural_color_froc_2023_code_parity_fixture`.
 Phase 3F.1E then produced a passing non-promoting TMM code-regression fixture.
 Phase 3F.1F then paused measured-data scouting for now. The current
-recommended next phase is `Phase 3G - Research Memory / Executive Research
-Assistant measured-data intake queue`.
+recommended next phase is `Phase 3G.2 - assistant intake ergonomics and
+research-memory record promotion`.
 
-Phase 3G should:
+Phase 3G.1 has now:
 
 - Turn the Phase 3E/3F gates, rejection memory, source-file audit results, and
   pause/resume rules into an assistant-facing measured-data intake workflow.
 - Make it easy to add one new lead and immediately see whether Phase 3F.2 can
   open, without repeating broad searches or weakening hard gates.
+- Added commands for blocker summaries, lead ranking, 5.5 Pro prompts,
+  no-overclaim status reports, and single-lead gate comparison.
+- Added searchable failure-memory records for Phase 3F, Saha, St Andrews,
+  Wang, and TiON.
 - Keep the Phase 3F.1E result labeled as machinery regression coverage, not
   simulator validation against experiment.
 - Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
 - Keep Phase 3F.2 closed until exactly one measured-data candidate clears every
   hard scout flag and can be ingested without fitting or guessing.
+
+Phase 3G.2 should improve the ergonomics around this queue: record promotion
+from reviewed queue entries, short user-facing status cards, and tighter
+integration with Research Memory/Radar without changing the evidence standard.
 
 Phase 3E.2A implementation result:
 
@@ -1307,11 +1316,12 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3G - Research Memory / Executive Research Assistant measured-data
-  intake queue`. The first scout pass, the Pro-lead pass, the top-three
-  source-file audit, and the targeted benchmark/source-data follow-up all found
-  no candidate ready for Phase 3F.2 intake. Phase 3F.1E added code-regression
-  coverage, and Phase 3F.1F paused broad measured-data scouting.
+- `Phase 3G.2 - assistant intake ergonomics and research-memory record
+  promotion`. The first scout pass, the Pro-lead pass, the top-three source-file
+  audit, and the targeted benchmark/source-data follow-up all found no
+  candidate ready for Phase 3F.2 intake. Phase 3F.1E added code-regression
+  coverage, Phase 3F.1F paused broad measured-data scouting, and Phase 3G.1
+  built the intake queue and assistant commands.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1474,10 +1484,39 @@ Result:
 - Residual modeling allowed: `false`.
 - Phase 4 candidate: `false`.
 
+#### Phase 3G.1: Measured-Data Intake Queue And Assistant Brief
+
+Artifacts:
+
+- `docs/phase3g_measured_data_intake_queue.yaml`
+- `docs/phase3g_new_lead_template.yaml`
+- `docs/phase3g_measured_data_intake_queue.md`
+- `docs/phase3g_measured_data_intake_queue.json`
+- `docs/phase3g_no_overclaim_status.md`
+- `src/eternity/phase3g1.py`
+- `research_memory/examples/failure_memory/`
+
+Result:
+
+- Decision: `phase3g1_intake_queue_ready_no_candidate`.
+- Queue lead count: `5`.
+- Hard-gate pass count: `0`.
+- Phase 3F.2 intake allowed: `false`.
+- Residual modeling allowed now: `false`.
+- Phase 4 candidate ready now: `false`.
+
+Commands:
+
+- `eternity phase3g1-summarize-blockers`
+- `eternity phase3g1-rank-leads`
+- `eternity phase3g1-pro-prompt`
+- `eternity phase3g1-no-overclaim-report`
+- `eternity phase3g1-compare-lead --lead-card <lead.yaml>`
+
 Recommended next phase:
 
-- `Phase 3G - Research Memory / Executive Research Assistant measured-data
-  intake queue`. Planning: GPT-5.5 `high`; implementation: `medium`.
+- `Phase 3G.2 - assistant intake ergonomics and research-memory record
+  promotion`. Planning: GPT-5.5 `medium`; implementation: `medium`.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3G Research Memory / Executive Research Assistant measured-data intake queue
+**Current focus:** Phase 3G.2 assistant intake ergonomics and research-memory record promotion
 
 ## Current Position
 
-**Current Phase:** 3G
-**Current Phase Name:** Research Memory / Executive Research Assistant Measured-Data Intake Queue
+**Current Phase:** 3G.2
+**Current Phase Name:** Assistant Intake Ergonomics And Research-Memory Record Promotion
 **Total Phases:** 3
-**Current Plan:** docs/phase3f1f_measured_data_scouting_decision.md
+**Current Plan:** docs/phase3g_measured_data_intake_queue.md
 **Total Plans in Phase:** 15
-**Status:** Active / Phase 3F.1F measured-data scouting paused
+**Status:** Active / Phase 3G.1 intake queue ready
 **Last Activity:** 2026-05-26
-**Last Activity Description:** Completed Phase 3F.1F by pausing measured-data scouting after Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes across 37 leads and Phase 3F.1E supplied only non-promoting code-regression coverage. Phase 3F.2 intake, measured residual modeling, and Phase 4 remain closed. Next remembered work is Phase 3G: build the Research Memory / Executive Research Assistant measured-data intake queue.
+**Last Activity Description:** Completed Phase 3G.1 by adding a measured-data intake queue, assistant commands, generated JSON/Markdown/no-overclaim reports, tests, and searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and TiON. The queue has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 intake, measured residual modeling, and Phase 4 closed. Next remembered work is Phase 3G.2: improve assistant intake ergonomics and research-memory record promotion.
 
 **Progress:** [██████████] 99%
 
@@ -285,6 +285,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   search envelope produced 0 measured-data hard-gate passes across 37 leads, so
   the next useful lane is Phase 3G assistant-facing intake, not another broad
   search.
+- [Phase 3G.1]: The measured-data intake queue is ready. — Five current leads
+  are queued, zero hard-gate passes are recorded, assistant commands exist for
+  blocker summaries, lead ranking, Pro prompts, no-overclaim reports, and
+  single-lead comparison, and failure memory is searchable.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -305,9 +309,9 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3G: build a Research Memory / Executive Research Assistant measured-data
-  intake queue that preserves the Phase 3E/3F gates, rejection memory, and
-  pause/resume rules for future source-backed leads.
+- Phase 3G.2: improve assistant intake ergonomics and research-memory record
+  promotion without changing hard gates, opening Phase 3F.2, or running
+  measured residuals.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

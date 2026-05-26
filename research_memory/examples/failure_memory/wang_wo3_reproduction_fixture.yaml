@@ -1,0 +1,33 @@
+schema_version: "0.1"
+record_type: source
+title: Wang W/WO3 is a de-offseted reproduction fixture, not validation evidence
+summary: Wang W/WO3 provides useful non-ENZ source tables and de-offseted plotted traces, but Fig. 2f semantics block no-fit validation.
+body: Phase 3E.2A through Phase 3E.2D captured the Wang source-data package, source semantics, de-offseted fixture, and claim boundary. The result is useful for assistant parsing and literature reproduction, not calibrated evidence.
+evidence_state: literature_supported
+review_state: reviewed
+source_refs:
+  - source_type: local_note
+    locator: docs/phase3e2d_wang_claim_boundary_handoff.md
+    description: Wang claim-boundary and assistant handoff.
+  - source_type: local_note
+    locator: docs/phase3e2c_wang_deoffset_reproduction_fixture.md
+    description: Wang bounded de-offseted reproduction fixture.
+created_at: "2026-05-26T00:00:00Z"
+tags: [wang, wo3, literature_reproduction_fixture, deoffset, failure_memory]
+project_areas: [calibrated_linear_evidence, research_memory]
+related_record_ids: []
+claims:
+  - Wang can remain a literature reproduction fixture.
+  - Wang should not be promoted as calibrated validation evidence.
+limitations:
+  - Fig. 2f chart/series semantics are not clean enough for no-fit validation.
+next_actions:
+  - Use Wang for parser/gating behavior, not residual-based claim promotion.
+warnings:
+  - literature_fixture_only
+  - no_claim_promotion
+source_kind: public_dataset_failure_memory
+canonical_id: wang_wo3_reproduction_fixture
+license_notes: Repo-local summary of public source-data fixture.
+trust_notes: Derived from committed Phase 3E.2 reports.
+

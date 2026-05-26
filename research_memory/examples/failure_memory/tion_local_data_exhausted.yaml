@@ -1,0 +1,31 @@
+schema_version: "0.1"
+record_type: source
+title: TiON local validation evidence is exhausted without raw R/T
+summary: TiON_48 and TiON_49 have epsilon tables and calibration-only examples, but no repo-local raw R/T spectra or digitizable plot candidates.
+body: Phase 3B.1 inventoried local TiON evidence and found material models plus epsilon tables, but no raw R/T measurement holdout. Under the hard data-availability rule, unavailable CompleteEASE re-exports, TiON raw R/T, and St Andrews author contact are not active next steps.
+evidence_state: literature_supported
+review_state: reviewed
+source_refs:
+  - source_type: local_note
+    locator: docs/phase3b1_tion_evidence_reality_check.md
+    description: TiON evidence reality check and local exhaustion decision.
+  - source_type: local_note
+    locator: docs/phase_index.md
+    description: Current phase index and hard data-availability constraints.
+created_at: "2026-05-26T00:00:00Z"
+tags: [tion, tion_48, tion_49, raw_rt_missing, failure_memory]
+project_areas: [calibrated_linear_evidence, research_memory]
+related_record_ids: []
+claims:
+  - Local TiON_48/TiON_49 evidence supports calibration-only examples, not measured validation.
+limitations:
+  - New user-supplied raw R/T or exact source files would change this record.
+next_actions:
+  - Keep TiON parked for validation until raw R/T or source-backed measurement data appears.
+warnings:
+  - raw_rt_missing
+  - calibration_only_no_holdout
+source_kind: local_data_failure_memory
+canonical_id: tion_local_data_exhausted
+license_notes: Repo-local summary of local evidence inventory.
+trust_notes: Derived from committed Phase 3B.1 report and project rules.

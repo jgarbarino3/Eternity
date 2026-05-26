@@ -138,6 +138,96 @@ def test_phase3f1_simulator_validation_scout_command_writes_artifacts(
     assert packet["decision"]["residual_modeling_performed"] is False
 
 
+def test_phase3g1_intake_queue_command_writes_artifacts(tmp_path: Path) -> None:
+    result = runner.invoke(
+        app,
+        [
+            "phase3g1-intake-queue",
+            "--output-dir",
+            str(tmp_path),
+            "--report-stem",
+            "phase3g1_cli_smoke",
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    json_path = tmp_path / "phase3g1_cli_smoke.json"
+    assert json_path.exists()
+    assert (tmp_path / "phase3g1_cli_smoke.md").exists()
+
+    packet = json.loads(json_path.read_text(encoding="utf-8"))
+    assert packet["decision"]["phase3f2_intake_allowed"] is False
+    assert packet["decision"]["residual_modeling_allowed_now"] is False
+
+
+def test_phase3g1_assistant_commands_are_usable(tmp_path: Path) -> None:
+    blockers = runner.invoke(app, ["phase3g1-summarize-blockers"])
+    ranked = runner.invoke(app, ["phase3g1-rank-leads"])
+    prompt = runner.invoke(app, ["phase3g1-pro-prompt"])
+    report_path = tmp_path / "no_overclaim.md"
+    report = runner.invoke(
+        app,
+        ["phase3g1-no-overclaim-report", "--output", str(report_path)],
+    )
+
+    assert blockers.exit_code == 0, blockers.output
+    assert "phase3f2_intake_allowed=false" in blockers.output
+    assert ranked.exit_code == 0, ranked.output
+    assert "saha_tin_azo_2023_exported_tables" in ranked.output
+    assert prompt.exit_code == 0, prompt.output
+    assert "Do not relax the evidence bar" in prompt.output
+    assert report.exit_code == 0, report.output
+    assert "wrote" in report.output
+    assert "No-Overclaim Status" in report_path.read_text(encoding="utf-8")
+
+
+def test_phase3g1_compare_lead_labels_new_dataset(tmp_path: Path) -> None:
+    lead_card = tmp_path / "lead.json"
+    lead_card.write_text(
+        json.dumps(
+            {
+                "lead_id": "new_clean_stack",
+                "title": "New clean stack",
+                "material_family": "dielectric planar stack",
+                "intended_use": "simulator_validation",
+                "source_type": "fixture",
+                "source_refs": ["fixture"],
+                "source_urls": ["https://example.test"],
+                "exact_files_or_records": ["nk.csv", "rt.csv"],
+                "evidence": {
+                    "public_access": "pass",
+                    "source_qualified_constants_or_model": "pass",
+                    "independent_measured_holdout": "pass",
+                    "machine_readable_files": "pass",
+                    "geometry_backed": "pass",
+                    "stack_thickness_backed": "pass",
+                    "substrate_backside_coherence_clear": "pass",
+                    "leakage_safe_no_fit_split": "pass",
+                    "planar_linear_tmm_suitable": "pass",
+                    "source_hash_ready": "pass",
+                },
+                "priority_rank": 1,
+                "known_failure_memory": [],
+                "notes": [],
+                "exact_next_action": "Open Phase 3F.2 source-file intake.",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = runner.invoke(
+        app,
+        ["phase3g1-compare-lead", "--lead-card", str(lead_card), "--json"],
+    )
+
+    assert result.exit_code == 0, result.output
+    packet = json.loads(result.output)
+    assert packet["decision"]["computed_intake_label"] == "simulator_validation_candidate"
+    assert packet["decision"]["canonical_dataset_label"] == "simulator_validation_candidate"
+    assert packet["decision"]["phase3f2_intake_allowed"] is True
+    assert packet["decision"]["residual_modeling_allowed_now"] is False
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

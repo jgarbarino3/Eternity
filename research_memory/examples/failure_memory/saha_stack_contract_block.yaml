@@ -1,0 +1,33 @@
+schema_version: "0.1"
+record_type: source
+title: Saha TiN/AZO source tables are exported but stack-contract blocked
+summary: Saha Fig. 2b and Fig. 2c/d source tables are canonicalized, but no-fit TMM residual modeling is blocked by silicon/backside/coherence and leakage uncertainties.
+body: The Windows Origin Viewer export cleared the OPJU table extraction blocker, and Phase 3E.3A produced canonical measured reflectance, source-simulated reflectance, TiN epsilon, and AZO epsilon tables. Phase 3E.3B blocked TMM because silicon optical constants, substrate backside/coherence handling, and interface or oxide assumptions are not source-backed tightly enough.
+evidence_state: literature_supported
+review_state: reviewed
+source_refs:
+  - source_type: local_note
+    locator: docs/phase3e3a_saha_exported_table_audit.md
+    description: Saha exported-table audit and canonical artifact summary.
+  - source_type: local_note
+    locator: docs/phase3e3b_saha_stack_model_gate.md
+    description: Saha frozen-stack model provenance and no-fit adapter gate.
+created_at: "2026-05-26T00:00:00Z"
+tags: [saha, tin, azo, substrate_backside, leakage, failure_memory]
+project_areas: [calibrated_linear_evidence, research_memory]
+related_record_ids: []
+claims:
+  - Saha is source-table-exported and useful as source memory.
+  - Saha does not currently support residual modeling or calibrated claim promotion.
+limitations:
+  - Source-backed silicon constants, backside/coherence treatment, and leakage boundary are still missing.
+next_actions:
+  - Keep Saha parked unless source-backed substrate/backside/coherence and leakage proof appears.
+warnings:
+  - no_residual_driven_variant_selection
+  - do_not_promote_saha
+source_kind: public_dataset_failure_memory
+canonical_id: saha_tin_azo_stack_contract_block
+license_notes: Repo-local summary of public source-data audit.
+trust_notes: Derived from committed Saha phase reports.
+

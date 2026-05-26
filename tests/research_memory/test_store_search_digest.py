@@ -29,6 +29,18 @@ def test_search_orders_relevant_records_and_shows_evidence() -> None:
     assert "scalar" in results[0].snippet.lower()
 
 
+def test_failure_memory_records_are_searchable() -> None:
+    loaded = load_records(Path("research_memory/examples"))
+
+    saha = search_records([item.record for item in loaded], "Saha backside leakage", limit=3)
+    tion = search_records([item.record for item in loaded], "TiON raw R/T missing", limit=3)
+
+    assert saha
+    assert "saha" in saha[0].record.title.lower()
+    assert tion
+    assert "tion" in tion[0].record.title.lower()
+
+
 def test_digest_writes_conservative_markdown(tmp_path: Path) -> None:
     loaded = load_records(Path("research_memory/examples"))
 

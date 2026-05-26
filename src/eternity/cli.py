@@ -95,6 +95,19 @@ from eternity.phase3f1 import build_phase3f1_packet, write_phase3f1_packet
 from eternity.phase3f1e import DEFAULT_ARCHIVE_PATH as DEFAULT_PHASE3F1E_ARCHIVE_PATH
 from eternity.phase3f1e import DEFAULT_SOURCE_ROOT as DEFAULT_PHASE3F1E_SOURCE_ROOT
 from eternity.phase3f1e import build_phase3f1e_packet, write_phase3f1e_packet
+from eternity.phase3g1 import (
+    DEFAULT_PHASE3F1F_DECISION_PATH as DEFAULT_PHASE3G1_PHASE3F1F_DECISION_PATH,
+)
+from eternity.phase3g1 import DEFAULT_QUEUE_PATH as DEFAULT_PHASE3G1_QUEUE_PATH
+from eternity.phase3g1 import (
+    build_phase3g1_compare_packet,
+    build_phase3g1_packet,
+    phase3g1_blocker_summary,
+    phase3g1_compare_markdown,
+    phase3g1_no_overclaim_markdown,
+    phase3g1_ranked_leads,
+    write_phase3g1_packet,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -512,6 +525,37 @@ PHASE3F1E_REPORT_STEM_OPTION = typer.Option(
     "phase3f1e_code_regression_fixture",
     "--report-stem",
     help="Output filename stem for Phase 3F.1E code-regression artifacts.",
+)
+PHASE3G1_QUEUE_OPTION = typer.Option(
+    DEFAULT_PHASE3G1_QUEUE_PATH,
+    "--queue",
+    help="Phase 3G.1 measured-data lead queue.",
+)
+PHASE3G1_PHASE3F1F_DECISION_OPTION = typer.Option(
+    DEFAULT_PHASE3G1_PHASE3F1F_DECISION_PATH,
+    "--phase3f1f-decision",
+    help="Phase 3F.1F measured-data scouting pause decision JSON.",
+)
+PHASE3G1_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown intake queue artifacts.",
+)
+PHASE3G1_REPORT_STEM_OPTION = typer.Option(
+    "phase3g_measured_data_intake_queue",
+    "--report-stem",
+    help="Output filename stem for Phase 3G.1 intake queue artifacts.",
+)
+PHASE3G1_LEAD_CARD_OPTION = typer.Option(
+    ...,
+    "--lead-card",
+    help="Single Phase 3G.1 lead-card YAML/JSON file to compare against the hard gate.",
+)
+PHASE3G1_JSON_OPTION = typer.Option(False, "--json", help="Emit machine-readable JSON.")
+PHASE3G1_OUTPUT_PATH_OPTION = typer.Option(
+    None,
+    "--output",
+    help="Optional output path for a Markdown report.",
 )
 
 
@@ -1284,6 +1328,157 @@ def phase3f1e_code_regression_fixture(
         return
 
     typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3g1-intake-queue")
+def phase3g1_intake_queue(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_dir: Path | None = PHASE3G1_OUTPUT_DIR_OPTION,
+    report_stem: str = PHASE3G1_REPORT_STEM_OPTION,
+) -> None:
+    """Write the Phase 3G.1 measured-data intake queue and assistant brief."""
+
+    try:
+        packet = build_phase3g1_packet(queue_path, phase3f1f_decision_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 intake queue failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3g1_packet(
+            output_dir,
+            packet,
+            report_stem=report_stem,
+        )
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3g1-summarize-blockers")
+def phase3g1_summarize_blockers(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_json: bool = PHASE3G1_JSON_OPTION,
+) -> None:
+    """Summarize the current measured-data blockers without promoting claims."""
+
+    try:
+        packet = build_phase3g1_packet(queue_path, phase3f1f_decision_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 blocker summary failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    summary = phase3g1_blocker_summary(packet)
+    if output_json:
+        typer.echo(json.dumps(summary, indent=2, sort_keys=True))
+        return
+
+    typer.echo(f"status={summary['status']}")
+    typer.echo(f"phase3f2_intake_allowed={str(summary['phase3f2_intake_allowed']).lower()}")
+    typer.echo(
+        "residual_modeling_allowed_now="
+        f"{str(summary['residual_modeling_allowed_now']).lower()}"
+    )
+    for blocker in summary["top_blockers"][:8]:
+        typer.echo(f"{blocker['flag']} count={blocker['count']} :: {blocker['criterion']}")
+
+
+@app.command("phase3g1-rank-leads")
+def phase3g1_rank_leads(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_json: bool = PHASE3G1_JSON_OPTION,
+) -> None:
+    """Rank queued measured-data leads by hard-gate readiness."""
+
+    try:
+        packet = build_phase3g1_packet(queue_path, phase3f1f_decision_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 lead ranking failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    ranked = phase3g1_ranked_leads(packet)
+    if output_json:
+        typer.echo(json.dumps(ranked, indent=2, sort_keys=True))
+        return
+
+    for item in ranked:
+        missing = ",".join(item["missing_required_flags"]) or "none"
+        typer.echo(
+            f"{item['lead_id']} label={item['label']} "
+            f"canonical={item['canonical_dataset_label']} "
+            f"pass={str(item['hard_gate_pass']).lower()} missing={missing}"
+        )
+
+
+@app.command("phase3g1-pro-prompt")
+def phase3g1_pro_prompt(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+) -> None:
+    """Emit the current 5.5 Pro prompt for source-backed missing-evidence review."""
+
+    try:
+        packet = build_phase3g1_packet(queue_path, phase3f1f_decision_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 Pro prompt failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    typer.echo(packet["assistant_command_contract"]["pro_prompt"])
+
+
+@app.command("phase3g1-no-overclaim-report")
+def phase3g1_no_overclaim_report(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_path: Path | None = PHASE3G1_OUTPUT_PATH_OPTION,
+) -> None:
+    """Write or print a no-overclaim measured-data status report."""
+
+    try:
+        packet = build_phase3g1_packet(queue_path, phase3f1f_decision_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 no-overclaim report failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    markdown = phase3g1_no_overclaim_markdown(packet)
+    if output_path is not None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(markdown, encoding="utf-8")
+        typer.echo(f"wrote {output_path}")
+        return
+    typer.echo(markdown)
+
+
+@app.command("phase3g1-compare-lead")
+def phase3g1_compare_lead(
+    lead_card_path: Path = PHASE3G1_LEAD_CARD_OPTION,
+    output_json: bool = PHASE3G1_JSON_OPTION,
+    output_path: Path | None = PHASE3G1_OUTPUT_PATH_OPTION,
+) -> None:
+    """Compare one new dataset lead card against the Phase 3G.1 hard gate."""
+
+    try:
+        packet = build_phase3g1_compare_packet(lead_card_path)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.1 lead comparison failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_json:
+        typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+        return
+
+    markdown = phase3g1_compare_markdown(packet)
+    if output_path is not None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(markdown, encoding="utf-8")
+        typer.echo(f"wrote {output_path}")
+        return
+    typer.echo(markdown)
 
 
 if __name__ == "__main__":

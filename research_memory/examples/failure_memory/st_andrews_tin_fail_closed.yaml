@@ -1,0 +1,33 @@
+schema_version: "0.1"
+record_type: source
+title: St Andrews public TiN clean run failed locked thresholds
+summary: The St Andrews public 50 nm TiN dataset has useful R/T and ellipsometry tables, but threshold-locked clean runs and bounded source-derived variants failed.
+body: Phase 3C.3 locked thresholds before a clean run and the candidate failed all five metrics. Phase 3C.6A tested bounded roughness/back-reflection variants, but all variants still failed and exact source-model parity remains underdetermined.
+evidence_state: literature_supported
+review_state: reviewed
+source_refs:
+  - source_type: local_note
+    locator: docs/phase3c3_clean_run_evaluation.md
+    description: Threshold-locked St Andrews clean-run result.
+  - source_type: local_note
+    locator: docs/phase3c6_source_model_parity_decision.md
+    description: Bounded source-model parity decision.
+created_at: "2026-05-26T00:00:00Z"
+tags: [st_andrews, tin, threshold_failed, source_model_parity, failure_memory]
+project_areas: [calibrated_linear_evidence, research_memory]
+related_record_ids: []
+claims:
+  - St Andrews is a useful public TiN validation failure memory.
+  - Current St Andrews artifacts should not proceed to Phase 4.
+limitations:
+  - Exact roughness, back-reflection, or acquisition-parity evidence could justify a new source-model parity pass.
+next_actions:
+  - Do not continue St Andrews toward Phase 4 without new exact source-model evidence.
+warnings:
+  - thresholds_failed
+  - no_threshold_rewriting_after_residuals
+source_kind: public_dataset_failure_memory
+canonical_id: st_andrews_tin_fail_closed
+license_notes: Repo-local summary of public dataset validation attempt.
+trust_notes: Derived from committed Phase 3C reports.
+

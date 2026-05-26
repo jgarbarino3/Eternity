@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3G Research Memory / Executive Research Assistant measured-data intake queue"
+    "current_focus": "Phase 3G.2 assistant intake ergonomics and research-memory record promotion"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -25,14 +25,14 @@
     }
   },
   "position": {
-    "current_phase": "3G",
-    "current_phase_name": "Research Memory / Executive Research Assistant Measured-Data Intake Queue",
+    "current_phase": "3G.2",
+    "current_phase_name": "Assistant Intake Ergonomics And Research-Memory Record Promotion",
     "total_phases": 3,
-    "current_plan": "docs/phase3f1f_measured_data_scouting_decision.md",
+    "current_plan": "docs/phase3g_measured_data_intake_queue.md",
     "total_plans_in_phase": 15,
-    "status": "Active / Phase 3F.1F measured-data scouting paused",
+    "status": "Active / Phase 3G.1 intake queue ready",
     "last_activity": "2026-05-26",
-    "last_activity_desc": "Completed Phase 3F.1F by pausing measured-data scouting after Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes across 37 leads and Phase 3F.1E supplied only non-promoting code-regression coverage. Phase 3F.2 intake, measured residual modeling, and Phase 4 remain closed. Next remembered work is Phase 3G: build the Research Memory / Executive Research Assistant measured-data intake queue.",
+    "last_activity_desc": "Completed Phase 3G.1 by adding a measured-data intake queue, assistant commands, generated JSON/Markdown/no-overclaim reports, tests, and searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and TiON. The queue has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 intake, measured residual modeling, and Phase 4 closed. Next remembered work is Phase 3G.2: improve assistant intake ergonomics and research-memory record promotion.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -724,6 +724,11 @@
       "phase": "Phase 3F.1F",
       "decision": "Pause measured-data scouting rather than opening another broad public-data search.",
       "implication": "Phase 3F.2 intake, measured residual modeling, and Phase 4 remain closed. Resume only with new source files, new lead lists, a narrower benchmark target class, or newly public machine-readable measured optical data."
+    },
+    {
+      "phase": "Phase 3G.1",
+      "decision": "Measured-data intake queue is ready with 5 leads and 0 hard-gate passes.",
+      "implication": "Phase 3F.2 intake, measured residual modeling, and Phase 4 remain closed. Future leads can be compared through the queue or single-lead command before any source-file intake."
     }
   ],
   "approximations": [
@@ -763,7 +768,7 @@
   },
   "propagated_uncertainties": [],
   "pending_todos": [
-    "Phase 3G: build a Research Memory / Executive Research Assistant measured-data intake queue that preserves Phase 3E/3F gates, rejection memory, and pause/resume rules for future source-backed leads.",
+    "Phase 3G.2: improve assistant intake ergonomics and research-memory record promotion without changing hard gates, opening Phase 3F.2, or running measured residuals.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.6 packet remains archived as the acceptance template if new source evidence or a future measurement appears; CompleteEASE re-export is not available under current constraints.",
@@ -785,12 +790,13 @@
     "Phase 3F.1C found no hard-gate-ready candidate in the top-three source-file audit, so Phase 3F.2 intake and residual modeling remain blocked.",
     "Phase 3F.1D found no measured-data hard-gate candidate in the targeted benchmark/source-data follow-up, so Phase 3F.2 intake and residual modeling remain blocked.",
     "Phase 3F.1E is code-regression coverage only; it does not supply a measured holdout, so Phase 3F.2 intake and residual modeling remain blocked.",
-    "Phase 3F.1F paused broad measured-data scouting; do not reopen another broad search unless new source files, new lead lists, a narrower benchmark target class, or newly public measured optical data appear."
+    "Phase 3F.1F paused broad measured-data scouting; do not reopen another broad search unless new source files, new lead lists, a narrower benchmark target class, or newly public measured optical data appear.",
+    "Phase 3G.1 queue has 5 leads and 0 hard-gate passes; Phase 3F.2 remains closed until a future lead passes every hard gate before residual modeling."
   ],
   "continuation": {
     "schema_version": 1,
-    "handoff": "Phase 3F.1F is complete: measured-data scouting is paused after 37 leads produced 0 measured-data hard-gate passes and Phase 3F.1E supplied only code-regression coverage. Continue with Phase 3G measured-data intake queue work.",
-    "bounded_segment": "Phase 3G assistant-facing intake workflow; no measured residuals, Phase 3F.2 intake, or claim promotion unless a future candidate clears every hard gate.",
+    "handoff": "Phase 3G.1 is complete: measured-data intake queue, assistant commands, no-overclaim report, tests, and searchable failure-memory records are in place. Continue with Phase 3G.2 ergonomics and record-promotion work.",
+    "bounded_segment": "Phase 3G.2 assistant ergonomics and research-memory promotion only; no measured residuals, Phase 3F.2 intake, or claim promotion unless a future lead clears every hard gate.",
     "machine": {
       "recorded_at": null,
       "hostname": null,

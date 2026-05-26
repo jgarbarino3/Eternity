@@ -1,0 +1,165 @@
+phase_id: Phase 3G.1
+report_title: Measured-Data Intake Queue And Assistant Brief
+queue_version: 1
+updated_at: "2026-05-26"
+queue_scope: >
+  Assistant-facing queue for future public measured-data leads after Phase
+  3F.1F paused broad scouting. Queue entries preserve the hard gate state and
+  claim ceiling for fast fail-closed triage; they are not validation evidence.
+lead_limit: 50
+candidates_note: >
+  To compare a new paper, dataset, repository, or 5.5 Pro lead against the
+  gate, add one lead card with evidence states set to pass, missing, unknown,
+  risk, or not_applicable, then run `eternity phase3g1-intake-queue`.
+leads:
+  - lead_id: saha_tin_azo_2023_exported_tables
+    title: Saha TiN/AZO Origin Viewer exported Fig. 2b and Fig. 2c/d tables
+    material_family: TiN/AZO ENZ-adjacent multilayer
+    intended_use: enz_calibrated
+    source_type: Figshare source data plus paper
+    source_refs:
+      - docs/phase3e3a_saha_exported_table_audit.md
+      - docs/phase3e3b_saha_stack_model_gate.md
+    source_urls:
+      - https://figshare.com/articles/dataset/Origin_source_data_for_figures_in_Rapid_electro-optic_response_of_transparent_conducting_oxide_integrated_in_silicon_photonic_crystal/23734116
+    exact_files_or_records:
+      - lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv
+      - lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv
+    evidence:
+      public_access: pass
+      source_qualified_constants_or_model: pass
+      independent_measured_holdout: pass
+      machine_readable_files: pass
+      geometry_backed: pass
+      stack_thickness_backed: pass
+      substrate_backside_coherence_clear: unknown
+      leakage_safe_no_fit_split: unknown
+      planar_linear_tmm_suitable: pass
+      source_hash_ready: pass
+    priority_rank: 2
+    known_failure_memory:
+      - Phase 3E.3A canonicalized source tables but stopped before TMM.
+      - Phase 3E.3B blocked no-fit TMM on silicon/backside/coherence and leakage gaps.
+      - Phase 3E.5 sensitivity was non-promoting.
+    notes:
+      - Source tables are useful memory, not calibrated evidence.
+    exact_next_action: Keep parked unless source-backed silicon/backside/coherence and leakage proof appears.
+
+  - lead_id: st_andrews_tin_2025_public_tin
+    title: St Andrews public 50 nm TiN-on-glass dataset
+    material_family: TiN thin film on glass
+    intended_use: enz_calibrated
+    source_type: public dataset plus paper
+    source_refs:
+      - docs/phase3c6_source_model_parity_decision.md
+      - docs/phase3c3_clean_run_evaluation.md
+    source_urls: []
+    exact_files_or_records:
+      - lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip
+      - experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml
+    evidence:
+      public_access: pass
+      source_qualified_constants_or_model: pass
+      independent_measured_holdout: pass
+      machine_readable_files: pass
+      geometry_backed: pass
+      stack_thickness_backed: pass
+      substrate_backside_coherence_clear: unknown
+      leakage_safe_no_fit_split: risk
+      planar_linear_tmm_suitable: pass
+      source_hash_ready: pass
+    priority_rank: 3
+    known_failure_memory:
+      - Phase 3C.3 threshold-locked clean run failed all five metrics.
+      - Phase 3C.6A bounded source-derived variants still failed and stayed non-promoting.
+    notes:
+      - Keep as historical public TiN validation failure memory.
+    exact_next_action: Do not continue toward Phase 4 without exact roughness/back-reflection or acquisition-parity evidence.
+
+  - lead_id: structural_color_froc_2023_code_parity
+    title: Structural color FROC public TMM code and material-table fixture
+    material_family: ultrathin metal/dielectric color coatings
+    intended_use: code_regression
+    source_type: GitHub code plus Nature source-data memory
+    source_refs:
+      - docs/phase3f1e_code_regression_fixture.md
+      - docs/phase3f1c_source_file_audit.md
+    source_urls:
+      - https://github.com/hincz-lab/structural_color_FROCs
+    exact_files_or_records:
+      - lab_data/raw/public_structural_color_froc_2023/structural_color_FROCs-main.zip
+    evidence:
+      public_access: pass
+      source_qualified_constants_or_model: pass
+      independent_measured_holdout: missing
+      machine_readable_files: pass
+      geometry_backed: pass
+      stack_thickness_backed: pass
+      substrate_backside_coherence_clear: pass
+      leakage_safe_no_fit_split: missing
+      planar_linear_tmm_suitable: pass
+      source_hash_ready: pass
+    priority_rank: 4
+    known_failure_memory:
+      - Phase 3F.1E passed three deterministic code-regression parity cases.
+      - No open measured spectral R/T holdout package was identified.
+    notes:
+      - Useful for implementation parity only.
+    exact_next_action: Keep as code-regression coverage, not measured validation.
+
+  - lead_id: ultrathin_au_absorber_2020
+    title: Ultrathin 2 nm gold impedance-matched absorber source-data package
+    material_family: SiN / ultrathin Au absorber stack
+    intended_use: simulator_validation
+    source_type: Zenodo and Nature source data
+    source_refs:
+      - docs/phase3f1c_source_file_audit.md
+    source_urls:
+      - https://doi.org/10.5281/zenodo.3667418
+    exact_files_or_records:
+      - Source-data package inspected in Phase 3F.1C
+    evidence:
+      public_access: pass
+      source_qualified_constants_or_model: pass
+      independent_measured_holdout: pass
+      machine_readable_files: pass
+      geometry_backed: pass
+      stack_thickness_backed: pass
+      substrate_backside_coherence_clear: pass
+      leakage_safe_no_fit_split: risk
+      planar_linear_tmm_suitable: pass
+      source_hash_ready: pass
+    priority_rank: 3
+    known_failure_memory:
+      - Phase 3F.1C found raw R/T richness but same-measurement fitting leakage.
+      - Processing code remained request-only.
+    notes:
+      - Best kept as secondary measurement-parser fixture memory.
+    exact_next_action: Revisit only if an independent no-fit material split is found.
+
+  - lead_id: future_clean_teaching_stack_template
+    title: Future clean public teaching or benchmark coating package
+    material_family: simple dielectric or metal/dielectric planar stack
+    intended_use: simulator_validation
+    source_type: placeholder lead template
+    source_refs:
+      - docs/phase3f1f_measured_data_scouting_decision.md
+    source_urls: []
+    exact_files_or_records: []
+    evidence:
+      public_access: unknown
+      source_qualified_constants_or_model: unknown
+      independent_measured_holdout: unknown
+      machine_readable_files: unknown
+      geometry_backed: unknown
+      stack_thickness_backed: unknown
+      substrate_backside_coherence_clear: unknown
+      leakage_safe_no_fit_split: unknown
+      planar_linear_tmm_suitable: unknown
+      source_hash_ready: unknown
+    priority_rank: 1
+    known_failure_memory:
+      - Use this card shape for a genuinely new lead outside the exhausted Phase 3F.1 search envelope.
+    notes:
+      - Mark unknown until exact source files have been inspected.
+    exact_next_action: Replace placeholder fields with source-backed evidence before considering Phase 3F.2.

@@ -40,6 +40,29 @@ uv run --no-editable eternity memory digest research_memory/examples --project-a
 data belongs under `data/research_memory/` or `results/research_memory/`, both of
 which are ignored by git.
 
+## Measured-Data Intake Queue
+
+Phase 3G.1 adds an assistant-facing queue for future public measured-data
+leads. It is a triage and no-overclaim workflow, not validation evidence.
+
+```bash
+uv run --no-editable eternity phase3g1-intake-queue --output-dir docs
+uv run --no-editable eternity phase3g1-summarize-blockers
+uv run --no-editable eternity phase3g1-rank-leads
+uv run --no-editable eternity phase3g1-pro-prompt
+uv run --no-editable eternity phase3g1-no-overclaim-report --output docs/phase3g_no_overclaim_status.md
+uv run --no-editable eternity phase3g1-compare-lead --lead-card docs/phase3g_new_lead_template.yaml --json
+```
+
+The queue source is `docs/phase3g_measured_data_intake_queue.yaml`. Add one lead
+card for a new paper, repository, Zenodo/Figshare package, or 5.5 Pro lead, set
+each hard-gate field to `pass`, `missing`, `unknown`, `risk`, or
+`not_applicable`, then rerun the command. The generated report classifies the
+lead, ranks it against current blockers, emits a 5.5 Pro prompt, and keeps
+Phase 3F.2 closed unless every hard gate passes before residual modeling.
+For a one-off comparison, copy the shape of `docs/phase3g_new_lead_template.yaml`
+into a new YAML file and run `phase3g1-compare-lead`.
+
 ## Weekly Research Radar
 
 The radar layer turns public metadata feeds and Codex web-search results into a

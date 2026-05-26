@@ -1,0 +1,544 @@
+{
+  "assistant_command_contract": {
+    "commands": {
+      "compare_new_dataset_against_gate": "eternity phase3g1-compare-lead --lead-card <lead.yaml>",
+      "generate_pro_prompt": "eternity phase3g1-pro-prompt",
+      "make_no_overclaim_status_report": "eternity phase3g1-no-overclaim-report",
+      "rank_next_public_data_leads": "eternity phase3g1-rank-leads",
+      "summarize_current_blockers": "eternity phase3g1-summarize-blockers"
+    },
+    "forbidden_workflows": [
+      "running measured residuals from a queue lead",
+      "opening Phase 3F.2 without every hard gate passing",
+      "using residual shape to choose constants, thickness, or backside assumptions",
+      "promoting Phase 3F.1E code parity to measured validation"
+    ],
+    "primary_cli": "eternity phase3g1-intake-queue",
+    "pro_prompt": "You are reviewing candidate public thin-film measured-data leads for Eternity.\nDo not relax the evidence bar. Find only source-backed evidence for missing hard gates.\nCurrent selected lead: none.\nRequired gates: public access; source-qualified constants/model; independent measured holdout; machine-readable files; geometry; stack/thickness; substrate/backside/coherence; leakage-safe no-fit split; planar linear TMM suitability; source/hash readiness.\nReturn a table with pass/unknown/fail for each gate, exact source files, and a conservative claim ceiling. Do not propose residual modeling unless every hard gate is source-backed before fitting.",
+    "supported_workflows": [
+      {
+        "name": "summarize_current_blockers",
+        "output": "No-overclaim status plus top missing hard gates."
+      },
+      {
+        "name": "rank_next_public_data_leads",
+        "output": "Sorted lead table by priority rank and missing hard-gate count."
+      },
+      {
+        "name": "generate_pro_prompt",
+        "output": "A compact 5.5 Pro prompt asking for source-backed missing evidence only."
+      },
+      {
+        "name": "make_no_overclaim_status_report",
+        "output": "Markdown report with claim ceiling, stop rules, and next action."
+      },
+      {
+        "name": "compare_new_dataset_against_gate",
+        "output": "Add a lead card to the queue YAML and rerun the same command."
+      }
+    ]
+  },
+  "decision": {
+    "claim_standard_changed": false,
+    "phase3f2_intake_allowed": false,
+    "phase4_candidate_ready_now": false,
+    "recommended_next_phase": "Phase 3G.2 - assistant intake ergonomics and research-memory record promotion",
+    "residual_modeling_allowed_now": false,
+    "selected_next_lead_id": null,
+    "status": "phase3g1_intake_queue_ready_no_candidate"
+  },
+  "failure_memory": {
+    "available": true,
+    "decision_status": "phase3f1f_measured_data_scouting_paused",
+    "evidence_basis": [
+      {
+        "candidate_count": 10,
+        "consequence": "Phase 3F.2 intake stayed closed",
+        "hard_gate_pass_count": 0,
+        "phase": "Phase 3F.1",
+        "scope": "simple thin-film simulator-validation scout"
+      },
+      {
+        "candidate_count": 16,
+        "consequence": "Phase 3F.2 intake stayed closed",
+        "hard_gate_pass_count": 0,
+        "phase": "Phase 3F.1B",
+        "scope": "pasted GPT-5.5 Pro lead gate"
+      },
+      {
+        "candidate_count": 3,
+        "consequence": "no measured-data candidate cleared the gate",
+        "hard_gate_pass_count": 0,
+        "phase": "Phase 3F.1C",
+        "scope": "top-three source-file audit"
+      },
+      {
+        "candidate_count": 8,
+        "consequence": "selected only a non-promoting code-regression lane",
+        "measured_data_hard_gate_pass_count": 0,
+        "phase": "Phase 3F.1D",
+        "scope": "targeted benchmark/source-data and software-fixture follow-up"
+      },
+      {
+        "case_count": 3,
+        "claim_label": "non_promoting_code_regression_fixture",
+        "consequence": "machinery regression coverage only, not measured validation",
+        "max_abs_r_delta": 1.6653345369377348e-16,
+        "max_abs_t_delta": 1.3877787807814457e-16,
+        "pass_count": 3,
+        "phase": "Phase 3F.1E",
+        "scope": "non-promoting structural_color_FROCs code-regression fixture"
+      }
+    ],
+    "measured_data_scouting_paused": true,
+    "path": "docs/phase3f1f_measured_data_scouting_decision.json",
+    "phase3f2_intake_allowed": false,
+    "phase4_candidate": false,
+    "prior_measured_data_leads": 37,
+    "residual_modeling_allowed": false,
+    "resume_conditions": [
+      "User supplies a new source-data package, lead list, or paper/dataset outside the Phase 3F.1 through Phase 3F.1D search envelope.",
+      "A future search is narrower than the exhausted envelope and targets known teaching or benchmark coating packages with source-backed constants plus measured spectra.",
+      "A current-source refresh reveals newly public machine-readable measured R/T, ellipsometry, or source-code packages."
+    ]
+  },
+  "generated_at": "2026-05-26T10:26:30.102830+00:00",
+  "hard_gate_flags": {
+    "geometry_backed": "source-backed wavelength axis, angle, polarization, side, and units",
+    "independent_measured_holdout": "independent measured R/T, A, or ellipsometry holdout",
+    "leakage_safe_no_fit_split": "material model and measured holdout can be separated without residual-driven tuning",
+    "machine_readable_files": "machine-readable files for constants and measured data",
+    "planar_linear_tmm_suitable": "measurement is appropriate for planar linear TMM",
+    "public_access": "public data access without private credentials or author contact",
+    "source_hash_ready": "source files can be hashed or have checksums before intake",
+    "source_qualified_constants_or_model": "source-qualified n,k, epsilon, or model constants",
+    "stack_thickness_backed": "source-backed stack order, material identity, and thicknesses",
+    "substrate_backside_coherence_clear": "source-backed substrate/backside/coherence treatment or irrelevant backside"
+  },
+  "inputs": {
+    "phase3f1f_decision_path": "docs/phase3f1f_measured_data_scouting_decision.json",
+    "queue_path": "docs/phase3g_measured_data_intake_queue.yaml"
+  },
+  "lead_evaluations": [
+    {
+      "canonical_dataset_label": "weak_within_dataset_holdout",
+      "computed_intake_label": "weak_within_dataset_holdout",
+      "evidence_states": {
+        "geometry_backed": "pass",
+        "independent_measured_holdout": "pass",
+        "leakage_safe_no_fit_split": "unknown",
+        "machine_readable_files": "pass",
+        "planar_linear_tmm_suitable": "pass",
+        "public_access": "pass",
+        "source_hash_ready": "pass",
+        "source_qualified_constants_or_model": "pass",
+        "stack_thickness_backed": "pass",
+        "substrate_backside_coherence_clear": "unknown"
+      },
+      "exact_files_or_records": [
+        "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv",
+        "lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv"
+      ],
+      "exact_next_action": "Keep parked unless source-backed silicon/backside/coherence and leakage proof appears.",
+      "gate_blockers": [
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_clear",
+          "state": "unknown"
+        },
+        {
+          "criterion": "material model and measured holdout can be separated without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split",
+          "state": "unknown"
+        }
+      ],
+      "hard_gate_pass": false,
+      "intended_use": "enz_calibrated",
+      "known_failure_memory": [
+        "Phase 3E.3A canonicalized source tables but stopped before TMM.",
+        "Phase 3E.3B blocked no-fit TMM on silicon/backside/coherence and leakage gaps.",
+        "Phase 3E.5 sensitivity was non-promoting."
+      ],
+      "lead_id": "saha_tin_azo_2023_exported_tables",
+      "material_family": "TiN/AZO ENZ-adjacent multilayer",
+      "missing_required_flags": [
+        "substrate_backside_coherence_clear",
+        "leakage_safe_no_fit_split"
+      ],
+      "notes": [
+        "Source tables are useful memory, not calibrated evidence."
+      ],
+      "phase3f2_intake_candidate": false,
+      "phase4_candidate_ready_now": false,
+      "priority_rank": 2,
+      "residual_modeling_allowed_now": false,
+      "source_refs": [
+        "docs/phase3e3a_saha_exported_table_audit.md",
+        "docs/phase3e3b_saha_stack_model_gate.md"
+      ],
+      "source_type": "Figshare source data plus paper",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Origin_source_data_for_figures_in_Rapid_electro-optic_response_of_transparent_conducting_oxide_integrated_in_silicon_photonic_crystal/23734116"
+      ],
+      "title": "Saha TiN/AZO Origin Viewer exported Fig. 2b and Fig. 2c/d tables"
+    },
+    {
+      "canonical_dataset_label": "weak_within_dataset_holdout",
+      "computed_intake_label": "weak_within_dataset_holdout",
+      "evidence_states": {
+        "geometry_backed": "pass",
+        "independent_measured_holdout": "pass",
+        "leakage_safe_no_fit_split": "risk",
+        "machine_readable_files": "pass",
+        "planar_linear_tmm_suitable": "pass",
+        "public_access": "pass",
+        "source_hash_ready": "pass",
+        "source_qualified_constants_or_model": "pass",
+        "stack_thickness_backed": "pass",
+        "substrate_backside_coherence_clear": "unknown"
+      },
+      "exact_files_or_records": [
+        "lab_data/raw/public_st_andrews_tin_2025/TiN-data_Pure.zip",
+        "experiments/examples/linear_standrews_tin_50nm_threshold_locked_clean_run.yaml"
+      ],
+      "exact_next_action": "Do not continue toward Phase 4 without exact roughness/back-reflection or acquisition-parity evidence.",
+      "gate_blockers": [
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_clear",
+          "state": "unknown"
+        },
+        {
+          "criterion": "material model and measured holdout can be separated without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split",
+          "state": "risk"
+        }
+      ],
+      "hard_gate_pass": false,
+      "intended_use": "enz_calibrated",
+      "known_failure_memory": [
+        "Phase 3C.3 threshold-locked clean run failed all five metrics.",
+        "Phase 3C.6A bounded source-derived variants still failed and stayed non-promoting."
+      ],
+      "lead_id": "st_andrews_tin_2025_public_tin",
+      "material_family": "TiN thin film on glass",
+      "missing_required_flags": [
+        "substrate_backside_coherence_clear",
+        "leakage_safe_no_fit_split"
+      ],
+      "notes": [
+        "Keep as historical public TiN validation failure memory."
+      ],
+      "phase3f2_intake_candidate": false,
+      "phase4_candidate_ready_now": false,
+      "priority_rank": 3,
+      "residual_modeling_allowed_now": false,
+      "source_refs": [
+        "docs/phase3c6_source_model_parity_decision.md",
+        "docs/phase3c3_clean_run_evaluation.md"
+      ],
+      "source_type": "public dataset plus paper",
+      "source_urls": [],
+      "title": "St Andrews public 50 nm TiN-on-glass dataset"
+    },
+    {
+      "canonical_dataset_label": "reject",
+      "computed_intake_label": "software_or_code_regression_fixture",
+      "evidence_states": {
+        "geometry_backed": "pass",
+        "independent_measured_holdout": "missing",
+        "leakage_safe_no_fit_split": "missing",
+        "machine_readable_files": "pass",
+        "planar_linear_tmm_suitable": "pass",
+        "public_access": "pass",
+        "source_hash_ready": "pass",
+        "source_qualified_constants_or_model": "pass",
+        "stack_thickness_backed": "pass",
+        "substrate_backside_coherence_clear": "pass"
+      },
+      "exact_files_or_records": [
+        "lab_data/raw/public_structural_color_froc_2023/structural_color_FROCs-main.zip"
+      ],
+      "exact_next_action": "Keep as code-regression coverage, not measured validation.",
+      "gate_blockers": [
+        {
+          "criterion": "independent measured R/T, A, or ellipsometry holdout",
+          "flag": "independent_measured_holdout",
+          "state": "missing"
+        },
+        {
+          "criterion": "material model and measured holdout can be separated without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split",
+          "state": "missing"
+        }
+      ],
+      "hard_gate_pass": false,
+      "intended_use": "code_regression",
+      "known_failure_memory": [
+        "Phase 3F.1E passed three deterministic code-regression parity cases.",
+        "No open measured spectral R/T holdout package was identified."
+      ],
+      "lead_id": "structural_color_froc_2023_code_parity",
+      "material_family": "ultrathin metal/dielectric color coatings",
+      "missing_required_flags": [
+        "independent_measured_holdout",
+        "leakage_safe_no_fit_split"
+      ],
+      "notes": [
+        "Useful for implementation parity only."
+      ],
+      "phase3f2_intake_candidate": false,
+      "phase4_candidate_ready_now": false,
+      "priority_rank": 4,
+      "residual_modeling_allowed_now": false,
+      "source_refs": [
+        "docs/phase3f1e_code_regression_fixture.md",
+        "docs/phase3f1c_source_file_audit.md"
+      ],
+      "source_type": "GitHub code plus Nature source-data memory",
+      "source_urls": [
+        "https://github.com/hincz-lab/structural_color_FROCs"
+      ],
+      "title": "Structural color FROC public TMM code and material-table fixture"
+    },
+    {
+      "canonical_dataset_label": "weak_within_dataset_holdout",
+      "computed_intake_label": "weak_within_dataset_holdout",
+      "evidence_states": {
+        "geometry_backed": "pass",
+        "independent_measured_holdout": "pass",
+        "leakage_safe_no_fit_split": "risk",
+        "machine_readable_files": "pass",
+        "planar_linear_tmm_suitable": "pass",
+        "public_access": "pass",
+        "source_hash_ready": "pass",
+        "source_qualified_constants_or_model": "pass",
+        "stack_thickness_backed": "pass",
+        "substrate_backside_coherence_clear": "pass"
+      },
+      "exact_files_or_records": [
+        "Source-data package inspected in Phase 3F.1C"
+      ],
+      "exact_next_action": "Revisit only if an independent no-fit material split is found.",
+      "gate_blockers": [
+        {
+          "criterion": "material model and measured holdout can be separated without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split",
+          "state": "risk"
+        }
+      ],
+      "hard_gate_pass": false,
+      "intended_use": "simulator_validation",
+      "known_failure_memory": [
+        "Phase 3F.1C found raw R/T richness but same-measurement fitting leakage.",
+        "Processing code remained request-only."
+      ],
+      "lead_id": "ultrathin_au_absorber_2020",
+      "material_family": "SiN / ultrathin Au absorber stack",
+      "missing_required_flags": [
+        "leakage_safe_no_fit_split"
+      ],
+      "notes": [
+        "Best kept as secondary measurement-parser fixture memory."
+      ],
+      "phase3f2_intake_candidate": false,
+      "phase4_candidate_ready_now": false,
+      "priority_rank": 3,
+      "residual_modeling_allowed_now": false,
+      "source_refs": [
+        "docs/phase3f1c_source_file_audit.md"
+      ],
+      "source_type": "Zenodo and Nature source data",
+      "source_urls": [
+        "https://doi.org/10.5281/zenodo.3667418"
+      ],
+      "title": "Ultrathin 2 nm gold impedance-matched absorber source-data package"
+    },
+    {
+      "canonical_dataset_label": "reject",
+      "computed_intake_label": "blocked_source_data_lead",
+      "evidence_states": {
+        "geometry_backed": "unknown",
+        "independent_measured_holdout": "unknown",
+        "leakage_safe_no_fit_split": "unknown",
+        "machine_readable_files": "unknown",
+        "planar_linear_tmm_suitable": "unknown",
+        "public_access": "unknown",
+        "source_hash_ready": "unknown",
+        "source_qualified_constants_or_model": "unknown",
+        "stack_thickness_backed": "unknown",
+        "substrate_backside_coherence_clear": "unknown"
+      },
+      "exact_files_or_records": [],
+      "exact_next_action": "Replace placeholder fields with source-backed evidence before considering Phase 3F.2.",
+      "gate_blockers": [
+        {
+          "criterion": "public data access without private credentials or author contact",
+          "flag": "public_access",
+          "state": "unknown"
+        },
+        {
+          "criterion": "source-qualified n,k, epsilon, or model constants",
+          "flag": "source_qualified_constants_or_model",
+          "state": "unknown"
+        },
+        {
+          "criterion": "independent measured R/T, A, or ellipsometry holdout",
+          "flag": "independent_measured_holdout",
+          "state": "unknown"
+        },
+        {
+          "criterion": "machine-readable files for constants and measured data",
+          "flag": "machine_readable_files",
+          "state": "unknown"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, side, and units",
+          "flag": "geometry_backed",
+          "state": "unknown"
+        },
+        {
+          "criterion": "source-backed stack order, material identity, and thicknesses",
+          "flag": "stack_thickness_backed",
+          "state": "unknown"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_clear",
+          "state": "unknown"
+        },
+        {
+          "criterion": "material model and measured holdout can be separated without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split",
+          "state": "unknown"
+        },
+        {
+          "criterion": "measurement is appropriate for planar linear TMM",
+          "flag": "planar_linear_tmm_suitable",
+          "state": "unknown"
+        },
+        {
+          "criterion": "source files can be hashed or have checksums before intake",
+          "flag": "source_hash_ready",
+          "state": "unknown"
+        }
+      ],
+      "hard_gate_pass": false,
+      "intended_use": "simulator_validation",
+      "known_failure_memory": [
+        "Use this card shape for a genuinely new lead outside the exhausted Phase 3F.1 search envelope."
+      ],
+      "lead_id": "future_clean_teaching_stack_template",
+      "material_family": "simple dielectric or metal/dielectric planar stack",
+      "missing_required_flags": [
+        "public_access",
+        "source_qualified_constants_or_model",
+        "independent_measured_holdout",
+        "machine_readable_files",
+        "geometry_backed",
+        "stack_thickness_backed",
+        "substrate_backside_coherence_clear",
+        "leakage_safe_no_fit_split",
+        "planar_linear_tmm_suitable",
+        "source_hash_ready"
+      ],
+      "notes": [
+        "Mark unknown until exact source files have been inspected."
+      ],
+      "phase3f2_intake_candidate": false,
+      "phase4_candidate_ready_now": false,
+      "priority_rank": 1,
+      "residual_modeling_allowed_now": false,
+      "source_refs": [
+        "docs/phase3f1f_measured_data_scouting_decision.md"
+      ],
+      "source_type": "placeholder lead template",
+      "source_urls": [],
+      "title": "Future clean public teaching or benchmark coating package"
+    }
+  ],
+  "lead_intake_template": {
+    "evidence": {
+      "geometry_backed": "unknown",
+      "independent_measured_holdout": "unknown",
+      "leakage_safe_no_fit_split": "unknown",
+      "machine_readable_files": "unknown",
+      "planar_linear_tmm_suitable": "unknown",
+      "public_access": "unknown",
+      "source_hash_ready": "unknown",
+      "source_qualified_constants_or_model": "unknown",
+      "stack_thickness_backed": "unknown",
+      "substrate_backside_coherence_clear": "unknown"
+    },
+    "exact_files_or_records": [
+      "data.csv",
+      "nk.xlsx"
+    ],
+    "exact_next_action": "Inspect source files and hash machine-readable data.",
+    "intended_use": "simulator_validation",
+    "known_failure_memory": [],
+    "lead_id": "new_source_data_lead",
+    "material_family": "material / stack",
+    "notes": [
+      "Do not mark pass until source files are inspected."
+    ],
+    "priority_rank": 3,
+    "source_refs": [
+      "DOI or citation"
+    ],
+    "source_type": "paper_dataset_repository",
+    "source_urls": [
+      "https://..."
+    ],
+    "title": "Paper or dataset title"
+  },
+  "phase_id": "Phase 3G.1",
+  "queue": {
+    "candidates_note": "To compare a new paper, dataset, repository, or 5.5 Pro lead against the gate, add one lead card with evidence states set to pass, missing, unknown, risk, or not_applicable, then run `eternity phase3g1-intake-queue`.\n",
+    "lead_count": 5,
+    "lead_limit": 50,
+    "queue_scope": "Assistant-facing queue for future public measured-data leads after Phase 3F.1F paused broad scouting. Queue entries preserve the hard gate state and claim ceiling for fast fail-closed triage; they are not validation evidence.\n",
+    "queue_version": 1,
+    "updated_at": "2026-05-26"
+  },
+  "searchable_failure_records": [
+    "research_memory/examples/failure_memory/phase3f_public_measured_data_scouts.yaml",
+    "research_memory/examples/failure_memory/saha_stack_contract_block.yaml",
+    "research_memory/examples/failure_memory/st_andrews_tin_fail_closed.yaml",
+    "research_memory/examples/failure_memory/wang_wo3_reproduction_fixture.yaml",
+    "research_memory/examples/failure_memory/tion_local_data_exhausted.yaml"
+  ],
+  "stop_rules": [
+    "A queue lead is not validation evidence.",
+    "Phase 3F.2 can open only after every hard gate is pass.",
+    "Measured residual modeling remains forbidden in Phase 3G.1.",
+    "No claim label may be promoted from code parity, constants-only data, or leakage-risk holdouts."
+  ],
+  "summary": {
+    "blocker_counts": {
+      "geometry_backed": 1,
+      "independent_measured_holdout": 2,
+      "leakage_safe_no_fit_split": 5,
+      "machine_readable_files": 1,
+      "planar_linear_tmm_suitable": 1,
+      "public_access": 1,
+      "source_hash_ready": 1,
+      "source_qualified_constants_or_model": 1,
+      "stack_thickness_backed": 1,
+      "substrate_backside_coherence_clear": 3
+    },
+    "canonical_dataset_label_counts": {
+      "reject": 2,
+      "weak_within_dataset_holdout": 3
+    },
+    "hard_gate_pass_count": 0,
+    "intake_label_counts": {
+      "blocked_source_data_lead": 1,
+      "software_or_code_regression_fixture": 1,
+      "weak_within_dataset_holdout": 3
+    },
+    "lead_count": 5,
+    "selected_next_lead_id": null
+  },
+  "title": "Measured-Data Intake Queue And Assistant Brief"
+}

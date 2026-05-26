@@ -72,12 +72,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3F.1D | Completed/fixture-lane-selected | Benchmark/source-data search and fixture-lane decision | Gated 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 remains closed. Selected `structural_color_froc_2023_code_parity_fixture` as a non-promoting Phase 3F.1E code-regression lane; ultrathin Au remains a secondary parser fixture only. |
 | Phase 3F.1E | Completed/code-regression-fixture-ready | Non-promoting TMM code-regression fixture | Pinned the `structural_color_FROCs` archive and compared three deterministic TMM parity cases, including one using source material tables. All cases passed with max absolute deltas below `2e-16`. This is machinery regression coverage only; Phase 3F.2 and Phase 4 remain closed. |
 | Phase 3F.1F | Completed/scouting-paused | Measured-data scouting decision or pause | Paused measured-data scouting after Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes and Phase 3F.1E added only non-promoting code-regression coverage. Phase 3F.2, residual modeling, and Phase 4 remain closed until a new or narrower source-backed candidate clears every hard flag. |
-| Phase 3G | Recommended | Research Memory / Executive Research Assistant measured-data intake queue | Turn the hard gates, rejection memory, pause/resume rules, and assistant-facing project state into a stronger intake workflow for future leads without weakening the scientific evidence bar. |
+| Phase 3G | Active | Research Memory / Executive Research Assistant measured-data intake queue | Turn the hard gates, rejection memory, pause/resume rules, and assistant-facing project state into a stronger intake workflow for future leads without weakening the scientific evidence bar. |
+| Phase 3G.1 | Completed/intake-queue-ready | Measured-data intake queue and assistant brief | Added a fail-closed lead queue, CLI assistant commands, generated JSON/Markdown reports, a no-overclaim status report, tests, and searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and TiON. Current queue has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 closed. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3G - Research Memory / Executive Research Assistant measured-data intake queue**.
+Current phase: **Phase 3G.2 - assistant intake ergonomics and research-memory record promotion**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -92,9 +93,9 @@ under those assumptions, but this does not recover the author model or validate
 the measured Fig. 2b curve. Phase 3F.1 then ran a bounded simulator-validation
 scout over 10 simple/thin-film-adjacent public leads and found 0 candidates that
 clear the full material/holdout/geometry/stack/substrate/backside/leakage/hash
-gate. The useful next move is still not a Saha residual victory lap. It is to
-continue the simple-stack scout until one source-backed public dataset is clean
-enough for a Phase 3F.2 intake. Phase 3F.1B then processed the pasted 16-lead
+gate. The useful next move was not a Saha residual victory lap; it was to keep
+the fail-closed measured-data scout moving only while the search envelope still
+had fresh leads. Phase 3F.1B then processed the pasted 16-lead
 GPT-5.5 Pro list; it confirmed the same boundary: 0 hard-gate passes, no
 Phase 3F.2 intake, no TMM adapter, and no residual modeling. Phase 3F.1C then
 downloaded and inspected the three best practical fallback packages. The result
@@ -113,7 +114,10 @@ Phase 3F.1F then paused measured-data scouting rather than opening another
 broad search. The resume rule is intentionally narrow: bring new source files,
 a genuinely new lead list, or a stricter benchmark/teaching-stack target class
 before reopening measured-data discovery. Phase 3F.2, residual modeling, and
-Phase 4 remain closed.
+Phase 4 remain closed. Phase 3G.1 then turned that state into a working intake
+queue: five queued leads, zero hard-gate passes, actual assistant commands for
+blockers/ranking/Pro prompts/no-overclaim reports/single-lead comparison, and
+searchable failure-memory records for the repeated dead ends.
 
 Information sufficiency:
 
@@ -242,6 +246,11 @@ Information sufficiency:
   scout, Pro-list, source-file, benchmark, source-data, or software-fixture
   leads across Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard
   gate passes, while Phase 3F.1E supplied code-regression coverage only.
+- Enough to complete Phase 3G.1 as an assistant-facing intake queue: the queue
+  records 5 current leads, classifies future lead cards against hard gates,
+  provides blocker/ranking/prompt/no-overclaim/compare commands, and adds
+  searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and
+  TiON.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -309,10 +318,12 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3G - Research Memory / Executive Research Assistant measured-data
-  intake queue**. Planning: GPT-5.5 `high`. Implementation: `medium`. Current
-  artifacts: `docs/phase3f1f_measured_data_scouting_decision.md` and
-  `docs/phase3f1f_measured_data_scouting_decision.json`.
+- **Phase 3G.2 - assistant intake ergonomics and research-memory record
+  promotion**. Planning: GPT-5.5 `medium`. Implementation: `medium`. Current
+  artifacts: `docs/phase3g_measured_data_intake_queue.md`,
+  `docs/phase3g_measured_data_intake_queue.json`,
+  `docs/phase3g_no_overclaim_status.md`, and
+  `docs/phase3g_new_lead_template.yaml`.
 
 Helpful tools:
 

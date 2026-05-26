@@ -586,10 +586,14 @@ Next:
   Phase 3F.1D found 0 measured-data hard-gate passes across 37 leads, and Phase
   3F.1E supplied only machinery regression coverage. Keep Phase 3F.2 closed
   until a source-backed measured holdout candidate clears every hard gate.
-- Continue `Phase 3G - Research Memory / Executive Research Assistant
-  measured-data intake queue`: turn the hard gates, rejection memory, and
-  pause/resume conditions into a stronger assistant-facing intake workflow for
-  future leads.
+- Phase 3G.1 has completed the measured-data intake queue and assistant brief.
+  The queue has 5 leads, 0 hard-gate passes, generated reports, assistant
+  commands, and searchable failure-memory records for Phase 3F, Saha, St
+  Andrews, Wang, and TiON.
+- Continue `Phase 3G.2 - assistant intake ergonomics and research-memory record
+  promotion`: smooth reviewed queue entries into useful research-memory records
+  and status cards without changing gates, opening Phase 3F.2, or running
+  residuals.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

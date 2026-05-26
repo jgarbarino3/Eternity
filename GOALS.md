@@ -166,8 +166,11 @@ deterministic TMM parity cases. All passed with max absolute R/T deltas below
 Phase 3F.1F then paused measured-data scouting for now: 37 total leads across
 Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes, and
 Phase 3F.1E did not supply measured validation. The next remembered action is
-`Phase 3G - Research Memory / Executive Research Assistant measured-data intake
-queue`.
+`Phase 3G.2 - assistant intake ergonomics and research-memory record
+promotion`.
+Phase 3G.1 built the measured-data intake queue, assistant commands, generated
+no-overclaim reports, and searchable failure-memory records for Phase 3F, Saha,
+St Andrews, Wang, and TiON.
 Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
 material models, St Andrews diagnostics, public package failures, Saha
 sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
@@ -268,8 +271,11 @@ Current blocker:
   public `structural_color_FROCs` TMM code and material tables without measured
   residuals or claim promotion.
 - Phase 3F.1F paused measured-data scouting. The next remembered action is
-  `Phase 3G - Research Memory / Executive Research Assistant measured-data
-  intake queue`.
+  `Phase 3G.2 - assistant intake ergonomics and research-memory record
+  promotion`.
+- Phase 3G.1 added the measured-data intake queue and assistant commands for
+  blockers, lead ranking, 5.5 Pro prompts, no-overclaim reports, and single-lead
+  hard-gate comparison.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -387,6 +393,9 @@ Current blocker:
   passed, but no measured holdout was used and Phase 3F.2 remains closed.
 - Phase 3F.1F has enough information to pause measured-data scouting until new
   source packages, new lead lists, or a narrower benchmark target class appears.
+- Phase 3G.1 has enough information to stop as an intake-queue implementation:
+  5 queued leads, 0 hard-gate passes, explicit commands, and searchable failure
+  memory are recorded without opening Phase 3F.2.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift
