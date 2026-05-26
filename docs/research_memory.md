@@ -44,6 +44,9 @@ which are ignored by git.
 
 Phase 3G.1 adds an assistant-facing queue for future public measured-data
 leads. It is a triage and no-overclaim workflow, not validation evidence.
+Phase 3G.2 adds compact status cards and review-gated source-record drafts
+from the queue. Draft promotion is memory ergonomics only; it does not promote
+claims, open Phase 3F.2, or allow residual modeling.
 
 ```bash
 uv run --no-editable eternity phase3g1-intake-queue --output-dir docs
@@ -52,6 +55,9 @@ uv run --no-editable eternity phase3g1-rank-leads
 uv run --no-editable eternity phase3g1-pro-prompt
 uv run --no-editable eternity phase3g1-no-overclaim-report --output docs/phase3g_no_overclaim_status.md
 uv run --no-editable eternity phase3g1-compare-lead --lead-card docs/phase3g_new_lead_template.yaml --json
+uv run --no-editable eternity phase3g2-status-cards --output docs/phase3g2_status_cards.md
+uv run --no-editable eternity phase3g2-promote-records --record-output-dir research_memory/examples/intake_queue
+uv run --no-editable eternity phase3g2-assistant-brief --output-dir docs --record-output-dir research_memory/examples/intake_queue
 ```
 
 The queue source is `docs/phase3g_measured_data_intake_queue.yaml`. Add one lead
@@ -62,6 +68,13 @@ lead, ranks it against current blockers, emits a 5.5 Pro prompt, and keeps
 Phase 3F.2 closed unless every hard gate passes before residual modeling.
 For a one-off comparison, copy the shape of `docs/phase3g_new_lead_template.yaml`
 into a new YAML file and run `phase3g1-compare-lead`.
+
+Phase 3G.2 generated `docs/phase3g2_assistant_intake_ergonomics.md`,
+`docs/phase3g2_assistant_intake_ergonomics.json`,
+`docs/phase3g2_status_cards.md`, and review-gated drafts under
+`research_memory/examples/intake_queue/`. Those drafts default to
+`review_state: needs_human_review`, `evidence_state: literature_supported`, and
+warnings that the queue record is not validation evidence.
 
 ## Weekly Research Radar
 

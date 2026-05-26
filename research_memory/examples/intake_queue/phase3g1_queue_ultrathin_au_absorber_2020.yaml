@@ -1,0 +1,56 @@
+schema_version: '0.1'
+record_type: source
+title: Phase 3G.1 queue lead - Ultrathin 2 nm gold impedance-matched absorber source-data
+  package
+summary: ultrathin_au_absorber_2020 is queued as weak_within_dataset_holdout; hard-gate
+  pass is false.
+body: 'Phase 3G.1 queue lead `ultrathin_au_absorber_2020` was classified as `weak_within_dataset_holdout`
+  with canonical label `weak_within_dataset_holdout`. Hard-gate pass is false. Missing
+  or risky gates: leakage_safe_no_fit_split. Exact files or records named by the queue:
+  Source-data package inspected in Phase 3F.1C. Known failure memory: Phase 3F.1C
+  found raw R/T richness but same-measurement fitting leakage.; Processing code remained
+  request-only.. Notes: Best kept as secondary measurement-parser fixture memory..
+  Next action: Revisit only if an independent no-fit material split is found.. This
+  draft preserves intake memory only; it is not validation evidence.'
+evidence_state: literature_supported
+review_state: needs_human_review
+source_refs:
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.yaml
+  description: Phase 3G.1 machine-readable measured-data intake queue.
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.md
+  description: Phase 3G.1 generated assistant brief for the intake queue.
+- source_type: local_note
+  locator: docs/phase3f1c_source_file_audit.md
+  description: Queue-cited source reference for ultrathin_au_absorber_2020.
+- source_type: other
+  locator: https://doi.org/10.5281/zenodo.3667418
+  description: Queue-cited public URL for ultrathin_au_absorber_2020.
+created_at: '2026-05-26T00:00:00Z'
+tags:
+- phase3g
+- intake_queue
+- weak_within_dataset_holdout
+- ultrathin_au_absorber_2020
+project_areas:
+- calibrated_linear_evidence
+- research_memory
+related_record_ids: []
+claims:
+- The Phase 3G.1 queue currently classifies ultrathin_au_absorber_2020 as weak_within_dataset_holdout.
+limitations:
+- Queue classification is not measured validation evidence.
+- No residual modeling or Phase 4 claim promotion is implied.
+- Phase 3F.2 intake can open only after every hard gate is source-backed before fitting.
+- 'Missing or risky hard gates: leakage_safe_no_fit_split.'
+next_actions:
+- Revisit only if an independent no-fit material split is found.
+warnings:
+- queue_record_not_validation_evidence
+- no_measured_residual_modeling_from_queue_record
+source_kind: measured_data_intake_queue_lead
+canonical_id: phase3g1_queue_ultrathin_au_absorber_2020
+license_notes: Repo-local queue memory only; inspect upstream licenses before intake.
+trust_notes: Derived from the Phase 3G.1 queue and prior failure-memory records; requires
+  human review before use as an active source record.

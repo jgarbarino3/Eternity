@@ -228,6 +228,52 @@ def test_phase3g1_compare_lead_labels_new_dataset(tmp_path: Path) -> None:
     assert packet["decision"]["residual_modeling_allowed_now"] is False
 
 
+def test_phase3g2_assistant_commands_are_usable(tmp_path: Path) -> None:
+    cards_path = tmp_path / "cards.md"
+    cards = runner.invoke(
+        app,
+        ["phase3g2-status-cards", "--output", str(cards_path)],
+    )
+    promote = runner.invoke(
+        app,
+        [
+            "phase3g2-promote-records",
+            "--record-output-dir",
+            str(tmp_path / "records"),
+            "--json",
+        ],
+    )
+    brief = runner.invoke(
+        app,
+        [
+            "phase3g2-assistant-brief",
+            "--output-dir",
+            str(tmp_path),
+            "--record-output-dir",
+            str(tmp_path / "brief_records"),
+            "--report-stem",
+            "phase3g2_cli_smoke",
+            "--status-cards-stem",
+            "phase3g2_cards_smoke",
+        ],
+    )
+
+    assert cards.exit_code == 0, cards.output
+    assert "Status Cards" in cards_path.read_text(encoding="utf-8")
+    assert promote.exit_code == 0, promote.output
+    manifest = json.loads(promote.output)
+    assert len(manifest) == 4
+    assert manifest[0]["review_state"] == "needs_human_review"
+    assert brief.exit_code == 0, brief.output
+    json_path = tmp_path / "phase3g2_cli_smoke.json"
+    assert json_path.exists()
+    assert (tmp_path / "phase3g2_cli_smoke.md").exists()
+    assert (tmp_path / "phase3g2_cards_smoke.md").exists()
+    packet = json.loads(json_path.read_text(encoding="utf-8"))
+    assert packet["decision"]["phase3f2_intake_allowed"] is False
+    assert packet["decision"]["residual_modeling_allowed_now"] is False
+
+
 def test_run_command_creates_expected_artifacts() -> None:
     result = runner.invoke(app, ["run", "experiments/examples/linear_ito_toy.yaml"])
 

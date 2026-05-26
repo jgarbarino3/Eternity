@@ -195,7 +195,8 @@
               <div class="progress-row done"><span>Code parity</span><strong>Phase 3F.1E TMM fixture</strong></div>
               <div class="progress-row done"><span>Paused</span><strong>Phase 3F.1F scouting decision</strong></div>
               <div class="progress-row done"><span>Queue</span><strong>Phase 3G.1 intake queue</strong></div>
-              <div class="progress-row next"><span>Next</span><strong>Phase 3G.2 ergonomics</strong></div>
+              <div class="progress-row done"><span>Cards</span><strong>Phase 3G.2 ergonomics</strong></div>
+              <div class="progress-row next"><span>Next</span><strong>Phase 3G.3 dry run</strong></div>
             </div>
           </div>
           <div class="goal-sequence" aria-label="Eternity goal sequence">
@@ -285,7 +286,8 @@
                   <div class="map-node complete"><span>Code parity</span><strong>Phase 3F.1E TMM fixture</strong><div class="sub-branches"><em>3 cases passed</em><em>R/T deltas &lt;2e-16</em><em>no claim</em></div></div>
                   <div class="map-node complete"><span>Paused</span><strong>Phase 3F.1F scouting decision</strong><div class="sub-branches"><em>37 leads total</em><em>0 measured passes</em><em>no residual</em></div></div>
                   <div class="map-node complete"><span>Queue</span><strong>Phase 3G.1 intake queue</strong><div class="sub-branches"><em>5 leads</em><em>assistant commands</em><em>searchable memory</em></div></div>
-                  <div class="map-node in-progress"><span>Next</span><strong>Phase 3G.2 ergonomics</strong><div class="sub-branches"><em>record promotion</em><em>status cards</em><em>radar link</em></div></div>
+                  <div class="map-node complete"><span>Cards</span><strong>Phase 3G.2 ergonomics</strong><div class="sub-branches"><em>4 record drafts</em><em>status cards</em><em>no claim</em></div></div>
+                  <div class="map-node in-progress"><span>Next</span><strong>Phase 3G.3 dry run</strong><div class="sub-branches"><em>new lead card</em><em>queue hygiene</em><em>no residual</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Independent holdout measurement</strong><div class="sub-branches"><em>no fit leakage</em><em>residual threshold</em><em>claim gate</em></div></div>
                   <div class="map-node not-started"><span>Needed</span><strong>Residual and uncertainty report</strong><div class="sub-branches"><em>comparison table</em><em>residuals</em><em>claim status</em></div></div>
                 </div>
@@ -608,7 +610,7 @@
                 <dt>Forbidden overclaim</dt>
                 <dd>Calibrated TiN/TiON evidence exists.</dd>
                 <dt>Next discriminating test</dt>
-                <dd>Use Phase 3G.2 to smooth reviewed queue entries into research-memory records without changing the evidence bar.</dd>
+                <dd>Use Phase 3G.3 to dry-run the new-lead intake flow and keep the queue maintainable without changing the evidence bar.</dd>
               </dl>
             </article>
             <article class="conflict-card atlas-node" data-lane="hypothesis" data-status="conflict">
@@ -706,7 +708,7 @@
           <div class="swimlanes">
             <article class="swimlane atlas-node" data-lane="serious-core" data-status="validated">
               <h3>Serious Core</h3>
-              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet -> Phase 3A.12 exhausted -> Phase 3C public TiN intake -> Phase 3C.1 pairing candidate -> Phase 3C.2 future-only audit -> Phase 3C.3 threshold lock / clean run decision -> Phase 3C.4 failure triage -> Phase 3C.5 source-model parity gaps -> Phase 3C.6A bounded parity parked -> Phase 3B.1 TiON local evidence exhausted -> Phase 3D literature/public dataset search -> Phase 3D.1 Exeter/Bohn intake -> Phase 3D.1A split audit -> Phase 3D.1B split lock -> Phase 3D.1C non-promoting no-fit reconstruction -> Phase 3D.2 Saha OPJU intake -> Phase 3D.2A local export audit blocked -> Phase 3E.3 Saha CSV export -> Phase 3D.3 Exeter spatiotemporal ITO fixture -> Phase 3D.4 thermo-optic ITO constants fixture -> Phase 3D.5 remaining lead triage -> Phase 3E.1 executive research assistant gate -> Phase 3E.2A Wang non-ENZ baseline intake -> Phase 3E.2B-D Wang de-offseted reproduction handoff -> Phase 3E.3A Saha exported-table gate -> Phase 3E.3B Saha stack gate blocked -> Phase 3E.4 renewed ENZ search snapshot with 7 leads and 0 Phase 4 candidates -> Phase 3E.5 Saha sensitivity fixture -> Phase 3F.1 simulator-validation scout with 10 leads and 0 hard-gate candidates -> Phase 3F.1B Pro lead gate with 16 leads and 0 hard-gate candidates -> Phase 3F.1C source-file audit with 3 packages and 0 hard-gate candidates -> Phase 3F.1D benchmark decision with 8 leads and 0 measured-data passes -> Phase 3F.1E code-regression fixture with 3 parity cases passed -> Phase 3F.1F measured-data scouting paused -> Phase 3G.1 intake queue ready. The pivot preserves calibrated-evidence standards while making the project useful as a research right-hand.</p>
+              <p>Phase 3 snapshots -> Phase 3A TiN/SiO2 comparison -> Phase 3A.2 mapping correction -> Phase 3A.3 provenance closure -> Phase 3A.4 absolute R decision -> Phase 3A.5 export retrieval -> Phase 3A.7 source recovery -> Phase 3A.8 source triage -> Phase 3A.9 relative diagnostics -> Phase 3A.10 branch decision -> Phase 3A.11 packet -> Phase 3A.12 exhausted -> Phase 3C public TiN intake -> Phase 3C.1 pairing candidate -> Phase 3C.2 future-only audit -> Phase 3C.3 threshold lock / clean run decision -> Phase 3C.4 failure triage -> Phase 3C.5 source-model parity gaps -> Phase 3C.6A bounded parity parked -> Phase 3B.1 TiON local evidence exhausted -> Phase 3D literature/public dataset search -> Phase 3D.1 Exeter/Bohn intake -> Phase 3D.1A split audit -> Phase 3D.1B split lock -> Phase 3D.1C non-promoting no-fit reconstruction -> Phase 3D.2 Saha OPJU intake -> Phase 3D.2A local export audit blocked -> Phase 3E.3 Saha CSV export -> Phase 3D.3 Exeter spatiotemporal ITO fixture -> Phase 3D.4 thermo-optic ITO constants fixture -> Phase 3D.5 remaining lead triage -> Phase 3E.1 executive research assistant gate -> Phase 3E.2A Wang non-ENZ baseline intake -> Phase 3E.2B-D Wang de-offseted reproduction handoff -> Phase 3E.3A Saha exported-table gate -> Phase 3E.3B Saha stack gate blocked -> Phase 3E.4 renewed ENZ search snapshot with 7 leads and 0 Phase 4 candidates -> Phase 3E.5 Saha sensitivity fixture -> Phase 3F.1 simulator-validation scout with 10 leads and 0 hard-gate candidates -> Phase 3F.1B Pro lead gate with 16 leads and 0 hard-gate candidates -> Phase 3F.1C source-file audit with 3 packages and 0 hard-gate candidates -> Phase 3F.1D benchmark decision with 8 leads and 0 measured-data passes -> Phase 3F.1E code-regression fixture with 3 parity cases passed -> Phase 3F.1F measured-data scouting paused -> Phase 3G.1 intake queue ready -> Phase 3G.2 status cards and review-gated memory drafts. The pivot preserves calibrated-evidence standards while making the project useful as a research right-hand.</p>
             </article>
             <article class="swimlane atlas-node" data-lane="memory-radar" data-status="candidate">
               <h3>Research Memory</h3>

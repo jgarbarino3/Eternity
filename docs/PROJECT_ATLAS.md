@@ -146,8 +146,11 @@ Current progress:
   assistant brief. Five current leads are queued, zero hard-gate passes are
   recorded, assistant commands are available, and failure memory is searchable
   for Phase 3F, Saha, St Andrews, Wang, and TiON.
-- **Next**: Phase 3G.2 assistant intake ergonomics and research-memory record
-  promotion.
+- **Done/assistant-ergonomics-ready**: Phase 3G.2 assistant status cards and
+  review-gated research-memory draft promotion. Four non-template queue leads
+  now have `needs_human_review` / `literature_supported` draft source records
+  with no-validation/no-residual warnings.
+- **Next**: Phase 3G.3 new-lead intake dry run and queue maintenance.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -218,7 +221,8 @@ calibrated_linear_evidence
   -> COMPLETE/CODE-REGRESSION: Phase 3F.1E non-promoting TMM parity fixture
   -> COMPLETE/PAUSED: Phase 3F.1F measured-data scouting pause
   -> COMPLETE/QUEUE: Phase 3G.1 measured-data intake queue
-  -> NEXT: Phase 3G.2 assistant intake ergonomics
+  -> COMPLETE/ERGONOMICS: Phase 3G.2 assistant status cards and record drafts
+  -> NEXT: Phase 3G.3 new-lead dry run
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -353,7 +357,9 @@ pinned `structural_color_FROCs` and passed 3 deterministic TMM parity cases.
 That is machinery regression coverage, not measured validation. Phase 3F.1F
 then paused measured-data scouting rather than repeating the broad search.
 Phase 3G.1 then added the queue, assistant commands, no-overclaim report, and
-searchable failure-memory records.
+searchable failure-memory records. Phase 3G.2 then added status cards and
+review-gated queue-record drafts for research memory while preserving the
+claim boundary.
 Phase 3F.2 intake stays closed until a simpler public planar thin-film dataset
 has a complete source-backed contract.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but

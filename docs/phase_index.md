@@ -74,11 +74,12 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3F.1F | Completed/scouting-paused | Measured-data scouting decision or pause | Paused measured-data scouting after Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes and Phase 3F.1E added only non-promoting code-regression coverage. Phase 3F.2, residual modeling, and Phase 4 remain closed until a new or narrower source-backed candidate clears every hard flag. |
 | Phase 3G | Active | Research Memory / Executive Research Assistant measured-data intake queue | Turn the hard gates, rejection memory, pause/resume rules, and assistant-facing project state into a stronger intake workflow for future leads without weakening the scientific evidence bar. |
 | Phase 3G.1 | Completed/intake-queue-ready | Measured-data intake queue and assistant brief | Added a fail-closed lead queue, CLI assistant commands, generated JSON/Markdown reports, a no-overclaim status report, tests, and searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and TiON. Current queue has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 closed. |
+| Phase 3G.2 | Completed/assistant-ergonomics-ready | Status cards and review-gated record drafts | Added compact assistant status-card output, a Phase 3G.2 assistant brief, and safe research-memory draft promotion from non-template queue leads. Four drafts are written as `needs_human_review` / `literature_supported` records with explicit no-validation/no-residual warnings. Phase 3F.2 and Phase 4 remain closed. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3G.2 - assistant intake ergonomics and research-memory record promotion**.
+Current phase: **Phase 3G.3 - new-lead intake dry run and queue maintenance**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -117,7 +118,11 @@ before reopening measured-data discovery. Phase 3F.2, residual modeling, and
 Phase 4 remain closed. Phase 3G.1 then turned that state into a working intake
 queue: five queued leads, zero hard-gate passes, actual assistant commands for
 blockers/ranking/Pro prompts/no-overclaim reports/single-lead comparison, and
-searchable failure-memory records for the repeated dead ends.
+searchable failure-memory records for the repeated dead ends. Phase 3G.2 then
+made that queue easier to use by adding assistant status cards, a generated
+ergonomics brief, and four review-gated source-record drafts for non-template
+queue leads. Those drafts remain memory records only and carry explicit
+no-validation/no-residual warnings.
 
 Information sufficiency:
 
@@ -318,12 +323,13 @@ Information sufficiency:
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3G.2 - assistant intake ergonomics and research-memory record
-  promotion**. Planning: GPT-5.5 `medium`. Implementation: `medium`. Current
-  artifacts: `docs/phase3g_measured_data_intake_queue.md`,
+- **Phase 3G.3 - new-lead intake dry run and queue maintenance**. Planning:
+  GPT-5.5 `medium`. Implementation: `medium`. Current artifacts:
+  `docs/phase3g_measured_data_intake_queue.md`,
   `docs/phase3g_measured_data_intake_queue.json`,
-  `docs/phase3g_no_overclaim_status.md`, and
-  `docs/phase3g_new_lead_template.yaml`.
+  `docs/phase3g2_assistant_intake_ergonomics.md`,
+  `docs/phase3g2_status_cards.md`, and
+  `research_memory/examples/intake_queue/`.
 
 Helpful tools:
 

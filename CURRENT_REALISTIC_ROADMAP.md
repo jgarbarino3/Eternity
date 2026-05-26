@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3G.2 - assistant intake ergonomics and research-memory record promotion`.
+Choose `Phase 3G.3 - new-lead intake dry run and queue maintenance`.
 
 Why:
 
@@ -1150,9 +1150,10 @@ candidates. Phase 3F.1D then gated 8 targeted benchmark/source-data or
 software-fixture leads, again found 0 measured-data hard-gate passes, and
 selected the non-promoting `structural_color_froc_2023_code_parity_fixture`.
 Phase 3F.1E then produced a passing non-promoting TMM code-regression fixture.
-Phase 3F.1F then paused measured-data scouting for now. The current
-recommended next phase is `Phase 3G.2 - assistant intake ergonomics and
-research-memory record promotion`.
+Phase 3F.1F then paused measured-data scouting for now. Phase 3G.1 built the
+measured-data intake queue and Phase 3G.2 added status cards plus review-gated
+record drafts. The current recommended next phase is `Phase 3G.3 - new-lead
+intake dry run and queue maintenance`.
 
 Phase 3G.1 has now:
 
@@ -1170,9 +1171,22 @@ Phase 3G.1 has now:
 - Keep Phase 3F.2 closed until exactly one measured-data candidate clears every
   hard scout flag and can be ingested without fitting or guessing.
 
-Phase 3G.2 should improve the ergonomics around this queue: record promotion
-from reviewed queue entries, short user-facing status cards, and tighter
-integration with Research Memory/Radar without changing the evidence standard.
+Phase 3G.2 has now:
+
+- Added `eternity phase3g2-status-cards`,
+  `eternity phase3g2-promote-records`, and
+  `eternity phase3g2-assistant-brief`.
+- Generated `docs/phase3g2_assistant_intake_ergonomics.md`,
+  `docs/phase3g2_assistant_intake_ergonomics.json`, and
+  `docs/phase3g2_status_cards.md`.
+- Promoted four non-template queue leads into review-gated source-record drafts
+  under `research_memory/examples/intake_queue/`.
+- Kept all drafts at `needs_human_review` / `literature_supported` with
+  explicit no-validation/no-residual warnings.
+
+Phase 3G.3 should dry-run the new-lead workflow on one synthetic or newly
+provided lead card and tighten queue-maintenance guidance without changing the
+evidence standard.
 
 Phase 3E.2A implementation result:
 
@@ -1316,12 +1330,13 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3G.2 - assistant intake ergonomics and research-memory record
-  promotion`. The first scout pass, the Pro-lead pass, the top-three source-file
-  audit, and the targeted benchmark/source-data follow-up all found no
-  candidate ready for Phase 3F.2 intake. Phase 3F.1E added code-regression
-  coverage, Phase 3F.1F paused broad measured-data scouting, and Phase 3G.1
-  built the intake queue and assistant commands.
+- `Phase 3G.3 - new-lead intake dry run and queue maintenance`. The first
+  scout pass, the Pro-lead pass, the top-three source-file audit, and the
+  targeted benchmark/source-data follow-up all found no candidate ready for
+  Phase 3F.2 intake. Phase 3F.1E added code-regression coverage, Phase 3F.1F
+  paused broad measured-data scouting, Phase 3G.1 built the intake queue and
+  assistant commands, and Phase 3G.2 added safe status cards plus review-gated
+  memory drafts.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1515,8 +1530,39 @@ Commands:
 
 Recommended next phase:
 
-- `Phase 3G.2 - assistant intake ergonomics and research-memory record
-  promotion`. Planning: GPT-5.5 `medium`; implementation: `medium`.
+- `Phase 3G.3 - new-lead intake dry run and queue maintenance`. Planning:
+  GPT-5.5 `medium`; implementation: `medium`.
+
+#### Phase 3G.2: Assistant Intake Ergonomics And Research-Memory Record Promotion
+
+Artifacts:
+
+- `docs/phase3g2_assistant_intake_ergonomics.md`
+- `docs/phase3g2_assistant_intake_ergonomics.json`
+- `docs/phase3g2_status_cards.md`
+- `src/eternity/phase3g2.py`
+- `research_memory/examples/intake_queue/`
+
+Result:
+
+- Decision: `phase3g2_assistant_ergonomics_ready`.
+- Record draft count: `4`.
+- Phase 3F.2 intake allowed: `false`.
+- Residual modeling allowed now: `false`.
+- Phase 4 candidate ready now: `false`.
+- Drafts are `needs_human_review` / `literature_supported` queue-memory
+  records, not validation evidence.
+
+Commands:
+
+- `eternity phase3g2-status-cards`
+- `eternity phase3g2-promote-records`
+- `eternity phase3g2-assistant-brief`
+
+Recommended next phase:
+
+- `Phase 3G.3 - new-lead intake dry run and queue maintenance`. Planning:
+  GPT-5.5 `medium`; implementation: `medium`.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

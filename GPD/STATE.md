@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3G.2 assistant intake ergonomics and research-memory record promotion
+**Current focus:** Phase 3G.3 new-lead intake dry run and queue maintenance
 
 ## Current Position
 
-**Current Phase:** 3G.2
-**Current Phase Name:** Assistant Intake Ergonomics And Research-Memory Record Promotion
+**Current Phase:** 3G.3
+**Current Phase Name:** New-Lead Intake Dry Run And Queue Maintenance
 **Total Phases:** 3
-**Current Plan:** docs/phase3g_measured_data_intake_queue.md
+**Current Plan:** docs/phase3g2_assistant_intake_ergonomics.md
 **Total Plans in Phase:** 15
-**Status:** Active / Phase 3G.1 intake queue ready
+**Status:** Active / Phase 3G.2 assistant ergonomics ready
 **Last Activity:** 2026-05-26
-**Last Activity Description:** Completed Phase 3G.1 by adding a measured-data intake queue, assistant commands, generated JSON/Markdown/no-overclaim reports, tests, and searchable failure-memory records for Phase 3F, Saha, St Andrews, Wang, and TiON. The queue has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 intake, measured residual modeling, and Phase 4 closed. Next remembered work is Phase 3G.2: improve assistant intake ergonomics and research-memory record promotion.
+**Last Activity Description:** Completed Phase 3G.2 by adding compact assistant status cards, a generated ergonomics brief, and four review-gated source-record drafts from non-template Phase 3G.1 queue entries. The queue still has 5 leads, 0 hard-gate passes, and keeps Phase 3F.2 intake, measured residual modeling, and Phase 4 closed. Next remembered work is Phase 3G.3: dry-run a new lead card and tighten queue-maintenance guidance.
 
 **Progress:** [██████████] 99%
 
@@ -309,8 +309,8 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3G.2: improve assistant intake ergonomics and research-memory record
-  promotion without changing hard gates, opening Phase 3F.2, or running
+- Phase 3G.3: dry-run the new-lead intake workflow and tighten queue
+  maintenance without changing hard gates, opening Phase 3F.2, or running
   measured residuals.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis

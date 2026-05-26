@@ -1,0 +1,62 @@
+schema_version: '0.1'
+record_type: source
+title: Phase 3G.1 queue lead - Saha TiN/AZO Origin Viewer exported Fig. 2b and Fig.
+  2c/d tables
+summary: saha_tin_azo_2023_exported_tables is queued as weak_within_dataset_holdout;
+  hard-gate pass is false.
+body: 'Phase 3G.1 queue lead `saha_tin_azo_2023_exported_tables` was classified as
+  `weak_within_dataset_holdout` with canonical label `weak_within_dataset_holdout`.
+  Hard-gate pass is false. Missing or risky gates: substrate_backside_coherence_clear,
+  leakage_safe_no_fit_split. Exact files or records named by the queue: lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2b_origin_viewer_export.csv;
+  lab_data/raw/public_saha_tin_azo_2023/origin_viewer_exports/saha_fig2cd_origin_viewer_export.csv.
+  Known failure memory: Phase 3E.3A canonicalized source tables but stopped before
+  TMM.; Phase 3E.3B blocked no-fit TMM on silicon/backside/coherence and leakage gaps.;
+  Phase 3E.5 sensitivity was non-promoting.. Notes: Source tables are useful memory,
+  not calibrated evidence.. Next action: Keep parked unless source-backed silicon/backside/coherence
+  and leakage proof appears.. This draft preserves intake memory only; it is not validation
+  evidence.'
+evidence_state: literature_supported
+review_state: needs_human_review
+source_refs:
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.yaml
+  description: Phase 3G.1 machine-readable measured-data intake queue.
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.md
+  description: Phase 3G.1 generated assistant brief for the intake queue.
+- source_type: local_note
+  locator: docs/phase3e3a_saha_exported_table_audit.md
+  description: Queue-cited source reference for saha_tin_azo_2023_exported_tables.
+- source_type: local_note
+  locator: docs/phase3e3b_saha_stack_model_gate.md
+  description: Queue-cited source reference for saha_tin_azo_2023_exported_tables.
+- source_type: other
+  locator: https://figshare.com/articles/dataset/Origin_source_data_for_figures_in_Rapid_electro-optic_response_of_transparent_conducting_oxide_integrated_in_silicon_photonic_crystal/23734116
+  description: Queue-cited public URL for saha_tin_azo_2023_exported_tables.
+created_at: '2026-05-26T00:00:00Z'
+tags:
+- phase3g
+- intake_queue
+- weak_within_dataset_holdout
+- saha_tin_azo_2023_exported_tables
+project_areas:
+- calibrated_linear_evidence
+- research_memory
+related_record_ids: []
+claims:
+- The Phase 3G.1 queue currently classifies saha_tin_azo_2023_exported_tables as weak_within_dataset_holdout.
+limitations:
+- Queue classification is not measured validation evidence.
+- No residual modeling or Phase 4 claim promotion is implied.
+- Phase 3F.2 intake can open only after every hard gate is source-backed before fitting.
+- 'Missing or risky hard gates: substrate_backside_coherence_clear, leakage_safe_no_fit_split.'
+next_actions:
+- Keep parked unless source-backed silicon/backside/coherence and leakage proof appears.
+warnings:
+- queue_record_not_validation_evidence
+- no_measured_residual_modeling_from_queue_record
+source_kind: measured_data_intake_queue_lead
+canonical_id: phase3g1_queue_saha_tin_azo_2023_exported_tables
+license_notes: Repo-local queue memory only; inspect upstream licenses before intake.
+trust_notes: Derived from the Phase 3G.1 queue and prior failure-memory records; requires
+  human review before use as an active source record.

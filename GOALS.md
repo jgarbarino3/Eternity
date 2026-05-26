@@ -166,11 +166,13 @@ deterministic TMM parity cases. All passed with max absolute R/T deltas below
 Phase 3F.1F then paused measured-data scouting for now: 37 total leads across
 Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes, and
 Phase 3F.1E did not supply measured validation. The next remembered action is
-`Phase 3G.2 - assistant intake ergonomics and research-memory record
-promotion`.
+now `Phase 3G.3 - new-lead intake dry run and queue maintenance`.
 Phase 3G.1 built the measured-data intake queue, assistant commands, generated
 no-overclaim reports, and searchable failure-memory records for Phase 3F, Saha,
 St Andrews, Wang, and TiON.
+Phase 3G.2 added status cards, an assistant ergonomics brief, and four
+review-gated source-record drafts from non-template queue entries. Those drafts
+are searchable memory only; they do not open Phase 3F.2 or promote any claim.
 Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
 material models, St Andrews diagnostics, public package failures, Saha
 sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
@@ -271,11 +273,13 @@ Current blocker:
   public `structural_color_FROCs` TMM code and material tables without measured
   residuals or claim promotion.
 - Phase 3F.1F paused measured-data scouting. The next remembered action is
-  `Phase 3G.2 - assistant intake ergonomics and research-memory record
-  promotion`.
+  now `Phase 3G.3 - new-lead intake dry run and queue maintenance`.
 - Phase 3G.1 added the measured-data intake queue and assistant commands for
   blockers, lead ranking, 5.5 Pro prompts, no-overclaim reports, and single-lead
   hard-gate comparison.
+- Phase 3G.2 added compact status cards and review-gated research-memory draft
+  records for the non-template queue leads while preserving the fail-closed
+  claim boundary.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold

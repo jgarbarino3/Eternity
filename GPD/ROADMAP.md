@@ -590,10 +590,12 @@ Next:
   The queue has 5 leads, 0 hard-gate passes, generated reports, assistant
   commands, and searchable failure-memory records for Phase 3F, Saha, St
   Andrews, Wang, and TiON.
-- Continue `Phase 3G.2 - assistant intake ergonomics and research-memory record
-  promotion`: smooth reviewed queue entries into useful research-memory records
-  and status cards without changing gates, opening Phase 3F.2, or running
-  residuals.
+- Phase 3G.2 has completed assistant status cards, a generated ergonomics
+  brief, and four review-gated queue-record drafts under research memory.
+  Those drafts are not validation evidence and do not open Phase 3F.2.
+- Continue `Phase 3G.3 - new-lead intake dry run and queue maintenance`:
+  exercise the new lead-card flow and tighten queue-maintenance guidance
+  without changing gates, opening Phase 3F.2, or running residuals.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

@@ -1,0 +1,61 @@
+schema_version: '0.1'
+record_type: source
+title: Phase 3G.1 queue lead - Structural color FROC public TMM code and material-table
+  fixture
+summary: structural_color_froc_2023_code_parity is queued as reject; hard-gate pass
+  is false.
+body: 'Phase 3G.1 queue lead `structural_color_froc_2023_code_parity` was classified
+  as `software_or_code_regression_fixture` with canonical label `reject`. Hard-gate
+  pass is false. Missing or risky gates: independent_measured_holdout, leakage_safe_no_fit_split.
+  Exact files or records named by the queue: lab_data/raw/public_structural_color_froc_2023/structural_color_FROCs-main.zip.
+  Known failure memory: Phase 3F.1E passed three deterministic code-regression parity
+  cases.; No open measured spectral R/T holdout package was identified.. Notes: Useful
+  for implementation parity only.. Next action: Keep as code-regression coverage,
+  not measured validation.. This draft preserves intake memory only; it is not validation
+  evidence.'
+evidence_state: literature_supported
+review_state: needs_human_review
+source_refs:
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.yaml
+  description: Phase 3G.1 machine-readable measured-data intake queue.
+- source_type: local_note
+  locator: docs/phase3g_measured_data_intake_queue.md
+  description: Phase 3G.1 generated assistant brief for the intake queue.
+- source_type: local_note
+  locator: docs/phase3f1e_code_regression_fixture.md
+  description: Queue-cited source reference for structural_color_froc_2023_code_parity.
+- source_type: local_note
+  locator: docs/phase3f1c_source_file_audit.md
+  description: Queue-cited source reference for structural_color_froc_2023_code_parity.
+- source_type: other
+  locator: https://github.com/hincz-lab/structural_color_FROCs
+  description: Queue-cited public URL for structural_color_froc_2023_code_parity.
+created_at: '2026-05-26T00:00:00Z'
+tags:
+- phase3g
+- intake_queue
+- reject
+- structural_color_froc_2023_code_parity
+project_areas:
+- calibrated_linear_evidence
+- research_memory
+related_record_ids: []
+claims:
+- The Phase 3G.1 queue currently classifies structural_color_froc_2023_code_parity
+  as reject.
+limitations:
+- Queue classification is not measured validation evidence.
+- No residual modeling or Phase 4 claim promotion is implied.
+- Phase 3F.2 intake can open only after every hard gate is source-backed before fitting.
+- 'Missing or risky hard gates: independent_measured_holdout, leakage_safe_no_fit_split.'
+next_actions:
+- Keep as code-regression coverage, not measured validation.
+warnings:
+- queue_record_not_validation_evidence
+- no_measured_residual_modeling_from_queue_record
+source_kind: measured_data_intake_queue_lead
+canonical_id: phase3g1_queue_structural_color_froc_2023_code_parity
+license_notes: Repo-local queue memory only; inspect upstream licenses before intake.
+trust_notes: Derived from the Phase 3G.1 queue and prior failure-memory records; requires
+  human review before use as an active source record.

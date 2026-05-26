@@ -108,6 +108,15 @@ from eternity.phase3g1 import (
     phase3g1_ranked_leads,
     write_phase3g1_packet,
 )
+from eternity.phase3g2 import (
+    DEFAULT_PHASE3G2_REPORT_STEM,
+    DEFAULT_PHASE3G2_STATUS_CARDS_STEM,
+    DEFAULT_RECORD_DRAFT_DIR,
+    build_phase3g2_packet,
+    phase3g2_status_cards_markdown,
+    write_phase3g2_packet,
+    write_phase3g2_record_drafts,
+)
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -556,6 +565,31 @@ PHASE3G1_OUTPUT_PATH_OPTION = typer.Option(
     None,
     "--output",
     help="Optional output path for a Markdown report.",
+)
+PHASE3G2_REPORT_STEM_OPTION = typer.Option(
+    DEFAULT_PHASE3G2_REPORT_STEM,
+    "--report-stem",
+    help="Output filename stem for Phase 3G.2 assistant brief artifacts.",
+)
+PHASE3G2_STATUS_CARDS_STEM_OPTION = typer.Option(
+    DEFAULT_PHASE3G2_STATUS_CARDS_STEM,
+    "--status-cards-stem",
+    help="Output filename stem for Phase 3G.2 status-card Markdown.",
+)
+PHASE3G2_RECORD_DRAFT_DIR_OPTION = typer.Option(
+    DEFAULT_RECORD_DRAFT_DIR,
+    "--record-output-dir",
+    help="Output directory for review-gated research-memory source-record drafts.",
+)
+PHASE3G2_OPTIONAL_RECORD_DRAFT_DIR_OPTION = typer.Option(
+    None,
+    "--record-output-dir",
+    help="Optional output directory for review-gated record drafts.",
+)
+PHASE3G2_INCLUDE_TEMPLATES_OPTION = typer.Option(
+    False,
+    "--include-templates",
+    help="Include placeholder/template queue leads in generated record drafts.",
 )
 
 
@@ -1479,6 +1513,109 @@ def phase3g1_compare_lead(
         typer.echo(f"wrote {output_path}")
         return
     typer.echo(markdown)
+
+
+@app.command("phase3g2-status-cards")
+def phase3g2_status_cards(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_path: Path | None = PHASE3G1_OUTPUT_PATH_OPTION,
+    output_json: bool = PHASE3G1_JSON_OPTION,
+    include_templates: bool = PHASE3G2_INCLUDE_TEMPLATES_OPTION,
+) -> None:
+    """Write or print compact Phase 3G.2 assistant status cards."""
+
+    try:
+        packet = build_phase3g2_packet(
+            queue_path,
+            phase3f1f_decision_path,
+            include_templates=include_templates,
+        )
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.2 status cards failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_json:
+        typer.echo(json.dumps(packet["cards"], indent=2, sort_keys=True))
+        return
+
+    markdown = phase3g2_status_cards_markdown(packet)
+    if output_path is not None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(markdown, encoding="utf-8")
+        typer.echo(f"wrote {output_path}")
+        return
+    typer.echo(markdown)
+
+
+@app.command("phase3g2-promote-records")
+def phase3g2_promote_records(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    record_output_dir: Path = PHASE3G2_RECORD_DRAFT_DIR_OPTION,
+    include_templates: bool = PHASE3G2_INCLUDE_TEMPLATES_OPTION,
+    output_json: bool = PHASE3G1_JSON_OPTION,
+) -> None:
+    """Write review-gated source-record drafts from Phase 3G.1 queue entries."""
+
+    try:
+        packet = build_phase3g2_packet(
+            queue_path,
+            phase3f1f_decision_path,
+            include_templates=include_templates,
+        )
+        manifest = write_phase3g2_record_drafts(record_output_dir, packet)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.2 record promotion failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_json:
+        typer.echo(json.dumps(manifest, indent=2, sort_keys=True))
+        return
+    for item in manifest:
+        typer.echo(
+            f"wrote {item['path']} review_state={item['review_state']} "
+            f"evidence_state={item['evidence_state']}"
+        )
+
+
+@app.command("phase3g2-assistant-brief")
+def phase3g2_assistant_brief(
+    queue_path: Path = PHASE3G1_QUEUE_OPTION,
+    phase3f1f_decision_path: Path = PHASE3G1_PHASE3F1F_DECISION_OPTION,
+    output_dir: Path | None = PHASE3G1_OUTPUT_DIR_OPTION,
+    report_stem: str = PHASE3G2_REPORT_STEM_OPTION,
+    status_cards_stem: str = PHASE3G2_STATUS_CARDS_STEM_OPTION,
+    record_output_dir: Path | None = PHASE3G2_OPTIONAL_RECORD_DRAFT_DIR_OPTION,
+    include_templates: bool = PHASE3G2_INCLUDE_TEMPLATES_OPTION,
+) -> None:
+    """Write the Phase 3G.2 assistant brief and optional record drafts."""
+
+    try:
+        packet = build_phase3g2_packet(
+            queue_path,
+            phase3f1f_decision_path,
+            include_templates=include_templates,
+        )
+        if record_output_dir is not None:
+            write_phase3g2_record_drafts(record_output_dir, packet)
+    except (FileNotFoundError, KeyError, ValueError, json.JSONDecodeError, yaml.YAMLError) as error:
+        typer.echo(f"Phase 3G.2 assistant brief failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path, cards_path = write_phase3g2_packet(
+            output_dir,
+            packet,
+            report_stem=report_stem,
+            status_cards_stem=status_cards_stem,
+        )
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        typer.echo(f"wrote {cards_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
