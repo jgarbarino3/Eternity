@@ -1,0 +1,330 @@
+phase_id: Phase 3F.1D
+report_title: Targeted Benchmark Source-Data Search And Fixture-Lane Decision
+registry_version: 1
+updated_at: "2026-05-26"
+search_scope: >-
+  Targeted follow-up after Phase 3F.1C. This pass rechecks practical public
+  thin-film source-data leads plus software/code-benchmark leads. It is still a
+  scout/gate phase: no new source downloads, no TMM adapter, no residual
+  modeling, and no ENZ claim promotion.
+candidate_limit: 8
+selected_next_phase: Phase 3F.2 - source-file intake for selected simple thin-film candidate
+blocked_next_phase: Phase 3F.1E - non-promoting TMM code-regression fixture contract
+candidates:
+  - candidate_id: transparent_electrode_umtf_2020
+    title: Ultrathin-metal-film-based transparent electrodes with relative transmittance surpassing 100%
+    material_family: PET/TiO2/Ag/dielectric transparent electrode
+    source_type: nature_source_data_article
+    source_refs:
+      - DOI 10.1038/s41467-020-17107-6
+      - Nature Source Data workbook 41467_2020_17107_MOESM3_ESM.xlsx
+    source_urls:
+      - https://www.nature.com/articles/s41467-020-17107-6
+    exact_files_or_records:
+      - 41467_2020_17107_MOESM3_ESM.xlsx
+      - reported absolute transmittance/reflectance and ellipsometry-derived stack inputs
+    scouting_notes:
+      - The article/source-data package remains a useful transparent-electrode lead from the 5.5 Pro list.
+      - Landing-page/source inspection does not establish a clean independent constants-vs-holdout split or substrate/backside contract.
+      - It should not be promoted to Phase 3F.2 without downloading and auditing the workbook in a separate intake pass.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: true
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: promising_but_blocked
+    decision: blocked_before_intake_by_unproven_split_and_backside_contract
+    blockers:
+      - Material constants are not source-qualified as independent of the measured optical holdout from this scout alone.
+      - Substrate/backside/coherence treatment is not source-backed enough for a frozen no-fit adapter.
+      - No source-file hash was recorded in Phase 3F.1D.
+    exact_next_action: keep as a later source-file audit target only if code-regression fixtures are insufficient
+
+  - candidate_id: pfpe_pvdf_mendeley_2021
+    title: Data for optical transmission and refractive index of PFPE and PVDF thin films
+    material_family: PFPE/PVDF polymer films
+    source_type: mendeley_data_csv_package
+    source_refs:
+      - DOI 10.1016/j.dib.2021.107461
+      - Mendeley Data DOI 10.17632/bwtzc9rzb9.2
+    source_urls:
+      - https://data.mendeley.com/datasets/bwtzc9rzb9/2
+    exact_files_or_records:
+      - spectroscopic-scan-PFPE-refractive-indices-cauchy-V1.csv
+      - spectroscopic-scan-PVDF-refractive-indices-cauchy-V1.csv
+      - transmission and absorption scan CSV records described by the dataset
+    scouting_notes:
+      - Public CSV files are attractive for parser testing and boring optical-data sanity checks.
+      - The constants and transmission/absorption products appear tied to one characterization workflow.
+      - The package is not a clearly source-backed planar multilayer no-fit holdout.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: simulator_validation_fallback
+    decision: blocked_by_stack_backside_and_leakage_uncertainty
+    blockers:
+      - Film/substrate/coherence model is not sufficiently pinned for no-fit TMM validation.
+      - Cauchy/optical constants and transmission products are not a clean independent split.
+      - No local source-file hashes were captured in this phase.
+    exact_next_action: use only as a future parser/material-table fixture unless a split is source-proven
+
+  - candidate_id: htem_db_thin_film_measurement_archive
+    title: NREL HTEM database thin-film optical measurement archive
+    material_family: high-throughput experimental thin films
+    source_type: public_database_api_examples
+    source_refs:
+      - NREL HTEM Database API examples
+    source_urls:
+      - https://www.nrel.gov/research/software/htem-db-api-examples
+    exact_files_or_records:
+      - API-level thin-film optical-property records
+      - public examples for querying measurement archives
+    scouting_notes:
+      - The database is useful for broad measured optical-data discovery.
+      - It is not itself a source-backed single-stack package with independent constants, measured holdout, and coherence contract.
+      - It could seed a future candidate search, but not a Phase 3F.2 intake without a specific fully documented record.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: false
+      stack_thickness_specified: false
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: false
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 5
+      normal_incidence: false
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 5
+    proposed_scout_label: measured_only_fixture
+    decision: database_discovery_surface_not_validation_candidate
+    blockers:
+      - No candidate-specific layer stack, thickness, substrate, or independent constants contract.
+      - TMM suitability must be established per record, not at database level.
+      - No source-file hash or fixed record identifier was captured.
+    exact_next_action: query only if a future search identifies one fully documented simple coating record
+
+  - candidate_id: precise_gaas_algaas_heterostructure_2023
+    title: Precise Measurement of Refractive Indices in Thin Film Heterostructures
+    material_family: GaAs/AlGaAs heterostructures
+    source_type: arxiv_article_no_source_package_confirmed
+    source_refs:
+      - arXiv 2301.07712
+    source_urls:
+      - https://arxiv.org/abs/2301.07712
+    exact_files_or_records:
+      - article-level refractive-index measurement workflow
+    scouting_notes:
+      - The lead is scientifically relevant to thin-film optical constants and multilayer characterization.
+      - The scout did not find a public machine-readable source-data package with an independent measured holdout.
+      - It is closer to a measurement/calibration workflow than a no-fit simulator-validation dataset.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: false
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 4
+      normal_incidence: false
+      open_format_priority: 5
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 4
+    proposed_scout_label: calibration_only_no_holdout
+    decision: blocked_by_no_public_source_package_or_holdout_split
+    blockers:
+      - No source-data package with machine-readable measured holdout was confirmed.
+      - The workflow is not a clean independent constants-to-holdout validation split.
+      - Coherence/backside treatment is not intake-ready from the scout.
+    exact_next_action: ignore for Phase 3F unless public source files are discovered
+
+  - candidate_id: tmmax_software_benchmark_suite
+    title: tmmax JAX-based transfer-matrix method package
+    material_family: multilayer thin-film software examples
+    source_type: open_source_tmm_software
+    source_refs:
+      - tmmax public software/documentation lead
+    source_urls:
+      - https://github.com/bahremsd/tmmax
+    exact_files_or_records:
+      - software examples and package tests
+    scouting_notes:
+      - This is a software benchmark lead, not a measured-data package.
+      - It can help compare API behavior or numerical conventions if independent implementation parity is needed.
+      - It cannot validate measured optical spectra or support any evidence claim by itself.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: true
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 3
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 3
+    proposed_scout_label: software_or_simulation_fixture
+    decision: useful_as_software_fixture_not_measured_validation
+    blockers:
+      - No independent measured R/T or ellipsometry holdout.
+      - No local source hash or pinned revision was captured in this phase.
+    exact_next_action: keep as secondary parity option after choosing a fixture with closer project relevance
+
+  - candidate_id: sbyrnes_tmm_internal_dependency_reference
+    title: sbyrnes321/tmm transfer-matrix package
+    material_family: multilayer thin-film software examples
+    source_type: current_internal_dependency_reference
+    source_refs:
+      - sbyrnes321/tmm GitHub repository
+    source_urls:
+      - https://github.com/sbyrnes321/tmm
+    exact_files_or_records:
+      - examples.py
+      - tests.py
+      - manual_source
+    scouting_notes:
+      - Eternity already imports coh_tmm from this package in src/eternity/simulation.py.
+      - That makes it useful as a dependency reference but invalid as an independent code-regression oracle.
+      - Comparing Eternity to its own backend would only test wrapper plumbing, not independent transfer-matrix correctness.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: true
+      tmm_suitable: true
+      source_hash_ready: false
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: software_or_simulation_fixture
+    decision: rejected_as_independent_oracle_because_it_is_the_current_backend
+    blockers:
+      - No measured holdout.
+      - Not independent of Eternity's current TMM implementation.
+      - No pinned source hash was recorded in this phase.
+    exact_next_action: keep as dependency documentation, not as Phase 3F.1E oracle
+
+  - candidate_id: structural_color_froc_2023_code_parity_fixture
+    title: Fano resonant optical coatings platform for structural colors - code parity fixture
+    material_family: ultrathin metal/dielectric color coatings
+    source_type: github_source_code_and_phase3f1c_hashed_archive
+    source_refs:
+      - DOI 10.1038/s41467-023-39602-2
+      - GitHub hincz-lab/structural_color_FROCs
+      - Phase 3F.1C GitHub archive SHA-256 9d595ac110fc203b500780c97393a070c876fc81c5b75e7c20f0e1abf7949d92
+    source_urls:
+      - https://www.nature.com/articles/s41467-023-39602-2
+      - https://github.com/hincz-lab/structural_color_FROCs
+    exact_files_or_records:
+      - helper_functions/TMM_numba.py
+      - helper_functions/* material constant tables
+      - notebooks that call the project TMM helper
+    scouting_notes:
+      - Phase 3F.1C already showed the measured spectral holdout is absent from the open Source Data workbook.
+      - The GitHub archive is nevertheless useful because it contains a separate project-specific TMM implementation and material tables.
+      - This can become a non-promoting code-parity fixture for Eternity's TMM machinery with no measured residual and no evidence claim.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: true
+      machine_readable_measured_holdout: false
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: true
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 1
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: software_or_simulation_fixture
+    decision: selected_for_non_promoting_phase3f1e_code_regression_fixture
+    blockers:
+      - No machine-readable measured spectral R/T holdout for Phase 3F.2.
+      - Fixture must be reported as code-regression only, not simulator validation against experiment.
+    exact_next_action: build a pinned non-promoting Phase 3F.1E parity fixture against TMM_numba.py examples and material tables
+
+  - candidate_id: ultrathin_gold_absorber_2020_measurement_parser_fixture
+    title: Ultrathin 2 nm gold as impedance-matched absorber for infrared light - parser fixture
+    material_family: SiN/ultrathin Au absorber stack
+    source_type: nature_source_data_zip_phase3f1c_hashed_archive
+    source_refs:
+      - DOI 10.1038/s41467-020-15762-3
+      - Phase 3F.1C Nature Source Data ZIP SHA-256 b765e13c6cc6c2dfc832ee643e134139fb61da9288c1640ad04c2a94cf5641d5
+    source_urls:
+      - https://www.nature.com/articles/s41467-020-15762-3
+      - https://backend.orbit.dtu.dk/ws/files/216930338/s41467_020_15762_3.pdf
+    exact_files_or_records:
+      - 57 public .dpt FTIR reflectivity/transmittance spectra found in Phase 3F.1C
+      - Fig. 3 and Fig. 4 READMEs describing wavenumber/value columns
+    scouting_notes:
+      - Phase 3F.1C confirmed this is source-data-rich and open-table-readable for measured spectra.
+      - It remains leakage-blocked because the support-layer constants and metal model are fitted from the same spectral family.
+      - It is useful as a measurement parser fixture, not as a no-fit validation candidate.
+    evidence:
+      public_access: true
+      machine_readable_material_constants: false
+      machine_readable_measured_holdout: true
+      geometry_specified: true
+      stack_thickness_specified: true
+      substrate_backside_coherence_specified: true
+      leakage_safe_no_fit_split: false
+      tmm_suitable: true
+      source_hash_ready: true
+    tie_breakers:
+      stack_simplicity_rank: 2
+      normal_incidence: true
+      open_format_priority: 2
+      non_enz_or_non_claim_context: true
+      substrate_backside_clarity_rank: 2
+    proposed_scout_label: calibration_only_no_holdout
+    decision: useful_secondary_parser_fixture_but_not_no_fit_validation
+    blockers:
+      - Source-backed material constants are not independent of the measured spectra.
+      - Processing code is request-only in the public package.
+      - Leakage-safe no-fit split is not established.
+    exact_next_action: keep as secondary parser/regression fixture after the code-parity fixture is in place

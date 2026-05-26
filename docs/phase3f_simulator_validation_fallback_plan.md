@@ -114,3 +114,23 @@ from the same optical measurements and the processing code is request-only.
 
 No candidate cleared every hard flag, no Phase 3F.2 intake opened, no TMM
 adapter started, and no residual modeling was run.
+
+## Phase 3F.1D Result
+
+The targeted benchmark/source-data follow-up is recorded in
+`docs/phase3f1d_benchmark_fixture_gate.md`,
+`docs/phase3f1d_benchmark_fixture_gate.json`, and
+`docs/phase3f1d_benchmark_fixture_candidate_registry.yaml`.
+
+Result: 8 benchmark/source-data or software-fixture leads were gated, 0 cleared
+every measured-data hard flag, no Phase 3F.2 intake opened, no TMM adapter
+started, and no residual modeling was run. The phase therefore explicitly opens
+a non-promoting fixture lane instead of weakening the evidence bar.
+
+Selected next fixture lane: `structural_color_froc_2023_code_parity_fixture`.
+This is code-regression only: compare deterministic TMM implementation
+conventions against the public `structural_color_FROCs` code and material
+tables. It is not experimental validation, not a measured residual, and not
+support for any ENZ claim. The secondary future parser fixture is the ultrathin
+Au source-data package, which has raw FTIR R/T tables but remains leakage-
+blocked for no-fit validation.

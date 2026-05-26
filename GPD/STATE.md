@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3F.1D targeted benchmark/source-data search or code-regression fixture lane
+**Current focus:** Phase 3F.1E non-promoting TMM code-regression fixture contract
 
 ## Current Position
 
-**Current Phase:** 3F.1D
-**Current Phase Name:** Targeted Benchmark Source-Data Search Or Code-Regression Fixture Lane
+**Current Phase:** 3F.1E
+**Current Phase Name:** Non-Promoting TMM Code-Regression Fixture Contract
 **Total Phases:** 3
-**Current Plan:** docs/phase3f1c_source_file_audit.md
-**Total Plans in Phase:** 13
-**Status:** Active / Phase 3F.1C source-file audit found 0 hard-gate candidates
+**Current Plan:** docs/phase3f1d_benchmark_fixture_gate.md
+**Total Plans in Phase:** 14
+**Status:** Active / Phase 3F.1D selected non-promoting code-regression fixture lane
 **Last Activity:** 2026-05-26
-**Last Activity Description:** Completed Phase 3F.1C by downloading and source-auditing the top-three practical fallback packages from Phase 3F.1B. Structural color FROC 2023, FROC 2021, and ultrathin Au absorber 2020 all failed at least one hard gate; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1D: targeted benchmark/source-data search or explicit code-regression fixture lane.
+**Last Activity Description:** Completed Phase 3F.1D by gating 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 intake remains closed. The next remembered work is Phase 3F.1E: pin and compare a non-promoting TMM code-regression fixture against the public `structural_color_FROCs` code/material tables, with no measured residuals and no claim promotion.
 
 **Progress:** [██████████] 99%
 
@@ -153,15 +153,23 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   is leakage-blocked by same-measurement fitting plus request-only processing
   code. Zero cleared every hard flag, no Phase 3F.2 intake opened, no TMM
   adapter started, and no residual modeling was run.
+- Phase 3F.1D wrote `docs/phase3f1d_benchmark_fixture_candidate_registry.yaml`,
+  `docs/phase3f1d_benchmark_fixture_gate.md`, and `.json`. Eight targeted
+  benchmark/source-data or software-fixture leads were gated. Zero measured-data
+  candidates cleared every hard flag. The selected next lane is
+  `structural_color_froc_2023_code_parity_fixture` as a non-promoting
+  code-regression fixture; ultrathin Au remains only a secondary parser fixture.
 
 ## Open Questions
 
-- Which stricter simple public planar thin-film dataset can provide
+- Which exact `structural_color_FROCs` stack/material records should be pinned
+  first for Phase 3F.1E code-regression parity?
+- Does the public `structural_color_FROCs` TMM helper use conventions that
+  differ from Eternity's current `sbyrnes321/tmm` wrapper in a way that should
+  become documented fixture behavior?
+- Which stricter simple public planar thin-film dataset can later provide
   source-qualified optical constants plus independent R/T or ellipsometry
-  holdout without author contact, so the TMM machinery can be tested before
-  another ENZ claim attempt?
-- If a candidate public dataset is found, what sample/stack, geometry,
-  wavelength range, polarization, units, and leakage policy are source-proven?
+  holdout without author contact, so Phase 3F.2 can eventually open?
 - Can the thesis/exported `Intensity` columns be justified as absolute reflectance for Phase 3A?
 - What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?
 - Can a Woollam project file, plotting script, or lab note map the `30_20_10` exports to a sample and stack?
@@ -263,6 +271,10 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 - [Phase 3F.1C]: The top-three source-file audit found no intake-ready
   candidate either. — Structural color FROC, FROC 2021, and ultrathin Au each
   failed at least one hard gate, so Phase 3F.2 remains closed.
+- [Phase 3F.1D]: The targeted benchmark/source-data follow-up found no
+  measured-data candidate either. — Eight leads yielded zero hard-gate passes,
+  so the only active next lane is a non-promoting code-regression fixture
+  against `structural_color_FROCs`.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -283,9 +295,9 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3F.1D: either search narrowly for a benchmark/source-data package that
-  clears every hard flag, or explicitly open a non-promoting code-regression
-  fixture lane from a useful blocked package.
+- Phase 3F.1E: pin the `structural_color_FROCs` source/material inputs and
+  write a deterministic, non-promoting TMM code-regression fixture. Do not run
+  measured residuals or promote claim labels.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

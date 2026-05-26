@@ -572,12 +572,16 @@ Next:
   measured data are Origin OPJ containers, and ultrathin Au is leakage-blocked
   by same-measurement fitting plus request-only processing code. Zero cleared
   every hard flag, so Phase 3F.2 remains closed.
-- Continue `Phase 3F.1D - targeted benchmark/source-data search or explicit
-  code-regression fixture lane`: search for or receive one boring public planar
-  stack with source-backed material constants, measured R/T or ellipsometry,
-  geometry, substrate/backside handling, leakage boundaries, and source/hash
-  readiness, or explicitly demote a useful blocked package into a
-  non-promoting code-regression fixture.
+- Phase 3F.1D has completed the targeted benchmark/source-data and
+  software-fixture follow-up. Eight leads were gated, zero measured-data
+  candidates cleared every hard flag, and Phase 3F.2 remains closed. The
+  selected next lane is the non-promoting
+  `structural_color_froc_2023_code_parity_fixture`; ultrathin Au remains only
+  secondary parser-fixture memory.
+- Continue `Phase 3F.1E - non-promoting TMM code-regression fixture contract`:
+  pin the `structural_color_FROCs` source/material inputs, compare deterministic
+  transfer-matrix convention outputs, and report machinery regression coverage
+  without measured residuals or claim promotion.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

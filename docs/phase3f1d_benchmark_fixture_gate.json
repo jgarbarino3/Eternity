@@ -1,0 +1,452 @@
+{
+  "candidate_evaluations": [
+    {
+      "blockers": [
+        "Material constants are not source-qualified as independent of the measured optical holdout from this scout alone.",
+        "Substrate/backside/coherence treatment is not source-backed enough for a frozen no-fit adapter.",
+        "No source-file hash was recorded in Phase 3F.1D."
+      ],
+      "candidate_id": "transparent_electrode_umtf_2020",
+      "computed_gate_label": "promising_but_blocked",
+      "decision": "blocked_before_intake_by_unproven_split_and_backside_contract",
+      "exact_next_action": "keep as a later source-file audit target only if code-regression fixtures are insufficient",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "PET/TiO2/Ag/dielectric transparent electrode",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "promising_but_blocked",
+      "source_type": "nature_source_data_article",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 2,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 4
+      },
+      "title": "Ultrathin-metal-film-based transparent electrodes with relative transmittance surpassing 100%"
+    },
+    {
+      "blockers": [
+        "Film/substrate/coherence model is not sufficiently pinned for no-fit TMM validation.",
+        "Cauchy/optical constants and transmission products are not a clean independent split.",
+        "No local source-file hashes were captured in this phase."
+      ],
+      "candidate_id": "pfpe_pvdf_mendeley_2021",
+      "computed_gate_label": "simulator_validation_fallback",
+      "decision": "blocked_by_stack_backside_and_leakage_uncertainty",
+      "exact_next_action": "use only as a future parser/material-table fixture unless a split is source-proven",
+      "gate_blockers": [
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "PFPE/PVDF polymer films",
+      "missing_required_flags": [
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "simulator_validation_fallback",
+      "source_type": "mendeley_data_csv_package",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 4
+      },
+      "title": "Data for optical transmission and refractive index of PFPE and PVDF thin films"
+    },
+    {
+      "blockers": [
+        "No candidate-specific layer stack, thickness, substrate, or independent constants contract.",
+        "TMM suitability must be established per record, not at database level.",
+        "No source-file hash or fixed record identifier was captured."
+      ],
+      "candidate_id": "htem_db_thin_film_measurement_archive",
+      "computed_gate_label": "measured_only_fixture",
+      "decision": "database_discovery_surface_not_validation_candidate",
+      "exact_next_action": "query only if a future search identifies one fully documented simple coating record",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "source-backed wavelength axis, angle, polarization, and units",
+          "flag": "geometry_specified"
+        },
+        {
+          "criterion": "source-backed layer order and thicknesses",
+          "flag": "stack_thickness_specified"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "measurement is a planar linear TMM target",
+          "flag": "tmm_suitable"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "high-throughput experimental thin films",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "geometry_specified",
+        "stack_thickness_specified",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "tmm_suitable",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "measured_only_fixture",
+      "source_type": "public_database_api_examples",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": false,
+        "open_format_priority": 2,
+        "stack_simplicity_rank": 5,
+        "substrate_backside_clarity_rank": 5
+      },
+      "title": "NREL HTEM database thin-film optical measurement archive"
+    },
+    {
+      "blockers": [
+        "No source-data package with machine-readable measured holdout was confirmed.",
+        "The workflow is not a clean independent constants-to-holdout validation split.",
+        "Coherence/backside treatment is not intake-ready from the scout."
+      ],
+      "candidate_id": "precise_gaas_algaas_heterostructure_2023",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "blocked_by_no_public_source_package_or_holdout_split",
+      "exact_next_action": "ignore for Phase 3F unless public source files are discovered",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+          "flag": "substrate_backside_coherence_specified"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "GaAs/AlGaAs heterostructures",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "machine_readable_measured_holdout",
+        "substrate_backside_coherence_specified",
+        "leakage_safe_no_fit_split",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "calibration_only_no_holdout",
+      "source_type": "arxiv_article_no_source_package_confirmed",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": false,
+        "open_format_priority": 5,
+        "stack_simplicity_rank": 4,
+        "substrate_backside_clarity_rank": 4
+      },
+      "title": "Precise Measurement of Refractive Indices in Thin Film Heterostructures"
+    },
+    {
+      "blockers": [
+        "No independent measured R/T or ellipsometry holdout.",
+        "No local source hash or pinned revision was captured in this phase."
+      ],
+      "candidate_id": "tmmax_software_benchmark_suite",
+      "computed_gate_label": "software_or_simulation_fixture",
+      "decision": "useful_as_software_fixture_not_measured_validation",
+      "exact_next_action": "keep as secondary parity option after choosing a fixture with closer project relevance",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "multilayer thin-film software examples",
+      "missing_required_flags": [
+        "machine_readable_measured_holdout",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "software_or_simulation_fixture",
+      "source_type": "open_source_tmm_software",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 3,
+        "substrate_backside_clarity_rank": 3
+      },
+      "title": "tmmax JAX-based transfer-matrix method package"
+    },
+    {
+      "blockers": [
+        "No measured holdout.",
+        "Not independent of Eternity's current TMM implementation.",
+        "No pinned source hash was recorded in this phase."
+      ],
+      "candidate_id": "sbyrnes_tmm_internal_dependency_reference",
+      "computed_gate_label": "software_or_simulation_fixture",
+      "decision": "rejected_as_independent_oracle_because_it_is_the_current_backend",
+      "exact_next_action": "keep as dependency documentation, not as Phase 3F.1E oracle",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        },
+        {
+          "criterion": "source-page files can be hashed or provide checksums before intake",
+          "flag": "source_hash_ready"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "multilayer thin-film software examples",
+      "missing_required_flags": [
+        "machine_readable_measured_holdout",
+        "source_hash_ready"
+      ],
+      "proposed_scout_label": "software_or_simulation_fixture",
+      "source_type": "current_internal_dependency_reference",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "sbyrnes321/tmm transfer-matrix package"
+    },
+    {
+      "blockers": [
+        "No machine-readable measured spectral R/T holdout for Phase 3F.2.",
+        "Fixture must be reported as code-regression only, not simulator validation against experiment."
+      ],
+      "candidate_id": "structural_color_froc_2023_code_parity_fixture",
+      "computed_gate_label": "software_or_simulation_fixture",
+      "decision": "selected_for_non_promoting_phase3f1e_code_regression_fixture",
+      "exact_next_action": "build a pinned non-promoting Phase 3F.1E parity fixture against TMM_numba.py examples and material tables",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable measured R/T or ellipsometry holdout",
+          "flag": "machine_readable_measured_holdout"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "ultrathin metal/dielectric color coatings",
+      "missing_required_flags": [
+        "machine_readable_measured_holdout"
+      ],
+      "proposed_scout_label": "software_or_simulation_fixture",
+      "source_type": "github_source_code_and_phase3f1c_hashed_archive",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 1,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "Fano resonant optical coatings platform for structural colors - code parity fixture"
+    },
+    {
+      "blockers": [
+        "Source-backed material constants are not independent of the measured spectra.",
+        "Processing code is request-only in the public package.",
+        "Leakage-safe no-fit split is not established."
+      ],
+      "candidate_id": "ultrathin_gold_absorber_2020_measurement_parser_fixture",
+      "computed_gate_label": "calibration_only_no_holdout",
+      "decision": "useful_secondary_parser_fixture_but_not_no_fit_validation",
+      "exact_next_action": "keep as secondary parser/regression fixture after the code-parity fixture is in place",
+      "gate_blockers": [
+        {
+          "criterion": "machine-readable n,k, epsilon, or model constants",
+          "flag": "machine_readable_material_constants"
+        },
+        {
+          "criterion": "material model and measured holdout can be used without residual-driven tuning",
+          "flag": "leakage_safe_no_fit_split"
+        }
+      ],
+      "hard_gate_pass": false,
+      "material_family": "SiN/ultrathin Au absorber stack",
+      "missing_required_flags": [
+        "machine_readable_material_constants",
+        "leakage_safe_no_fit_split"
+      ],
+      "proposed_scout_label": "calibration_only_no_holdout",
+      "source_type": "nature_source_data_zip_phase3f1c_hashed_archive",
+      "tie_breakers": {
+        "non_enz_or_non_claim_context": true,
+        "normal_incidence": true,
+        "open_format_priority": 2,
+        "stack_simplicity_rank": 2,
+        "substrate_backside_clarity_rank": 2
+      },
+      "title": "Ultrathin 2 nm gold as impedance-matched absorber for infrared light - parser fixture"
+    }
+  ],
+  "decision": {
+    "claim_standard_changed": false,
+    "phase3f2_intake_allowed": false,
+    "phase4_candidate": false,
+    "recommended_next_phase": "Phase 3F.1E - non-promoting TMM code-regression fixture contract",
+    "residual_modeling_performed": false,
+    "selected_next_candidate_id": null,
+    "serious_core_allowed_now": false,
+    "status": "phase3f1d_no_source_data_candidate_open_code_regression_fixture_lane",
+    "tmm_adapter_started": false
+  },
+  "fixture_lane_decision": {
+    "fixture_lane_rules": [
+      "No measured residuals, fitted parameters, or claim promotion in Phase 3F.1E.",
+      "Pin source revision/hash before using external code as a fixture.",
+      "Compare deterministic transfer-matrix outputs and conventions only.",
+      "Report any match as machinery regression coverage, not experimental validation."
+    ],
+    "phase3f2_source_data_candidate": null,
+    "secondary_fixture": "ultrathin_gold_absorber_2020_measurement_parser_fixture",
+    "selected_fixture": "structural_color_froc_2023_code_parity_fixture",
+    "selected_fixture_scope": "non_promoting_code_regression_only",
+    "why_not_sbyrnes_tmm_as_oracle": "Eternity already imports coh_tmm from sbyrnes321/tmm, so it is a dependency reference rather than an independent oracle.",
+    "why_phase3f2_remains_blocked": [
+      "No candidate establishes all hard gates for public access, independent machine-readable constants, measured holdout, geometry, stack, substrate/backside/coherence, leakage-safe no-fit split, TMM suitability, and source-hash readiness.",
+      "The strongest measured-data package remains leakage-blocked because optical constants/model pieces are fitted from the same measurement family.",
+      "The strongest code package lacks measured spectral holdout and therefore can only test implementation parity."
+    ]
+  },
+  "generated_at": "2026-05-26T09:32:08.488130+00:00",
+  "hard_gate_flags": {
+    "geometry_specified": "source-backed wavelength axis, angle, polarization, and units",
+    "leakage_safe_no_fit_split": "material model and measured holdout can be used without residual-driven tuning",
+    "machine_readable_material_constants": "machine-readable n,k, epsilon, or model constants",
+    "machine_readable_measured_holdout": "machine-readable measured R/T or ellipsometry holdout",
+    "public_access": "public data access without private credentials or author contact",
+    "source_hash_ready": "source-page files can be hashed or provide checksums before intake",
+    "stack_thickness_specified": "source-backed layer order and thicknesses",
+    "substrate_backside_coherence_specified": "source-backed substrate/backside/coherence treatment or irrelevant backside",
+    "tmm_suitable": "measurement is a planar linear TMM target"
+  },
+  "inputs": {
+    "registry_path": "docs/phase3f1d_benchmark_fixture_candidate_registry.yaml"
+  },
+  "phase_id": "Phase 3F.1D",
+  "registry": {
+    "candidate_count": 8,
+    "phase_id": "Phase 3F.1D",
+    "registry_version": 1,
+    "updated_at": "2026-05-26"
+  },
+  "search_bounds": {
+    "candidate_limit": 8,
+    "residual_modeling_allowed": false,
+    "search_scope": "Targeted follow-up after Phase 3F.1C. This pass rechecks practical public thin-film source-data leads plus software/code-benchmark leads. It is still a scout/gate phase: no new source downloads, no TMM adapter, no residual modeling, and no ENZ claim promotion.",
+    "tmm_adapter_allowed": false
+  },
+  "source_refresh": {
+    "date": "2026-05-26",
+    "mode": "read_only_live_source_search_and_source_page_inspection",
+    "urls_inspected_or_carried_forward": [
+      "https://www.nature.com/articles/s41467-020-17107-6",
+      "https://data.mendeley.com/datasets/bwtzc9rzb9/2",
+      "https://www.nrel.gov/research/software/htem-db-api-examples",
+      "https://arxiv.org/abs/2301.07712",
+      "https://github.com/bahremsd/tmmax",
+      "https://github.com/sbyrnes321/tmm",
+      "https://www.nature.com/articles/s41467-023-39602-2",
+      "https://github.com/hincz-lab/structural_color_FROCs",
+      "https://www.nature.com/articles/s41467-020-15762-3"
+    ]
+  },
+  "stop_rule": {
+    "reason": "Phase 3F.1D is scouting/gating only; residuals require a later Phase 3F.2 source-file intake and frozen no-fit adapter.",
+    "residual_modeling_stop_active": true
+  },
+  "summary": {
+    "blocker_counts": {
+      "geometry_specified": 1,
+      "leakage_safe_no_fit_split": 5,
+      "machine_readable_material_constants": 4,
+      "machine_readable_measured_holdout": 4,
+      "source_hash_ready": 6,
+      "stack_thickness_specified": 2,
+      "substrate_backside_coherence_specified": 4,
+      "tmm_suitable": 1
+    },
+    "candidate_count": 8,
+    "claim_label_counts": {
+      "calibration_only_no_holdout": 2,
+      "measured_only_fixture": 1,
+      "promising_but_blocked": 1,
+      "simulator_validation_fallback": 1,
+      "software_or_simulation_fixture": 3
+    },
+    "hard_gate_pass_count": 0,
+    "selected_next_candidate_id": null
+  },
+  "title": "Targeted Benchmark Source-Data Search And Fixture-Lane Decision"
+}

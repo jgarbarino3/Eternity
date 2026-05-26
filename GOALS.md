@@ -153,8 +153,13 @@ chromaticity/comparison data rather than measured spectral R/T holdout, FROC
 2021 is blocked because measured data remain in Origin OPJ containers, and the
 ultrathin Au absorber is source-data-rich but leakage-blocked because optical
 constants/model parameters are fit from the same measurements and processing
-code is request-only. The active next step is now `Phase 3F.1D - targeted
+code is request-only. That set up `Phase 3F.1D - targeted
 benchmark/source-data search or explicit code-regression fixture lane`.
+Phase 3F.1D then gated 8 targeted benchmark/source-data or software-fixture
+leads and found 0 measured-data hard-gate passes. It explicitly selected
+`structural_color_froc_2023_code_parity_fixture` for a non-promoting Phase
+3F.1E TMM code-regression contract, with ultrathin Au retained only as a
+secondary parser fixture. Phase 3F.2 remains closed.
 Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
 material models, St Andrews diagnostics, public package failures, Saha
 sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
@@ -248,11 +253,12 @@ Current blocker:
 - Phase 3F.1C downloaded and source-audited the top-three fallback packages.
   Structural color FROC, FROC 2021, and ultrathin Au all failed at least one
   hard gate, so Phase 3F.2 remains closed.
-- The next remembered action is `Phase 3F.1D - targeted benchmark/source-data
-  search or explicit code-regression fixture lane`: either search for a boring
-  public planar thin-film dataset with a complete source-backed stack/
-  measurement contract, or deliberately demote a blocked package into a
-  non-promoting code-regression fixture.
+- Phase 3F.1D gated 8 targeted benchmark/source-data or software-fixture leads.
+  Zero measured-data candidates cleared every hard flag, so no Phase 3F.2
+  intake opens. The next remembered action is `Phase 3F.1E - non-promoting TMM
+  code-regression fixture contract`: pin and compare a small deterministic
+  fixture against the public `structural_color_FROCs` TMM code and material
+  tables without measured residuals or claim promotion.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -361,6 +367,10 @@ Current blocker:
   Pro list produced 16 candidate cards and 0 hard-gate-ready candidates. This
   confirms the no-ENZ-public-candidate boundary while giving a better shortlist
   of non-ENZ simulator-validation fallback leads for future source-file audit.
+- Phase 3F.1D has enough information to stop the measured-data scout and open
+  only a code-regression fixture lane: 8 targeted leads produced 0 measured-data
+  hard-gate passes, and `structural_color_FROCs` is selected strictly as a
+  non-promoting implementation-parity fixture.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

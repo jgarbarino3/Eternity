@@ -2,7 +2,7 @@
   "project_reference": {
     "project_md_updated": "2026-05-19",
     "core_research_question": "Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?",
-    "current_focus": "Phase 3F.1D targeted benchmark/source-data search or code-regression fixture lane"
+    "current_focus": "Phase 3F.1E non-promoting TMM code-regression fixture contract"
   },
   "project_contract": {
     "gpd_role": "planning_mirror_only",
@@ -25,14 +25,14 @@
     }
   },
   "position": {
-    "current_phase": "3F.1D",
-    "current_phase_name": "Targeted Benchmark Source-Data Search Or Code-Regression Fixture Lane",
+    "current_phase": "3F.1E",
+    "current_phase_name": "Non-Promoting TMM Code-Regression Fixture Contract",
     "total_phases": 3,
-    "current_plan": "docs/phase3f1c_source_file_audit.md",
-    "total_plans_in_phase": 13,
-    "status": "Active / Phase 3F.1C source-file audit found 0 hard-gate candidates",
+    "current_plan": "docs/phase3f1d_benchmark_fixture_gate.md",
+    "total_plans_in_phase": 14,
+    "status": "Active / Phase 3F.1D selected non-promoting code-regression fixture lane",
     "last_activity": "2026-05-26",
-    "last_activity_desc": "Completed Phase 3F.1C by downloading and source-auditing the top-three practical fallback packages from Phase 3F.1B. Structural color FROC 2023, FROC 2021, and ultrathin Au absorber 2020 all failed at least one hard gate; no Phase 3F.2 intake opened, no TMM adapter started, and no residual modeling was run. Next remembered work is Phase 3F.1D: targeted benchmark/source-data search or explicit code-regression fixture lane.",
+    "last_activity_desc": "Completed Phase 3F.1D by gating 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 intake remains closed. The next remembered work is Phase 3F.1E: pin and compare a non-promoting TMM code-regression fixture against the public structural_color_FROCs code/material tables, with no measured residuals and no claim promotion.",
     "progress_percent": 99,
     "paused_at": null
   },
@@ -532,12 +532,14 @@
         "Fano-resonant-ultrathin-film-optical-coatings-FROC_fb41dbd.zip": "f858c31647b806514fb805feafe9ec2a809448532e8d707e9fb6e7feb26e7edf",
         "41467_2020_15762_MOESM3_ESM.zip": "b765e13c6cc6c2dfc832ee643e134139fb61da9288c1640ad04c2a94cf5641d5"
       },
-      "next": "Phase 3F.1D targeted benchmark/source-data search or explicit code-regression fixture lane"
-    }
+      "next": "Phase 3F.1D completed; continue Phase 3F.1E non-promoting code-regression fixture contract"
+    },
+    "Phase 3F.1D wrote docs/phase3f1d_benchmark_fixture_candidate_registry.yaml, docs/phase3f1d_benchmark_fixture_gate.md, and .json. Eight targeted benchmark/source-data or software-fixture leads were gated; zero measured-data candidates cleared every hard flag. The selected next lane is structural_color_froc_2023_code_parity_fixture as a non-promoting code-regression fixture, and ultrathin Au remains only a secondary parser fixture."
   ],
   "open_questions": [
-    "Which stricter simple public planar thin-film dataset can provide source-qualified optical constants plus independent R/T or ellipsometry holdout without author contact, so the TMM machinery can be tested before another ENZ claim attempt?",
-    "If a candidate public dataset is found, what sample/stack, geometry, wavelength range, polarization, units, and leakage policy are source-proven?",
+    "Which exact structural_color_FROCs stack/material records should be pinned first for Phase 3F.1E code-regression parity?",
+    "Does the public structural_color_FROCs TMM helper use conventions that differ from Eternity current sbyrnes321/tmm wrapper in a way that should become documented fixture behavior?",
+    "Which stricter simple public planar thin-film dataset can later provide source-qualified optical constants plus independent R/T or ellipsometry holdout without author contact, so Phase 3F.2 can eventually open?",
     "Can the thesis/exported Intensity columns be justified as absolute reflectance for Phase 3A?",
     "What predeclared residual thresholds and wavelength window are defensible before any calibrated-evidence promotion?",
     "Can a Woollam project file, plotting script, or lab note map the 30_20_10 exports to a sample and stack?"
@@ -693,6 +695,11 @@
       "phase": "3F.1C",
       "summary": "The top-three fallback source-file audit found no intake-ready candidate.",
       "rationale": "Structural color FROC lacks open measured spectral holdout, FROC 2021 measured data are Origin OPJ containers, and ultrathin Au is leakage-blocked by same-measurement fitting plus request-only processing code; Phase 3F.2 remains closed."
+    },
+    {
+      "phase": "Phase 3F.1D",
+      "decision": "Targeted benchmark/source-data search found no measured-data hard-gate candidate; open only a non-promoting code-regression fixture lane.",
+      "implication": "Phase 3F.2 intake and residual modeling remain closed. Phase 3F.1E may compare deterministic TMM conventions against structural_color_FROCs code/material tables without claim promotion."
     }
   ],
   "approximations": [
@@ -732,7 +739,7 @@
   },
   "propagated_uncertainties": [],
   "pending_todos": [
-    "Phase 3F.1D: either search narrowly for a benchmark/source-data package that clears every hard flag, or explicitly open a non-promoting code-regression fixture lane from a useful blocked package.",
+    "Phase 3F.1E: pin the structural_color_FROCs source/material inputs and write a deterministic, non-promoting TMM code-regression fixture. Do not run measured residuals or promote claim labels.",
     "Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.",
     "Retrieve source-backed export/recipe/project/lab-note evidence if thesis exported intensity spectra are to be treated as absolute reflectance.",
     "Phase 3A.6 packet remains archived as the acceptance template if new source evidence or a future measurement appears; CompleteEASE re-export is not available under current constraints.",
@@ -751,12 +758,13 @@
     "Phase 3C.6A keeps St Andrews non-promoting; do not proceed to Phase 4, change thresholds, contact authors, or choose more source-model variants without new evidence for exact roughness/back-reflection or CompleteEASE acquisition parity.",
     "Phase 3F.1 found no hard-gate-ready simple thin-film candidate in the first 10-card scout, so Phase 3F.2 intake and residual modeling remain blocked.",
     "Phase 3F.1B found no hard-gate-ready candidate in the pasted 16-lead GPT-5.5 Pro list, so Phase 3F.2 intake and residual modeling remain blocked.",
-    "Phase 3F.1C found no hard-gate-ready candidate in the top-three source-file audit, so Phase 3F.2 intake and residual modeling remain blocked."
+    "Phase 3F.1C found no hard-gate-ready candidate in the top-three source-file audit, so Phase 3F.2 intake and residual modeling remain blocked.",
+    "Phase 3F.1D found no measured-data hard-gate candidate in the targeted benchmark/source-data follow-up, so Phase 3F.2 intake and residual modeling remain blocked."
   ],
   "continuation": {
     "schema_version": 1,
-    "handoff": "Phase 3F.1C source-file audit is complete with zero hard-gate candidates; continue with Phase 3F.1D targeted benchmark/source-data search or explicitly open a non-promoting code-regression fixture lane.",
-    "bounded_segment": null,
+    "handoff": "Phase 3F.1D benchmark/source-data follow-up is complete with zero measured-data hard-gate candidates; continue with Phase 3F.1E non-promoting TMM code-regression fixture against structural_color_FROCs code/material tables.",
+    "bounded_segment": "Phase 3F.1E code-regression fixture contract only; Phase 3F.2 intake and measured residual modeling remain closed.",
     "machine": {
       "recorded_at": null,
       "hostname": null,
