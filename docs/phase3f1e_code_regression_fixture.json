@@ -1,0 +1,173 @@
+{
+  "case_results": [
+    {
+      "angle_deg": 0.0,
+      "backend_reflection": 0.04648936165145637,
+      "backend_transmission": 0.9535106383485435,
+      "case_id": "lossless_te_single_layer",
+      "description": "One lossless film at normal incidence; checks TE layer-matrix convention.",
+      "layer_thicknesses_nm": [
+        100.0
+      ],
+      "n_cover": {
+        "imag": 0.0,
+        "real": 1.0
+      },
+      "n_layers": [
+        {
+          "imag": 0.0,
+          "real": 1.5
+        }
+      ],
+      "n_substrate": {
+        "imag": 0.0,
+        "real": 1.45
+      },
+      "pass": true,
+      "polarization": "s",
+      "reflection_abs_delta": 6.938893903907228e-18,
+      "rho": 0,
+      "source_inputs": {
+        "origin": "synthetic closed-form sanity case"
+      },
+      "source_reflection": 0.046489361651456375,
+      "source_transmission": 0.9535106383485435,
+      "transmission_abs_delta": 0.0,
+      "wavelength_nm": 550.0
+    },
+    {
+      "angle_deg": 35.0,
+      "backend_reflection": 0.07788741414335444,
+      "backend_transmission": 0.8670145619663215,
+      "case_id": "lossy_tm_double_layer_angle",
+      "description": "Two-layer lossy/transparent stack at oblique incidence; checks TM convention.",
+      "layer_thicknesses_nm": [
+        20.0,
+        80.0
+      ],
+      "n_cover": {
+        "imag": 0.0,
+        "real": 1.0
+      },
+      "n_layers": [
+        {
+          "imag": 0.15,
+          "real": 2.0
+        },
+        {
+          "imag": 0.0,
+          "real": 1.7
+        }
+      ],
+      "n_substrate": {
+        "imag": 0.0,
+        "real": 1.52
+      },
+      "pass": true,
+      "polarization": "p",
+      "reflection_abs_delta": 9.71445146547012e-17,
+      "rho": 1,
+      "source_inputs": {
+        "origin": "synthetic lossy oblique-incidence sanity case"
+      },
+      "source_reflection": 0.07788741414335434,
+      "source_transmission": 0.8670145619663217,
+      "transmission_abs_delta": 1.1102230246251565e-16,
+      "wavelength_nm": 650.0
+    },
+    {
+      "angle_deg": 25.0,
+      "backend_reflection": 0.28278254757743887,
+      "backend_transmission": 0.20270967801708842,
+      "case_id": "source_table_ge_sio2_tio2_tm",
+      "description": "Three-layer TM stack using structural_color_FROCs Ge, SiO2, and TiO2 source material tables at 550 nm.",
+      "layer_thicknesses_nm": [
+        14.999999999999998,
+        50.0,
+        75.0
+      ],
+      "n_cover": {
+        "imag": 0.0,
+        "real": 1.0
+      },
+      "n_layers": [
+        {
+          "imag": 1.2935791019955836,
+          "real": 4.164282416579534
+        },
+        {
+          "imag": 0.0,
+          "real": 1.46521593
+        },
+        {
+          "imag": 0.0,
+          "real": 2.20997262
+        }
+      ],
+      "n_substrate": {
+        "imag": 0.0,
+        "real": 1.0
+      },
+      "pass": true,
+      "polarization": "p",
+      "reflection_abs_delta": 1.6653345369377348e-16,
+      "rho": 1,
+      "source_inputs": {
+        "material_files": [
+          "nGe.txt",
+          "kGe.txt",
+          "constants.csv"
+        ],
+        "materials_top_to_bottom": [
+          "Ge",
+          "SiO2",
+          "TiO2"
+        ],
+        "origin": "structural_color_FROCs material tables"
+      },
+      "source_reflection": 0.2827825475774387,
+      "source_transmission": 0.20270967801708856,
+      "transmission_abs_delta": 1.3877787807814457e-16,
+      "wavelength_nm": 550.0
+    }
+  ],
+  "claim_boundary": {
+    "claim_status_changed": false,
+    "experimental_validation": false,
+    "label": "non_promoting_code_regression_fixture",
+    "measured_residual_modeling_performed": false,
+    "phase3f2_intake_allowed": false,
+    "phase4_candidate": false
+  },
+  "decision": {
+    "phase3f2_intake_allowed": false,
+    "recommended_next_phase": "Phase 3F.1F - decide whether code-regression coverage is enough for now or continue public measured-data scouting",
+    "residual_modeling_allowed": false,
+    "status": "phase3f1e_code_regression_fixture_ready"
+  },
+  "generated_at": "2026-05-26T09:48:42.789563+00:00",
+  "inputs": {
+    "archive_hash_matches": true,
+    "archive_path": "lab_data/raw/phase3f1c_structural_color_froc_2023/structural_color_FROCs_7c0998d.zip",
+    "expected_archive_sha256": "9d595ac110fc203b500780c97393a070c876fc81c5b75e7c20f0e1abf7949d92",
+    "observed_archive_sha256": "9d595ac110fc203b500780c97393a070c876fc81c5b75e7c20f0e1abf7949d92",
+    "pinned_github_revision": "7c0998d720c387f1efbffe6d1417593ba2f845b1",
+    "source_root": "lab_data/raw/phase3f1c_structural_color_froc_2023/structural_color_FROCs_7c0998d/structural_color_FROCs-7c0998d720c387f1efbffe6d1417593ba2f845b1",
+    "tmm_helper_sha256": "881948db767e986cd3ffb38914d561a1d96ee06d3e9d07c6df57f83f63326aef"
+  },
+  "method": {
+    "backend_under_test": "sbyrnes321/tmm coh_tmm through Eternity's current dependency",
+    "numba_handling": "TMM_numba.py is loaded with numba.jit stubbed as an identity decorator so the public source formula runs without local NumPy/Numba binary compatibility requirements.",
+    "source_oracle": "structural_color_FROCs TMM_numba.py reflect_amp/trans_amp",
+    "tolerance_abs": 1e-12
+  },
+  "phase_id": "Phase 3F.1E",
+  "summary": {
+    "all_cases_passed": true,
+    "case_count": 3,
+    "max_reflection_abs_delta": 1.6653345369377348e-16,
+    "max_transmission_abs_delta": 1.3877787807814457e-16,
+    "pass_count": 3
+  },
+  "title": "Non-Promoting TMM Code-Regression Fixture Contract"
+}

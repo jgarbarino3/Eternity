@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3F.1E - non-promoting TMM code-regression fixture contract`.
+Choose `Phase 3F.1F - measured-data scouting decision or pause`.
 
 Why:
 
@@ -1094,7 +1094,11 @@ material split. Phase 3F.1D then gated 8 targeted benchmark/source-data or
 software-fixture leads. It again found 0 measured-data hard-gate passes, kept
 Phase 3F.2 closed, and selected `structural_color_froc_2023_code_parity_fixture`
 as a strictly non-promoting Phase 3F.1E code-regression path. Ultrathin Au stays
-secondary parser-fixture memory only.
+secondary parser-fixture memory only. Phase 3F.1E then pinned the
+`structural_color_FROCs` archive and compared three deterministic TMM parity
+cases, including one built from source material tables. All cases passed with
+max absolute R/T deltas below `2e-16`. This is machinery regression coverage,
+not measured validation.
 
 Recommended decision scope:
 
@@ -1102,10 +1106,10 @@ Recommended decision scope:
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
 2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
    and public-dataset acceptance gate.
-3. Implement Phase 3F.1E as a non-promoting code-regression fixture only:
-   pin the `structural_color_FROCs` code/material inputs, compare deterministic
-   TMM convention outputs, and report machinery coverage without measured
-   residuals or claim promotion.
+3. Decide Phase 3F.1F: either pause measured-data scouting with the current
+   code-regression coverage recorded, or open a newly narrowed measured-data
+   search only if the target class is stricter than the exhausted Phase 3F.1
+   through Phase 3F.1D envelope.
 4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
@@ -1141,17 +1145,21 @@ then source-audited the top three fallback packages and found 0 intake-ready
 candidates. Phase 3F.1D then gated 8 targeted benchmark/source-data or
 software-fixture leads, again found 0 measured-data hard-gate passes, and
 selected the non-promoting `structural_color_froc_2023_code_parity_fixture`.
-The current recommended next phase is `Phase 3F.1E - non-promoting TMM
-code-regression fixture contract`.
+Phase 3F.1E then produced a passing non-promoting TMM code-regression fixture.
+The current recommended next phase is `Phase 3F.1F - measured-data scouting
+decision or pause`.
 
-Phase 3F.1E should:
+Phase 3F.1F should:
 
-- Pin the `structural_color_FROCs` source revision/hash and the exact material
-  tables or notebook stack records used for parity.
-- Compare deterministic transfer-matrix outputs and convention choices only;
-  do not compare to measured spectra or tune residuals.
-- Keep the result labeled as machinery regression coverage, not simulator
-  validation against experiment.
+- Decide whether the current Phase 3F sequence has done enough for now:
+  measured-data scouting remains blocked, but TMM machinery now has a small
+  independent code-regression check.
+- If continuing search, narrow the target class before starting: teaching/
+  benchmark coating packages with source-backed constants, measured R/T or
+  ellipsometry, geometry, stack, substrate/backside handling, leakage boundary,
+  and source/hash readiness.
+- Keep the Phase 3F.1E result labeled as machinery regression coverage, not
+  simulator validation against experiment.
 - Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
 - Keep Phase 3F.2 closed until exactly one measured-data candidate clears every
   hard scout flag and can be ingested without fitting or guessing.
@@ -1298,11 +1306,11 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1E - non-promoting TMM code-regression fixture contract`. The
-  first scout pass, the Pro-lead pass, the top-three source-file audit, and the
-  targeted benchmark/source-data follow-up all found no candidate ready for
-  Phase 3F.2 intake. The next useful action is therefore code-regression
-  coverage, not measured residual modeling.
+- `Phase 3F.1F - measured-data scouting decision or pause`. The first scout
+  pass, the Pro-lead pass, the top-three source-file audit, and the targeted
+  benchmark/source-data follow-up all found no candidate ready for Phase 3F.2
+  intake. Phase 3F.1E has now added code-regression coverage, so the remaining
+  decision is whether to pause or open a narrower measured-data search.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1423,11 +1431,38 @@ Result:
 Recommended next phase:
 
 - `Phase 3F.1E - non-promoting TMM code-regression fixture contract`.
-  Planning: GPT-5.5 `medium`; implementation: `medium` unless the fixture
-  exposes a transfer-matrix convention mismatch that requires wrapper changes.
-  The phase should pin source revision/hash, compare deterministic TMM outputs
-  against the public `structural_color_FROCs` code/material tables, and keep
-  the result out of measured validation and claim promotion.
+  Completed in the next pass with 3 deterministic parity cases passing and no
+  measured residual modeling.
+
+#### Phase 3F.1E: Non-Promoting TMM Code-Regression Fixture
+
+Artifacts:
+
+- `src/eternity/phase3f1e.py`
+- `tests/unit/test_phase3f1e.py`
+- `docs/phase3f1e_code_regression_fixture.md`
+- `docs/phase3f1e_code_regression_fixture.json`
+
+Result:
+
+- Status: `phase3f1e_code_regression_fixture_ready`.
+- Pinned GitHub revision:
+  `7c0998d720c387f1efbffe6d1417593ba2f845b1`.
+- Pinned archive SHA-256 matched:
+  `9d595ac110fc203b500780c97393a070c876fc81c5b75e7c20f0e1abf7949d92`.
+- Three deterministic parity cases passed, including one using
+  `structural_color_FROCs` Ge/SiO2/TiO2 material tables.
+- Max reflectance absolute delta: `1.6653345369377348e-16`.
+- Max transmittance absolute delta: `1.3877787807814457e-16`.
+- Phase 3F.2 intake allowed: `false`.
+- Residual modeling performed: `false`.
+- Phase 4 candidate: `false`.
+
+Recommended next phase:
+
+- `Phase 3F.1F - measured-data scouting decision or pause`. Planning: GPT-5.5
+  `medium`; implementation: `low` for a decision-only pause/report or `medium`
+  if another narrowly scoped measured-data search is explicitly opened.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

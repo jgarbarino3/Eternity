@@ -92,6 +92,9 @@ from eternity.phase3f1 import (
     DEFAULT_REGISTRY_PATH as DEFAULT_PHASE3F1_REGISTRY_PATH,
 )
 from eternity.phase3f1 import build_phase3f1_packet, write_phase3f1_packet
+from eternity.phase3f1e import DEFAULT_ARCHIVE_PATH as DEFAULT_PHASE3F1E_ARCHIVE_PATH
+from eternity.phase3f1e import DEFAULT_SOURCE_ROOT as DEFAULT_PHASE3F1E_SOURCE_ROOT
+from eternity.phase3f1e import build_phase3f1e_packet, write_phase3f1e_packet
 from eternity.registry import load_registry, validate_registry_integrity
 from eternity.research_memory.cli import app as memory_app
 from eternity.runner import load_spec, run_experiment
@@ -489,6 +492,26 @@ PHASE3F1_REPORT_STEM_OPTION = typer.Option(
     "phase3f1_simulator_validation_scout",
     "--report-stem",
     help="Output filename stem for Phase 3F.1 scout artifacts.",
+)
+PHASE3F1E_SOURCE_ROOT_OPTION = typer.Option(
+    DEFAULT_PHASE3F1E_SOURCE_ROOT,
+    "--source-root",
+    help="Pinned structural_color_FROCs source root extracted in Phase 3F.1C.",
+)
+PHASE3F1E_ARCHIVE_PATH_OPTION = typer.Option(
+    DEFAULT_PHASE3F1E_ARCHIVE_PATH,
+    "--archive-path",
+    help="Pinned structural_color_FROCs source archive from Phase 3F.1C.",
+)
+PHASE3F1E_OUTPUT_DIR_OPTION = typer.Option(
+    None,
+    "--output-dir",
+    help="Optional directory for JSON and Markdown code-regression artifacts.",
+)
+PHASE3F1E_REPORT_STEM_OPTION = typer.Option(
+    "phase3f1e_code_regression_fixture",
+    "--report-stem",
+    help="Output filename stem for Phase 3F.1E code-regression artifacts.",
 )
 
 
@@ -1224,6 +1247,34 @@ def phase3f1_simulator_validation_scout(
 
     if output_dir is not None:
         json_path, md_path = write_phase3f1_packet(
+            output_dir,
+            packet,
+            report_stem=report_stem,
+        )
+        typer.echo(f"wrote {json_path}")
+        typer.echo(f"wrote {md_path}")
+        return
+
+    typer.echo(json.dumps(packet, indent=2, sort_keys=True))
+
+
+@app.command("phase3f1e-code-regression-fixture")
+def phase3f1e_code_regression_fixture(
+    source_root: Path = PHASE3F1E_SOURCE_ROOT_OPTION,
+    archive_path: Path = PHASE3F1E_ARCHIVE_PATH_OPTION,
+    output_dir: Path | None = PHASE3F1E_OUTPUT_DIR_OPTION,
+    report_stem: str = PHASE3F1E_REPORT_STEM_OPTION,
+) -> None:
+    """Write the Phase 3F.1E non-promoting TMM code-regression fixture packet."""
+
+    try:
+        packet = build_phase3f1e_packet(source_root, archive_path)
+    except (FileNotFoundError, ImportError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"Phase 3F.1E code-regression fixture failed: {error}", err=True)
+        raise typer.Exit(1) from error
+
+    if output_dir is not None:
+        json_path, md_path = write_phase3f1e_packet(
             output_dir,
             packet,
             report_stem=report_stem,

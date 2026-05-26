@@ -134,3 +134,19 @@ tables. It is not experimental validation, not a measured residual, and not
 support for any ENZ claim. The secondary future parser fixture is the ultrathin
 Au source-data package, which has raw FTIR R/T tables but remains leakage-
 blocked for no-fit validation.
+
+## Phase 3F.1E Result
+
+The non-promoting code-regression fixture is recorded in
+`docs/phase3f1e_code_regression_fixture.md` and
+`docs/phase3f1e_code_regression_fixture.json`.
+
+Result: the pinned `structural_color_FROCs` archive hash matches the Phase
+3F.1C source audit, and 3 deterministic transfer-matrix parity cases passed.
+The maximum absolute deltas were `1.6653345369377348e-16` for reflectance and
+`1.3877787807814457e-16` for transmittance. This confirms implementation
+convention parity for the tested cases only.
+
+This remains `non_promoting_code_regression_fixture`: no measured spectra were
+used, no residual modeling was run, no Phase 3F.2 intake opened, and no claim
+status changed.

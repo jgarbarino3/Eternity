@@ -160,6 +160,9 @@ leads and found 0 measured-data hard-gate passes. It explicitly selected
 `structural_color_froc_2023_code_parity_fixture` for a non-promoting Phase
 3F.1E TMM code-regression contract, with ultrathin Au retained only as a
 secondary parser fixture. Phase 3F.2 remains closed.
+Phase 3F.1E then pinned the `structural_color_FROCs` archive and ran three
+deterministic TMM parity cases. All passed with max absolute R/T deltas below
+`2e-16`. This is useful machinery regression coverage, not measured validation.
 Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
 material models, St Andrews diagnostics, public package failures, Saha
 sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
@@ -255,10 +258,11 @@ Current blocker:
   hard gate, so Phase 3F.2 remains closed.
 - Phase 3F.1D gated 8 targeted benchmark/source-data or software-fixture leads.
   Zero measured-data candidates cleared every hard flag, so no Phase 3F.2
-  intake opens. The next remembered action is `Phase 3F.1E - non-promoting TMM
-  code-regression fixture contract`: pin and compare a small deterministic
-  fixture against the public `structural_color_FROCs` TMM code and material
-  tables without measured residuals or claim promotion.
+  intake opens.
+- Phase 3F.1E pinned and compared a small deterministic fixture against the
+  public `structural_color_FROCs` TMM code and material tables without measured
+  residuals or claim promotion. The next remembered action is `Phase 3F.1F -
+  measured-data scouting decision or pause`.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -371,6 +375,9 @@ Current blocker:
   only a code-regression fixture lane: 8 targeted leads produced 0 measured-data
   hard-gate passes, and `structural_color_FROCs` is selected strictly as a
   non-promoting implementation-parity fixture.
+- Phase 3F.1E has enough information to count the selected fixture as
+  non-promoting machinery coverage only: three deterministic R/T parity cases
+  passed, but no measured holdout was used and Phase 3F.2 remains closed.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

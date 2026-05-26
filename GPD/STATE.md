@@ -7,18 +7,18 @@ See: GPD/PROJECT.md (updated 2026-05-19)
 **Machine-readable scoping contract:** `GPD/state.json` field `project_contract`
 
 **Core research question:** Can Eternity build a calibrated ENZ linear digital twin from source-qualified TiN/TiON optical constants and measured holdout spectra without overclaiming?
-**Current focus:** Phase 3F.1E non-promoting TMM code-regression fixture contract
+**Current focus:** Phase 3F.1F measured-data scouting decision or pause
 
 ## Current Position
 
-**Current Phase:** 3F.1E
-**Current Phase Name:** Non-Promoting TMM Code-Regression Fixture Contract
+**Current Phase:** 3F.1F
+**Current Phase Name:** Measured-Data Scouting Decision Or Pause
 **Total Phases:** 3
-**Current Plan:** docs/phase3f1d_benchmark_fixture_gate.md
-**Total Plans in Phase:** 14
-**Status:** Active / Phase 3F.1D selected non-promoting code-regression fixture lane
+**Current Plan:** docs/phase3f1e_code_regression_fixture.md
+**Total Plans in Phase:** 15
+**Status:** Active / Phase 3F.1E code-regression fixture ready
 **Last Activity:** 2026-05-26
-**Last Activity Description:** Completed Phase 3F.1D by gating 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 intake remains closed. The next remembered work is Phase 3F.1E: pin and compare a non-promoting TMM code-regression fixture against the public `structural_color_FROCs` code/material tables, with no measured residuals and no claim promotion.
+**Last Activity Description:** Completed Phase 3F.1E by pinning the `structural_color_FROCs` source archive and comparing three deterministic TMM R/T parity cases against the current backend. All cases passed with max absolute deltas below `2e-16`. This is non-promoting machinery coverage only; Phase 3F.2 intake and measured residual modeling remain closed. Next remembered work is Phase 3F.1F: decide whether to pause measured-data scouting or open a narrower search.
 
 **Progress:** [██████████] 99%
 
@@ -159,14 +159,17 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   candidates cleared every hard flag. The selected next lane is
   `structural_color_froc_2023_code_parity_fixture` as a non-promoting
   code-regression fixture; ultrathin Au remains only a secondary parser fixture.
+- Phase 3F.1E wrote `src/eternity/phase3f1e.py`,
+  `tests/unit/test_phase3f1e.py`,
+  `docs/phase3f1e_code_regression_fixture.md`, and `.json`. The pinned
+  `structural_color_FROCs` archive hash matched, and 3 deterministic parity
+  cases passed with max R/T deltas below `2e-16`. This is code-regression
+  coverage only, not measured validation.
 
 ## Open Questions
 
-- Which exact `structural_color_FROCs` stack/material records should be pinned
-  first for Phase 3F.1E code-regression parity?
-- Does the public `structural_color_FROCs` TMM helper use conventions that
-  differ from Eternity's current `sbyrnes321/tmm` wrapper in a way that should
-  become documented fixture behavior?
+- Should Phase 3F pause measured-data scouting now that code-regression coverage
+  exists, or should it open one more narrower public measured-data search?
 - Which stricter simple public planar thin-film dataset can later provide
   source-qualified optical constants plus independent R/T or ellipsometry
   holdout without author contact, so Phase 3F.2 can eventually open?
@@ -275,6 +278,9 @@ See: GPD/PROJECT.md (updated 2026-05-19)
   measured-data candidate either. — Eight leads yielded zero hard-gate passes,
   so the only active next lane is a non-promoting code-regression fixture
   against `structural_color_FROCs`.
+- [Phase 3F.1E]: The selected code-regression fixture passed. — Three
+  deterministic TMM parity cases matched the current backend below `2e-16`, but
+  this is not measured validation and does not open Phase 3F.2.
 - [Phase 3A]: Phase 3A validation candidates are capped at `weak_within_dataset_holdout`. — Normalization certainty and predeclared thresholds are still missing, and residuals have now been inspected only under that capped status.
 - [Phase 3A.1]: Existing residuals are historical context only. — Threshold policy must apply to a future run unless it was recorded before the run being judged.
 
@@ -295,9 +301,9 @@ None yet.
 
 ### Pending Todos
 
-- Phase 3F.1E: pin the `structural_color_FROCs` source/material inputs and
-  write a deterministic, non-promoting TMM code-regression fixture. Do not run
-  measured residuals or promote claim labels.
+- Phase 3F.1F: decide whether to pause with code-regression coverage recorded
+  or open a narrower measured-data search. Do not run measured residuals or
+  promote claim labels without a source-backed holdout candidate.
 - Record Pro/user-approved Phase 3A residual thresholds before any future residual-gated pass/fail run.
 - Retrieve source-backed export/recipe/project/lab-note evidence if thesis
   exported intensity spectra are to be treated as absolute reflectance.

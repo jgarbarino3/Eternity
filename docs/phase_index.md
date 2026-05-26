@@ -70,11 +70,12 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3F.1B | Completed/pro-leads-no-candidate-ready | 5.5 Pro lead gate | Encoded the pasted 16-lead GPT-5.5 Pro list into a companion registry and ran it through the same hard gate. Zero candidates cleared every flag. The closest non-ENZ simulator fallbacks remain promising source-file audit targets, but Phase 3F.2 stays closed until material constants, measured holdout, geometry, stack/backside, leakage, and source/hash readiness are all proven. |
 | Phase 3F.1C | Completed/source-file-audit-no-candidate-ready | Top-candidate source-file audit | Downloaded and hash-verified the top-three practical fallback packages from Phase 3F.1B. Structural color FROC is chromaticity/source-code memory without measured spectral holdout, FROC 2021 is blocked by Origin OPJ measured-data containers, and ultrathin Au is source-data-rich but leakage-blocked by same-measurement fitting and request-only processing code. Phase 3F.2 remains closed. |
 | Phase 3F.1D | Completed/fixture-lane-selected | Benchmark/source-data search and fixture-lane decision | Gated 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 remains closed. Selected `structural_color_froc_2023_code_parity_fixture` as a non-promoting Phase 3F.1E code-regression lane; ultrathin Au remains a secondary parser fixture only. |
+| Phase 3F.1E | Completed/code-regression-fixture-ready | Non-promoting TMM code-regression fixture | Pinned the `structural_color_FROCs` archive and compared three deterministic TMM parity cases, including one using source material tables. All cases passed with max absolute deltas below `2e-16`. This is machinery regression coverage only; Phase 3F.2 and Phase 4 remain closed. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3F.1E - non-promoting TMM code-regression fixture contract**.
+Current phase: **Phase 3F.1F - measured-data scouting decision or pause**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -103,6 +104,9 @@ fixture search over 8 leads and still found 0 measured-data hard-gate passes.
 It therefore selected the explicit non-promoting code-regression path:
 `structural_color_froc_2023_code_parity_fixture` for Phase 3F.1E, with
 ultrathin Au retained only as a secondary measurement-parser fixture.
+Phase 3F.1E then pinned the source archive and compared three deterministic
+TMM parity cases. All passed with max absolute deltas below `2e-16`, so the
+local TMM machinery now has a small non-promoting code-regression fixture.
 
 Information sufficiency:
 
@@ -224,6 +228,9 @@ Information sufficiency:
   benchmark/source-data search records 8 candidate cards, 0 measured-data
   hard-gate passes, and a non-promoting Phase 3F.1E code-regression fixture
   choice using `structural_color_FROCs` code rather than measured residuals.
+- Enough to complete Phase 3F.1E as non-promoting machinery coverage: the
+  pinned `structural_color_FROCs` source helper and material tables agree with
+  the current `sbyrnes321/tmm` backend on three deterministic R/T parity cases.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -282,16 +289,17 @@ Information sufficiency:
 - Not enough to open Phase 3F.2 after Phase 3F.1D either: the targeted
   benchmark/source-data and software-fixture search found 0 measured-data hard
   gate passes. The selected next step is code-regression coverage only.
+- Not enough to open Phase 3F.2 after Phase 3F.1E either: code parity is useful
+  machinery coverage, but it is not measured validation and does not supply an
+  independent optical holdout.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3F.1E - non-promoting TMM code-regression fixture contract**.
-  Planning: GPT-5.5 `medium`, because the source and claim boundary are now
-  narrow. Implementation: `medium`, unless the fixture reveals convention
-  mismatches that require refactoring the local TMM wrapper. Current artifacts:
-  `docs/phase3f1d_benchmark_fixture_gate.md`,
-  `docs/phase3f1d_benchmark_fixture_gate.json`, and
-  `docs/phase3f1d_benchmark_fixture_candidate_registry.yaml`.
+- **Phase 3F.1F - measured-data scouting decision or pause**. Planning:
+  GPT-5.5 `medium`. Implementation: `low` for a decision-only pause/report, or
+  `medium` if another narrowly scoped measured-data search is opened. Current
+  artifacts: `docs/phase3f1e_code_regression_fixture.md` and
+  `docs/phase3f1e_code_regression_fixture.json`.
 
 Helpful tools:
 

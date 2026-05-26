@@ -134,10 +134,13 @@ Current progress:
   candidates cleared every hard flag, so Phase 3F.2 stays closed. The selected
   path is the non-promoting
   `structural_color_froc_2023_code_parity_fixture`.
-- **Next**: Build Phase 3F.1E as a non-promoting TMM code-regression fixture:
-  pin the `structural_color_FROCs` source/material inputs, compare deterministic
-  implementation conventions, and do not run measured residuals or promote
-  claims.
+- **Done/code-regression-fixture-ready**: Phase 3F.1E non-promoting TMM
+  code-regression fixture. The pinned `structural_color_FROCs` archive matched
+  its source hash, and 3 deterministic parity cases passed with max R/T deltas
+  below `2e-16`.
+- **Next**: Phase 3F.1F measured-data scouting decision or pause. Decide
+  whether current code-regression coverage is enough for now or whether a more
+  narrowly scoped public measured-data search is worth opening.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -205,7 +208,8 @@ calibrated_linear_evidence
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1B 5.5 Pro lead gate
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1C source-file audit
   -> COMPLETE/FIXTURE-LANE: Phase 3F.1D benchmark search and fixture decision
-  -> NEXT: Phase 3F.1E non-promoting TMM code-regression fixture
+  -> COMPLETE/CODE-REGRESSION: Phase 3F.1E non-promoting TMM parity fixture
+  -> NEXT: Phase 3F.1F measured-data scouting decision or pause
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -335,11 +339,11 @@ R/T holdout package, FROC 2021 measured data are Origin OPJ containers, and
 ultrathin Au has public raw FTIR R/T but fails the leakage-safe no-fit split
 because constants/model parameters are fit from the same optical measurements.
 Phase 3F.1D then gated 8 targeted benchmark/source-data or software-fixture
-leads and again found 0 measured-data hard-gate passes. The next serious-core
-fallback is Phase 3F.1E: a non-promoting code-regression fixture against
-`structural_color_FROCs` code/material tables. Phase 3F.2 intake stays closed
-until a simpler public planar thin-film dataset has a complete source-backed
-contract.
+leads and again found 0 measured-data hard-gate passes. Phase 3F.1E then
+pinned `structural_color_FROCs` and passed 3 deterministic TMM parity cases.
+That is machinery regression coverage, not measured validation. Phase 3F.2
+intake stays closed until a simpler public planar thin-film dataset has a
+complete source-backed contract.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks

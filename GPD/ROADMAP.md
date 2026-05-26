@@ -578,10 +578,14 @@ Next:
   selected next lane is the non-promoting
   `structural_color_froc_2023_code_parity_fixture`; ultrathin Au remains only
   secondary parser-fixture memory.
-- Continue `Phase 3F.1E - non-promoting TMM code-regression fixture contract`:
-  pin the `structural_color_FROCs` source/material inputs, compare deterministic
-  transfer-matrix convention outputs, and report machinery regression coverage
-  without measured residuals or claim promotion.
+- Phase 3F.1E has completed the non-promoting TMM code-regression fixture.
+  The pinned `structural_color_FROCs` archive hash matched, and three
+  deterministic R/T parity cases passed with max deltas below `2e-16`. This is
+  machinery regression coverage only, not measured validation.
+- Continue `Phase 3F.1F - measured-data scouting decision or pause`: decide
+  whether to pause with code-regression coverage recorded or open one narrower
+  measured-data search. Keep Phase 3F.2 closed until a source-backed measured
+  holdout candidate clears every hard gate.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 
