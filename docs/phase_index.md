@@ -71,11 +71,13 @@ Do not renumber old phases unless the roadmap is explicitly reset. Add suffixes 
 | Phase 3F.1C | Completed/source-file-audit-no-candidate-ready | Top-candidate source-file audit | Downloaded and hash-verified the top-three practical fallback packages from Phase 3F.1B. Structural color FROC is chromaticity/source-code memory without measured spectral holdout, FROC 2021 is blocked by Origin OPJ measured-data containers, and ultrathin Au is source-data-rich but leakage-blocked by same-measurement fitting and request-only processing code. Phase 3F.2 remains closed. |
 | Phase 3F.1D | Completed/fixture-lane-selected | Benchmark/source-data search and fixture-lane decision | Gated 8 targeted benchmark/source-data or software-fixture leads. Zero measured-data candidates cleared every hard flag, so Phase 3F.2 remains closed. Selected `structural_color_froc_2023_code_parity_fixture` as a non-promoting Phase 3F.1E code-regression lane; ultrathin Au remains a secondary parser fixture only. |
 | Phase 3F.1E | Completed/code-regression-fixture-ready | Non-promoting TMM code-regression fixture | Pinned the `structural_color_FROCs` archive and compared three deterministic TMM parity cases, including one using source material tables. All cases passed with max absolute deltas below `2e-16`. This is machinery regression coverage only; Phase 3F.2 and Phase 4 remain closed. |
+| Phase 3F.1F | Completed/scouting-paused | Measured-data scouting decision or pause | Paused measured-data scouting after Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes and Phase 3F.1E added only non-promoting code-regression coverage. Phase 3F.2, residual modeling, and Phase 4 remain closed until a new or narrower source-backed candidate clears every hard flag. |
+| Phase 3G | Recommended | Research Memory / Executive Research Assistant measured-data intake queue | Turn the hard gates, rejection memory, pause/resume rules, and assistant-facing project state into a stronger intake workflow for future leads without weakening the scientific evidence bar. |
 | Phase 4 | Gated | First calibrated linear evidence attempt | Requires frozen model, independent holdout, residual/uncertainty gates, split integrity, and claim-status promotion checks. |
 
 ## Active Recommendation
 
-Current phase: **Phase 3F.1F - measured-data scouting decision or pause**.
+Current phase: **Phase 3G - Research Memory / Executive Research Assistant measured-data intake queue**.
 
 Reason: The known ENZ public-data lanes now mostly function as conservative
 fixtures rather than calibrated validation candidates. Saha cleared the
@@ -107,6 +109,11 @@ ultrathin Au retained only as a secondary measurement-parser fixture.
 Phase 3F.1E then pinned the source archive and compared three deterministic
 TMM parity cases. All passed with max absolute deltas below `2e-16`, so the
 local TMM machinery now has a small non-promoting code-regression fixture.
+Phase 3F.1F then paused measured-data scouting rather than opening another
+broad search. The resume rule is intentionally narrow: bring new source files,
+a genuinely new lead list, or a stricter benchmark/teaching-stack target class
+before reopening measured-data discovery. Phase 3F.2, residual modeling, and
+Phase 4 remain closed.
 
 Information sufficiency:
 
@@ -231,6 +238,10 @@ Information sufficiency:
 - Enough to complete Phase 3F.1E as non-promoting machinery coverage: the
   pinned `structural_color_FROCs` source helper and material tables agree with
   the current `sbyrnes321/tmm` backend on three deterministic R/T parity cases.
+- Enough to complete Phase 3F.1F as a measured-data scouting pause: 37 total
+  scout, Pro-list, source-file, benchmark, source-data, or software-fixture
+  leads across Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard
+  gate passes, while Phase 3F.1E supplied code-regression coverage only.
 - Not enough to use `30_20_10` files as thesis `d_10nm` validation evidence.
 - Not enough to claim absolute reflectance normalization.
 - Not enough to complete calibrated Phase 3A promotion without a new export,
@@ -292,14 +303,16 @@ Information sufficiency:
 - Not enough to open Phase 3F.2 after Phase 3F.1E either: code parity is useful
   machinery coverage, but it is not measured validation and does not supply an
   independent optical holdout.
+- Not enough to justify another broad measured-data scouting loop right now:
+  Phase 3F.1F pauses the search until new source files, new lead lists, or a
+  narrower benchmark target class appear.
 
 Recommended next phase under the current GPT-5.5 assumption:
 
-- **Phase 3F.1F - measured-data scouting decision or pause**. Planning:
-  GPT-5.5 `medium`. Implementation: `low` for a decision-only pause/report, or
-  `medium` if another narrowly scoped measured-data search is opened. Current
-  artifacts: `docs/phase3f1e_code_regression_fixture.md` and
-  `docs/phase3f1e_code_regression_fixture.json`.
+- **Phase 3G - Research Memory / Executive Research Assistant measured-data
+  intake queue**. Planning: GPT-5.5 `high`. Implementation: `medium`. Current
+  artifacts: `docs/phase3f1f_measured_data_scouting_decision.md` and
+  `docs/phase3f1f_measured_data_scouting_decision.json`.
 
 Helpful tools:
 

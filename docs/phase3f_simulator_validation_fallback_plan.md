@@ -150,3 +150,21 @@ convention parity for the tested cases only.
 This remains `non_promoting_code_regression_fixture`: no measured spectra were
 used, no residual modeling was run, no Phase 3F.2 intake opened, and no claim
 status changed.
+
+## Phase 3F.1F Result
+
+The measured-data scouting decision is recorded in
+`docs/phase3f1f_measured_data_scouting_decision.md` and
+`docs/phase3f1f_measured_data_scouting_decision.json`.
+
+Result: measured-data scouting is paused for now. Phase 3F.1, Phase 3F.1B,
+Phase 3F.1C, and Phase 3F.1D collectively inspected 37 scout, Pro-list,
+source-file, benchmark, source-data, or software-fixture leads and found 0
+measured-data hard-gate passes. Phase 3F.1E added a passing code-regression
+fixture, but it did not add measured validation. Phase 3F.2 intake therefore
+remains closed, residual modeling remains forbidden, and Phase 4 remains gated.
+
+Measured-data scouting should resume only when a new source-data package or
+lead list appears, a future search is narrower than the exhausted envelope, or a
+current-source refresh reveals newly public machine-readable measured optical
+data with a source-backed no-fit contract.

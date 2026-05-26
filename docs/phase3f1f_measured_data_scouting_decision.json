@@ -1,0 +1,84 @@
+{
+  "phase_id": "Phase 3F.1F",
+  "title": "Measured-Data Scouting Decision Or Pause",
+  "date": "2026-05-26",
+  "decision": {
+    "status": "phase3f1f_measured_data_scouting_paused",
+    "measured_data_scouting_paused": true,
+    "new_measured_data_search_opened": false,
+    "phase3f2_intake_allowed": false,
+    "residual_modeling_allowed": false,
+    "phase4_candidate": false,
+    "claim_status_changed": false,
+    "recommended_next_phase": "Phase 3G - Research Memory / Executive Research Assistant measured-data intake queue"
+  },
+  "evidence_basis": [
+    {
+      "phase": "Phase 3F.1",
+      "scope": "simple thin-film simulator-validation scout",
+      "candidate_count": 10,
+      "hard_gate_pass_count": 0,
+      "consequence": "Phase 3F.2 intake stayed closed"
+    },
+    {
+      "phase": "Phase 3F.1B",
+      "scope": "pasted GPT-5.5 Pro lead gate",
+      "candidate_count": 16,
+      "hard_gate_pass_count": 0,
+      "consequence": "Phase 3F.2 intake stayed closed"
+    },
+    {
+      "phase": "Phase 3F.1C",
+      "scope": "top-three source-file audit",
+      "candidate_count": 3,
+      "hard_gate_pass_count": 0,
+      "consequence": "no measured-data candidate cleared the gate"
+    },
+    {
+      "phase": "Phase 3F.1D",
+      "scope": "targeted benchmark/source-data and software-fixture follow-up",
+      "candidate_count": 8,
+      "measured_data_hard_gate_pass_count": 0,
+      "consequence": "selected only a non-promoting code-regression lane"
+    },
+    {
+      "phase": "Phase 3F.1E",
+      "scope": "non-promoting structural_color_FROCs code-regression fixture",
+      "case_count": 3,
+      "pass_count": 3,
+      "max_abs_r_delta": 1.6653345369377348e-16,
+      "max_abs_t_delta": 1.3877787807814457e-16,
+      "claim_label": "non_promoting_code_regression_fixture",
+      "consequence": "machinery regression coverage only, not measured validation"
+    }
+  ],
+  "resume_conditions": [
+    "User supplies a new source-data package, lead list, or paper/dataset outside the Phase 3F.1 through Phase 3F.1D search envelope.",
+    "A future search is narrower than the exhausted envelope and targets known teaching or benchmark coating packages with source-backed constants plus measured spectra.",
+    "A current-source refresh reveals newly public machine-readable measured R/T, ellipsometry, or source-code packages."
+  ],
+  "hard_gates_required_before_phase3f2": [
+    "public_access",
+    "source_qualified_constants_or_model",
+    "independent_measured_holdout",
+    "machine_readable_files",
+    "geometry_backed",
+    "stack_thickness_backed",
+    "substrate_backside_coherence_clear",
+    "leakage_safe_no_fit_split",
+    "planar_linear_tmm_suitable",
+    "source_hash_ready"
+  ],
+  "stop_rules": [
+    "Do not run measured residuals without a frozen source-backed model contract.",
+    "Do not use residual shape, fitted thickness, fitted constants, or guessed substrate/backside assumptions to rescue a candidate.",
+    "Do not promote Phase 3F.1E beyond non_promoting_code_regression_fixture.",
+    "Do not open Phase 4 until a future candidate clears every required gate."
+  ],
+  "recommended_next": {
+    "phase": "Phase 3G",
+    "name": "Research Memory / Executive Research Assistant measured-data intake queue",
+    "planning_effort": "high",
+    "implementation_effort": "medium"
+  }
+}

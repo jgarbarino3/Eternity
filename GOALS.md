@@ -163,6 +163,11 @@ secondary parser fixture. Phase 3F.2 remains closed.
 Phase 3F.1E then pinned the `structural_color_FROCs` archive and ran three
 deterministic TMM parity cases. All passed with max absolute R/T deltas below
 `2e-16`. This is useful machinery regression coverage, not measured validation.
+Phase 3F.1F then paused measured-data scouting for now: 37 total leads across
+Phase 3F.1 through Phase 3F.1D produced 0 measured-data hard-gate passes, and
+Phase 3F.1E did not supply measured validation. The next remembered action is
+`Phase 3G - Research Memory / Executive Research Assistant measured-data intake
+queue`.
 Source-qualified TiN/TiON optical constants, thesis reflectance spectra,
 material models, St Andrews diagnostics, public package failures, Saha
 sensitivity diagnostics, Phase 3F rejection cards, and provenance gaps remain
@@ -261,8 +266,10 @@ Current blocker:
   intake opens.
 - Phase 3F.1E pinned and compared a small deterministic fixture against the
   public `structural_color_FROCs` TMM code and material tables without measured
-  residuals or claim promotion. The next remembered action is `Phase 3F.1F -
-  measured-data scouting decision or pause`.
+  residuals or claim promotion.
+- Phase 3F.1F paused measured-data scouting. The next remembered action is
+  `Phase 3G - Research Memory / Executive Research Assistant measured-data
+  intake queue`.
 - Phase 3A normalization certainty and predeclared residual thresholds are not
   yet resolved, so no Phase 3A run may promote to `calibrated_linear_evidence`.
 - Phase 3A.1 does not have enough information to pass normalization or threshold
@@ -378,6 +385,8 @@ Current blocker:
 - Phase 3F.1E has enough information to count the selected fixture as
   non-promoting machinery coverage only: three deterministic R/T parity cases
   passed, but no measured holdout was used and Phase 3F.2 remains closed.
+- Phase 3F.1F has enough information to pause measured-data scouting until new
+  source packages, new lead lists, or a narrower benchmark target class appears.
 - Phase 3D.3 has enough information to stop on the Exeter spatiotemporal ITO
   lane for calibrated-linear purposes: it is public and useful, but the
   inspected measurement lane is nonlinear pumped transmission/frequency-shift

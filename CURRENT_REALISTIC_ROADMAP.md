@@ -1046,7 +1046,7 @@ The win is:
 
 ## Immediate Next Step
 
-Choose `Phase 3F.1F - measured-data scouting decision or pause`.
+Choose `Phase 3G - Research Memory / Executive Research Assistant measured-data intake queue`.
 
 Why:
 
@@ -1098,7 +1098,10 @@ secondary parser-fixture memory only. Phase 3F.1E then pinned the
 `structural_color_FROCs` archive and compared three deterministic TMM parity
 cases, including one built from source material tables. All cases passed with
 max absolute R/T deltas below `2e-16`. This is machinery regression coverage,
-not measured validation.
+not measured validation. Phase 3F.1F then paused measured-data scouting instead
+of opening another broad search: Phase 3F.1 through Phase 3F.1D found 0
+measured-data hard-gate passes across 37 leads, and Phase 3F.1E supplied only
+non-promoting code-regression coverage.
 
 Recommended decision scope:
 
@@ -1106,10 +1109,10 @@ Recommended decision scope:
 1. Keep Phase 4 gated until a genuinely independent measured holdout appears.
 2. Preserve the Phase 3D/3E failure memory in the structured candidate registry
    and public-dataset acceptance gate.
-3. Decide Phase 3F.1F: either pause measured-data scouting with the current
-   code-regression coverage recorded, or open a newly narrowed measured-data
-   search only if the target class is stricter than the exhausted Phase 3F.1
-   through Phase 3F.1D envelope.
+3. Keep measured-data scouting paused until the user supplies a new source-data
+   package or lead list, or until a future current-source refresh identifies a
+   newly public package outside the exhausted Phase 3F.1 through Phase 3F.1D
+   envelope.
 4. Promote the executive research assistant lane as the user-facing layer for
    planning, summaries, prompts, reports, dataset triage, phase tracking, and
    evidence-aware next actions.
@@ -1146,18 +1149,16 @@ candidates. Phase 3F.1D then gated 8 targeted benchmark/source-data or
 software-fixture leads, again found 0 measured-data hard-gate passes, and
 selected the non-promoting `structural_color_froc_2023_code_parity_fixture`.
 Phase 3F.1E then produced a passing non-promoting TMM code-regression fixture.
-The current recommended next phase is `Phase 3F.1F - measured-data scouting
-decision or pause`.
+Phase 3F.1F then paused measured-data scouting for now. The current
+recommended next phase is `Phase 3G - Research Memory / Executive Research
+Assistant measured-data intake queue`.
 
-Phase 3F.1F should:
+Phase 3G should:
 
-- Decide whether the current Phase 3F sequence has done enough for now:
-  measured-data scouting remains blocked, but TMM machinery now has a small
-  independent code-regression check.
-- If continuing search, narrow the target class before starting: teaching/
-  benchmark coating packages with source-backed constants, measured R/T or
-  ellipsometry, geometry, stack, substrate/backside handling, leakage boundary,
-  and source/hash readiness.
+- Turn the Phase 3E/3F gates, rejection memory, source-file audit results, and
+  pause/resume rules into an assistant-facing measured-data intake workflow.
+- Make it easy to add one new lead and immediately see whether Phase 3F.2 can
+  open, without repeating broad searches or weakening hard gates.
 - Keep the Phase 3F.1E result labeled as machinery regression coverage, not
   simulator validation against experiment.
 - Keep Phase 4 closed unless a future ENZ dataset clears every required flag.
@@ -1306,11 +1307,11 @@ Result:
 
 Recommended next phase:
 
-- `Phase 3F.1F - measured-data scouting decision or pause`. The first scout
-  pass, the Pro-lead pass, the top-three source-file audit, and the targeted
-  benchmark/source-data follow-up all found no candidate ready for Phase 3F.2
-  intake. Phase 3F.1E has now added code-regression coverage, so the remaining
-  decision is whether to pause or open a narrower measured-data search.
+- `Phase 3G - Research Memory / Executive Research Assistant measured-data
+  intake queue`. The first scout pass, the Pro-lead pass, the top-three
+  source-file audit, and the targeted benchmark/source-data follow-up all found
+  no candidate ready for Phase 3F.2 intake. Phase 3F.1E added code-regression
+  coverage, and Phase 3F.1F paused broad measured-data scouting.
 
 #### Phase 3F.1: Simple Thin-Film Simulator-Validation Scout
 
@@ -1458,11 +1459,25 @@ Result:
 - Residual modeling performed: `false`.
 - Phase 4 candidate: `false`.
 
+#### Phase 3F.1F: Measured-Data Scouting Decision Or Pause
+
+Artifacts:
+
+- `docs/phase3f1f_measured_data_scouting_decision.md`
+- `docs/phase3f1f_measured_data_scouting_decision.json`
+
+Result:
+
+- Decision: `phase3f1f_measured_data_scouting_paused`.
+- New measured-data search opened: `false`.
+- Phase 3F.2 intake allowed: `false`.
+- Residual modeling allowed: `false`.
+- Phase 4 candidate: `false`.
+
 Recommended next phase:
 
-- `Phase 3F.1F - measured-data scouting decision or pause`. Planning: GPT-5.5
-  `medium`; implementation: `low` for a decision-only pause/report or `medium`
-  if another narrowly scoped measured-data search is explicitly opened.
+- `Phase 3G - Research Memory / Executive Research Assistant measured-data
+  intake queue`. Planning: GPT-5.5 `high`; implementation: `medium`.
 
 #### Phase 3D.2A: Saha OPJU Worksheet Export Audit
 

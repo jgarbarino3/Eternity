@@ -582,10 +582,14 @@ Next:
   The pinned `structural_color_FROCs` archive hash matched, and three
   deterministic R/T parity cases passed with max deltas below `2e-16`. This is
   machinery regression coverage only, not measured validation.
-- Continue `Phase 3F.1F - measured-data scouting decision or pause`: decide
-  whether to pause with code-regression coverage recorded or open one narrower
-  measured-data search. Keep Phase 3F.2 closed until a source-backed measured
-  holdout candidate clears every hard gate.
+- Phase 3F.1F has paused measured-data scouting for now. Phase 3F.1 through
+  Phase 3F.1D found 0 measured-data hard-gate passes across 37 leads, and Phase
+  3F.1E supplied only machinery regression coverage. Keep Phase 3F.2 closed
+  until a source-backed measured holdout candidate clears every hard gate.
+- Continue `Phase 3G - Research Memory / Executive Research Assistant
+  measured-data intake queue`: turn the hard gates, rejection memory, and
+  pause/resume conditions into a stronger assistant-facing intake workflow for
+  future leads.
 - Reopen unavailable CompleteEASE, TiON raw R/T, St Andrews author contact, or
   new literature-package paths only if the user supplies new access or data.
 

@@ -138,9 +138,13 @@ Current progress:
   code-regression fixture. The pinned `structural_color_FROCs` archive matched
   its source hash, and 3 deterministic parity cases passed with max R/T deltas
   below `2e-16`.
-- **Next**: Phase 3F.1F measured-data scouting decision or pause. Decide
-  whether current code-regression coverage is enough for now or whether a more
-  narrowly scoped public measured-data search is worth opening.
+- **Done/scouting-paused**: Phase 3F.1F measured-data scouting decision. The
+  current broad measured-data search envelope is paused after 37 leads produced
+  0 measured-data hard-gate passes and Phase 3F.1E supplied only code-regression
+  coverage.
+- **Next**: Phase 3G Research Memory / Executive Research Assistant
+  measured-data intake queue. Turn the gates and failure memory into a stronger
+  future-lead intake workflow.
 - **Pivot active for current run**: Keep the evidence bar intact and promote
   the executive research assistant / public-dataset gate lane recorded in
   `docs/pivots/executive_research_assistant_fallback.md`.
@@ -209,7 +213,8 @@ calibrated_linear_evidence
   -> COMPLETE/NO-CANDIDATE: Phase 3F.1C source-file audit
   -> COMPLETE/FIXTURE-LANE: Phase 3F.1D benchmark search and fixture decision
   -> COMPLETE/CODE-REGRESSION: Phase 3F.1E non-promoting TMM parity fixture
-  -> NEXT: Phase 3F.1F measured-data scouting decision or pause
+  -> COMPLETE/PAUSED: Phase 3F.1F measured-data scouting pause
+  -> NEXT: Phase 3G measured-data intake queue
   -> IN PROGRESS: frozen tabulated material model
   -> PARKED: Phase 3B TiON plot-level/R/T provenance
   -> NEEDED: independent holdout measurement
@@ -341,9 +346,10 @@ because constants/model parameters are fit from the same optical measurements.
 Phase 3F.1D then gated 8 targeted benchmark/source-data or software-fixture
 leads and again found 0 measured-data hard-gate passes. Phase 3F.1E then
 pinned `structural_color_FROCs` and passed 3 deterministic TMM parity cases.
-That is machinery regression coverage, not measured validation. Phase 3F.2
-intake stays closed until a simpler public planar thin-film dataset has a
-complete source-backed contract.
+That is machinery regression coverage, not measured validation. Phase 3F.1F
+then paused measured-data scouting rather than repeating the broad search.
+Phase 3F.2 intake stays closed until a simpler public planar thin-film dataset
+has a complete source-backed contract.
 Phase 3A.2 keeps thesis `d_10nm` source-backed but
 keeps the separate `30_20_10` files out of the validation candidate. Phase 3A.1
 now keeps the already-inspected residuals as historical context only and blocks
